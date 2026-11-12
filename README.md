@@ -39,6 +39,26 @@ proofs. These connect Afriat rationalization to consumer demand and bundle lotte
 to preferences over income after optimal consumption. CI runs these checks
 alongside the individual chapter audits.
 
+## Mas-Colell, Whinston and Green, *Microeconomic Theory*
+
+A second programme formalizes Mas-Colell, Whinston and Green, *Microeconomic Theory*
+(Oxford University Press, 1995), chapter by chapter in book order, under
+`MicroeconomicTheory/`. The [proposal](PROPOSAL-MicroeconomicTheory.md) gives the
+chapter plan and the settled decisions. Each chapter is an independent Lean/Mathlib
+project `MicroeconomicTheory/NN_Project/`, with Lake library `MWG<Project>` and namespace
+`MWG.<Project>`. It covers every definition, numbered result, example and mathematical
+exercise, with source maps, corrections and the same fresh proof audit.
+
+Unlike `Volume1/`, MWG chapters **depend on** earlier material rather than copying it.
+They use Lake `path` requirements on Kreps chapters and earlier MWG chapters, and `git`
+requirements pinned to a commit for other LeanEconomics repositories. All share the
+Mathlib pin above. Each chapter audits only its own modules.
+
+| Project | Chapter | Checked results | Start here |
+| --- | --- | --- | --- |
+
+No MWG chapter has been implemented yet.
+
 ## Build and verify
 
 From an implemented chapter directory:
@@ -55,7 +75,8 @@ source. Documentation distinguishes verified results from outstanding source cov
 ## License and provenance
 
 Apache 2.0; see [LICENSE](LICENSE) and each chapter's third-party notices. Formalization
-is developed with OpenAI Codex under the user's direction. The textbook is cited and
-is not distributed. Read the [working guidance](AGENTS.md) before contributing;
+is developed with OpenAI Codex under the user's direction; the MWG programme is
+developed with Claude Code under the user's direction. The textbooks are cited and are
+not distributed. Read the [working guidance](AGENTS.md) before contributing;
 [UPSTREAM.md](UPSTREAM.md) records possible reusable mathematical contributions and
 the duplication checks still required before an upstream proposal.

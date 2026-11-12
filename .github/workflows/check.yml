@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-name: Check Kreps Foundations proofs
+name: Check Kreps Foundations and MWG proofs
 on: [push, pull_request]
 permissions:
   contents: read
@@ -55,6 +55,10 @@ jobs:
                              for name in config['modules']
                              for line in (project / name).read_text().splitlines()
                              if line.startswith('import Mathlib.'))
+          # MWG projects require other packages (Kreps chapters, LeanEconomics), whose
+          # Mathlib imports are not listed above: fetch the whole pinned Mathlib cache.
+          if Path('lakefile.toml').read_text().count('[[require]]') > 1:
+              imports = set()
           for attempt in range(1, 6):
               if subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(imports)]).returncode == 0:
                   break

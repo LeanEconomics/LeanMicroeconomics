@@ -11,6 +11,11 @@ The convention references and their exact revisions are recorded in
 chapter and audit workflow with LeanEconomics' reusable mathematics and provenance
 practice. The reference repositories are sources to inspect, not additional dependencies.
 
+The repository also formalizes Mas-Colell, Whinston and Green, *Microeconomic Theory*,
+under `MicroeconomicTheory/`; see the MWG section below and
+[PROPOSAL-MicroeconomicTheory.md](PROPOSAL-MicroeconomicTheory.md). Everything in this
+file applies to it except where that section says otherwise.
+
 ## Project structure and environment
 
 - Each `Volume1/NN_Project/` directory is an independent Lake project. Use the two-digit
@@ -85,6 +90,37 @@ practice. The reference repositories are sources to inspect, not additional depe
 - In parallel work, agree on file ownership and keep shared integration files with the
   coordinator. Review a frozen snapshot for the final audit so subsequent edits cannot
   be confused with checked source. Preserve other contributors' changes.
+
+## Mas-Colell, Whinston and Green (`MicroeconomicTheory/`)
+
+- Each `MicroeconomicTheory/NN_Project/` directory is an independent Lake project, with
+  the two-digit book chapter number. The Lake package and library are `MWG<Project>`, the
+  namespace is `MWG.<Project>`, and modules are imported as `MWG<Project>.Module`.
+- **Dependencies replace copies.** Unlike `Volume1/`, an MWG chapter uses earlier work
+  through Lake requirements: a `path` requirement for Kreps chapters and earlier MWG
+  chapters, and a `git` requirement pinned to a commit for other LeanEconomics
+  repositories. Every dependency must resolve to the Mathlib and transitive pins above.
+  Create the manifest by copying a Kreps `lake-manifest.json`, renaming the package and
+  running `lake update <new dependencies>` only. Check that the Mathlib-family revisions
+  are unchanged. Remove an unused requirement before the chapter is committed.
+- `proof-manifest.json` lists only the chapter's own modules. `scripts/verify.py` (the
+  unchanged baseline copy) keeps imports from dependencies as library imports in the
+  fresh audit. Dependency declarations are therefore trusted from their own audited
+  projects, not re-audited.
+- Check a dependency's hypotheses against MWG's statement before using it; a theorem with
+  a similar name is not enough. Record each use in the source map with the providing
+  package and commit.
+- Cite as `MWG, Prop. 3.D.3, p. 56` or `MWG, Exercise 3.D.6, p. 98`. Numbered aliases follow
+  `proposition_3_D_3`, `definition_16_C_1`, `example_6_B_2` and `exercise_3_D_6`, with
+  `M_` for the Mathematical Appendix (`theorem_M_I_1`). Each appendix section is formalized
+  in the first chapter that uses it.
+- The local source is an image scan: work from the page images. OCR text is only a search
+  aid, and OCR artefacts are never textbook corrections.
+- **One Mathlib on disk.** A project's `.lake` is a link to a build directory outside the
+  repository. That directory's `packages` is either a link to the single shared package
+  directory, or a real directory of per-package links to it plus clones of the chapter's
+  git dependencies. Never run a command that downloads a second Mathlib or writes into the
+  shared packages.
 
 ## Attribution and reusable work
 

@@ -80,6 +80,27 @@ use of the Chapter 3 budget and demand results, Chapter 4's finite minima, and C
 mixture representation and Borel lottery results. Future changes to the baseline require
 their own provenance entry and verification.
 
+## MWG dependency arrangement (Phase 0, 2026-11-13)
+
+The MWG programme (`MicroeconomicTheory/`) departs from the copy rule above at the
+user's direction. Its chapters depend on earlier work through Lake requirements rather
+than local copies. Phase 0 tested this with a temporary stub project, which was not
+committed. The stub had three requirements:
+
+- Mathlib `v4.34.0`;
+- `path = "../../Volume1/01_ChoicePreferenceUtility"`;
+- LeanEconomics by `git`, pinned to
+  [`04deccaf63`](https://github.com/LeanEconomics/LeanEconomics/tree/04deccaf63), which
+  provides `LeanEconomics.FixedPoint.kakutani_euclidean`.
+
+Its manifest, made from a Kreps manifest with `lake update` of the two new requirements,
+kept all nine Mathlib-family revisions above unchanged. `lake build`, the unchanged
+verifier tests (14) and `scripts/verify.py` passed. The fresh audit kept the Kreps and
+LeanEconomics imports as library imports, and audited only the stub's own declarations.
+The verifier copies are byte-identical to the hashes above. CI fetches the whole pinned
+Mathlib cache for a project with more than one Lake requirement, because its
+dependencies' Mathlib imports are not listed in its own modules.
+
 ## Authorship, licenses and review
 
 The original formalization and supporting documentation are developed with OpenAI Codex,
@@ -90,6 +111,9 @@ and the verifier separately records their transitive axioms and source hashes. A
 check does not imply that an external researcher or reference-project maintainer reviewed
 the economics.
 
+The MWG programme is developed with Claude Code (Anthropic) under the user's direction,
+with the same review caveats.
+
 Original project material is Apache 2.0 licensed. Lean, Mathlib, copied verification code
 and other dependencies retain their notices. See the chapter `THIRD_PARTY_NOTICES.md`
 files for copied material, including the Chapter 1 prerequisites copied into Chapter 2.
@@ -99,3 +123,4 @@ was copied as part of this alignment.
 Kreps's book remains copyrighted by its rights holders. The repository cites printed
 pages, result numbers and bibliographic details, and keeps the locally supplied PDF
 outside version control. It does not distribute the textbook or its figures.
+The same applies to Mas-Colell, Whinston and Green's *Microeconomic Theory* (1995).
