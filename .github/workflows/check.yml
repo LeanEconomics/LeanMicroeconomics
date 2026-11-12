@@ -19,6 +19,7 @@ jobs:
           - Volume1/06_UtilityForMoney
           - MicroeconomicTheory/01_PreferenceChoice
           - MicroeconomicTheory/02_ConsumerChoice
+          - MicroeconomicTheory/03_ClassicalDemand
     defaults:
       run:
         working-directory: ${{ matrix.project }}
