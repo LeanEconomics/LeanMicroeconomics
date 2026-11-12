@@ -17,6 +17,7 @@ jobs:
           - Volume1/04_RevealedPreference
           - Volume1/05_ChoiceUnderUncertainty
           - Volume1/06_UtilityForMoney
+          - MicroeconomicTheory/01_PreferenceChoice
     defaults:
       run:
         working-directory: ${{ matrix.project }}

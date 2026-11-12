@@ -1,0 +1,17 @@
+{
+  "library": "MWGPreferenceChoice",
+  "modules": [
+    "MWGPreferenceChoice/PreferenceRelations.lean",
+    "MWGPreferenceChoice/ChoiceRules.lean",
+    "MWGPreferenceChoice/Rationalization.lean",
+    "MWGPreferenceChoice/StochasticChoice.lean"
+  ],
+  "theorem_counts": {
+    "MWGPreferenceChoice/PreferenceRelations.lean": 21,
+    "MWGPreferenceChoice/ChoiceRules.lean": 20,
+    "MWGPreferenceChoice/Rationalization.lean": 20,
+    "MWGPreferenceChoice/StochasticChoice.lean": 12
+  },
+  "scope": "MWG Chapter 1, pp. 5-16: preference relations, choice rules, their relationship, and all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 1. Exact scope: docs/source-map.md."
+}
