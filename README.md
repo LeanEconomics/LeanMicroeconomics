@@ -57,8 +57,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | Project | Chapter | Checked results | Start here |
 | --- | --- | --- | --- |
 | [MicroeconomicTheory/01_PreferenceChoice](MicroeconomicTheory/01_PreferenceChoice/README.md) | 1. Preference and Choice | 73 theorems / 101 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/01_PreferenceChoice/README.md) |
+| [MicroeconomicTheory/02_ConsumerChoice](MicroeconomicTheory/02_ConsumerChoice/README.md) | 2. Consumer Choice (with Appendix M.A, M.B, M.D) | 273 theorems / 356 declarations; fresh audit passed; 1 exercise converse open | [Chapter overview](MicroeconomicTheory/02_ConsumerChoice/README.md) |
 
-MWG Chapter 1 is implemented.
+MWG Chapters 1–2 are implemented.
 
 ## Build and verify
 

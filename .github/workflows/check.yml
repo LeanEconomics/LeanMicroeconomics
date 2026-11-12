@@ -18,6 +18,7 @@ jobs:
           - Volume1/05_ChoiceUnderUncertainty
           - Volume1/06_UtilityForMoney
           - MicroeconomicTheory/01_PreferenceChoice
+          - MicroeconomicTheory/02_ConsumerChoice
     defaults:
       run:
         working-directory: ${{ matrix.project }}
