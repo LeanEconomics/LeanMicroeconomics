@@ -1,0 +1,2810 @@
+{
+  "checked_at_utc": "2026-11-13T03:10:24.251576+00:00",
+  "theorems": 204,
+  "module_theorems": {
+    "MWGAggregateDemand/Basic.lean": 10,
+    "MWGAggregateDemand/AggregateWealth.lean": 19,
+    "MWGAggregateDemand/LawOfDemand.lean": 14,
+    "MWGAggregateDemand/AggregateSlutsky.lean": 19,
+    "MWGAggregateDemand/LShaped.lean": 26,
+    "MWGAggregateDemand/Representative.lean": 16,
+    "MWGAggregateDemand/RepresentativeExamples.lean": 5,
+    "MWGAggregateDemand/Hildenbrand.lean": 11,
+    "MWGAggregateDemand/MitiushinPolterovich.lean": 9,
+    "MWGAggregateDemand/GormanNecessity.lean": 4,
+    "MWGAggregateDemand/AppendixA.lean": 3,
+    "MWGAggregateDemand/NormativeSlutsky.lean": 2,
+    "MWGAggregateDemand/StrongAxiomExamples.lean": 3,
+    "MWGAggregateDemand/LShapedHomothetic.lean": 5,
+    "MWGAggregateDemand/RepresentativeUtility.lean": 9,
+    "MWGAggregateDemand/HildenbrandDensity.lean": 2,
+    "MWGAggregateDemand/QuasilinearPair.lean": 5,
+    "MWGAggregateDemand/QuasilinearSlutsky.lean": 24,
+    "MWGAggregateDemand/HildenbrandStrict.lean": 6,
+    "MWGAggregateDemand/HildenbrandThreeGoods.lean": 12
+  },
+  "audited_declarations": 274,
+  "declarations": [
+    {
+      "name": "MWG.AggregateDemand.aggDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.RedistributionInvariant",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ParallelLinearEngel",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.IsWealthDistributionRule",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ruleDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.shareRule",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.IsShareVector",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.shareDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.shareDemand_eq_ruleDemand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ruleDemand_eq_aggDemand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.isWealthDistributionRule_shareRule",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ruleDemand_spec",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.aggDemand_perm",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.aggDemand_of_linear",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ruleDemand_homogeneousZero",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ruleDemand_walrasLaw",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ruleDemand_continuousOn",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.footnote_4_C_7",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Basic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.sum_split_pair",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.invariant_transfer",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.equation_4_B_1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.footnote_4_B_3",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.invariant_of_parallel",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.parallel_of_invariant",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.invariant_iff_parallel",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.GormanForm",
+      "kind": "def",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.isOpen_pwDomain",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.roy_gorman",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_B_1_sufficiency",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.expenditure_pos_of_attainable",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_B_1_expenditure",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.footnote_4_B_4",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.indirectUtility_homothetic",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.gorman_of_homothetic",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_B_2a",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.demand_hd1_of_homogeneousOne",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_B_2b",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_B_2b_gorman",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateWealth.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.definition_4_C_1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.UncompensatedLawOfDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.aggregate_compensated_law",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.uld_shareDemand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.weakAxiom_of_uld",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hasDerivAt_dot_line",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_1_nsd",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_1_nd",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exists_pos_mem_budgetSet",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_2_pref",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_2_differential",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.dot_vecMulVec_mulVec",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_2_negDef",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LawOfDemand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.scaleWealthCLM",
+      "kind": "def",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.scaleWealthCLM_apply",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hasFDerivAt_shareDemand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.priceJacobian_shareDemand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.wealthJacobian_shareDemand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.covMatrix",
+      "kind": "def",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.covariance_means_zero",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.slutsky_aggregate_algebra",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.equation_4_C_4_5",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.equation_4_C_6",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.equation_4_C_7",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_8",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.equation_4_C_8",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.slutsky_negative_of_cov_psd",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cov_zero_of_equal_wealth_effects",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cov_zero_of_proportional_consumption",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_9",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.slutsky_negative_of_negDef",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.weakAxiom_of_cov_psd",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontief_slutsky_zero",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AggregateSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exists_demandFunction",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.weakAxiom_of_unique_demand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_min_fun",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_max_fun",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_affine",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.minUtility",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.continuous_minUtility",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.dotProduct_two",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.walrasianDemand_minUtility",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41Kink",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_ex41Kink",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.continuous_ex41Kink",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41U1",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41U2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.continuousOn_ex41U1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.continuousOn_ex41U2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41P",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41P'",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41P_pos",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex41P'_pos",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_C_1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_C_1_individual_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_C_1_demands_exist",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_3",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex412Kink",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_ex412Kink",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex412U",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_12",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontiefU",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontiefRayDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.walrasianDemand_leontiefU",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontiefU_homogeneousOne",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontiefRayDemand_walrasLaw",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontiefRayDemand_uld",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex413Rule",
+      "kind": "def",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ex413Rule_sum",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_13",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShaped.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.IsPositiveRepresentative",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.weakAxiom_of_positiveRepresentative",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strongAxiom_of_positiveRepresentative",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.rational_utilityPref",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.SocialWelfareFunction",
+      "kind": "abbrev",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.FeasibleDistribution",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.SolvesSWP",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.socialIndirectUtility",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.repUtility",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.dotProduct_le_of_le",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.split_value_le",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup",
+      "kind": "structure",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.mk",
+      "kind": "constructor",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.wr",
+      "kind": "projection",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.xs",
+      "kind": "projection",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.monotone",
+      "kind": "projection",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.cont",
+      "kind": "projection",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.opt",
+      "kind": "projection",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.demand",
+      "kind": "projection",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.aggregate_mem_budgetSet",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PlannerSetup.repUtility_spec",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_D_1_demand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.isCompact_splits",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_D_1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.IsNormativeRepresentative",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_D_1_normative",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.normative_A_subset_B",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_5",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.PassesPotentialCompensation",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_8",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Representative.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_6",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_7",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.gorman_compensating_distribution",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_D_2_any_W",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_D_2_compensation",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.young_square",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hildenbrandDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.integral_dot_hildenbrand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_4",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hildenbrand_mean_income_effect",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.integral_affine",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_10",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hildKink",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_hildKink",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hildU",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.integral_two_piece",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_4_strict_counterexample",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.densityDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.tentDensity",
+      "kind": "def",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.integral_tent",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_7_unimodal",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/Hildenbrand.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.interior_demand_gradient",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.mp_quadratic",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.demand_variational",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.mp_dot_pos",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.mp_uld_on",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_3",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_3_instance",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_3_interior",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_6",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/MitiushinPolterovich.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.convex_strictlyPositive",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/GormanNecessity.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ratio_const_of_grad",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/GormanNecessity.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.expenditure_hasFDerivAt_linear_engel",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/GormanNecessity.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_B_1_necessity",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/GormanNecessity.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.indivisibleDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/AppendixA.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_AA_1_individual",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AppendixA.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_AA_1_continuum",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AppendixA.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.example_4_AA_1_finite",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/AppendixA.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exists_hicksian_selection",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/NormativeSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_9",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/NormativeSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.leontiefRayDemand_homogeneousZero",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/StrongAxiomExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.homothetic_weakAxiom_not_invariant",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/StrongAxiomExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.identical_consumers_strongAxiom",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/StrongAxiomExamples.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_4_hint",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShapedHomothetic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.minUtility_kink_point",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShapedHomothetic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.minUtility_demand_eq",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShapedHomothetic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.slutsky_zero_minUtility",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShapedHomothetic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_4",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/LShapedHomothetic.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.splitValues",
+      "kind": "def",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.repUtility_eq",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.splitValues_nonempty",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_4a_monotone",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_4a_concave",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_4a_quasiconcave",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_4a_continuous",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.shareSimplex",
+      "kind": "def",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.isCompact_shareSimplex",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.splitValues_eq_image",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_4a_continuousOn",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/RepresentativeUtility.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.antitone_weighted_integral_nonpos",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandDensity.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_7",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandDensity.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_bound",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql1",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11a_consumer1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.swap2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11a_consumer2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11a",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11c",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearPair.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlGen",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlGrad",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlHess",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlHess_apply",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql1_eq_qlGen",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql2_eq_qlGen",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_uld",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.homogeneousZero_of_singleton",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql1_facts",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql2_facts",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_uld_consumer1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_uld_consumer2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11b_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_10_positive",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.fderiv_eq_of_line",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hasDerivAt_ratio_line",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hasDerivAt_sqratio_line",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_eventually",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlF1",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlC1",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlF2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlC2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11b_consumer1",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11b_consumer2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_agg_slutsky",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_prop_of_cross",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11b_aggregate",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11b_negative",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_11c_conclusion",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.qlAgg",
+      "kind": "def",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.ql_sqrt_eq",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_10_normative",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/QuasilinearSlutsky.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hild_ray_slutsky",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.proposition_4_C_4_strict",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cdHalf",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cdHalfDp",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cdHalfDw",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cdHalf_hypotheses",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cobbDouglasHalf_hildenbrand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.hildMeanDemand",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_C_10_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.cobbDouglasHalf_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandStrict.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3G0",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3G2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3P0",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3P2",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3U",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_l3P0",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.strictMono_l3P2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3P0_l3G0",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3P2_l3G2",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.continuous_l3U",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3U_demand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3A",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3B",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3C",
+      "kind": "def",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.dotProduct_three",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3_demand",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.integral_three_piece",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3_agg",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.l3_demand_exists",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    },
+    {
+      "name": "MWG.AggregateDemand.exercise_4_D_11",
+      "kind": "theorem",
+      "module": "MWGAggregateDemand/HildenbrandThreeGoods.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.AggregateDemand.aggDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.RedistributionInvariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ParallelLinearEngel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.IsWealthDistributionRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ruleDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.shareRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.IsShareVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.shareDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.shareDemand_eq_ruleDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ruleDemand_eq_aggDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.isWealthDistributionRule_shareRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ruleDemand_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.aggDemand_perm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.aggDemand_of_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ruleDemand_homogeneousZero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ruleDemand_walrasLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ruleDemand_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.footnote_4_C_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.sum_split_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.invariant_transfer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.equation_4_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.footnote_4_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.invariant_of_parallel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.parallel_of_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.invariant_iff_parallel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.GormanForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.isOpen_pwDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.roy_gorman": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_B_1_sufficiency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.expenditure_pos_of_attainable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_B_1_expenditure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.footnote_4_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.indirectUtility_homothetic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.gorman_of_homothetic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_B_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.demand_hd1_of_homogeneousOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_B_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_B_2b_gorman": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.definition_4_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.UncompensatedLawOfDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.aggregate_compensated_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.uld_shareDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.weakAxiom_of_uld": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hasDerivAt_dot_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_1_nsd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_1_nd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exists_pos_mem_budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_2_pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_2_differential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.dot_vecMulVec_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_2_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.scaleWealthCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.scaleWealthCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hasFDerivAt_shareDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.priceJacobian_shareDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.wealthJacobian_shareDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.covMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.covariance_means_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.slutsky_aggregate_algebra": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.equation_4_C_4_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.equation_4_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.equation_4_C_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.equation_4_C_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.slutsky_negative_of_cov_psd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cov_zero_of_equal_wealth_effects": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cov_zero_of_proportional_consumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.slutsky_negative_of_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.weakAxiom_of_cov_psd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontief_slutsky_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exists_demandFunction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.weakAxiom_of_unique_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_min_fun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_max_fun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.minUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.continuous_minUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.dotProduct_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.walrasianDemand_minUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41Kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_ex41Kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.continuous_ex41Kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41U1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41U2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.continuousOn_ex41U1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.continuousOn_ex41U2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41P": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41P'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41P_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex41P'_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_C_1_individual_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_C_1_demands_exist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex412Kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_ex412Kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex412U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontiefU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontiefRayDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.walrasianDemand_leontiefU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontiefU_homogeneousOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontiefRayDemand_walrasLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontiefRayDemand_uld": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex413Rule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ex413Rule_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.IsPositiveRepresentative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.weakAxiom_of_positiveRepresentative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strongAxiom_of_positiveRepresentative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.rational_utilityPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.SocialWelfareFunction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.FeasibleDistribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.SolvesSWP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.socialIndirectUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.repUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.dotProduct_le_of_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.split_value_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.wr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.xs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.cont": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.aggregate_mem_budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PlannerSetup.repUtility_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_D_1_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.isCompact_splits": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.IsNormativeRepresentative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_D_1_normative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.normative_A_subset_B": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.PassesPotentialCompensation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.gorman_compensating_distribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_D_2_any_W": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_D_2_compensation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.young_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hildenbrandDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.integral_dot_hildenbrand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hildenbrand_mean_income_effect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.integral_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hildKink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_hildKink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hildU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.integral_two_piece": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_4_strict_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.densityDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.tentDensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.integral_tent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_7_unimodal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.interior_demand_gradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.mp_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.demand_variational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.mp_dot_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.mp_uld_on": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_3_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_3_interior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.convex_strictlyPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ratio_const_of_grad": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.expenditure_hasFDerivAt_linear_engel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_B_1_necessity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.indivisibleDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_AA_1_individual": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_AA_1_continuum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.example_4_AA_1_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exists_hicksian_selection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.leontiefRayDemand_homogeneousZero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.homothetic_weakAxiom_not_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.identical_consumers_strongAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_4_hint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.minUtility_kink_point": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.minUtility_demand_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.slutsky_zero_minUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.splitValues": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.repUtility_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.splitValues_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_4a_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_4a_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_4a_quasiconcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_4a_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.shareSimplex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.isCompact_shareSimplex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.splitValues_eq_image": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_4a_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.antitone_weighted_integral_nonpos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11a_consumer1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.swap2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11a_consumer2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlGen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlGrad": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlHess": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlHess_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql1_eq_qlGen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql2_eq_qlGen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_uld": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.homogeneousZero_of_singleton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql1_facts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql2_facts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_uld_consumer1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_uld_consumer2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11b_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_10_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.fderiv_eq_of_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hasDerivAt_ratio_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hasDerivAt_sqratio_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_eventually": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlF1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlC1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlF2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlC2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11b_consumer1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11b_consumer2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_agg_slutsky": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_prop_of_cross": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11b_aggregate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11b_negative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_11c_conclusion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.qlAgg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.ql_sqrt_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_10_normative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hild_ray_slutsky": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.proposition_4_C_4_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cdHalf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cdHalfDp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cdHalfDw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cdHalf_hypotheses": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cobbDouglasHalf_hildenbrand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.hildMeanDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_C_10_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.cobbDouglasHalf_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3G0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3G2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3P0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3P2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_l3P0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.strictMono_l3P2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3P0_l3G0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3P2_l3G2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.continuous_l3U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3U_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3A": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3B": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3C": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.dotProduct_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.integral_three_piece": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3_agg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.l3_demand_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.AggregateDemand.exercise_4_D_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGAggregateDemand/Basic.lean": "e11901991786ca7dc2a9bb218c145cc5a31803c46a09e06f5db6e1713d5bf0e6",
+    "MWGAggregateDemand/AggregateWealth.lean": "110bc9cc05972ed08e77bc72fef2685ab5090c9e26b877e99cc4061c14ef1406",
+    "MWGAggregateDemand/LawOfDemand.lean": "b4c12114adae9ca866d29b047d9b12e9790b8669487c4303cc805a00dc7e32b9",
+    "MWGAggregateDemand/AggregateSlutsky.lean": "a18b1e2c749e1c23a46cb9b848b5de620934f4f4465e5e334db75d86a41e9167",
+    "MWGAggregateDemand/LShaped.lean": "a995a1784adf5cb589effd2a464b332100d50dd65f8116449079e1952f8ba01a",
+    "MWGAggregateDemand/Representative.lean": "3f6321f64df83f640d320f3ae7aee0d1df51659b3cd03678785cbb6acb230644",
+    "MWGAggregateDemand/RepresentativeExamples.lean": "488f5843237747e3d9c5fe8aafb87a949b80cc2a92a6751ade0ae62ca3892bde",
+    "MWGAggregateDemand/Hildenbrand.lean": "72b1696de46cb08a6df133342853798b030027cac6abd4a2e9a78166596d0368",
+    "MWGAggregateDemand/MitiushinPolterovich.lean": "28d29445e2a3041259ca47d4b9e240d755311af5f208ac33040d301c10ee1ccd",
+    "MWGAggregateDemand/GormanNecessity.lean": "e7554afc8f4ef8b4f2dcbb801a92a4215a0c653e5d169d2320673ed349478d0e",
+    "MWGAggregateDemand/AppendixA.lean": "e9bf194a4516a9937e1a9cd466350a5dab0c89f4a386be02213a66966bed9d17",
+    "MWGAggregateDemand/NormativeSlutsky.lean": "461655021709537eb189897cef74b0283cd4914dfd89e9744c0e1fdd03a328ba",
+    "MWGAggregateDemand/StrongAxiomExamples.lean": "a2586ff0f9f8ee0e0831db8623d6d8dce3292f3c182a28ad81a4081b7db604ed",
+    "MWGAggregateDemand/LShapedHomothetic.lean": "33b9f14c466a8dbc2cd063abeacd3f0638e41056723d0e664f40d299834f1e5d",
+    "MWGAggregateDemand/RepresentativeUtility.lean": "b42ec3a0da6df15fe999542a5dbf2ca2118a8795d8a98701562845cb7455be36",
+    "MWGAggregateDemand/HildenbrandDensity.lean": "84648fc9d7e8309ac4b1d3a27e6c2c98b460f48dbba54f7b669053f80508f81a",
+    "MWGAggregateDemand/QuasilinearPair.lean": "1b609061dc86109d6d60d14398eb908f652880ee32442ceb3c42bde381c76a2b",
+    "MWGAggregateDemand/QuasilinearSlutsky.lean": "058600164d83d9bdde0f0af48a9f9554b4121bc49dcaeff5db6caa431e0e7523",
+    "MWGAggregateDemand/HildenbrandStrict.lean": "68cdf2888af9d978144d2f20fbcd687404debdae7b208b287a2bf00d059baddb",
+    "MWGAggregateDemand/HildenbrandThreeGoods.lean": "ea978d17cacf535929ebbf5a9d6fdaad33267f333a11bcc0ef066813dced51ac",
+    "MWGAggregateDemand.lean": "15b0ba948bdd1f715d9b774f4bbcbd2c10eae8269c62daf92cc01a6df5036b74",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "b4e65aaef2db0153de6317a041a647ed90451b887bdfd0478252323f4fff5c0c",
+    "lake-manifest.json": "d94282c8375ca49e17cd4a9d98444d6e30fc2b4a89a54259d21c7c488ed9fd11",
+    "proof-manifest.json": "ba4960bba609310eb30ba7f000414a41bfd8d787523c6a009fda81bf6421ba49",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "60d8fde06fc20c26e12a806d706695317c80a4c0f617a95665dde521bed4b199",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 4, pp. 105-126: aggregate demand and aggregate wealth, aggregate demand and the weak axiom, representative consumers, Appendix 4.A on regularizing effects of aggregation, and all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 4. Exact scope: docs/source-map.md."
+}

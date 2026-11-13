@@ -1,0 +1,25 @@
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+import MWGAggregateDemand.Basic
+import MWGAggregateDemand.AggregateWealth
+import MWGAggregateDemand.LawOfDemand
+import MWGAggregateDemand.AggregateSlutsky
+import MWGAggregateDemand.LShaped
+import MWGAggregateDemand.Representative
+import MWGAggregateDemand.RepresentativeExamples
+import MWGAggregateDemand.Hildenbrand
+import MWGAggregateDemand.MitiushinPolterovich
+import MWGAggregateDemand.GormanNecessity
+import MWGAggregateDemand.AppendixA
+import MWGAggregateDemand.NormativeSlutsky
+import MWGAggregateDemand.StrongAxiomExamples
+import MWGAggregateDemand.LShapedHomothetic
+import MWGAggregateDemand.RepresentativeUtility
+import MWGAggregateDemand.HildenbrandDensity
+import MWGAggregateDemand.QuasilinearPair
+import MWGAggregateDemand.QuasilinearSlutsky
+import MWGAggregateDemand.HildenbrandStrict
+import MWGAggregateDemand.HildenbrandThreeGoods

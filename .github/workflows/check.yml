@@ -20,6 +20,7 @@ jobs:
           - MicroeconomicTheory/01_PreferenceChoice
           - MicroeconomicTheory/02_ConsumerChoice
           - MicroeconomicTheory/03_ClassicalDemand
+          - MicroeconomicTheory/04_AggregateDemand
     defaults:
       run:
         working-directory: ${{ matrix.project }}
