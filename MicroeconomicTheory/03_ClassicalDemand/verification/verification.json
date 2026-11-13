@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-11-12T22:54:04.212527+00:00",
-  "theorems": 772,
+  "checked_at_utc": "2026-11-13T02:19:19.818345+00:00",
+  "theorems": 949,
   "module_theorems": {
     "MWGClassicalDemand/Basic.lean": 18,
     "MWGClassicalDemand/PrefProperties.lean": 16,
@@ -59,9 +59,29 @@
     "MWGClassicalDemand/CloserDemandContinuity.lean": 5,
     "MWGClassicalDemand/CloserGivenExpenditure.lean": 8,
     "MWGClassicalDemand/CloserComposite.lean": 1,
-    "MWGClassicalDemand/CloserCobbDouglas.lean": 4
+    "MWGClassicalDemand/CloserCobbDouglas.lean": 4,
+    "MWGClassicalDemand/HardIntegrability.lean": 15,
+    "MWGClassicalDemand/HardHalkin.lean": 6,
+    "MWGClassicalDemand/HardSecondOrder.lean": 3,
+    "MWGClassicalDemand/HardEnvelope.lean": 3,
+    "MWGClassicalDemand/HardSard.lean": 6,
+    "MWGClassicalDemand/FrobeniusDependence.lean": 2,
+    "MWGClassicalDemand/FrobeniusTheorem.lean": 8,
+    "MWGClassicalDemand/FrobeniusIntegrability.lean": 12,
+    "MWGClassicalDemand/FrobeniusOnePrice.lean": 15,
+    "MWGClassicalDemand/EconDebreu.lean": 11,
+    "MWGClassicalDemand/EconIntegrability.lean": 7,
+    "MWGClassicalDemand/EconGivenExpenditure.lean": 5,
+    "MWGClassicalDemand/EconBoundary.lean": 4,
+    "MWGClassicalDemand/EconWelfare.lean": 7,
+    "MWGClassicalDemand/EconRevealed.lean": 10,
+    "MWGClassicalDemand/LastRevealed.lean": 12,
+    "MWGClassicalDemand/LastWelfare.lean": 23,
+    "MWGClassicalDemand/LastQuasilinear.lean": 5,
+    "MWGClassicalDemand/LastComposite.lean": 14,
+    "MWGClassicalDemand/LastCompositeApps.lean": 9
   },
-  "audited_declarations": 942,
+  "audited_declarations": 1152,
   "declarations": [
     {
       "name": "MWG.ClassicalDemand.euclidDist",
@@ -4772,6 +4792,1056 @@
       "name": "MWG.ClassicalDemand.exercise_3_G_2",
       "kind": "theorem",
       "module": "MWGClassicalDemand/CloserCobbDouglas.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_lipschitz",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_unique_Ioo",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_unique",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_exists_local",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_exists_global",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardIntLogField",
+      "kind": "def",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_strictlyPositive_exp",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardIntLogField_contDiff",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardIntLogField_abs_le",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_lift_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_log_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_strict_order",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.footnote_3_18_global",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.footnote_3_18_unique",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardInt_solution_family",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.integrability_two_goods_global",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardHalkin_feasible",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardHalkin.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardHalkin_cone",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardHalkin.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_K_1_differentiable",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardHalkin.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_K_1_book",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardHalkin.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_K_2_differentiable",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardHalkin.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_K_2_book",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardHalkin.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardSO_bound",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSecondOrder.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_K_second_order_necessary",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSecondOrder.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_K_second_order_necessary_matrix",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSecondOrder.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardEnv_range_pi_eq_top",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardEnvelope.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_L_1_value",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardEnvelope.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_L_1_needs_CQ",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardEnvelope.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardSard_exists_complement_map",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSard.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardSard_isInvertible_of_injective",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSard.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.hardSard_local",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSard.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_E_2",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSard.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_E_2_ae",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSard.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.theorem_M_E_2_regular",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/HardSard.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_uniform_taylor",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusDependence.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_hasFDerivAt_endpoint",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusDependence.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_hasDerivAt_dotProduct",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobRayField",
+      "kind": "def",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobRayField_contDiff",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobRayField_abs_le",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobRayField_fderiv_apply",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_ray_exists",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_ray_unique",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_ray_strict_order",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobenius_ray_family",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusTheorem.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLogField",
+      "kind": "def",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_slutsky_mulVec",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_exp_mem_domain",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLogField_contDiff",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLogField_abs_dot_le",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLogField_fderiv_apply",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLogField_dot_fderiv",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLogField_symm",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_hasFDerivAt_log",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_solvesPDE_of_log",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_expenditure_family",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_3_H_2_exists",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.integrability_general",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_update_strictlyPositive",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_line_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLineField",
+      "kind": "def",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLineField_contDiff",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobLineField_abs_le",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_line_lift",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_line_log",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_line_exists",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_line_unique",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobOnePricePath",
+      "kind": "def",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobOnePricePath_pos",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobOnePricePath_zero",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobOnePricePath_last",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobOnePricePath_update_start",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frobOnePricePath_update_end",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_one_price_at_a_time",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.frob_one_price_at_a_time_exists",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/FrobeniusOnePrice.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBaseUtility",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBaseUtility_summable",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBaseUtility_bounds",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBaseUtility_represents",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_exists_nat_basis",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econJumps",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econDense",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econJumps_countable",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econDense_countable",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econDense_subset",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econDense_between",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econGapOrder",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econGapUtility",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_gap_lemma",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_debreu_representation",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.proposition_3_C_1_general",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconDebreu.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econPenalty",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econPenalty_ge_term",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econPenalty_nonneg",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econPenalty_exists_min",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econPenalty_foc",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_recoveredSet_subset",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_H_2_convex",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_H_2_prefConvex",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconIntegrability.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.givenHicks",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.givenDemand",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_givenPi_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_givenA_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_givenHicks_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_givenDemand_eq",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_16c_slutsky",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconGivenExpenditure.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBoundaryUtility",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconBoundary.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBoundaryPrice",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconBoundary.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBoundaryUtility_continuousOn",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconBoundary.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBoundaryUtility_lns",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconBoundary.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econBoundaryPrice_dot",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconBoundary.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_AA_2_boundary_counterexample",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconBoundary.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_priceLine_priceLine",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.footnote_3_I_28_cv",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_relative_error_of_deriv",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.welfare_av_relative_error",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.welfare_ev_relative_error",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_second_order_taylor",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.equation_3_I_9_second_order",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econP0",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econP1",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econX0",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econP0_dot",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econP1_dot",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econX0_mem",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econ_affine_concaveOn",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7a_necessary",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7a",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.econQL",
+      "kind": "def",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7b",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7c",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7d",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7e",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/EconRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastPhi",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalUtility",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalLevel",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalDemand",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastPhi_quarter",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastPhi_opt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalLevel_nonneg",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalDemand_mem",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalDemand_mono",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalUtility_continuous",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalUtility_concaveOn",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormalUtility_monotone",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_lns_of_monotone",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_exercise_3_D_7d_hyp_unsatisfiable",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_exercise_3_D_7d_necessary",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_D_7d_iff",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastRevealed.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastQ",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastQ_pos",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastQ_self",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastQ_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_quadratic_of_deriv",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_ratio_limit",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlEV",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlCV",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlAV",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlMixed",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_revenue_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_inv_sq_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlEV_expansion",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlCV_expansion",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlAV_expansion",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastDwlMixed_expansion",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_priceLine_zero",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_priceLine_one",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_cd_expenditure_indirect",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_cdConst_priceLine",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_cd_dwl_ev_eq",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_cd_dwl_cv_eq",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_cd_dwl_mixed_eq",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_cd_dwl_av_eq",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.figure_3_I_8_ev",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.figure_3_I_8_cv",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.figure_3_I_8",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.footnote_3_I_29_mixed",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastWelfare.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormPrices",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastNormPrices_convex",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_const_of_small_variation",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_I_8a_only_if",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_I_8a_only_if_all",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastSqrtUtility",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastSqrtDemand",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_3_I_8a_instance",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastQuasilinear.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastCompositeVec",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastSnoc",
+      "kind": "def",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastCompositeVec_snoc",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastSnoc_init",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastSnoc_castSucc",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.lastSnoc_last",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_snoc_dot",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_snoc_mem",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_snoc_pos",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_set_eq",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_attained",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_exhausts",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_continuousOn",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_section",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_lns",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_strictlyQuasiconcave",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastComposite.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_hyps",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5b",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5b_actual",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5b_roy",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5c_E3",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5c_G1",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5c_G2",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.exercise_3_G_5c_G3",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
+    },
+    {
+      "name": "MWG.ClassicalDemand.last_composite_instance",
+      "kind": "theorem",
+      "module": "MWGClassicalDemand/LastCompositeApps.lean"
     }
   ],
   "full_build": "passed",
@@ -9449,6 +10519,1056 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_lipschitz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_unique_Ioo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_exists_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_exists_global": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardIntLogField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_strictlyPositive_exp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardIntLogField_contDiff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardIntLogField_abs_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_lift_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_log_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_strict_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.footnote_3_18_global": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.footnote_3_18_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardInt_solution_family": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.integrability_two_goods_global": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardHalkin_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardHalkin_cone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_K_1_differentiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_K_1_book": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_K_2_differentiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_K_2_book": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardSO_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_K_second_order_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_K_second_order_necessary_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardEnv_range_pi_eq_top": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_L_1_value": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_L_1_needs_CQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardSard_exists_complement_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardSard_isInvertible_of_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.hardSard_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_E_2_ae": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.theorem_M_E_2_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_uniform_taylor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_hasFDerivAt_endpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_hasDerivAt_dotProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobRayField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobRayField_contDiff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobRayField_abs_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobRayField_fderiv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_ray_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_ray_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_ray_strict_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobenius_ray_family": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLogField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_slutsky_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_exp_mem_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLogField_contDiff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLogField_abs_dot_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLogField_fderiv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLogField_dot_fderiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLogField_symm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_hasFDerivAt_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_solvesPDE_of_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_expenditure_family": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_3_H_2_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.integrability_general": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_update_strictlyPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_line_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLineField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLineField_contDiff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobLineField_abs_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_line_lift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_line_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_line_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_line_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobOnePricePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobOnePricePath_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobOnePricePath_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobOnePricePath_last": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobOnePricePath_update_start": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frobOnePricePath_update_end": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_one_price_at_a_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.frob_one_price_at_a_time_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBaseUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBaseUtility_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBaseUtility_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBaseUtility_represents": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_exists_nat_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econJumps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econDense": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econJumps_countable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econDense_countable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econDense_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econDense_between": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econGapOrder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econGapUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_gap_lemma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_debreu_representation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.proposition_3_C_1_general": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econPenalty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econPenalty_ge_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econPenalty_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econPenalty_exists_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econPenalty_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_recoveredSet_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_H_2_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_H_2_prefConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.givenHicks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.givenDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_givenPi_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_givenA_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_givenHicks_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_givenDemand_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_16c_slutsky": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBoundaryUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBoundaryPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBoundaryUtility_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBoundaryUtility_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econBoundaryPrice_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_AA_2_boundary_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_priceLine_priceLine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.footnote_3_I_28_cv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_relative_error_of_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.welfare_av_relative_error": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.welfare_ev_relative_error": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_second_order_taylor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.equation_3_I_9_second_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econP0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econP1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econX0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econP0_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econP1_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econX0_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econ_affine_concaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7a_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.econQL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastPhi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalLevel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastPhi_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastPhi_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalLevel_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalDemand_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalDemand_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalUtility_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalUtility_concaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormalUtility_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_lns_of_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_exercise_3_D_7d_hyp_unsatisfiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_exercise_3_D_7d_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_D_7d_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastQ_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastQ_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastQ_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_quadratic_of_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_ratio_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlEV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlCV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlAV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_revenue_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_inv_sq_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlEV_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlCV_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlAV_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastDwlMixed_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_priceLine_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_priceLine_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_cd_expenditure_indirect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_cdConst_priceLine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_cd_dwl_ev_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_cd_dwl_cv_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_cd_dwl_mixed_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_cd_dwl_av_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.figure_3_I_8_ev": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.figure_3_I_8_cv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.figure_3_I_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.footnote_3_I_29_mixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormPrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastNormPrices_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_const_of_small_variation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_I_8a_only_if": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_I_8a_only_if_all": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastSqrtUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastSqrtDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_3_I_8a_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastCompositeVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastSnoc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastCompositeVec_snoc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastSnoc_init": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastSnoc_castSucc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.lastSnoc_last": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_snoc_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_snoc_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_snoc_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_set_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_attained": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_exhausts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_section": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_strictlyQuasiconcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_hyps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5b_actual": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5b_roy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5c_E3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5c_G1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5c_G2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.exercise_3_G_5c_G3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ClassicalDemand.last_composite_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "source_sha256": {
@@ -9510,15 +11630,35 @@
     "MWGClassicalDemand/CloserGivenExpenditure.lean": "f404c9ee5e730ae09ee52185759954b0e7dbef089002dd6f82e6021da3421405",
     "MWGClassicalDemand/CloserComposite.lean": "9bbc3f65ad083c6c16fa16a502098756b58414350951840799b3f0f2527eeb8a",
     "MWGClassicalDemand/CloserCobbDouglas.lean": "f4ffbbde6ebccb6d608b8e88993e6beb2f20df72f3cd05752a8f70fa52f226fd",
-    "MWGClassicalDemand.lean": "c6b74493bcd7b3041c26899df61687de6a003d0054fa1123f419957123ffd952",
+    "MWGClassicalDemand/HardIntegrability.lean": "9ef00600e4695685ac31104d48f0ea927391ac9d2127469ea8d17bab692fd211",
+    "MWGClassicalDemand/HardHalkin.lean": "17f91b944f0243ac8c248ca4cf78afe82f5a7cabc1ff5ac4fd112b20850e56a1",
+    "MWGClassicalDemand/HardSecondOrder.lean": "594e2337af1b98a9d7dc187b6991c1b12785fa048127f0fa4decfd6a9f5230f4",
+    "MWGClassicalDemand/HardEnvelope.lean": "01988100520fbb54ab3ca27a14819817f7df8f0a5ea1f60366fd8b30814096bb",
+    "MWGClassicalDemand/HardSard.lean": "221d99b4ff4883005047bcbb0b9d425cb5dbcd8d47ca34bf084f838d52fb62f4",
+    "MWGClassicalDemand/FrobeniusDependence.lean": "ad6f7c4015828193e6026884b13096c199cf39f0200bbb0d20027e6134ef90ea",
+    "MWGClassicalDemand/FrobeniusTheorem.lean": "e9c99e66ecffc1c376b7542ac25312ea5217174a41bc10cdeb8de8733866639f",
+    "MWGClassicalDemand/FrobeniusIntegrability.lean": "13994c11db3d1bc25e5f8501e320cccd4c261768616d95118e89a045593d50a4",
+    "MWGClassicalDemand/FrobeniusOnePrice.lean": "881fd9103da56b559b8b63281b6206da990d806a8fc7bab8d5a3e9774596a619",
+    "MWGClassicalDemand/EconDebreu.lean": "d8e5d19db71f576a4213904674567be3a243207bd1115c3ac4627994e792a99a",
+    "MWGClassicalDemand/EconIntegrability.lean": "41dce194b19c3c156f2f2d610c477ef1f0a6374d4be16b1af202eda7c6d2c720",
+    "MWGClassicalDemand/EconGivenExpenditure.lean": "685c87e1ffb668772bb507e8fef40a36ed20fa273dcdac4894d732e3032bb892",
+    "MWGClassicalDemand/EconBoundary.lean": "6249c6372c91ecee1862f8eaf7ccbc31e3fda0eed5392b8ec7b128d66e320971",
+    "MWGClassicalDemand/EconWelfare.lean": "2510332aafe1cb082dee133114f3cd689b52d6f13e18f32a022dedd6a85ac1ab",
+    "MWGClassicalDemand/EconRevealed.lean": "41725ad47f9b5d2871b33a0479c5d2befdb85ec53528d37abc02df55447b05fc",
+    "MWGClassicalDemand/LastRevealed.lean": "e94da98c014de242dc7295b99f4fd234f3ef9369655e86a4c3d7d0c47dcbb3d7",
+    "MWGClassicalDemand/LastWelfare.lean": "17a27d56da1c78b49f1aebb57060d2a27ff353531ae4fe87499feec25b5a2265",
+    "MWGClassicalDemand/LastQuasilinear.lean": "f6a5401a0eb29f5e54683de1735e43945b8731a79d98f3f861122b045a732a1f",
+    "MWGClassicalDemand/LastComposite.lean": "b43bdadcf194d242ac939f9c504f2df5367f7d7e48c1947d45865bf043193420",
+    "MWGClassicalDemand/LastCompositeApps.lean": "122f1bed4dbceade2f61de1fef56a035e173136233073f5f028fb696df361400",
+    "MWGClassicalDemand.lean": "ba39c84fcb12a1006075e4719b27ee77691787694ff8387fcf56a8326e89ade7",
     "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
-    "lakefile.toml": "aa2e0ba02c0f467730492da9931ec8ea91b13ed17a2af7adcee058fd905f02a4",
-    "lake-manifest.json": "dec7d39ff0edf536b93475a0516fc3150ecf21af35d191705c641a6a4f8e2b5c",
-    "proof-manifest.json": "f2aae0252d15469a06e888d3ab072bd7a66d03d94095fadc4f9c67d0ca3beeae",
+    "lakefile.toml": "f718696d24591c274b13c1bff0c835eb629d6104ea795081a404caf7dfb886a5",
+    "lake-manifest.json": "11bd6eec4d62457b8a761e1a14513e31276cc74b1dc3f296479263b6c1dcbfc9",
+    "proof-manifest.json": "3ce0b758843fae4a71bc4f7baf8cbefdb75fff509acbd56140cb16e8f08c49c0",
     "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
     "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
   },
-  "fresh_audit_sha256": "f75e453a079b5e72367942d93bfc9b1d4679713e7b8e05833355b43d1d9ba93e",
+  "fresh_audit_sha256": "28b8bdc7b49d82d9c13fb0d918eae8fad5f69388c09b7bc96ae0cfd46229259c",
   "lean_toolchain": "leanprover/lean4:v4.34.0",
   "scope": "MWG Chapter 3, parts A and B (pp. 40-75 and Exercises 3.B.1-3.G.18, pp. 96-102): preference properties, preference and utility, the utility and expenditure minimization problems, duality, and the relations between demand, indirect utility and expenditure functions; Mathematical Appendix M.C, M.E, M.F, M.G, M.J, M.K and M.L. Part C (3.H-3.J, Appendix 3.A) is added by later modules.",
   "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 3. Exact scope: docs/source-map.md and docs/source-map-B.md."

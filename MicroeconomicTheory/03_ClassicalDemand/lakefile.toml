@@ -39,5 +39,10 @@ path = "../../Volume1/04_RevealedPreference"
 name = "ChoicePreferenceUtility"
 path = "../../Volume1/01_ChoicePreferenceUtility"
 
+[[require]]
+name = "LeanEconomics"
+git = "https://github.com/LeanEconomics/LeanEconomics"
+rev = "04decca"
+
 [[lean_lib]]
 name = "MWGClassicalDemand"

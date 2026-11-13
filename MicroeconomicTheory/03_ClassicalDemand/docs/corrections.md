@@ -419,3 +419,168 @@ E14. **Exercise 3.G.5(a) (p. 100).** `ũ(x, z)` is defined as a supremum, so no 
 E15. **Theorem M.G.1 (p. 947).** No departure: proved as printed (`theorem_M_G_1`), via Minkowski's
      theorem `B = Co(ext B)` in any finite-dimensional inner product space
      (`closerMG_minkowski`) and Carathéodory's bound.
+
+## Part F1: hard analysis items (Halkin, second order, envelope, transversality, L = 2 integrability)
+
+Departures from the book in the modules `HardIntegrability`, `HardHalkin`, `HardSecondOrder`,
+`HardEnvelope` and `HardSard`.
+
+F1-1. **Section 3.H, p. 80, the case `L = 2`.** The book says that for `L = 2` "we can always find
+preferences that rationalize any differentiable demand function" satisfying the weak axiom,
+homogeneity of degree zero and Walras' law (with footnote 19: "subject to minor technical
+requirements"). We assume that demand is continuously differentiable on `p ≫ 0, w > 0` and
+nonnegative there; continuity of the derivative makes (3.H.1) locally Lipschitz, which gives
+uniqueness and the non-crossing of solutions used for monotonicity in the utility index.
+Theorem: `integrability_two_goods_global`. (The global solutions exist for every initial
+condition, `footnote_3_18_global`, and are unique, `footnote_3_18_unique`.)
+
+F1-2. **Theorem M.L.1, p. 965: the constraint qualification is needed.** The book assumes only
+that `v` is differentiable at `q̄` and that `λ` are Lagrange multipliers at `x(q̄)`. Without the
+constraint qualification the formula (M.L.4) can fail: for `max x³` s.t. `x³ - q = 0` (one
+variable, one parameter), `v(q) = q`, so `v'(0) = 1`, while at `q̄ = 0`, `x̄ = 0` both `∂f/∂x` and
+`∂g/∂x` vanish, so every `λ` satisfies (M.K.2), and (M.L.4) gives `∂f/∂q - λ ∂g/∂q = λ`, which is
+wrong for `λ = 0` (`theorem_M_L_1_needs_CQ`). `theorem_M_L_1_value` assumes that the
+`∇_x g_m(x̄; q̄)` are linearly independent (as in Theorem M.K.1, from which the multipliers come),
+that `f` and the `g_m` are differentiable at `(x̄, q̄)` and the `g_m` continuous near it, and that
+`v` is at least `f` on the constraint sets near `q̄` with `v(q̄) = f(x̄; q̄)` (true of the value
+function). No maximizer path is needed.
+
+F1-3. **First-pass correction 7 (Theorems M.K.1-M.K.2) is superseded.** The first pass assumed
+strict differentiability at `x̄`. `theorem_M_K_1_book` and `theorem_M_K_2_book` prove the theorems
+under the book's hypothesis (differentiable functions); `theorem_M_K_1_differentiable` and
+`theorem_M_K_2_differentiable` need only differentiability of `f` at `x̄` and differentiability
+at `x̄` plus continuity near `x̄` of the constraints.
+
+## Part F3: Frobenius integrability for any L
+
+1. **Smoothness: `C¹` instead of "differentiable" (Section 3.H, p. 80, footnote 19).** The book
+   states the integrability theorem for a differentiable demand function, subject to "minor
+   technical requirements" (footnote 19). We assume `x(p, w)` continuously differentiable on
+   `p ≫ 0, w > 0`, as in `integrability_two_goods_global` (F1-1). Theorems:
+   `frob_3_H_2_exists`, `frob_expenditure_family`, `integrability_general`,
+   `frob_line_exists`, `frob_line_unique`, `frob_one_price_at_a_time`,
+   `frob_one_price_at_a_time_exists`.
+
+2. **Homogeneity of degree zero is not needed (p. 80).** The book's conclusion on p. 80 is
+   stated for demand satisfying homogeneity of degree zero, Walras' law and a symmetric negative
+   semidefinite Slutsky matrix. The proofs use only Walras' law, `x ≥ 0`, `C¹` and the conditions
+   on `S`; homogeneity is dropped (a weaker hypothesis set, so the theorems are stronger).
+   Theorems: `frob_3_H_2_exists`, `integrability_general`.
+
+3. **Frobenius' theorem is proved for the form needed, on the whole space.** The book cites
+   Frobenius' theorem in general. `frobenius_ray_family` is the case of one unknown function,
+   `∂Z/∂q = f(q, Z)` with `f` `C¹` on all of `ℝ^L × ℝ` and `|v·f| ≤ ‖v‖` (which gives global
+   existence); (3.H.2) is brought to this form by logarithmic coordinates (`frobLogField`), where
+   Walras' law and `x ≥ 0` give the bound. The integrability condition is symmetry of
+   `D_q f + D_z f fᵀ`, equivalent for (3.H.2) to symmetry of `S` (`frobLogField_symm`).
+
+4. **Normalisation of the utility index.** The family of expenditure functions is indexed by
+   `u ∈ ℝ` with `E(p⁰, u) = exp u` (`frob_expenditure_family`), not by `e(p⁰) = w⁰` with
+   `u⁰` free. This is only a choice of index; `frob_3_H_2_exists` gives the book's initial
+   condition `e(p⁰) = w⁰` directly.
+
+5. **One-price-at-a-time: goods in index order.** The small type raises "price `l`" in some
+   order. `frob_one_price_at_a_time` raises the prices of goods `0, ..., L - 1` in index order;
+   since the result is `E(p̄)` for a solution `E` of (3.H.2) that does not depend on the order,
+   any other order gives the same value (apply the theorem to the demand with relabelled goods).
+   The initial point of a subproblem is any `r₀` (`frob_line_exists`); the book takes `r₀ > 0`.
+
+## Part F2: economics items (Debreu, 3.D.7, 3.H.2, 3.I, 3.AA.2)
+
+MWG, Chapter 3. Part F2 closes items from the "Open items" table of
+[source-map.md](source-map.md); see [source-map-F2.md](source-map.md). Each item gives what the
+book says, what is proved, and the Lean names. Items proved exactly as printed (Proposition 3.C.1
+for every `X`, Exercise 3.H.2, Exercise 3.G.16(c), footnote 28) are not departures and are not
+listed.
+
+F2-1. **Exercise 3.AA.2 (p. 95): `e(p, u)` is not jointly continuous at boundary prices.** The book
+asks to show that `e(p, u)` is continuous "even if we replace minimum by infimum and allow
+`p = 0`". At a boundary price, joint continuity in `(p, ū)` (indeed continuity in `ū` alone) fails
+for a continuous, locally nonsatiated utility: for
+`u(x) = min(x₁, 1) + max(x₁ - 2, 0) + x₂/(1 + x₂)` on `ℝ²_+` and `p = (1, 0)`, the level `ū = 2`
+is attainable and `e(p, 2) ≥ 2`, while `e(p, ū) ≤ 1` for every `ū ∈ (1, 2)`
+(`exercise_3_AA_2_boundary_counterexample`). The infimum at `p₂ = 0` is approached as `x₂ → ∞`,
+and `x₂/(1 + x₂)` never reaches its supremum. What is true: `e` is jointly continuous on
+`{p ≫ 0, ū attainable}` (`exercise_3_AA_2_continuous`, Proposition 3.E.2(iv)), and for each
+attainable `ū`, `e(·, ū)` (with the infimum) is continuous on the whole of `ℝ^L_+`, boundary
+prices and `p = 0` included (`exercise_3_AA_2_inf_continuous`).
+
+F2-2. **Exercise 3.D.7 (p. 98): consistency needs local nonsatiation.** "Consistent with
+maximization of preferences" restricts `x¹` only if the preferences are locally nonsatiated: a
+constant utility makes every bundle optimal. The necessity parts assume a locally nonsatiated
+`≿` (`exercise_3_D_7a_necessary`, `exercise_3_D_7d`, the first half of `exercise_3_D_7e`); in (a)
+the rationalizing utilities are required to be monotone (`PrefMonotone`), which implies local
+nonsatiation (`exercise_3_D_7a`). The regions (with `t = x¹₂`, `x¹ = (26 - 4t, t)`) are:
+(a) `t < 6`; (b) `t ≤ 4`; (c) `t ≤ 11/2`; (d) necessarily `t ≤ 11/2`; (e) `t ≤ 26/5`.
+
+F2-3. **Exercise 3.D.7(b), (c), (e): the forms used for "quasilinear" and "homothetic".**
+"Quasilinear with respect to good `k`" is taken in the utility form `x_k + φ(x_j)` on the
+quasilinear consumption set of Definition 3.B.7 (`econQL`; Exercise 3.C.5(b), "if" direction,
+`exercise_3_C_5b_if`, shows that this form is quasilinear). In (e) the necessity half assumes a
+representation homogeneous of degree one, the standard representation of continuous, monotone
+homothetic preferences (MWG p. 49; Exercise 3.C.5(a), `exercise_3_C_5a_only_if`); the
+rationalizing utility of the sufficiency half is homogeneous of degree one, concave, continuous
+and monotone. In (d) only the
+necessity bound `t ≤ 11/2` is proved; that every such `t` is the choice of a preference with
+normal goods (on `ℝ²_+`) is OPEN (see the source map).
+
+## Part G: last items (3.D.7(d), 3.G.5, 3.I.8(a), Figure 3.I.8, footnote 29)
+
+MWG, Chapter 3. Part G closes the last open items of the chapter; see
+[source-map-G.md](source-map.md). Each item gives what the book (or an earlier part of this
+project) says, what is proved, and the Lean names. Figure 3.I.8 (`figure_3_I_8`) is proved as a
+precise statement of the book's claim and is not a departure.
+
+G-1. **Exercise 3.D.7(d) (p. 98): the demand function lives on `p ≫ 0`; the earlier necessity
+theorem is vacuous.** The necessity theorem of part F2, `exercise_3_D_7d`, assumes a demand
+selection `xs` with `xs p w ∈ x(p, w)` for *every* `(p, w)`. At `p = 0`, `w = 0` the whole of
+`ℝ²_+` is affordable, and a locally nonsatiated preference has no best element there, so that
+hypothesis is never satisfied (`last_exercise_3_D_7d_hyp_unsatisfiable`) and the theorem says
+nothing. Part G restates the exercise with the demand function defined on the book's domain
+`p ≫ 0`, `w ≥ 0`, and proves both directions: necessity from optimality at `(p⁰, 8)`, `(p¹, 20)`,
+`(p¹, 26)` and normality of good 1 at `p¹` (`last_exercise_3_D_7d_necessary`); sufficiency for
+every `t = x¹₂ ≤ 11/2` with the utility `x₂ + min(x₁, 3 + x₁/4, 3 + x¹₁/4)` on `ℝ²_+` and an
+explicit demand function in which both goods are (weakly) normal at every `p ≫ 0`
+(`exercise_3_D_7d_iff`). "Normal" is taken as "demand nondecreasing in wealth" (MWG Section 2.E,
+`∂x_l/∂w ≥ 0`, stated without derivatives); with the piecewise-linear `φ` used here the demand is constant in
+`w` over ranges of wealth.
+
+G-2. **Footnote 29 (p. 90): the limit `-α/(α+1)` belongs to a mixed measure, not to the book's
+deadweight loss.** The computation recorded in `docs/source-map-F2.md` takes
+`DWL(s) = w((s/a)^α - 1) - αw(s - a)/s`, i.e. `-CV(p⁰, p¹, w) - τ x₁(p¹, w)`: the compensating
+variation minus the revenue actually collected. That limit is proved
+(`footnote_3_I_29_mixed`: `(DWL_AV - M)/M → -α/(α+1)`). But the book's two deadweight-loss
+measures are (3.I.5) `-τ x₁(p¹, w) - EV` (based at `u¹`) and (3.I.6) `-CV - τ h₁(p¹, u⁰)` (based
+at `u⁰`, the measure of Figure 3.I.8, whose Hicksian curve is at `u⁰`). For both, with
+Cobb-Douglas utility, `DWL ≈ α(1-α)w(s-a)²/(2a²)` and the relative error of the area-variation
+deadweight loss tends to `α/(1-α)` (`figure_3_I_8_ev`, `figure_3_I_8_cv`). Either way the
+error does not vanish, which is the book's point. The footnote's own claim (two equal-revenue
+taxes ranked wrongly by the area variation for small taxes) is not proved; it remains OPEN (see
+the source map, which records a candidate three-good example).
+
+G-3. **Exercise 3.G.5(b)-(c) (p. 100): assumptions made explicit.** The book does not list the
+assumptions under which "the properties ... hold". Proved under: `q₀ ≫ 0`; `u` continuous on
+`ℝ^A_+ × ℝ^B_+`; strictly increasing in the `y` goods (the book's "desirable commodities");
+strictly quasiconcave on `ℝ^{A+B}_+` (needed for demand *functions*, as in Propositions 3.D.2(iii),
+3.E.3(iii) and 3.G.1-3.G.3). From these, `ũ` is continuous (Berge's theorem), locally
+nonsatiated and strictly quasiconcave on `ℝ^{A+1}_+` (`last_composite_hyps`), and the general
+propositions apply verbatim to the composite problem; the conclusions involving derivatives (Roy's
+identity, Propositions 3.G.2-3.G.3) are conditional on the differentiability of the composite
+functions, as in those propositions. The route through `JᵀSJ` (Slutsky matrix of the composite
+demand from that of the original one, suggested in source-map-F2) is not needed and is not
+formalized: it would require differentiability of the original demand, which the book does not
+assume.
+
+G-4. **Exercise 3.I.8(a), "only if" (p. 103): what demand data determine.** "The most general
+class of utility functions whose demand has this property" is the quasilinear class, but demand
+determines the preference only on bundles that are demanded at some prices. Proved: if `u` is
+continuous on the quasilinear consumption set `X` (Definition 3.B.7; on `ℝ^L_+` a nonzero
+wealth-independent demand is impossible at low wealth), strictly increasing in the numeraire, and
+the demand for the other goods is a continuous wealth-independent function `y(p)` on
+`P = {p ≫ 0, p_k = 1}`, then `x_k + φ(x)` with `φ(x) = inf_{p ∈ P}(p·x - x_k - E(p))`
+(independent of `x_k`, `E` the expenditure at a reference utility level) represents `u` on every
+demanded bundle (`exercise_3_I_8a_only_if`), and on all of `X` when every bundle is demanded
+(`exercise_3_I_8a_only_if_all`). No differentiability is assumed: the expenditure functions at
+different utility levels differ by a constant because their difference has increments bounded by
+`|(p' - p)·(y(p') - y(p))|` (revealed preference), hence zero derivative along segments of `P`
+(`last_const_of_small_variation`). The hypotheses are consistent (`last_3_I_8a_instance`).

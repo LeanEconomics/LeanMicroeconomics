@@ -20,3 +20,7 @@ and figures are not distributed. The local scan is excluded from version control
 
 Original formalization is developed with Claude Code under the user's direction;
 mathematical coverage and verification status are recorded separately.
+
+The project depends (Lake `git` requirement, pinned to commit `04deccaf63`) on
+[LeanEconomics/LeanEconomics](https://github.com/LeanEconomics/LeanEconomics), Apache 2.0, for
+Brouwer's fixed-point theorem. Nothing from it is copied.

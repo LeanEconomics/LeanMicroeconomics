@@ -21,26 +21,12 @@ Items marked OPEN are listed in the last table. Modules `AppendixMCHessian`, `Ut
 ## Open items (current status of the whole chapter)
 
 This list is authoritative. The OPEN tables in the part sections below record each part's
-state when it was written; items listed there and closed later are closed in part E.
+state when it was written; items listed there were closed in later parts (E, F1, F2, F3, G),
+whose sections give the Lean names.
 
 | Source | Item | What is missing |
 | --- | --- | --- |
-| Proposition 3.C.1, p. 47 | Continuous utility for a general (possibly disconnected) `X ⊆ ℝ^L_+` | Debreu's open-gap lemma; proved for `X = ℝ^L_+` and every convex `X` |
-| Exercise 3.D.7(a)-(e), p. 98 | Constructed rationalizing preferences per region | Explicit rationalizations |
-| Exercise 3.G.5(b)-(c), p. 100 | Composite-commodity utility `ũ` | Properties of `ũ` |
-| Exercise 3.G.16(c), p. 101 | Slutsky part | Second derivatives of the given expenditure function |
-| Section 3.H, pp. 75-80 | Integrability sufficiency for `L > 2` (Frobenius) | Integrability of symmetric C¹ systems `∂e/∂p = x(p, e)` |
-| Section 3.H, footnote 18 | `L = 2`: global continuation of the local ODE solution | Continuation to all `p₁ > 0`, monotone in `w⁰` |
-| Small type, p. 80 | One-price-at-a-time construction for general `L` | Depends on the Frobenius item |
-| Exercise 3.H.2 / p. 78 | Differentiable `e` ⇒ every generating preference is convex | A density argument |
-| Exercise 3.I.8(a) | "Only if": wealth-independent demand ⇒ quasilinear utility | Integration argument |
-| Footnote 28, p. 89 | CV part | Differentiability of `e` in `u` and of `v` |
-| pp. 89-91, footnote 29 | Asymptotic comparisons of CV, EV, AV | Second-order expansions |
-| Exercise 3.AA.2 | Joint continuity of `e(p, ū)` at boundary prices | Boundary analysis (interior case proved) |
-| Theorems M.K.1-M.K.2 | For merely differentiable functions (Halkin) | Brouwer's theorem; proved for strictly differentiable functions |
-| p. 958 | Second-order necessary conditions | C² feasible curves; sufficiency proved |
-| Theorem M.E.2 | Transversality theorem | Sard's theorem in unequal dimensions |
-| Theorem M.L.1 | With only `v` differentiable | Implicit function theorem for the non-square system; proved along a differentiable maximizer path |
+| Footnote 29, p. 91 | The area variation can misrank two equal-revenue taxes even for small taxes | An explicit example; Cobb-Douglas preserves the ranking at leading order. A candidate three-good example and the remaining steps are in Part G. The footnote's Cobb-Douglas computation and the Figure 3.I.8 comparison are proved. |
 
 ## Section 3.A-3.B: preference relations
 
@@ -729,3 +715,232 @@ the Lean names that close it, or OPEN with what is missing. Departures are in
 | Theorem M.E.2 | Sard's theorem in unequal dimensions |
 | Theorem M.L.1 with only `v` differentiable | Implicit function theorem for the constraint system with parameters, non-square case |
 | Exercise 3.AA.2, joint continuity of `e` at boundary prices | Continuity of `e(p, ·)` in `ū` at prices with zero components |
+
+## Part F1: hard analysis items (Halkin, second order, envelope, transversality, L = 2 integrability)
+
+Mas-Colell, Whinston and Green, *Microeconomic Theory*, Chapter 3 and Mathematical Appendix M.E,
+M.K, M.L. This part closes analysis items listed OPEN in the "Open items" table of
+`docs/source-map.md`, in the new modules `HardIntegrability`, `HardHalkin`, `HardSecondOrder`,
+`HardEnvelope` and `HardSard`. Printed pages; Lean names relative to `MWG.ClassicalDemand`.
+Departures are in `docs/corrections-F1.md`.
+
+### Items closed
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Section 3.H, footnote 18, p. 79 | (3.H.1) has a solution on all of `p₁ > 0` through every initial condition, positive, unique | `footnote_3_18_global`, `footnote_3_18_unique`; ODE layer `hardInt_lipschitz`, `hardInt_unique_Ioo`, `hardInt_unique`, `hardInt_exists_local`, `hardInt_exists_global`, `hardInt_strict_order`; logarithmic coordinates `hardIntLogField`, `hardInt_strictlyPositive_exp`, `hardIntLogField_contDiff`, `hardIntLogField_abs_le`, `hardInt_lift_hasDerivAt`, `hardInt_log_hasDerivAt` |
+| Section 3.H, pp. 79-80 | Solutions strictly increasing, continuous and onto `(0, ∞)` in the initial value | `hardInt_solution_family` |
+| Section 3.H, p. 80 | `L = 2`: every (C¹) demand with the weak axiom, homogeneity of degree zero and Walras' law is rationalized by preferences, from primitive hypotheses | `integrability_two_goods_global` (C¹, F1-1) |
+| Theorem M.K.1, p. 956 | Lagrange multipliers with merely differentiable functions | `theorem_M_K_1_differentiable` (f differentiable at `x̄`; `g_m` differentiable at `x̄`, continuous near it), `theorem_M_K_1_book` (all differentiable on `ℝ^N`, as printed); Halkin's lemma `hardHalkin_feasible` and cone lemma `hardHalkin_cone` (LeanEconomics `brouwer`) |
+| Theorem M.K.2, p. 959 | Kuhn-Tucker conditions with merely differentiable functions | `theorem_M_K_2_differentiable`, `theorem_M_K_2_book` |
+| Section M.K, p. 958 | Second-order necessary conditions: `D²_x L(x̄, λ)` negative semidefinite on `{z : ∇g_m(x̄)·z = 0}` | `theorem_M_K_second_order_necessary`, `theorem_M_K_second_order_necessary_matrix` (Hessian form), key estimate `hardSO_bound`. Feasible points from Halkin's lemma replace the C² curves (first-order accuracy suffices since `∇L(x̄) = 0`) |
+| Theorem M.L.1, (M.L.4)-(M.L.5), pp. 965-966 | Envelope theorem with only `v` differentiable | `theorem_M_L_1_value` (with the constraint qualification, F1-2); `hardEnv_range_pi_eq_top`; the constraint qualification is needed: `theorem_M_L_1_needs_CQ` |
+| Theorem M.E.2, p. 943; footnote 11 | Transversality theorem: regular for almost every `q̄ ∈ B` | `theorem_M_E_2` (bad set has Lebesgue measure zero), `theorem_M_E_2_ae`, `theorem_M_E_2_regular` (`RegularSystemAt` a.e. for `A = ℝ^N`, `B = ℝ^M`); local step `hardSard_local`, `hardSard_exists_complement_map`, `hardSard_isInvertible_of_injective`. Uses Mathlib's equal-dimension Sard lemma `addHaar_image_eq_zero_of_det_fderivWithin_eq_zero` in charts of the zero set (inverse function theorem); no unequal-dimension Sard theorem is needed |
+
+### Items still OPEN
+
+| Source | Item | What remains |
+| --- | --- | --- |
+| Section 3.H, pp. 79-80 | Integrability sufficiency for `L > 2` (Frobenius): a C¹ demand with homogeneity of degree zero, Walras' law and a symmetric negative semidefinite Slutsky matrix has solutions of (3.H.2) | Not proved. The planned route: define `E(p)` by the scalar ODE `y' = (p - p⁰)·x(p⁰ + t(p - p⁰), y)`, `y(0) = w⁰`, on `[0, 1]`. Global existence on `[0, 1]` follows as in `HardIntegrability` (Walras' law and `x ≥ 0` give `|(p - p⁰)·x| ≤ c·w`, so in `log w` the field is bounded). The missing step is the differentiability of `E` with `∇E(p) = x(p, E(p))`. Mathlib v4.34.0 has existence, uniqueness, Gronwall bounds and Lipschitz dependence on the initial point (`Mathlib/Analysis/ODE/*`), but no differentiable dependence of solutions on initial data or parameters. The direct argument: for `δ(t) = y(t; p + εh) - y(t; p)`, the function `δ*(t) = tε h·x(γ_p(t), y(t; p))` solves the linearized equation exactly, because the defect is `tε (hᵀS v - vᵀS h) = 0` by Slutsky symmetry (`v = p - p⁰`); Gronwall's inequality for `δ - δ*` with a uniform first-order Taylor remainder of `(q, w) ↦ (q - p⁰)·x(p⁰ + t(q - p⁰), w)` on compact sets would give `δ(1) = ε h·x(p, E(p)) + o(ε)`. The uniform Taylor remainder and this Gronwall estimate are not formalized |
+| Small type, p. 80 | One-price-at-a-time construction for general `L` | Same missing ingredient (differentiability of an ODE solution in the prices held fixed) |
+
+## Part F3: Frobenius integrability for any L
+
+Mas-Colell, Whinston and Green, *Microeconomic Theory*, Section 3.H, pp. 79-80. This part closes
+the two items left OPEN in `docs/source-map.md` and `docs/source-map-F1.md`: the sufficiency half
+of Frobenius' theorem for (3.H.2), hence the integrability theorem for any number of goods from
+primitive hypotheses, and the small-type one-price-at-a-time construction. New modules
+`FrobeniusDependence`, `FrobeniusTheorem`, `FrobeniusIntegrability`, `FrobeniusOnePrice`
+(37 theorems). Printed pages; Lean names relative to `MWG.ClassicalDemand`. Departures are in
+`docs/corrections-F3.md`.
+
+### Items closed
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Section 3.H, p. 80 | Frobenius' theorem, sufficiency: symmetry of the derivative matrix of (3.H.2) gives a solution (general form, one unknown function) | `frobenius_ray_family` (system `∂Z/∂q = f(q, Z)` on `ℝ^L × ℝ`, `f` `C¹`, `|v·f| ≤ ‖v‖`, integrability condition `h·Df(v, v·f) = v·Df(h, h·f)`; solutions through every initial value, defined on all of `ℝ^L`); ray construction `frobRayField`, `frobRayField_contDiff`, `frobRayField_abs_le`, `frobRayField_fderiv_apply`, `frob_ray_exists`, `frob_ray_unique`, `frob_ray_strict_order`, `frob_hasDerivAt_dotProduct` |
+| (needed for the above; not in Mathlib v4.34.0) | Differentiable dependence of an ODE solution on a parameter, given a solution of the variational equation | `frob_hasFDerivAt_endpoint` (two Gronwall estimates: Lipschitz dependence, then the first-order remainder); `frob_uniform_taylor` (uniform first-order Taylor remainder on compact convex sets) |
+| Equation (3.H.2), pp. 79-80 | For `C¹` demand with Walras' law, `x ≥ 0` and symmetric `S(p, w)`, (3.H.2) has a solution through every `(p⁰, w⁰) ≫ 0`, on all of `p ≫ 0` | `frob_3_H_2_exists`; family indexed by utility, strictly increasing, continuous and onto `(0, ∞)` in `u`: `frob_expenditure_family`. Logarithmic coordinates: `frobLogField`, `frobLogField_contDiff`, `frobLogField_abs_dot_le`, `frobLogField_fderiv_apply`, `frobLogField_dot_fderiv`, `frobLogField_symm` (symmetry of `S` is the integrability condition), `frob_slutsky_mulVec`, `frob_exp_mem_domain`, `frob_hasFDerivAt_log`, `frob_solvesPDE_of_log` |
+| Section 3.H, p. 80 | "The necessary and sufficient condition for the recovery of an underlying expenditure function is the symmetry and negative semidefiniteness of the Slutsky matrix" (sufficiency, any `L`) | `integrability_general`: a `C¹`, nonnegative demand with Walras' law and symmetric negative semidefinite `S` is the Walrasian demand of the recovered preference at every `(p, w) ≫ 0`. Necessity was already proved (`pde_slutsky_symmetric`, Section 2.F results) |
+| Small type, p. 80 | Each one-price subproblem is an equation of the form (3.H.1) and "can be solved"; this "makes mechanical sense even if `S(p, w)` is not symmetric" | `frob_line_exists` (global positive solution on `r > 0`, no symmetry), `frob_line_unique`; logarithmic coordinates `frobLineField`, `frobLineField_contDiff`, `frobLineField_abs_le`, `frob_line_lift`, `frob_line_log`; `frob_update_strictlyPositive` |
+| Small type, p. 80 | Changing prices one at a time from `p⁰` to `p̄` "we eventually get to `e(p̄)`" | `frob_one_price_at_a_time` (any solutions of the successive subproblems end at `E(p̄)` for any solution `E` of (3.H.2)), `frob_one_price_at_a_time_exists` (from primitive hypotheses, with symmetric `S`); `frob_line_hasDerivAt` (a solution of (3.H.2) solves each subproblem); path `frobOnePricePath`, `frobOnePricePath_pos`, `frobOnePricePath_zero`, `frobOnePricePath_last`, `frobOnePricePath_update_start`, `frobOnePricePath_update_end` |
+| Small type, p. 80 | Without symmetry, `e(p̄)` depends on the path ("absurdity") | Verbal. Without symmetry (3.H.2) has no solution (`pde_slutsky_symmetric`, `section_3_H_no_solution`); an explicit path dependence is `exercise_3_I_7b` |
+
+### Items still OPEN
+
+None from this part.
+
+## Part F2: economics items (Debreu, 3.D.7, 3.H.2, 3.I, 3.AA.2)
+
+Mas-Colell, Whinston and Green, *Microeconomic Theory*, Chapter 3. Part F2 works through the
+ECONOMICS items of the "Open items" table at the top of [source-map.md](source-map.md):
+Proposition 3.C.1 for a general consumption set, Exercises 3.D.7, 3.G.5(b)-(c), 3.G.16(c),
+3.H.2, 3.I.8(a) ("only if"), 3.AA.2, footnote 28 (CV) and the asymptotic comparisons of CV, EV
+and AV on pp. 89-91 with footnote 29. Modules `EconDebreu`, `EconIntegrability`,
+`EconGivenExpenditure`, `EconBoundary`, `EconWelfare`, `EconRevealed`. Printed pages; Lean names
+relative to `MWG.ClassicalDemand`. Departures are in [corrections-F2.md](corrections.md).
+
+### Status of the assigned open items
+
+| Source | Item | Status after part F2 |
+| --- | --- | --- |
+| Proposition 3.C.1, p. 47 | Continuous utility for a general (possibly disconnected) `X` | CLOSED: `proposition_3_C_1_general` |
+| Exercise 3.D.7(a)-(e), p. 98 | Regions of permissible `x¹`, with rationalizations | CLOSED for (a), (b), (c), (e); (d) necessity proved, sufficiency OPEN |
+| Exercise 3.G.5(b)-(c), p. 100 | Composite-commodity demand and `ũ` | OPEN |
+| Exercise 3.G.16(c), p. 101 | Slutsky equation | CLOSED: `exercise_3_G_16c_slutsky` |
+| Exercise 3.H.2 / p. 78 | Differentiable `e` ⇒ every generating preference convex | CLOSED: `exercise_3_H_2_convex`, `exercise_3_H_2_prefConvex` |
+| Exercise 3.I.8(a) | "Only if": wealth-independent demand ⇒ quasilinear utility | OPEN |
+| Footnote 28, p. 90 | CV part | CLOSED: `footnote_3_I_28_cv` |
+| pp. 89-91, footnote 29 | Asymptotic comparisons of CV, EV, AV | Partly CLOSED (relative errors, second-order accuracy of (3.I.9)); comparison with the deadweight loss and footnote 29 OPEN |
+| Exercise 3.AA.2 | Joint continuity of `e(p, ū)` at boundary prices | CLOSED by counterexample: `exercise_3_AA_2_boundary_counterexample` (correction F2-1) |
+
+### Section 3.C: Proposition 3.C.1 (module `EconDebreu`)
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Proposition 3.C.1, p. 47 | A continuous rational `≿` on any `X ⊆ ℝ^L` (in particular any `X ⊆ ℝ^L_+`, connected or not) has a utility continuous on `X` | `proposition_3_C_1_general` |
+| Proof (Debreu's theorem) | On any second-countable space, a continuous rational preference has a continuous representation | `econ_debreu_representation` |
+| Proof, step 1 | Countable base `bₙ`; `v(x) = ∑ {2⁻ⁿ : bₙ ⊆ {z : x ≻ z}}` represents `≿`, values in `[0, 2]` | `econBaseUtility`, `econBaseUtility_summable`, `econBaseUtility_bounds`, `econBaseUtility_represents`, `econ_exists_nat_basis` |
+| Proof, step 2 (open-gap lemma) | If all `{v < v z}`, `{v > v z}` are open, a strictly increasing transformation of `v` is continuous | `econ_gap_lemma` (via `econJumps`, `econDense`, `econGapOrder`, `econGapUtility`, `econJumps_countable`, `econDense_countable`, `econDense_subset`, `econDense_between`) |
+
+### Section 3.D: Exercise 3.D.7 (module `EconRevealed`)
+
+`p⁰ = (1, 1)`, `w⁰ = 8`, `x⁰ = (4, 4)`, `p¹ = (1, 4)`, `w¹ = 26`, `x¹ = (26 - 4t, t)`
+(`econP0`, `econP1`, `econX0`, `econP0_dot`, `econP1_dot`, `econX0_mem`).
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Exercise 3.D.7(a), p. 98 | Any (locally nonsatiated) preference maximization: region `t < 6`; Afriat-type utility `min(p⁰·x - 8, c(p¹·x - 26) + s - 8)` | `exercise_3_D_7a_necessary`, `exercise_3_D_7a`, `econ_affine_concaveOn` |
+| Exercise 3.D.7(b), p. 98 | Quasilinear in good 1: region `t ≤ 4`; `φ(τ) = min(4τ, 3t + τ, 3t + 4)` | `exercise_3_D_7b`, `econQL` |
+| Exercise 3.D.7(c), p. 98 | Quasilinear in good 2: region `x¹₁ ≥ 4` (`t ≤ 11/2`); `φ(τ) = min(τ, 3 + τ/4, 3 + x¹₁/4)` | `exercise_3_D_7c` |
+| Exercise 3.D.7(d), p. 98 | Both goods normal: necessarily `t ≤ 11/2` | `exercise_3_D_7d`; sufficiency OPEN (below) |
+| Exercise 3.D.7(e), p. 98 | Homothetic: region `t ≤ 26/5`; `u = min(p⁰·x, (2/5)p¹·x)` | `exercise_3_D_7e` |
+| Exercise 3.D.7, hint | Pictures | Listed only (graphical) |
+
+### Section 3.G: Exercise 3.G.16(c) (module `EconGivenExpenditure`)
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Exercise 3.G.16(c), p. 101 | Hicksian demand `h_l = ∂e/∂p_l = e(α_l + β_lΠu)/p_l` | `givenHicks`, `econ_givenHicks_hasDerivAt`, `econ_givenPi_hasDerivAt`, `econ_givenA_hasDerivAt` |
+| Exercise 3.G.16(c), p. 101 | Walrasian demand `x_l = w(α_l + β_l(log w - A))/p_l = h_l(p, v(p, w))` | `givenDemand`, `econ_givenDemand_eq` |
+| Exercise 3.G.16(c), p. 101 | Slutsky equation `∂h_l/∂p_k = ∂x_l/∂p_k + (∂x_l/∂w)x_k` at `w = e(p, u)` | `exercise_3_G_16c_slutsky` (Roy's identity: `exercise_3_G_16c_roy`, earlier module) |
+
+### Section 3.H: Exercise 3.H.2 (module `EconIntegrability`)
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Small type, p. 78; Exercise 3.H.2, p. 102 | If `e(·, ū)` is differentiable at every `p ≫ 0`, the at-least-as-good set of a continuous, locally nonsatiated, strongly monotone `≿` is convex and equals `V_ū` | `exercise_3_H_2_convex`, `econ_recoveredSet_subset` |
+| Small type, p. 78; Exercise 3.H.2 | Differentiable `e` (all levels) ⇒ every such generating preference is convex | `exercise_3_H_2_prefConvex` |
+| Proof | Penalised problem `min p·c - e(p) + ε∑(p_l + 1/p_l)` attains its minimum at some `p* ≫ 0`; first-order conditions `∂e/∂p_l = c_l + ε - ε/p*_l²` | `econPenalty`, `econPenalty_ge_term`, `econPenalty_nonneg`, `econPenalty_exists_min`, `econPenalty_foc` |
+
+### Section 3.I: welfare approximations (module `EconWelfare`)
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Footnote 28, p. 90 | `∂CV(p¹, p⁰, w)/∂p¹_l` at `p⁰_l` equals `x_l(p⁰, w)` (no differentiability of `e` in `u` or of `v` needed) | `footnote_3_I_28_cv`, `econ_priceLine_priceLine` (EV and AV parts: `footnote_3_I_28_ev`, `footnote_3_I_28_av`, earlier module) |
+| Section 3.I, p. 89, footnote 27 | For small price changes the AV error (and the EV-CV gap) is small as a fraction of the welfare change | `welfare_av_relative_error`, `welfare_ev_relative_error` |
+| Section 3.I, p. 89 | The same holds for any measure with the same first derivative | `econ_relative_error_of_deriv` |
+| Section 3.I, pp. 90-91, (3.I.9) | The `h̃` approximation is a second-order expansion of `e`: error `o((p¹_l - p⁰_l)²)` | `equation_3_I_9_second_order`, `econ_second_order_taylor` |
+| Section 3.I, p. 90, Figure 3.I.8 | The AV error need not be small relative to the deadweight loss | OPEN (below) |
+| Footnote 29, p. 90 | AV can misrank equal-revenue taxes even for small taxes | OPEN (below) |
+| Section 3.I, p. 91 | `h̃` better than AV for small changes; "adequate approximation to the deadweight loss" | Second-order accuracy proved (`equation_3_I_9_second_order`); the ratio statement against the deadweight loss OPEN (below) |
+
+### Appendix 3.A: Exercise 3.AA.2 (module `EconBoundary`)
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Exercise 3.AA.2, p. 95 | `e(p, ū)` continuous "allowing `p = 0`": false jointly at boundary prices | `exercise_3_AA_2_boundary_counterexample`, `econBoundaryUtility`, `econBoundaryPrice`, `econBoundaryUtility_continuousOn`, `econBoundaryUtility_lns`, `econBoundaryPrice_dot` (correction F2-1); corrected statements `exercise_3_AA_2_continuous`, `exercise_3_AA_2_inf_continuous` (earlier module) |
+
+### OPEN after part F2
+
+| Source | Item | What remains |
+| --- | --- | --- |
+| Exercise 3.D.7(d), p. 98 | Sufficiency: every `x¹ = (26 - 4t, t)`, `t ≤ 11/2`, chosen by a preference on `ℝ²_+` with both goods normal | A demand *function* on all of `ℝ²_{++} × ℝ_+` with normal goods through `x⁰` and `x¹`. For `t ≤ 26/5` the homothetic utility of (e) works once a normal (degree-one) selection of its demand correspondence is written down; for `t ∈ (26/5, 11/2]` a non-homothetic construction (e.g. quasilinear in good 2 with a smooth strictly concave `φ`, `φ'(4) = 1`, `φ'(x¹₁) = 1/4`, and its corner solutions on `ℝ²_+`) must be verified for all `(p, w)` |
+| Exercise 3.G.5(b)-(c), p. 100 | Propositions 3.D.2, 3.G.4 for `x(p, α, w)`, `z(p, α, w)`; 3.E.3, 3.G.1-3.G.3 for the Hicksian demand of `ũ` | Transfer through `x(p, α, w) = x(p, αq₀, w)`, `z = q₀·y(p, αq₀, w)`: HD0, Walras' law and convexity/uniqueness are immediate; the Slutsky matrix of the composite demand is `JᵀSJ` with `J = diag(I, q₀)` (chain rule on the product of `ℝ^A` and `ℝ^B`, which this project's `Fin L` demand machinery does not support); for (c), `ũ` must be shown continuous (Berge), locally nonsatiated and strictly quasiconcave, which the project's EMP results on `ℝ^{A+1}_+` then need through an identification of `(Fin A → ℝ) × ℝ` with `Fin (A + 1) → ℝ` |
+| Exercise 3.I.8(a) | "Only if": demand for goods 1, 2 independent of wealth ⇒ utility quasilinear in good 3 | By Shephard's lemma `∂e/∂p_l(p, u) = x_l(p)` is independent of `u` (`l = 1, 2`), so `e(p, u) = A(p) + B(u)` and `B(v(p, w)) = w - A(p)` is an indirect utility; the recovered utility is `x₃ + inf_p(p₁x₁ + p₂x₂ - A(p))`. Missing: the EMP and Shephard's lemma on the quasilinear consumption set `ℝ²_+ × ℝ` (the project's are on `ℝ^L_+`, where wealth-independence fails at low wealth), and, for preferences rather than utilities, the duality step that recovers `≿` on non-demanded bundles (convexity and monotonicity needed) |
+| p. 90, Figure 3.I.8; footnote 29 | AV error not small relative to the deadweight loss; AV can misrank two equal-revenue taxes for small taxes | An explicit example. For Cobb-Douglas `x₁ = αw/p₁`, with the price of good 1 raised from `a` to `s`: `DWL(s) = w((s/a)^α - 1) - αw(s - a)/s ~ α(α+1)w(s - a)²/(2a²)` and the AV-based loss differs by `-α²w(s - a)²/(2a²) + o`, so the relative error tends to `-α/(α+1) ≠ 0`; formalizing needs the second-order expansions of these explicit functions (`econ_second_order_taylor` applies) and their identification with the project's `compensatingVariation`/`areaVariation` for Cobb-Douglas; footnote 29 then needs two goods with different wealth effects and equal revenue |
+
+## Part G: last items (3.D.7(d), 3.G.5, 3.I.8(a), Figure 3.I.8, footnote 29)
+
+Mas-Colell, Whinston and Green, *Microeconomic Theory*, Chapter 3. Part G closes the five items
+left OPEN in [source-map-F2.md](source-map.md): Exercise 3.D.7(d) (sufficiency), Exercise
+3.G.5(b)-(c), Exercise 3.I.8(a) ("only if"), the deadweight-loss comparison of p. 90 (Figure
+3.I.8) and the Cobb-Douglas computation attached to footnote 29. Modules `LastRevealed`,
+`LastWelfare`, `LastQuasilinear`, `LastComposite`, `LastCompositeApps`. Printed pages; Lean names
+relative to `MWG.ClassicalDemand`. Departures are in [corrections-G.md](corrections.md).
+
+### Status of the assigned items
+
+| Source | Item | Status after part G |
+| --- | --- | --- |
+| Exercise 3.D.7(d), p. 98 | Both goods normal: region `t = x¹₂ ≤ 11/2`, sufficiency | CLOSED: `exercise_3_D_7d_iff` (correction G-1) |
+| Exercise 3.G.5(b)-(c), p. 100 | Propositions 3.D.2, 3.G.4 for `x(p, α, w)`, `z(p, α, w)`; 3.E.3, 3.G.1-3.G.3 for the Hicksian demand of `ũ` | CLOSED: `exercise_3_G_5b`, `exercise_3_G_5b_actual`, `exercise_3_G_5b_roy`, `exercise_3_G_5c_E3`, `exercise_3_G_5c_G1`, `exercise_3_G_5c_G2`, `exercise_3_G_5c_G3` (correction G-3) |
+| Exercise 3.I.8(a), p. 103 | "Only if": wealth-independent demand ⇒ quasilinear utility | CLOSED: `exercise_3_I_8a_only_if`, `exercise_3_I_8a_only_if_all` (correction G-4) |
+| Section 3.I, p. 90, Figure 3.I.8 | The AV deadweight loss can be far off as a fraction of the deadweight loss, even for small price changes | CLOSED: `figure_3_I_8`, `figure_3_I_8_ev`, `figure_3_I_8_cv` |
+| Footnote 29, p. 90 | Cobb-Douglas computation with limit `-α/(α+1)` | CLOSED for the measure that gives this limit: `footnote_3_I_29_mixed` (correction G-2). The footnote's own claim (misranking of two equal-revenue taxes) remains OPEN (last table) |
+
+### Section 3.D: Exercise 3.D.7(d) (module `LastRevealed`)
+
+`p⁰ = (1, 1)`, `w⁰ = 8`, `x⁰ = (4, 4)`, `p¹ = (1, 4)`, `w¹ = 26`, `x¹ = (26 - 4t, t)`.
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Exercise 3.D.7(d), p. 98 | `x¹ ∈ ℝ²_+` with `p¹·x¹ = 26` is chosen, together with `x⁰`, by a continuous, concave, monotone utility on `ℝ²_+` whose demand function (on `p ≫ 0`, `w ≥ 0`) has both goods normal at every `p`, iff `t ≤ 11/2` | `exercise_3_D_7d_iff` |
+| Necessity | Any locally nonsatiated preference with a demand function on `p ≫ 0` and good 1 normal at `p¹` has `t ≤ 11/2` | `last_exercise_3_D_7d_necessary` |
+| Sufficiency: utility | `u(x) = x₂ + φ(x₁)`, `φ(τ) = min(τ, 3 + τ/4, 3 + x¹₁/4)`, on `ℝ²_+`; continuous, concave, monotone, locally nonsatiated | `lastPhi`, `lastNormalUtility`, `lastNormalUtility_continuous`, `lastNormalUtility_concaveOn`, `lastNormalUtility_monotone`, `last_lns_of_monotone` |
+| Sufficiency: demand function | `x₁ = min(w/p₁, c(p))`, `x₂ = (w - p₁x₁)/p₂`, `c(p) ∈ {0, 4, x¹₁}` by the price ratio; it solves the UMP at every `p ≫ 0`, `w ≥ 0` and both coordinates are nondecreasing in `w` | `lastNormalLevel`, `lastNormalDemand`, `lastNormalLevel_nonneg`, `lastPhi_quarter`, `lastPhi_opt`, `lastNormalDemand_mem`, `lastNormalDemand_mono` |
+| (on `exercise_3_D_7d`) | The hypothesis "optimal at every `(p, w)`, `p = 0` included" is never satisfied by a locally nonsatiated preference | `last_exercise_3_D_7d_hyp_unsatisfiable` (correction G-1) |
+
+### Section 3.G: Exercise 3.G.5(b)-(c) (modules `LastComposite`, `LastCompositeApps`)
+
+Standing assumptions: `q₀ ≫ 0`; `u` continuous on `ℝ^A_+ × ℝ^B_+`, strictly increasing in the
+`y` goods, strictly quasiconcave on `ℝ^{A+B}_+`. Consistent: `last_composite_instance`
+(`u = √x + √y`, `q₀ = 1`).
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Bridge | `(x, z) ∈ ℝ^A × ℝ` ↔ `Fin.snoc x z ∈ ℝ^{A+1}`; prices `(p, α)`; `(p, α)·(x, z) = p·x + αz`; orthant and `≫ 0` correspond | `lastSnoc`, `lastCompositeVec`, `lastCompositeVec_snoc`, `lastSnoc_init`, `lastSnoc_castSucc`, `lastSnoc_last`, `last_snoc_dot`, `last_snoc_mem`, `last_snoc_pos` |
+| Exercise 3.G.5, p. 99 | `ũ(x, z) = max_{y ≥ 0, q₀·y ≤ z} u(x, y)`: the max is attained; at a maximizer `q₀·y = z` | `last_composite_set_eq`, `last_composite_attained`, `last_composite_section`, `last_composite_exhausts` |
+| Exercise 3.G.5(c) | `ũ` is continuous on `ℝ^{A+1}_+` (Berge) | `last_composite_continuousOn` |
+| Exercise 3.G.5(c) | The preference of `ũ` is locally nonsatiated | `last_composite_lns` |
+| Exercise 3.G.5(c) | `ũ` is strictly quasiconcave (its preference strictly convex) | `last_composite_strictlyQuasiconcave`, `last_composite_hyps` |
+| Exercise 3.G.5(b), Proposition 3.D.2 | `(x, z)(p, α, w)`: homogeneous of degree zero, Walras' law `p·x + αz = w`, exists and is unique | `exercise_3_G_5b` |
+| Exercise 3.G.5(b) with (a) | The composite demand is `{(x*, q₀·y*)}` for the consumer's actual choice `(x*, y*)` at `(p, αq₀, w)` | `exercise_3_G_5b_actual` |
+| Exercise 3.G.5(b), Proposition 3.G.4 | Roy's identity for the composite demand where `ṽ` is differentiable | `exercise_3_G_5b_roy` |
+| Exercise 3.G.5(c), Proposition 3.E.3 | Hicksian demand of `ũ`: homogeneous of degree zero in `P`, no excess utility, single-valued | `exercise_3_G_5c_E3` |
+| Exercise 3.G.5(c), Proposition 3.G.1 | Shephard's lemma for `ẽ(·, ū)` | `exercise_3_G_5c_G1` |
+| Exercise 3.G.5(c), Proposition 3.G.2 | `D_P h̃ = D²_P ẽ`, negative semidefinite, symmetric, `D_P h̃ P = 0` | `exercise_3_G_5c_G2` |
+| Exercise 3.G.5(c), Proposition 3.G.3 | Slutsky equation for the composite demand | `exercise_3_G_5c_G3` |
+
+### Section 3.I: Exercise 3.I.8(a), "only if" (module `LastQuasilinear`)
+
+Numeraire `k` (the book's good 3), consumption set `X = {x : x_l ≥ 0, l ≠ k}` (Definition
+3.B.7), normalized prices `P = {p ≫ 0, p_k = 1}` (`lastNormPrices`).
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Exercise 3.I.8(a), p. 103 | If `u` is continuous on `X`, strictly increasing in good `k`, and its demand for the goods `l ≠ k` is a continuous wealth-independent function `y(p)` (`y(p) + (w - p·y(p)) e_k ∈ x(p, w)` for all `w ∈ ℝ`), then `x_k + φ(x)`, `φ(x) = inf_{p ∈ P}(p·x - x_k - E(p))` independent of `x_k`, represents `u` on every demanded bundle | `exercise_3_I_8a_only_if` |
+| Same | If every bundle of `X` is demanded at some prices, `x_k + φ(x)` represents `u` on `X` | `exercise_3_I_8a_only_if_all` |
+| Proof | `P` is convex; a function with increments `≤ |(p' - p)·(y(p') - y(p))|`, `y` continuous, is constant on `P` (zero derivative along segments) | `lastNormPrices_convex`, `last_const_of_small_variation` |
+| Hypotheses consistent | `u = x₂ + 2√x₁`, `y(p) = (1/p₁², 0)` satisfy all hypotheses | `lastSqrtUtility`, `lastSqrtDemand`, `last_3_I_8a_instance` |
+| Exercise 3.I.8(a), "if" | (earlier module) | `exercise_3_I_8a` |
+
+### Section 3.I: Figure 3.I.8 and footnote 29 (module `LastWelfare`)
+
+Cobb-Douglas `x₁^α x₂^{1-α}`, `α ∈ (0, 1)`, `p⁰ ≫ 0`, `w > 0`; the price of good 1 moves from
+`a = p⁰₁` to `s`, `p¹ = (s, p⁰₂)`, `τ = s - a`. Measures: (3.I.5) `DWL_EV = -τx₁(p¹, w) - EV`;
+(3.I.6) `DWL_CV = -CV - τh₁(p¹, u⁰)`; the Walrasian-curve version `DWL_AV = -AV - τx₁(p¹, w)`.
+
+| Source | Claim | Lean |
+| --- | --- | --- |
+| Closed forms | The three measures (and the mixed measure) computed from the project's `expenditure`, `indirectUtility`, `equivalentVariation`, `compensatingVariation`, `hicksianOf`, `areaVariation`; `e(p, v(p', w)) = wC(p')/C(p)`; `AV = αw log(a/s)` | `last_cd_dwl_ev_eq`, `last_cd_dwl_cv_eq`, `last_cd_dwl_av_eq`, `last_cd_dwl_mixed_eq`, `last_cd_expenditure_indirect`, `last_cdConst_priceLine`, `last_priceLine_zero`, `last_priceLine_one`, `lastQ`, `lastQ_pos`, `lastQ_self`, `lastQ_hasDerivAt`, `lastDwlEV`, `lastDwlCV`, `lastDwlAV`, `lastDwlMixed` |
+| Expansions | `DWL_EV, DWL_CV = α(1-α)w(s-a)²/(2a²) + o`, `DWL_AV = αw(s-a)²/(2a²) + o`, mixed `α(1+α)w(s-a)²/(2a²) + o` | `lastDwlEV_expansion`, `lastDwlCV_expansion`, `lastDwlAV_expansion`, `lastDwlMixed_expansion`, `last_quadratic_of_deriv`, `last_revenue_hasDerivAt`, `last_inv_sq_hasDerivAt` |
+| Ratio lemma | `F ≈ c(s-a)²`, `G ≈ d(s-a)²`, `c ≠ 0` ⇒ `(G - F)/F → (d - c)/c` | `last_ratio_limit` |
+| Section 3.I, p. 90, Figure 3.I.8 | "The percentage difference between these two areas need not grow small as the price change grows small": `(DWL_AV - DWL)/DWL → α/(1-α) ≠ 0` for both book measures | `figure_3_I_8_ev`, `figure_3_I_8_cv`, `figure_3_I_8` |
+| Footnote 29, p. 90 (computation of source-map-F2) | With the mixed measure `-CV - τx₁(p¹, w)`, the limit is `-α/(α+1)` | `footnote_3_I_29_mixed` |
+
+### OPEN after part G
+
+| Source | Item | What remains |
+| --- | --- | --- |
+| Footnote 29, p. 90 | "The area variation measure need not give the correct ranking even for small taxes" (two taxed goods, equal revenue `T`) | Cobb-Douglas cannot show it: with taxes on goods of shares `α₁, α₂` and equal revenue, both rankings are by `α_l` at leading order. A three-good example that works at leading order: `u = x₁^α (x₃ + 2β√x₂)^{1-α}` (full income `W = w + β²/p₂`, `x₁ = αW/p₁`, `x₂ = β²/p₂²`, good 2 without wealth effect) at `p = (1, 1, 1)` with `α < 1/5` and `max(2β²/(1-α), (1-α)β²/(2α)) < W < β²/(2α)` (e.g. `α = 1/10`, `β = 1`, `W = 4.75`): then `DWL₁ ≈ R²(1-α)/(2αW) < DWL₂ ≈ R²/β² < AV-DWL₁ ≈ R²/(2αW)`. Missing: the EMP/UMP closed forms for this utility on `ℝ³_+` (corner `x₃ = 0` at low wealth), the equal-revenue tax rates as functions of `T` (inverting `τ x_l(p + τe_l)`), and the second-order expansions in `T` |

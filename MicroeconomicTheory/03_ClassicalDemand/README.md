@@ -8,13 +8,15 @@ Shephard's lemma, the Slutsky equation and Roy's identity (3.G), integrability (
 welfare evaluation (3.I), the strong axiom (3.J), Appendix 3.A on continuity and
 differentiability of Walrasian demand, the end-of-chapter exercises, and Mathematical
 Appendix Sections M.C, M.E, M.F, M.G, M.H, M.J, M.K and M.L. The audit passed
-**772 theorems and 942 declarations across 58 modules**. Coverage is in the
+**949 theorems and 1152 declarations across 78 modules**. Coverage is in the
 [source map](docs/source-map.md); its first section lists the items still OPEN.
 Departures from the printed text are in [corrections](docs/corrections.md).
 
 The chapter was built in parts. Part A (3.A-3.D, M.C, M.F, M.J, M.K) laid the shared
 definitions in `Basic`; part B added 3.E-3.G and M.E, M.G, M.L; part C added 3.J,
-Appendix 3.A and M.H; part D added 3.H-3.I; part E closed open items across the chapter.
+Appendix 3.A and M.H; part D added 3.H-3.I; parts E, F1, F2, F3 and G closed open items across the chapter, including
+Frobenius integrability for every number of goods, Halkin's Lagrange theorem, the
+transversality theorem M.E.2 and Debreu's representation theorem for any consumption set.
 The source map and corrections keep these parts as sections.
 
 This is a Lake project pinned to Lean and Mathlib `v4.34.0`. It imports (Lake `path`
@@ -22,7 +24,8 @@ requirements) MWG Chapters 1-2 (`MWGPreferenceChoice`: choice structures and the
 `MWGConsumerChoice`: budgets, demand properties, the Slutsky matrix, Appendix M.A/M.B/M.D) and
 Kreps Chapters 1-4 (`ChoicePreferenceUtility`, `PreferenceProperties`: Debreu's continuous
 representation; `ConsumerDemand`: Berge's theorem, Cobb-Douglas and CES demand;
-`RevealedPreference`: GARP), with bridge theorems. See
+`RevealedPreference`: GARP), with bridge theorems, and LeanEconomics (Lake `git` requirement,
+pinned to `04deccaf63`) for Brouwer's theorem in Halkin's proof. See
 [third-party notices](THIRD_PARTY_NOTICES.md).
 
 `Basic` is the shared foundation: preferences on a consumption set (`RationalOn`,
@@ -90,6 +93,26 @@ Walrasian demand correspondence `walrasianDemand` and the indirect utility `indi
 | [CloserGivenExpenditure](MWGClassicalDemand/CloserGivenExpenditure.lean) | 8 | Exercise 3.G.16(a)-(b) and Roy's identity in (c) |
 | [CloserComposite](MWGClassicalDemand/CloserComposite.lean) | 1 | Exercise 3.G.5(a): Hicksian composite commodities |
 | [CloserCobbDouglas](MWGClassicalDemand/CloserCobbDouglas.lean) | 4 | Exercise 3.G.2: Cobb-Douglas satisfies Propositions 3.G.1-3.G.4; Roy's identity for the LES |
+| [HardIntegrability](MWGClassicalDemand/HardIntegrability.lean) | 15 | Footnote 18: global solution of (3.H.1) for L = 2; integrability for two goods from primitive hypotheses |
+| [HardHalkin](MWGClassicalDemand/HardHalkin.lean) | 6 | Theorems M.K.1-M.K.2 for merely differentiable functions (Halkin, via Brouwer) |
+| [HardSecondOrder](MWGClassicalDemand/HardSecondOrder.lean) | 3 | Second-order necessary conditions, p. 958 |
+| [HardEnvelope](MWGClassicalDemand/HardEnvelope.lean) | 3 | Theorem M.L.1 with only v differentiable; the constraint qualification is needed |
+| [HardSard](MWGClassicalDemand/HardSard.lean) | 6 | Theorem M.E.2, the transversality theorem |
+| [FrobeniusDependence](MWGClassicalDemand/FrobeniusDependence.lean) | 2 | Uniform first-order Taylor remainder on compact convex sets; differentiable dependence of an ODE solution on a parameter, given a solution of the variational equation (two Gronwall estimates) |
+| [FrobeniusTheorem](MWGClassicalDemand/FrobeniusTheorem.lean) | 8 | Frobenius' theorem (sufficiency) for `∂Z/∂q = f(q, Z)` on `ℝ^L × ℝ` by integration along rays: global existence, uniqueness, differentiability via the variational equation and the integrability condition; family strictly increasing, onto and continuous in the initial value |
+| [FrobeniusIntegrability](MWGClassicalDemand/FrobeniusIntegrability.lean) | 12 | (3.H.2) in logarithmic coordinates; symmetry of `S` as the integrability condition; existence of solutions of (3.H.2) for any `L` (`frob_3_H_2_exists`, `frob_expenditure_family`); the integrability theorem from primitive hypotheses (`integrability_general`) |
+| [FrobeniusOnePrice](MWGClassicalDemand/FrobeniusOnePrice.lean) | 15 | Small type p. 80: the one-price subproblems (global existence without symmetry, uniqueness) and the one-price-at-a-time construction ends at `E(p̄)` (`frob_one_price_at_a_time`, `frob_one_price_at_a_time_exists`) |
+| [EconDebreu](MWGClassicalDemand/EconDebreu.lean) | 11 | Proposition 3.C.1 for every `X ⊆ ℝ^L`; Debreu's theorem on second-countable spaces; open-gap lemma |
+| [EconIntegrability](MWGClassicalDemand/EconIntegrability.lean) | 7 | Exercise 3.H.2 and p. 78: differentiable `e` ⇒ `K = V_ū` convex, generating preferences convex |
+| [EconGivenExpenditure](MWGClassicalDemand/EconGivenExpenditure.lean) | 5 | Exercise 3.G.16(c): Hicksian and Walrasian demands, Slutsky equation |
+| [EconBoundary](MWGClassicalDemand/EconBoundary.lean) | 4 | Exercise 3.AA.2: `e` not jointly continuous at boundary prices (counterexample) |
+| [EconWelfare](MWGClassicalDemand/EconWelfare.lean) | 7 | Footnote 28 (CV); relative errors of AV and EV (p. 89); (3.I.9) second-order accuracy; Peano second-order Taylor lemma |
+| [EconRevealed](MWGClassicalDemand/EconRevealed.lean) | 10 | Exercise 3.D.7(a)-(e): regions of permissible choices and rationalizing utilities |
+| [LastRevealed](MWGClassicalDemand/LastRevealed.lean) | 12 | Exercise 3.D.7(d): iff `t ≤ 11/2`; normal demand function for `x₂ + min(x₁, 3 + x₁/4, 3 + x¹₁/4)` on `ℝ²_+`; the earlier hypothesis is unsatisfiable |
+| [LastWelfare](MWGClassicalDemand/LastWelfare.lean) | 23 | Figure 3.I.8: Cobb-Douglas closed forms of (3.I.5), (3.I.6) and the AV deadweight loss, second-order expansions, relative error `→ α/(1-α)`; footnote 29 computation (`-α/(α+1)`, mixed measure) |
+| [LastQuasilinear](MWGClassicalDemand/LastQuasilinear.lean) | 5 | Exercise 3.I.8(a) "only if": `x_k + inf_p(p·x - x_k - E(p))` represents `u` on demanded bundles; constancy lemma; consistent instance |
+| [LastComposite](MWGClassicalDemand/LastComposite.lean) | 14 | Bridge `(x, z) ↦ Fin.snoc x z`; `ũ` attained, budget exhausted, continuous (Berge), locally nonsatiated, strictly quasiconcave |
+| [LastCompositeApps](MWGClassicalDemand/LastCompositeApps.lean) | 9 | Exercise 3.G.5(b)-(c): Propositions 3.D.2, 3.G.4, 3.E.3, 3.G.1-3.G.3 for the composite problem; consistent instance |
 
 From this directory, run:
 

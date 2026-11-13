@@ -85,6 +85,23 @@ import ConsumerDemand.CESDemand
 import ConsumerDemand.CESContinuity
 import Mathlib.Data.Rat.Cast.Order
 import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Topology.Order.MonotoneContinuity
+import LeanEconomics.FixedPoint.Brouwer
+import Mathlib.Topology.Algebra.Module.FiniteDimension
+import Mathlib.MeasureTheory.Function.Jacobian
+import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv
+import Mathlib.Analysis.Calculus.FDeriv.OfCompLeft
+import Mathlib.Analysis.Normed.Ring.Units
+import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
+import Mathlib.Analysis.Normed.Operator.Prod
+import Mathlib.Analysis.ODE.Gronwall
+import Mathlib.Topology.UniformSpace.HeineCantor
+import Mathlib.Analysis.Calculus.Deriv.Pi
+import Mathlib.Order.CountableDenseLinearOrder
+import Mathlib.Topology.Algebra.InfiniteSum.Real
+import Mathlib.Data.Prod.Lex
+import Mathlib.Topology.Instances.Matrix
+import Mathlib.Analysis.Convex.SpecificFunctions.Pow
 set_option autoImplicit false
 
 /-
@@ -19732,6 +19749,5918 @@ theorem exercise_3_G_2 {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p : Fin 2 →
 
 end MWG.ClassicalDemand
 
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Integrability with two commodities: global solutions of (3.H.1)
+
+MWG, Section 3.H, pp. 78-80, and footnote 18: the case `L = 2`, from primitive hypotheses.
+
+* A scalar ODE `y' = V(t, y)` whose field is `C¹` on `ℝ²` and bounded by `1` has, through every
+  point, a solution defined on all of `ℝ`, and any two solutions defined on an interval that agree
+  at one point agree on that interval (`hardInt_exists_global`, `hardInt_unique_Ioo`,
+  `hardInt_unique`). Existence is the Picard-Lindelöf theorem on `[t₀ - N, t₀ + N]` with the
+  ball of radius `N` (the bound `|V| ≤ 1` keeps solutions inside it), glued over `N`.
+* In logarithmic coordinates `s = log p₁`, `z = log w`, equation (3.H.1)
+  `e'(p₁) = x₁((p₁, 1), e(p₁))` becomes `z'(s) = p₁ x₁ / w`, which lies in `[0, 1]` by Walras' law
+  and nonnegativity of demand (`hardIntLogField`, `hardIntLogField_abs_le`). Hence (3.H.1) has a
+  unique positive solution on all of `p₁ > 0` through every initial condition `(p₁⁰, w⁰) ≫ 0`
+  (`footnote_3_18_global`, `footnote_3_18_unique`): this is the continuation of footnote 18.
+* The solutions, indexed by `u` with `e(1, u) = exp u`, are strictly increasing, continuous and
+  onto `(0, ∞)` in `u` (`hardInt_solution_family`): continuity comes from monotonicity and
+  surjectivity, so no continuous-dependence theorem is needed.
+* **The `L = 2` integrability claim of p. 80** (`integrability_two_goods_global`): a continuously
+  differentiable, nonnegative demand function on `p ≫ 0, w > 0` that is homogeneous of degree zero
+  and satisfies Walras' law and the weak axiom is the Walrasian demand of a preference. The book
+  says "differentiable"; we assume `C¹`, the "minor technical requirement" of footnote 19
+  (`docs/corrections-F1.md`, F1-1).
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology
+open scoped NNReal
+
+/-- A field `V` that is `C¹` on `ℝ²` is Lipschitz in `y`, uniformly for `t` in a compact interval,
+on every closed ball. -/
+theorem hardInt_lipschitz {V : ℝ → ℝ → ℝ} (hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2))
+    (A B c R : ℝ) :
+    ∃ K : ℝ≥0, ∀ t ∈ Set.Icc A B, LipschitzOnWith K (V t) (Metric.closedBall c R) := by
+  obtain ⟨K, hK⟩ := (hV.contDiffOn (s := Set.Icc A B ×ˢ Metric.closedBall c R)
+    ).exists_lipschitzOnWith one_ne_zero ((convex_Icc A B).prod (convex_closedBall c R))
+    (isCompact_Icc.prod (isCompact_closedBall c R))
+  refine ⟨K, fun t ht => LipschitzOnWith.of_dist_le_mul fun y hy y' hy' => ?_⟩
+  have := hK.dist_le_mul (t, y) ⟨ht, hy⟩ (t, y') ⟨ht, hy'⟩
+  simp only [Prod.dist_eq, dist_self, max_eq_right dist_nonneg] at this
+  exact this
+
+/-- Uniqueness for `y' = V(t, y)` with `V` of class `C¹`: two solutions on an open interval that
+agree at one point of it agree on the whole interval. -/
+theorem hardInt_unique_Ioo {V : ℝ → ℝ → ℝ} (hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2))
+    {f g : ℝ → ℝ} {A B t₀ : ℝ} (ht₀ : t₀ ∈ Set.Ioo A B)
+    (hf : ∀ t ∈ Set.Ioo A B, HasDerivAt f (V t (f t)) t)
+    (hg : ∀ t ∈ Set.Ioo A B, HasDerivAt g (V t (g t)) t) (h0 : f t₀ = g t₀) :
+    Set.EqOn f g (Set.Ioo A B) := by
+  intro t ht
+  have hAm : A < min t t₀ := lt_min ht.1 ht₀.1
+  have hBm : max t t₀ < B := max_lt ht.2 ht₀.2
+  set A' := (A + min t t₀) / 2 with hA'
+  set B' := (B + max t t₀) / 2 with hB'
+  have hsub : Set.Icc A' B' ⊆ Set.Ioo A B := fun s hs =>
+    ⟨by linarith [hs.1], by linarith [hs.2]⟩
+  have hfc : ContinuousOn f (Set.Icc A' B') := fun s hs =>
+    (hf s (hsub hs)).continuousAt.continuousWithinAt
+  have hgc : ContinuousOn g (Set.Icc A' B') := fun s hs =>
+    (hg s (hsub hs)).continuousAt.continuousWithinAt
+  obtain ⟨Cf, hCf⟩ := isCompact_Icc.exists_bound_of_continuousOn hfc
+  obtain ⟨Cg, hCg⟩ := isCompact_Icc.exists_bound_of_continuousOn hgc
+  obtain ⟨K, hK⟩ := hardInt_lipschitz hV A' B' 0 (max Cf Cg)
+  have hmin1 : min t t₀ ≤ t := min_le_left _ _
+  have hmin2 : min t t₀ ≤ t₀ := min_le_right _ _
+  have hmax1 : t ≤ max t t₀ := le_max_left _ _
+  have hmax2 : t₀ ≤ max t t₀ := le_max_right _ _
+  refine ODE_solution_unique_of_mem_Ioo (v := V) (s := fun _ => Metric.closedBall 0 (max Cf Cg))
+    (fun s hs => hK s (Set.Ioo_subset_Icc_self hs)) ⟨by linarith, by linarith⟩
+    (fun s hs => ⟨hf s (hsub (Set.Ioo_subset_Icc_self hs)), ?_⟩)
+    (fun s hs => ⟨hg s (hsub (Set.Ioo_subset_Icc_self hs)), ?_⟩) h0 ⟨by linarith, by linarith⟩
+  · rw [mem_closedBall_zero_iff]
+    exact (hCf s (Set.Ioo_subset_Icc_self hs)).trans (le_max_left _ _)
+  · rw [mem_closedBall_zero_iff]
+    exact (hCg s (Set.Ioo_subset_Icc_self hs)).trans (le_max_right _ _)
+
+/-- Global uniqueness for `y' = V(t, y)` with `V` of class `C¹`. -/
+theorem hardInt_unique {V : ℝ → ℝ → ℝ} (hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2))
+    {f g : ℝ → ℝ} {t₀ : ℝ} (hf : ∀ t, HasDerivAt f (V t (f t)) t)
+    (hg : ∀ t, HasDerivAt g (V t (g t)) t) (h0 : f t₀ = g t₀) : f = g := by
+  funext t
+  have h1 : min t t₀ - 1 < t := by linarith [min_le_left t t₀]
+  have h2 : t < max t t₀ + 1 := by linarith [le_max_left t t₀]
+  have h3 : min t t₀ - 1 < t₀ := by linarith [min_le_right t t₀]
+  have h4 : t₀ < max t t₀ + 1 := by linarith [le_max_right t t₀]
+  exact hardInt_unique_Ioo hV ⟨h3, h4⟩ (fun s _ => hf s) (fun s _ => hg s) h0 ⟨h1, h2⟩
+
+/-- Local existence for `y' = V(t, y)` with `V` of class `C¹` and `|V| ≤ 1`, on
+`(t₀ - N, t₀ + N)`, by the Picard-Lindelöf theorem with the ball of radius `N` around `y₀`. -/
+theorem hardInt_exists_local {V : ℝ → ℝ → ℝ} (hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2))
+    (hb : ∀ t y, |V t y| ≤ 1) (t₀ y₀ : ℝ) (N : ℕ) :
+    ∃ α : ℝ → ℝ, α t₀ = y₀ ∧ ∀ t ∈ Set.Ioo (t₀ - N) (t₀ + N), HasDerivAt α (V t (α t)) t := by
+  obtain ⟨K, hK⟩ := hardInt_lipschitz hV (t₀ - N) (t₀ + N) y₀ N
+  have hN : (0 : ℝ) ≤ N := Nat.cast_nonneg N
+  have ht : t₀ ∈ Set.Icc (t₀ - N) (t₀ + N) := ⟨by linarith, by linarith⟩
+  have hPL : IsPicardLindelof V (⟨t₀, ht⟩ : Set.Icc (t₀ - N) (t₀ + N)) y₀ (N : ℝ≥0) 0 1 K :=
+    { lipschitzOnWith := fun t ht' => by
+        rw [NNReal.coe_natCast]
+        exact hK t ht'
+      continuousOn := fun y _ =>
+        (hV.continuous.comp (continuous_id.prodMk continuous_const)).continuousOn
+      norm_le := fun t _ y _ => by
+        rw [Real.norm_eq_abs, NNReal.coe_one]
+        exact hb t y
+      mul_max_le := by
+        simp only [NNReal.coe_one, one_mul, NNReal.coe_natCast, NNReal.coe_zero, sub_zero]
+        rw [max_le_iff]
+        constructor <;> linarith }
+  obtain ⟨α, hα0, hα⟩ := hPL.exists_eq_forall_mem_Icc_hasDerivWithinAt₀
+  exact ⟨α, hα0, fun t ht' =>
+    (hα t (Set.Ioo_subset_Icc_self ht')).hasDerivAt (Icc_mem_nhds ht'.1 ht'.2)⟩
+
+/-- Global existence for `y' = V(t, y)` with `V` of class `C¹` and `|V| ≤ 1`: through every
+point `(t₀, y₀)` there is a solution defined on all of `ℝ` (the local solutions on
+`(t₀ - N, t₀ + N)` agree by uniqueness and are glued). -/
+theorem hardInt_exists_global {V : ℝ → ℝ → ℝ} (hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2))
+    (hb : ∀ t y, |V t y| ≤ 1) (t₀ y₀ : ℝ) :
+    ∃ α : ℝ → ℝ, α t₀ = y₀ ∧ ∀ t, HasDerivAt α (V t (α t)) t := by
+  choose β hβ0 hβ using fun N : ℕ => hardInt_exists_local hV hb t₀ y₀ N
+  have hcons : ∀ N M : ℕ, N ≤ M → Set.EqOn (β N) (β M) (Set.Ioo (t₀ - N) (t₀ + N)) := by
+    intro N M hNM t ht
+    have hNM' : (N : ℝ) ≤ M := Nat.cast_le.mpr hNM
+    have hsub : Set.Ioo (t₀ - N) (t₀ + N) ⊆ Set.Ioo (t₀ - M) (t₀ + M) :=
+      Set.Ioo_subset_Ioo (by linarith) (by linarith)
+    have hNpos : (0 : ℝ) < N := by
+      by_contra h
+      have : (N : ℝ) = 0 := le_antisymm (not_lt.mp h) (Nat.cast_nonneg N)
+      rw [this] at ht
+      linarith [ht.1, ht.2]
+    exact hardInt_unique_Ioo hV ⟨by linarith, by linarith⟩ (hβ N)
+      (fun s hs => hβ M s (hsub hs)) ((hβ0 N).trans (hβ0 M).symm) ht
+  set n : ℝ → ℕ := fun t => ⌈|t - t₀|⌉₊ + 1 with hn_def
+  have hn : ∀ t, t ∈ Set.Ioo (t₀ - n t) (t₀ + n t) := fun t => by
+    have h1 := Nat.le_ceil |t - t₀|
+    have h2 : ((n t : ℕ) : ℝ) = (⌈|t - t₀|⌉₊ : ℝ) + 1 := by
+      simp only [hn_def]
+      push_cast
+      ring
+    rw [h2]
+    constructor
+    · linarith [neg_abs_le (t - t₀)]
+    · linarith [le_abs_self (t - t₀)]
+  refine ⟨fun t => β (n t) t, hβ0 _, fun t => ?_⟩
+  have heq : (fun s => β (n s) s) =ᶠ[𝓝 t] β (n t) := by
+    filter_upwards [Ioo_mem_nhds (hn t).1 (hn t).2] with s hs
+    rcases le_total (n s) (n t) with h | h
+    · exact hcons _ _ h (hn s)
+    · exact (hcons _ _ h hs).symm
+  exact (hβ (n t) t (hn t)).congr_of_eventuallyEq heq
+
+/-- **Footnote 18** (MWG, p. 79). Equation (3.H.1) `e'(p₁) = x₁((p₁, 1), e)` in logarithmic
+coordinates `s = log p₁`, `z = log e`: `z'(s) = p₁ x₁((p₁, 1), w) / w` with `p₁ = exp s`,
+`w = exp z`. -/
+noncomputable def hardIntLogField (x : DemandFunction 2) (s z : ℝ) : ℝ :=
+  Real.exp s * x ![Real.exp s, 1] (Real.exp z) 0 / Real.exp z
+
+/-- The price vector `(exp s, 1)` is strictly positive. -/
+theorem hardInt_strictlyPositive_exp (s : ℝ) :
+    StrictlyPositive (![Real.exp s, 1] : Fin 2 → ℝ) := fun i => by
+  fin_cases i
+  · simp [Real.exp_pos]
+  · simp
+
+/-- If demand is `C¹` on `p ≫ 0, w > 0`, the logarithmic field is `C¹` on `ℝ²`. -/
+theorem hardIntLogField_contDiff {x : DemandFunction 2}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain 2)) :
+    ContDiff ℝ 1 (fun z : ℝ × ℝ => hardIntLogField x z.1 z.2) := by
+  have hg : ContDiff ℝ 1
+      (fun z : ℝ × ℝ => ((![Real.exp z.1, 1] : Fin 2 → ℝ), Real.exp z.2)) := by
+    refine ContDiff.prodMk (contDiff_pi.mpr fun i => ?_) (Real.contDiff_exp.comp contDiff_snd)
+    fin_cases i
+    · convert Real.contDiff_exp.comp contDiff_fst using 1
+      funext z
+      rfl
+    · simpa using contDiff_const
+  have hmaps : ∀ z : ℝ × ℝ,
+      ((![Real.exp z.1, 1] : Fin 2 → ℝ), Real.exp z.2) ∈ demandDomain 2 :=
+    fun z => ⟨hardInt_strictlyPositive_exp z.1, Real.exp_pos _⟩
+  have hc := hx.comp_contDiff hg hmaps
+  have h0 : ContDiff ℝ 1 (fun z : ℝ × ℝ => x ![Real.exp z.1, 1] (Real.exp z.2) 0) :=
+    contDiff_pi.mp hc 0
+  exact ((Real.contDiff_exp.comp contDiff_fst).mul h0).div
+    (Real.contDiff_exp.comp contDiff_snd) fun z => (Real.exp_pos _).ne'
+
+/-- By Walras' law and nonnegativity of demand, `0 ≤ p₁ x₁ / w ≤ 1`: the logarithmic field is
+bounded by `1`. -/
+theorem hardIntLogField_abs_le {x : DemandFunction 2} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant 2) (s z : ℝ) :
+    |hardIntLogField x s z| ≤ 1 := by
+  have hq := hardInt_strictlyPositive_exp s
+  have hw := hW _ _ ⟨hq, Real.exp_pos z⟩
+  have hn := hnn _ _ hq (Real.exp_pos z)
+  have h0 : 0 ≤ x ![Real.exp s, 1] (Real.exp z) 0 := hn 0
+  have h1 : 0 ≤ x ![Real.exp s, 1] (Real.exp z) 1 := hn 1
+  simp only [dotProduct, Fin.sum_univ_two, Matrix.cons_val_zero, Matrix.cons_val_one,
+    one_mul] at hw
+  have hez := Real.exp_pos z
+  have hes := Real.exp_pos s
+  unfold hardIntLogField
+  rw [abs_le]
+  constructor
+  · have : 0 ≤ Real.exp s * x ![Real.exp s, 1] (Real.exp z) 0 / Real.exp z :=
+      div_nonneg (mul_nonneg hes.le h0) hez.le
+    linarith
+  · rw [div_le_one hez]
+    linarith
+
+/-- From the logarithmic equation back to (3.H.1): if `z' = V(s, z)` on `ℝ`, then
+`e(p₁) = exp z(log p₁)` solves `e'(p₁) = x₁((p₁, 1), e(p₁))` at every `p₁ > 0`. -/
+theorem hardInt_lift_hasDerivAt {x : DemandFunction 2} {Z : ℝ → ℝ}
+    (hZ : ∀ s, HasDerivAt Z (hardIntLogField x s (Z s)) s) {r : ℝ} (hr : 0 < r) :
+    HasDerivAt (fun t => Real.exp (Z (Real.log t)))
+      (x ![r, 1] (Real.exp (Z (Real.log r))) 0) r := by
+  have h1 := (hZ (Real.log r)).comp r (Real.hasDerivAt_log hr.ne')
+  have h2 := (Real.hasDerivAt_exp _).comp r h1
+  refine h2.congr_deriv ?_
+  unfold hardIntLogField
+  rw [Real.exp_log hr]
+  simp only [Function.comp_apply]
+  field_simp
+
+/-- From (3.H.1) to the logarithmic equation: a positive solution `e` of (3.H.1) on `p₁ > 0` gives
+the solution `z(s) = log e(exp s)` of `z' = V(s, z)` on `ℝ`. -/
+theorem hardInt_log_hasDerivAt {x : DemandFunction 2} {e : ℝ → ℝ}
+    (hpos : ∀ r, 0 < r → 0 < e r)
+    (he : ∀ r, 0 < r → HasDerivAt e (x ![r, 1] (e r) 0) r) (s : ℝ) :
+    HasDerivAt (fun t => Real.log (e (Real.exp t)))
+      (hardIntLogField x s (Real.log (e (Real.exp s)))) s := by
+  have hes := Real.exp_pos s
+  have h1 := (he _ hes).comp s (Real.hasDerivAt_exp s)
+  have h2 := h1.log (hpos _ hes).ne'
+  refine h2.congr_deriv ?_
+  unfold hardIntLogField
+  rw [Real.exp_log (hpos _ hes)]
+  simp only [Function.comp_apply]
+  field_simp
+
+/-- Two global solutions of `y' = V(t, y)` (`V` of class `C¹`) that are ordered at one time are
+strictly ordered at every time: solutions cannot cross. -/
+theorem hardInt_strict_order {V : ℝ → ℝ → ℝ} (hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2))
+    {f g : ℝ → ℝ} (hf : ∀ t, HasDerivAt f (V t (f t)) t) (hg : ∀ t, HasDerivAt g (V t (g t)) t)
+    {t₀ : ℝ} (h0 : f t₀ < g t₀) (t : ℝ) : f t < g t := by
+  by_contra h
+  push Not at h
+  have hc : ContinuousOn (fun s => g s - f s) (Set.uIcc t₀ t) := fun s _ =>
+    ((hg s).continuousAt.sub (hf s).continuousAt).continuousWithinAt
+  have hmem : (0 : ℝ) ∈ Set.uIcc (g t₀ - f t₀) (g t - f t) := by
+    rw [Set.mem_uIcc]
+    right
+    constructor <;> linarith
+  obtain ⟨c, -, hc0⟩ := intermediate_value_uIcc hc hmem
+  have hfg : f c = g c := by
+    simp only at hc0
+    linarith
+  have := hardInt_unique hV hf hg hfg
+  rw [this] at h0
+  exact lt_irrefl _ h0
+
+/-- **Footnote 18** (MWG, p. 79), global form. Let `x` be a nonnegative demand function for two
+goods satisfying Walras' law and continuously differentiable on `p ≫ 0, w > 0`. For every
+initial condition `(p₁⁰, w⁰)` with `w⁰ > 0` (the book takes `p₁⁰ > 0`; the statement holds for
+every `p₁⁰`), equation (3.H.1) has a solution on all of `p₁ > 0`, which is positive. -/
+theorem footnote_3_18_global {x : DemandFunction 2} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant 2)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain 2)) {p₀ w₀ : ℝ} (hw₀ : 0 < w₀) :
+    ∃ e : ℝ → ℝ, e p₀ = w₀ ∧ ∀ r, 0 < r → 0 < e r ∧ HasDerivAt e (x ![r, 1] (e r) 0) r := by
+  obtain ⟨Z, hZ0, hZ⟩ := hardInt_exists_global (hardIntLogField_contDiff hx)
+    (hardIntLogField_abs_le hW hnn) (Real.log p₀) (Real.log w₀)
+  refine ⟨fun t => Real.exp (Z (Real.log t)), ?_, fun r hr =>
+    ⟨Real.exp_pos _, hardInt_lift_hasDerivAt hZ hr⟩⟩
+  simp only [hZ0, Real.exp_log hw₀]
+
+/-- **Footnote 18** (MWG, p. 79), uniqueness. If `x` is continuously differentiable on
+`p ≫ 0, w > 0`, two positive solutions of (3.H.1) on `p₁ > 0` that agree at one `p₁⁰ > 0` agree
+at every `p₁ > 0`. -/
+theorem footnote_3_18_unique {x : DemandFunction 2}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain 2)) {e₁ e₂ : ℝ → ℝ}
+    (hpos₁ : ∀ r, 0 < r → 0 < e₁ r) (hpos₂ : ∀ r, 0 < r → 0 < e₂ r)
+    (h₁ : ∀ r, 0 < r → HasDerivAt e₁ (x ![r, 1] (e₁ r) 0) r)
+    (h₂ : ∀ r, 0 < r → HasDerivAt e₂ (x ![r, 1] (e₂ r) 0) r) {p₀ : ℝ} (hp₀ : 0 < p₀)
+    (h0 : e₁ p₀ = e₂ p₀) {r : ℝ} (hr : 0 < r) : e₁ r = e₂ r := by
+  have hu := hardInt_unique (hardIntLogField_contDiff hx) (t₀ := Real.log p₀)
+    (hardInt_log_hasDerivAt hpos₁ h₁) (hardInt_log_hasDerivAt hpos₂ h₂)
+    (by simp only [Real.exp_log hp₀, h0])
+  have := congrFun hu (Real.log r)
+  simp only [Real.exp_log hr] at this
+  exact Real.log_injOn_pos (hpos₁ r hr) (hpos₂ r hr) this
+
+/-- **Footnote 18 and p. 80** (MWG). The family of solutions of (3.H.1) indexed by the utility
+level `u`, with `e(1, u) = exp u`: each `e(·, u)` is a positive solution on `p₁ > 0`, and at every
+`p₁ > 0`, `u ↦ e(p₁, u)` is strictly increasing, continuous and onto `(0, ∞)`. -/
+theorem hardInt_solution_family {x : DemandFunction 2} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant 2)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain 2)) :
+    ∃ e : ℝ → ℝ → ℝ, (∀ u r, 0 < r → HasDerivAt (fun s => e s u) (x ![r, 1] (e r u) 0) r) ∧
+      (∀ u r, 0 < r → 0 < e r u) ∧ (∀ r, 0 < r → StrictMono (e r)) ∧
+      (∀ r, 0 < r → Continuous (e r)) ∧ (∀ r, 0 < r → ∀ w, 0 < w → ∃ u, e r u = w) ∧
+      ∀ u, e 1 u = Real.exp u := by
+  have hV := hardIntLogField_contDiff hx
+  have hb := hardIntLogField_abs_le hW hnn
+  choose sol hsol0 hsol using fun t₀ y₀ : ℝ => hardInt_exists_global hV hb t₀ y₀
+  set e : ℝ → ℝ → ℝ := fun r u => Real.exp (sol 0 u (Real.log r)) with he
+  -- the logarithmic solution through any point is a member of the family
+  have hmem : ∀ s y, sol 0 (sol s y 0) = sol s y := fun s y =>
+    hardInt_unique hV (t₀ := 0) (hsol 0 _) (hsol s y) (hsol0 0 _)
+  -- strict monotonicity in the initial value at every time
+  have hsm : ∀ s, StrictMono fun u => sol 0 u s := fun s u u' huu' =>
+    hardInt_strict_order hV (hsol 0 u) (hsol 0 u') (t₀ := 0)
+      (by rw [hsol0, hsol0]; exact huu') s
+  have hsurjlog : ∀ s y, ∃ u, sol 0 u s = y := fun s y =>
+    ⟨sol s y 0, by rw [hmem, hsol0]⟩
+  refine ⟨e, fun u r hr => hardInt_lift_hasDerivAt (hsol 0 u) hr, fun u r _ => Real.exp_pos _,
+    fun r _ => Real.exp_strictMono.comp (hsm _), fun r _ => ?_, fun r _ w hw => ?_, fun u => ?_⟩
+  · have hc : Continuous fun u => sol 0 u (Real.log r) :=
+      (hsm _).monotone.continuous_of_surjective fun y => hsurjlog _ y
+    exact Real.continuous_exp.comp hc
+  · obtain ⟨u, hu⟩ := hsurjlog (Real.log r) (Real.log w)
+    exact ⟨u, by simp only [he, hu, Real.exp_log hw]⟩
+  · simp only [he, Real.log_one, hsol0]
+
+/-- **Section 3.H** (MWG, p. 80), the case `L = 2`, from primitive hypotheses. Let `x(p, w)` be a
+nonnegative demand function for two goods that is homogeneous of degree zero, satisfies Walras'
+law and the weak axiom, and is continuously differentiable on `p ≫ 0, w > 0`. Then there is a
+family `e(·, u)` of solutions of (3.H.1) on `p₁ > 0`, and the preference recovered from the
+expenditure functions `E(p, u) = p₂ e(p₁/p₂, u)` rationalizes `x`: its Walrasian demand at every
+`(p, w) ≫ 0` is `{x(p, w)}`. -/
+theorem integrability_two_goods_global {x : DemandFunction 2} (hH : HomogeneousZero x)
+    (hW : WalrasLaw x) (hWA : WeakAxiom x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant 2)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain 2)) :
+    ∃ e : ℝ → ℝ → ℝ, (∀ u r, 0 < r → HasDerivAt (fun s => e s u) (x ![r, 1] (e r u) 0) r) ∧
+      ∀ p w, StrictlyPositive p → 0 < w →
+        walrasianDemandPref (recoveredPref fun q u => twoGoodsLift (fun s => e s u) q) p w =
+          {x p w} := by
+  obtain ⟨e, hode, hepos, hmono, hcont, hsurj, -⟩ := hardInt_solution_family hW hnn hx
+  refine ⟨e, hode, fun p w hp hw => ?_⟩
+  have hD : ∀ q w, StrictlyPositive q → 0 < w → HasFDerivAt (Function.uncurry x)
+      (fderiv ℝ (Function.uncurry x) (q, w)) (q, w) := fun q w hq hw =>
+    ((hx.differentiableOn one_ne_zero (q, w) ⟨hq, hw⟩).differentiableAt
+      ((isOpen_demandDomain 2).mem_nhds ⟨hq, hw⟩)).hasFDerivAt
+  exact integrability_two_goods hH hW hWA hnn hD hode hepos hmono hcont hsurj hp hw
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Theorems M.K.1 and M.K.2 for merely differentiable functions (Halkin's argument)
+
+MWG, Section M.K, pp. 956-960. The book assumes only that the objective and the constraint
+functions are differentiable; the first pass (`theorem_M_K_1`, `theorem_M_K_2`) assumed strict
+differentiability at `x̄`. Here the book's hypotheses suffice, by Halkin's argument (H. Halkin,
+"Implicit functions and optimization problems without continuous differentiability of the
+data", SIAM J. Control 12 (1974)) with Brouwer's fixed point theorem in place of the implicit
+function theorem.
+
+* `hardHalkin_feasible`: if `G : ℝ^N → ℝ^ι` is differentiable at `a` with a surjective derivative
+  `G'` and continuous near `a`, `A` is a right inverse of `G'`, and `ε > 0`, then for all small
+  `t > 0` there is `v` with `‖v‖ ≤ ε t` and `G(a + t z + A v) = G(a) + t G'z`. The point `v` is a
+  fixed point of `v ↦ v - (G(a + t z + A v) - G(a) - t G'z)` on the ball of radius `ε t`
+  (LeanEconomics' `brouwer`).
+* `hardHalkin_cone`: at a local maximizer on a set `S` that contains the points with
+  `G(y) = G(x̄) + t G'z`, `t > 0`, near `x̄`, the derivative of the objective satisfies
+  `f'z ≤ 0`.
+* `theorem_M_K_1_differentiable`, `theorem_M_K_1_book` (Theorem M.K.1) and
+  `theorem_M_K_2_differentiable`, `theorem_M_K_2_book` (Theorem M.K.2): Lagrange and
+  Kuhn-Tucker multipliers when `f` is differentiable at `x̄` and the constraints are
+  differentiable at `x̄` and continuous near it (in the `_book` forms: all functions
+  differentiable on `ℝ^N`, as the book states). The multipliers are then read off from the
+  linearized problem by the first-pass theorems for linear functions.
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology MWG.ConsumerChoice
+
+variable {N M : ℕ}
+
+/-- **Halkin's lemma** (for Theorems M.K.1-M.K.2). Let `G : X → ℝ^ι` (`X` a normed space) be
+differentiable at `a` with derivative `G'`, continuous near `a`, and let `A` be a right inverse
+of `G'`. For every
+direction `z` and `ε > 0` there is `δ > 0` such that for `0 < t < δ` some `v` with `‖v‖ ≤ ε t`
+solves `G(a + t z + A v) = G(a) + t G'z` (Brouwer's fixed point theorem). -/
+theorem hardHalkin_feasible {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
+    {ι : Type*} [Fintype ι] {G : X → ι → ℝ}
+    {G' : X →L[ℝ] (ι → ℝ)} {a : X} (hG : HasFDerivAt G G' a)
+    (hGc : ∀ᶠ y in 𝓝 a, ContinuousAt G y) {A : (ι → ℝ) →L[ℝ] X}
+    (hA : ∀ v, G' (A v) = v) (z : X) {ε : ℝ} (hε : 0 < ε) :
+    ∃ δ > 0, ∀ t, 0 < t → t < δ → ∃ v : ι → ℝ, ‖v‖ ≤ ε * t ∧
+      G (a + t • z + A v) = G a + t • G' z := by
+  set C := ‖z‖ + ‖A‖ * ε + 1 with hC
+  have hC0 : 0 < C := by positivity
+  have ho := hG.isLittleO.def (c := ε / C) (by positivity)
+  obtain ⟨ρ, hρ, hball⟩ := Metric.eventually_nhds_iff_ball.mp (ho.and hGc)
+  refine ⟨ρ / C, by positivity, fun t ht0 htδ => ?_⟩
+  set P : (ι → ℝ) → X := fun v => a + t • z + A v with hP
+  have hPsub : ∀ v, P v - a = t • z + A v := fun v => by simp only [hP]; abel
+  have hPa : ∀ v, ‖v‖ ≤ ε * t → ‖P v - a‖ ≤ C * t := by
+    intro v hv
+    rw [hPsub]
+    have h1 : ‖t • z‖ = t * ‖z‖ := by rw [norm_smul, Real.norm_of_nonneg ht0.le]
+    have h2 : ‖A v‖ ≤ ‖A‖ * (ε * t) :=
+      (A.le_opNorm v).trans (mul_le_mul_of_nonneg_left hv (norm_nonneg _))
+    calc ‖t • z + A v‖ ≤ ‖t • z‖ + ‖A v‖ := norm_add_le _ _
+      _ ≤ t * ‖z‖ + ‖A‖ * (ε * t) := by rw [h1]; linarith
+      _ ≤ C * t := by rw [hC]; nlinarith [norm_nonneg z, norm_nonneg A]
+  have hPball : ∀ v, ‖v‖ ≤ ε * t → P v ∈ Metric.ball a ρ := by
+    intro v hv
+    rw [Metric.mem_ball, dist_eq_norm]
+    have : C * t < ρ := by rwa [lt_div_iff₀ hC0, mul_comm] at htδ
+    linarith [hPa v hv]
+  set Φ : (ι → ℝ) → ι → ℝ := fun v => v - (G (P v) - G a - t • G' z) with hΦ
+  have hΦeq : ∀ v, Φ v = -(G (P v) - G a - G' (P v - a)) := by
+    intro v
+    rw [hPsub, map_add, map_smul, hA]
+    simp only [hΦ]
+    abel
+  set K := Metric.closedBall (0 : ι → ℝ) (ε * t) with hK
+  have hmemK : ∀ v, v ∈ K ↔ ‖v‖ ≤ ε * t := fun v => by
+    rw [hK, Metric.mem_closedBall, dist_zero_right]
+  have hmaps : Set.MapsTo Φ K K := by
+    intro v hv
+    rw [hmemK] at hv ⊢
+    rw [hΦeq, norm_neg]
+    calc _ ≤ ε / C * ‖P v - a‖ := (hball _ (hPball v hv)).1
+      _ ≤ ε / C * (C * t) := mul_le_mul_of_nonneg_left (hPa v hv) (by positivity)
+      _ = ε * t := by field_simp
+  have hcont : ContinuousOn Φ K := by
+    intro v hv
+    have hPc : Continuous P := by
+      simp only [hP]
+      exact continuous_const.add A.continuous
+    have hGP : ContinuousAt G (P v) := (hball _ (hPball v ((hmemK v).mp hv))).2
+    exact (continuousAt_id.sub (((hGP.comp hPc.continuousAt).sub continuousAt_const).sub
+      continuousAt_const)).continuousWithinAt
+  have hne : K.Nonempty := ⟨0, (hmemK 0).mpr (by simp only [norm_zero]; positivity)⟩
+  obtain ⟨v, hvK, hv⟩ := LeanEconomics.FixedPoint.brouwer (isCompact_closedBall _ _)
+    (convex_closedBall _ _) hne hcont hmaps
+  refine ⟨v, (hmemK v).mp hvK, ?_⟩
+  have h0 : G (P v) - G a - t • G' z = 0 := by
+    have hv' : v - (G (P v) - G a - t • G' z) = v := hv
+    rwa [sub_eq_self] at hv'
+  have : G (P v) = G a + t • G' z := by
+    rw [sub_sub, sub_eq_zero] at h0
+    exact h0
+  exact this
+
+/-- **Halkin's cone lemma** (for Theorems M.K.1-M.K.2). Let `x̄` be a local maximizer of `f` on
+`S`, `f` differentiable at `x̄`, and `G : X → ℝ^ι` differentiable at `x̄` with surjective
+derivative `G'` and continuous near `x̄`. If, near `x̄`, every `y` with `G(y) = G(x̄) + t G'z` for
+some `t > 0` lies in `S`, then `f'z ≤ 0`. -/
+theorem hardHalkin_cone {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
+    {ι : Type*} [Finite ι] {f : X → ℝ}
+    {f' : X →L[ℝ] ℝ} {G : X → ι → ℝ} {G' : X →L[ℝ] (ι → ℝ)}
+    {S : Set X} {x z : X} (hmax : IsLocalMaxOn f S x)
+    (hf : HasFDerivAt f f' x) (hG : HasFDerivAt G G' x) (hGc : ∀ᶠ y in 𝓝 x, ContinuousAt G y)
+    (hsurj : G'.range = ⊤)
+    (hS : ∀ᶠ y in 𝓝 x, ∀ t : ℝ, 0 < t → G y = G x + t • G' z → y ∈ S) : f' z ≤ 0 := by
+  have := Fintype.ofFinite ι
+  obtain ⟨A, hA⟩ := G'.exists_rightInverse_of_surjective hsurj
+  have hA' : ∀ v, G' (A v) = v := fun v => by
+    have := congrArg (fun T : (ι → ℝ) →L[ℝ] (ι → ℝ) => T v) hA
+    simpa using this
+  by_contra hpos
+  push Not at hpos
+  set d := f' z with hd
+  set ε := d / (4 * (‖f'‖ * ‖A‖ + 1)) with hε
+  have hε0 : 0 < ε := by positivity
+  set C := ‖z‖ + ‖A‖ * ε + 1 with hC
+  have hC0 : 0 < C := by positivity
+  obtain ⟨δ, hδ, hfeas⟩ := hardHalkin_feasible hG hGc hA' z hε0
+  have hmax' : ∀ᶠ y in 𝓝 x, y ∈ S → f y ≤ f x := eventually_nhdsWithin_iff.mp hmax
+  have hfo := hf.isLittleO.def (c := d / (4 * C)) (by positivity)
+  obtain ⟨ρ, hρ, hball⟩ := Metric.eventually_nhds_iff_ball.mp ((hmax'.and hfo).and hS)
+  set t := min (δ / 2) (ρ / (2 * C)) with ht
+  have ht0 : 0 < t := lt_min (by positivity) (by positivity)
+  have htδ : t < δ := (min_le_left _ _).trans_lt (by linarith)
+  have htρ : C * t ≤ ρ / 2 := by
+    have := min_le_right (δ / 2) (ρ / (2 * C))
+    rw [← ht] at this
+    calc C * t ≤ C * (ρ / (2 * C)) := mul_le_mul_of_nonneg_left this hC0.le
+      _ = ρ / 2 := by field_simp
+  obtain ⟨v, hv, hGv⟩ := hfeas t ht0 htδ
+  set P := x + t • z + A v with hP
+  have hPx : P - x = t • z + A v := by rw [hP]; abel
+  have hAv : ‖A v‖ ≤ ‖A‖ * (ε * t) :=
+    (A.le_opNorm v).trans (mul_le_mul_of_nonneg_left hv (norm_nonneg _))
+  have hPnorm : ‖P - x‖ ≤ C * t := by
+    rw [hPx]
+    have h1 : ‖t • z‖ = t * ‖z‖ := by rw [norm_smul, Real.norm_of_nonneg ht0.le]
+    calc ‖t • z + A v‖ ≤ ‖t • z‖ + ‖A v‖ := norm_add_le _ _
+      _ ≤ t * ‖z‖ + ‖A‖ * (ε * t) := by rw [h1]; linarith
+      _ ≤ C * t := by rw [hC]; nlinarith [norm_nonneg z, norm_nonneg A]
+  have hPball : P ∈ Metric.ball x ρ := by
+    rw [Metric.mem_ball, dist_eq_norm]
+    linarith
+  obtain ⟨⟨hmaxP, hfP⟩, hSP⟩ := hball P hPball
+  have hfle := hmaxP (hSP t ht0 hGv)
+  have h2 : f' (P - x) = t * d + f' (A v) := by
+    rw [hPx, map_add, map_smul, smul_eq_mul]
+  have h3 : |f' (A v)| ≤ ‖f'‖ * (‖A‖ * (ε * t)) := by
+    rw [← Real.norm_eq_abs]
+    exact (f'.le_opNorm _).trans (mul_le_mul_of_nonneg_left hAv (norm_nonneg _))
+  have h4 : ‖f'‖ * ‖A‖ * ε ≤ d / 4 := by
+    have hk : 0 ≤ ‖f'‖ * ‖A‖ := by positivity
+    calc ‖f'‖ * ‖A‖ * ε = d / 4 * (‖f'‖ * ‖A‖ / (‖f'‖ * ‖A‖ + 1)) := by
+          rw [hε]
+          field_simp
+      _ ≤ d / 4 * 1 := by
+          refine mul_le_mul_of_nonneg_left ?_ (by positivity)
+          rw [div_le_one (by positivity)]
+          linarith
+      _ = d / 4 := mul_one _
+  have h5 : ‖f P - f x - f' (P - x)‖ ≤ d / (4 * C) * (C * t) :=
+    hfP.trans (mul_le_mul_of_nonneg_left hPnorm (by positivity))
+  have h6 : d / (4 * C) * (C * t) = d / 4 * t := by field_simp
+  rw [h6, Real.norm_eq_abs, abs_le] at h5
+  have h7 : ‖f'‖ * (‖A‖ * (ε * t)) = ‖f'‖ * ‖A‖ * ε * t := by ring
+  rw [h7] at h3
+  have h8 := (abs_le.mp h3).1
+  have h9 : ‖f'‖ * ‖A‖ * ε * t ≤ d / 4 * t := mul_le_mul_of_nonneg_right h4 ht0.le
+  nlinarith [h5.1, h2, h8, h9]
+
+/-- **Theorem M.K.1** (MWG, p. 956) for merely differentiable functions. Let `x̄ ∈ C` be a local
+constrained maximizer of (M.K.1), `f` differentiable at `x̄`, every `g_m` differentiable at `x̄`
+and continuous near `x̄`, and let the constraint qualification hold (the `∇g_m(x̄)` are linearly
+independent). Then `∇f(x̄) = ∑ λ_m ∇g_m(x̄)` for some multipliers `λ_m`. -/
+theorem theorem_M_K_1_differentiable {f : (Fin N → ℝ) → ℝ} {f' : (Fin N → ℝ) →L[ℝ] ℝ}
+    {g : Fin M → (Fin N → ℝ) → ℝ} {g' : Fin M → (Fin N → ℝ) →L[ℝ] ℝ} {b : Fin M → ℝ}
+    {x : Fin N → ℝ} (hx : x ∈ eqConstraintSet g b) (hmax : IsLocalMaxOn f (eqConstraintSet g b) x)
+    (hf : HasFDerivAt f f' x) (hg : ∀ m, HasFDerivAt (g m) (g' m) x)
+    (hgc : ∀ m, ∀ᶠ y in 𝓝 x, ContinuousAt (g m) y) (hCQ : LinearIndependent ℝ g') :
+    ∃ lam : Fin M → ℝ, f' = ∑ m, lam m • g' m := by
+  set G : (Fin N → ℝ) → Fin M → ℝ := fun y m => g m y with hGdef
+  have hG : HasFDerivAt G (ContinuousLinearMap.pi g') x := hasFDerivAt_pi.mpr hg
+  have hGc : ∀ᶠ y in 𝓝 x, ContinuousAt G y :=
+    (eventually_all.mpr hgc).mono fun y hy => continuousAt_pi.mpr hy
+  have hsurj := mk_range_pi_eq_top hCQ
+  have hle : ∀ z, (∀ m, g' m z = 0) → f' z ≤ 0 := by
+    intro z hz
+    refine hardHalkin_cone hmax hf hG hGc hsurj (Eventually.of_forall fun y t _ hy => ?_)
+    intro m
+    have := congrFun hy m
+    simp only [hGdef, Pi.add_apply, Pi.smul_apply, ContinuousLinearMap.pi_apply, hz,
+      smul_zero, add_zero] at this
+    rw [this]
+    exact hx m
+  have hker : ∀ z, (∀ m, g' m z = 0) → f' z = 0 := by
+    intro z hz
+    have h1 := hle z hz
+    have h2 := hle (-z) fun m => by rw [map_neg, hz m, neg_zero]
+    rw [map_neg] at h2
+    linarith
+  have hlin : IsLocalMaxOn (⇑f') (eqConstraintSet (fun m => ⇑(g' m)) fun m => g' m x) x := by
+    refine Filter.eventually_of_mem self_mem_nhdsWithin fun y hy => ?_
+    have := hker (y - x) fun m => by rw [map_sub]; exact sub_eq_zero.mpr (hy m)
+    rw [map_sub, sub_eq_zero] at this
+    exact this.le
+  exact theorem_M_K_1 (fun m => rfl) hlin f'.hasStrictFDerivAt
+    (fun m => (g' m).hasStrictFDerivAt) hCQ
+
+/-- **Theorem M.K.1** (MWG, p. 956), as printed: `f` and the `g_m` are differentiable (on `ℝ^N`),
+`x̄ ∈ C` is a local constrained maximizer and the constraint qualification holds. Then
+`∇f(x̄) = ∑ λ_m ∇g_m(x̄)`. -/
+theorem theorem_M_K_1_book {f : (Fin N → ℝ) → ℝ} {g : Fin M → (Fin N → ℝ) → ℝ}
+    {b : Fin M → ℝ} {x : Fin N → ℝ} (hf : Differentiable ℝ f) (hg : ∀ m, Differentiable ℝ (g m))
+    (hx : x ∈ eqConstraintSet g b) (hmax : IsLocalMaxOn f (eqConstraintSet g b) x)
+    (hCQ : LinearIndependent ℝ fun m => fderiv ℝ (g m) x) :
+    ∃ lam : Fin M → ℝ, fderiv ℝ f x = ∑ m, lam m • fderiv ℝ (g m) x :=
+  theorem_M_K_1_differentiable hx hmax (hf x).hasFDerivAt (fun m => (hg m x).hasFDerivAt)
+    (fun m => Eventually.of_forall fun y => (hg m y).continuousAt) hCQ
+
+/-- **Theorem M.K.2** (MWG, p. 959) for merely differentiable functions. Let `x̄` be a local
+constrained maximizer of (M.K.4), `f` differentiable at `x̄`, every `g_m` and `h_k`
+differentiable at `x̄` and continuous near `x̄`, and let the gradients of the equality and binding
+inequality constraints be linearly independent. Then there are `λ_m` and `λ_k ≥ 0` with
+`∇f(x̄) = ∑ λ_m ∇g_m(x̄) + ∑ λ_k ∇h_k(x̄)` and `λ_k (h_k(x̄) - c̄_k) = 0`. -/
+theorem theorem_M_K_2_differentiable {K : ℕ} {f : (Fin N → ℝ) → ℝ} {f' : (Fin N → ℝ) →L[ℝ] ℝ}
+    {g : Fin M → (Fin N → ℝ) → ℝ} {g' : Fin M → (Fin N → ℝ) →L[ℝ] ℝ} {b : Fin M → ℝ}
+    {h : Fin K → (Fin N → ℝ) → ℝ} {h' : Fin K → (Fin N → ℝ) →L[ℝ] ℝ} {c : Fin K → ℝ}
+    {x : Fin N → ℝ} (hx : x ∈ kktConstraintSet g b h c)
+    (hmax : IsLocalMaxOn f (kktConstraintSet g b h c) x) (hf : HasFDerivAt f f' x)
+    (hg : ∀ m, HasFDerivAt (g m) (g' m) x) (hh : ∀ k, HasFDerivAt (h k) (h' k) x)
+    (hgc : ∀ m, ∀ᶠ y in 𝓝 x, ContinuousAt (g m) y)
+    (hhc : ∀ k, ∀ᶠ y in 𝓝 x, ContinuousAt (h k) y)
+    (hCQ : LinearIndependent ℝ (Sum.elim g' fun k : {k // h k x = c k} => h' k.1)) :
+    ∃ lam : Fin M → ℝ, ∃ mu : Fin K → ℝ, (∀ k, 0 ≤ mu k) ∧
+      f' = ∑ m, lam m • g' m + ∑ k, mu k • h' k ∧ ∀ k, mu k * (h k x - c k) = 0 := by
+  classical
+  set ι := Fin M ⊕ {k // h k x = c k}
+  set φ : ι → (Fin N → ℝ) →L[ℝ] ℝ := Sum.elim g' fun k => h' k.1 with hφ
+  set F : ι → (Fin N → ℝ) → ℝ := Sum.elim g fun k => h k.1 with hF
+  set G : (Fin N → ℝ) → ι → ℝ := fun y i => F i y with hGdef
+  have hG : HasFDerivAt G (ContinuousLinearMap.pi φ) x := by
+    refine hasFDerivAt_pi.mpr ?_
+    rintro (m | k)
+    · exact hg m
+    · exact hh k.1
+  have hGc : ∀ᶠ y in 𝓝 x, ContinuousAt G y := by
+    have hall : ∀ i, ∀ᶠ y in 𝓝 x, ContinuousAt (F i) y := by
+      rintro (m | k)
+      · exact hgc m
+      · exact hhc k.1
+    exact (eventually_all.mpr hall).mono fun y hy => continuousAt_pi.mpr hy
+  have hsurj := mk_range_pi_eq_top hCQ
+  -- inactive constraints stay slack near `x̄`
+  have hslack : ∀ᶠ y in 𝓝 x, ∀ k, h k x < c k → h k y < c k := by
+    rw [eventually_all]
+    intro k
+    by_cases hk : h k x < c k
+    · exact ((hhc k).self_of_nhds.eventually (gt_mem_nhds hk)).mono fun y hy _ => hy
+    · exact Eventually.of_forall fun y hk' => absurd hk' hk
+  have hcone : ∀ z, (∀ m, g' m z = 0) → (∀ k, h k x = c k → h' k z ≤ 0) → f' z ≤ 0 := by
+    intro z hz hzk
+    refine hardHalkin_cone hmax hf hG hGc hsurj (hslack.mono fun y hy t ht hGy => ?_)
+    refine ⟨fun m => ?_, fun k => ?_⟩
+    · have := congrFun hGy (Sum.inl m)
+      simp only [hGdef, hF, hφ, Sum.elim_inl, Pi.add_apply, Pi.smul_apply,
+        ContinuousLinearMap.pi_apply, hz, smul_zero, add_zero] at this
+      rw [this]
+      exact hx.1 m
+    · rcases (hx.2 k).lt_or_eq with hk | hk
+      · exact (hy k hk).le
+      · have := congrFun hGy (Sum.inr ⟨k, hk⟩)
+        simp only [hGdef, hF, hφ, Sum.elim_inr, Pi.add_apply, Pi.smul_apply,
+          ContinuousLinearMap.pi_apply, smul_eq_mul] at this
+        rw [this, hk]
+        have := hzk k hk
+        nlinarith
+  -- the linearized problem, with the same slacks
+  set c' : Fin K → ℝ := fun k => h' k x + (c k - h k x) with hc'
+  have hact : ∀ k, h' k x = c' k ↔ h k x = c k := fun k => by
+    simp only [hc']
+    constructor <;> intro H <;> linarith
+  have hlin : IsLocalMaxOn (⇑f')
+      (kktConstraintSet (fun m => ⇑(g' m)) (fun m => g' m x) (fun k => ⇑(h' k)) c') x := by
+    refine Filter.eventually_of_mem self_mem_nhdsWithin fun y hy => ?_
+    have := hcone (y - x) (fun m => by rw [map_sub]; exact sub_eq_zero.mpr (hy.1 m))
+      (fun k hk => by
+        have := hy.2 k
+        simp only [hc', hk, sub_self, add_zero] at this
+        rw [map_sub]
+        linarith)
+    rw [map_sub] at this
+    linarith
+  have hxlin : x ∈ kktConstraintSet (fun m => ⇑(g' m)) (fun m => g' m x) (fun k => ⇑(h' k)) c' :=
+    ⟨fun m => rfl, fun k => by simp only [hc']; linarith [hx.2 k]⟩
+  have hCQ' : LinearIndependent ℝ (Sum.elim g' fun k : {k // h' k x = c' k} => h' k.1) := by
+    have := hCQ.comp (Sum.map id fun k : {k // h' k x = c' k} =>
+        (⟨k.1, (hact k.1).mp k.2⟩ : {k // h k x = c k}))
+      (Sum.map_injective.mpr ⟨Function.injective_id,
+        fun a b hab => Subtype.ext (by simpa using congrArg Subtype.val hab)⟩)
+    convert this using 1
+    funext i
+    rcases i with m | k <;> rfl
+  obtain ⟨lam, mu, hmu, hsum, hcs⟩ := theorem_M_K_2 hxlin hlin f'.hasStrictFDerivAt
+    (fun m => (g' m).hasStrictFDerivAt) (fun k => (h' k).hasStrictFDerivAt) hCQ'
+  refine ⟨lam, mu, hmu, hsum, fun k => ?_⟩
+  have := hcs k
+  have e : h' k x - c' k = h k x - c k := by simp only [hc']; ring
+  rwa [e] at this
+
+/-- **Theorem M.K.2** (MWG, p. 959), as printed: `f`, the `g_m` and the `h_k` are differentiable
+(on `ℝ^N`), `x̄` is a local constrained maximizer of (M.K.4) and the constraint qualification
+holds for the equality and binding inequality constraints. Then the Kuhn-Tucker conditions
+(M.K.6)-(M.K.7) hold with `λ_k ≥ 0`. -/
+theorem theorem_M_K_2_book {K : ℕ} {f : (Fin N → ℝ) → ℝ} {g : Fin M → (Fin N → ℝ) → ℝ}
+    {b : Fin M → ℝ} {h : Fin K → (Fin N → ℝ) → ℝ} {c : Fin K → ℝ} {x : Fin N → ℝ}
+    (hf : Differentiable ℝ f) (hg : ∀ m, Differentiable ℝ (g m)) (hh : ∀ k, Differentiable ℝ (h k))
+    (hx : x ∈ kktConstraintSet g b h c) (hmax : IsLocalMaxOn f (kktConstraintSet g b h c) x)
+    (hCQ : LinearIndependent ℝ
+      (Sum.elim (fun m => fderiv ℝ (g m) x) fun k : {k // h k x = c k} => fderiv ℝ (h k.1) x)) :
+    ∃ lam : Fin M → ℝ, ∃ mu : Fin K → ℝ, (∀ k, 0 ≤ mu k) ∧
+      fderiv ℝ f x = ∑ m, lam m • fderiv ℝ (g m) x + ∑ k, mu k • fderiv ℝ (h k) x ∧
+        ∀ k, mu k * (h k x - c k) = 0 :=
+  theorem_M_K_2_differentiable hx hmax (hf x).hasFDerivAt (fun m => (hg m x).hasFDerivAt)
+    (fun k => (hh k x).hasFDerivAt) (fun m => Eventually.of_forall fun y => (hg m y).continuousAt)
+    (fun k => Eventually.of_forall fun y => (hh k y).continuousAt) hCQ
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Second-order necessary conditions for equality-constrained maximization
+
+MWG, Section M.K, p. 958: "Suppose that at `x̄` the constraint qualification is satisfied and
+that there are Lagrange multipliers satisfying (M.K.3). If `x̄` is a local maximizer, then
+`D²_x L(x̄, λ)` is negative semidefinite on the subspace `{z : ∇g_m(x̄)·z = 0 for all m}`."
+
+The book's formula `D²f(x̄) - ∑ λ_m ∇g_m(x̄)` is read as `D²f(x̄) - ∑ λ_m D²g_m(x̄)`, the second
+derivative of the Lagrangian (first-pass correction E6). We assume, as in the first-pass
+sufficiency theorem `theorem_M_K_second_order_sufficient`, that the Lagrangian is differentiable
+near `x̄` with a derivative that is differentiable at `x̄` (second derivative `D2`); the
+constraints need only be differentiable at `x̄` and continuous near it.
+
+Instead of a `C²` feasible curve with prescribed tangent (which needs `C²` constraints), the proof
+uses the feasible points `x̄ + t z + A v_t` with `‖v_t‖ ≤ η t` given by Halkin's lemma
+(`hardHalkin_feasible`, Brouwer's theorem): first-order accuracy of the feasible points suffices
+because `∇L(x̄) = 0`. Along them `L = f ≤ f(x̄)`, and the second-order expansion of `L`
+(`closerMK_second_order_estimate` applied to `-L`) gives `D2 z z ≤ η K` for every small `η > 0`
+(`hardSO_bound`), hence `D2 z z ≤ 0` (`theorem_M_K_second_order_necessary`); in matrix form, the
+Hessian of the Lagrangian is negative semidefinite on the tangent subspace
+(`theorem_M_K_second_order_necessary_matrix`).
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology MWG.ConsumerChoice
+
+variable {N M : ℕ}
+
+/-- The key estimate for the second-order necessary conditions (MWG, p. 958): under the
+hypotheses of `theorem_M_K_second_order_necessary`, for every tangent direction `z` and every
+`0 < η ≤ 1`, `D2 z z ≤ η K` for a constant `K` depending only on `‖z‖`, `‖A‖` and `‖D2‖`. -/
+theorem hardSO_bound {f : (Fin N → ℝ) → ℝ}
+    {g : Fin M → (Fin N → ℝ) → ℝ} {g' : Fin M → (Fin N → ℝ) →L[ℝ] ℝ} {x : Fin N → ℝ}
+    {b lam : Fin M → ℝ} {D2 : (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] ℝ}
+    (hx : x ∈ eqConstraintSet g b) (hmax : IsLocalMaxOn f (eqConstraintSet g b) x)
+    (hg : ∀ m, HasFDerivAt (g m) (g' m) x) (hgc : ∀ m, ∀ᶠ y in 𝓝 x, ContinuousAt (g m) y)
+    (hdiff : ∀ᶠ y in 𝓝 x, DifferentiableAt ℝ (fun y => lagrangian f g b y lam) y)
+    (hgrad : fderiv ℝ (fun y => lagrangian f g b y lam) x = 0)
+    (h2 : HasFDerivAt (fderiv ℝ (fun y => lagrangian f g b y lam)) D2 x)
+    {A : (Fin M → ℝ) →L[ℝ] (Fin N → ℝ)} (hA : ∀ v, ContinuousLinearMap.pi g' (A v) = v)
+    {z : Fin N → ℝ} (hz : ∀ m, g' m z = 0) {η : ℝ} (hη : 0 < η) (hη1 : η ≤ 1) :
+    D2 z z ≤ η * ((‖z‖ + ‖A‖) ^ 2 + 2 * ‖D2‖ * ‖z‖ * ‖A‖ + ‖D2‖ * ‖A‖ ^ 2) := by
+  set F := fun y => lagrangian f g b y lam with hF
+  have hFeq : ∀ y, y ∈ eqConstraintSet g b → F y = f y := by
+    intro y hy
+    simp [hF, lagrangian, show ∀ m, g m y = b m from hy]
+  -- the second-order expansion of `-L`
+  have hdiffn : ∀ᶠ y in 𝓝 x, DifferentiableAt ℝ (fun y => -F y) y :=
+    hdiff.mono fun y hy => hy.neg
+  have hfd : fderiv ℝ (fun y => -F y) = fun y => -fderiv ℝ F y := funext fun y => fderiv_neg
+  have hgradn : fderiv ℝ (fun y => -F y) x = 0 := by rw [hfd]; simp only [hgrad, neg_zero]
+  have h2n : HasFDerivAt (fderiv ℝ (fun y => -F y)) (-D2) x := by rw [hfd]; exact h2.neg
+  have hest := closerMK_second_order_estimate hdiffn hgradn h2n hη
+  -- feasible points
+  set G : (Fin N → ℝ) → Fin M → ℝ := fun y m => g m y with hGdef
+  have hG : HasFDerivAt G (ContinuousLinearMap.pi g') x := hasFDerivAt_pi.mpr hg
+  have hGc : ∀ᶠ y in 𝓝 x, ContinuousAt G y :=
+    (eventually_all.mpr hgc).mono fun y hy => continuousAt_pi.mpr hy
+  obtain ⟨δ, hδ, hfeas⟩ := hardHalkin_feasible hG hGc hA z hη
+  have hmax' : ∀ᶠ y in 𝓝 x, y ∈ eqConstraintSet g b → f y ≤ f x :=
+    eventually_nhdsWithin_iff.mp hmax
+  obtain ⟨ρ, hρ, hball⟩ := Metric.eventually_nhds_iff_ball.mp (hest.and hmax')
+  set C := ‖z‖ + ‖A‖ + 1 with hC
+  have hC0 : 0 < C := by positivity
+  set t := min (δ / 2) (ρ / (2 * C)) with ht
+  have ht0 : 0 < t := lt_min (by positivity) (by positivity)
+  have htδ : t < δ := (min_le_left _ _).trans_lt (by linarith)
+  have htρ : C * t ≤ ρ / 2 := by
+    have := min_le_right (δ / 2) (ρ / (2 * C))
+    rw [← ht] at this
+    calc C * t ≤ C * (ρ / (2 * C)) := mul_le_mul_of_nonneg_left this hC0.le
+      _ = ρ / 2 := by field_simp
+  obtain ⟨v, hv, hGv⟩ := hfeas t ht0 htδ
+  set w := A v with hw
+  set y := x + t • z + w with hy
+  have hyx : y - x = t • z + w := by rw [hy]; abel
+  have hwn : ‖w‖ ≤ ‖A‖ * η * t := by
+    have := (A.le_opNorm v).trans (mul_le_mul_of_nonneg_left hv (norm_nonneg _))
+    rw [hw]
+    linarith [this, show ‖A‖ * (η * t) = ‖A‖ * η * t by ring]
+  have hwn' : ‖w‖ ≤ ‖A‖ * t := by
+    refine hwn.trans ?_
+    have := mul_le_mul_of_nonneg_left hη1 (norm_nonneg A)
+    nlinarith [ht0]
+  have htz : ‖t • z‖ = t * ‖z‖ := by rw [norm_smul, Real.norm_of_nonneg ht0.le]
+  have hhn : ‖y - x‖ ≤ (‖z‖ + ‖A‖) * t := by
+    rw [hyx]
+    calc ‖t • z + w‖ ≤ ‖t • z‖ + ‖w‖ := norm_add_le _ _
+      _ ≤ (‖z‖ + ‖A‖) * t := by rw [htz]; linarith
+  have hyball : y ∈ Metric.ball x ρ := by
+    rw [Metric.mem_ball, dist_eq_norm]
+    have : (‖z‖ + ‖A‖) * t ≤ C * t := mul_le_mul_of_nonneg_right (by linarith) ht0.le
+    linarith
+  have hyC : y ∈ eqConstraintSet g b := by
+    intro m
+    have := congrFun hGv m
+    simp only [hGdef, Pi.add_apply, Pi.smul_apply, ContinuousLinearMap.pi_apply, hz,
+      smul_zero, add_zero] at this
+    rw [this]
+    exact hx m
+  obtain ⟨hesty, hmaxy⟩ := hball y hyball
+  have hFle : -F x ≤ -F y := by
+    rw [hFeq y hyC, hFeq x hx]
+    linarith [hmaxy hyC]
+  have hq := hesty hFle
+  -- `D2 (y - x) (y - x) ≤ η ‖y - x‖²`
+  have hq' : D2 (y - x) (y - x) ≤ η * ‖y - x‖ ^ 2 := by
+    have : (-D2) (y - x) (y - x) = -(D2 (y - x) (y - x)) := rfl
+    rw [this] at hq
+    linarith
+  have hexp : D2 (y - x) (y - x) =
+      t ^ 2 * D2 z z + t * D2 z w + t * D2 w z + D2 w w := by
+    rw [hyx]
+    simp only [map_add, map_smul, add_apply, smul_apply, smul_eq_mul]
+    ring
+  have hb1 : |D2 z w| ≤ ‖D2‖ * ‖z‖ * (‖A‖ * η * t) := by
+    rw [← Real.norm_eq_abs]
+    refine (D2.le_opNorm₂ z w).trans ?_
+    exact mul_le_mul_of_nonneg_left hwn (mul_nonneg D2.opNorm_nonneg (norm_nonneg _))
+  have hb2 : |D2 w z| ≤ ‖D2‖ * (‖A‖ * η * t) * ‖z‖ := by
+    rw [← Real.norm_eq_abs]
+    refine (D2.le_opNorm₂ w z).trans ?_
+    exact mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hwn D2.opNorm_nonneg)
+      (norm_nonneg _)
+  have hb3 : |D2 w w| ≤ ‖D2‖ * (‖A‖ * η * t) * (‖A‖ * t) := by
+    rw [← Real.norm_eq_abs]
+    refine (D2.le_opNorm₂ w w).trans ?_
+    exact mul_le_mul (mul_le_mul_of_nonneg_left hwn D2.opNorm_nonneg) hwn' (norm_nonneg _)
+      (mul_nonneg D2.opNorm_nonneg (by positivity))
+  have hb4 : η * ‖y - x‖ ^ 2 ≤ η * ((‖z‖ + ‖A‖) * t) ^ 2 :=
+    mul_le_mul_of_nonneg_left (pow_le_pow_left₀ (norm_nonneg _) hhn 2) hη.le
+  have hsum : t ^ 2 * D2 z z ≤
+      t ^ 2 * (η * ((‖z‖ + ‖A‖) ^ 2 + 2 * ‖D2‖ * ‖z‖ * ‖A‖ + ‖D2‖ * ‖A‖ ^ 2)) := by
+    have e1 := (abs_le.mp hb1).1
+    have e2 := (abs_le.mp hb2).1
+    have e3 := (abs_le.mp hb3).1
+    have : t ^ 2 * D2 z z ≤ η * ((‖z‖ + ‖A‖) * t) ^ 2 - t * D2 z w - t * D2 w z - D2 w w := by
+      linarith
+    nlinarith [mul_le_mul_of_nonneg_left (neg_le_of_neg_le e1) ht0.le,
+      mul_le_mul_of_nonneg_left (neg_le_of_neg_le e2) ht0.le]
+  exact le_of_mul_le_mul_left hsum (by positivity)
+
+/-- **Section M.K** (MWG, p. 958), second-order necessary conditions. Let `x̄ ∈ C` be a local
+constrained maximizer of (M.K.1) at which the constraint qualification holds, the `g_m`
+differentiable at `x̄` and continuous near it, and let `λ` be Lagrange multipliers satisfying
+(M.K.3), i.e. the Lagrangian `L(·, λ)` is stationary at `x̄`. If `L(·, λ)` is differentiable near
+`x̄` and its derivative has derivative `D2` at `x̄` (the second derivative `D²_x L(x̄, λ)`), then
+`D2` is negative semidefinite on `{z : ∇g_m(x̄)·z = 0 for all m}`. -/
+theorem theorem_M_K_second_order_necessary {f : (Fin N → ℝ) → ℝ}
+    {g : Fin M → (Fin N → ℝ) → ℝ} {g' : Fin M → (Fin N → ℝ) →L[ℝ] ℝ} {x : Fin N → ℝ}
+    {b lam : Fin M → ℝ} {D2 : (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] ℝ}
+    (hx : x ∈ eqConstraintSet g b) (hmax : IsLocalMaxOn f (eqConstraintSet g b) x)
+    (hg : ∀ m, HasFDerivAt (g m) (g' m) x) (hgc : ∀ m, ∀ᶠ y in 𝓝 x, ContinuousAt (g m) y)
+    (hCQ : LinearIndependent ℝ g')
+    (hdiff : ∀ᶠ y in 𝓝 x, DifferentiableAt ℝ (fun y => lagrangian f g b y lam) y)
+    (hgrad : fderiv ℝ (fun y => lagrangian f g b y lam) x = 0)
+    (h2 : HasFDerivAt (fderiv ℝ (fun y => lagrangian f g b y lam)) D2 x)
+    (z : Fin N → ℝ) (hz : ∀ m, g' m z = 0) : D2 z z ≤ 0 := by
+  obtain ⟨A, hA⟩ := (ContinuousLinearMap.pi g').exists_rightInverse_of_surjective
+    (mk_range_pi_eq_top hCQ)
+  have hA' : ∀ v, ContinuousLinearMap.pi g' (A v) = v := fun v => by
+    have := congrArg (fun T : (Fin M → ℝ) →L[ℝ] (Fin M → ℝ) => T v) hA
+    simpa using this
+  set K := (‖z‖ + ‖A‖) ^ 2 + 2 * ‖D2‖ * ‖z‖ * ‖A‖ + ‖D2‖ * ‖A‖ ^ 2 with hK
+  have hK0 : 0 ≤ K := by positivity
+  by_contra hpos
+  push Not at hpos
+  set η := min 1 (D2 z z / (2 * (K + 1))) with hηdef
+  have hη : 0 < η := lt_min one_pos (by positivity)
+  have hb := hardSO_bound hx hmax hg hgc hdiff hgrad h2 hA' hz hη (min_le_left _ _)
+  have h1 : η * K ≤ D2 z z / (2 * (K + 1)) * K :=
+    mul_le_mul_of_nonneg_right (min_le_right _ _) hK0
+  have h2' : D2 z z / (2 * (K + 1)) * K < D2 z z := by
+    rw [div_mul_eq_mul_div, div_lt_iff₀ (by positivity)]
+    nlinarith
+  linarith
+
+/-- **Section M.K** (MWG, p. 958), second-order necessary conditions in matrix form: the Hessian
+matrix of the Lagrangian, `D²_x L(x̄, λ)`, satisfies `z·D²_x L z ≤ 0` for every `z` with
+`∇g_m(x̄)·z = 0` for all `m`. -/
+theorem theorem_M_K_second_order_necessary_matrix {f : (Fin N → ℝ) → ℝ}
+    {g : Fin M → (Fin N → ℝ) → ℝ} {g' : Fin M → (Fin N → ℝ) →L[ℝ] ℝ} {x : Fin N → ℝ}
+    {b lam : Fin M → ℝ} {D2 : (Fin N → ℝ) →L[ℝ] (Fin N → ℝ) →L[ℝ] ℝ}
+    (hx : x ∈ eqConstraintSet g b) (hmax : IsLocalMaxOn f (eqConstraintSet g b) x)
+    (hg : ∀ m, HasFDerivAt (g m) (g' m) x) (hgc : ∀ m, ∀ᶠ y in 𝓝 x, ContinuousAt (g m) y)
+    (hCQ : LinearIndependent ℝ g')
+    (hdiff : ∀ᶠ y in 𝓝 x, DifferentiableAt ℝ (fun y => lagrangian f g b y lam) y)
+    (hgrad : fderiv ℝ (fun y => lagrangian f g b y lam) x = 0)
+    (h2 : HasFDerivAt (fderiv ℝ (fun y => lagrangian f g b y lam)) D2 x)
+    (z : Fin N → ℝ) (hz : ∀ m, gradientVec (g' m) ⬝ᵥ z = 0) :
+    z ⬝ᵥ (hessianMatrix D2).mulVec z ≤ 0 := by
+  rw [hessianMatrix_quad]
+  refine theorem_M_K_second_order_necessary hx hmax hg hgc hCQ hdiff hgrad h2 z fun m => ?_
+  rw [fderiv_apply_eq_gradient_dot]
+  exact hz m
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Theorem M.L.1 when only the value function is known to be differentiable
+
+MWG, Section M.L, pp. 965-966. The book's Theorem M.L.1 assumes only that the value function
+`v` is differentiable at `q̄` and that `λ` are Lagrange multipliers at the maximizer `x(q̄)`; its
+proof differentiates along a maximizer path `x(·)`, which the first pass formalized
+(`theorem_M_L_1`). Here the statement is proved without any maximizer path:
+
+* `theorem_M_L_1_value`: let `f(x; q)` and `g_m(x; q)` be differentiable at `(x̄, q̄)`, the `g_m`
+  continuous near it, `g(x̄; q̄) = b̄`, let the constraint qualification hold (the
+  `∇_x g_m(x̄; q̄)` are linearly independent), let `λ` satisfy (M.K.2), and let `v` bound `f` on
+  the constraint sets near `q̄` with `v(q̄) = f(x̄; q̄)` (e.g. the value function). If `v` is
+  differentiable at `q̄`, then `∇v(q̄) = ∇_q f - ∑ λ_m ∇_q g_m` (M.L.4)-(M.L.5). The point
+  `(x̄, q̄)` maximizes `f(x; q) - v(q)` on the joint constraint set `{(x, q) : g(x; q) = b̄}`, so
+  Halkin's cone lemma (`hardHalkin_cone`, Brouwer's theorem) makes the derivative
+  `f' - v' ∘ snd` vanish on the tangent space; evaluating it at the tangent vector `(w, e)` with
+  `∇_x g·w = -∇_q g·e` gives the formula.
+* `theorem_M_L_1_needs_CQ`: the constraint qualification (implicit in the book through the
+  multipliers of Theorem M.K.1) cannot be dropped: for `max x³` s.t. `x³ - q = 0`, `v(q) = q`, but
+  at `q̄ = 0`, `x̄ = 0` every `λ` satisfies (M.K.2) and (M.L.4) holds only for `λ = 1`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology
+
+/-- Linearly independent functionals on a normed space give a surjective joint map. -/
+theorem hardEnv_range_pi_eq_top {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] {M : ℕ}
+    {φ : Fin M → F →L[ℝ] ℝ} (hφ : LinearIndependent ℝ φ) :
+    (ContinuousLinearMap.pi φ).range = ⊤ := by
+  by_contra hne
+  obtain ⟨ψ, hψ, hle⟩ := Submodule.exists_le_ker_of_lt_top _ (lt_top_iff_ne_top.mpr hne)
+  have hdecomp : ∀ y : Fin M → ℝ, ψ y = ∑ i, y i * ψ (Pi.single i 1) := by
+    intro y
+    conv_lhs => rw [← Finset.univ_sum_single y]
+    rw [map_sum]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [← smul_eq_mul, ← map_smul, ← Pi.single_smul, smul_eq_mul, mul_one]
+  have hcomb : ∑ i, ψ (Pi.single i 1) • φ i = 0 := by
+    ext v
+    have := hle ⟨v, rfl⟩
+    rw [LinearMap.mem_ker, hdecomp] at this
+    simpa [mul_comm] using this
+  have hzero := (Fintype.linearIndependent_iff.mp hφ) _ hcomb
+  apply hψ
+  refine LinearMap.ext fun y => ?_
+  rw [hdecomp]
+  simp [hzero]
+
+/-- **Theorem M.L.1 (envelope theorem)** (MWG, p. 965), (M.L.4)-(M.L.5), with only `v`
+differentiable. Consider `max f(x; q)` s.t. `g_m(x; q) = b̄_m`. Let `f` and the `g_m` be
+differentiable at `(x̄, q̄)`, the `g_m` continuous near it, `g(x̄; q̄) = b̄`, the `∇_x g_m(x̄; q̄)`
+linearly independent, and `λ` multipliers: `∇_x f = ∑ λ_m ∇_x g_m` (M.K.2). Let `v(q)` bound
+`f(·; q)` on the constraint set at `q` for `q` near `q̄`, with `v(q̄) = f(x̄; q̄)`. If `v` is
+differentiable at `q̄` with derivative `v'`, then `v' = ∇_q f - ∑ λ_m ∇_q g_m`. -/
+theorem theorem_M_L_1_value {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [NormedAddCommGroup F] [NormedSpace ℝ F] {M : ℕ} {f : F × E → ℝ}
+    {g : Fin M → F × E → ℝ} {b : Fin M → ℝ} {v : E → ℝ} {x : F} {q : E}
+    {f' : F × E →L[ℝ] ℝ} {g' : Fin M → F × E →L[ℝ] ℝ} {v' : E →L[ℝ] ℝ} {lam : Fin M → ℝ}
+    (hf : HasFDerivAt f f' (x, q)) (hg : ∀ m, HasFDerivAt (g m) (g' m) (x, q))
+    (hgc : ∀ m, ∀ᶠ z in 𝓝 (x, q), ContinuousAt (g m) z) (hx : ∀ m, g m (x, q) = b m)
+    (hCQ : LinearIndependent ℝ fun m => (g' m).comp (ContinuousLinearMap.inl ℝ F E))
+    (hvge : ∀ᶠ q' in 𝓝 q, ∀ y, (∀ m, g m (y, q') = b m) → f (y, q') ≤ v q')
+    (hvq : v q = f (x, q)) (hv : HasFDerivAt v v' q)
+    (hfoc : f'.comp (ContinuousLinearMap.inl ℝ F E) =
+      ∑ m, lam m • (g' m).comp (ContinuousLinearMap.inl ℝ F E)) :
+    v' = f'.comp (ContinuousLinearMap.inr ℝ F E) -
+      ∑ m, lam m • (g' m).comp (ContinuousLinearMap.inr ℝ F E) := by
+  set S : Set (F × E) := {z | ∀ m, g m z = b m} with hS
+  set φ : F × E → ℝ := fun z => f z - v z.2 with hφdef
+  set φ' : F × E →L[ℝ] ℝ := f' - v'.comp (ContinuousLinearMap.snd ℝ F E) with hφ'def
+  have hφ : HasFDerivAt φ φ' (x, q) := hf.sub (hv.comp (x, q) hasFDerivAt_snd)
+  -- `(x̄, q̄)` maximizes `f(x; q) - v(q)` on the joint constraint set
+  have hmax : IsLocalMaxOn φ S (x, q) := by
+    have hq' : ∀ᶠ z : F × E in 𝓝 (x, q),
+        ∀ y, (∀ m, g m (y, z.2) = b m) → f (y, z.2) ≤ v z.2 :=
+      (continuous_snd.tendsto (x, q)).eventually hvge
+    refine eventually_nhdsWithin_iff.mpr (hq'.mono fun z hz hzS => ?_)
+    have := hz z.1 hzS
+    simp only [hφdef, hvq, sub_self]
+    linarith
+  set G : F × E → Fin M → ℝ := fun z m => g m z with hGdef
+  have hG : HasFDerivAt G (ContinuousLinearMap.pi g') (x, q) := hasFDerivAt_pi.mpr hg
+  have hGc : ∀ᶠ z in 𝓝 (x, q), ContinuousAt G z :=
+    (eventually_all.mpr hgc).mono fun z hz => continuousAt_pi.mpr hz
+  obtain ⟨A, hA⟩ := (ContinuousLinearMap.pi fun m => (g' m).comp
+    (ContinuousLinearMap.inl ℝ F E)).exists_rightInverse_of_surjective
+    (hardEnv_range_pi_eq_top hCQ)
+  have hA' : ∀ u m, g' m (A u, 0) = u m := fun u m => by
+    have := congrFun (congrArg (fun T : (Fin M → ℝ) →L[ℝ] (Fin M → ℝ) => T u) hA) m
+    simpa using this
+  have hsurj : (ContinuousLinearMap.pi g').range = ⊤ := by
+    rw [LinearMap.range_eq_top]
+    intro u
+    exact ⟨(A u, 0), funext fun m => hA' u m⟩
+  have hcone : ∀ ζ, (∀ m, g' m ζ = 0) → φ' ζ ≤ 0 := fun ζ hζ =>
+    hardHalkin_cone hmax hφ hG hGc hsurj (Eventually.of_forall fun y t _ hy => by
+      intro m
+      have := congrFun hy m
+      simp only [hGdef, Pi.add_apply, Pi.smul_apply, ContinuousLinearMap.pi_apply, hζ,
+        smul_zero, add_zero] at this
+      rw [this]
+      exact hx m)
+  ext e
+  set w : F := -A (fun m => g' m (0, e)) with hw
+  have hw0 : ∀ m, g' m (w, 0) = -g' m (0, e) := fun m => by
+    have : ((w, 0) : F × E) = -((A fun m => g' m (0, e)), 0) := by simp [hw]
+    rw [this, map_neg, hA']
+  have hsplit : ∀ T : F × E →L[ℝ] ℝ, T (w, e) = T (w, 0) + T (0, e) := fun T => by
+    rw [← map_add]
+    simp
+  have hζ : ∀ m, g' m (w, e) = 0 := fun m => by
+    rw [hsplit, hw0]
+    ring
+  have h1 := hcone (w, e) hζ
+  have h2 := hcone (-(w, e)) fun m => by rw [map_neg, hζ m, neg_zero]
+  rw [map_neg] at h2
+  have h0 : φ' (w, e) = 0 := by linarith
+  have hf1 := congrArg (fun T : F →L[ℝ] ℝ => T w) hfoc
+  simp only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.inl_apply,
+    FunLike.coe_sum, Finset.sum_apply, FunLike.coe_smul, Pi.smul_apply,
+    smul_eq_mul] at hf1
+  simp only [hφ'def, sub_apply, ContinuousLinearMap.comp_apply,
+    ContinuousLinearMap.coe_snd'] at h0
+  rw [hsplit, hf1] at h0
+  simp only [hw0, mul_neg, Finset.sum_neg_distrib] at h0
+  simp only [sub_apply, ContinuousLinearMap.comp_apply, ContinuousLinearMap.inr_apply,
+    FunLike.coe_sum, Finset.sum_apply, FunLike.coe_smul, Pi.smul_apply, smul_eq_mul]
+  linarith
+
+/-- **Theorem M.L.1** (MWG, p. 965): the constraint qualification cannot be dropped. For
+`max x³` s.t. `g(x; q) = x³ - q = 0` (`x, q ∈ ℝ`), the value function is `v(q) = q`, so
+`v'(0) = 1`. At `q̄ = 0`, `x̄ = 0` we have `∂f/∂x = 0` and `∂g/∂x = 0`, so every `λ` satisfies
+(M.K.2), while `∂f/∂q = 0` and `∂g/∂q = -1`: (M.L.4) reads `1 = λ`, which fails for `λ = 0`. -/
+theorem theorem_M_L_1_needs_CQ :
+    (∀ q : ℝ, sSup ((fun y : ℝ => y ^ 3) '' {y : ℝ | y ^ 3 - q = 0}) = q) ∧
+    HasDerivAt (fun y : ℝ => y ^ 3) 0 0 ∧ HasDerivAt (fun y : ℝ => y ^ 3 - (0 : ℝ)) 0 0 ∧
+    (∀ lam : ℝ, (0 : ℝ) = lam * 0) ∧ HasDerivAt (fun _ : ℝ => (0 : ℝ) ^ 3) 0 0 ∧
+    HasDerivAt (fun q : ℝ => (0 : ℝ) ^ 3 - q) (-1) 0 ∧ (1 : ℝ) ≠ 0 - 0 * (-1) := by
+  refine ⟨fun q => ?_, ?_, ?_, fun lam => by ring, hasDerivAt_const _ _, ?_, by norm_num⟩
+  · -- a real cube root exists
+    obtain ⟨y, -, hy⟩ : ∃ y ∈ Set.Icc (-(|q| + 1)) (|q| + 1), y ^ 3 = q := by
+      have hab : -(|q| + 1) ≤ |q| + 1 := by linarith [abs_nonneg q]
+      have hc : ContinuousOn (fun y : ℝ => y ^ 3) (Set.Icc (-(|q| + 1)) (|q| + 1)) :=
+        (continuous_pow 3).continuousOn
+      have hmem : q ∈ Set.Icc ((-(|q| + 1)) ^ 3) ((|q| + 1) ^ 3) := by
+        have h1 : |q| + 1 ≤ (|q| + 1) ^ 3 :=
+          le_self_pow₀ (by linarith [abs_nonneg q]) (by norm_num)
+        constructor <;> nlinarith [abs_nonneg q, neg_abs_le q, le_abs_self q]
+      exact intermediate_value_Icc hab hc hmem
+    have hset : (fun y : ℝ => y ^ 3) '' {y : ℝ | y ^ 3 - q = 0} = {q} := by
+      ext a
+      simp only [Set.mem_image, Set.mem_ofPred_eq, Set.mem_singleton_iff]
+      constructor
+      · rintro ⟨y', hy', rfl⟩
+        linarith
+      · rintro rfl
+        exact ⟨y, by rw [hy]; ring, hy⟩
+    rw [hset, csSup_singleton]
+  · simpa using hasDerivAt_pow 3 (0 : ℝ)
+  · simpa using hasDerivAt_pow 3 (0 : ℝ)
+  · exact (hasDerivAt_id (0 : ℝ)).const_sub ((0 : ℝ) ^ 3)
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# The transversality theorem (Theorem M.E.2)
+
+MWG, Section M.E, p. 943: if `f : A × B → ℝ^N` (`A ⊆ ℝ^N`, `B ⊆ ℝ^M` open) is continuously
+differentiable and `Df(x; q)` has rank `N` whenever `f(x; q) = 0`, then `f(·; q) = 0` is regular
+for almost every `q ∈ B`.
+
+No Sard theorem in unequal dimensions is needed: Mathlib's Sard lemma in equal dimension
+(`addHaar_image_eq_zero_of_det_fderivWithin_eq_zero`, for differentiable maps `ℝ^M → ℝ^M`)
+suffices, applied in charts of the zero set.
+
+* `hardSard_local`: near a point `p` where `Df(p)` is onto, choose `Λ : ℝ^N × ℝ^M → ℝ^M`
+  injective on `ker Df(p)` (`hardSard_exists_complement_map`), so that `φ = (f, Λ)` has an
+  invertible derivative at `p`; the inverse function theorem gives a chart `Φ` of `ℝ^{N+M}`
+  in which the zero set of `f` is `{Φ⁻¹(0, k)}`. The bad parameters near `p` are images of
+  `k ↦ (Φ⁻¹(0, k))_q`, a differentiable map `ℝ^M → ℝ^M` whose derivative is singular wherever
+  `D_x f` is singular (`hardSard_det_eq_zero`): if `D_x f ξ = 0` then `κ = Λ(ξ, 0) ≠ 0` and the
+  derivative kills `κ`. Sard's lemma gives measure zero.
+* `theorem_M_E_2`: the bad set `{q ∈ B : ∃ x ∈ A, f(x; q) = 0, D_x f(x; q) singular}` has
+  Lebesgue measure zero (countably many charts cover the zero set, second countability);
+  `theorem_M_E_2_ae`: equivalently, for almost every `q ∈ B` the system is regular on `A`;
+  `theorem_M_E_2_regular`: with `A = ℝ^N`, `B = ℝ^M`, `RegularSystemAt f q` for a.e. `q`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology MeasureTheory
+
+/-- For a surjective linear map `D : ℝ^N × ℝ^M → ℝ^N` there is a linear `Λ : ℝ^N × ℝ^M → ℝ^M`
+that is injective on `ker D`, so that `(D, Λ)` is injective. -/
+theorem hardSard_exists_complement_map {N M : ℕ}
+    (D : (Fin N → ℝ) × (Fin M → ℝ) →L[ℝ] (Fin N → ℝ)) (hD : D.range = ⊤) :
+    ∃ Λ : (Fin N → ℝ) × (Fin M → ℝ) →L[ℝ] (Fin M → ℝ),
+      ∀ w, D w = 0 → Λ w = 0 → w = 0 := by
+  set K := LinearMap.ker (D : (Fin N → ℝ) × (Fin M → ℝ) →ₗ[ℝ] (Fin N → ℝ)) with hK
+  have hrk := LinearMap.finrank_range_add_finrank_ker
+    (D : (Fin N → ℝ) × (Fin M → ℝ) →ₗ[ℝ] (Fin N → ℝ))
+  have hrange : LinearMap.range (D : (Fin N → ℝ) × (Fin M → ℝ) →ₗ[ℝ] (Fin N → ℝ)) = ⊤ := hD
+  rw [hrange, finrank_top, Module.finrank_prod, Module.finrank_fin_fun,
+    Module.finrank_fin_fun] at hrk
+  have hKdim : Module.finrank ℝ K = Module.finrank ℝ (Fin M → ℝ) := by
+    rw [Module.finrank_fin_fun]
+    change N + Module.finrank ℝ K = N + M at hrk
+    omega
+  obtain ⟨g, hg⟩ := K.subtype.exists_leftInverse_of_injective K.ker_subtype
+  set e := LinearEquiv.ofFinrankEq K (Fin M → ℝ) hKdim with he
+  refine ⟨LinearMap.toContinuousLinearMap (e.toLinearMap ∘ₗ g), fun w hw hΛ => ?_⟩
+  have hwK : w ∈ K := hw
+  have hgw : g w = ⟨w, hwK⟩ := by
+    have := congrArg (fun T : K →ₗ[ℝ] K => T ⟨w, hwK⟩) hg
+    simpa using this
+  have : e (g w) = 0 := hΛ
+  rw [hgw, LinearEquiv.map_eq_zero_iff] at this
+  exact congrArg Subtype.val this
+
+/-- An injective endomorphism of `ℝ^N` is invertible. -/
+theorem hardSard_isInvertible_of_injective {N : ℕ} (T : (Fin N → ℝ) →L[ℝ] (Fin N → ℝ))
+    (hT : Function.Injective T) : T.IsInvertible :=
+  ⟨(LinearEquiv.ofInjectiveEndo (T : (Fin N → ℝ) →ₗ[ℝ] (Fin N → ℝ)) hT).toContinuousLinearEquiv,
+    by ext v; rfl⟩
+
+/-- **Theorem M.E.2**, local step. Let `f` be `C¹` on an open `U ⊆ ℝ^N × ℝ^M` and `Df(p)` onto
+at `p ∈ U`. Then `p` has an open neighbourhood `S` such that the set of parameters `q` for which
+some `(x, q) ∈ S ∩ U` solves `f(x; q) = 0` with `D_x f(x; q)` singular has measure zero. -/
+theorem hardSard_local {N M : ℕ} {U : Set ((Fin N → ℝ) × (Fin M → ℝ))} (hU : IsOpen U)
+    {f : (Fin N → ℝ) × (Fin M → ℝ) → (Fin N → ℝ)} (hf : ContDiffOn ℝ 1 f U)
+    {p : (Fin N → ℝ) × (Fin M → ℝ)} (hpU : p ∈ U) (hsurj : (fderiv ℝ f p).range = ⊤) :
+    ∃ S : Set ((Fin N → ℝ) × (Fin M → ℝ)), IsOpen S ∧ p ∈ S ∧
+      volume {q | ∃ x, (x, q) ∈ S ∧ (x, q) ∈ U ∧ f (x, q) = 0 ∧
+        ¬ ((fderiv ℝ f (x, q)).comp (ContinuousLinearMap.inl ℝ _ _)).IsInvertible} = 0 := by
+  obtain ⟨Λ, hΛ⟩ := hardSard_exists_complement_map (fderiv ℝ f p) hsurj
+  set φ : (Fin N → ℝ) × (Fin M → ℝ) → (Fin N → ℝ) × (Fin M → ℝ) := fun w => (f w, Λ w) with hφ
+  set Dφ : (Fin N → ℝ) × (Fin M → ℝ) → ((Fin N → ℝ) × (Fin M → ℝ) →L[ℝ]
+    (Fin N → ℝ) × (Fin M → ℝ)) := fun w => (fderiv ℝ f w).prod Λ with hDφ
+  have hfd : ∀ w ∈ U, HasFDerivAt f (fderiv ℝ f w) w := fun w hw =>
+    ((hf.differentiableOn one_ne_zero w hw).differentiableAt (hU.mem_nhds hw)).hasFDerivAt
+  have hφd : ∀ w ∈ U, HasFDerivAt φ (Dφ w) w := fun w hw =>
+    (hfd w hw).prodMk Λ.hasFDerivAt
+  -- the derivative of `φ` at `p` is invertible
+  have hinj : Function.Injective (Dφ p).toLinearMap := by
+    refine (injective_iff_map_eq_zero _).mpr fun w hw => ?_
+    have h1 : fderiv ℝ f p w = 0 := congrArg Prod.fst hw
+    have h2 : Λ w = 0 := congrArg Prod.snd hw
+    exact hΛ w h1 h2
+  set E₀ := (LinearEquiv.ofInjectiveEndo (Dφ p).toLinearMap hinj
+    ).toContinuousLinearEquiv with hE₀
+  have hE₀c : (E₀ : (Fin N → ℝ) × (Fin M → ℝ) →L[ℝ] (Fin N → ℝ) × (Fin M → ℝ)) = Dφ p := by
+    ext v <;> rfl
+  have hfs : HasStrictFDerivAt f (fderiv ℝ f p) p :=
+    (hf.contDiffAt (hU.mem_nhds hpU)).hasStrictFDerivAt one_ne_zero
+  have hφs : HasStrictFDerivAt φ (E₀ : (Fin N → ℝ) × (Fin M → ℝ) →L[ℝ] _) p := by
+    rw [hE₀c]
+    exact hfs.prodMk Λ.hasStrictFDerivAt
+  set Φ := hφs.toOpenPartialHomeomorph φ with hΦ
+  have hΦc : (Φ : (Fin N → ℝ) × (Fin M → ℝ) → (Fin N → ℝ) × (Fin M → ℝ)) = φ := rfl
+  -- the set where `Dφ` is invertible is open
+  have hDc : ContinuousOn Dφ U := by
+    have := hf.continuousOn_fderiv_of_isOpen hU le_rfl
+    exact (ContinuousLinearMap.prodₗᵢ ℝ).continuous.comp_continuousOn
+      (this.prodMk continuousOn_const)
+  have hO : IsOpen (U ∩ Dφ ⁻¹' {T | IsUnit T}) := hDc.isOpen_inter_preimage hU Units.isOpen
+  set S := Φ.source ∩ (U ∩ Dφ ⁻¹' {T | IsUnit T}) with hS
+  have hpS : p ∈ S := ⟨hφs.mem_toOpenPartialHomeomorph_source, hpU, by
+    change IsUnit (Dφ p)
+    rw [← hE₀c]
+    exact (ContinuousLinearEquiv.unitsEquiv ℝ _).symm E₀ |>.isUnit⟩
+  refine ⟨S, Φ.open_source.inter hO, hpS, ?_⟩
+  -- the parametrization of the zero set and the bad parameters
+  set h : (Fin M → ℝ) → (Fin M → ℝ) := fun k => (Φ.symm (0, k)).2 with hh
+  set s : Set (Fin M → ℝ) := {k | ((0 : Fin N → ℝ), k) ∈ Φ.target ∧ Φ.symm (0, k) ∈ S ∧
+    ¬ ((fderiv ℝ f (Φ.symm (0, k))).comp (ContinuousLinearMap.inl ℝ _ _)).IsInvertible} with hs
+  have hsub : {q | ∃ x, (x, q) ∈ S ∧ (x, q) ∈ U ∧ f (x, q) = 0 ∧
+      ¬ ((fderiv ℝ f (x, q)).comp (ContinuousLinearMap.inl ℝ _ _)).IsInvertible} ⊆ h '' s := by
+    rintro q ⟨x, hxS, -, hf0, hbad⟩
+    have hmap : Φ (x, q) = (0, Λ (x, q)) := by rw [hΦc, hφ]; simp only [hf0]
+    have htgt : ((0 : Fin N → ℝ), Λ (x, q)) ∈ Φ.target := hmap ▸ Φ.map_source hxS.1
+    have hinv : Φ.symm (0, Λ (x, q)) = (x, q) := by rw [← hmap]; exact Φ.left_inv hxS.1
+    refine ⟨Λ (x, q), ⟨htgt, by rw [hinv]; exact hxS, by rw [hinv]; exact hbad⟩, ?_⟩
+    simp only [hh, hinv]
+  refine measure_mono_null hsub ?_
+  -- derivative of the parametrization and its singularity
+  have hderiv : ∀ k ∈ s, ∃ D : (Fin M → ℝ) →L[ℝ] (Fin M → ℝ), HasFDerivAt h D k ∧ D.det = 0 := by
+    intro k hk
+    obtain ⟨htgt, hwS, hbad⟩ := hk
+    set w := Φ.symm (0, k) with hw
+    have hu : IsUnit (Dφ w) := hwS.2.2
+    set Ew := ContinuousLinearEquiv.unitsEquiv ℝ _ hu.unit with hEw
+    have hEwc : (Ew : (Fin N → ℝ) × (Fin M → ℝ) →L[ℝ] _) = Dφ w := rfl
+    have hφw : HasFDerivAt Φ (Ew : (Fin N → ℝ) × (Fin M → ℝ) →L[ℝ] _) (Φ.symm (0, k)) := by
+      rw [hEwc, hΦc]
+      exact hφd w hwS.2.1
+    have hψ := Φ.hasFDerivAt_symm htgt hφw
+    have hin : HasFDerivAt (fun k' : Fin M → ℝ => ((0 : Fin N → ℝ), k'))
+        ((0 : (Fin M → ℝ) →L[ℝ] (Fin N → ℝ)).prod (ContinuousLinearMap.id ℝ _)) k :=
+      (hasFDerivAt_const _ k).prodMk (hasFDerivAt_id k)
+    have hcomp := hasFDerivAt_snd.comp k (hψ.comp k hin)
+    set Dk : (Fin M → ℝ) →L[ℝ] (Fin M → ℝ) :=
+      (ContinuousLinearMap.snd ℝ (Fin N → ℝ) (Fin M → ℝ)).comp
+        ((Ew.symm : ((Fin N → ℝ) × (Fin M → ℝ)) →L[ℝ] ((Fin N → ℝ) × (Fin M → ℝ))).comp
+          ((0 : (Fin M → ℝ) →L[ℝ] (Fin N → ℝ)).prod (ContinuousLinearMap.id ℝ (Fin M → ℝ))))
+      with hDk
+    refine ⟨Dk, hcomp, ?_⟩
+    -- a nonzero vector in the kernel
+    have hni : ¬ Function.Injective
+        ((fderiv ℝ f w).comp (ContinuousLinearMap.inl ℝ (Fin N → ℝ) (Fin M → ℝ))) :=
+      fun hi => hbad (hardSard_isInvertible_of_injective _ hi)
+    obtain ⟨ξ, hξ, hξ0⟩ : ∃ ξ, (fderiv ℝ f w) (ξ, 0) = 0 ∧ ξ ≠ 0 := by
+      by_contra hcon
+      push Not at hcon
+      apply hni
+      refine (injective_iff_map_eq_zero _).mpr fun ξ' hξ' => ?_
+      by_contra hne
+      exact hne (hcon ξ' hξ')
+    set κ := Λ (ξ, 0) with hκ
+    have hEξ : Ew (ξ, 0) = (0, κ) := by
+      change Dφ w (ξ, 0) = (0, κ)
+      simp only [hDφ, ContinuousLinearMap.prod_apply, hξ, hκ]
+    have hκ0 : κ ≠ 0 := by
+      intro h0
+      rw [h0] at hEξ
+      have : ((ξ, 0) : (Fin N → ℝ) × (Fin M → ℝ)) = 0 :=
+        Ew.injective (hEξ.trans (by rw [map_zero]; rfl))
+      exact hξ0 (congrArg Prod.fst this)
+    have hker : Dk κ = 0 := by
+      have : Ew.symm (0, κ) = (ξ, 0) := by rw [← hEξ, ContinuousLinearEquiv.symm_apply_apply]
+      simp only [hDk, ContinuousLinearMap.comp_apply, ContinuousLinearMap.prod_apply,
+        zero_apply, ContinuousLinearMap.id_apply,
+        ContinuousLinearEquiv.coe_coe, this, ContinuousLinearMap.coe_snd']
+    rw [ContinuousLinearMap.det, LinearMap.det_eq_zero_iff_ker_ne_bot]
+    intro hbot
+    apply hκ0
+    have hmem : κ ∈ LinearMap.ker Dk.toLinearMap := hker
+    rw [hbot] at hmem
+    exact hmem
+  choose! D hD hdet using hderiv
+  exact addHaar_image_eq_zero_of_det_fderivWithin_eq_zero volume
+    (fun k hk => (hD k hk).hasFDerivWithinAt) hdet
+
+/-- **Theorem M.E.2 (transversality theorem)** (MWG, p. 943). Let `A ⊆ ℝ^N` and `B ⊆ ℝ^M` be open
+and `f : A × B → ℝ^N` continuously differentiable, with `Df(x; q)` of rank `N` (onto `ℝ^N`)
+whenever `f(x; q) = 0`. Then the set of `q ∈ B` at which `f(·; q) = 0` is not regular (some
+`x ∈ A` solves it with `D_x f(x; q)` singular) has Lebesgue measure zero. -/
+theorem theorem_M_E_2 {N M : ℕ} {A : Set (Fin N → ℝ)} {B : Set (Fin M → ℝ)} (hA : IsOpen A)
+    (hB : IsOpen B) {f : (Fin N → ℝ) × (Fin M → ℝ) → (Fin N → ℝ)}
+    (hf : ContDiffOn ℝ 1 f (A ×ˢ B))
+    (hrank : ∀ p ∈ A ×ˢ B, f p = 0 → (fderiv ℝ f p).range = ⊤) :
+    volume {q | q ∈ B ∧ ∃ x ∈ A, f (x, q) = 0 ∧
+      ¬ ((fderiv ℝ f (x, q)).comp (ContinuousLinearMap.inl ℝ _ _)).IsInvertible} = 0 := by
+  have hU : IsOpen (A ×ˢ B) := hA.prod hB
+  choose S hSo hpS hnull using fun z : {p : (Fin N → ℝ) × (Fin M → ℝ) // p ∈ A ×ˢ B ∧ f p = 0} =>
+    hardSard_local hU hf z.2.1 (hrank z.1 z.2.1 z.2.2)
+  obtain ⟨T, hTc, hTU⟩ := TopologicalSpace.isOpen_iUnion_countable S hSo
+  refine measure_mono_null (fun q hq => ?_) ((measure_biUnion_null_iff hTc).mpr fun z _ => hnull z)
+  obtain ⟨hqB, x, hxA, hf0, hbad⟩ := hq
+  have hz : (x, q) ∈ ⋃ z, S z := Set.mem_iUnion.mpr ⟨⟨(x, q), ⟨hxA, hqB⟩, hf0⟩, hpS _⟩
+  rw [← hTU] at hz
+  obtain ⟨z, hzT, hxz⟩ := Set.mem_iUnion₂.mp hz
+  exact Set.mem_iUnion₂.mpr ⟨z, hzT, x, hxz, ⟨hxA, hqB⟩, hf0, hbad⟩
+
+/-- **Theorem M.E.2** (MWG, p. 943), "almost every" form: under the hypotheses of
+`theorem_M_E_2`, for almost every `q`, if `q ∈ B` then every solution `x ∈ A` of `f(x; q) = 0`
+has `D_x f(x; q)` invertible. -/
+theorem theorem_M_E_2_ae {N M : ℕ} {A : Set (Fin N → ℝ)} {B : Set (Fin M → ℝ)} (hA : IsOpen A)
+    (hB : IsOpen B) {f : (Fin N → ℝ) × (Fin M → ℝ) → (Fin N → ℝ)}
+    (hf : ContDiffOn ℝ 1 f (A ×ˢ B))
+    (hrank : ∀ p ∈ A ×ˢ B, f p = 0 → (fderiv ℝ f p).range = ⊤) :
+    ∀ᵐ q, q ∈ B → ∀ x ∈ A, f (x, q) = 0 →
+      ((fderiv ℝ f (x, q)).comp (ContinuousLinearMap.inl ℝ _ _)).IsInvertible := by
+  rw [ae_iff]
+  refine measure_mono_null (fun q hq => ?_) (theorem_M_E_2 hA hB hf hrank)
+  change ¬ (q ∈ B → ∀ x ∈ A, f (x, q) = 0 → _) at hq
+  push Not at hq
+  exact hq
+
+/-- **Theorem M.E.2** (MWG, p. 943) with `A = ℝ^N`, `B = ℝ^M`, in terms of Definition M.E.2: if
+`f` is `C¹` and `Df(x; q)` is onto whenever `f(x; q) = 0`, then `f(·; q) = 0` is regular
+(`RegularSystemAt`) for almost every `q`. -/
+theorem theorem_M_E_2_regular {N M : ℕ} {f : (Fin N → ℝ) × (Fin M → ℝ) → (Fin N → ℝ)}
+    (hf : ContDiff ℝ 1 f) (hrank : ∀ p, f p = 0 → (fderiv ℝ f p).range = ⊤) :
+    ∀ᵐ q, RegularSystemAt f q := by
+  filter_upwards [theorem_M_E_2_ae isOpen_univ isOpen_univ hf.contDiffOn
+    (fun p _ hp => hrank p hp)] with q hq
+  exact fun x hx => hq trivial x trivial hx
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Frobenius' theorem, step 1: differentiable dependence of an ODE solution on parameters
+
+MWG, Section 3.H, pp. 79-80. The sufficiency half of Frobenius' theorem needs the derivative of
+the solution of an ordinary differential equation with respect to a parameter. Mathlib v4.34.0
+has existence, uniqueness, Gronwall bounds and Lipschitz dependence for ODEs, but no
+differentiable dependence. This module proves the case needed:
+
+* `frob_uniform_taylor`: a `C¹` map has a first-order Taylor remainder that is `o(‖b - a‖)`
+  uniformly for `a, b` in a compact convex set (Heine-Cantor plus the mean value inequality).
+* `frob_hasFDerivAt_endpoint`: let `y' = G(s, q, y)` with `G` of class `C¹` on `ℝ × E × ℝ`
+  (`E` finite-dimensional, `q` a parameter), and let `Y q` solve it on `[0, 1]` from an initial
+  value that does not depend on `q`, with the solutions bounded for `q` near `q₁`. If a family of
+  linear maps `D s` solves the linearized (variational) equation
+  `d/ds (D s k) = ∂_{(q, y)} G(s, q₁, Y q₁ s) (k, D s k)`, `D 0 = 0`, then `q ↦ Y q 1` is
+  differentiable at `q₁` with derivative `D 1`. The proof bounds `Y q - Y q₁` by Gronwall's
+  inequality (Lipschitz dependence), and then bounds `Y q - Y q₁ - D · (q - q₁)` by Gronwall's
+  inequality again, with the uniform Taylor remainder as the forcing term.
+
+The candidate `D` is supplied by the caller: for (3.H.2) it is explicit (see
+`FrobeniusTheorem`), so no linear-ODE existence theorem is needed.
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology
+
+/-- A `C¹` map has a uniform first-order Taylor remainder on a compact convex set: for every
+`ε > 0` there is `ρ > 0` with `‖G b - G a - DG(a)(b - a)‖ ≤ ε ‖b - a‖` whenever `a, b ∈ K` and
+`‖b - a‖ ≤ ρ`. -/
+theorem frob_uniform_taylor {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
+    {G : V → ℝ} (hG : ContDiff ℝ 1 G) {K : Set V} (hK : IsCompact K) (hKc : Convex ℝ K)
+    {ε : ℝ} (hε : 0 < ε) :
+    ∃ ρ > 0, ∀ a ∈ K, ∀ b ∈ K, ‖b - a‖ ≤ ρ →
+      ‖G b - G a - fderiv ℝ G a (b - a)‖ ≤ ε * ‖b - a‖ := by
+  have hc := hG.continuous_fderiv one_ne_zero
+  obtain ⟨ρ, hρ, hu⟩ := Metric.uniformContinuousOn_iff.mp
+    (hK.uniformContinuousOn_of_continuous hc.continuousOn) ε hε
+  refine ⟨ρ / 2, half_pos hρ, fun a ha b hb hab => ?_⟩
+  set φ : V → ℝ := fun c => G c - fderiv ℝ G a c with hφ
+  have hd : ∀ c, HasFDerivAt φ (fderiv ℝ G c - fderiv ℝ G a) c := fun c =>
+    ((hG.differentiable one_ne_zero c).hasFDerivAt).sub (fderiv ℝ G a).hasFDerivAt
+  have hs : Convex ℝ (K ∩ Metric.closedBall a (ρ / 2)) := hKc.inter (convex_closedBall a _)
+  have key := hs.norm_image_sub_le_of_norm_fderiv_le (f := φ) (C := ε)
+    (fun c _ => (hd c).differentiableAt)
+    (fun c hc' => by
+      rw [(hd c).fderiv]
+      have h1 := Metric.mem_closedBall.mp hc'.2
+      have := hu c hc'.1 a ha (by linarith)
+      rw [dist_eq_norm] at this
+      exact this.le)
+    ⟨ha, Metric.mem_closedBall_self (half_pos hρ).le⟩
+    ⟨hb, by rw [Metric.mem_closedBall, dist_eq_norm]; exact hab⟩
+  simp only [hφ] at key
+  rw [map_sub]
+  convert key using 2
+  ring
+
+/-- **Differentiable dependence on a parameter** (used for Frobenius' theorem, MWG pp. 79-80).
+Let `G : ℝ × E × ℝ → ℝ` be `C¹`, and for every parameter `q` let `Y q` solve `y' = G(s, q, y)` on
+`[0, 1]` with `Y q 0 = Y q₁ 0`, the solutions being bounded by `B` for `‖q - q₁‖ ≤ 1`. If
+`s ↦ D s k` solves the variational equation along `Y q₁` with `D 0 = 0`, then `q ↦ Y q 1` has
+derivative `D 1` at `q₁`. -/
+theorem frob_hasFDerivAt_endpoint {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [ProperSpace E] {G : ℝ × E × ℝ → ℝ} (hG : ContDiff ℝ 1 G) {Y : E → ℝ → ℝ} {q₁ : E}
+    {B : ℝ} (hY : ∀ q, ∀ s ∈ Set.Icc (0 : ℝ) 1, HasDerivAt (Y q) (G (s, q, Y q s)) s)
+    (hY0 : ∀ q, Y q 0 = Y q₁ 0)
+    (hB : ∀ q ∈ Metric.closedBall q₁ 1, ∀ s ∈ Set.Icc (0 : ℝ) 1, |Y q s| ≤ B)
+    {D : ℝ → E →L[ℝ] ℝ} (hD0 : D 0 = 0)
+    (hD : ∀ k, ∀ s ∈ Set.Icc (0 : ℝ) 1,
+      HasDerivAt (fun t => D t k) (fderiv ℝ G (s, q₁, Y q₁ s) (0, k, D s k)) s) :
+    HasFDerivAt (fun q => Y q 1) (D 1) q₁ := by
+  set K : Set (ℝ × E × ℝ) := Set.Icc 0 1 ×ˢ (Metric.closedBall q₁ 1 ×ˢ Set.Icc (-B) B)
+    with hKdef
+  have hKc : IsCompact K := isCompact_Icc.prod ((isCompact_closedBall _ _).prod isCompact_Icc)
+  have hKv : Convex ℝ K :=
+    (convex_Icc _ _).prod ((convex_closedBall _ _).prod (convex_Icc _ _))
+  have hGd := hG.differentiable one_ne_zero
+  obtain ⟨M₀, hM₀⟩ :=
+    hKc.exists_bound_of_continuousOn (hG.continuous_fderiv one_ne_zero).continuousOn
+  set M := max M₀ 0 + 1 with hM
+  have hMpos : 0 < M := by positivity
+  have hMb : ∀ X ∈ K, ‖fderiv ℝ G X‖ ≤ M := fun X hX =>
+    (hM₀ X hX).trans (by linarith [le_max_left M₀ 0])
+  have hlip : ∀ a ∈ K, ∀ b ∈ K, ‖G b - G a‖ ≤ M * ‖b - a‖ := fun a ha b hb =>
+    hKv.norm_image_sub_le_of_norm_fderiv_le (fun X _ => hGd X) hMb ha hb
+  have hmem : ∀ q ∈ Metric.closedBall q₁ 1, ∀ s ∈ Set.Icc (0 : ℝ) 1, (s, q, Y q s) ∈ K :=
+    fun q hq s hs => ⟨hs, hq, abs_le.mp (hB q hq s hs)⟩
+  have hq₁ : q₁ ∈ Metric.closedBall q₁ 1 := Metric.mem_closedBall_self zero_le_one
+  set C := Real.exp M - 1 with hC
+  have hC0 : 0 ≤ C := by have := Real.add_one_le_exp M; linarith
+  -- Lipschitz dependence on the parameter
+  have hlipdep : ∀ q ∈ Metric.closedBall q₁ 1, ∀ s ∈ Set.Icc (0 : ℝ) 1,
+      |Y q s - Y q₁ s| ≤ C * ‖q - q₁‖ := by
+    intro q hq
+    have hgr := norm_le_gronwallBound_of_norm_deriv_right_le
+      (f := fun s => Y q s - Y q₁ s)
+      (f' := fun s => G (s, q, Y q s) - G (s, q₁, Y q₁ s)) (δ := 0) (K := M)
+      (ε := M * ‖q - q₁‖) (a := 0) (b := 1)
+      (fun s hs => ((hY q s hs).continuousAt.sub (hY q₁ s hs).continuousAt).continuousWithinAt)
+      (fun s hs => ((hY q s (Set.Ico_subset_Icc_self hs)).sub
+        (hY q₁ s (Set.Ico_subset_Icc_self hs))).hasDerivWithinAt)
+      (by simp [hY0 q])
+      (fun s hs => by
+        have hs' := Set.Ico_subset_Icc_self hs
+        have h0 := hlip _ (hmem q₁ hq₁ s hs') _ (hmem q hq s hs')
+        refine h0.trans ?_
+        simp only [Prod.mk_sub_mk, Prod.norm_mk, sub_self, norm_zero]
+        have h1 : max 0 (max ‖q - q₁‖ ‖Y q s - Y q₁ s‖) ≤ ‖Y q s - Y q₁ s‖ + ‖q - q₁‖ :=
+          max_le (by positivity) (max_le (by linarith [norm_nonneg (Y q s - Y q₁ s)])
+            (by linarith [norm_nonneg (q - q₁)]))
+        calc M * max 0 (max ‖q - q₁‖ ‖Y q s - Y q₁ s‖)
+            ≤ M * (‖Y q s - Y q₁ s‖ + ‖q - q₁‖) := mul_le_mul_of_nonneg_left h1 hMpos.le
+          _ = M * ‖Y q s - Y q₁ s‖ + M * ‖q - q₁‖ := by ring)
+    intro s hs
+    have h2 := hgr s hs
+    rw [gronwallBound_of_K_ne_0 hMpos.ne'] at h2
+    simp only [zero_mul, zero_add, sub_zero, Real.norm_eq_abs] at h2
+    refine h2.trans ?_
+    have hexp : Real.exp (M * s) ≤ Real.exp M :=
+      Real.exp_le_exp.mpr (by nlinarith [hs.2])
+    rw [mul_div_cancel_left₀ _ hMpos.ne']
+    nlinarith [norm_nonneg (q - q₁)]
+  -- the first-order estimate
+  rw [hasFDerivAt_iff_isLittleO_nhds_zero, Asymptotics.isLittleO_iff]
+  intro ε hε
+  set c₁ := (Real.exp M - 1) / M with hc₁def
+  have hc₁ : 0 ≤ c₁ := div_nonneg hC0 hMpos.le
+  set ε' := ε / ((1 + C) * c₁ + 1) with hε'def
+  have hden : 0 < (1 + C) * c₁ + 1 := by positivity
+  have hε' : 0 < ε' := div_pos hε hden
+  obtain ⟨ρ, hρ, hT⟩ := frob_uniform_taylor hG hKc hKv hε'
+  have hball : Metric.ball (0 : E) (min 1 (ρ / (1 + C))) ∈ 𝓝 (0 : E) :=
+    Metric.ball_mem_nhds _ (lt_min one_pos (div_pos hρ (by linarith)))
+  filter_upwards [hball] with k hk
+  rw [mem_ball_zero_iff, lt_min_iff] at hk
+  have hq : q₁ + k ∈ Metric.closedBall q₁ 1 := by
+    rw [Metric.mem_closedBall, dist_eq_norm, add_sub_cancel_left]
+    exact hk.1.le
+  have hkρ : (1 + C) * ‖k‖ ≤ ρ := by
+    have := hk.2
+    rw [lt_div_iff₀ (by linarith)] at this
+    linarith
+  have hgr := norm_le_gronwallBound_of_norm_deriv_right_le
+    (f := fun s => Y (q₁ + k) s - Y q₁ s - D s k)
+    (f' := fun s => G (s, q₁ + k, Y (q₁ + k) s) - G (s, q₁, Y q₁ s) -
+      fderiv ℝ G (s, q₁, Y q₁ s) (0, k, D s k)) (δ := 0) (K := M)
+    (ε := ε' * ((1 + C) * ‖k‖)) (a := 0) (b := 1)
+    (fun s hs => (((hY _ s hs).continuousAt.sub (hY q₁ s hs).continuousAt).sub
+      (hD k s hs).continuousAt).continuousWithinAt)
+    (fun s hs => (((hY _ s (Set.Ico_subset_Icc_self hs)).sub
+      (hY q₁ s (Set.Ico_subset_Icc_self hs))).sub
+        (hD k s (Set.Ico_subset_Icc_self hs))).hasDerivWithinAt)
+    (by simp [hY0 (q₁ + k), hD0])
+    (fun s hs => by
+      have hs' := Set.Ico_subset_Icc_self hs
+      set a : ℝ × E × ℝ := (s, q₁, Y q₁ s) with ha
+      set b : ℝ × E × ℝ := (s, q₁ + k, Y (q₁ + k) s) with hb
+      set e := Y (q₁ + k) s - Y q₁ s - D s k with he
+      have hba : b - a = (0, k, D s k) + (0, 0, e) := by
+        simp only [ha, hb, he, Prod.mk_sub_mk, Prod.mk_add_mk, sub_self, add_zero,
+          add_sub_cancel_left]
+        congr 2
+        ring
+      have hsplit : G b - G a - fderiv ℝ G a (0, k, D s k) =
+          (G b - G a - fderiv ℝ G a (b - a)) + fderiv ℝ G a (0, 0, e) := by
+        rw [hba, map_add]
+        ring
+      have hnba : ‖b - a‖ ≤ (1 + C) * ‖k‖ := by
+        have hd := hlipdep _ hq s hs'
+        rw [add_sub_cancel_left] at hd
+        simp only [ha, hb, Prod.mk_sub_mk, Prod.norm_mk, sub_self, norm_zero,
+          add_sub_cancel_left, Real.norm_eq_abs]
+        refine max_le (by positivity)
+          (max_le (by nlinarith [norm_nonneg k]) (by linarith [norm_nonneg k]))
+      have hTa := hT a (hmem q₁ hq₁ s hs') b (hmem _ hq s hs') (hnba.trans hkρ)
+      have hlin : ‖fderiv ℝ G a (0, 0, e)‖ ≤ M * ‖e‖ := by
+        refine ((fderiv ℝ G a).le_opNorm _).trans ?_
+        have h3 : ‖((0 : ℝ), (0 : E), e)‖ = ‖e‖ := by
+          simp only [Prod.norm_mk, norm_zero, max_eq_right (norm_nonneg e)]
+        rw [h3]
+        exact mul_le_mul_of_nonneg_right (hMb a (hmem q₁ hq₁ s hs')) (norm_nonneg e)
+      change ‖G b - G a - fderiv ℝ G a (0, k, D s k)‖ ≤ M * ‖e‖ + ε' * ((1 + C) * ‖k‖)
+      rw [hsplit]
+      refine (norm_add_le _ _).trans ?_
+      have h4 : ε' * ‖b - a‖ ≤ ε' * ((1 + C) * ‖k‖) := mul_le_mul_of_nonneg_left hnba hε'.le
+      linarith)
+  have h5 := hgr 1 ⟨zero_le_one, le_rfl⟩
+  rw [gronwallBound_of_K_ne_0 hMpos.ne'] at h5
+  simp only [zero_mul, zero_add, sub_zero, mul_one] at h5
+  change ‖Y (q₁ + k) 1 - Y q₁ 1 - D 1 k‖ ≤ ε * ‖k‖
+  refine h5.trans ?_
+  have h6 : ε' * ((1 + C) * ‖k‖) / M * (Real.exp M - 1) = ε' * ((1 + C) * c₁) * ‖k‖ := by
+    rw [hc₁def]
+    field_simp
+  rw [h6]
+  have h7 : ε' * ((1 + C) * c₁) ≤ ε := by
+    rw [hε'def, div_mul_eq_mul_div, div_le_iff₀ hden]
+    nlinarith [hε.le, mul_nonneg (by linarith : (0 : ℝ) ≤ 1 + C) hc₁]
+  exact mul_le_mul_of_nonneg_right h7 (norm_nonneg k)
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Frobenius' theorem for one unknown function, by integration along rays
+
+MWG, Section 3.H, p. 80: "A basic result of the theory of partial differential equations (called
+Frobenius' theorem) tells us that the symmetry of the `L × L` derivative matrix of (3.H.2) at all
+points of its domain is the necessary and sufficient condition for the existence of a solution to
+(3.H.2)." This module proves the sufficiency half for a system `∂Z/∂q = f(q, Z)` on all of
+`ℝ^L × ℝ`, which is the form (3.H.2) takes in logarithmic coordinates (`FrobeniusIntegrability`).
+
+Hypotheses on `f : ℝ^L × ℝ → ℝ^L`: `f` is `C¹`; `|v·f(q, z)| ≤ ‖v‖` (sup norm), which rules out
+blow-up; and the integrability condition
+`h·D f(q, z)(v, v·f(q, z)) = v·D f(q, z)(h, h·f(q, z))`, i.e. symmetry of the matrix
+`A = D_q f + D_z f fᵀ` (for (3.H.2) this is the symmetry of the Slutsky matrix).
+
+Construction (the route of the source map F1): `Z(q)` is the value at `s = 1` of the solution of the
+scalar equation `y'(s) = (q - q₀)·f(q₀ + s(q - q₀), y)`, `y(0) = u`, along the segment from `q₀`
+(`frobRayField`). Global existence: Picard-Lindelöf with the bound on `f` (`frob_ray_exists`).
+Differentiability: `D(s)k = s k·f(q₀ + s(q - q₀), y(s))` solves the variational equation exactly,
+because the defect is `s (k·A v - v·A k) = 0` by the integrability condition; then
+`frob_hasFDerivAt_endpoint` gives `∇Z(q) = f(q, Z(q))` (`frobenius_ray_family`).
+
+The family indexed by the initial value `u` is strictly increasing, onto and continuous in `u`
+at every `q`, as needed by `integrability_of_pde`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Filter Topology
+
+variable {L : ℕ}
+
+/-- Product rule for the dot product of two curves in `ℝ^L`. -/
+theorem frob_hasDerivAt_dotProduct {a b : ℝ → Fin L → ℝ} {a' b' : Fin L → ℝ} {t : ℝ}
+    (ha : HasDerivAt a a' t) (hb : HasDerivAt b b' t) :
+    HasDerivAt (fun τ => a τ ⬝ᵥ b τ) (a' ⬝ᵥ b t + a t ⬝ᵥ b') t := by
+  have h := HasDerivAt.fun_sum (u := Finset.univ) fun i _ =>
+    (hasDerivAt_pi.mp ha i).mul (hasDerivAt_pi.mp hb i)
+  unfold dotProduct
+  convert h using 1
+  rw [← Finset.sum_add_distrib]
+
+/-- The field of the scalar equation along the segment from `q₀` to `q`:
+`G(s, q, y) = (q - q₀)·f(q₀ + s(q - q₀), y)`. -/
+def frobRayField (f : (Fin L → ℝ) × ℝ → Fin L → ℝ) (q₀ : Fin L → ℝ)
+    (X : ℝ × (Fin L → ℝ) × ℝ) : ℝ :=
+  (X.2.1 - q₀) ⬝ᵥ f (q₀ + X.1 • (X.2.1 - q₀), X.2.2)
+
+/-- The ray field is `C¹` when `f` is. -/
+theorem frobRayField_contDiff {f : (Fin L → ℝ) × ℝ → Fin L → ℝ} (hf : ContDiff ℝ 1 f)
+    (q₀ : Fin L → ℝ) : ContDiff ℝ 1 (frobRayField f q₀) := by
+  have hin : ContDiff ℝ 1
+      (fun X : ℝ × (Fin L → ℝ) × ℝ => (q₀ + X.1 • (X.2.1 - q₀), X.2.2)) := by fun_prop
+  have hc := hf.comp hin
+  unfold frobRayField dotProduct
+  refine ContDiff.sum fun i _ => ContDiff.mul ?_ (contDiff_pi.mp hc i)
+  fun_prop
+
+/-- The ray field is bounded by `‖q - q₀‖` when `|v·f| ≤ ‖v‖`. -/
+theorem frobRayField_abs_le {f : (Fin L → ℝ) × ℝ → Fin L → ℝ}
+    (hbd : ∀ X v, |v ⬝ᵥ f X| ≤ ‖v‖) (q₀ : Fin L → ℝ) (s : ℝ) (q : Fin L → ℝ) (y : ℝ) :
+    |frobRayField f q₀ (s, q, y)| ≤ ‖q - q₀‖ :=
+  hbd _ _
+
+/-- The derivative of the ray field in the direction `(0, k, u)`:
+`k·f(γ, y) + (q - q₀)·D f(γ, y)(s k, u)` with `γ = q₀ + s(q - q₀)`. -/
+theorem frobRayField_fderiv_apply {f : (Fin L → ℝ) × ℝ → Fin L → ℝ} (hf : ContDiff ℝ 1 f)
+    (q₀ : Fin L → ℝ) (s : ℝ) (q : Fin L → ℝ) (y : ℝ) (k : Fin L → ℝ) (u : ℝ) :
+    fderiv ℝ (frobRayField f q₀) (s, q, y) (0, k, u) =
+      k ⬝ᵥ f (q₀ + s • (q - q₀), y) +
+        (q - q₀) ⬝ᵥ fderiv ℝ f (q₀ + s • (q - q₀), y) (s • k, u) := by
+  set ℓ : ℝ → ℝ × (Fin L → ℝ) × ℝ := fun τ => (s, q + τ • k, y + τ * u) with hℓdef
+  have hℓ : HasDerivAt ℓ (0, k, u) 0 := by
+    refine (hasDerivAt_const _ _).prodMk
+      ((?_ : HasDerivAt (fun τ : ℝ => q + τ • k) k 0).prodMk ?_)
+    · simpa using ((hasDerivAt_id (0 : ℝ)).smul_const k).const_add q
+    · simpa using ((hasDerivAt_id (0 : ℝ)).mul_const u).const_add y
+  have hℓ0 : ℓ 0 = (s, q, y) := by simp [hℓdef]
+  have h1 := ((frobRayField_contDiff hf q₀).differentiable one_ne_zero
+    (ℓ 0)).hasFDerivAt.comp_hasDerivAt (0 : ℝ) hℓ
+  rw [hℓ0] at h1
+  have ha : HasDerivAt (fun τ : ℝ => q + τ • k - q₀) k 0 := by
+    simpa using (((hasDerivAt_id (0 : ℝ)).smul_const k).const_add q).sub_const q₀
+  have hp : HasDerivAt (fun τ : ℝ => (q₀ + s • (q + τ • k - q₀), y + τ * u)) (s • k, u) 0 := by
+    refine HasDerivAt.prodMk ?_ ?_
+    · simpa using (ha.const_smul s).const_add q₀
+    · simpa using ((hasDerivAt_id (0 : ℝ)).mul_const u).const_add y
+  have hb := ((hf.differentiable one_ne_zero _).hasFDerivAt).comp_hasDerivAt (0 : ℝ) hp
+  have h2 := frob_hasDerivAt_dotProduct ha hb
+  have h3 := h1.unique h2
+  simp only [zero_smul, add_zero, zero_mul, Function.comp_apply] at h3
+  exact h3
+
+/-- Global existence along a ray: through every `(t₀, y₀)` the equation
+`y' = (q - q₀)·f(q₀ + t(q - q₀), y)` has a solution defined on all of `ℝ`. -/
+theorem frob_ray_exists {f : (Fin L → ℝ) × ℝ → Fin L → ℝ} (hf : ContDiff ℝ 1 f)
+    (hbd : ∀ X v, |v ⬝ᵥ f X| ≤ ‖v‖) (q₀ q : Fin L → ℝ) (t₀ y₀ : ℝ) :
+    ∃ α : ℝ → ℝ, α t₀ = y₀ ∧ ∀ t, HasDerivAt α (frobRayField f q₀ (t, q, α t)) t := by
+  set c := ‖q - q₀‖ + 1 with hcdef
+  have hc : 0 < c := by positivity
+  set V : ℝ → ℝ → ℝ := fun t y => frobRayField f q₀ (t, q, c * y) / c with hVdef
+  have hV : ContDiff ℝ 1 (fun z : ℝ × ℝ => V z.1 z.2) :=
+    ((frobRayField_contDiff hf q₀).comp
+      (by fun_prop : ContDiff ℝ 1 (fun z : ℝ × ℝ => (z.1, q, c * z.2)))).div_const c
+  have hb : ∀ t y, |V t y| ≤ 1 := by
+    intro t y
+    simp only [hVdef, abs_div, abs_of_pos hc]
+    rw [div_le_one hc]
+    linarith [frobRayField_abs_le hbd q₀ t q (c * y)]
+  obtain ⟨β, hβ0, hβ⟩ := hardInt_exists_global hV hb t₀ (y₀ / c)
+  refine ⟨fun t => c * β t, by simp only [hβ0]; field_simp, fun t => ?_⟩
+  have := (hβ t).const_mul c
+  convert this using 1
+  simp only [hVdef]
+  field_simp
+
+/-- Uniqueness along a ray: two global solutions that agree at one time agree everywhere. -/
+theorem frob_ray_unique {f : (Fin L → ℝ) × ℝ → Fin L → ℝ} (hf : ContDiff ℝ 1 f)
+    (q₀ q : Fin L → ℝ) {α β : ℝ → ℝ} (hα : ∀ t, HasDerivAt α (frobRayField f q₀ (t, q, α t)) t)
+    (hβ : ∀ t, HasDerivAt β (frobRayField f q₀ (t, q, β t)) t) {t₀ : ℝ} (h0 : α t₀ = β t₀) :
+    α = β :=
+  hardInt_unique (V := fun t y => frobRayField f q₀ (t, q, y))
+    ((frobRayField_contDiff hf q₀).comp
+      (by fun_prop : ContDiff ℝ 1 (fun z : ℝ × ℝ => (z.1, q, z.2)))) hα hβ h0
+
+/-- Solutions along a ray that are ordered at one time are strictly ordered at every time. -/
+theorem frob_ray_strict_order {f : (Fin L → ℝ) × ℝ → Fin L → ℝ} (hf : ContDiff ℝ 1 f)
+    (q₀ q : Fin L → ℝ) {α β : ℝ → ℝ} (hα : ∀ t, HasDerivAt α (frobRayField f q₀ (t, q, α t)) t)
+    (hβ : ∀ t, HasDerivAt β (frobRayField f q₀ (t, q, β t)) t) {t₀ : ℝ} (h0 : α t₀ < β t₀)
+    (t : ℝ) : α t < β t :=
+  hardInt_strict_order (V := fun t y => frobRayField f q₀ (t, q, y))
+    ((frobRayField_contDiff hf q₀).comp
+      (by fun_prop : ContDiff ℝ 1 (fun z : ℝ × ℝ => (z.1, q, z.2)))) hα hβ h0 t
+
+/-- **Frobenius' theorem** (MWG, p. 80), sufficiency, for `∂Z/∂q = f(q, Z)` on `ℝ^L × ℝ`. Let `f`
+be `C¹` with `|v·f(q, z)| ≤ ‖v‖` and satisfy the integrability condition
+`h·D f(q, z)(v, v·f) = v·D f(q, z)(h, h·f)`. Then for every `q₀` there is a family `Z u` of
+solutions on all of `ℝ^L`, `∇Z u (q) = f(q, Z u (q))`, with `Z u (q₀) = u`; at every `q`,
+`u ↦ Z u (q)` is strictly increasing, onto `ℝ` and continuous. -/
+theorem frobenius_ray_family {f : (Fin L → ℝ) × ℝ → Fin L → ℝ} (hf : ContDiff ℝ 1 f)
+    (hbd : ∀ X v, |v ⬝ᵥ f X| ≤ ‖v‖)
+    (hsym : ∀ X h v, h ⬝ᵥ fderiv ℝ f X (v, v ⬝ᵥ f X) = v ⬝ᵥ fderiv ℝ f X (h, h ⬝ᵥ f X))
+    (q₀ : Fin L → ℝ) :
+    ∃ Z : ℝ → (Fin L → ℝ) → ℝ, (∀ u, Z u q₀ = u) ∧
+      (∀ u q, HasFDerivAt (Z u) (dualityDotCLM (f (q, Z u q))) q) ∧
+      (∀ q, StrictMono fun u => Z u q) ∧ (∀ q z, ∃ u, Z u q = z) ∧
+      ∀ q, Continuous fun u => Z u q := by
+  choose α hα0 hα using fun q u => frob_ray_exists hf hbd q₀ q 0 u
+  have hsm : ∀ q, StrictMono fun u => α q u 1 := fun q u u' huu' =>
+    frob_ray_strict_order hf q₀ q (hα q u) (hα q u') (t₀ := 0)
+      (by rw [hα0, hα0]; exact huu') 1
+  have hsurj : ∀ q z, ∃ u, α q u 1 = z := by
+    intro q z
+    obtain ⟨β, hβ1, hβ⟩ := frob_ray_exists hf hbd q₀ q 1 z
+    refine ⟨β 0, ?_⟩
+    rw [frob_ray_unique hf q₀ q (hα q (β 0)) hβ (t₀ := 0) (hα0 q (β 0)), hβ1]
+  refine ⟨fun u q => α q u 1, fun u => ?_, fun u q₁ => ?_, hsm, hsurj,
+    fun q => (hsm q).monotone.continuous_of_surjective (hsurj q)⟩
+  · -- along the trivial ray the solution is constant
+    have hconst : ∀ t, HasDerivAt (fun _ : ℝ => u) (frobRayField f q₀ (t, q₀, u)) t := by
+      intro t
+      simp only [frobRayField, sub_self, zero_dotProduct]
+      exact hasDerivAt_const t u
+    have := frob_ray_unique hf q₀ q₀ (hα q₀ u) hconst (t₀ := 0) (hα0 q₀ u)
+    simp only [this]
+  · -- differentiability via the variational equation
+    set v := q₁ - q₀ with hv
+    set P : ℝ → (Fin L → ℝ) × ℝ := fun s => (q₀ + s • v, α q₁ u s) with hPdef
+    set D : ℝ → (Fin L → ℝ) →L[ℝ] ℝ := fun s => s • dualityDotCLM (f (P s)) with hDdef
+    have hDk : ∀ s k, D s k = s * (k ⬝ᵥ f (P s)) := fun s k => by
+      simp only [hDdef, smul_apply, dualityDotCLM_apply, smul_eq_mul,
+        dotProduct_comm]
+    have hB : ∀ q ∈ Metric.closedBall q₁ 1, ∀ s ∈ Set.Icc (0 : ℝ) 1,
+        |α q u s| ≤ |u| + (‖q₁ - q₀‖ + 1) := by
+      intro q hq s hs
+      have h1 := norm_image_sub_le_of_norm_deriv_le_segment' (f := α q u) (C := ‖q - q₀‖)
+        (fun x _ => (hα q u x).hasDerivWithinAt)
+        (fun x _ => by rw [Real.norm_eq_abs]; exact frobRayField_abs_le hbd q₀ x q _) s hs
+      rw [hα0, Real.norm_eq_abs, sub_zero] at h1
+      have h2 : ‖q - q₀‖ ≤ ‖q₁ - q₀‖ + 1 := by
+        have := norm_sub_le_norm_sub_add_norm_sub q q₁ q₀
+        rw [Metric.mem_closedBall, dist_eq_norm] at hq
+        linarith
+      have h3 : ‖q - q₀‖ * s ≤ ‖q - q₀‖ := by
+        nlinarith [norm_nonneg (q - q₀), hs.1, hs.2]
+      have h4 := abs_sub_abs_le_abs_sub (α q u s) u
+      linarith
+    have hD : ∀ k, ∀ s ∈ Set.Icc (0 : ℝ) 1, HasDerivAt (fun t => D t k)
+        (fderiv ℝ (frobRayField f q₀) (s, q₁, α q₁ u s) (0, k, D s k)) s := by
+      intro k s _
+      have hP : HasDerivAt P (v, frobRayField f q₀ (s, q₁, α q₁ u s)) s := by
+        refine HasDerivAt.prodMk ?_ (hα q₁ u s)
+        simpa using ((hasDerivAt_id s).smul_const v).const_add q₀
+      have hfP := ((hf.differentiable one_ne_zero (P s)).hasFDerivAt).comp_hasDerivAt s hP
+      have hdot := frob_hasDerivAt_dotProduct (hasDerivAt_const s k) hfP
+      have hmul := (hasDerivAt_id s).mul hdot
+      have hfun : (fun t => D t k) = fun t => id t * (k ⬝ᵥ (f ∘ P) t) := by
+        funext t
+        rw [hDk]
+        rfl
+      rw [hfun, frobRayField_fderiv_apply hf, hDk]
+      convert hmul using 1
+      have hsm2 : (s • k, s * (k ⬝ᵥ f (P s))) = s • (k, k ⬝ᵥ f (P s)) := by
+        simp only [Prod.smul_mk, smul_eq_mul]
+      have hG : frobRayField f q₀ (s, q₁, α q₁ u s) = v ⬝ᵥ f (P s) := rfl
+      rw [hsm2, map_smul, dotProduct_smul, ← hsym (P s) k v, hG]
+      simp only [id, Function.comp_apply, zero_dotProduct, zero_add, one_mul, smul_eq_mul]
+      rfl
+    have hfd := frob_hasFDerivAt_endpoint (frobRayField_contDiff hf q₀) (Y := fun q => α q u)
+      (q₁ := q₁) (fun q s _ => hα q u s) (fun q => by rw [hα0, hα0]) hB
+      (by simp only [hDdef, zero_smul]) hD
+    have hD1 : D 1 = dualityDotCLM (f (q₁, α q₁ u 1)) := by
+      simp only [hDdef, hPdef, hv, one_smul, add_sub_cancel]
+    rw [hD1] at hfd
+    exact hfd
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Integrability for `L` goods: existence of solutions of (3.H.2)
+
+MWG, Section 3.H, pp. 79-80. For a demand function `x(p, w)` that is `C¹` on `p ≫ 0, w > 0`,
+nonnegative, satisfies Walras' law and has a symmetric Slutsky matrix, the system (3.H.2)
+`∂e(p)/∂p_l = x_l(p, e(p))` has a solution through every initial condition `(p⁰, w⁰) ≫ 0`, defined
+on all of `p ≫ 0` (`frob_3_H_2_exists`). With a negative semidefinite Slutsky matrix the solutions
+rationalize `x` (`integrability_general`): **the integrability theorem for any number of goods,
+from primitive hypotheses**. Homogeneity of degree zero is not used (see `docs/corrections-F3.md`).
+
+Method: in logarithmic coordinates `q = log p`, `z = log w` the system becomes
+`∂z/∂q_k = f_k(q, z) = p_k x_k(p, w) / w` (`frobLogField`), defined and `C¹` on all of
+`ℝ^L × ℝ` (`frobLogField_contDiff`). Walras' law and `x ≥ 0` give `f ≥ 0`, `Σ f_k = 1`, hence
+`|v·f| ≤ ‖v‖` (`frobLogField_abs_dot_le`). The derivative of `f` (`frobLogField_fderiv_apply`)
+gives `v·D f(h, h·f) = Σ v_k h_k f_k + (p∘v)·S(p, w)(p∘h)/w - (v·f)(h·f)`
+(`frobLogField_dot_fderiv`), so symmetry of `S` is exactly the integrability condition of
+`frobenius_ray_family` (`frobLogField_symm`). The solutions are `E(p, u) = exp Z_u(log p)`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology
+
+variable {L : ℕ}
+
+/-- Equation (3.H.2) in logarithmic coordinates: `f_k(q, z) = p_k x_k(p, w) / w` with
+`p = exp q` (componentwise) and `w = exp z`. -/
+noncomputable def frobLogField (x : DemandFunction L) (X : (Fin L → ℝ) × ℝ) : Fin L → ℝ :=
+  fun k => Real.exp (X.1 k) * x (fun j => Real.exp (X.1 j)) (Real.exp X.2) k / Real.exp X.2
+
+/-- The Slutsky matrix acting on a vector: `S u = D_p x u + D_w x (x·u)`. -/
+theorem frob_slutsky_mulVec (D : ((Fin L → ℝ) × ℝ) →L[ℝ] (Fin L → ℝ)) (xv u : Fin L → ℝ) :
+    (slutskyMatrix D xv).mulVec u = D (u, xv ⬝ᵥ u) := by
+  rw [← pde_jacobian_eq_slutsky, jacobian_mulVec]
+  simp only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.prod_apply,
+    ContinuousLinearMap.id_apply, dualityDotCLM_apply]
+
+/-- The point `(exp q, exp z)` lies in the domain `p ≫ 0, w > 0`. -/
+theorem frob_exp_mem_domain (q : Fin L → ℝ) (z : ℝ) :
+    ((fun j => Real.exp (q j)), Real.exp z) ∈ demandDomain L :=
+  ⟨fun _ => Real.exp_pos _, Real.exp_pos _⟩
+
+/-- If demand is `C¹` on `p ≫ 0, w > 0`, the logarithmic field is `C¹` on `ℝ^L × ℝ`. -/
+theorem frobLogField_contDiff {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) :
+    ContDiff ℝ 1 (frobLogField x) := by
+  have hg : ContDiff ℝ 1
+      (fun X : (Fin L → ℝ) × ℝ => ((fun j => Real.exp (X.1 j)), Real.exp X.2)) := by
+    refine ContDiff.prodMk (contDiff_pi.mpr fun j => ?_) (Real.contDiff_exp.comp contDiff_snd)
+    exact Real.contDiff_exp.comp ((contDiff_apply ℝ ℝ j).comp contDiff_fst)
+  have hc := hx.comp_contDiff hg fun X => frob_exp_mem_domain X.1 X.2
+  refine contDiff_pi.mpr fun k => ?_
+  have h0 : ContDiff ℝ 1 (fun X : (Fin L → ℝ) × ℝ =>
+      x (fun j => Real.exp (X.1 j)) (Real.exp X.2) k) := contDiff_pi.mp hc k
+  exact ((Real.contDiff_exp.comp ((contDiff_apply ℝ ℝ k).comp contDiff_fst)).mul h0).div
+    (Real.contDiff_exp.comp contDiff_snd) fun X => (Real.exp_pos _).ne'
+
+/-- By Walras' law and `x ≥ 0`, the logarithmic field satisfies `|v·f(q, z)| ≤ ‖v‖`. -/
+theorem frobLogField_abs_dot_le {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L)
+    (X : (Fin L → ℝ) × ℝ) (v : Fin L → ℝ) : |v ⬝ᵥ frobLogField x X| ≤ ‖v‖ := by
+  set P : Fin L → ℝ := fun j => Real.exp (X.1 j) with hP
+  have hPpos : StrictlyPositive P := fun j => Real.exp_pos _
+  have hw := Real.exp_pos X.2
+  have hwal := hW P (Real.exp X.2) ⟨hPpos, hw⟩
+  have hn := hnn P (Real.exp X.2) hPpos hw
+  have hf0 : ∀ k, 0 ≤ frobLogField x X k := fun k =>
+    div_nonneg (mul_nonneg (Real.exp_pos _).le (hn k)) hw.le
+  have hsum : ∑ k, frobLogField x X k = 1 := by
+    simp only [frobLogField, ← Finset.sum_div]
+    rw [div_eq_one_iff_eq hw.ne']
+    exact hwal
+  calc |v ⬝ᵥ frobLogField x X| ≤ ∑ k, |v k * frobLogField x X k| :=
+        Finset.abs_sum_le_sum_abs _ _
+    _ ≤ ∑ k, ‖v‖ * frobLogField x X k := by
+        refine Finset.sum_le_sum fun k _ => ?_
+        rw [abs_mul, abs_of_nonneg (hf0 k)]
+        have := norm_le_pi_norm v k
+        rw [Real.norm_eq_abs] at this
+        exact mul_le_mul_of_nonneg_right this (hf0 k)
+    _ = ‖v‖ := by rw [← Finset.mul_sum, hsum, mul_one]
+
+/-- The derivative of the logarithmic field: with `p = exp q`, `w = exp z`,
+`D f(q, z)(h, c)_k = h_k f_k + p_k D x(p, w)(p∘h, w c)_k / w - f_k c`. -/
+theorem frobLogField_fderiv_apply {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) (q : Fin L → ℝ) (z : ℝ)
+    (h : Fin L → ℝ) (c : ℝ) :
+    fderiv ℝ (frobLogField x) (q, z) (h, c) = fun k =>
+      h k * frobLogField x (q, z) k +
+        Real.exp (q k) * fderiv ℝ (Function.uncurry x) ((fun j => Real.exp (q j)), Real.exp z)
+          ((fun j => Real.exp (q j) * h j), Real.exp z * c) k / Real.exp z -
+        frobLogField x (q, z) k * c := by
+  set ℓ : ℝ → (Fin L → ℝ) × ℝ := fun τ => (q + τ • h, z + τ * c) with hℓdef
+  have hℓ : HasDerivAt ℓ (h, c) 0 := by
+    refine HasDerivAt.prodMk ?_ ?_
+    · simpa using ((hasDerivAt_id (0 : ℝ)).smul_const h).const_add q
+    · simpa using ((hasDerivAt_id (0 : ℝ)).mul_const c).const_add z
+  have hℓ0 : ℓ 0 = (q, z) := by simp [hℓdef]
+  have h1 := ((frobLogField_contDiff hx).differentiable one_ne_zero
+    (ℓ 0)).hasFDerivAt.comp_hasDerivAt (0 : ℝ) hℓ
+  rw [hℓ0] at h1
+  -- the same derivative computed by hand
+  set P : Fin L → ℝ := fun j => Real.exp (q j) with hPdef
+  set w := Real.exp z with hwdef
+  have hdom : (P, w) ∈ demandDomain L := frob_exp_mem_domain q z
+  have hDx : HasFDerivAt (Function.uncurry x) (fderiv ℝ (Function.uncurry x) (P, w)) (P, w) :=
+    ((hx.differentiableOn one_ne_zero (P, w) hdom).differentiableAt
+      ((isOpen_demandDomain L).mem_nhds hdom)).hasFDerivAt
+  have hPτ : HasDerivAt (fun τ : ℝ => fun j => Real.exp (q j + τ * h j))
+      (fun j => Real.exp (q j) * h j) 0 := by
+    rw [hasDerivAt_pi]
+    intro j
+    simpa using (((hasDerivAt_id (0 : ℝ)).mul_const (h j)).const_add (q j)).exp
+  have hWτ : HasDerivAt (fun τ : ℝ => Real.exp (z + τ * c)) (w * c) 0 := by
+    simpa using (((hasDerivAt_id (0 : ℝ)).mul_const c).const_add z).exp
+  have hX := hDx.comp_hasDerivAt_of_eq 0 (hPτ.prodMk hWτ) (by simp [hPdef, hwdef])
+  have hman : HasDerivAt (fun τ => frobLogField x (ℓ τ)) (fun k =>
+      h k * frobLogField x (q, z) k +
+        Real.exp (q k) * fderiv ℝ (Function.uncurry x) (P, w)
+          ((fun j => Real.exp (q j) * h j), w * c) k / w -
+        frobLogField x (q, z) k * c) 0 := by
+    rw [hasDerivAt_pi]
+    intro k
+    have hEk : HasDerivAt (fun τ : ℝ => Real.exp (q k + τ * h k)) (Real.exp (q k) * h k) 0 := by
+      simpa using (((hasDerivAt_id (0 : ℝ)).mul_const (h k)).const_add (q k)).exp
+    have hXk := hasDerivAt_pi.mp hX k
+    have hq := ((hEk.mul hXk).div hWτ (by simp only [zero_mul, add_zero]; exact
+      (Real.exp_pos z).ne'))
+    convert hq using 1
+    · funext τ
+      simp only [frobLogField, hℓdef, Function.comp_apply, Function.uncurry_apply_pair,
+        Pi.add_apply, Pi.smul_apply, smul_eq_mul, Pi.mul_apply, Pi.div_apply]
+    · simp only [frobLogField, Function.comp_apply, Function.uncurry_apply_pair, zero_mul,
+        add_zero, hPdef, hwdef, Pi.mul_apply]
+      field_simp
+  exact h1.unique hman
+
+/-- The integrability form of the derivative of the logarithmic field:
+`v·D f(h, h·f) = Σ v_k h_k f_k + (p∘v)·S(p, w)(p∘h)/w - (v·f)(h·f)`. -/
+theorem frobLogField_dot_fderiv {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) (q : Fin L → ℝ) (z : ℝ)
+    (h v : Fin L → ℝ) :
+    v ⬝ᵥ fderiv ℝ (frobLogField x) (q, z) (h, h ⬝ᵥ frobLogField x (q, z)) =
+      ∑ k, v k * h k * frobLogField x (q, z) k +
+        (fun j => Real.exp (q j) * v j) ⬝ᵥ
+          (slutskyMatrix (fderiv ℝ (Function.uncurry x) ((fun j => Real.exp (q j)), Real.exp z))
+            (x (fun j => Real.exp (q j)) (Real.exp z))).mulVec
+            (fun j => Real.exp (q j) * h j) / Real.exp z -
+        (v ⬝ᵥ frobLogField x (q, z)) * (h ⬝ᵥ frobLogField x (q, z)) := by
+  have hw := Real.exp_pos z
+  have hc : Real.exp z * (h ⬝ᵥ frobLogField x (q, z)) =
+      x (fun j => Real.exp (q j)) (Real.exp z) ⬝ᵥ (fun j => Real.exp (q j) * h j) := by
+    simp only [dotProduct, frobLogField, Finset.mul_sum]
+    refine Finset.sum_congr rfl fun k _ => ?_
+    field_simp
+  rw [frobLogField_fderiv_apply hx, hc, frob_slutsky_mulVec]
+  simp only [dotProduct, Finset.sum_div, Finset.sum_mul]
+  rw [← Finset.sum_add_distrib, ← Finset.sum_sub_distrib]
+  refine Finset.sum_congr rfl fun k _ => ?_
+  ring
+
+/-- Symmetry of the Slutsky matrix is the integrability condition of the logarithmic field. -/
+theorem frobLogField_symm {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L))
+    (hS : ∀ p w, StrictlyPositive p → 0 < w → ∀ i j,
+      slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) i j =
+        slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) j i)
+    (X : (Fin L → ℝ) × ℝ) (h v : Fin L → ℝ) :
+    h ⬝ᵥ fderiv ℝ (frobLogField x) X (v, v ⬝ᵥ frobLogField x X) =
+      v ⬝ᵥ fderiv ℝ (frobLogField x) X (h, h ⬝ᵥ frobLogField x X) := by
+  obtain ⟨q, z⟩ := X
+  rw [frobLogField_dot_fderiv hx, frobLogField_dot_fderiv hx]
+  set S := slutskyMatrix (fderiv ℝ (Function.uncurry x) ((fun j => Real.exp (q j)), Real.exp z))
+    (x (fun j => Real.exp (q j)) (Real.exp z)) with hSdef
+  have hT : S.transpose = S := by
+    ext i j
+    exact hS _ _ (fun j => Real.exp_pos _) (Real.exp_pos _) j i
+  have hmid : ∀ a b : Fin L → ℝ, a ⬝ᵥ S.mulVec b = b ⬝ᵥ S.mulVec a := by
+    intro a b
+    rw [Matrix.dotProduct_mulVec, ← hT, Matrix.vecMul_transpose, dotProduct_comm, hT]
+  rw [hmid]
+  have hs : ∑ k, h k * v k * frobLogField x (q, z) k =
+      ∑ k, v k * h k * frobLogField x (q, z) k :=
+    Finset.sum_congr rfl fun k _ => by ring
+  rw [hs]
+  ring
+
+/-- The componentwise logarithm has derivative `h ↦ (h_j / p_j)_j` at `p ≫ 0`. -/
+theorem frob_hasFDerivAt_log {p : Fin L → ℝ} (hp : StrictlyPositive p) :
+    HasFDerivAt (fun q : Fin L → ℝ => fun j => Real.log (q j))
+      (ContinuousLinearMap.pi fun j : Fin L =>
+        (p j)⁻¹ • ContinuousLinearMap.proj (R := ℝ) (φ := fun _ : Fin L => ℝ) j) p :=
+  hasFDerivAt_pi.mpr fun j =>
+    (Real.hasDerivAt_log (hp j).ne').comp_hasFDerivAt (f := fun q : Fin L → ℝ => q j) p
+      (hasFDerivAt_apply (𝕜 := ℝ) j p)
+
+/-- From the logarithmic system back to (3.H.2): if `∇Z(q) = f(q, Z(q))` on `ℝ^L`, then
+`E(p) = exp Z(log p)` solves (3.H.2) on `p ≫ 0`. -/
+theorem frob_solvesPDE_of_log {x : DemandFunction L} {Z : (Fin L → ℝ) → ℝ}
+    (hZ : ∀ q, HasFDerivAt Z (dualityDotCLM (frobLogField x (q, Z q))) q) :
+    SolvesPDE x fun p => Real.exp (Z fun j => Real.log (p j)) := by
+  intro p hp
+  have hd := ((hZ _).comp p (frob_hasFDerivAt_log hp)).exp
+  refine hd.congr_fderiv ?_
+  ext1 h
+  have hel : ∀ j, Real.exp (Real.log (p j)) = p j := fun j => Real.exp_log (hp j)
+  simp only [FunLike.coe_smul, Pi.smul_apply, ContinuousLinearMap.comp_apply,
+    dualityDotCLM_apply, ContinuousLinearMap.pi_apply, ContinuousLinearMap.proj_apply,
+    frobLogField, hel, smul_eq_mul, dotProduct, Finset.mul_sum, Function.comp_apply]
+  refine Finset.sum_congr rfl fun k _ => ?_
+  have := hp k
+  have := Real.exp_pos (Z fun j => Real.log (p j))
+  field_simp
+
+/-- **Equation (3.H.2)** (MWG, pp. 79-80): existence of solutions for `L` goods. Let `x(p, w)`
+be `C¹` on `p ≫ 0, w > 0`, nonnegative, with Walras' law and a symmetric Slutsky matrix. Then
+there is a family `E(·, u)` of positive solutions of (3.H.2) on all of `p ≫ 0`, with
+`E(p⁰, u) = exp u`; at every `p ≫ 0`, `u ↦ E(p, u)` is strictly increasing, continuous and onto
+`(0, ∞)`. -/
+theorem frob_expenditure_family {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L))
+    (hS : ∀ p w, StrictlyPositive p → 0 < w → ∀ i j,
+      slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) i j =
+        slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) j i)
+    (p₀ : Fin L → ℝ) :
+    ∃ E : (Fin L → ℝ) → ℝ → ℝ, (∀ u, SolvesPDE x fun q => E q u) ∧
+      (∀ q u, 0 < E q u) ∧ (∀ p, StrictMono (E p)) ∧ (∀ p, Continuous (E p)) ∧
+      (∀ p w, 0 < w → ∃ u, E p u = w) ∧ ∀ u, E p₀ u = Real.exp u := by
+  obtain ⟨Z, hZ0, hZ, hsm, hsurj, hcont⟩ := frobenius_ray_family (frobLogField_contDiff hx)
+    (frobLogField_abs_dot_le hW hnn) (frobLogField_symm hx hS) (fun j => Real.log (p₀ j))
+  refine ⟨fun p u => Real.exp (Z u fun j => Real.log (p j)),
+    fun u => frob_solvesPDE_of_log (hZ u), fun _ _ => Real.exp_pos _,
+    fun p => Real.exp_strictMono.comp (hsm _), fun p => Real.continuous_exp.comp (hcont _),
+    fun p w hw => ?_, fun u => by simp only [hZ0]⟩
+  obtain ⟨u, hu⟩ := hsurj (fun j => Real.log (p j)) (Real.log w)
+  exact ⟨u, by simp only [hu, Real.exp_log hw]⟩
+
+/-- **Equation (3.H.2)** (MWG, p. 79), existence through a given initial condition: with the
+hypotheses of `frob_expenditure_family`, for every `p⁰` and `w⁰ > 0` there is a solution `e` of
+(3.H.2) on all of `p ≫ 0`, positive, with `e(p⁰) = w⁰`. -/
+theorem frob_3_H_2_exists {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L))
+    (hS : ∀ p w, StrictlyPositive p → 0 < w → ∀ i j,
+      slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) i j =
+        slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) j i)
+    (p₀ : Fin L → ℝ) {w₀ : ℝ} (hw₀ : 0 < w₀) :
+    ∃ e : (Fin L → ℝ) → ℝ, e p₀ = w₀ ∧ (∀ q, 0 < e q) ∧ SolvesPDE x e := by
+  obtain ⟨E, hE, hpos, -, -, -, hE0⟩ := frob_expenditure_family hW hnn hx hS p₀
+  exact ⟨fun q => E q (Real.log w₀), by simp only [hE0, Real.exp_log hw₀],
+    fun q => hpos q _, hE _⟩
+
+/-- **The integrability theorem** (MWG, Section 3.H, p. 80), for any number of goods, from
+primitive hypotheses. Let `x(p, w)` be a nonnegative demand function, continuously
+differentiable on `p ≫ 0, w > 0`, satisfying Walras' law, with a symmetric and negative
+semidefinite Slutsky matrix. Then there is a family `E(·, u)` of solutions of (3.H.2), and the
+preference recovered from these expenditure functions rationalizes `x`: its Walrasian demand at
+every `(p, w) ≫ 0` is `{x(p, w)}`. -/
+theorem integrability_general {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L))
+    (hS : ∀ p w, StrictlyPositive p → 0 < w → ∀ i j,
+      slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) i j =
+        slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) j i)
+    (hnsd : ∀ p w, StrictlyPositive p → 0 < w →
+      NegSemidef (slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w))) :
+    ∃ E : (Fin L → ℝ) → ℝ → ℝ, (∀ u, SolvesPDE x fun q => E q u) ∧
+      ∀ p w, StrictlyPositive p → 0 < w →
+        walrasianDemandPref (recoveredPref E) p w = {x p w} := by
+  obtain ⟨E, hE, hpos, hmono, hcont, hsurj, -⟩ :=
+    frob_expenditure_family hW hnn hx hS (fun _ => 1)
+  refine ⟨E, hE, fun p w hp hw => ?_⟩
+  have hD : ∀ q w, StrictlyPositive q → 0 < w → HasFDerivAt (Function.uncurry x)
+      (fderiv ℝ (Function.uncurry x) (q, w)) (q, w) := fun q w hq hw =>
+    ((hx.differentiableOn one_ne_zero (q, w) ⟨hq, hw⟩).differentiableAt
+      ((isOpen_demandDomain L).mem_nhds ⟨hq, hw⟩)).hasFDerivAt
+  exact integrability_of_pde hnn hW hD hnsd hE (fun q u _ => hpos q u)
+    (fun p _ => hmono p) (fun p _ => hcont p) (fun p _ w hw => hsurj p w hw) hp hw
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Solving (3.H.2) one price at a time
+
+MWG, Section 3.H, p. 80 (small type): "once we know that `S(p, w)` is symmetric at all `(p, w)`,
+we can in fact use (3.H.1) to solve (3.H.2) ... By changing prices one at a time, we can decompose
+this problem into `L` subproblems where only one price changes at each step."
+
+* Each subproblem is the scalar equation `e'(r) = x_l(p[l ↦ r], e(r))` along a coordinate line,
+  with the other prices `p_k` (`k ≠ l`) fixed. It has a positive solution on all of `r > 0`
+  through every initial condition, whether or not `S` is symmetric ("this method makes mechanical
+  sense even if `S(p, w)` is not symmetric": `frob_line_exists`), and the solution is unique
+  (`frob_line_unique`). Both use logarithmic coordinates, as for footnote 18.
+* Along a coordinate line every solution `E` of (3.H.2) solves the subproblem
+  (`frob_line_hasDerivAt`).
+* Hence, if (3.H.2) has a solution `E` with `E(p⁰) = w⁰` (`frob_3_H_2_exists` when `S` is
+  symmetric), raising the prices of goods `1, ..., L` in turn from `p⁰` to `p̄` and solving the
+  subproblems gives exactly `E(p̄)` (`frob_one_price_at_a_time`); in particular the result does
+  not depend on how the path is decomposed. When `S` is not symmetric no solution of (3.H.2)
+  exists (`pde_slutsky_symmetric`), which is the book's "absurdity" remark.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Filter Topology
+
+variable {L : ℕ}
+
+/-- Changing one price of a strictly positive price vector to a positive value keeps it strictly
+positive. -/
+theorem frob_update_strictlyPositive {p : Fin L → ℝ} (hp : StrictlyPositive p) (l : Fin L)
+    {r : ℝ} (hr : 0 < r) : StrictlyPositive (Function.update p l r) := fun j => by
+  rw [Function.update_apply]
+  split_ifs
+  · exact hr
+  · exact hp j
+
+/-- Along a coordinate line, a solution of (3.H.2) solves the one-price equation
+`e'(r) = x_l(p[l ↦ r], e(r))`. -/
+theorem frob_line_hasDerivAt {x : DemandFunction L} {E : (Fin L → ℝ) → ℝ}
+    (hE : SolvesPDE x E) {p : Fin L → ℝ} (hp : StrictlyPositive p) (l : Fin L) {r : ℝ}
+    (hr : 0 < r) :
+    HasDerivAt (fun s => E (Function.update p l s))
+      (x (Function.update p l r) (E (Function.update p l r)) l) r := by
+  have h := (hE _ (frob_update_strictlyPositive hp l hr)).comp_hasDerivAt r
+    (hasDerivAt_update p l r)
+  rwa [dualityDotCLM_apply, dotProduct_single, mul_one] at h
+
+/-- The one-price equation in logarithmic coordinates `s = log r`, `ζ = log e`:
+`ζ'(s) = r x_l(p[l ↦ r], e) / e`. -/
+noncomputable def frobLineField (x : DemandFunction L) (p : Fin L → ℝ) (l : Fin L)
+    (s ζ : ℝ) : ℝ :=
+  Real.exp s * x (Function.update p l (Real.exp s)) (Real.exp ζ) l / Real.exp ζ
+
+/-- The logarithmic one-price field is `C¹` on `ℝ²`. -/
+theorem frobLineField_contDiff {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) {p : Fin L → ℝ}
+    (hp : StrictlyPositive p) (l : Fin L) :
+    ContDiff ℝ 1 (fun z : ℝ × ℝ => frobLineField x p l z.1 z.2) := by
+  have hg : ContDiff ℝ 1
+      (fun z : ℝ × ℝ => (Function.update p l (Real.exp z.1), Real.exp z.2)) :=
+    ((contDiff_update 1 p l).comp (Real.contDiff_exp.comp contDiff_fst)).prodMk
+      (Real.contDiff_exp.comp contDiff_snd)
+  have hc := hx.comp_contDiff hg fun z =>
+    ⟨frob_update_strictlyPositive hp l (Real.exp_pos _), Real.exp_pos _⟩
+  have h0 : ContDiff ℝ 1 (fun z : ℝ × ℝ =>
+      x (Function.update p l (Real.exp z.1)) (Real.exp z.2) l) := contDiff_pi.mp hc l
+  exact ((Real.contDiff_exp.comp contDiff_fst).mul h0).div
+    (Real.contDiff_exp.comp contDiff_snd) fun z => (Real.exp_pos _).ne'
+
+/-- By Walras' law and `x ≥ 0`, `0 ≤ r x_l / e ≤ 1`: the logarithmic one-price field is bounded
+by `1`. -/
+theorem frobLineField_abs_le {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L) {p : Fin L → ℝ}
+    (hp : StrictlyPositive p) (l : Fin L) (s ζ : ℝ) : |frobLineField x p l s ζ| ≤ 1 := by
+  set P := Function.update p l (Real.exp s) with hPdef
+  have hP := frob_update_strictlyPositive hp l (Real.exp_pos s)
+  have hw := Real.exp_pos ζ
+  have hwal := hW P (Real.exp ζ) ⟨hP, hw⟩
+  have hn := hnn P (Real.exp ζ) hP hw
+  have hPl : P l = Real.exp s := Function.update_self l _ p
+  have hle : P l * x P (Real.exp ζ) l ≤ P ⬝ᵥ x P (Real.exp ζ) :=
+    Finset.single_le_sum (f := fun j => P j * x P (Real.exp ζ) j)
+      (fun j _ => mul_nonneg (hP j).le (hn j)) (Finset.mem_univ l)
+  rw [hPl, hwal] at hle
+  have h0 : 0 ≤ Real.exp s * x P (Real.exp ζ) l := mul_nonneg (Real.exp_pos s).le (hn l)
+  unfold frobLineField
+  rw [← hPdef, abs_le]
+  constructor
+  · have : 0 ≤ Real.exp s * x P (Real.exp ζ) l / Real.exp ζ := div_nonneg h0 hw.le
+    linarith
+  · rw [div_le_one hw]
+    exact hle
+
+/-- From the logarithmic equation back to the one-price equation: if `ζ' = V(s, ζ)` on `ℝ`, then
+`e(r) = exp ζ(log r)` solves `e'(r) = x_l(p[l ↦ r], e(r))` at every `r > 0`. -/
+theorem frob_line_lift {x : DemandFunction L} {p : Fin L → ℝ} {l : Fin L} {Z : ℝ → ℝ}
+    (hZ : ∀ s, HasDerivAt Z (frobLineField x p l s (Z s)) s) {r : ℝ} (hr : 0 < r) :
+    HasDerivAt (fun t => Real.exp (Z (Real.log t)))
+      (x (Function.update p l r) (Real.exp (Z (Real.log r))) l) r := by
+  have h1 := (hZ (Real.log r)).comp r (Real.hasDerivAt_log hr.ne')
+  have h2 := (Real.hasDerivAt_exp _).comp r h1
+  refine h2.congr_deriv ?_
+  unfold frobLineField
+  rw [Real.exp_log hr]
+  simp only [Function.comp_apply]
+  field_simp
+
+/-- From the one-price equation to the logarithmic equation: a positive solution `e` on `r > 0`
+gives the solution `ζ(s) = log e(exp s)` on `ℝ`. -/
+theorem frob_line_log {x : DemandFunction L} {p : Fin L → ℝ} {l : Fin L} {e : ℝ → ℝ}
+    (hpos : ∀ r, 0 < r → 0 < e r)
+    (he : ∀ r, 0 < r → HasDerivAt e (x (Function.update p l r) (e r) l) r) (s : ℝ) :
+    HasDerivAt (fun t => Real.log (e (Real.exp t)))
+      (frobLineField x p l s (Real.log (e (Real.exp s)))) s := by
+  have hes := Real.exp_pos s
+  have h1 := (he _ hes).comp s (Real.hasDerivAt_exp s)
+  have h2 := h1.log (hpos _ hes).ne'
+  refine h2.congr_deriv ?_
+  unfold frobLineField
+  rw [Real.exp_log (hpos _ hes)]
+  simp only [Function.comp_apply]
+  field_simp
+
+/-- **Section 3.H** (MWG, p. 80, small type). Each one-price subproblem
+`e'(r) = x_l(p[l ↦ r], e(r))` (the other prices `p ≫ 0` fixed) has a positive solution on all
+of `r > 0` through every `(r₀, w₀)` with `w₀ > 0` (the book takes `r₀ > 0`; the statement
+needs no condition on `r₀`). Symmetry of `S` is not needed. -/
+theorem frob_line_exists {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) {p : Fin L → ℝ}
+    (hp : StrictlyPositive p) (l : Fin L) (r₀ : ℝ) {w₀ : ℝ} (hw₀ : 0 < w₀) :
+    ∃ e : ℝ → ℝ, e r₀ = w₀ ∧ ∀ r, 0 < r → 0 < e r ∧
+      HasDerivAt e (x (Function.update p l r) (e r) l) r := by
+  obtain ⟨Z, hZ0, hZ⟩ := hardInt_exists_global (frobLineField_contDiff hx hp l)
+    (frobLineField_abs_le hW hnn hp l) (Real.log r₀) (Real.log w₀)
+  refine ⟨fun t => Real.exp (Z (Real.log t)), by simp only [hZ0, Real.exp_log hw₀],
+    fun r hr => ⟨Real.exp_pos _, frob_line_lift hZ hr⟩⟩
+
+/-- **Section 3.H** (MWG, p. 80, small type). Uniqueness for each one-price subproblem: two
+positive solutions on `r > 0` that agree at one `r₀ > 0` agree at every `r > 0`. -/
+theorem frob_line_unique {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) {p : Fin L → ℝ}
+    (hp : StrictlyPositive p) (l : Fin L) {e₁ e₂ : ℝ → ℝ}
+    (hpos₁ : ∀ r, 0 < r → 0 < e₁ r) (hpos₂ : ∀ r, 0 < r → 0 < e₂ r)
+    (h₁ : ∀ r, 0 < r → HasDerivAt e₁ (x (Function.update p l r) (e₁ r) l) r)
+    (h₂ : ∀ r, 0 < r → HasDerivAt e₂ (x (Function.update p l r) (e₂ r) l) r) {r₀ : ℝ}
+    (hr₀ : 0 < r₀) (h0 : e₁ r₀ = e₂ r₀) {r : ℝ} (hr : 0 < r) : e₁ r = e₂ r := by
+  have hu := hardInt_unique (frobLineField_contDiff hx hp l) (t₀ := Real.log r₀)
+    (frob_line_log hpos₁ h₁) (frob_line_log hpos₂ h₂) (by simp only [Real.exp_log hr₀, h0])
+  have := congrFun hu (Real.log r)
+  simp only [Real.exp_log hr] at this
+  exact Real.log_injOn_pos (hpos₁ r hr) (hpos₂ r hr) this
+
+/-- The `k`-th intermediate price vector of the one-price-at-a-time path from `p⁰` to `p̄`: goods
+with index `< k` have reached `p̄`, the others are still at `p⁰`. -/
+def frobOnePricePath (p₀ p₁ : Fin L → ℝ) (k : ℕ) : Fin L → ℝ :=
+  fun j => if (j : ℕ) < k then p₁ j else p₀ j
+
+/-- The intermediate price vectors are strictly positive. -/
+theorem frobOnePricePath_pos {p₀ p₁ : Fin L → ℝ} (h₀ : StrictlyPositive p₀)
+    (h₁ : StrictlyPositive p₁) (k : ℕ) : StrictlyPositive (frobOnePricePath p₀ p₁ k) :=
+  fun j => by
+    unfold frobOnePricePath
+    split_ifs
+    · exact h₁ j
+    · exact h₀ j
+
+/-- The path starts at `p⁰`. -/
+theorem frobOnePricePath_zero (p₀ p₁ : Fin L → ℝ) : frobOnePricePath p₀ p₁ 0 = p₀ := by
+  funext j
+  simp [frobOnePricePath]
+
+/-- The path ends at `p̄`. -/
+theorem frobOnePricePath_last (p₀ p₁ : Fin L → ℝ) : frobOnePricePath p₀ p₁ L = p₁ := by
+  funext j
+  simp [frobOnePricePath, j.isLt]
+
+/-- At step `k` only the price of good `k` changes: `path k` with good `k` at `p⁰_k` is
+`path k`. -/
+theorem frobOnePricePath_update_start (p₀ p₁ : Fin L → ℝ) {k : ℕ} (hk : k < L) :
+    Function.update (frobOnePricePath p₀ p₁ k) ⟨k, hk⟩ (p₀ ⟨k, hk⟩) =
+      frobOnePricePath p₀ p₁ k := by
+  funext j
+  rw [Function.update_apply]
+  split_ifs with h
+  · subst h
+    simp [frobOnePricePath]
+  · rfl
+
+/-- At step `k`, raising good `k` to `p̄_k` gives `path (k + 1)`. -/
+theorem frobOnePricePath_update_end (p₀ p₁ : Fin L → ℝ) {k : ℕ} (hk : k < L) :
+    Function.update (frobOnePricePath p₀ p₁ k) ⟨k, hk⟩ (p₁ ⟨k, hk⟩) =
+      frobOnePricePath p₀ p₁ (k + 1) := by
+  funext j
+  rw [Function.update_apply]
+  split_ifs with h
+  · subst h
+    simp [frobOnePricePath]
+  · have h' : (j : ℕ) ≠ k := fun h'' => h (Fin.ext h'')
+    simp only [frobOnePricePath]
+    by_cases hj : (j : ℕ) < k
+    · simp [hj, Nat.lt_succ_of_lt hj]
+    · have : ¬ (j : ℕ) < k + 1 := by omega
+      simp [hj, this]
+
+/-- **Section 3.H** (MWG, p. 80, small type): solving (3.H.2) one price at a time. Let `E` be
+a positive solution of (3.H.2) on `p ≫ 0` with `E(p⁰) = w⁰`, and let `x` be `C¹`. Raise the
+prices of goods `0, 1, ..., L - 1` in turn from `p⁰` to `p̄ ≫ 0`: at step `k`, `e_k` is a positive
+solution of `e'(r) = x_k(path_k[k ↦ r], e(r))` on `r > 0` starting from the value `c_k` reached
+so far (`e_k(p⁰_k) = c_k`, `c_0 = w⁰`, `c_{k+1} = e_k(p̄_k)`). Then the final value is
+`c_L = E(p̄)`: the construction recovers the solution of (3.H.2). -/
+theorem frob_one_price_at_a_time {x : DemandFunction L}
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L)) {E : (Fin L → ℝ) → ℝ}
+    (hE : SolvesPDE x E) (hEpos : ∀ q, StrictlyPositive q → 0 < E q) {p₀ p₁ : Fin L → ℝ}
+    (h₀ : StrictlyPositive p₀) (h₁ : StrictlyPositive p₁) {w₀ : ℝ} (hEw : E p₀ = w₀)
+    {c : ℕ → ℝ} {e : ℕ → ℝ → ℝ} (hc0 : c 0 = w₀)
+    (hpos : ∀ k, k < L → ∀ r, 0 < r → 0 < e k r)
+    (hode : ∀ k (hk : k < L), ∀ r, 0 < r → HasDerivAt (e k)
+      (x (Function.update (frobOnePricePath p₀ p₁ k) ⟨k, hk⟩ r) (e k r) ⟨k, hk⟩) r)
+    (hstart : ∀ k (hk : k < L), e k (p₀ ⟨k, hk⟩) = c k)
+    (hstep : ∀ k (hk : k < L), c (k + 1) = e k (p₁ ⟨k, hk⟩)) :
+    c L = E p₁ := by
+  have key : ∀ k, k ≤ L → c k = E (frobOnePricePath p₀ p₁ k) := by
+    intro k
+    induction k with
+    | zero => intro _; rw [frobOnePricePath_zero, hc0, hEw]
+    | succ k ih =>
+      intro hk
+      have hkL : k < L := hk
+      have hpath := frobOnePricePath_pos h₀ h₁ k
+      have hEline : ∀ r, 0 < r → HasDerivAt (fun s => E (Function.update
+          (frobOnePricePath p₀ p₁ k) ⟨k, hkL⟩ s))
+          (x (Function.update (frobOnePricePath p₀ p₁ k) ⟨k, hkL⟩ r)
+            (E (Function.update (frobOnePricePath p₀ p₁ k) ⟨k, hkL⟩ r)) ⟨k, hkL⟩) r :=
+        fun r hr => frob_line_hasDerivAt hE hpath _ hr
+      have hu := frob_line_unique hx hpath ⟨k, hkL⟩ (hpos k hkL)
+        (fun r hr => hEpos _ (frob_update_strictlyPositive hpath _ hr)) (hode k hkL) hEline
+        (h₀ ⟨k, hkL⟩)
+        (by rw [hstart k hkL, frobOnePricePath_update_start p₀ p₁ hkL, ih hkL.le])
+        (h₁ ⟨k, hkL⟩)
+      rw [hstep k hkL, hu, frobOnePricePath_update_end p₀ p₁ hkL]
+  rw [key L le_rfl, frobOnePricePath_last]
+
+/-- **Section 3.H** (MWG, p. 80, small type), from primitive hypotheses. If `x` is `C¹`,
+nonnegative, satisfies Walras' law and has a symmetric Slutsky matrix, then for every
+`(p⁰, w⁰) ≫ 0` there is a solution `E` of (3.H.2) with `E(p⁰) = w⁰`, and the one-price-at-a-time
+construction from `p⁰` to any `p̄ ≫ 0` ends at `E(p̄)`, whatever solutions of the subproblems
+are used. -/
+theorem frob_one_price_at_a_time_exists {x : DemandFunction L} (hW : WalrasLaw x)
+    (hnn : ∀ q w, StrictlyPositive q → 0 < w → x q w ∈ nonnegOrthant L)
+    (hx : ContDiffOn ℝ 1 (Function.uncurry x) (demandDomain L))
+    (hS : ∀ p w, StrictlyPositive p → 0 < w → ∀ i j,
+      slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) i j =
+        slutskyMatrix (fderiv ℝ (Function.uncurry x) (p, w)) (x p w) j i)
+    {p₀ : Fin L → ℝ} (h₀ : StrictlyPositive p₀) {w₀ : ℝ} (hw₀ : 0 < w₀) :
+    ∃ E : (Fin L → ℝ) → ℝ, E p₀ = w₀ ∧ SolvesPDE x E ∧
+      ∀ p₁ : Fin L → ℝ, StrictlyPositive p₁ → ∀ (c : ℕ → ℝ) (e : ℕ → ℝ → ℝ), c 0 = w₀ →
+        (∀ k, k < L → ∀ r, 0 < r → 0 < e k r) →
+        (∀ k (hk : k < L), ∀ r, 0 < r → HasDerivAt (e k)
+          (x (Function.update (frobOnePricePath p₀ p₁ k) ⟨k, hk⟩ r) (e k r) ⟨k, hk⟩) r) →
+        (∀ k (hk : k < L), e k (p₀ ⟨k, hk⟩) = c k) →
+        (∀ k (hk : k < L), c (k + 1) = e k (p₁ ⟨k, hk⟩)) → c L = E p₁ := by
+  obtain ⟨E, hE0, hpos, hE⟩ := frob_3_H_2_exists hW hnn hx hS p₀ hw₀
+  exact ⟨E, hE0, hE, fun p₁ h₁ c e hc0 hp hode hst hstep =>
+    frob_one_price_at_a_time hx hE (fun q _ => hpos q) h₀ h₁ hE0 hc0 hp hode hst hstep⟩
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Proposition 3.C.1 on an arbitrary consumption set (Debreu's theorem)
+
+MWG, Section 3.C, Proposition 3.C.1, p. 47: a continuous rational preference relation on a
+consumption set `X ⊆ ℝ^L_+` has a continuous utility representation. The earlier modules prove
+it for `X = ℝ^L_+` and every convex `X` (Kreps's Proposition 2.9 needs connectedness). Here it
+is proved for every `X ⊆ ℝ^L`, connected or not (`proposition_3_C_1_general`), via Debreu's
+theorem on any second-countable space (`econ_debreu_representation`).
+
+The proof has two steps.
+* A representation (not yet continuous): with a countable base `b₀, b₁, …`,
+  `v(x) = ∑ {2⁻ⁿ : bₙ ⊆ {z : x ≻ z}}` represents `≿` (`econBaseUtility_represents`).
+* Debreu's open-gap lemma, in the form needed (`econ_gap_lemma`): if all sets `{v < v z}` and
+  `{v > v z}` are open, a strictly increasing transformation of `v` is continuous. Let `T` be
+  the range of `v`, `J ⊆ T` the lower ends of its jumps (`a < b` in `T`, nothing of `T`
+  between) and `Δ ⊇ J` a countable subset of `T` meeting every interval between two points of
+  `T` that has a point of `T` inside. The countable order `P ⊆ ℝ ×ₗ ℚ` of the points `(a, 0)`,
+  `a ∈ Δ`, plus a copy of `(0, 1) ∩ ℚ` after each jump and after the end markers `-1` and `3`,
+  is dense without end points, hence (Cantor) order-isomorphic to `(0, 1) ∩ ℚ`. The
+  transformed utility is `f(x) = sup {e(z) : z ∈ P, z.1 < v(x)}`.
+
+No departure from the book.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties
+
+variable {X : Type*} [TopologicalSpace X] {r : X → X → Prop}
+
+open Classical in
+/-- The representation built from a sequence `b` of open sets: the sum of `2⁻ⁿ` over the `n`
+with `bₙ` strictly below `x`. -/
+noncomputable def econBaseUtility (b : ℕ → Set X) (r : X → X → Prop) (x : X) : ℝ :=
+  ∑' n, if b n ⊆ StrictlyWorseThan r x then ((1 : ℝ) / 2) ^ n else 0
+
+omit [TopologicalSpace X] in
+open Classical in
+/-- The terms of `econBaseUtility` are summable. -/
+theorem econBaseUtility_summable (b : ℕ → Set X) (r : X → X → Prop) (x : X) :
+    Summable fun n => if b n ⊆ StrictlyWorseThan r x then ((1 : ℝ) / 2) ^ n else 0 := by
+  refine Summable.of_nonneg_of_le (fun n => ?_) (fun n => ?_) summable_geometric_two
+  · split_ifs <;> positivity
+  · split_ifs
+    · exact le_rfl
+    · positivity
+
+omit [TopologicalSpace X] in
+open Classical in
+/-- `econBaseUtility` takes values in `[0, 2]`. -/
+theorem econBaseUtility_bounds (b : ℕ → Set X) (r : X → X → Prop) (x : X) :
+    0 ≤ econBaseUtility b r x ∧ econBaseUtility b r x ≤ 2 := by
+  constructor
+  · exact tsum_nonneg fun n => by split_ifs <;> positivity
+  · rw [← tsum_geometric_two]
+    refine (econBaseUtility_summable b r x).tsum_le_tsum (fun n => ?_) summable_geometric_two
+    split_ifs
+    · exact le_rfl
+    · positivity
+
+open Classical in
+/-- `econBaseUtility` represents a rational `≿` with open strict contours, when `b` is a
+base of the topology. -/
+theorem econBaseUtility_represents {b : ℕ → Set X}
+    (hb : ∀ U : Set X, IsOpen U → ∀ x ∈ U, ∃ n, x ∈ b n ∧ b n ⊆ U) (hr : Rational r)
+    (ho : OpenStrictContours r) : Represents (econBaseUtility b r) r := by
+  have hmono : ∀ x y, r x y → econBaseUtility b r y ≤ econBaseUtility b r x := by
+    intro x y hxy
+    refine (econBaseUtility_summable b r y).tsum_le_tsum (fun n => ?_)
+      (econBaseUtility_summable b r x)
+    by_cases hy : b n ⊆ StrictlyWorseThan r y
+    · have hx : b n ⊆ StrictlyWorseThan r x := by
+        intro z hz
+        obtain ⟨hyz, hzy⟩ := hy hz
+        exact ⟨hr.2 x y z hxy hyz, fun hzx => hzy (hr.2 z x y hzx hxy)⟩
+      simp only [hy, hx, ↓reduceIte, le_refl]
+    · simp only [hy, ↓reduceIte]
+      split_ifs <;> positivity
+  intro x y
+  refine ⟨hmono x y, fun h => ?_⟩
+  by_contra hxy
+  have hyx : Strict r y x := ⟨(hr.1 x y).resolve_left hxy, hxy⟩
+  obtain ⟨n, hxn, hn⟩ := hb _ (ho y).2 x hyx
+  have hnx : ¬ b n ⊆ StrictlyWorseThan r x := fun hs => (hs hxn).2 (hs hxn).1
+  have hlt : econBaseUtility b r x < econBaseUtility b r y := by
+    refine Summable.tsum_lt_tsum_of_nonneg (i := n) (fun m => ?_) (fun m => ?_) ?_
+      (econBaseUtility_summable b r y)
+    · split_ifs <;> positivity
+    · by_cases hx : b m ⊆ StrictlyWorseThan r x
+      · have hy : b m ⊆ StrictlyWorseThan r y := by
+          intro z hz
+          obtain ⟨hxz, hzx⟩ := hx hz
+          exact ⟨hr.2 y x z hyx.1 hxz, fun hzy => hyx.2 (hr.2 x z y hxz hzy)⟩
+        simp only [hx, hy, ↓reduceIte, le_refl]
+      · simp only [hx, ↓reduceIte]
+        split_ifs <;> positivity
+    · simp only [hnx, hn, ↓reduceIte]
+      positivity
+  exact absurd h (not_le.mpr hlt)
+
+/-- A second-countable space has a base indexed by `ℕ`. -/
+theorem econ_exists_nat_basis [SecondCountableTopology X] :
+    ∃ b : ℕ → Set X, ∀ U : Set X, IsOpen U → ∀ x ∈ U, ∃ n, x ∈ b n ∧ b n ⊆ U := by
+  obtain ⟨B, hBc, -, hB⟩ := TopologicalSpace.exists_countable_basis X
+  obtain ⟨b, hb⟩ := (hBc.insert ∅).exists_eq_range (Set.insert_nonempty _ _)
+  refine ⟨b, fun U hU x hx => ?_⟩
+  obtain ⟨V, hV, hxV, hVU⟩ := hB.exists_subset_of_mem_open hx hU
+  have hV' : V ∈ insert ∅ B := Set.mem_insert_of_mem _ hV
+  rw [hb] at hV'
+  obtain ⟨n, rfl⟩ := hV'
+  exact ⟨n, hxV, hVU⟩
+
+/-- The lower ends of the jumps of `T ⊆ ℝ`: `a ∈ T` with some `b ∈ T`, `a < b`, and no point
+of `T` strictly between. -/
+def econJumps (T : Set ℝ) : Set ℝ :=
+  {a | a ∈ T ∧ ∃ b ∈ T, a < b ∧ ∀ c ∈ T, ¬ (a < c ∧ c < b)}
+
+/-- The countable "Debreu-dense" subset of `T`: the jump ends and one chosen point of `T` in
+each rational interval meeting `T`. -/
+def econDense (T : Set ℝ) : Set ℝ :=
+  econJumps T ∪
+    Set.range fun s : {qq : ℚ × ℚ // (T ∩ Set.Ioo (qq.1 : ℝ) qq.2).Nonempty} => s.2.some
+
+/-- The jumps of any `T ⊆ ℝ` are countable. -/
+theorem econJumps_countable (T : Set ℝ) : (econJumps T).Countable := by
+  classical
+  let nx : ℝ → ℝ := fun a => if h : a ∈ econJumps T then h.2.choose else a
+  have hnx : ∀ a ∈ econJumps T, nx a ∈ T ∧ a < nx a ∧ ∀ c ∈ T, ¬ (a < c ∧ c < nx a) := by
+    intro a ha
+    simp only [nx, ha, ↓reduceDIte]
+    exact ha.2.choose_spec
+  refine Set.PairwiseDisjoint.countable_of_isOpen (s := fun a => Set.Ioo a (nx a)) ?_
+    (fun _ _ => isOpen_Ioo) (fun a ha => Set.nonempty_Ioo.mpr (hnx a ha).2.1)
+  have key : ∀ a ∈ econJumps T, ∀ a' ∈ econJumps T, a < a' →
+      Disjoint (Set.Ioo a (nx a)) (Set.Ioo a' (nx a')) := by
+    intro a ha a' ha' hlt
+    have hle : nx a ≤ a' := by
+      by_contra h
+      exact (hnx a ha).2.2 a' ha'.1 ⟨hlt, not_le.mp h⟩
+    rw [Set.disjoint_left]
+    intro t ht ht'
+    exact absurd (ht.2.trans_le hle) (not_lt.mpr ht'.1.le)
+  intro a ha a' ha' hne
+  rcases lt_or_gt_of_ne hne with h | h
+  · exact key a ha a' ha' h
+  · exact (key a' ha' a ha h).symm
+
+/-- `econDense T` is countable. -/
+theorem econDense_countable (T : Set ℝ) : (econDense T).Countable :=
+  (econJumps_countable T).union (Set.countable_range _)
+
+/-- `econDense T ⊆ T`. -/
+theorem econDense_subset (T : Set ℝ) : econDense T ⊆ T := by
+  rintro a (ha | ⟨s, rfl⟩)
+  · exact ha.1
+  · exact s.2.some_mem.1
+
+/-- Between two points of `T` that are not a jump, there is a point of `econDense T`. -/
+theorem econDense_between {T : Set ℝ} {a b : ℝ} (ha : a ∈ T) (hb : b ∈ T) (hab : a < b)
+    (hj : a ∉ econJumps T) : ∃ d ∈ econDense T, a < d ∧ d < b := by
+  have : ∃ c ∈ T, a < c ∧ c < b := by
+    by_contra hn
+    simp only [not_exists, not_and, not_lt] at hn
+    exact hj ⟨ha, b, hb, hab, fun c hc h => absurd h.2 (not_lt.mpr (hn c hc h.1))⟩
+  obtain ⟨c, hcT, hac, hcb⟩ := this
+  obtain ⟨q, haq, hqc⟩ := exists_rat_btwn hac
+  obtain ⟨q', hcq, hqb⟩ := exists_rat_btwn hcb
+  let s : {qq : ℚ × ℚ // (T ∩ Set.Ioo (qq.1 : ℝ) qq.2).Nonempty} :=
+    ⟨(q, q'), ⟨c, hcT, hqc, hcq⟩⟩
+  have hs := s.2.some_mem
+  exact ⟨s.2.some, Or.inr ⟨s, rfl⟩, haq.trans hs.2.1, hs.2.2.trans hqb⟩
+
+/-- The countable order used in the gap lemma: `(a, 0)` for `a ∈ econDense T`, and `(a, q)`,
+`q ∈ (0, 1) ∩ ℚ`, for `a` a jump end or one of the end markers `-1`, `3`. -/
+def econGapOrder (T : Set ℝ) : Set (Lex (ℝ × ℚ)) :=
+  {z | ((ofLex z).1 ∈ econDense T ∧ (ofLex z).2 = 0) ∨
+    (((ofLex z).1 ∈ econJumps T ∨ (ofLex z).1 = -1 ∨ (ofLex z).1 = 3) ∧
+      0 < (ofLex z).2 ∧ (ofLex z).2 < 1)}
+
+/-- The utility transformed through an order isomorphism `e` of `econGapOrder` onto
+`(0, 1) ∩ ℚ`. -/
+noncomputable def econGapUtility (v : X → ℝ) (e : econGapOrder (Set.range v) ≃o RationalUnit)
+    (x : X) : ℝ :=
+  sSup ((fun z => (((e z : RationalUnit) : ℚ) : ℝ)) '' {z | (ofLex z.1).1 < v x})
+
+/-- **Debreu's open-gap lemma** (in the form used for Proposition 3.C.1). If `0 ≤ v ≤ 2` and
+all the sets `{v < v z}`, `{v > v z}` are open, some `f` with the same order as `v`
+(`v x ≤ v y ⟺ f x ≤ f y`) is continuous. -/
+theorem econ_gap_lemma {v : X → ℝ} (hb : ∀ x, 0 ≤ v x ∧ v x ≤ 2)
+    (hlt : ∀ z, IsOpen {x | v x < v z}) (hgt : ∀ z, IsOpen {x | v z < v x}) :
+    ∃ f : X → ℝ, Continuous f ∧ ∀ x y, v x ≤ v y ↔ f x ≤ f y := by
+  classical
+  set T := Set.range v with hTdef
+  set P := econGapOrder T with hPdef
+  have hJΔ : econJumps T ⊆ econDense T := Set.subset_union_left
+  have hΔT := econDense_subset T
+  have hTb : ∀ a ∈ T, 0 ≤ a ∧ a ≤ 2 := by
+    rintro _ ⟨x, rfl⟩
+    exact hb x
+  have hopen : ∀ c : ℝ, (c ∈ T ∨ c < 0 ∨ 2 < c) →
+      IsOpen {x | v x < c} ∧ IsOpen {x | c < v x} := by
+    rintro c (⟨z, rfl⟩ | hc | hc)
+    · exact ⟨hlt z, hgt z⟩
+    · have h1 : {x | v x < c} = ∅ :=
+        Set.eq_empty_of_forall_notMem fun x hx => absurd (hb x).1 (not_le.mpr (hx.trans hc))
+      have h2 : {x | c < v x} = Set.univ :=
+        Set.eq_univ_of_forall fun x => hc.trans_le (hb x).1
+      rw [h1, h2]
+      exact ⟨isOpen_empty, isOpen_univ⟩
+    · have h1 : {x | v x < c} = Set.univ :=
+        Set.eq_univ_of_forall fun x => (hb x).2.trans_lt hc
+      have h2 : {x | c < v x} = ∅ :=
+        Set.eq_empty_of_forall_notMem fun x hx => absurd (hb x).2 (not_le.mpr (hc.trans hx))
+      rw [h1, h2]
+      exact ⟨isOpen_univ, isOpen_empty⟩
+  have hfst : ∀ z ∈ P, (ofLex z).1 ∈ econDense T ∨ (ofLex z).1 = -1 ∨ (ofLex z).1 = 3 := by
+    rintro z (h | h)
+    · exact Or.inl h.1
+    · rcases h.1 with h' | h' | h'
+      · exact Or.inl (hJΔ h')
+      · exact Or.inr (Or.inl h')
+      · exact Or.inr (Or.inr h')
+  have hfstT : ∀ z ∈ P, (ofLex z).1 ∈ T ∨ (ofLex z).1 < 0 ∨ 2 < (ofLex z).1 := by
+    intro z hz
+    rcases hfst z hz with h | h | h
+    · exact Or.inl (hΔT h)
+    · exact Or.inr (Or.inl (by rw [h]; norm_num))
+    · exact Or.inr (Or.inr (by rw [h]; norm_num))
+  have hmk0 : ∀ a ∈ econDense T, toLex (a, (0 : ℚ)) ∈ P := fun a ha => Or.inl ⟨ha, rfl⟩
+  have hmkq : ∀ a : ℝ, (a ∈ econJumps T ∨ a = -1 ∨ a = 3) → ∀ q : ℚ, 0 < q → q < 1 →
+      toLex (a, q) ∈ P := fun a ha q h0 h1 => Or.inr ⟨ha, h0, h1⟩
+  have hlex : ∀ z w : Lex (ℝ × ℚ), z < w ↔
+      (ofLex z).1 < (ofLex w).1 ∨ (ofLex z).1 = (ofLex w).1 ∧ (ofLex z).2 < (ofLex w).2 :=
+    fun z w => Prod.Lex.toLex_lt_toLex (x := ofLex z) (y := ofLex w)
+  -- the order `P` is countable, dense and has no end points
+  let : Countable P := by
+    have hc : ((econDense T ∪ {-1, 3}) ×ˢ (Set.univ : Set ℚ)).Countable :=
+      ((econDense_countable T).union (Set.toFinite _).countable).prod Set.countable_univ
+    refine ((hc.image toLex).mono ?_).to_subtype
+    intro z hz
+    refine ⟨ofLex z, ⟨?_, Set.mem_univ _⟩, rfl⟩
+    rcases hfst z hz with h | h | h
+    · exact Or.inl h
+    · exact Or.inr (Or.inl h)
+    · exact Or.inr (Or.inr h)
+  let : Nonempty P := ⟨⟨toLex (-1, 1 / 2), hmkq _ (Or.inr (Or.inl rfl)) _
+    (by norm_num) (by norm_num)⟩⟩
+  have hcopy : ∀ z ∈ P, (ofLex z).2 ≠ 0 →
+      ((ofLex z).1 ∈ econJumps T ∨ (ofLex z).1 = -1 ∨ (ofLex z).1 = 3) ∧
+        0 < (ofLex z).2 ∧ (ofLex z).2 < 1 := by
+    rintro z (h | h) hne
+    · exact absurd h.2 hne
+    · exact h
+  have hsnd : ∀ z ∈ P, 0 ≤ (ofLex z).2 ∧ (ofLex z).2 < 1 := by
+    rintro z (h | h)
+    · rw [h.2]
+      norm_num
+    · exact ⟨h.2.1.le, h.2.2⟩
+  let : DenselyOrdered P := ⟨by
+    rintro ⟨z, hz⟩ ⟨w, hw⟩ hzw
+    change z < w at hzw
+    rw [hlex] at hzw
+    rcases hzw with hlt | ⟨heq, hlt⟩
+    · by_cases hc : (ofLex z).1 ∈ econJumps T ∨ (ofLex z).1 = -1 ∨ (ofLex z).1 = 3
+      · have hs := hsnd z hz
+        refine ⟨⟨toLex ((ofLex z).1, ((ofLex z).2 + 1) / 2), hmkq _ hc _ (by linarith)
+          (by linarith)⟩, ?_, ?_⟩
+        · change z < toLex _
+          rw [hlex]
+          exact Or.inr ⟨rfl, by change (ofLex z).2 < ((ofLex z).2 + 1) / 2; linarith⟩
+        · change toLex _ < w
+          rw [hlex]
+          exact Or.inl hlt
+      · have hz0 : (ofLex z).2 = 0 := by
+          by_contra h0
+          exact hc (hcopy z hz h0).1
+        have hzΔ : (ofLex z).1 ∈ econDense T := by
+          rcases hfst z hz with h | h | h
+          · exact h
+          · exact absurd (Or.inr (Or.inl h)) hc
+          · exact absurd (Or.inr (Or.inr h)) hc
+        have hzJ : (ofLex z).1 ∉ econJumps T := fun h => hc (Or.inl h)
+        rcases hfst w hw with hwΔ | hw1 | hw3
+        · obtain ⟨d, hd, hzd, hdw⟩ := econDense_between (hΔT hzΔ) (hΔT hwΔ) hlt hzJ
+          refine ⟨⟨toLex (d, 0), hmk0 d hd⟩, ?_, ?_⟩
+          · change z < toLex _
+            rw [hlex]
+            exact Or.inl hzd
+          · change toLex _ < w
+            rw [hlex]
+            exact Or.inl hdw
+        · have := (hTb _ (hΔT hzΔ)).1
+          rw [hw1] at hlt
+          linarith
+        · have hw0 : (ofLex w).2 ≠ 0 := by
+            intro h0
+            rcases hw with h | h
+            · have := (hTb _ (hΔT h.1)).2
+              rw [hw3] at this
+              norm_num at this
+            · rw [h0] at h
+              exact lt_irrefl _ h.2.1
+          have hws := (hcopy w hw hw0).2
+          refine ⟨⟨toLex (3, (ofLex w).2 / 2), hmkq _ (Or.inr (Or.inr rfl)) _ (by linarith)
+            (by linarith)⟩, ?_, ?_⟩
+          · change z < toLex _
+            rw [hlex]
+            left
+            change (ofLex z).1 < 3
+            rw [← hw3]
+            exact hlt
+          · change toLex _ < w
+            rw [hlex]
+            right
+            exact ⟨hw3.symm, by change (ofLex w).2 / 2 < (ofLex w).2; linarith⟩
+    · have hw0 : (ofLex w).2 ≠ 0 := by
+        have := (hsnd z hz).1
+        intro h
+        rw [h] at hlt
+        linarith
+      have hwc := hcopy w hw hw0
+      have hzs := (hsnd z hz).1
+      refine ⟨⟨toLex ((ofLex z).1, ((ofLex z).2 + (ofLex w).2) / 2), hmkq _ ?_ _
+        (by linarith) (by linarith)⟩, ?_, ?_⟩
+      · rw [heq]
+        exact hwc.1
+      · change z < toLex _
+        rw [hlex]
+        exact Or.inr ⟨rfl, by change (ofLex z).2 < ((ofLex z).2 + (ofLex w).2) / 2; linarith⟩
+      · change toLex _ < w
+        rw [hlex]
+        exact Or.inr ⟨heq, by
+          change ((ofLex z).2 + (ofLex w).2) / 2 < (ofLex w).2; linarith⟩⟩
+  let : NoMinOrder P := ⟨by
+    rintro ⟨z, hz⟩
+    by_cases h0 : (ofLex z).2 = 0
+    · refine ⟨⟨toLex (-1, 1 / 2), hmkq _ (Or.inr (Or.inl rfl)) _ (by norm_num)
+        (by norm_num)⟩, ?_⟩
+      change toLex _ < z
+      rw [hlex]
+      left
+      change (-1 : ℝ) < (ofLex z).1
+      rcases hz with h | h
+      · linarith [(hTb _ (hΔT h.1)).1]
+      · exact absurd h0 (ne_of_gt h.2.1)
+    · have hc := hcopy z hz h0
+      refine ⟨⟨toLex ((ofLex z).1, (ofLex z).2 / 2), hmkq _ hc.1 _ (by linarith)
+        (by linarith)⟩, ?_⟩
+      change toLex _ < z
+      rw [hlex]
+      exact Or.inr ⟨rfl, by change (ofLex z).2 / 2 < (ofLex z).2; linarith⟩⟩
+  let : NoMaxOrder P := ⟨by
+    rintro ⟨z, hz⟩
+    have hs := hsnd z hz
+    by_cases h3 : (ofLex z).1 = 3
+    · refine ⟨⟨toLex (3, ((ofLex z).2 + 1) / 2), hmkq _ (Or.inr (Or.inr rfl)) _
+        (by linarith) (by linarith)⟩, ?_⟩
+      change z < toLex _
+      rw [hlex]
+      exact Or.inr ⟨h3, by change (ofLex z).2 < ((ofLex z).2 + 1) / 2; linarith⟩
+    · refine ⟨⟨toLex (3, 1 / 2), hmkq _ (Or.inr (Or.inr rfl)) _ (by norm_num)
+        (by norm_num)⟩, ?_⟩
+      change z < toLex _
+      rw [hlex]
+      left
+      change (ofLex z).1 < 3
+      rcases hfst z hz with h | h | h
+      · linarith [(hTb _ (hΔT h)).2]
+      · rw [h]
+        norm_num
+      · exact absurd h h3⟩
+  let : Nonempty RationalUnit := ⟨⟨1 / 2, by constructor <;> norm_num⟩⟩
+  obtain ⟨e⟩ := Order.iso_of_countable_dense P RationalUnit
+  -- the transformed utility
+  set ψ : P → ℝ := fun z => (((e z : RationalUnit) : ℚ) : ℝ) with hψdef
+  have hψ : ∀ z, 0 < ψ z ∧ ψ z < 1 := by
+    intro z
+    have h := (e z).2
+    change (0 : ℝ) < (((e z : RationalUnit) : ℚ) : ℝ) ∧ (((e z : RationalUnit) : ℚ) : ℝ) < 1
+    exact ⟨by exact_mod_cast h.1, by exact_mod_cast h.2⟩
+  have hψmono : ∀ z w : P, z < w → ψ z < ψ w := by
+    intro z w hzw
+    have h := e.strictMono hzw
+    change (((e z : RationalUnit) : ℚ) : ℝ) < (((e w : RationalUnit) : ℚ) : ℝ)
+    exact_mod_cast h
+  let f : X → ℝ := econGapUtility v e
+  have hf : ∀ x, f x = sSup (ψ '' {z | (ofLex z.1).1 < v x}) := fun x => rfl
+  let lo : P := ⟨toLex (-1, 1 / 2), hmkq _ (Or.inr (Or.inl rfl)) _ (by norm_num)
+    (by norm_num)⟩
+  have hlo : ∀ x, lo ∈ {z : P | (ofLex z.1).1 < v x} := by
+    intro x
+    change (-1 : ℝ) < v x
+    linarith [(hb x).1]
+  have hbdd : ∀ x, BddAbove (ψ '' {z : P | (ofLex z.1).1 < v x}) := by
+    intro x
+    refine ⟨1, ?_⟩
+    rintro _ ⟨z, -, rfl⟩
+    exact (hψ z).2.le
+  have hne : ∀ x, (ψ '' {z : P | (ofLex z.1).1 < v x}).Nonempty :=
+    fun x => ⟨ψ lo, lo, hlo x, rfl⟩
+  have le_f : ∀ x, ∀ z : P, (ofLex z.1).1 < v x → ψ z ≤ f x := by
+    intro x z hz
+    rw [hf]
+    exact le_csSup (hbdd x) ⟨z, hz, rfl⟩
+  have f_le : ∀ x, ∀ z : P, v x ≤ (ofLex z.1).1 → f x ≤ ψ z := by
+    intro x z hz
+    rw [hf]
+    refine csSup_le (hne x) ?_
+    rintro _ ⟨w, hw, rfl⟩
+    refine (hψmono w z ?_).le
+    change w.1 < z.1
+    rw [hlex]
+    exact Or.inl (lt_of_lt_of_le hw hz)
+  have f_le_one : ∀ x, f x ≤ 1 := by
+    intro x
+    rw [hf]
+    refine csSup_le (hne x) ?_
+    rintro _ ⟨z, -, rfl⟩
+    exact (hψ z).2.le
+  have f_pos : ∀ x, 0 < f x := fun x => (hψ lo).1.trans_le (le_f x lo (hlo x))
+  have lt_f : ∀ x t, t < f x → ∃ z : P, (ofLex z.1).1 < v x ∧ t < ψ z := by
+    intro x t ht
+    rw [hf] at ht
+    obtain ⟨_, ⟨z, hz, rfl⟩, h⟩ := (lt_csSup_iff (hbdd x) (hne x)).mp ht
+    exact ⟨z, hz, h⟩
+  -- strict monotonicity
+  have hstep : ∀ d ∈ econDense T, ∀ c ∈ T, d < c →
+      ∃ z : P, toLex (d, (0 : ℚ)) < z.1 ∧ (ofLex z.1).1 < c := by
+    intro d hd c hc hdc
+    by_cases hj : d ∈ econJumps T
+    · refine ⟨⟨toLex (d, 1 / 2), hmkq _ (Or.inl hj) _ (by norm_num) (by norm_num)⟩, ?_, hdc⟩
+      change toLex (d, (0 : ℚ)) < toLex (d, 1 / 2)
+      rw [Prod.Lex.toLex_lt_toLex]
+      exact Or.inr ⟨rfl, by norm_num⟩
+    · obtain ⟨d', hd', hdd', hd'c⟩ := econDense_between (hΔT hd) hc hdc hj
+      refine ⟨⟨toLex (d', 0), hmk0 d' hd'⟩, ?_, hd'c⟩
+      change toLex (d, (0 : ℚ)) < toLex (d', 0)
+      rw [Prod.Lex.toLex_lt_toLex]
+      exact Or.inl hdd'
+  have hstrict : ∀ x y, v x < v y → f x < f y := by
+    intro x y hxy
+    obtain ⟨d, hd, hxd, hdy⟩ : ∃ d ∈ econDense T, v x ≤ d ∧ d < v y := by
+      by_cases hj : v x ∈ econJumps T
+      · exact ⟨v x, hJΔ hj, le_rfl, hxy⟩
+      · obtain ⟨d, hd, h1, h2⟩ := econDense_between (T := T) ⟨x, rfl⟩ ⟨y, rfl⟩ hxy hj
+        exact ⟨d, hd, h1.le, h2⟩
+    obtain ⟨z, hz, hzy⟩ := hstep d hd (v y) ⟨y, rfl⟩ hdy
+    let p₁ : P := ⟨toLex (d, 0), hmk0 d hd⟩
+    calc f x ≤ ψ p₁ := f_le x p₁ hxd
+      _ < ψ z := hψmono p₁ z hz
+      _ ≤ f y := le_f y z hzy
+  have hcongr : ∀ x y, v x = v y → f x = f y := by
+    intro x y h
+    rw [hf, hf, h]
+  refine ⟨f, ?_, fun x y => ⟨fun h => ?_, fun h => ?_⟩⟩
+  · apply OrderTopology.continuous_iff.mpr
+    intro a
+    constructor
+    · apply isOpen_iff_mem_nhds.mpr
+      intro x hx
+      change a < f x at hx
+      obtain ⟨z, hz, haz⟩ := lt_f x a hx
+      have hU := (hopen _ (hfstT z.1 z.2)).2
+      apply Filter.mem_of_superset (hU.mem_nhds hz)
+      intro x' hx'
+      exact haz.trans_le (le_f x' z hx')
+    · apply isOpen_iff_mem_nhds.mpr
+      intro x hx
+      change f x < a at hx
+      by_cases ha : 1 < a
+      · exact Filter.mem_of_superset Filter.univ_mem fun x' _ => (f_le_one x').trans_lt ha
+      obtain ⟨q, hxq, hqa⟩ := exists_rat_btwn hx
+      have hq0 : (0 : ℚ) < q := by exact_mod_cast (f_pos x).trans hxq
+      have hq1 : q < (1 : ℚ) := by exact_mod_cast hqa.trans_le (not_lt.mp ha)
+      set p : P := e.symm (⟨q, hq0, hq1⟩ : RationalUnit) with hpdef
+      have hψp : ψ p = q := by simp [hψdef, hpdef]
+      have hvx : v x ≤ (ofLex p.1).1 := by
+        by_contra hcon
+        have := le_f x p (not_le.mp hcon)
+        rw [hψp] at this
+        exact absurd hxq (not_lt.mpr this)
+      by_cases hpJ : (ofLex p.1).1 ∈ econJumps T
+      · obtain ⟨-, c, hcT, hpc, hnone⟩ := hpJ
+        have hU := (hopen c (Or.inl hcT)).1
+        apply Filter.mem_of_superset (hU.mem_nhds (lt_of_le_of_lt hvx hpc))
+        intro x' hx'
+        have hle : v x' ≤ (ofLex p.1).1 := by
+          by_contra hcon
+          exact hnone (v x') ⟨x', rfl⟩ ⟨not_le.mp hcon, hx'⟩
+        exact (f_le x' p hle).trans_lt (hψp ▸ hqa)
+      by_cases hp3 : (ofLex p.1).1 = 3
+      · refine Filter.mem_of_superset Filter.univ_mem fun x' _ => ?_
+        have hle : v x' ≤ (ofLex p.1).1 := by
+          rw [hp3]
+          linarith [(hb x').2]
+        exact (f_le x' p hle).trans_lt (hψp ▸ hqa)
+      have hp1 : (ofLex p.1).1 ≠ -1 := by
+        intro h
+        rw [h] at hvx
+        linarith [(hb x).1]
+      have hp0 : (ofLex p.1).2 = 0 := by
+        by_contra h0
+        rcases (hcopy p.1 p.2 h0).1 with h | h | h
+        · exact hpJ h
+        · exact hp1 h
+        · exact hp3 h
+      obtain ⟨q', hqq', hq'a⟩ := exists_rat_btwn hqa
+      have hq'0 : (0 : ℚ) < q' := hq0.trans (by exact_mod_cast hqq')
+      have hq'1 : q' < (1 : ℚ) := by exact_mod_cast hq'a.trans_le (not_lt.mp ha)
+      set p₀ : P := e.symm (⟨q', hq'0, hq'1⟩ : RationalUnit) with hp₀def
+      have hψp₀ : ψ p₀ = q' := by simp [hψdef, hp₀def]
+      have hpp₀ : p < p₀ := by
+        rw [hpdef, hp₀def]
+        apply e.symm.strictMono
+        change q < q'
+        exact_mod_cast hqq'
+      have hlt0 : (ofLex p.1).1 < (ofLex p₀.1).1 := by
+        have h := hpp₀
+        change p.1 < p₀.1 at h
+        rw [hlex] at h
+        rcases h with h | ⟨heq, h2⟩
+        · exact h
+        · exfalso
+          have hne0 : (ofLex p₀.1).2 ≠ 0 := by
+            rw [hp0] at h2
+            exact ne_of_gt h2
+          rcases (hcopy p₀.1 p₀.2 hne0).1 with h | h | h
+          · exact hpJ (heq ▸ h)
+          · exact hp1 (heq ▸ h)
+          · exact hp3 (heq ▸ h)
+      have hU := (hopen _ (hfstT p₀.1 p₀.2)).1
+      apply Filter.mem_of_superset (hU.mem_nhds (lt_of_le_of_lt hvx hlt0))
+      intro x' hx'
+      exact (f_le x' p₀ (le_of_lt hx')).trans_lt (hψp₀ ▸ hq'a)
+  · rcases h.lt_or_eq with h | h
+    · exact (hstrict x y h).le
+    · exact (hcongr x y h).le
+  · by_contra hcon
+    exact absurd h (not_le.mpr (hstrict y x (not_le.mp hcon)))
+
+/-- **Debreu's theorem.** On a second-countable space, a continuous rational preference
+relation has a continuous utility representation. -/
+theorem econ_debreu_representation [SecondCountableTopology X] (hr : Rational r)
+    (hc : ContinuousPreference r) : ∃ u : X → ℝ, Represents u r ∧ Continuous u := by
+  have ho := continuousPreference_openStrictContours hc
+  obtain ⟨b, hb⟩ := econ_exists_nat_basis (X := X)
+  set v := econBaseUtility b r with hvdef
+  have hv : Represents v r := econBaseUtility_represents hb hr ho
+  have hlt : ∀ z, IsOpen {x | v x < v z} := by
+    intro z
+    have hset : {x | v x < v z} = StrictlyWorseThan r z := by
+      ext x
+      change v x < v z ↔ r z x ∧ ¬ r x z
+      rw [hv z x, hv x z, not_le]
+      exact ⟨fun h => ⟨h.le, h⟩, fun h => h.2⟩
+    rw [hset]
+    exact (ho z).2
+  have hgt : ∀ z, IsOpen {x | v z < v x} := by
+    intro z
+    have hset : {x | v z < v x} = StrictlyBetterThan r z := by
+      ext x
+      change v z < v x ↔ r x z ∧ ¬ r z x
+      rw [hv z x, hv x z, not_le]
+      exact ⟨fun h => ⟨h.le, h⟩, fun h => h.2⟩
+    rw [hset]
+    exact (ho z).1
+  obtain ⟨f, hfc, hfv⟩ := econ_gap_lemma (econBaseUtility_bounds b r) hlt hgt
+  refine ⟨f, fun x y => ?_, hfc⟩
+  rw [hv x y, hfv]
+
+/-- **Proposition 3.C.1** (MWG, p. 47) at the book's generality: on any consumption set
+`X ⊆ ℝ^L` (connected or not, in particular any `X ⊆ ℝ^L_+`) a continuous rational `≿` has a
+utility representation continuous on `X`. -/
+theorem proposition_3_C_1_general {L : ℕ} {X : Set (Fin L → ℝ)}
+    {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop} (hr : RationalOn X r) (hc : PrefContinuous X r) :
+    ∃ u : (Fin L → ℝ) → ℝ, ContinuousOn u X ∧ RepresentsOn X u r := by
+  classical
+  have hr' := (rationalOn_iff_rational X r).mp hr
+  have hc' := (prefContinuous_iff_continuousPreference hr).mp hc
+  obtain ⟨v, hv, hvc⟩ := econ_debreu_representation hr' hc'
+  refine ⟨fun x => if h : x ∈ X then v ⟨x, h⟩ else 0, ?_, ?_⟩
+  · rw [continuousOn_iff_continuous_domRestrict]
+    convert hvc using 1
+    funext x
+    simp [x.2]
+  · intro x hx y hy
+    simp only [hx, hy, ↓reduceDIte]
+    exact hv ⟨x, hx⟩ ⟨y, hy⟩
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.H.2: a differentiable expenditure function forces convex preferences
+
+MWG, Section 3.H, p. 78 (small type), and Exercise 3.H.2, p. 102: if `e(p, ū)` is
+differentiable in `p`, no (strongly monotone) nonconvex preference generates `e`.
+
+`exercise_3_H_2` (earlier module) shows that at each `p ≫ 0` where `e(·, ū)` is differentiable
+the expenditure minimizer is unique and equals `∇e(p, ū)`, and that `e` is also generated by the
+closed convex set `V_ū ⊇ K = {x ≥ 0 : u(x) ≥ ū}`. Here we prove `V_ū ⊆ K`, so that `K = V_ū`
+is convex (`exercise_3_H_2_convex`, `exercise_3_H_2_prefConvex`).
+
+The proof avoids any separation argument at prices with zero components. Fix `c ∈ V_ū` and
+`ε > 0`. The function `Φ(p) = p·c - e(p, ū) + ε ∑_l (p_l + 1/p_l)` is `≥ ε ∑_l (p_l + 1/p_l)`
+on `p ≫ 0` (because `c ∈ V_ū`), so it attains its minimum over `p ≫ 0` at an interior point
+`p*` (`econPenalty_exists_min`). The first-order conditions (`econPenalty_foc`) give
+`∂e/∂p_l(p*) = c_l + ε - ε/p*_l² ≤ c_l + ε`, and `∇e(p*) ∈ K`; since `K` is closed upward
+(monotonicity), `c + ε·1 ∈ K`, and letting `ε → 0`, `c ∈ K` (`K` is closed).
+
+No departure from the book: the statement is proved as printed, for continuous strongly
+monotone preferences on `ℝ^L_+` (weak monotonicity, `y ≥ x ⇒ y ≿ x`, suffices).
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology
+
+variable {L : ℕ}
+
+/-- The penalised objective `Φ(p) = p·c - E(p) + ε ∑_l (p_l + p_l⁻¹)` of the proof. -/
+noncomputable def econPenalty (E : (Fin L → ℝ) → ℝ) (c : Fin L → ℝ) (ε : ℝ)
+    (p : Fin L → ℝ) : ℝ :=
+  p ⬝ᵥ c - E p + ε * ∑ l, (p l + (p l)⁻¹)
+
+/-- `Φ ≥ ε (p_l + p_l⁻¹)` on `p ≫ 0` when `E(p) ≤ p·c`. -/
+theorem econPenalty_ge_term {E : (Fin L → ℝ) → ℝ} {c : Fin L → ℝ} {ε : ℝ} (hε : 0 < ε)
+    (hc : ∀ p, StrictlyPositive p → E p ≤ p ⬝ᵥ c) {q : Fin L → ℝ} (hq : StrictlyPositive q)
+    (l : Fin L) : ε * (q l + (q l)⁻¹) ≤ econPenalty E c ε q := by
+  have hterm : ∀ j, 0 ≤ q j + (q j)⁻¹ := fun j => by have := hq j; positivity
+  have hsum : q l + (q l)⁻¹ ≤ ∑ j, (q j + (q j)⁻¹) :=
+    Finset.single_le_sum (fun j _ => hterm j) (Finset.mem_univ l)
+  have := hc q hq
+  unfold econPenalty
+  nlinarith [mul_le_mul_of_nonneg_left hsum hε.le]
+
+/-- `Φ ≥ 0` on `p ≫ 0` when `E(p) ≤ p·c`. -/
+theorem econPenalty_nonneg {E : (Fin L → ℝ) → ℝ} {c : Fin L → ℝ} {ε : ℝ} (hε : 0 < ε)
+    (hc : ∀ p, StrictlyPositive p → E p ≤ p ⬝ᵥ c) {q : Fin L → ℝ} (hq : StrictlyPositive q) :
+    0 ≤ econPenalty E c ε q := by
+  have hterm : ∀ j, 0 ≤ q j + (q j)⁻¹ := fun j => by have := hq j; positivity
+  have := hc q hq
+  have : 0 ≤ ∑ j, (q j + (q j)⁻¹) := Finset.sum_nonneg fun j _ => hterm j
+  unfold econPenalty
+  nlinarith
+
+/-- If `E` is differentiable on `p ≫ 0` and `E(p) ≤ p·c` there, `Φ` attains its minimum over
+`p ≫ 0`. -/
+theorem econPenalty_exists_min {E : (Fin L → ℝ) → ℝ} {c : Fin L → ℝ} {ε : ℝ} (hε : 0 < ε)
+    (hd : ∀ p, StrictlyPositive p → DifferentiableAt ℝ E p)
+    (hc : ∀ p, StrictlyPositive p → E p ≤ p ⬝ᵥ c) :
+    ∃ p, StrictlyPositive p ∧ ∀ q, StrictlyPositive q →
+      econPenalty E c ε p ≤ econPenalty E c ε q := by
+  set Φ := econPenalty E c ε with hΦ
+  have h1 : StrictlyPositive (1 : Fin L → ℝ) := fun _ => one_pos
+  have hΦ1 : 0 ≤ Φ 1 := econPenalty_nonneg hε hc h1
+  set R := Φ 1 / ε + 1 with hRdef
+  have hR0 : 0 < R := by positivity
+  have hbox : ∀ q, StrictlyPositive q → Φ q ≤ Φ 1 →
+      q ∈ Set.Icc (fun _ => 1 / R) (fun _ => R) := by
+    intro q hq hle
+    have hR : ∀ l, q l + (q l)⁻¹ < R := by
+      intro l
+      have h := (econPenalty_ge_term hε hc hq l).trans hle
+      have h' : q l + (q l)⁻¹ ≤ Φ 1 / ε := by
+        rw [le_div_iff₀ hε]
+        linarith
+      linarith
+    refine ⟨fun l => ?_, fun l => ?_⟩
+    · have hql := hq l
+      have hinv : (q l)⁻¹ < R := by linarith [hR l, hq l]
+      change 1 / R ≤ q l
+      rw [div_le_iff₀ hR0]
+      have := (inv_lt_iff_one_lt_mul₀ hql).mp hinv
+      linarith
+    · have hinv : 0 < (q l)⁻¹ := inv_pos.mpr (hq l)
+      exact (by linarith [hR l] : q l ≤ R)
+  have hpos : ∀ q ∈ Set.Icc (fun _ : Fin L => 1 / R) (fun _ => R), StrictlyPositive q :=
+    fun q hq l => lt_of_lt_of_le (by positivity) (hq.1 l)
+  have h1Q : (1 : Fin L → ℝ) ∈ Set.Icc (fun _ => 1 / R) (fun _ => R) := by
+    have hR1 : 1 ≤ R := by linarith [div_nonneg hΦ1 hε.le]
+    refine ⟨fun l => ?_, fun l => ?_⟩
+    · change 1 / R ≤ 1
+      rw [div_le_one hR0]
+      exact hR1
+    · exact hR1
+  have hcont : ContinuousOn Φ (Set.Icc (fun _ => 1 / R) (fun _ => R)) := by
+    intro q hq
+    have hq' := hpos q hq
+    apply ContinuousAt.continuousWithinAt
+    have hE := (hd q hq').continuousAt
+    have hsum : ContinuousAt (fun p : Fin L → ℝ => ∑ l, (p l + (p l)⁻¹)) q := by
+      have : (fun p : Fin L → ℝ => ∑ l, (p l + (p l)⁻¹)) =
+          fun p => ∑ l ∈ Finset.univ, (fun l (p : Fin L → ℝ) => p l + (p l)⁻¹) l p := rfl
+      rw [this]
+      refine tendsto_finsetSum _ fun l _ => ?_
+      exact ((continuous_apply l).continuousAt).add
+        (((continuous_apply l).continuousAt).inv₀ (hq' l).ne')
+    have hdot : Continuous fun p : Fin L → ℝ => p ⬝ᵥ c := by
+      simp only [dotProduct]
+      fun_prop
+    exact (hdot.continuousAt.sub hE).add (continuousAt_const.mul hsum)
+  obtain ⟨p, hpQ, hmin⟩ := isCompact_Icc.exists_isMinOn ⟨1, h1Q⟩ hcont
+  refine ⟨p, hpos p hpQ, fun q hq => ?_⟩
+  by_cases hle : Φ q ≤ Φ 1
+  · exact hmin (hbox q hq hle)
+  · exact (hmin h1Q).trans (le_of_not_ge hle)
+
+/-- First-order conditions at a minimizer of `Φ` over `p ≫ 0` where `E` has derivative `E'`:
+`∂E/∂p_l = c_l + ε - ε/p_l²`. -/
+theorem econPenalty_foc {E : (Fin L → ℝ) → ℝ} {c : Fin L → ℝ} {ε : ℝ}
+    {p : Fin L → ℝ} (hp : StrictlyPositive p)
+    (hmin : ∀ q, StrictlyPositive q → econPenalty E c ε p ≤ econPenalty E c ε q)
+    {E' : (Fin L → ℝ) →L[ℝ] ℝ} (hE : HasFDerivAt E E' p) (l : Fin L) :
+    gradientVec E' l = c l + ε - ε / (p l) ^ 2 := by
+  set e : Fin L → ℝ := Pi.single l 1 with he
+  let g : ℝ → ℝ := fun t => econPenalty E c ε (p + t • e)
+  have hline : HasDerivAt (fun t : ℝ => p + t • e) e 0 := by
+    simpa using ((hasDerivAt_id (0 : ℝ)).smul_const e).const_add p
+  have hline0 : p + (0 : ℝ) • e = p := by simp
+  have hloc : IsLocalMin g 0 := by
+    have ht : Tendsto (fun t : ℝ => p + t • e) (𝓝 0) (𝓝 p) := by
+      have := hline.continuousAt.tendsto
+      rwa [hline0] at this
+    filter_upwards [ht.eventually (relations_eventually_strictlyPositive hp)] with t ht
+    change econPenalty E c ε (p + (0 : ℝ) • e) ≤ econPenalty E c ε (p + t • e)
+    rw [hline0]
+    exact hmin _ ht
+  -- the derivative of `g` at `0`
+  have hE0 : HasFDerivAt E E' (p + (0 : ℝ) • e) := by rwa [hline0]
+  have hEd : HasDerivAt (fun t : ℝ => E (p + t • e)) (E' e) 0 := hE0.comp_hasDerivAt (0 : ℝ) hline
+  have hdot : HasDerivAt (fun t : ℝ => (p + t • e) ⬝ᵥ c) (c l) 0 := by
+    have hfun : (fun t : ℝ => (p + t • e) ⬝ᵥ c) = fun t => p ⬝ᵥ c + t * c l := by
+      funext t
+      rw [add_dotProduct, smul_dotProduct, he, single_dotProduct, one_mul, smul_eq_mul]
+    rw [hfun]
+    simpa using ((hasDerivAt_id (0 : ℝ)).mul_const (c l)).const_add (p ⬝ᵥ c)
+  have hterm : ∀ j, HasDerivAt (fun t : ℝ => (p + t • e) j + ((p + t • e) j)⁻¹)
+      (e j + -(e j) / (p j) ^ 2) 0 := by
+    intro j
+    have hj : HasDerivAt (fun t : ℝ => (p + t • e) j) (e j) 0 := by
+      have hfun : (fun t : ℝ => (p + t • e) j) = fun t => p j + t * e j := by
+        funext t
+        simp
+      rw [hfun]
+      simpa using ((hasDerivAt_id (0 : ℝ)).mul_const (e j)).const_add (p j)
+    have hj0 : (p + (0 : ℝ) • e) j = p j := by simp
+    have hne : (fun t : ℝ => (p + t • e) j) 0 ≠ 0 := by
+      change (p + (0 : ℝ) • e) j ≠ 0
+      rw [hj0]
+      exact (hp j).ne'
+    have hinv := hj.inv hne
+    change HasDerivAt _ (-(e j) / ((p + (0 : ℝ) • e) j) ^ 2) 0 at hinv
+    rw [hj0] at hinv
+    exact hj.add hinv
+  have hsum : HasDerivAt (fun t : ℝ => ∑ j, ((p + t • e) j + ((p + t • e) j)⁻¹))
+      (∑ j, (e j + -(e j) / (p j) ^ 2)) 0 := by
+    have := HasDerivAt.sum (u := Finset.univ) (fun j _ => hterm j)
+    convert this using 1
+    funext t
+    simp
+  have hg : HasDerivAt g (c l - E' e + ε * ∑ j, (e j + -(e j) / (p j) ^ 2)) 0 :=
+    (hdot.sub hEd).add (hsum.const_mul ε)
+  have h0 := hloc.hasDerivAt_eq_zero hg
+  have hsumval : ∑ j, (e j + -(e j) / (p j) ^ 2) = 1 - 1 / (p l) ^ 2 := by
+    have : ∀ j, e j + -(e j) / (p j) ^ 2 = if j = l then 1 - 1 / (p l) ^ 2 else 0 := by
+      intro j
+      by_cases hjl : j = l
+      · subst hjl
+        simp [he]
+        ring
+      · simp [he, hjl]
+    simp only [this, Finset.sum_ite_eq', Finset.mem_univ, ↓reduceIte]
+  rw [hsumval] at h0
+  change E' e = _
+  have : ε / p l ^ 2 = ε * (1 / p l ^ 2) := by ring
+  rw [this]
+  linarith
+
+/-- **Exercise 3.H.2** (MWG, p. 102), the main step. Let `u` be continuous on `ℝ^L_+`,
+representing a locally nonsatiated `≿`, `ū` attainable, and let the EMP constraint set
+`K = {x ≥ 0 : u(x) ≥ ū}` be closed upward. If `e(·, ū)` is differentiable at every `p ≫ 0`,
+then `V_ū ⊆ K`. -/
+theorem econ_recoveredSet_subset {u : (Fin L → ℝ) → ℝ} {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant L) u r) (hu : ContinuousOn u (nonnegOrthant L))
+    (hlns : LocallyNonsatiated (nonnegOrthant L) r) {ub : ℝ}
+    (hne : ∃ x ∈ nonnegOrthant L, ub ≤ u x)
+    (hup : ∀ x ∈ empConstraintSet u ub, ∀ y, x ≤ y → y ∈ empConstraintSet u ub)
+    (hd : ∀ p, StrictlyPositive p → DifferentiableAt ℝ (fun q => expenditure u q ub) p) :
+    recoveredSet (fun q => expenditure u q ub) ⊆ empConstraintSet u ub := by
+  intro c hc
+  set E := fun q => expenditure u q ub with hEdef
+  have key : ∀ ε : ℝ, 0 < ε → c + (fun _ => ε) ∈ empConstraintSet u ub := by
+    intro ε hε
+    obtain ⟨p, hp, hmin⟩ := econPenalty_exists_min hε hd hc.2
+    have hE := (hd p hp).hasFDerivAt
+    have hk := (exercise_3_H_2 hrep hu hlns hne hp hE).2.2
+    refine hup _ hk _ fun l => ?_
+    rw [econPenalty_foc hp hmin hE l]
+    have : 0 ≤ ε / p l ^ 2 := by have := hp l; positivity
+    simp only [Pi.add_apply]
+    linarith
+  have hK : IsClosed (empConstraintSet u ub) := isClosed_empConstraintSet hu ub
+  have ht : Tendsto (fun n : ℕ => c + fun _ => 1 / ((n : ℝ) + 1)) atTop (𝓝 c) := by
+    have h0 : Tendsto (fun n : ℕ => 1 / ((n : ℝ) + 1)) atTop (𝓝 0) :=
+      tendsto_one_div_add_atTop_nhds_zero_nat
+    have : Tendsto (fun n : ℕ => (fun _ : Fin L => 1 / ((n : ℝ) + 1))) atTop
+        (𝓝 (fun _ => (0 : ℝ))) := tendsto_pi_nhds.mpr fun _ => h0
+    have h2 := this.const_add c
+    have hc0 : (c + fun _ : Fin L => (0 : ℝ)) = c := add_zero c
+    rwa [hc0] at h2
+  exact hK.mem_of_tendsto ht (Eventually.of_forall fun n => key _ Nat.one_div_pos_of_nat)
+
+/-- **Exercise 3.H.2** (MWG, pp. 78, 102). Let `u` be continuous on `ℝ^L_+` and represent a
+locally nonsatiated, strongly monotone `≿`. If `e(·, ū)` is differentiable at every `p ≫ 0`,
+the at-least-as-good set `{x ≥ 0 : u(x) ≥ ū}` is convex (and equals `V_ū`). -/
+theorem exercise_3_H_2_convex {u : (Fin L → ℝ) → ℝ} {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant L) u r) (hu : ContinuousOn u (nonnegOrthant L))
+    (hlns : LocallyNonsatiated (nonnegOrthant L) r)
+    (hsm : PrefStronglyMonotone (nonnegOrthant L) r) {ub : ℝ}
+    (hd : ∀ p, StrictlyPositive p → DifferentiableAt ℝ (fun q => expenditure u q ub) p) :
+    Convex ℝ (empConstraintSet u ub) ∧
+      ((∃ x ∈ nonnegOrthant L, ub ≤ u x) →
+        empConstraintSet u ub = recoveredSet fun q => expenditure u q ub) := by
+  by_cases hne : ∃ x ∈ nonnegOrthant L, ub ≤ u x
+  · have hup : ∀ x ∈ empConstraintSet u ub, ∀ y, x ≤ y → y ∈ empConstraintSet u ub := by
+      intro x hx y hxy
+      have hy : y ∈ nonnegOrthant L := fun l => (hx.1 l).trans (hxy l)
+      refine ⟨hy, ?_⟩
+      by_cases hyx : y = x
+      · rw [hyx]
+        exact hx.2
+      · exact hx.2.trans ((hrep y hy x hx.1).mp (hsm x hx.1 y hy hxy hyx).1)
+    have heq : empConstraintSet u ub = recoveredSet fun q => expenditure u q ub :=
+      Set.Subset.antisymm (fun _ hx => subset_recoveredSet (fun _ hy => hy.1) hx)
+        (econ_recoveredSet_subset hrep hu hlns hne hup hd)
+    refine ⟨?_, fun _ => heq⟩
+    rw [heq]
+    exact convex_recoveredSet _
+  · have hempty : empConstraintSet u ub = ∅ :=
+      Set.eq_empty_of_forall_notMem fun x hx => hne ⟨x, hx.1, hx.2⟩
+    exact ⟨hempty ▸ convex_empty, fun h => absurd h hne⟩
+
+/-- **Small type, p. 78; Exercise 3.H.2** (MWG, p. 102). If the expenditure function of a
+continuous, locally nonsatiated, strongly monotone `≿` on `ℝ^L_+` is differentiable in `p` at
+every `p ≫ 0` (for every utility level), then `≿` is convex: no nonconvex strongly monotone
+preference generates a differentiable expenditure function. -/
+theorem exercise_3_H_2_prefConvex {u : (Fin L → ℝ) → ℝ}
+    {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant L) u r) (hu : ContinuousOn u (nonnegOrthant L))
+    (hlns : LocallyNonsatiated (nonnegOrthant L) r)
+    (hsm : PrefStronglyMonotone (nonnegOrthant L) r)
+    (hd : ∀ ub, ∀ p, StrictlyPositive p → DifferentiableAt ℝ (fun q => expenditure u q ub) p) :
+    PrefConvex (nonnegOrthant L) r := by
+  intro x hx
+  have hset : upperContour (nonnegOrthant L) r x = empConstraintSet u (u x) := by
+    ext y
+    exact ⟨fun h => ⟨h.1, (hrep y h.1 x hx).mp h.2⟩, fun h => ⟨h.1, (hrep y h.1 x hx).mpr h.2⟩⟩
+  rw [hset]
+  exact (exercise_3_H_2_convex hrep hu hlns hsm (hd (u x))).1
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.G.16(c): the Slutsky equation for a given expenditure function
+
+MWG, Exercise 3.G.16(c), p. 101, for `e(p, u) = exp{∑ α_l log p_l + (∏ p_l^{β_l}) u}`
+(`givenExp`). Write `A(p) = ∑ α_l log p_l` and `Π(p) = ∏ p_l^{β_l}`. The Hicksian demand is
+`h_l(p, u) = ∂e/∂p_l = e(p, u)(α_l + β_l Π(p) u)/p_l` (`econ_givenHicks_hasDerivAt`), and the
+Walrasian demand `x_l(p, w) = h_l(p, v(p, w)) = w(α_l + β_l(log w - A(p)))/p_l`
+(`econ_givenDemand_eq`). The Slutsky equation
+`∂h_l/∂p_k(p, u) = ∂x_l/∂p_k(p, w) + ∂x_l/∂w(p, w) x_k(p, w)`, `w = e(p, u)`,
+holds for all `l`, `k`, `p ≫ 0` and `u` (`exercise_3_G_16c_slutsky`), with the derivatives
+computed explicitly. Roy's identity is `exercise_3_G_16c_roy` (earlier module).
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology MWG.ConsumerChoice
+
+variable {L : ℕ}
+
+/-- **Exercise 3.G.16(c)** (MWG, p. 101). The Hicksian demand
+`h_l(p, u) = e(p, u)(α_l + β_l Π(p) u)/p_l` of `givenExp`. -/
+noncomputable def givenHicks (α β p : Fin L → ℝ) (u : ℝ) (l : Fin L) : ℝ :=
+  givenExp α β p u * (α l + β l * (∏ k, p k ^ β k) * u) / p l
+
+/-- **Exercise 3.G.16(c)** (MWG, p. 101). The Walrasian demand
+`x_l(p, w) = w(α_l + β_l(log w - A(p)))/p_l` of `givenExp`. -/
+noncomputable def givenDemand (α β p : Fin L → ℝ) (w : ℝ) (l : Fin L) : ℝ :=
+  w * (α l + β l * (Real.log w - ∑ k, α k * Real.log (p k))) / p l
+
+/-- `Π` along the `k`th price has derivative `β_k Π(p)/p_k`. -/
+theorem econ_givenPi_hasDerivAt (β : Fin L → ℝ) {p : Fin L → ℝ} (hp : StrictlyPositive p)
+    (k : Fin L) : HasDerivAt (fun t => ∏ j, Function.update p k t j ^ β j)
+      (β k * (∏ j, p j ^ β j) / p k) (p k) := by
+  have hpk := hp k
+  set R := ∏ j ∈ Finset.univ.erase k, p j ^ β j with hR
+  have hPiR : ∏ j, p j ^ β j = p k ^ β k * R := by
+    have := givenPi_update β p k (p k)
+    rwa [Function.update_eq_self] at this
+  have h := (Real.hasDerivAt_rpow_const (p := β k) (Or.inl hpk.ne')).mul_const R
+  refine (h.congr_deriv ?_).congr_of_eventuallyEq ?_
+  · rw [hPiR, Real.rpow_sub_one hpk.ne']
+    field_simp
+  · filter_upwards with t
+    exact givenPi_update β p k t
+
+/-- `A` along the `k`th price has derivative `α_k/p_k`. -/
+theorem econ_givenA_hasDerivAt (α : Fin L → ℝ) {p : Fin L → ℝ} (hp : StrictlyPositive p)
+    (k : Fin L) : HasDerivAt (fun t => ∑ j, α j * Real.log (Function.update p k t j))
+      (α k / p k) (p k) := by
+  have hpk := hp k
+  set S := ∑ j ∈ Finset.univ.erase k, α j * Real.log (p j)
+  have h := ((Real.hasDerivAt_log hpk.ne').const_mul (α k)).add_const S
+  refine (h.congr_deriv (by field_simp)).congr_of_eventuallyEq ?_
+  filter_upwards with t
+  exact givenA_update α p k t
+
+/-- `e` along the `k`th price has derivative `h_k(p, u)` (Shephard's lemma for `givenExp`). -/
+theorem econ_givenHicks_hasDerivAt (α β : Fin L → ℝ) {p : Fin L → ℝ} (hp : StrictlyPositive p)
+    (u : ℝ) (k : Fin L) : HasDerivAt (fun t => givenExp α β (Function.update p k t) u)
+      (givenHicks α β p u k) (p k) := by
+  have hinner := (econ_givenA_hasDerivAt α hp k).add
+    ((econ_givenPi_hasDerivAt β hp k).mul_const u)
+  have h := (Real.hasDerivAt_exp _).comp (p k) hinner
+  refine (h.congr_deriv ?_).congr_of_eventuallyEq ?_
+  · simp only [Pi.add_apply, Function.update_eq_self, givenHicks, givenExp]
+    field_simp
+  · filter_upwards with t
+    rfl
+
+/-- **Exercise 3.G.16(c)** (MWG, p. 101). The Walrasian demand is the Hicksian demand at the
+indirect utility: `x_l(p, w) = h_l(p, v(p, w))` for `w > 0`. -/
+theorem econ_givenDemand_eq (α β : Fin L → ℝ) {p : Fin L → ℝ} (hp : StrictlyPositive p)
+    {w : ℝ} (hw : 0 < w) (l : Fin L) :
+    givenDemand α β p w l = givenHicks α β p (givenIndirect α β p w) l := by
+  have hPi := givenPi_pos β hp
+  unfold givenHicks
+  rw [(exercise_3_G_16b α β hp).1 w hw]
+  unfold givenDemand givenIndirect
+  congr 2
+  field_simp
+
+/-- **Exercise 3.G.16(c)** (MWG, p. 101), the Slutsky equation. For `p ≫ 0`, any `u` and
+`w = e(p, u)`, the derivatives `∂h_l/∂p_k(p, u)`, `∂x_l/∂p_k(p, w)` and `∂x_l/∂w(p, w)` exist
+and `∂h_l/∂p_k = ∂x_l/∂p_k + (∂x_l/∂w) x_k(p, w)`. -/
+theorem exercise_3_G_16c_slutsky (α β : Fin L → ℝ) {p : Fin L → ℝ} (hp : StrictlyPositive p)
+    (u : ℝ) (l k : Fin L) :
+    ∃ Dh Dx Dw : ℝ,
+      HasDerivAt (fun t => givenHicks α β (Function.update p k t) u l) Dh (p k) ∧
+      HasDerivAt (fun t => givenDemand α β (Function.update p k t) (givenExp α β p u) l) Dx
+        (p k) ∧
+      HasDerivAt (fun w' => givenDemand α β p w' l) Dw (givenExp α β p u) ∧
+      Dh = Dx + Dw * givenDemand α β p (givenExp α β p u) k := by
+  set w := givenExp α β p u with hwdef
+  have hw : 0 < w := Real.exp_pos _
+  set P := ∏ j, p j ^ β j with hPdef
+  set A := ∑ j, α j * Real.log (p j) with hAdef
+  have hPi : 0 < P := givenPi_pos β hp
+  have hpk := hp k
+  have hpl := hp l
+  have hlog : Real.log w = A + P * u := by
+    rw [hwdef, givenExp, Real.log_exp]
+  have hE := econ_givenHicks_hasDerivAt α β hp u k
+  have hPd := econ_givenPi_hasDerivAt β hp k
+  have hAd := econ_givenA_hasDerivAt α hp k
+  have hE0 : givenExp α β (Function.update p k (p k)) u = w := by
+    rw [Function.update_eq_self]
+  have hP0 : ∏ j, Function.update p k (p k) j ^ β j = P := by rw [Function.update_eq_self]
+  have hA0 : ∑ j, α j * Real.log (Function.update p k (p k) j) = A := by
+    rw [Function.update_eq_self]
+  -- the derivative in `w`
+  have hDw : HasDerivAt (fun w' => givenDemand α β p w' l)
+      ((α l + β l * (Real.log w - A) + β l) / p l) w := by
+    have h1 := ((Real.hasDerivAt_log hw.ne').sub_const A).const_mul (β l) |>.const_add (α l)
+    have h2 := ((hasDerivAt_id w).mul h1).div_const (p l)
+    refine (h2.congr_deriv ?_).congr_of_eventuallyEq ?_
+    · simp only [id]
+      field_simp
+    · filter_upwards with w'
+      rfl
+  have hxk : givenDemand α β p w k = w * (α k + β k * (P * u)) / p k := by
+    unfold givenDemand
+    rw [hlog]
+    ring
+  by_cases hlk : l = k
+  · subst hlk
+    -- own-price effects
+    have hden : HasDerivAt (fun t : ℝ => Function.update p l t l) 1 (p l) := by
+      refine (hasDerivAt_id (p l)).congr_of_eventuallyEq ?_
+      filter_upwards with t
+      simp
+    have hnum := hE.mul (((hPd.mul_const u).const_mul (β l)).const_add (α l))
+    have hh := hnum.div hden (by rw [Function.update_self]; exact hpl.ne')
+    have hxn := (((hAd.const_sub (Real.log w)).const_mul (β l)).const_add (α l)).const_mul w
+    have hx := hxn.div hden (by rw [Function.update_self]; exact hpl.ne')
+    refine ⟨_, _, _, hh.congr_of_eventuallyEq ?_, hx.congr_of_eventuallyEq ?_, hDw, ?_⟩
+    · filter_upwards with t
+      simp only [givenHicks, Pi.mul_apply, Pi.div_apply]
+      ring
+    · filter_upwards with t
+      simp only [givenDemand, Pi.div_apply]
+    · rw [hxk]
+      simp only [Pi.mul_apply, hE0, hP0, hA0, Function.update_self, givenHicks, ← hwdef,
+        ← hPdef, hlog]
+      field_simp
+      ring
+  · -- cross-price effects
+    have hpl' : ∀ t, Function.update p k t l = p l := fun t => Function.update_of_ne hlk _ _
+    have hh := (hE.mul (((hPd.mul_const u).const_mul (β l)).const_add (α l))).div_const (p l)
+    have hx := ((((hAd.const_sub (Real.log w)).const_mul (β l)).const_add (α l)).const_mul
+      w).div_const (p l)
+    refine ⟨_, _, _, hh.congr_of_eventuallyEq ?_, hx.congr_of_eventuallyEq ?_, hDw, ?_⟩
+    · filter_upwards with t
+      simp only [givenHicks, hpl', Pi.mul_apply]
+      ring
+    · filter_upwards with t
+      simp only [givenDemand, hpl']
+    · rw [hxk]
+      simp only [hE0, hP0, givenHicks, ← hwdef, ← hPdef, hlog]
+      field_simp
+      ring
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.AA.2: the expenditure function at boundary prices
+
+MWG, Exercise 3.AA.2, p. 95: under the conditions of Proposition 3.AA.1 (`u` continuous,
+representing a locally nonsatiated `≿` on `ℝ^L_+`), `e(p, u)` is continuous "even if we replace
+minimum by infimum and allow `p = 0`".
+
+Earlier modules prove joint continuity of `e` on `{p ≫ 0, ū attainable}`
+(`exercise_3_AA_2_continuous`) and continuity of `e(·, ū)` in `p` on all of `ℝ^L_+`
+(`exercise_3_AA_2_inf_continuous`). Joint continuity in `(p, ū)` at a boundary price is false:
+with `L = 2`, `u(x) = min(x₁, 1) + max(x₁ - 2, 0) + x₂/(1 + x₂)` (continuous, strongly
+increasing in `x₂`, hence locally nonsatiated) and `p = (1, 0)`, the infimum `e((1, 0), ū)` is
+`≤ 1` for every `ū < 2` close to `2`, but `= 2` at the attainable level `ū = 2`
+(`exercise_3_AA_2_boundary_counterexample`): `e((1, 0), ·)` is not even continuous in `ū`.
+The reason is that at `p₂ = 0` the infimum is approached by `x₂ → ∞`, and `x₂/(1 + x₂)`
+never reaches its supremum `1`. (Correction F2-1.)
+-/
+
+namespace MWG.ClassicalDemand
+
+open Filter Topology MWG.ConsumerChoice Kreps.PreferenceProperties
+
+/-- The utility of the counterexample: `min(x₁, 1) + max(x₁ - 2, 0) + x₂/(1 + x₂)`. -/
+noncomputable def econBoundaryUtility (x : Fin 2 → ℝ) : ℝ :=
+  min (x 0) 1 + max (x 0 - 2) 0 + x 1 / (1 + x 1)
+
+/-- The boundary price vector `(1, 0)`. -/
+def econBoundaryPrice : Fin 2 → ℝ := ![1, 0]
+
+/-- `econBoundaryUtility` is continuous on `ℝ²_+`. -/
+theorem econBoundaryUtility_continuousOn :
+    ContinuousOn econBoundaryUtility (nonnegOrthant 2) := by
+  have h1 : ContinuousOn (fun x : Fin 2 → ℝ => x 1 / (1 + x 1)) (nonnegOrthant 2) :=
+    (continuous_apply 1).continuousOn.div (continuous_const.add (continuous_apply 1)).continuousOn
+      fun x hx => by have := hx 1; positivity
+  have h0 : Continuous fun x : Fin 2 → ℝ => min (x 0) 1 + max (x 0 - 2) 0 := by fun_prop
+  exact h0.continuousOn.add h1
+
+/-- `econBoundaryUtility` is locally nonsatiated on `ℝ²_+`. -/
+theorem econBoundaryUtility_lns :
+    LocallyNonsatiated (nonnegOrthant 2) (utilityPref econBoundaryUtility) := by
+  intro x hx ε hε
+  refine ⟨x + fun _ => ε / 2, fun l => by simp only [Pi.add_apply]; linarith [hx l], ?_, ?_⟩
+  · rw [euclidDist_add_const, abs_of_pos (by linarith)]
+    have h2 : Real.sqrt (2 : ℕ) ≤ 2 := by
+      rw [Real.sqrt_le_left (by norm_num)]
+      norm_num
+    have := mul_le_mul_of_nonneg_right h2 (by linarith : (0 : ℝ) ≤ ε / 2)
+    linarith
+  · have hx1 := hx 1
+    have hlt : econBoundaryUtility x < econBoundaryUtility (x + fun _ => ε / 2) := by
+      simp only [econBoundaryUtility, Pi.add_apply]
+      have hm : min (x 0) 1 ≤ min (x 0 + ε / 2) 1 := min_le_min_right _ (by linarith)
+      have hM : max (x 0 - 2) 0 ≤ max (x 0 + ε / 2 - 2) 0 := max_le_max_right _ (by linarith)
+      have hf : x 1 / (1 + x 1) < (x 1 + ε / 2) / (1 + (x 1 + ε / 2)) := by
+        rw [div_lt_div_iff₀ (by linarith) (by linarith)]
+        nlinarith
+      linarith
+    exact ⟨hlt.le, not_le.mpr hlt⟩
+
+/-- `p·x = x₁` at `p = (1, 0)`. -/
+theorem econBoundaryPrice_dot (x : Fin 2 → ℝ) : econBoundaryPrice ⬝ᵥ x = x 0 := by
+  simp [econBoundaryPrice, dotProduct, Fin.sum_univ_two]
+
+/-- **Exercise 3.AA.2** (MWG, p. 95), counterexample to joint continuity at boundary prices.
+For the continuous, locally nonsatiated `u = econBoundaryUtility` on `ℝ²_+` and the boundary
+price `p = (1, 0)`: the level `ū = 2` is attainable, `e(p, 2) ≥ 2` (in fact `= 2`, as an
+infimum), but `e(p, ū) ≤ 1` for all `ū ∈ (1, 2)`; so `ū ↦ e(p, ū)` is not continuous at `2`,
+and `(p, ū) ↦ e(p, ū)` is not continuous at `((1, 0), 2)`. -/
+theorem exercise_3_AA_2_boundary_counterexample :
+    ContinuousOn econBoundaryUtility (nonnegOrthant 2) ∧
+      LocallyNonsatiated (nonnegOrthant 2) (utilityPref econBoundaryUtility) ∧
+      econBoundaryPrice ∈ nonnegOrthant 2 ∧
+      (∃ x ∈ nonnegOrthant 2, (2 : ℝ) ≤ econBoundaryUtility x) ∧
+      2 ≤ expenditure econBoundaryUtility econBoundaryPrice 2 ∧
+      (∀ ub : ℝ, 1 < ub → ub < 2 → expenditure econBoundaryUtility econBoundaryPrice ub ≤ 1) ∧
+      ¬ ContinuousAt (fun ub => expenditure econBoundaryUtility econBoundaryPrice ub) 2 := by
+  have hp : econBoundaryPrice ∈ nonnegOrthant 2 := by
+    intro l
+    fin_cases l <;> simp [econBoundaryPrice]
+  have hatt : ∃ x ∈ nonnegOrthant 2, (2 : ℝ) ≤ econBoundaryUtility x := by
+    refine ⟨![3, 0], fun l => by fin_cases l <;> norm_num, ?_⟩
+    simp only [econBoundaryUtility]
+    norm_num
+  have hge : 2 ≤ expenditure econBoundaryUtility econBoundaryPrice 2 := by
+    obtain ⟨x0, hx0, hux0⟩ := hatt
+    refine le_supportFn (K := empConstraintSet econBoundaryUtility 2) ⟨x0, hx0, hux0⟩
+      fun x hx => ?_
+    rw [econBoundaryPrice_dot]
+    have hx1 := hx.1 1
+    have hu := hx.2
+    simp only [econBoundaryUtility] at hu
+    have hf : x 1 / (1 + x 1) < 1 := by
+      rw [div_lt_one (by linarith)]
+      linarith
+    by_contra hlt
+    rw [not_le] at hlt
+    have hm : min (x 0) 1 ≤ 1 := min_le_right _ _
+    have hM : max (x 0 - 2) 0 = 0 := max_eq_right (by linarith)
+    linarith
+  have hle : ∀ ub : ℝ, 1 < ub → ub < 2 →
+      expenditure econBoundaryUtility econBoundaryPrice ub ≤ 1 := by
+    intro ub h1 h2
+    set δ := 2 - ub with hδ
+    have hδ0 : 0 < δ := by linarith
+    set x : Fin 2 → ℝ := ![1, 1 / δ] with hxdef
+    have hx : x ∈ empConstraintSet econBoundaryUtility ub := by
+      have hx0 : x 0 = 1 := rfl
+      have hx1 : x 1 = 1 / δ := rfl
+      refine ⟨fun l => ?_, ?_⟩
+      · fin_cases l
+        · change 0 ≤ x 0
+          rw [hx0]
+          norm_num
+        · change 0 ≤ x 1
+          rw [hx1]
+          positivity
+      simp only [econBoundaryUtility, x]
+      norm_num
+      rw [show δ⁻¹ / (1 + δ⁻¹) = 1 / (1 + δ) by field_simp; ring]
+      have h3 : 1 - δ ≤ 1 / (1 + δ) := by
+        rw [le_div_iff₀ (by linarith)]
+        nlinarith
+      linarith
+    have hbdd : BddBelow ((fun y => econBoundaryPrice ⬝ᵥ y) ''
+        empConstraintSet econBoundaryUtility ub) := by
+      refine ⟨0, ?_⟩
+      rintro _ ⟨y, hy, rfl⟩
+      change 0 ≤ econBoundaryPrice ⬝ᵥ y
+      rw [econBoundaryPrice_dot]
+      exact hy.1 0
+    have := supportFn_le hbdd hx
+    rw [econBoundaryPrice_dot] at this
+    exact this.trans_eq (by simp [x])
+  refine ⟨econBoundaryUtility_continuousOn, econBoundaryUtility_lns, hp, hatt, hge, hle, ?_⟩
+  intro hc
+  have hev : ∀ᶠ ub in 𝓝 (2 : ℝ),
+      (3 / 2 : ℝ) < expenditure econBoundaryUtility econBoundaryPrice ub :=
+    hc.eventually (lt_mem_nhds (by linarith))
+  have hev' : ∀ᶠ ub in 𝓝[<] (2 : ℝ), (3 / 2 : ℝ) <
+      expenditure econBoundaryUtility econBoundaryPrice ub ∧ ub ∈ Set.Ioo 1 2 :=
+    (eventually_nhdsWithin_of_eventually_nhds hev).and (Ioo_mem_nhdsLT (by norm_num))
+  obtain ⟨ub, hub, hub12⟩ := hev'.exists
+  have := hle ub hub12.1 hub12.2
+  linarith
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Welfare approximations: footnote 28 (CV) and the comparisons on pp. 89-91
+
+MWG, Section 3.I, pp. 89-91, footnote 28.
+
+* Footnote 28, the compensating variation (`footnote_3_I_28_cv`): as a function of the price
+  `s` of good `l` in `p¹`, `CV(p¹, p⁰, w) = w - e(p⁰, v(p¹, w))` has derivative `x_l(p⁰, w)`
+  at `s = p⁰_l`. The proof needs no differentiability of `e` in `u` or of `v`: for every `s > 0`,
+  `(s - p⁰_l) x_l(p¹, w) ≤ CV ≤ (s - p⁰_l) h_l(p⁰, v(p¹, w))` (revealed preference and
+  concavity of `e` in `p`), and both bounds' coefficients tend to `x_l(p⁰, w)` (continuity of
+  Walrasian demand, Proposition 3.AA.1, and of `v` and `e`).
+* p. 89: "if `p¹_1 - p⁰_1` is small, the error involved in using the area variation measure
+  becomes small as a fraction of the true welfare change" (`welfare_av_relative_error`,
+  `welfare_ev_relative_error`), and the same holds for any measure with the same derivative
+  (`econ_relative_error_of_deriv`).
+* pp. 90-91, (3.I.9): the welfare change computed from the first-order Taylor approximation
+  `h̃` of the Hicksian demand is a second-order expansion of the expenditure function:
+  `e(p¹, u⁰) - e(p⁰, u⁰) - [h_l (s - p⁰_l) + ½ ∂h_l/∂p_l (s - p⁰_l)²] = o((s - p⁰_l)²)`
+  (`equation_3_I_9_second_order`), from a general second-order Taylor lemma
+  (`econ_second_order_taylor`).
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology Asymptotics
+
+variable {L : ℕ}
+
+/-- `priceLine (priceLine p l s) l t = priceLine p l t`. -/
+theorem econ_priceLine_priceLine (p : Fin L → ℝ) (l : Fin L) (s t : ℝ) :
+    priceLine (priceLine p l s) l t = priceLine p l t := by
+  simp [priceLine]
+
+/-- **Footnote 28** (MWG, p. 90), the compensating variation. With `u` continuous, strictly
+quasiconcave, representing a locally nonsatiated `≿`, and `xs` the Walrasian demand function:
+as a function of the price `s` of good `l` in `p¹`, `CV(p¹, p⁰, w)` has derivative `x_l(p⁰, w)`
+at `s = p⁰_l`. -/
+theorem footnote_3_I_28_cv {u : (Fin L → ℝ) → ℝ} {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant L) u r) (hu : ContinuousOn u (nonnegOrthant L))
+    (hlns : LocallyNonsatiated (nonnegOrthant L) r)
+    (hq : StrictlyQuasiconcaveOn (nonnegOrthant L) u) {xs : DemandFunction L}
+    (hxs : ∀ q w, StrictlyPositive q → 0 ≤ w → xs q w ∈ walrasianDemand u q w)
+    {p₀ : Fin L → ℝ} (hp₀ : StrictlyPositive p₀) (l : Fin L) {w : ℝ} (hw : 0 < w) :
+    HasDerivAt (fun s => compensatingVariation u (priceLine p₀ l s) p₀ w) (xs p₀ w l)
+      (p₀ l) := by
+  set a := p₀ l with hadef
+  have ha : 0 < a := hp₀ l
+  have hself : priceLine p₀ l a = p₀ := by simp [priceLine, hadef]
+  set CV := fun s => compensatingVariation u (priceLine p₀ l s) p₀ w with hCV
+  have hcv : ∀ s, CV s = w - expenditure u p₀ (indirectUtility u (priceLine p₀ l s) w) := by
+    intro s
+    simp only [hCV, compensatingVariation, equation_3_E_1_left hrep hu hlns hp₀ hw.le]
+  have hcv0 : CV a = 0 := by
+    rw [hcv, hself, equation_3_E_1_left hrep hu hlns hp₀ hw.le, sub_self]
+  -- the two bounds
+  set A := fun s => xs (priceLine p₀ l s) w l with hA
+  set B := fun s => hicksianOf u xs p₀ (indirectUtility u (priceLine p₀ l s) w) l with hB
+  have hlow : ∀ s, 0 < s → (s - a) * A s ≤ CV s := by
+    intro s hs
+    have hps := priceLine_pos hp₀ l hs
+    have hx := hxs _ _ hps hw.le
+    set x := xs (priceLine p₀ l s) w
+    have hxK : x ∈ empConstraintSet u (indirectUtility u (priceLine p₀ l s) w) :=
+      ⟨hx.1.1, (indirectUtility_eq_of_mem hx).le⟩
+    have he := supportFn_le (exp_bddBelow hp₀ _) hxK
+    have hwal := proposition_3_D_2_ii hrep hlns hx
+    have hdot := priceLine_dot (priceLine p₀ l s) l (a - s) x
+    have hps_l : priceLine p₀ l s l = s := by simp [priceLine]
+    rw [hps_l, show s + (a - s) = a by ring, econ_priceLine_priceLine, hself, hwal] at hdot
+    rw [hcv]
+    change expenditure u p₀ _ ≤ p₀ ⬝ᵥ x at he
+    simp only [hA]
+    nlinarith
+  have hup : ∀ s, 0 < s → CV s ≤ (s - a) * B s := by
+    intro s hs
+    have hps := priceLine_pos hp₀ l hs
+    have hub := relations_indirectUtility_gt_zero hrep hu hlns hps hw
+    have hne := welfare_v_attainable hu hps hw.le
+    have hmem := hicksianOf_mem hrep hu hlns hxs hp₀ hub hne
+    set h := hicksianOf u xs p₀ (indirectUtility u (priceLine p₀ l s) w)
+    have hlin := expenditure_le_linear hmem hps
+    rw [equation_3_E_1_left hrep hu hlns hps hw.le] at hlin
+    have hdot := priceLine_dot p₀ l (s - a) h
+    rw [← hadef, show a + (s - a) = s by ring] at hdot
+    rw [hcv]
+    simp only [hB]
+    nlinarith [hlin.1, hlin.2]
+  -- continuity of the bounds' coefficients
+  have hsing : ∀ p w, PWDomain p w → walrasianDemand u p w = {xs p w} := by
+    intro p w' hd
+    refine Set.eq_singleton_iff_unique_mem.mpr ⟨hxs p w' hd.1 hd.2.le, fun y hy => ?_⟩
+    exact proposition_3_D_2_iii_unique hq p w' hy (hxs p w' hd.1 hd.2.le)
+  have hxc := proposition_3_AA_1_continuous hu hsing
+  have hopen : IsOpen (pwDomainSet L) := by
+    have : pwDomainSet L = {q : (Fin L → ℝ) × ℝ | StrictlyPositive q.1} ∩ {q | 0 < q.2} := by
+      ext q; rfl
+    rw [this]
+    exact ((relations_isOpen_strictlyPositive L).preimage continuous_fst).inter
+      (isOpen_lt continuous_const continuous_snd)
+  have hxcat : ∀ q : (Fin L → ℝ) × ℝ, PWDomain q.1 q.2 →
+      ContinuousAt (fun q : (Fin L → ℝ) × ℝ => xs q.1 q.2) q :=
+    fun q hq' => hxc.continuousAt (hopen.mem_nhds hq')
+  have hline : Tendsto (fun s => priceLine p₀ l s) (𝓝 a) (𝓝 p₀) := by
+    have := (priceLine_hasDerivAt p₀ l a).continuousAt.tendsto
+    rwa [hself] at this
+  have hAt : Tendsto A (𝓝 a) (𝓝 (xs p₀ w l)) := by
+    have h1 : Tendsto (fun s => (priceLine p₀ l s, w)) (𝓝 a) (𝓝 (p₀, w)) :=
+      hline.prodMk_nhds tendsto_const_nhds
+    have h2 := (hxcat (p₀, w) ⟨hp₀, hw⟩).tendsto.comp h1
+    exact ((continuous_apply l).tendsto _).comp h2
+  have hBt : Tendsto B (𝓝 a) (𝓝 (xs p₀ w l)) := by
+    -- `v(p¹, w) → v(p⁰, w)` and `e(p⁰, ·)` is continuous there
+    have hv : Tendsto (fun s => indirectUtility u (priceLine p₀ l s) w) (𝓝 a)
+        (𝓝 (indirectUtility u p₀ w)) :=
+      (exp_continuousAt_indirectUtility_prices hu hp₀ hw.le).tendsto.comp hline
+    have hdom : ∀ᶠ s in 𝓝 a,
+        (p₀, indirectUtility u (priceLine p₀ l s) w) ∈ expDomain u := by
+      filter_upwards [lt_mem_nhds ha] with s hs
+      exact ⟨hp₀, welfare_v_attainable hu (priceLine_pos hp₀ l hs) hw.le⟩
+    have hpair : Tendsto (fun s => (p₀, indirectUtility u (priceLine p₀ l s) w)) (𝓝 a)
+        (𝓝[expDomain u] (p₀, indirectUtility u p₀ w)) :=
+      tendsto_nhdsWithin_iff.mpr ⟨tendsto_const_nhds.prodMk_nhds hv, hdom⟩
+    have hE := ((proposition_3_E_2_iv hrep hu hlns) (p₀, indirectUtility u p₀ w)
+      ⟨hp₀, welfare_v_attainable hu hp₀ hw.le⟩).tendsto.comp hpair
+    simp only [Function.comp_def, equation_3_E_1_left hrep hu hlns hp₀ hw.le] at hE
+    have h2 := (hxcat (p₀, w) ⟨hp₀, hw⟩).tendsto.comp (tendsto_const_nhds.prodMk_nhds hE)
+    exact ((continuous_apply l).tendsto _).comp h2
+  -- squeeze the difference quotient
+  rw [hasDerivAt_iff_tendsto_slope]
+  have hmin : Tendsto (fun s => min (A s) (B s)) (𝓝[≠] a) (𝓝 (xs p₀ w l)) := by
+    have := hAt.min hBt
+    rw [min_self] at this
+    exact this.mono_left nhdsWithin_le_nhds
+  have hmax : Tendsto (fun s => max (A s) (B s)) (𝓝[≠] a) (𝓝 (xs p₀ w l)) := by
+    have := hAt.max hBt
+    rw [max_self] at this
+    exact this.mono_left nhdsWithin_le_nhds
+  have hev : ∀ᶠ s in 𝓝[≠] a, 0 < s ∧ s ≠ a :=
+    (eventually_nhdsWithin_of_eventually_nhds (lt_mem_nhds ha)).and self_mem_nhdsWithin
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' hmin hmax ?_ ?_
+  · filter_upwards [hev] with s ⟨hs, hsa⟩
+    rw [slope_def_field, hcv0, sub_zero]
+    rcases lt_or_gt_of_ne hsa with hlt | hgt
+    · refine min_le_of_right_le ?_
+      rw [le_div_iff_of_neg (by linarith)]
+      linarith [hup s hs]
+    · refine min_le_of_left_le ?_
+      rw [le_div_iff₀ (by linarith)]
+      linarith [hlow s hs]
+  · filter_upwards [hev] with s ⟨hs, hsa⟩
+    rw [slope_def_field, hcv0, sub_zero]
+    rcases lt_or_gt_of_ne hsa with hlt | hgt
+    · refine le_max_of_le_left ?_
+      rw [div_le_iff_of_neg (by linarith)]
+      linarith [hlow s hs]
+    · refine le_max_of_le_right ?_
+      rw [div_le_iff₀ (by linarith)]
+      linarith [hup s hs]
+
+/-- Two measures `F`, `G` vanishing at `a` with the same nonzero derivative `c` there have
+relative error `(F - G)/G → 0` as `s → a`. -/
+theorem econ_relative_error_of_deriv {F G : ℝ → ℝ} {a c : ℝ} (hF : HasDerivAt F c a)
+    (hG : HasDerivAt G c a) (hF0 : F a = 0) (hG0 : G a = 0) (hc : c ≠ 0) :
+    Tendsto (fun s => (F s - G s) / G s) (𝓝[≠] a) (𝓝 0) := by
+  have h1 := hF.tendsto_slope
+  have h2 := hG.tendsto_slope
+  have h3 := (h1.sub h2).div h2 hc
+  rw [sub_self, zero_div] at h3
+  refine h3.congr' ?_
+  filter_upwards [self_mem_nhdsWithin] with s hs
+  have hs' : s - a ≠ 0 := sub_ne_zero.mpr hs
+  change (slope F a s - slope G a s) / slope G a s = _
+  rw [slope_def_field, slope_def_field, hF0, hG0, sub_zero, sub_zero, ← sub_div,
+    div_div_div_cancel_right₀ hs']
+
+/-- **Section 3.I** (MWG, p. 89). For a small change in the price of good `l`, the error of the
+area variation `AV(p¹, p⁰, w)` is small as a fraction of the true welfare change
+`CV(p¹, p⁰, w)`, when `x_l(p⁰, w) ≠ 0`. -/
+theorem welfare_av_relative_error {u : (Fin L → ℝ) → ℝ} {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant L) u r) (hu : ContinuousOn u (nonnegOrthant L))
+    (hlns : LocallyNonsatiated (nonnegOrthant L) r)
+    (hq : StrictlyQuasiconcaveOn (nonnegOrthant L) u) {xs : DemandFunction L}
+    (hxs : ∀ q w, StrictlyPositive q → 0 ≤ w → xs q w ∈ walrasianDemand u q w)
+    {p₀ : Fin L → ℝ} (hp₀ : StrictlyPositive p₀) (l : Fin L) {w : ℝ} (hw : 0 < w)
+    (hc : ContinuousOn (fun t => xs (priceLine p₀ l t) w l) (Set.Ioi 0))
+    (hx0 : xs p₀ w l ≠ 0) :
+    Tendsto (fun s => (areaVariation xs p₀ l s (p₀ l) w -
+        compensatingVariation u (priceLine p₀ l s) p₀ w) /
+        compensatingVariation u (priceLine p₀ l s) p₀ w) (𝓝[≠] (p₀ l)) (𝓝 0) := by
+  have hself : priceLine p₀ l (p₀ l) = p₀ := by simp [priceLine]
+  refine econ_relative_error_of_deriv (footnote_3_I_28_av hp₀ l hc)
+    (footnote_3_I_28_cv hrep hu hlns hq hxs hp₀ l hw) ?_ ?_ hx0
+  · simp [areaVariation]
+  · simp only [compensatingVariation, hself, sub_self]
+
+/-- **Section 3.I** (MWG, p. 89, footnote 27). The same for the equivalent variation:
+`(EV - CV)/CV → 0` for a small change in the price of good `l`, when `x_l(p⁰, w) ≠ 0`. -/
+theorem welfare_ev_relative_error {u : (Fin L → ℝ) → ℝ} {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant L) u r) (hu : ContinuousOn u (nonnegOrthant L))
+    (hlns : LocallyNonsatiated (nonnegOrthant L) r)
+    (hq : StrictlyQuasiconcaveOn (nonnegOrthant L) u) {xs : DemandFunction L}
+    (hxs : ∀ q w, StrictlyPositive q → 0 ≤ w → xs q w ∈ walrasianDemand u q w)
+    {p₀ : Fin L → ℝ} (hp₀ : StrictlyPositive p₀) (l : Fin L) {w : ℝ} (hw : 0 < w)
+    (hx0 : xs p₀ w l ≠ 0) :
+    Tendsto (fun s => (equivalentVariation u (priceLine p₀ l s) p₀ w -
+        compensatingVariation u (priceLine p₀ l s) p₀ w) /
+        compensatingVariation u (priceLine p₀ l s) p₀ w) (𝓝[≠] (p₀ l)) (𝓝 0) := by
+  have hself : priceLine p₀ l (p₀ l) = p₀ := by simp [priceLine]
+  refine econ_relative_error_of_deriv (footnote_3_I_28_ev hrep hu hlns hq hxs hp₀ l hw)
+    (footnote_3_I_28_cv hrep hu hlns hq hxs hp₀ l hw) ?_ ?_ hx0
+  · simp only [equivalentVariation, hself, sub_self]
+  · simp only [compensatingVariation, hself, sub_self]
+
+/-- A second-order Taylor expansion with Peano remainder: if `F' = H` near `a` and `H` has
+derivative `σ` at `a`, then `F(s) = F(a) + H(a)(s - a) + ½σ(s - a)² + o((s - a)²)`. -/
+theorem econ_second_order_taylor {F H : ℝ → ℝ} {a σ : ℝ}
+    (hF : ∀ᶠ t in 𝓝 a, HasDerivAt F (H t) t) (hH : HasDerivAt H σ a) :
+    (fun s => F s - F a - H a * (s - a) - σ / 2 * (s - a) ^ 2) =o[𝓝 a]
+      fun s => (s - a) ^ 2 := by
+  rw [isLittleO_iff]
+  intro c hc
+  have ho := (hasDerivAt_iff_isLittleO.mp hH).def hc
+  obtain ⟨δ, hδ, hball⟩ := Metric.eventually_nhds_iff_ball.mp (hF.and ho)
+  filter_upwards [Metric.ball_mem_nhds a hδ] with s hs
+  set g := fun t => F t - F a - H a * (t - a) - σ / 2 * (t - a) ^ 2 with hg
+  have habs : ∀ t ∈ Set.uIcc a s, |t - a| ≤ |s - a| := by
+    intro t ht
+    rcases le_total a s with has | has
+    · rw [Set.uIcc_of_le has] at ht
+      rw [abs_of_nonneg (by linarith [ht.1]), abs_of_nonneg (by linarith)]
+      linarith [ht.2]
+    · rw [Set.uIcc_of_ge has] at ht
+      rw [abs_of_nonpos (by linarith [ht.2]), abs_of_nonpos (by linarith)]
+      linarith [ht.1]
+  have hsub : Set.uIcc a s ⊆ Metric.ball a δ := by
+    intro t ht
+    rw [Metric.mem_ball, Real.dist_eq]
+    rw [Metric.mem_ball, Real.dist_eq] at hs
+    exact (habs t ht).trans_lt hs
+  have hderiv : ∀ t ∈ Set.uIcc a s,
+      HasDerivWithinAt g (H t - H a - σ * (t - a)) (Set.uIcc a s) t := by
+    intro t ht
+    have hFt := (hball t (hsub ht)).1
+    have h1 : HasDerivAt (fun t => H a * (t - a)) (H a) t := by
+      simpa using ((hasDerivAt_id t).sub_const a).const_mul (H a)
+    have h2 : HasDerivAt (fun t => σ / 2 * (t - a) ^ 2) (σ * (t - a)) t := by
+      have hsq := (((hasDerivAt_id t).sub_const a).mul
+        ((hasDerivAt_id t).sub_const a)).const_mul (σ / 2)
+      convert hsq using 1
+      · funext y
+        simp only [id, Pi.mul_apply]
+        ring
+      · simp only [id]
+        ring
+    have := ((hFt.sub_const (F a)).sub h1).sub h2
+    exact this.hasDerivWithinAt
+  have hbound : ∀ t ∈ Set.uIcc a s, ‖H t - H a - σ * (t - a)‖ ≤ c * ‖s - a‖ := by
+    intro t ht
+    have h := (hball t (hsub ht)).2
+    have htl : ‖t - a‖ ≤ ‖s - a‖ := by
+      rw [Real.norm_eq_abs, Real.norm_eq_abs]
+      exact habs t ht
+    have : H t - H a - σ * (t - a) = H t - H a - (t - a) • σ := by
+      rw [smul_eq_mul, mul_comm]
+    rw [this]
+    exact h.trans (mul_le_mul_of_nonneg_left htl hc.le)
+  have hmv := Convex.norm_image_sub_le_of_norm_hasDerivWithin_le hderiv hbound
+    (convex_uIcc a s) Set.left_mem_uIcc Set.right_mem_uIcc
+  have hga : g a = 0 := by simp [hg]
+  rw [hga, sub_zero] at hmv
+  calc ‖g s‖ ≤ c * ‖s - a‖ * ‖s - a‖ := hmv
+    _ = c * ‖(s - a) ^ 2‖ := by rw [norm_pow]; ring
+
+/-- **Equation (3.I.9)** (MWG, pp. 90-91), second-order accuracy. Let `u` be continuous,
+strictly quasiconcave, representing a locally nonsatiated `≿`, `xs` the Walrasian demand,
+`u⁰ > u(0)` attainable, and let the Hicksian demand `t ↦ h_l(p⁰ with p_l = t, u⁰)` have
+derivative `σ = ∂h_l/∂p_l(p⁰, u⁰)` at `p⁰_l`. Then the welfare change computed from the
+first-order approximation `h̃_l(t) = h_l(p⁰, u⁰) + σ(t - p⁰_l)`, namely
+`∫_{p⁰_l}^{s} h̃_l = h_l(p⁰, u⁰)(s - p⁰_l) + ½σ(s - p⁰_l)²`, approximates
+`e(p¹, u⁰) - e(p⁰, u⁰)` up to `o((s - p⁰_l)²)`: it is a second-order expansion of `e`. -/
+theorem equation_3_I_9_second_order {u : (Fin L → ℝ) → ℝ}
+    {r : (Fin L → ℝ) → (Fin L → ℝ) → Prop} (hrep : RepresentsOn (nonnegOrthant L) u r)
+    (hu : ContinuousOn u (nonnegOrthant L)) (hlns : LocallyNonsatiated (nonnegOrthant L) r)
+    (hq : StrictlyQuasiconcaveOn (nonnegOrthant L) u) {xs : DemandFunction L}
+    (hxs : ∀ q w, StrictlyPositive q → 0 ≤ w → xs q w ∈ walrasianDemand u q w)
+    {p₀ : Fin L → ℝ} (hp₀ : StrictlyPositive p₀) (l : Fin L) {ub : ℝ} (hub : u 0 < ub)
+    (hne : ∃ x ∈ nonnegOrthant L, ub ≤ u x) {σ : ℝ}
+    (hσ : HasDerivAt (fun t => hicksianOf u xs (priceLine p₀ l t) ub l) σ (p₀ l)) :
+    (fun s => expenditure u (priceLine p₀ l s) ub - expenditure u p₀ ub -
+        (hicksianOf u xs p₀ ub l * (s - p₀ l) + σ / 2 * (s - p₀ l) ^ 2)) =o[𝓝 (p₀ l)]
+      fun s => (s - p₀ l) ^ 2 := by
+  have hself : priceLine p₀ l (p₀ l) = p₀ := by simp [priceLine]
+  obtain ⟨hd, -, -⟩ := expenditure_line_integral hrep hu hlns hq hxs hp₀ l hub hne
+  have hF : ∀ᶠ t in 𝓝 (p₀ l), HasDerivAt (fun s => expenditure u (priceLine p₀ l s) ub)
+      (hicksianOf u xs (priceLine p₀ l t) ub l) t := by
+    filter_upwards [lt_mem_nhds (hp₀ l)] with t ht
+    exact hd t ht
+  have := econ_second_order_taylor hF hσ
+  refine this.congr_left fun s => ?_
+  simp only [hself]
+  ring
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.D.7: regions of choices consistent with preference maximization
+
+MWG, Exercise 3.D.7, p. 98. Two goods; `p⁰ = (1, 1)`, `w⁰ = 8`, `x⁰ = (4, 4)`; `p¹ = (1, 4)`,
+`w¹ = 26`, and `x¹` with `p¹·x¹ = 26`. Write `t = x¹₂`, so `x¹ = (26 - 4t, t)`.
+
+* **(a)** Consistent with maximization of a locally nonsatiated preference iff `t < 6`
+  (`exercise_3_D_7a`). Necessity: `x⁰` is strictly affordable at `(p¹, w¹)` (cost 20), so
+  `x¹ ≻ x⁰`; then `x¹` must cost more than 8 at `p⁰`. Sufficiency: the continuous, concave,
+  strictly increasing `u(x) = min(p⁰·x - 8, c(p¹·x - 26) + s - 8)`, `s = x¹₁ + x¹₂`,
+  `c = (s - 8)/6` (Afriat's construction).
+* **(b)** Quasilinear in the first good (`u = x₁ + φ(x₂)` on `ℝ × ℝ_+`): iff `t ≤ 4`
+  (`exercise_3_D_7b`); rationalized by `φ(τ) = min(4τ, 3t + τ, 3t + 4)`.
+* **(c)** Quasilinear in the second good (`u = x₂ + φ(x₁)` on `ℝ_+ × ℝ`): iff `x¹₁ ≥ 4`, i.e.
+  `t ≤ 11/2` (`exercise_3_D_7c`); rationalized by `φ(τ) = min(τ, 3 + τ/4, 3 + x¹₁/4)`.
+* **(d)** Both goods normal: necessarily `t ≤ 11/2` (`exercise_3_D_7d`): `x' = x(p¹, 20)` is
+  revealed preferred to `x⁰` and must cost at least 8 at `p⁰`, and `x' ≤ x¹`.
+* **(e)** Homothetic (a representation homogeneous of degree one): iff `t ≤ 26/5`
+  (`exercise_3_D_7e`); rationalized by `u(x) = min(p⁰·x, (2/5) p¹·x)`.
+
+Departures (corrections F2-2, F2-3): the necessity parts need local nonsatiation (a constant
+utility rationalizes every choice); "quasilinear" is taken in the form `x_k + φ(x_{-k})` on the
+quasilinear consumption set of Definition 3.B.7; in (d) only the necessity bound is proved, the
+construction of a demand function with normal goods through every `t ≤ 11/2` is OPEN.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties
+
+/-- `p⁰ = (1, 1)`. -/
+def econP0 : Fin 2 → ℝ := ![1, 1]
+
+/-- `p¹ = (1, 4)`. -/
+def econP1 : Fin 2 → ℝ := ![1, 4]
+
+/-- `x⁰ = (4, 4)`. -/
+def econX0 : Fin 2 → ℝ := ![4, 4]
+
+/-- `p⁰·x = x₁ + x₂`. -/
+theorem econP0_dot (x : Fin 2 → ℝ) : econP0 ⬝ᵥ x = x 0 + x 1 := by
+  simp [econP0, dotProduct, Fin.sum_univ_two]
+
+/-- `p¹·x = x₁ + 4x₂`. -/
+theorem econP1_dot (x : Fin 2 → ℝ) : econP1 ⬝ᵥ x = x 0 + 4 * x 1 := by
+  simp [econP1, dotProduct, Fin.sum_univ_two]
+
+/-- `x⁰ ∈ ℝ²_+`. -/
+theorem econX0_mem : econX0 ∈ nonnegOrthant 2 := by
+  intro l
+  fin_cases l <;> norm_num [econX0]
+
+/-- Affine functions are concave on `ℝ²_+`. -/
+theorem econ_affine_concaveOn (q : Fin 2 → ℝ) (c : ℝ) :
+    ConcaveOn ℝ (nonnegOrthant 2) fun x => q ⬝ᵥ x + c := by
+  refine ⟨convex_nonnegOrthant 2, fun x _ y _ a b _ _ hab => ?_⟩
+  simp only [smul_eq_mul, dotProduct_add, dotProduct_smul]
+  have : a * c + b * c = c := by rw [← add_mul, hab, one_mul]
+  linarith
+
+/-- **Exercise 3.D.7(a)** (MWG, p. 98), necessity. If `u` represents a locally nonsatiated `≿`
+on `ℝ²_+`, `x⁰ ∈ x(p⁰, 8)` and `x¹ ∈ x(p¹, 26)`, then `x¹₂ < 6`. -/
+theorem exercise_3_D_7a_necessary {u : (Fin 2 → ℝ) → ℝ} {r : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant 2) u r) (hlns : LocallyNonsatiated (nonnegOrthant 2) r)
+    {x1 : Fin 2 → ℝ} (h0 : econX0 ∈ walrasianDemand u econP0 8)
+    (h1 : x1 ∈ walrasianDemand u econP1 26) : x1 1 < 6 := by
+  by_contra hge
+  rw [not_lt] at hge
+  have hb1 := proposition_3_D_2_ii hrep hlns h1
+  rw [econP1_dot] at hb1
+  have hx1p0 : x1 ∈ budgetSet econP0 8 := ⟨h1.1.1, by rw [econP0_dot]; linarith⟩
+  have hle := h0.2 x1 hx1p0
+  have hcost : econP1 ⬝ᵥ econX0 < 26 := by rw [econP1_dot]; norm_num [econX0]
+  obtain ⟨z, hz, hpz, hs⟩ := exists_better_affordable hlns econP1 econX0_mem hcost
+  have hlt := (hrep.strict_iff hz econX0_mem).mp hs
+  have := h1.2 z ⟨hz, hpz.le⟩
+  linarith
+
+/-- **Exercise 3.D.7(a)** (MWG, p. 98). For `x¹ ∈ ℝ²_+` on the budget line `p¹·x = 26`: `x⁰` and
+`x¹` are the choices of some continuous, concave, monotone (`PrefMonotone`, hence locally
+nonsatiated) utility iff `x¹₂ < 6`. -/
+theorem exercise_3_D_7a {x1 : Fin 2 → ℝ} (hx1 : x1 ∈ nonnegOrthant 2)
+    (hb : x1 0 + 4 * x1 1 = 26) :
+    (∃ u : (Fin 2 → ℝ) → ℝ, Continuous u ∧ ConcaveOn ℝ (nonnegOrthant 2) u ∧
+      PrefMonotone (nonnegOrthant 2) (utilityPref u) ∧
+      econX0 ∈ walrasianDemand u econP0 8 ∧ x1 ∈ walrasianDemand u econP1 26) ↔ x1 1 < 6 := by
+  constructor
+  · rintro ⟨u, -, -, hmono, h0, h1⟩
+    have hlns : LocallyNonsatiated (nonnegOrthant 2) (utilityPref u) := by
+      intro x hx ε hε
+      refine ⟨x + fun _ => ε / 2, fun l => by simp only [Pi.add_apply]; linarith [hx l], ?_,
+        hmono x hx _ (fun l => by simp only [Pi.add_apply]; linarith [hx l])
+          fun l => by simp only [Pi.add_apply]; linarith⟩
+      rw [euclidDist_add_const, abs_of_pos (by linarith)]
+      have h2 : Real.sqrt (2 : ℕ) ≤ 2 := by
+        rw [Real.sqrt_le_left (by norm_num)]
+        norm_num
+      have := mul_le_mul_of_nonneg_right h2 (by linarith : (0 : ℝ) ≤ ε / 2)
+      linarith
+    exact exercise_3_D_7a_necessary (fun _ _ _ _ => Iff.rfl) hlns h0 h1
+  · intro ht
+    set s := x1 0 + x1 1 with hs
+    have hs8 : 8 < s := by linarith
+    set c := (s - 8) / 6 with hc
+    have hc0 : 0 < c := by rw [hc]; linarith
+    refine ⟨fun x => min (econP0 ⬝ᵥ x - 8) (c * (econP1 ⬝ᵥ x - 26) + (s - 8)), ?_, ?_, ?_, ?_, ?_⟩
+    · simp only [econP0_dot, econP1_dot]
+      fun_prop
+    · refine ConcaveOn.inf ?_ ?_
+      · simpa [sub_eq_add_neg] using econ_affine_concaveOn econP0 (-8)
+      · have := econ_affine_concaveOn (c • econP1) (-(c * 26) + (s - 8))
+        refine this.congr fun x _ => ?_
+        simp only [smul_dotProduct, smul_eq_mul]
+        ring
+    · intro x _ y _ hxy
+      have h0 : x 0 < y 0 := hxy 0
+      have h1 : x 1 < y 1 := hxy 1
+      have hlt : min (econP0 ⬝ᵥ x - 8) (c * (econP1 ⬝ᵥ x - 26) + (s - 8)) <
+          min (econP0 ⬝ᵥ y - 8) (c * (econP1 ⬝ᵥ y - 26) + (s - 8)) := by
+        simp only [econP0_dot, econP1_dot]
+        refine min_lt_min (by linarith) ?_
+        nlinarith
+      exact ⟨hlt.le, not_le.mpr hlt⟩
+    · refine ⟨⟨econX0_mem, by rw [econP0_dot]; norm_num [econX0]⟩, fun y hy => ?_⟩
+      have hy2 := hy.2
+      rw [econP0_dot] at hy2
+      have hx0 : min (econP0 ⬝ᵥ econX0 - 8) (c * (econP1 ⬝ᵥ econX0 - 26) + (s - 8)) = 0 := by
+        simp only [econP0_dot, econP1_dot, econX0]
+        norm_num
+        rw [hc]
+        ring_nf
+        simp
+      beta_reduce
+      rw [hx0, econP0_dot]
+      exact (min_le_left _ _).trans (by linarith)
+    · refine ⟨⟨hx1, by rw [econP1_dot]; linarith⟩, fun y hy => ?_⟩
+      have hy2 := hy.2
+      rw [econP1_dot] at hy2
+      have hx1v : min (econP0 ⬝ᵥ x1 - 8) (c * (econP1 ⬝ᵥ x1 - 26) + (s - 8)) = s - 8 := by
+        rw [econP0_dot, econP1_dot, hb, ← hs]
+        simp
+      beta_reduce
+      rw [hx1v, econP1_dot]
+      refine (min_le_right _ _).trans ?_
+      nlinarith
+
+/-- The quasilinear utility `x_k + φ(x_j)` in two goods. -/
+def econQL (k j : Fin 2) (φ : ℝ → ℝ) (x : Fin 2 → ℝ) : ℝ := x k + φ (x j)
+
+/-- **Exercise 3.D.7(b)** (MWG, p. 98). With preferences quasilinear in the first good
+(`u = x₁ + φ(x₂)` on the quasilinear set `ℝ × ℝ_+`), `x⁰` and `x¹ = (26 - 4t, t)`, `t ≥ 0`,
+are both chosen for some `φ` iff `t ≤ 4`. -/
+theorem exercise_3_D_7b {x1 : Fin 2 → ℝ} (hx1 : x1 ∈ quasilinearDomain (0 : Fin 2))
+    (hb : x1 0 + 4 * x1 1 = 26) :
+    (∃ φ : ℝ → ℝ, econX0 ∈ walrasianDemandOn (quasilinearDomain 0) (econQL 0 1 φ) econP0 8 ∧
+      x1 ∈ walrasianDemandOn (quasilinearDomain 0) (econQL 0 1 φ) econP1 26) ↔ x1 1 ≤ 4 := by
+  have hmem : ∀ a b : ℝ, 0 ≤ b → (![a, b] : Fin 2 → ℝ) ∈ quasilinearDomain (0 : Fin 2) := by
+    intro a b hb' l hl
+    fin_cases l
+    · exact absurd rfl hl
+    · simpa using hb'
+  have ht0 : 0 ≤ x1 1 := hx1 1 (by decide)
+  constructor
+  · rintro ⟨φ, h0, h1⟩
+    set t := x1 1
+    have e0 := h0.2 ![8 - t, t] ⟨hmem _ _ ht0, by rw [econP0_dot]; simp⟩
+    have e1 := h1.2 ![10, 4] ⟨hmem _ _ (by norm_num), by rw [econP1_dot]; norm_num⟩
+    simp only [econQL, econX0] at e0 e1
+    norm_num at e0 e1
+    linarith
+  · intro ht
+    set t := x1 1
+    refine ⟨fun τ => min (4 * τ) (min (3 * t + τ) (3 * t + 4)), ⟨⟨hmem _ _ (by norm_num),
+      by rw [econP0_dot]; norm_num [econX0]⟩, fun y hy => ?_⟩,
+      ⟨⟨hx1, by rw [econP1_dot]; linarith⟩, fun y hy => ?_⟩⟩
+    · have hy2 := hy.2
+      rw [econP0_dot] at hy2
+      simp only [econQL, econX0]
+      norm_num
+      have h1 : min (4 * y 1) (min (3 * t + y 1) (3 * t + 4)) ≤ 3 * t + y 1 :=
+        (min_le_right _ _).trans (min_le_left _ _)
+      have h2 : min (16 : ℝ) (3 * t + 4) = 3 * t + 4 := min_eq_right (by linarith)
+      rw [h2]
+      linarith
+    · have hy2 := hy.2
+      rw [econP1_dot] at hy2
+      simp only [econQL]
+      have h1 : min (4 * y 1) (min (3 * t + y 1) (3 * t + 4)) ≤ 4 * y 1 := min_le_left _ _
+      have h2 : min (4 * t) (min (3 * t + t) (3 * t + 4)) = 4 * t := by
+        rw [min_eq_left]
+        exact le_min (by linarith) (by linarith)
+      rw [h2]
+      linarith
+
+/-- **Exercise 3.D.7(c)** (MWG, p. 98). With preferences quasilinear in the second good
+(`u = x₂ + φ(x₁)` on the quasilinear set `ℝ_+ × ℝ`), `x⁰` and `x¹` (with `x¹₁ ≥ 0`,
+`x¹₁ + 4x¹₂ = 26`) are both chosen for some `φ` iff `x¹₁ ≥ 4`, i.e. `x¹₂ ≤ 11/2`. -/
+theorem exercise_3_D_7c {x1 : Fin 2 → ℝ} (hx1 : x1 ∈ quasilinearDomain (1 : Fin 2))
+    (hb : x1 0 + 4 * x1 1 = 26) :
+    (∃ φ : ℝ → ℝ, econX0 ∈ walrasianDemandOn (quasilinearDomain 1) (econQL 1 0 φ) econP0 8 ∧
+      x1 ∈ walrasianDemandOn (quasilinearDomain 1) (econQL 1 0 φ) econP1 26) ↔
+      4 ≤ x1 0 := by
+  have hmem : ∀ a b : ℝ, 0 ≤ a → (![a, b] : Fin 2 → ℝ) ∈ quasilinearDomain (1 : Fin 2) := by
+    intro a b ha l hl
+    fin_cases l
+    · simpa using ha
+    · exact absurd rfl hl
+  have hT0 : 0 ≤ x1 0 := hx1 0 (by decide)
+  constructor
+  · rintro ⟨φ, h0, h1⟩
+    set T := x1 0
+    have e0 := h0.2 ![T, 8 - T] ⟨hmem _ _ hT0, by rw [econP0_dot]; simp⟩
+    have e1 := h1.2 ![4, 11 / 2] ⟨hmem _ _ (by norm_num), by rw [econP1_dot]; norm_num⟩
+    simp only [econQL, econX0] at e0 e1
+    norm_num at e0 e1
+    linarith
+  · intro hT
+    set T := x1 0
+    refine ⟨fun τ => min τ (min (3 + τ / 4) (3 + T / 4)), ⟨⟨hmem _ _ (by norm_num),
+      by rw [econP0_dot]; norm_num [econX0]⟩, fun y hy => ?_⟩,
+      ⟨⟨hx1, by rw [econP1_dot]; linarith⟩, fun y hy => ?_⟩⟩
+    · have hy2 := hy.2
+      rw [econP0_dot] at hy2
+      simp only [econQL, econX0]
+      norm_num
+      have h1 : min (y 0) (min (3 + y 0 / 4) (3 + T / 4)) ≤ y 0 := min_le_left _ _
+      have h2 : min (4 : ℝ) (3 + T / 4) = 4 := min_eq_left (by linarith)
+      rw [h2]
+      linarith
+    · have hy2 := hy.2
+      rw [econP1_dot] at hy2
+      simp only [econQL]
+      have h1 : min (y 0) (min (3 + y 0 / 4) (3 + T / 4)) ≤ 3 + y 0 / 4 :=
+        (min_le_right _ _).trans (min_le_left _ _)
+      have h2 : min T (min (3 + T / 4) (3 + T / 4)) = 3 + T / 4 := by
+        rw [min_self, min_eq_right (by linarith)]
+      rw [h2]
+      linarith
+
+/-- **Exercise 3.D.7(d)** (MWG, p. 98), necessity. Let `u` represent a locally nonsatiated `≿`
+on `ℝ²_+` and `xs` be a demand function for it (`xs p w ∈ x(p, w)`) with both goods normal at
+`p¹` (`xs p¹ w` nondecreasing in `w`). If `xs p⁰ 8 = x⁰` and `xs p¹ 26 = x¹`, then
+`x¹₂ ≤ 11/2`. -/
+theorem exercise_3_D_7d {u : (Fin 2 → ℝ) → ℝ} {r : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant 2) u r) (hlns : LocallyNonsatiated (nonnegOrthant 2) r)
+    {xs : (Fin 2 → ℝ) → ℝ → Fin 2 → ℝ} (hxs : ∀ p w, xs p w ∈ walrasianDemand u p w)
+    (hnormal : ∀ w w' : ℝ, w ≤ w' → xs econP1 w ≤ xs econP1 w')
+    (h0 : xs econP0 8 = econX0) : xs econP1 26 1 ≤ 11 / 2 := by
+  set x' := xs econP1 20
+  have hx' := hxs econP1 20
+  have hwal' := proposition_3_D_2_ii hrep hlns hx'
+  rw [econP1_dot] at hwal'
+  have hwal1 := proposition_3_D_2_ii hrep hlns (hxs econP1 26)
+  rw [econP1_dot] at hwal1
+  have h0d := hxs econP0 8
+  rw [h0] at h0d
+  -- `x'` is revealed preferred to `x⁰`, so it costs at least 8 at `p⁰`
+  have hcost : 8 ≤ x' 0 + x' 1 := by
+    by_contra hlt
+    rw [not_le] at hlt
+    have hle := hx'.2 econX0 ⟨econX0_mem, by rw [econP1_dot]; norm_num [econX0]⟩
+    obtain ⟨z, hz, hpz, hs⟩ := exists_better_affordable hlns econP0 hx'.1.1
+      (by rw [econP0_dot]; exact hlt)
+    have hzlt := (hrep.strict_iff hz hx'.1.1).mp hs
+    have := h0d.2 z ⟨hz, hpz.le⟩
+    linarith
+  have hn := hnormal 20 26 (by norm_num)
+  have hn0 : x' 0 ≤ xs econP1 26 0 := hn 0
+  have hx'1 : 0 ≤ x' 1 := hx'.1.1 1
+  linarith
+
+/-- **Exercise 3.D.7(e)** (MWG, p. 98). For `x¹ ∈ ℝ²_+` on the budget line `p¹·x = 26`:
+(i) if `u` is homogeneous of degree one on `ℝ²_+` (homothetic preferences) and represents a
+locally nonsatiated `≿` with `x⁰ ∈ x(p⁰, 8)`, `x¹ ∈ x(p¹, 26)`, then `x¹₂ ≤ 26/5`; (ii) if
+`x¹₂ ≤ 26/5`, the continuous, concave, degree-one homogeneous, monotone
+`u(x) = min(p⁰·x, (2/5) p¹·x)` chooses `x⁰` and `x¹`. -/
+theorem exercise_3_D_7e {x1 : Fin 2 → ℝ} (hx1 : x1 ∈ nonnegOrthant 2)
+    (hb : x1 0 + 4 * x1 1 = 26) :
+    (∀ (u : (Fin 2 → ℝ) → ℝ) (r : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop),
+      RepresentsOn (nonnegOrthant 2) u r → LocallyNonsatiated (nonnegOrthant 2) r →
+      (∀ x ∈ nonnegOrthant 2, ∀ α : ℝ, 0 < α → u (α • x) = α * u x) →
+      econX0 ∈ walrasianDemand u econP0 8 → x1 ∈ walrasianDemand u econP1 26 →
+      x1 1 ≤ 26 / 5) ∧
+    (x1 1 ≤ 26 / 5 → ∃ u : (Fin 2 → ℝ) → ℝ, Continuous u ∧ ConcaveOn ℝ (nonnegOrthant 2) u ∧
+      (∀ x : Fin 2 → ℝ, ∀ α : ℝ, 0 ≤ α → u (α • x) = α * u x) ∧
+      PrefMonotone (nonnegOrthant 2) (utilityPref u) ∧
+      econX0 ∈ walrasianDemand u econP0 8 ∧ x1 ∈ walrasianDemand u econP1 26) := by
+  constructor
+  · intro u r hrep hlns hhom h0 h1
+    set x' : Fin 2 → ℝ := (20 / 26 : ℝ) • x1 with hx'
+    have hx'm : x' ∈ nonnegOrthant 2 := fun l => by
+      simp only [hx', Pi.smul_apply, smul_eq_mul]; nlinarith [hx1 l]
+    -- `u(x') ≥ u(x⁰)`: scale `x⁰` up to the budget `26`
+    have hscale := hhom econX0 econX0_mem (26 / 20) (by norm_num)
+    have hx0big : (26 / 20 : ℝ) • econX0 ∈ budgetSet econP1 26 := by
+      refine ⟨fun l => ?_, ?_⟩
+      · simp only [Pi.smul_apply, smul_eq_mul]; nlinarith [econX0_mem l]
+      · rw [econP1_dot]; norm_num [econX0]
+    have hle := h1.2 _ hx0big
+    rw [hscale] at hle
+    have hx'u := hhom x1 hx1 (20 / 26) (by norm_num)
+    have hge : u econX0 ≤ u x' := by
+      rw [hx', hx'u]
+      nlinarith
+    by_contra hgt
+    rw [not_le] at hgt
+    have hcost : econP0 ⬝ᵥ x' < 8 := by
+      rw [econP0_dot]
+      simp only [hx', Pi.smul_apply, smul_eq_mul]
+      nlinarith
+    obtain ⟨z, hz, hpz, hs⟩ := exists_better_affordable hlns econP0 hx'm hcost
+    have hzlt := (hrep.strict_iff hz hx'm).mp hs
+    have := h0.2 z ⟨hz, hpz.le⟩
+    linarith
+  · intro ht
+    have hs : 52 / 5 ≤ x1 0 + x1 1 := by linarith
+    refine ⟨fun x => min (econP0 ⬝ᵥ x) (2 / 5 * econP1 ⬝ᵥ x), ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · simp only [econP0_dot, econP1_dot]
+      fun_prop
+    · refine ConcaveOn.inf ?_ ?_
+      · exact (econ_affine_concaveOn econP0 0).congr fun x _ => by simp
+      · have := econ_affine_concaveOn ((2 / 5 : ℝ) • econP1) 0
+        refine this.congr fun x _ => ?_
+        simp only [smul_dotProduct, smul_eq_mul, add_zero]
+    · intro x α hα
+      simp only [dotProduct_smul, smul_eq_mul]
+      rw [show 2 / 5 * (α * econP1 ⬝ᵥ x) = α * (2 / 5 * econP1 ⬝ᵥ x) by ring]
+      exact (mul_min_of_nonneg _ _ hα).symm
+    · intro x _ y _ hxy
+      have h0 : x 0 < y 0 := hxy 0
+      have h1 : x 1 < y 1 := hxy 1
+      have hlt : min (econP0 ⬝ᵥ x) (2 / 5 * econP1 ⬝ᵥ x) <
+          min (econP0 ⬝ᵥ y) (2 / 5 * econP1 ⬝ᵥ y) := by
+        simp only [econP0_dot, econP1_dot]
+        exact min_lt_min (by linarith) (by linarith)
+      exact ⟨hlt.le, not_le.mpr hlt⟩
+    · refine ⟨⟨econX0_mem, by rw [econP0_dot]; norm_num [econX0]⟩, fun y hy => ?_⟩
+      have hy2 := hy.2
+      rw [econP0_dot] at hy2
+      change min (econP0 ⬝ᵥ y) (2 / 5 * econP1 ⬝ᵥ y) ≤
+        min (econP0 ⬝ᵥ econX0) (2 / 5 * econP1 ⬝ᵥ econX0)
+      have hv : min (econP0 ⬝ᵥ econX0) (2 / 5 * econP1 ⬝ᵥ econX0) = 8 := by
+        rw [econP0_dot, econP1_dot]
+        norm_num [econX0]
+      rw [hv, econP0_dot]
+      exact (min_le_left _ _).trans hy2
+    · refine ⟨⟨hx1, by rw [econP1_dot]; linarith⟩, fun y hy => ?_⟩
+      have hy2 := hy.2
+      rw [econP1_dot] at hy2
+      have hv : min (econP0 ⬝ᵥ x1) (2 / 5 * econP1 ⬝ᵥ x1) = 52 / 5 := by
+        rw [econP0_dot, econP1_dot, hb, min_eq_right (by linarith)]
+        norm_num
+      beta_reduce
+      rw [hv, econP1_dot]
+      refine (min_le_right _ _).trans ?_
+      linarith
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.D.7(d): both goods normal, sufficiency
+
+MWG, Exercise 3.D.7(d), p. 98. Two goods; `p⁰ = (1, 1)`, `w⁰ = 8`, `x⁰ = (4, 4)`; `p¹ = (1, 4)`,
+`w¹ = 26`, `x¹ = (26 - 4t, t)`, `t = x¹₂ ≥ 0`.
+
+The necessity half (`t ≤ 11/2`) is `exercise_3_D_7d`, but its hypothesis asks the demand
+selection to be optimal at *every* `(p, w)`, including `p = 0`, where a locally nonsatiated
+preference has no optimum: that hypothesis is never satisfied
+(`last_exercise_3_D_7d_hyp_unsatisfiable`, correction G-1). Here the exercise is stated with the
+demand function defined on `p ≫ 0`, `w ≥ 0` (the book's domain of `x(p, w)`), and both
+directions are proved (`exercise_3_D_7d_iff`):
+
+* necessity again (`last_exercise_3_D_7d_necessary`), now from optimality at `(p⁰, 8)`,
+  `(p¹, 20)` and `(p¹, 26)` only;
+* sufficiency: for every `t ≤ 11/2` the continuous, concave, monotone utility
+  `u(x) = x₂ + φ(x₁)`, `φ(τ) = min(τ, 3 + τ/4, 3 + x¹₁/4)`, on `ℝ²_+` (not on the quasilinear
+  set) has the demand function
+  `x₁(p, w) = min(w/p₁, c(p))`, `x₂(p, w) = max(w - p₁c(p), 0)/p₂`, where `c(p)` is `0`, `4` or
+  `x¹₁` according as `p₁/p₂ > 1`, `1/4 < p₁/p₂ ≤ 1` or `p₁/p₂ ≤ 1/4` (`lastNormalDemand`). Both
+  coordinates are nondecreasing in `w`, so both goods are normal at every `p ≫ 0`, and the
+  demand passes through `x⁰` and `x¹`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties
+
+/-- The kinked concave function `φ(τ) = min(τ, 3 + τ/4, 3 + T/4)` (`T = x¹₁`). -/
+noncomputable def lastPhi (T τ : ℝ) : ℝ := min τ (min (3 + τ / 4) (3 + T / 4))
+
+/-- The utility `u(x) = x₂ + φ(x₁)` on `ℝ²_+`. -/
+noncomputable def lastNormalUtility (T : ℝ) (x : Fin 2 → ℝ) : ℝ := x 1 + lastPhi T (x 0)
+
+/-- The selected optimal level `c(p)` of good 1 when wealth does not bind:
+`0` if `p₁ > p₂`, `4` if `p₂/4 < p₁ ≤ p₂`, `T` if `p₁ ≤ p₂/4`. -/
+noncomputable def lastNormalLevel (T : ℝ) (p : Fin 2 → ℝ) : ℝ :=
+  if p 1 < p 0 then 0 else if p 1 < 4 * p 0 then 4 else T
+
+/-- The demand function `x₁ = min(w/p₁, c(p))`, `x₂ = (w - p₁x₁)/p₂`. -/
+noncomputable def lastNormalDemand (T : ℝ) (p : Fin 2 → ℝ) (w : ℝ) : Fin 2 → ℝ :=
+  ![min (w / p 0) (lastNormalLevel T p), (w - p 0 * min (w / p 0) (lastNormalLevel T p)) / p 1]
+
+/-- `φ` has slope at least `1/4` below `T`: `τ ↦ φ(τ) - τ/4` is nondecreasing on `(-∞, T]`. -/
+theorem lastPhi_quarter {T a b : ℝ} (hab : a ≤ b) (hb : b ≤ T) :
+    lastPhi T a - a / 4 ≤ lastPhi T b - b / 4 := by
+  unfold lastPhi
+  have h1 : min (3 + b / 4) (3 + T / 4) = 3 + b / 4 := min_eq_left (by linarith)
+  have h2 : min (3 + a / 4) (3 + T / 4) = 3 + a / 4 := min_eq_left (by linarith)
+  rw [h1, h2]
+  rcases le_total a 4 with ha | ha <;> rcases le_total b 4 with hb4 | hb4
+  · rw [min_eq_left (by linarith), min_eq_left (by linarith)]; linarith
+  · rw [min_eq_left (by linarith), min_eq_right (by linarith)]; linarith
+  · have : a = b := by linarith
+    rw [this]
+  · rw [min_eq_right (by linarith), min_eq_right (by linarith)]; linarith
+
+/-- The key inequality: `c = c(p)`-type optimality of `x₁` for the one-dimensional problem
+`max φ(y₁) - r y₁` over `0 ≤ y₁ ≤ m`, with `x₁ = min(m, c)`. -/
+theorem lastPhi_opt {T : ℝ} (hT : 4 ≤ T) {p : Fin 2 → ℝ} (hp : StrictlyPositive p) {m y : ℝ}
+    (hm : 0 ≤ m) (hy0 : 0 ≤ y) (hym : y ≤ m) :
+    p 1 * lastPhi T y - p 0 * y ≤
+      p 1 * lastPhi T (min m (lastNormalLevel T p)) - p 0 * min m (lastNormalLevel T p) := by
+  have hp0 := hp 0
+  have hp1 := hp 1
+  unfold lastNormalLevel
+  split_ifs with h1 h2
+  · -- `c = 0`: `x₁ = 0`
+    rw [min_eq_right hm]
+    have hφ : lastPhi T y ≤ y := min_le_left _ _
+    have hφ0 : lastPhi T 0 = 0 := by
+      unfold lastPhi; rw [min_eq_left (le_min (by norm_num) (by linarith))]
+    rw [hφ0]
+    nlinarith
+  · -- `c = 4`
+    rw [not_lt] at h1
+    have hφa : lastPhi T y ≤ y := min_le_left _ _
+    have hφb : lastPhi T y ≤ 3 + y / 4 := (min_le_right _ _).trans (min_le_left _ _)
+    rcases le_total m 4 with hm4 | hm4
+    · rw [min_eq_left hm4]
+      have hφm : lastPhi T m = m := by
+        unfold lastPhi; rw [min_eq_left (le_min (by linarith) (by linarith))]
+      rw [hφm]
+      nlinarith
+    · rw [min_eq_right hm4]
+      have hφ4 : lastPhi T 4 = 4 := by
+        unfold lastPhi; rw [min_eq_left (le_min (by linarith) (by linarith))]
+      rw [hφ4]
+      rcases le_total y 4 with hy4 | hy4
+      · nlinarith
+      · nlinarith
+  · -- `c = T`
+    rw [not_lt] at h1 h2
+    rcases le_total m T with hmT | hmT
+    · rw [min_eq_left hmT]
+      have hq := lastPhi_quarter hym hmT
+      nlinarith
+    · rw [min_eq_right hmT]
+      rcases le_total y T with hyT | hyT
+      · have hq := lastPhi_quarter hyT le_rfl
+        nlinarith
+      · have hφy : lastPhi T y ≤ 3 + T / 4 := (min_le_right _ _).trans (min_le_right _ _)
+        have hφT : lastPhi T T = 3 + T / 4 := by
+          unfold lastPhi
+          rw [min_self, min_eq_right (by linarith)]
+        rw [hφT]
+        nlinarith
+
+/-- `c(p) ≥ 0`. -/
+theorem lastNormalLevel_nonneg {T : ℝ} (hT : 4 ≤ T) (p : Fin 2 → ℝ) :
+    0 ≤ lastNormalLevel T p := by
+  unfold lastNormalLevel
+  split_ifs <;> linarith
+
+/-- The demand function is a solution of the UMP for `u(x) = x₂ + φ(x₁)` at every `p ≫ 0`,
+`w ≥ 0`. -/
+theorem lastNormalDemand_mem {T : ℝ} (hT : 4 ≤ T) {p : Fin 2 → ℝ} (hp : StrictlyPositive p)
+    {w : ℝ} (hw : 0 ≤ w) : lastNormalDemand T p w ∈ walrasianDemand (lastNormalUtility T) p w := by
+  have hp0 := hp 0
+  have hp1 := hp 1
+  set c := lastNormalLevel T p with hc
+  have hc0 : 0 ≤ c := lastNormalLevel_nonneg hT p
+  set m := w / p 0 with hm
+  have hm0 : 0 ≤ m := div_nonneg hw hp0.le
+  have hmw : p 0 * m = w := by rw [hm]; field_simp
+  have hx0 : 0 ≤ min m c := le_min hm0 hc0
+  have hx0m : min m c ≤ m := min_le_left _ _
+  have hspend : p 0 * min m c ≤ w := by rw [← hmw]; exact mul_le_mul_of_nonneg_left hx0m hp0.le
+  have hdot : ∀ y : Fin 2 → ℝ, p ⬝ᵥ y = p 0 * y 0 + p 1 * y 1 := fun y => by
+    simp [dotProduct, Fin.sum_univ_two]
+  have hD0 : lastNormalDemand T p w 0 = min m c := rfl
+  have hD1 : lastNormalDemand T p w 1 = (w - p 0 * min m c) / p 1 := rfl
+  refine ⟨⟨fun l => ?_, ?_⟩, fun y hy => ?_⟩
+  · fin_cases l
+    · exact hx0
+    · exact div_nonneg (by linarith) hp1.le
+  · rw [hdot, hD0, hD1]
+    field_simp
+    linarith
+  · have hy2 := hy.2
+    rw [hdot] at hy2
+    have hy0 := hy.1 0
+    have hy1 := hy.1 1
+    have hym : y 0 ≤ m := by
+      rw [hm, le_div_iff₀ hp0]; nlinarith
+    have hopt := lastPhi_opt hT hp hm0 hy0 hym
+    rw [← hc] at hopt
+    unfold lastNormalUtility
+    rw [hD0, hD1]
+    have key : p 1 * (y 1 + lastPhi T (y 0)) ≤
+        p 1 * ((w - p 0 * min m c) / p 1 + lastPhi T (min m c)) := by
+      rw [mul_add, mul_add, mul_div_cancel₀ _ hp1.ne']
+      linarith
+    exact le_of_mul_le_mul_left key hp1
+
+/-- Both goods are normal: each coordinate of the demand function is nondecreasing in wealth. -/
+theorem lastNormalDemand_mono (T : ℝ) {p : Fin 2 → ℝ} (hp : StrictlyPositive p) {w w' : ℝ}
+    (hww : w ≤ w') : lastNormalDemand T p w ≤ lastNormalDemand T p w' := by
+  have hp0 := hp 0
+  have hp1 := hp 1
+  set c := lastNormalLevel T p
+  have hmul : ∀ v : ℝ, p 0 * min (v / p 0) c = min v (p 0 * c) := fun v => by
+    rw [mul_min_of_nonneg _ _ hp0.le, mul_div_cancel₀ _ hp0.ne']
+  intro l
+  fin_cases l
+  · change min (w / p 0) c ≤ min (w' / p 0) c
+    exact min_le_min_right _ (div_le_div_of_nonneg_right hww hp0.le)
+  · change (w - p 0 * min (w / p 0) c) / p 1 ≤ (w' - p 0 * min (w' / p 0) c) / p 1
+    rw [hmul, hmul]
+    refine div_le_div_of_nonneg_right ?_ hp1.le
+    rcases le_total w (p 0 * c) with h | h <;> rcases le_total w' (p 0 * c) with h' | h'
+    · rw [min_eq_left h, min_eq_left h']; linarith
+    · rw [min_eq_left h, min_eq_right h']; linarith
+    · have : w = w' := by linarith
+      rw [this]
+    · rw [min_eq_right h, min_eq_right h']; linarith
+
+/-- The utility `x₂ + φ(x₁)` is continuous. -/
+theorem lastNormalUtility_continuous (T : ℝ) : Continuous (lastNormalUtility T) := by
+  unfold lastNormalUtility lastPhi
+  fun_prop
+
+/-- The utility `x₂ + φ(x₁)` is concave on `ℝ²_+` (a minimum of three affine functions). -/
+theorem lastNormalUtility_concaveOn (T : ℝ) :
+    ConcaveOn ℝ (nonnegOrthant 2) (lastNormalUtility T) := by
+  have hq : ∀ (a b c : ℝ), ConcaveOn ℝ (nonnegOrthant 2) fun x : Fin 2 → ℝ =>
+      a * x 0 + b * x 1 + c := by
+    intro a b c
+    refine (econ_affine_concaveOn ![a, b] c).congr fun x _ => ?_
+    simp [dotProduct, Fin.sum_univ_two]
+  have h := ((hq 1 1 0).inf (hq (1 / 4) 1 3)).inf (hq 0 1 (3 + T / 4))
+  refine h.congr fun x _ => ?_
+  simp only [lastNormalUtility, lastPhi, Pi.inf_apply]
+  rw [← min_add_add_left, ← min_add_add_left]
+  rw [min_assoc, show 1 * x 0 + 1 * x 1 + 0 = x 1 + x 0 by ring,
+    show 1 / 4 * x 0 + 1 * x 1 + 3 = x 1 + (3 + x 0 / 4) by ring,
+    show 0 * x 0 + 1 * x 1 + (3 + T / 4) = x 1 + (3 + T / 4) by ring]
+
+/-- The utility `x₂ + φ(x₁)` is monotone on `ℝ²_+`. -/
+theorem lastNormalUtility_monotone (T : ℝ) :
+    PrefMonotone (nonnegOrthant 2) (utilityPref (lastNormalUtility T)) := by
+  intro x _ y _ hxy
+  have h0 : x 0 < y 0 := hxy 0
+  have h1 : x 1 < y 1 := hxy 1
+  have hφ : lastPhi T (x 0) ≤ lastPhi T (y 0) := by
+    unfold lastPhi
+    exact min_le_min h0.le (min_le_min (by linarith) le_rfl)
+  have hlt : lastNormalUtility T x < lastNormalUtility T y := by
+    unfold lastNormalUtility; linarith
+  exact ⟨hlt.le, not_le.mpr hlt⟩
+
+/-- A monotone preference on `ℝ²_+` is locally nonsatiated. -/
+theorem last_lns_of_monotone {u : (Fin 2 → ℝ) → ℝ}
+    (hmono : PrefMonotone (nonnegOrthant 2) (utilityPref u)) :
+    LocallyNonsatiated (nonnegOrthant 2) (utilityPref u) := by
+  intro x hx ε hε
+  refine ⟨x + fun _ => ε / 2, fun l => by simp only [Pi.add_apply]; linarith [hx l], ?_,
+    hmono x hx _ (fun l => by simp only [Pi.add_apply]; linarith [hx l])
+      fun l => by simp only [Pi.add_apply]; linarith⟩
+  rw [euclidDist_add_const, abs_of_pos (by linarith)]
+  have h2 : Real.sqrt (2 : ℕ) ≤ 2 := by
+    rw [Real.sqrt_le_left (by norm_num)]
+    norm_num
+  have := mul_le_mul_of_nonneg_right h2 (by linarith : (0 : ℝ) ≤ ε / 2)
+  linarith
+
+/-- The hypothesis of `exercise_3_D_7d` (a demand selection optimal at every `(p, w)`,
+`p = 0` included) is never satisfied by a locally nonsatiated preference on `ℝ²_+`: at
+`p = 0`, `w = 0` the whole of `ℝ²_+` is affordable and has no best element (correction G-1). -/
+theorem last_exercise_3_D_7d_hyp_unsatisfiable {u : (Fin 2 → ℝ) → ℝ}
+    {r : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop} (hrep : RepresentsOn (nonnegOrthant 2) u r)
+    (hlns : LocallyNonsatiated (nonnegOrthant 2) r) (xs : (Fin 2 → ℝ) → ℝ → Fin 2 → ℝ) :
+    ¬ ∀ p w, xs p w ∈ walrasianDemand u p w := by
+  intro hxs
+  have hx := hxs 0 0
+  obtain ⟨y, hy, -, hs⟩ := hlns _ hx.1.1 1 one_pos
+  have hlt := (hrep.strict_iff hy hx.1.1).mp hs
+  have := hx.2 y ⟨hy, by simp⟩
+  linarith
+
+/-- **Exercise 3.D.7(d)** (MWG, p. 98), necessity, with the demand function defined on
+`p ≫ 0`, `w ≥ 0`. If `u` represents a locally nonsatiated `≿` on `ℝ²_+` and `xs` is a demand
+function for it with good 1 normal at `p¹`, `xs p⁰ 8 = x⁰` and `xs p¹ 26 = x¹`, then
+`x¹₂ ≤ 11/2`. -/
+theorem last_exercise_3_D_7d_necessary {u : (Fin 2 → ℝ) → ℝ}
+    {r : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop}
+    (hrep : RepresentsOn (nonnegOrthant 2) u r) (hlns : LocallyNonsatiated (nonnegOrthant 2) r)
+    {xs : (Fin 2 → ℝ) → ℝ → Fin 2 → ℝ}
+    (hxs : ∀ p w, StrictlyPositive p → 0 ≤ w → xs p w ∈ walrasianDemand u p w)
+    (hnormal : xs econP1 20 0 ≤ xs econP1 26 0)
+    (h0 : xs econP0 8 = econX0) : xs econP1 26 1 ≤ 11 / 2 := by
+  have hP0 : StrictlyPositive econP0 := fun l => by fin_cases l <;> norm_num [econP0]
+  have hP1 : StrictlyPositive econP1 := fun l => by fin_cases l <;> norm_num [econP1]
+  set x' := xs econP1 20
+  have hx' := hxs econP1 20 hP1 (by norm_num)
+  have hwal' := proposition_3_D_2_ii hrep hlns hx'
+  rw [econP1_dot] at hwal'
+  have hwal1 := proposition_3_D_2_ii hrep hlns (hxs econP1 26 hP1 (by norm_num))
+  rw [econP1_dot] at hwal1
+  have h0d := hxs econP0 8 hP0 (by norm_num)
+  rw [h0] at h0d
+  have hcost : 8 ≤ x' 0 + x' 1 := by
+    by_contra hlt
+    rw [not_le] at hlt
+    obtain ⟨z, hz, hpz, hs⟩ := exists_better_affordable hlns econP0 hx'.1.1
+      (by rw [econP0_dot]; exact hlt)
+    have hzlt := (hrep.strict_iff hz hx'.1.1).mp hs
+    have := h0d.2 z ⟨hz, hpz.le⟩
+    have hle := hx'.2 econX0 ⟨econX0_mem, by rw [econP1_dot]; norm_num [econX0]⟩
+    linarith
+  linarith
+
+/-- **Exercise 3.D.7(d)** (MWG, p. 98). For `x¹ ∈ ℝ²_+` on the budget line `p¹·x = 26`: there
+are a continuous, concave, monotone utility `u` on `ℝ²_+` and a demand function `xs` for it
+(`xs p w ∈ x(p, w)` for all `p ≫ 0`, `w ≥ 0`) with both goods normal at every `p ≫ 0` and
+`xs p⁰ 8 = x⁰`, `xs p¹ 26 = x¹`, iff `x¹₂ ≤ 11/2`. Necessity holds for every locally
+nonsatiated preference with good 1 normal at `p¹` (`last_exercise_3_D_7d_necessary`). -/
+theorem exercise_3_D_7d_iff {x1 : Fin 2 → ℝ} (hx1 : x1 ∈ nonnegOrthant 2)
+    (hb : x1 0 + 4 * x1 1 = 26) :
+    (∃ (u : (Fin 2 → ℝ) → ℝ) (xs : (Fin 2 → ℝ) → ℝ → Fin 2 → ℝ), Continuous u ∧
+      ConcaveOn ℝ (nonnegOrthant 2) u ∧ PrefMonotone (nonnegOrthant 2) (utilityPref u) ∧
+      (∀ p w, StrictlyPositive p → 0 ≤ w → xs p w ∈ walrasianDemand u p w) ∧
+      (∀ p, StrictlyPositive p → ∀ w w', w ≤ w' → xs p w ≤ xs p w') ∧
+      xs econP0 8 = econX0 ∧ xs econP1 26 = x1) ↔ x1 1 ≤ 11 / 2 := by
+  constructor
+  · rintro ⟨u, xs, -, -, hmono, hxs, hnorm, h0, h1⟩
+    have hP1 : StrictlyPositive econP1 := fun l => by fin_cases l <;> norm_num [econP1]
+    have := last_exercise_3_D_7d_necessary (fun _ _ _ _ => Iff.rfl) (last_lns_of_monotone hmono)
+      hxs (hnorm econP1 hP1 20 26 (by norm_num) 0) h0
+    rwa [h1] at this
+  · intro ht
+    set T := x1 0 with hTdef
+    have hT : 4 ≤ T := by linarith
+    have hT26 : T ≤ 26 := by linarith [hx1 1]
+    refine ⟨lastNormalUtility T, lastNormalDemand T, lastNormalUtility_continuous T,
+      lastNormalUtility_concaveOn T, lastNormalUtility_monotone T,
+      fun p w hp hw => lastNormalDemand_mem hT hp hw,
+      fun p hp w w' hww => lastNormalDemand_mono T hp hww, ?_, ?_⟩
+    · have hc : lastNormalLevel T econP0 = 4 := by
+        unfold lastNormalLevel; norm_num [econP0]
+      ext l
+      fin_cases l
+      · change min (8 / econP0 0) (lastNormalLevel T econP0) = econX0 0
+        rw [hc]; norm_num [econP0, econX0]
+      · change (8 - econP0 0 * min (8 / econP0 0) (lastNormalLevel T econP0)) / econP0 1 = econX0 1
+        rw [hc]; norm_num [econP0, econX0]
+    · have hc : lastNormalLevel T econP1 = T := by
+        unfold lastNormalLevel; norm_num [econP1]
+      ext l
+      fin_cases l
+      · change min (26 / econP1 0) (lastNormalLevel T econP1) = x1 0
+        rw [hc]; norm_num [econP1]; exact min_eq_right hT26
+      · change (26 - econP1 0 * min (26 / econP1 0) (lastNormalLevel T econP1)) / econP1 1 = x1 1
+        rw [hc]; norm_num [econP1]
+        rw [min_eq_right hT26]
+        linarith
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# The area variation and the deadweight loss (Figure 3.I.8, footnote 29)
+
+MWG, Section 3.I, p. 90, Figure 3.I.8 and footnote 29. The book: "the approximation error may be
+quite large as a fraction of the deadweight loss ... The percentage difference between these two
+areas need not grow small as the price change grows small."
+
+Precise statement proved here. Cobb-Douglas utility `x₁^α x₂^{1-α}`, `α ∈ (0, 1)`, prices
+`p⁰ ≫ 0`, wealth `w > 0`; a tax raises the price of good 1 from `a = p⁰₁` to `s`
+(`p¹ = (s, p⁰₂)`, `τ = s - a`). The book's deadweight losses are
+* (3.I.5), measured at `u¹`: `DWL_EV(s) = -τ x₁(p¹, w) - EV(p⁰, p¹, w)`;
+* (3.I.6), measured at `u⁰`: `DWL_CV(s) = -CV(p⁰, p¹, w) - τ h₁(p¹, u⁰)`;
+and the deadweight loss computed from the Walrasian demand curve replaces the welfare change by
+the area variation: `DWL_AV(s) = -AV(p⁰, p¹, w) - τ x₁(p¹, w)`. All three are computed in closed
+form from the project's `expenditure`, `indirectUtility`, `equivalentVariation`,
+`compensatingVariation`, `hicksianOf` and `areaVariation` (`last_cd_dwl_ev_eq`,
+`last_cd_dwl_cv_eq`, `last_cd_dwl_av_eq`). Their second-order expansions at `s = a` are
+`DWL_EV, DWL_CV ≈ α(1-α)w(s-a)²/(2a²)` and `DWL_AV ≈ αw(s-a)²/(2a²)`, so
+
+`(DWL_AV - DWL)/DWL → α/(1-α) ≠ 0` as `s → a`, for both book measures
+(`figure_3_I_8_ev`, `figure_3_I_8_cv`, summary `figure_3_I_8`).
+
+By contrast the relative error of `AV` against the welfare change itself tends to `0`
+(`welfare_av_relative_error`, p. 89).
+
+The computation in `docs/source-map-F2.md` (limit `-α/(α+1)`) uses the mixed measure
+`-CV(p⁰, p¹, w) - τ x₁(p¹, w)` (the compensating variation minus the revenue actually collected,
+rather than (3.I.6)'s compensated revenue `τ h₁(p¹, u⁰)`): that limit is proved as well
+(`footnote_3_I_29_mixed`); it is not one of the book's two deadweight-loss measures
+(correction G-2). The footnote's own claim (misranking of two equal-revenue taxes) needs two
+taxed goods with different wealth effects and is not covered here (see `docs/source-map-G.md`).
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology Asymptotics
+
+/-- The relative price factor `q(s) = (s/a)^α`. -/
+noncomputable def lastQ (a α s : ℝ) : ℝ := (s / a) ^ α
+
+/-- `q(s) > 0` for `a, s > 0`. -/
+theorem lastQ_pos {a α s : ℝ} (ha : 0 < a) (hs : 0 < s) : 0 < lastQ a α s :=
+  Real.rpow_pos_of_pos (div_pos hs ha) _
+
+/-- `q(a) = 1`. -/
+theorem lastQ_self {a : ℝ} (ha : 0 < a) (α : ℝ) : lastQ a α a = 1 := by
+  simp [lastQ, div_self ha.ne']
+
+/-- `q'(s) = α q(s)/s`. -/
+theorem lastQ_hasDerivAt {a α s : ℝ} (ha : 0 < a) (hs : 0 < s) :
+    HasDerivAt (lastQ a α) (α * lastQ a α s / s) s := by
+  have h : HasDerivAt (lastQ a α) _ s := ((hasDerivAt_id' s).div_const a).rpow_const (p := α)
+    (Or.inl (div_pos hs ha).ne')
+  convert h using 1
+  rw [Real.rpow_sub_one (div_pos hs ha).ne', lastQ]
+  field_simp
+
+/-- A function vanishing to first order at `a` with second derivative `σ` there:
+`F(s) = (σ/2)(s - a)² + o((s - a)²)`. -/
+theorem last_quadratic_of_deriv {F H : ℝ → ℝ} {a σ : ℝ}
+    (hF : ∀ᶠ t in 𝓝 a, HasDerivAt F (H t) t) (hH : HasDerivAt H σ a) (hF0 : F a = 0)
+    (hH0 : H a = 0) :
+    (fun s => F s - σ / 2 * (s - a) ^ 2) =o[𝓝 a] fun s => (s - a) ^ 2 := by
+  have h := econ_second_order_taylor hF hH
+  simpa [hF0, hH0] using h
+
+/-- If `F ≈ c(s - a)²` with `c ≠ 0` and `G ≈ d(s - a)²`, then `(G - F)/F → (d - c)/c`. -/
+theorem last_ratio_limit {F G : ℝ → ℝ} {a c d : ℝ} (hc : c ≠ 0)
+    (hF : (fun s => F s - c * (s - a) ^ 2) =o[𝓝 a] fun s => (s - a) ^ 2)
+    (hG : (fun s => G s - d * (s - a) ^ 2) =o[𝓝 a] fun s => (s - a) ^ 2) :
+    Tendsto (fun s => (G s - F s) / F s) (𝓝[≠] a) (𝓝 ((d - c) / c)) := by
+  have h1 := (hF.mono (nhdsWithin_le_nhds (s := {a}ᶜ))).tendsto_div_nhds_zero
+  have h2 := (hG.mono (nhdsWithin_le_nhds (s := {a}ᶜ))).tendsto_div_nhds_zero
+  have hF' : Tendsto (fun s => F s / (s - a) ^ 2) (𝓝[≠] a) (𝓝 c) := by
+    have := h1.add_const c
+    rw [zero_add] at this
+    refine this.congr' ?_
+    filter_upwards [self_mem_nhdsWithin] with s hs
+    have : (s - a) ^ 2 ≠ 0 := pow_ne_zero _ (sub_ne_zero.mpr hs)
+    rw [sub_div, mul_div_assoc, div_self this, mul_one, sub_add_cancel]
+  have hG' : Tendsto (fun s => G s / (s - a) ^ 2) (𝓝[≠] a) (𝓝 d) := by
+    have := h2.add_const d
+    rw [zero_add] at this
+    refine this.congr' ?_
+    filter_upwards [self_mem_nhdsWithin] with s hs
+    have : (s - a) ^ 2 ≠ 0 := pow_ne_zero _ (sub_ne_zero.mpr hs)
+    rw [sub_div, mul_div_assoc, div_self this, mul_one, sub_add_cancel]
+  refine ((hG'.sub hF').div hF' hc).congr' ?_
+  filter_upwards [self_mem_nhdsWithin] with s hs
+  have : (s - a) ^ 2 ≠ 0 := pow_ne_zero _ (sub_ne_zero.mpr hs)
+  change (G s / (s - a) ^ 2 - F s / (s - a) ^ 2) / (F s / (s - a) ^ 2) = _
+  rw [← sub_div, div_div_div_cancel_right₀ this]
+
+/-- The closed form of `DWL_EV(s) = -τ x₁(p¹, w) - EV` for Cobb-Douglas. -/
+noncomputable def lastDwlEV (a α w s : ℝ) : ℝ :=
+  -((s - a) * (α * w / s)) - (w / lastQ a α s - w)
+
+/-- The closed form of `DWL_CV(s) = -CV - τ h₁(p¹, u⁰)` for Cobb-Douglas. -/
+noncomputable def lastDwlCV (a α w s : ℝ) : ℝ :=
+  -(w - w * lastQ a α s) - (s - a) * (α * (w * lastQ a α s) / s)
+
+/-- The closed form of `DWL_AV(s) = -AV - τ x₁(p¹, w)` for Cobb-Douglas. -/
+noncomputable def lastDwlAV (a α w s : ℝ) : ℝ :=
+  -(α * w * Real.log (a / s)) - (s - a) * (α * w / s)
+
+/-- The closed form of the mixed measure `-CV - τ x₁(p¹, w)` for Cobb-Douglas. -/
+noncomputable def lastDwlMixed (a α w s : ℝ) : ℝ :=
+  -(w - w * lastQ a α s) - (s - a) * (α * w / s)
+
+/-- `d/ds [(s - a)(c/s)] = c a/s²`. -/
+theorem last_revenue_hasDerivAt (a c : ℝ) {s : ℝ} (hs : 0 < s) :
+    HasDerivAt (fun s => (s - a) * (c / s)) (c * a / s ^ 2) s := by
+  have h : HasDerivAt (fun s => (s - a) * (c / s)) _ s := ((hasDerivAt_id' s).sub_const a).mul
+    ((hasDerivAt_const s c).div (hasDerivAt_id' s) hs.ne')
+  convert h using 1
+  field_simp
+  ring
+
+/-- `d/ds [c a/s²]` at `s`. -/
+theorem last_inv_sq_hasDerivAt (c : ℝ) {s : ℝ} (hs : 0 < s) :
+    HasDerivAt (fun s => c / s ^ 2) (-(2 * c) / s ^ 3) s := by
+  have h : HasDerivAt (fun s => c / s ^ 2) _ s :=
+    (hasDerivAt_const s c).div ((hasDerivAt_id' s).pow 2) (pow_ne_zero 2 hs.ne')
+  convert h using 1
+  field_simp
+  ring
+
+/-- Expansion of `DWL_EV`: `≈ α(1-α)w(s-a)²/(2a²)`. -/
+theorem lastDwlEV_expansion {a α w : ℝ} (ha : 0 < a) :
+    (fun s => lastDwlEV a α w s - α * (1 - α) * w / a ^ 2 / 2 * (s - a) ^ 2) =o[𝓝 a]
+      fun s => (s - a) ^ 2 := by
+  set H : ℝ → ℝ := fun s => -(α * w * a / s ^ 2) + α * w / (s * lastQ a α s) with hH
+  have hD : ∀ᶠ t in 𝓝 a, HasDerivAt (lastDwlEV a α w) (H t) t := by
+    filter_upwards [lt_mem_nhds ha] with t ht
+    have hq := lastQ_hasDerivAt (α := α) ha ht
+    have hqne := (lastQ_pos (α := α) ha ht).ne'
+    have h : HasDerivAt (lastDwlEV a α w) _ t := ((last_revenue_hasDerivAt a (α * w) ht).neg).sub
+      (((hasDerivAt_const t w).div hq hqne).sub_const w)
+    convert h using 1
+    simp only [hH]
+    field_simp
+    ring
+  have hH' : HasDerivAt H (α * (1 - α) * w / a ^ 2) a := by
+    have hq := lastQ_hasDerivAt (α := α) ha ha
+    have hqne := (lastQ_pos (α := α) ha ha).ne'
+    have h : HasDerivAt H _ a := (last_inv_sq_hasDerivAt (α * w * a) ha).neg.add
+      ((hasDerivAt_const a (α * w)).div ((hasDerivAt_id' a).mul hq)
+        (mul_ne_zero ha.ne' hqne))
+    convert h using 1
+    simp only [lastQ_self ha]
+    field_simp
+    ring
+  have h := last_quadratic_of_deriv hD hH' (by simp [lastDwlEV, lastQ_self ha])
+    (by simp only [hH, lastQ_self ha]; field_simp; ring)
+  exact h
+
+/-- Expansion of `DWL_CV`: `≈ α(1-α)w(s-a)²/(2a²)`. -/
+theorem lastDwlCV_expansion {a α w : ℝ} (ha : 0 < a) :
+    (fun s => lastDwlCV a α w s - α * (1 - α) * w / a ^ 2 / 2 * (s - a) ^ 2) =o[𝓝 a]
+      fun s => (s - a) ^ 2 := by
+  set H : ℝ → ℝ := fun s => α * (1 - α) * w * ((s - a) * (lastQ a α s / s ^ 2)) with hH
+  have hD : ∀ᶠ t in 𝓝 a, HasDerivAt (lastDwlCV a α w) (H t) t := by
+    filter_upwards [lt_mem_nhds ha] with t ht
+    have hq := lastQ_hasDerivAt (α := α) ha ht
+    have h : HasDerivAt (lastDwlCV a α w) _ t :=
+      (((hasDerivAt_const t w).sub ((hasDerivAt_const t w).mul hq)).neg).sub
+      (((hasDerivAt_id' t).sub_const a).mul
+        (((hasDerivAt_const t α).mul ((hasDerivAt_const t w).mul hq)).div
+          (hasDerivAt_id' t) ht.ne'))
+    convert h using 1
+    simp only [hH, Pi.mul_apply]
+    field_simp
+    ring
+  have hH' : HasDerivAt H (α * (1 - α) * w / a ^ 2) a := by
+    have hq := lastQ_hasDerivAt (α := α) ha ha
+    have h : HasDerivAt H _ a := (((hasDerivAt_id' a).sub_const a).mul
+      (hq.div ((hasDerivAt_id' a).pow 2) (pow_ne_zero 2 ha.ne'))).const_mul (α * (1 - α) * w)
+    convert h using 1
+    simp only [Pi.div_apply, Pi.pow_apply, lastQ_self ha]
+    field_simp
+    ring
+  exact last_quadratic_of_deriv hD hH' (by simp [lastDwlCV, lastQ_self ha])
+    (by simp [hH])
+
+/-- Expansion of `DWL_AV`: `≈ αw(s-a)²/(2a²)`. -/
+theorem lastDwlAV_expansion {a α w : ℝ} (ha : 0 < a) :
+    (fun s => lastDwlAV a α w s - α * w / a ^ 2 / 2 * (s - a) ^ 2) =o[𝓝 a]
+      fun s => (s - a) ^ 2 := by
+  set H : ℝ → ℝ := fun s => α * w * ((s - a) / s ^ 2) with hH
+  have hD : ∀ᶠ t in 𝓝 a, HasDerivAt (lastDwlAV a α w) (H t) t := by
+    filter_upwards [lt_mem_nhds ha] with t ht
+    have hlog : HasDerivAt (fun s => Real.log (a / s)) (-(1 / t)) t := by
+      have h : HasDerivAt (fun s => Real.log (a / s)) _ t :=
+        ((hasDerivAt_const t a).div (hasDerivAt_id' t) ht.ne').log (div_pos ha ht).ne'
+      convert h using 1
+      simp only [Pi.div_apply]
+      field_simp
+      ring
+    have h : HasDerivAt (lastDwlAV a α w) _ t :=
+      ((hlog.const_mul (α * w)).neg).sub (last_revenue_hasDerivAt a (α * w) ht)
+    convert h using 1
+    simp only [hH]
+    field_simp
+  have hH' : HasDerivAt H (α * w / a ^ 2) a := by
+    have h : HasDerivAt H _ a := (((hasDerivAt_id' a).sub_const a).div ((hasDerivAt_id' a).pow 2)
+      (pow_ne_zero 2 ha.ne')).const_mul (α * w)
+    convert h using 1
+    simp only [Pi.pow_apply]
+    field_simp
+    ring
+  exact last_quadratic_of_deriv hD hH' (by simp [lastDwlAV, div_self ha.ne'])
+    (by simp [hH])
+
+/-- Expansion of the mixed measure: `≈ α(1+α)w(s-a)²/(2a²)`. -/
+theorem lastDwlMixed_expansion {a α w : ℝ} (ha : 0 < a) :
+    (fun s => lastDwlMixed a α w s - α * (1 + α) * w / a ^ 2 / 2 * (s - a) ^ 2) =o[𝓝 a]
+      fun s => (s - a) ^ 2 := by
+  set H : ℝ → ℝ := fun s => w * (α * lastQ a α s / s) - α * w * a / s ^ 2 with hH
+  have hD : ∀ᶠ t in 𝓝 a, HasDerivAt (lastDwlMixed a α w) (H t) t := by
+    filter_upwards [lt_mem_nhds ha] with t ht
+    have hq := lastQ_hasDerivAt (α := α) ha ht
+    have h : HasDerivAt (lastDwlMixed a α w) _ t :=
+      (((hasDerivAt_const t w).sub ((hasDerivAt_const t w).mul hq)).neg).sub
+      (last_revenue_hasDerivAt a (α * w) ht)
+    convert h using 1
+    simp only [hH]
+    ring
+  have hH' : HasDerivAt H (α * (1 + α) * w / a ^ 2) a := by
+    have hq := lastQ_hasDerivAt (α := α) ha ha
+    have h : HasDerivAt H _ a :=
+      (((hasDerivAt_const a α).mul hq).div (hasDerivAt_id' a) ha.ne').const_mul w |>.sub
+      (last_inv_sq_hasDerivAt (α * w * a) ha)
+    convert h using 1
+    simp only [Pi.mul_apply, lastQ_self ha]
+    field_simp
+    ring
+  exact last_quadratic_of_deriv hD hH' (by simp [lastDwlMixed, lastQ_self ha])
+    (by simp only [hH, lastQ_self ha]; field_simp; ring)
+
+/-- The price vector `p¹ = (s, p⁰₂)`: its first coordinate. -/
+theorem last_priceLine_zero (p₀ : Fin 2 → ℝ) (s : ℝ) : priceLine p₀ 0 s 0 = s := by
+  simp [priceLine]
+
+/-- The price vector `p¹ = (s, p⁰₂)`: its second coordinate. -/
+theorem last_priceLine_one (p₀ : Fin 2 → ℝ) (s : ℝ) : priceLine p₀ 0 s 1 = p₀ 1 := by
+  simp [priceLine]
+
+/-- For Cobb-Douglas, `e(p, v(p', w)) = w C(p')/C(p)`. -/
+theorem last_cd_expenditure_indirect {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1)
+    {p p' : Fin 2 → ℝ} (hp : StrictlyPositive p) (hp' : StrictlyPositive p') {w : ℝ}
+    (hw : 0 < w) :
+    expenditure (cobbDouglasUtility 1 α) p (indirectUtility (cobbDouglasUtility 1 α) p' w) =
+      w * cdConst α p' / cdConst α p := by
+  rw [example_3_D_2 hα0 hα1 hp' hw.le, cobbDouglasIndirect_eq hα0 hα1 hp' hw,
+    (example_3_E_1 hα0 hα1 hp (mul_pos hw (cdConst_pos hα0 hα1 hp'))).1, cdExpenditure]
+
+/-- `C(p⁰) = C(p¹) q(s)` for `p¹ = (s, p⁰₂)`. -/
+theorem last_cdConst_priceLine {α : ℝ} (hα0 : 0 < α) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {s : ℝ} (hs : 0 < s) :
+    cdConst α p₀ = cdConst α (priceLine p₀ 0 s) * lastQ (p₀ 0) α s := by
+  unfold cdConst lastQ
+  rw [last_priceLine_zero, last_priceLine_one]
+  have h : (α / p₀ 0) ^ α = (α / s) ^ α * (s / p₀ 0) ^ α := by
+    rw [← Real.mul_rpow (div_pos hα0 hs).le (div_pos hs (hp₀ 0)).le]
+    congr 1
+    field_simp
+  rw [h]
+  ring
+
+/-- **Equation (3.I.5)** (MWG, p. 84) for Cobb-Douglas: `-τ x₁(p¹, w) - EV(p⁰, p¹, w)` in closed
+form, `p¹ = (s, p⁰₂)`, `τ = s - p⁰₁`. -/
+theorem last_cd_dwl_ev_eq {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {s w : ℝ} (hs : 0 < s) (hw : 0 < w) :
+    -((s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+        equivalentVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w =
+      lastDwlEV (p₀ 0) α w s := by
+  have hp₁ := priceLine_pos hp₀ 0 hs
+  have hC₀ := (cdConst_pos hα0 hα1 hp₀).ne'
+  have hC₁ := (cdConst_pos hα0 hα1 hp₁).ne'
+  have hq := (lastQ_pos (α := α) (hp₀ 0) hs).ne'
+  unfold equivalentVariation lastDwlEV
+  rw [last_cd_expenditure_indirect hα0 hα1 hp₀ hp₁ hw,
+    last_cd_expenditure_indirect hα0 hα1 hp₀ hp₀ hw, last_cdConst_priceLine hα0 hp₀ hs]
+  simp only [cobbDouglasDemand, Matrix.cons_val_zero, last_priceLine_zero]
+  field_simp
+
+/-- **Equation (3.I.6)** (MWG, p. 85) for Cobb-Douglas: `-CV(p⁰, p¹, w) - τ h₁(p¹, u⁰)` in
+closed form. -/
+theorem last_cd_dwl_cv_eq {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {s w : ℝ} (hs : 0 < s) (hw : 0 < w) :
+    -compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+        (s - p₀ 0) * hicksianOf (cobbDouglasUtility 1 α) (cobbDouglasDemand α)
+          (priceLine p₀ 0 s) (indirectUtility (cobbDouglasUtility 1 α) p₀ w) 0 =
+      lastDwlCV (p₀ 0) α w s := by
+  have hp₁ := priceLine_pos hp₀ 0 hs
+  have hC₁ := (cdConst_pos hα0 hα1 hp₁).ne'
+  unfold compensatingVariation lastDwlCV hicksianOf
+  rw [last_cd_expenditure_indirect hα0 hα1 hp₁ hp₁ hw,
+    last_cd_expenditure_indirect hα0 hα1 hp₁ hp₀ hw, last_cdConst_priceLine hα0 hp₀ hs]
+  simp only [cobbDouglasDemand, Matrix.cons_val_zero, last_priceLine_zero]
+  field_simp
+
+/-- The mixed measure `-CV(p⁰, p¹, w) - τ x₁(p¹, w)` in closed form. -/
+theorem last_cd_dwl_mixed_eq {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {s w : ℝ} (hs : 0 < s) (hw : 0 < w) :
+    -compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+        (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0 =
+      lastDwlMixed (p₀ 0) α w s := by
+  have hp₁ := priceLine_pos hp₀ 0 hs
+  have hC₁ := (cdConst_pos hα0 hα1 hp₁).ne'
+  unfold compensatingVariation lastDwlMixed
+  rw [last_cd_expenditure_indirect hα0 hα1 hp₁ hp₁ hw,
+    last_cd_expenditure_indirect hα0 hα1 hp₁ hp₀ hw, last_cdConst_priceLine hα0 hp₀ hs]
+  simp only [cobbDouglasDemand, Matrix.cons_val_zero, last_priceLine_zero]
+  field_simp
+
+/-- **Equation (3.I.8)** (MWG, p. 89) for Cobb-Douglas: the deadweight loss computed with the
+area variation, `-AV(p⁰, p¹, w) - τ x₁(p¹, w)`, in closed form
+(`AV = ∫_s^a αw/t dt = αw log(a/s)`). -/
+theorem last_cd_dwl_av_eq (α : ℝ) {p₀ : Fin 2 → ℝ} (hp₀ : StrictlyPositive p₀) {s : ℝ}
+    (hs : 0 < s) (w : ℝ) :
+    -areaVariation (cobbDouglasDemand α) p₀ 0 (p₀ 0) s w -
+        (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0 =
+      lastDwlAV (p₀ 0) α w s := by
+  have hAV : areaVariation (cobbDouglasDemand α) p₀ 0 (p₀ 0) s w =
+      α * w * Real.log (p₀ 0 / s) := by
+    unfold areaVariation
+    have : (fun t => cobbDouglasDemand α (priceLine p₀ 0 t) w 0) = fun t => α * w * t⁻¹ := by
+      funext t
+      simp only [cobbDouglasDemand, Matrix.cons_val_zero, last_priceLine_zero]
+      rw [div_eq_mul_inv]
+    rw [this, intervalIntegral.integral_const_mul, integral_inv_of_pos hs (hp₀ 0)]
+  unfold lastDwlAV
+  rw [hAV]
+  simp only [cobbDouglasDemand, Matrix.cons_val_zero, last_priceLine_zero]
+
+/-- **Section 3.I** (MWG, p. 90, Figure 3.I.8), measure (3.I.5). For Cobb-Douglas utility and a
+tax on good 1 raising its price from `a = p⁰₁` to `s`, the relative error of the deadweight loss
+computed from the Walrasian demand curve, `(DWL_AV - DWL_EV)/DWL_EV`, tends to `α/(1-α) ≠ 0`
+as `s → a`: it does not grow small with the price change. -/
+theorem figure_3_I_8_ev {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {w : ℝ} (hw : 0 < w) :
+    Tendsto (fun s =>
+      ((-areaVariation (cobbDouglasDemand α) p₀ 0 (p₀ 0) s w -
+          (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+        (-((s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+          equivalentVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w)) /
+        (-((s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+          equivalentVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w))
+      (𝓝[≠] (p₀ 0)) (𝓝 (α / (1 - α))) := by
+  have ha := hp₀ 0
+  have hc : α * (1 - α) * w / p₀ 0 ^ 2 / 2 ≠ 0 := by
+    have : 0 < 1 - α := by linarith
+    positivity
+  have h := last_ratio_limit hc (lastDwlEV_expansion ha) (lastDwlAV_expansion (α := α) (w := w) ha)
+  have hval : (α * w / p₀ 0 ^ 2 / 2 - α * (1 - α) * w / p₀ 0 ^ 2 / 2) /
+      (α * (1 - α) * w / p₀ 0 ^ 2 / 2) = α / (1 - α) := by
+    have : (1 - α) ≠ 0 := by linarith
+    field_simp
+    ring
+  rw [hval] at h
+  refine h.congr' ?_
+  filter_upwards [nhdsWithin_le_nhds (lt_mem_nhds ha)] with s hs
+  rw [last_cd_dwl_ev_eq hα0 hα1 hp₀ hs hw, last_cd_dwl_av_eq α hp₀ hs w]
+
+/-- **Section 3.I** (MWG, p. 90, Figure 3.I.8), measure (3.I.6) (the figure's Hicksian demand
+is at `u⁰`). For Cobb-Douglas utility, `(DWL_AV - DWL_CV)/DWL_CV → α/(1-α) ≠ 0` as `s → a`. -/
+theorem figure_3_I_8_cv {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {w : ℝ} (hw : 0 < w) :
+    Tendsto (fun s =>
+      ((-areaVariation (cobbDouglasDemand α) p₀ 0 (p₀ 0) s w -
+          (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+        (-compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+          (s - p₀ 0) * hicksianOf (cobbDouglasUtility 1 α) (cobbDouglasDemand α)
+            (priceLine p₀ 0 s) (indirectUtility (cobbDouglasUtility 1 α) p₀ w) 0)) /
+        (-compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+          (s - p₀ 0) * hicksianOf (cobbDouglasUtility 1 α) (cobbDouglasDemand α)
+            (priceLine p₀ 0 s) (indirectUtility (cobbDouglasUtility 1 α) p₀ w) 0))
+      (𝓝[≠] (p₀ 0)) (𝓝 (α / (1 - α))) := by
+  have ha := hp₀ 0
+  have hc : α * (1 - α) * w / p₀ 0 ^ 2 / 2 ≠ 0 := by
+    have : 0 < 1 - α := by linarith
+    positivity
+  have h := last_ratio_limit hc (lastDwlCV_expansion ha) (lastDwlAV_expansion (α := α) (w := w) ha)
+  have hval : (α * w / p₀ 0 ^ 2 / 2 - α * (1 - α) * w / p₀ 0 ^ 2 / 2) /
+      (α * (1 - α) * w / p₀ 0 ^ 2 / 2) = α / (1 - α) := by
+    have : (1 - α) ≠ 0 := by linarith
+    field_simp
+    ring
+  rw [hval] at h
+  refine h.congr' ?_
+  filter_upwards [nhdsWithin_le_nhds (lt_mem_nhds ha)] with s hs
+  rw [last_cd_dwl_cv_eq hα0 hα1 hp₀ hs hw, last_cd_dwl_av_eq α hp₀ hs w]
+
+/-- **Section 3.I** (MWG, p. 90, Figure 3.I.8). "The percentage difference between these two
+areas need not grow small as the price change grows small": there is a utility (Cobb-Douglas,
+continuous, locally nonsatiated, strictly quasiconcave on the interior) for which the relative
+error of the area-variation deadweight loss against the deadweight loss (3.I.6) has a nonzero
+limit, while (p. 89) the area variation itself has vanishing relative error against the welfare
+change (`welfare_av_relative_error`). -/
+theorem figure_3_I_8 {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {w : ℝ} (hw : 0 < w) :
+    α / (1 - α) ≠ 0 ∧
+      ¬ Tendsto (fun s =>
+        ((-areaVariation (cobbDouglasDemand α) p₀ 0 (p₀ 0) s w -
+            (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+          (-compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+            (s - p₀ 0) * hicksianOf (cobbDouglasUtility 1 α) (cobbDouglasDemand α)
+              (priceLine p₀ 0 s) (indirectUtility (cobbDouglasUtility 1 α) p₀ w) 0)) /
+          (-compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+            (s - p₀ 0) * hicksianOf (cobbDouglasUtility 1 α) (cobbDouglasDemand α)
+              (priceLine p₀ 0 s) (indirectUtility (cobbDouglasUtility 1 α) p₀ w) 0))
+        (𝓝[≠] (p₀ 0)) (𝓝 0) := by
+  have hne : α / (1 - α) ≠ 0 := by
+    have : 0 < 1 - α := by linarith
+    positivity
+  refine ⟨hne, fun h0 => hne ?_⟩
+  exact tendsto_nhds_unique (figure_3_I_8_cv hα0 hα1 hp₀ hw) h0
+
+/-- **Footnote 29** (MWG, p. 90), the Cobb-Douglas computation of `docs/source-map-F2.md`. With
+the mixed measure `M(s) = -CV(p⁰, p¹, w) - τ x₁(p¹, w)` (compensating variation minus the revenue
+collected), `(DWL_AV - M)/M → -α/(α+1)` as `s → a`. (This is not one of the book's measures
+(3.I.5)-(3.I.6), for which the limit is `α/(1-α)`; correction G-2.) -/
+theorem footnote_3_I_29_mixed {α : ℝ} (hα0 : 0 < α) (hα1 : α < 1) {p₀ : Fin 2 → ℝ}
+    (hp₀ : StrictlyPositive p₀) {w : ℝ} (hw : 0 < w) :
+    Tendsto (fun s =>
+      ((-areaVariation (cobbDouglasDemand α) p₀ 0 (p₀ 0) s w -
+          (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0) -
+        (-compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+          (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0)) /
+        (-compensatingVariation (cobbDouglasUtility 1 α) p₀ (priceLine p₀ 0 s) w -
+          (s - p₀ 0) * cobbDouglasDemand α (priceLine p₀ 0 s) w 0))
+      (𝓝[≠] (p₀ 0)) (𝓝 (-α / (α + 1))) := by
+  have ha := hp₀ 0
+  have hc : α * (1 + α) * w / p₀ 0 ^ 2 / 2 ≠ 0 := by positivity
+  have h := last_ratio_limit hc (lastDwlMixed_expansion ha)
+    (lastDwlAV_expansion (α := α) (w := w) ha)
+  have hval : (α * w / p₀ 0 ^ 2 / 2 - α * (1 + α) * w / p₀ 0 ^ 2 / 2) /
+      (α * (1 + α) * w / p₀ 0 ^ 2 / 2) = -α / (α + 1) := by
+    have : (α + 1) ≠ 0 := by linarith
+    field_simp
+    ring
+  rw [hval] at h
+  refine h.congr' ?_
+  filter_upwards [nhdsWithin_le_nhds (lt_mem_nhds ha)] with s hs
+  rw [last_cd_dwl_mixed_eq hα0 hα1 hp₀ hs hw, last_cd_dwl_av_eq α hp₀ hs w]
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.I.8(a), "only if": wealth-independent demand comes from quasilinear utility
+
+MWG, Exercise 3.I.8(a), p. 103: the demands for goods 1 and 2 do not depend on wealth; "write
+down the most general class of utility functions whose demand has this property". The "if"
+direction (quasilinear utility gives wealth-independent demand) is `exercise_3_I_8a`. Here the
+converse is proved, with numeraire `k` (the book's good 3, `p₃ = 1`), on the quasilinear
+consumption set `X = ℝ^{L-1}_+ × ℝ` of Definition 3.B.7 (on `ℝ^L_+` wealth-independence of a
+nonzero demand is impossible at low wealth).
+
+Hypotheses: `u` is continuous on `X` and strictly increasing in good `k`; on the normalized
+prices `P = {p ≫ 0, p_k = 1}` the demand for the other goods is a continuous function `y(p)`,
+independent of wealth: for every `p ∈ P` and every `w ∈ ℝ`, the bundle
+`y(p) + (w - p·y(p)) e_k` solves the UMP on `X`.
+
+Conclusion (`exercise_3_I_8a_only_if`): with `E(p)` the expenditure needed at prices `p` to
+reach the utility of the reference bundle `y(1, …, 1)`, the concave function
+`φ(x) = inf_{p ∈ P} (p·x - x_k - E(p))` (it does not depend on `x_k`) makes `x_k + φ(x)` a
+representation of `u` on all bundles the consumer ever demands, `y(p) + t e_k`. If every bundle
+of `X` is demanded at some prices, `x_k + φ(x)` represents `u` on all of `X`
+(`exercise_3_I_8a_only_if_all`). An instance satisfying all hypotheses:
+`last_3_I_8a_instance` (`u = x₂ + 2√x₁`).
+
+Route (no differentiability is assumed): for a level `Δ` let `τ_Δ(p)` be the numeraire amount on
+the demand line at `p` that is indifferent to `y(p⁰) + Δ e_k` (intermediate value theorem).
+Revealed preference gives `τ_Δ(p') - τ_Δ(p) ≥ p·(y(p) - y(p'))`, hence
+`|D(p') - D(p)| ≤ |(p' - p)·(y(p') - y(p))|` for `D = τ_Δ - τ_0`; by continuity of `y`, `D` has
+zero derivative along segments of the convex set `P`, so it is constant: `τ_Δ = τ_0 + Δ`
+(the expenditure function is `E(p) + Δ`, the quasilinear form). The utility is then recovered by
+duality as `inf_p (p·x - E(p))`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology Asymptotics
+
+variable {L : ℕ}
+
+/-- The normalized prices `P = {p ≫ 0, p_k = 1}`. -/
+def lastNormPrices (k : Fin L) : Set (Fin L → ℝ) := {p | StrictlyPositive p ∧ p k = 1}
+
+/-- `P` is convex. -/
+theorem lastNormPrices_convex (k : Fin L) : Convex ℝ (lastNormPrices k) := by
+  intro p hp q hq a b ha hb hab
+  refine ⟨fun l => ?_, ?_⟩
+  · simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul]
+    have h1 := hp.1 l
+    have h2 := hq.1 l
+    rcases eq_or_lt_of_le ha with h | h
+    · rw [← h, zero_add] at hab
+      rw [← h, hab]
+      linarith
+    · nlinarith
+  · simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul, hp.2, hq.2]
+    linarith
+
+/-- A function whose increments are bounded by `|(p' - p)·(y(p') - y(p))|` with `y` continuous
+is constant on a convex set. -/
+theorem last_const_of_small_variation {P : Set (Fin L → ℝ)} (hP : Convex ℝ P)
+    {D : (Fin L → ℝ) → ℝ} {y : (Fin L → ℝ) → Fin L → ℝ} (hy : ContinuousOn y P)
+    (hb : ∀ p ∈ P, ∀ p' ∈ P, |D p' - D p| ≤ |(p' - p) ⬝ᵥ (y p' - y p)|) {p q : Fin L → ℝ}
+    (hp : p ∈ P) (hq : q ∈ P) : D q = D p := by
+  set γ : ℝ → Fin L → ℝ := fun s => p + s • (q - p) with hγ
+  have hγP : Set.MapsTo γ (Set.Icc 0 1) P := fun s hs => hP.add_smul_sub_mem hp hq hs
+  have hγc : Continuous γ := by
+    simp only [hγ]
+    fun_prop
+  set f : ℝ → ℝ := fun s => D (γ s) with hf
+  set h : ℝ → ℝ := fun s => (q - p) ⬝ᵥ y (γ s) with hh
+  have hhc : ContinuousOn h (Set.Icc 0 1) :=
+    (continuous_const.dotProduct continuous_id).comp_continuousOn
+      (hy.comp hγc.continuousOn hγP)
+  have hder : ∀ s ∈ Set.Icc (0 : ℝ) 1, HasDerivWithinAt f 0 (Set.Icc 0 1) s := by
+    intro s hs
+    rw [hasDerivWithinAt_iff_isLittleO]
+    simp only [smul_zero, sub_zero]
+    refine isLittleO_iff.mpr fun c hc => ?_
+    have hcont := hhc s hs
+    rw [Metric.continuousWithinAt_iff] at hcont
+    obtain ⟨δ, hδ, hball⟩ := hcont c hc
+    have hmem : Set.Icc 0 1 ∩ Metric.ball s δ ∈ 𝓝[Set.Icc 0 1] s :=
+      inter_mem_nhdsWithin _ (Metric.ball_mem_nhds s hδ)
+    filter_upwards [hmem] with s' hs'
+    have hd := hball hs'.1 hs'.2
+    rw [Real.dist_eq] at hd
+    have hbnd := hb (γ s) (hγP hs) (γ s') (hγP hs'.1)
+    have hdiff : γ s' - γ s = (s' - s) • (q - p) := by
+      simp only [hγ]
+      module
+    rw [hdiff, smul_dotProduct, smul_eq_mul, dotProduct_sub, abs_mul] at hbnd
+    rw [Real.norm_eq_abs, Real.norm_eq_abs]
+    calc |f s' - f s| ≤ |s' - s| * |(q - p) ⬝ᵥ y (γ s') - (q - p) ⬝ᵥ y (γ s)| := hbnd
+      _ ≤ |s' - s| * c := mul_le_mul_of_nonneg_left hd.le (abs_nonneg _)
+      _ = c * |s' - s| := mul_comm _ _
+  have hconst := constant_of_derivWithin_zero (f := f) (a := 0) (b := 1)
+    (fun s hs => (hder s hs).differentiableWithinAt)
+    (fun s hs => (hder s (Set.Ico_subset_Icc_self hs)).derivWithin
+      (uniqueDiffOn_Icc zero_lt_one s (Set.Ico_subset_Icc_self hs)))
+    1 (Set.right_mem_Icc.mpr zero_le_one)
+  simp only [hf, hγ, one_smul, zero_smul, add_zero, add_sub_cancel] at hconst
+  exact hconst
+
+/-- **Exercise 3.I.8(a)** (MWG, p. 103), "only if". Let `u` be continuous on the quasilinear
+consumption set `X = {x : x_l ≥ 0, l ≠ k}`, strictly increasing in the numeraire `k`, and let the
+Walrasian demand at normalized prices `p ∈ P` (`p ≫ 0`, `p_k = 1`) be wealth-independent for the
+goods `l ≠ k`: `y(p) + (w - p·y(p)) e_k ∈ x(p, w)` for all `w`, with `y` continuous on `P`,
+`y(p) ∈ X`, `y_k(p) = 0`. Then there is `φ`, independent of `x_k`, such that `x_k + φ(x)`
+represents `u` on every bundle `y(p) + t e_k` the consumer demands. -/
+theorem exercise_3_I_8a_only_if {k : Fin L} {u : (Fin L → ℝ) → ℝ}
+    {y : (Fin L → ℝ) → Fin L → ℝ} (hu : ContinuousOn u (quasilinearDomain k))
+    (hmono : ∀ x ∈ quasilinearDomain k, ∀ α : ℝ, 0 < α → u x < u (x + α • unitVec k))
+    (hyX : ∀ p ∈ lastNormPrices k, y p ∈ quasilinearDomain k ∧ y p k = 0)
+    (hd : ∀ p ∈ lastNormPrices k, ∀ w : ℝ,
+      y p + (w - p ⬝ᵥ y p) • unitVec k ∈ walrasianDemandOn (quasilinearDomain k) u p w)
+    (hy : ContinuousOn y (lastNormPrices k)) :
+    ∃ φ : (Fin L → ℝ) → ℝ, (∀ x : Fin L → ℝ, ∀ t : ℝ, φ (x + t • unitVec k) = φ x) ∧
+      ∀ p ∈ lastNormPrices k, ∀ s : ℝ, ∀ p' ∈ lastNormPrices k, ∀ s' : ℝ,
+        (u (y p + s • unitVec k) ≤ u (y p' + s' • unitVec k) ↔
+          (y p + s • unitVec k) k + φ (y p + s • unitVec k) ≤
+            (y p' + s' • unitVec k) k + φ (y p' + s' • unitVec k)) := by
+  classical
+  set X := quasilinearDomain k with hX
+  set e : Fin L → ℝ := unitVec k with he
+  set P := lastNormPrices k with hP
+  set p0 : Fin L → ℝ := fun _ => 1 with hp0
+  have hp0P : p0 ∈ P := ⟨fun _ => one_pos, rfl⟩
+  have hdot : ∀ p ∈ P, ∀ z : Fin L → ℝ, ∀ t : ℝ, p ⬝ᵥ (z + t • e) = p ⬝ᵥ z + t := by
+    intro p hp z t
+    rw [dotProduct_add, dotProduct_smul, he, unitVec, dotProduct_single, hp.2]
+    simp
+  have hek : e k = 1 := by simp [he, unitVec]
+  have hlineX : ∀ p ∈ P, ∀ t : ℝ, y p + t • e ∈ X := fun p hp t =>
+    quasilinearDomain_shift (hyX p hp).1 t
+  have hlinek : ∀ p ∈ P, ∀ t : ℝ, (y p + t • e) k = t := by
+    intro p hp t
+    simp [(hyX p hp).2, hek]
+  -- revealed preference along the demand line
+  have hA : ∀ p ∈ P, ∀ z ∈ X, ∀ t : ℝ, p ⬝ᵥ z ≤ p ⬝ᵥ y p + t → u z ≤ u (y p + t • e) := by
+    intro p hp z hz t hzt
+    have hdem := hd p hp (p ⬝ᵥ y p + t)
+    rw [add_sub_cancel_left] at hdem
+    exact hdem.2 z ⟨hz, hzt⟩
+  have hstrict : ∀ p ∈ P, ∀ t t' : ℝ, t < t' → u (y p + t • e) < u (y p + t' • e) := by
+    intro p hp t t' htt
+    have := hmono _ (hlineX p hp t) (t' - t) (sub_pos.mpr htt)
+    rwa [add_assoc, ← add_smul, add_sub_cancel] at this
+  have hB : ∀ p ∈ P, ∀ z ∈ X, ∀ t : ℝ, p ⬝ᵥ z < p ⬝ᵥ y p + t → u z < u (y p + t • e) := by
+    intro p hp z hz t hzt
+    have h1 := hA p hp z hz (p ⬝ᵥ z - p ⬝ᵥ y p) (by linarith)
+    exact h1.trans_lt (hstrict p hp _ _ (by linarith))
+  -- every level `y(p⁰) + Δ e_k` is crossed by every demand line
+  have hcross : ∀ Δ : ℝ, ∀ p : Fin L → ℝ, ∃ τ : ℝ, p ∈ P →
+      u (y p + τ • e) = u (y p0 + Δ • e) := by
+    intro Δ p
+    by_cases hp : p ∈ P
+    · set t₁ := p ⬝ᵥ (y p0 + Δ • e) - p ⬝ᵥ y p
+      set t₀ := p0 ⬝ᵥ y p0 + Δ - p0 ⬝ᵥ y p
+      have h1 : u (y p0 + Δ • e) ≤ u (y p + t₁ • e) :=
+        hA p hp _ (hlineX p0 hp0P Δ) t₁ (by simp only [t₁]; linarith)
+      have h0 : u (y p + t₀ • e) ≤ u (y p0 + Δ • e) :=
+        hA p0 hp0P _ (hlineX p hp t₀) Δ (by rw [hdot p0 hp0P]; simp only [t₀]; linarith)
+      have hle : t₀ ≤ t₁ := by
+        by_contra hlt
+        rw [not_le] at hlt
+        have := hstrict p hp _ _ hlt
+        linarith
+      have hc : ContinuousOn (fun t => u (y p + t • e)) (Set.Icc t₀ t₁) :=
+        hu.comp (by fun_prop) fun t _ => hlineX p hp t
+      obtain ⟨τ, -, hτ⟩ := intermediate_value_Icc hle hc ⟨h0, h1⟩
+      exact ⟨τ, fun _ => hτ⟩
+    · exact ⟨0, fun h => absurd h hp⟩
+  choose τ hτ using hcross
+  -- the key inequality
+  have hstar : ∀ Δ : ℝ, ∀ p ∈ P, ∀ p' ∈ P, p ⬝ᵥ (y p - y p') ≤ τ Δ p' - τ Δ p := by
+    intro Δ p hp p' hp'
+    by_contra hlt
+    rw [not_le] at hlt
+    have hc : p ⬝ᵥ (y p' + τ Δ p' • e) < p ⬝ᵥ y p + τ Δ p := by
+      rw [hdot p hp, dotProduct_sub] at *
+      linarith
+    have := hB p hp _ (hlineX p' hp' _) _ hc
+    rw [hτ Δ p hp, hτ Δ p' hp'] at this
+    exact lt_irrefl _ this
+  -- `τ_Δ - τ_0` is constant
+  have hτ0 : ∀ Δ : ℝ, τ Δ p0 = Δ := by
+    intro Δ
+    have h := hτ Δ p0 hp0P
+    rcases lt_trichotomy (τ Δ p0) Δ with hlt | heq | hgt
+    · exact absurd h (hstrict p0 hp0P _ _ hlt).ne
+    · exact heq
+    · exact absurd h (hstrict p0 hp0P _ _ hgt).ne'
+  have hshift : ∀ Δ : ℝ, ∀ p ∈ P, τ Δ p = τ 0 p + Δ := by
+    intro Δ p hp
+    have hb : ∀ q ∈ P, ∀ q' ∈ P, |(τ Δ q' - τ 0 q') - (τ Δ q - τ 0 q)| ≤
+        |(q' - q) ⬝ᵥ (y q' - y q)| := by
+      intro q hq q' hq'
+      have h1 := hstar Δ q hq q' hq'
+      have h2 := hstar Δ q' hq' q hq
+      have h3 := hstar 0 q hq q' hq'
+      have h4 := hstar 0 q' hq' q hq
+      have hexp : (q' - q) ⬝ᵥ (y q' - y q) =
+          q' ⬝ᵥ (y q' - y q) - q ⬝ᵥ (y q' - y q) := by
+        rw [sub_dotProduct]
+      have hneg : q ⬝ᵥ (y q - y q') = -(q ⬝ᵥ (y q' - y q)) := by
+        rw [← dotProduct_neg, neg_sub]
+      rw [hneg] at h1 h3
+      rw [hexp, abs_le]
+      constructor
+      · linarith [neg_abs_le (q' ⬝ᵥ (y q' - y q) - q ⬝ᵥ (y q' - y q))]
+      · linarith [neg_le_abs (q' ⬝ᵥ (y q' - y q) - q ⬝ᵥ (y q' - y q))]
+    have hc := last_const_of_small_variation (lastNormPrices_convex k) hy hb hp0P hp
+    rw [hτ0, hτ0] at hc
+    linarith
+  -- the expenditure function at the reference level and the dual utility
+  set E : (Fin L → ℝ) → ℝ := fun p => p ⬝ᵥ y p + τ 0 p with hE
+  set φ : (Fin L → ℝ) → ℝ := fun x => ⨅ p : P, ((p : Fin L → ℝ) ⬝ᵥ x - x k - E p) with hφ
+  have hφinv : ∀ x : Fin L → ℝ, ∀ t : ℝ, φ (x + t • e) = φ x := by
+    intro x t
+    simp only [hφ]
+    congr 1
+    funext p
+    rw [hdot p p.2, Pi.add_apply, Pi.smul_apply, smul_eq_mul, hek]
+    ring
+  -- on a demanded bundle `y(p') + s e_k`, `x_k + φ(x) = s - τ_0(p')`
+  have hU : ∀ p' ∈ P, ∀ s : ℝ, (y p' + s • e) k + φ (y p' + s • e) = s - τ 0 p' := by
+    intro p' hp' s
+    rw [hlinek p' hp' s]
+    have hterm : ∀ p : P, ((p : Fin L → ℝ) ⬝ᵥ (y p' + s • e) - (y p' + s • e) k - E p) =
+        (p : Fin L → ℝ) ⬝ᵥ (y p' - y p) - τ 0 p := by
+      intro p
+      rw [hdot p p.2, hlinek p' hp' s, dotProduct_sub]
+      simp only [hE]
+      ring
+    have hleast : IsLeast (Set.range fun p : P => (p : Fin L → ℝ) ⬝ᵥ (y p' - y p) - τ 0 p)
+        (-τ 0 p') := by
+      refine ⟨⟨⟨p', hp'⟩, by simp⟩, ?_⟩
+      rintro _ ⟨p, rfl⟩
+      have := hstar 0 p p.2 p' hp'
+      have hneg : (p : Fin L → ℝ) ⬝ᵥ (y p - y p') = -((p : Fin L → ℝ) ⬝ᵥ (y p' - y p)) := by
+        rw [← dotProduct_neg, neg_sub]
+      rw [hneg] at this
+      simp only
+      linarith
+    have hφx : φ (y p' + s • e) = -τ 0 p' := by
+      simp only [hφ]
+      rw [show (fun p : P => (p : Fin L → ℝ) ⬝ᵥ (y p' + s • e) - (y p' + s • e) k - E p) =
+        fun p : P => (p : Fin L → ℝ) ⬝ᵥ (y p' - y p) - τ 0 p from funext hterm]
+      exact hleast.csInf_eq
+    rw [hφx]
+    ring
+  -- every demanded bundle is indifferent to `y(p⁰) + (s - τ_0(p')) e_k`
+  have hlev : ∀ p' ∈ P, ∀ s : ℝ, u (y p' + s • e) = u (y p0 + (s - τ 0 p') • e) := by
+    intro p' hp' s
+    have := hτ (s - τ 0 p') p' hp'
+    rwa [hshift _ p' hp', add_sub_cancel] at this
+  refine ⟨φ, hφinv, fun p hp s p' hp' s' => ?_⟩
+  rw [hU p hp s, hU p' hp' s', hlev p hp s, hlev p' hp' s']
+  constructor
+  · intro hle
+    by_contra hlt
+    rw [not_le] at hlt
+    exact absurd hle (not_le.mpr (hstrict p0 hp0P _ _ hlt))
+  · intro hle
+    rcases eq_or_lt_of_le hle with heq | hlt
+    · rw [heq]
+    · exact (hstrict p0 hp0P _ _ hlt).le
+
+/-- **Exercise 3.I.8(a)** (MWG, p. 103), "only if", when every bundle of `X` is demanded at some
+normalized prices: then `u` is represented on all of `X` by the quasilinear `x_k + φ(x)`. -/
+theorem exercise_3_I_8a_only_if_all {k : Fin L} {u : (Fin L → ℝ) → ℝ}
+    {y : (Fin L → ℝ) → Fin L → ℝ} (hu : ContinuousOn u (quasilinearDomain k))
+    (hmono : ∀ x ∈ quasilinearDomain k, ∀ α : ℝ, 0 < α → u x < u (x + α • unitVec k))
+    (hyX : ∀ p ∈ lastNormPrices k, y p ∈ quasilinearDomain k ∧ y p k = 0)
+    (hd : ∀ p ∈ lastNormPrices k, ∀ w : ℝ,
+      y p + (w - p ⬝ᵥ y p) • unitVec k ∈ walrasianDemandOn (quasilinearDomain k) u p w)
+    (hy : ContinuousOn y (lastNormPrices k))
+    (hall : ∀ x ∈ quasilinearDomain k, ∃ p ∈ lastNormPrices k, ∃ t : ℝ,
+      x = y p + t • unitVec k) :
+    ∃ φ : (Fin L → ℝ) → ℝ, (∀ x : Fin L → ℝ, ∀ t : ℝ, φ (x + t • unitVec k) = φ x) ∧
+      RepresentsOn (quasilinearDomain k) (fun x => x k + φ x) (utilityPref u) := by
+  obtain ⟨φ, hinv, hrep⟩ := exercise_3_I_8a_only_if hu hmono hyX hd hy
+  refine ⟨φ, hinv, fun x hx x' hx' => ?_⟩
+  obtain ⟨p, hp, s, rfl⟩ := hall x hx
+  obtain ⟨p', hp', s', rfl⟩ := hall x' hx'
+  exact hrep p' hp' s' p hp s
+
+/-- The instance `u(x) = x₂ + 2√x₁` (two goods, numeraire `k = 2`). -/
+noncomputable def lastSqrtUtility (x : Fin 2 → ℝ) : ℝ := x 1 + 2 * Real.sqrt (x 0)
+
+/-- Its wealth-independent demand for good 1, `y(p) = (1/p₁², 0)`. -/
+noncomputable def lastSqrtDemand (p : Fin 2 → ℝ) : Fin 2 → ℝ := ![1 / p 0 ^ 2, 0]
+
+/-- **Exercise 3.I.8(a)** (MWG, p. 103): the hypotheses of `exercise_3_I_8a_only_if` are
+consistent. For `u(x) = x₂ + 2√x₁` on `ℝ_+ × ℝ` and `y(p) = (1/p₁², 0)`, all five hold. -/
+theorem last_3_I_8a_instance :
+    ContinuousOn lastSqrtUtility (quasilinearDomain (1 : Fin 2)) ∧
+    (∀ x ∈ quasilinearDomain (1 : Fin 2), ∀ α : ℝ, 0 < α →
+      lastSqrtUtility x < lastSqrtUtility (x + α • unitVec 1)) ∧
+    (∀ p ∈ lastNormPrices (1 : Fin 2),
+      lastSqrtDemand p ∈ quasilinearDomain (1 : Fin 2) ∧ lastSqrtDemand p 1 = 0) ∧
+    (∀ p ∈ lastNormPrices (1 : Fin 2), ∀ w : ℝ,
+      lastSqrtDemand p + (w - p ⬝ᵥ lastSqrtDemand p) • unitVec 1 ∈
+        walrasianDemandOn (quasilinearDomain (1 : Fin 2)) lastSqrtUtility p w) ∧
+    ContinuousOn lastSqrtDemand (lastNormPrices (1 : Fin 2)) := by
+  have he0 : (unitVec (1 : Fin 2)) 0 = 0 := by simp [unitVec]
+  have he1 : (unitVec (1 : Fin 2)) 1 = 1 := by simp [unitVec]
+  have hdot : ∀ p z : Fin 2 → ℝ, p ⬝ᵥ z = p 0 * z 0 + p 1 * z 1 := fun p z => by
+    simp [dotProduct, Fin.sum_univ_two]
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
+  · unfold lastSqrtUtility
+    exact Continuous.continuousOn (by fun_prop)
+  · intro x _ α hα
+    simp only [lastSqrtUtility, Pi.add_apply, Pi.smul_apply, smul_eq_mul, he0, he1]
+    simp only [mul_zero, add_zero, mul_one]
+    linarith
+  · intro p _
+    refine ⟨fun l hl => ?_, by simp [lastSqrtDemand]⟩
+    fin_cases l
+    · simp only [lastSqrtDemand, Fin.zero_eta, Fin.isValue, Matrix.cons_val_zero]
+      positivity
+    · exact absurd rfl hl
+  · intro p hp w
+    have hp0 := hp.1 0
+    have hp1 : p 1 = 1 := hp.2
+    set b := lastSqrtDemand p + (w - p ⬝ᵥ lastSqrtDemand p) • unitVec (1 : Fin 2) with hb
+    have hyd : p ⬝ᵥ lastSqrtDemand p = 1 / p 0 := by
+      rw [hdot]
+      simp only [lastSqrtDemand, Matrix.cons_val_zero, Matrix.cons_val_one, hp1]
+      field_simp
+      ring
+    have hb0 : b 0 = 1 / p 0 ^ 2 := by
+      rw [hb, Pi.add_apply, Pi.smul_apply, he0, smul_eq_mul, mul_zero, add_zero]
+      simp [lastSqrtDemand]
+    have hb1 : b 1 = w - 1 / p 0 := by
+      rw [hb, Pi.add_apply, Pi.smul_apply, he1, hyd, smul_eq_mul, mul_one]
+      simp [lastSqrtDemand]
+    have hsq : Real.sqrt (1 / p 0 ^ 2) = 1 / p 0 := by
+      rw [Real.sqrt_div' _ (sq_nonneg _), Real.sqrt_sq hp0.le, Real.sqrt_one]
+    refine ⟨⟨fun l hl => ?_, ?_⟩, fun z hz => ?_⟩
+    · fin_cases l
+      · rw [Fin.zero_eta, hb0]; positivity
+      · exact absurd rfl hl
+    · rw [hdot, hb0, hb1, hp1]
+      field_simp
+      ring_nf
+      exact le_rfl
+    · have hz0 : 0 ≤ z 0 := hz.1 0 (by decide)
+      have hz2 := hz.2
+      rw [hdot, hp1] at hz2
+      simp only [lastSqrtUtility, hb0, hb1, hsq]
+      have hs := Real.sq_sqrt hz0
+      have hs0 := Real.sqrt_nonneg (z 0)
+      have key : 2 * Real.sqrt (z 0) - p 0 * z 0 ≤ 1 / p 0 := by
+        rw [le_div_iff₀ hp0]
+        nlinarith [sq_nonneg (p 0 * Real.sqrt (z 0) - 1)]
+      have : 2 * (1 / p 0) = 1 / p 0 + 1 / p 0 := by ring
+      linarith
+  · refine continuousOn_pi.mpr fun i => ?_
+    fin_cases i
+    · simp only [lastSqrtDemand, Fin.zero_eta, Fin.isValue, Matrix.cons_val_zero]
+      exact ContinuousOn.div continuousOn_const ((continuous_apply 0).continuousOn.pow 2)
+        fun p hp => pow_ne_zero 2 (hp.1 0).ne'
+    · simp only [lastSqrtDemand, Fin.mk_one, Fin.isValue, Matrix.cons_val_one]
+      exact continuousOn_const
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.G.5(b)-(c): the composite commodity utility `ũ`
+
+MWG, Exercise 3.G.5, pp. 99-100. Goods `x ∈ ℝ^A_+` (prices `p`) and `y ∈ ℝ^B_+` (prices
+`q = α q₀`, `q₀ ≫ 0`); `ũ(x, z) = max {u(x, y) : y ≥ 0, q₀·y ≤ z}` (`compositeUtility`).
+
+The bridge: a composite bundle `(x, z) ∈ ℝ^A × ℝ` is the vector `Fin.snoc x z ∈ ℝ^{A+1}` (last
+coordinate `z`), with inverse `v ↦ (Fin.init v, v_{A+1})`; composite prices `(p, α)` are
+`Fin.snoc p α`, and `(p, α)·(x, z) = p·x + αz` (`last_snoc_dot`). The composite utility on
+`ℝ^{A+1}` is `lastCompositeVec u q₀ v = ũ(Fin.init v, v_{A+1})`.
+
+Properties of `ũ` proved here, for `u` continuous on `ℝ^A_+ × ℝ^B_+`, strictly increasing in `y`
+(the `y` goods are desirable), and `q₀ ≫ 0`:
+* the maximum defining `ũ` is attained (`last_composite_attained`), and at a maximizer the
+  budget for `y` is exhausted (`last_composite_exhausts`);
+* `ũ` is continuous on `ℝ^{A+1}_+` (`last_composite_continuousOn`): on the orthant
+  `ũ(x, z) = max_{y' ∈ K} u(x, z y')` over the fixed compact `K = {y' ≥ 0, q₀·y' ≤ 1}`, and the
+  maximum of a continuous function over a fixed compact set is continuous (Berge's theorem in the
+  form `IsCompact.continuous_sSup`);
+* the preference of `ũ` is locally nonsatiated (`last_composite_lns`);
+* if `u` is strictly quasiconcave on `ℝ^{A+B}_+`, `ũ` is strictly quasiconcave on `ℝ^{A+1}_+`
+  (`last_composite_strictlyQuasiconcave`).
+
+With these, every result of Sections 3.D, 3.E and 3.G proved in this project for a utility on
+`ℝ^L_+` applies to `ũ` with `L = A + 1`: module `LastCompositeApps`.
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties
+
+variable {A B : ℕ}
+
+/-- **Exercise 3.G.5** (MWG, p. 99). The composite utility `ũ` as a function on `ℝ^{A+1}`:
+`v ↦ ũ(Fin.init v, v_{A+1})`. -/
+noncomputable def lastCompositeVec (u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ) (q0 : Fin B → ℝ)
+    (v : Fin (A + 1) → ℝ) : ℝ :=
+  compositeUtility u q0 (Fin.init v) (v (Fin.last A))
+
+/-- The bridge `(x, z) ↦ Fin.snoc x z`. -/
+def lastSnoc (x : Fin A → ℝ) (z : ℝ) : Fin (A + 1) → ℝ := Fin.snoc x z
+
+/-- `ũ` on `ℝ^{A+1}` at `(x, z)` is `ũ(x, z)`. -/
+theorem lastCompositeVec_snoc (u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ) (q0 : Fin B → ℝ)
+    (x : Fin A → ℝ) (z : ℝ) : lastCompositeVec u q0 (lastSnoc x z) = compositeUtility u q0 x z := by
+  simp [lastCompositeVec, lastSnoc, Fin.init_snoc, Fin.snoc_last]
+
+/-- The bridge is onto: `v = (Fin.init v, v_{A+1})`. -/
+theorem lastSnoc_init (v : Fin (A + 1) → ℝ) : lastSnoc (Fin.init v) (v (Fin.last A)) = v :=
+  Fin.snoc_init_self v
+
+/-- Coordinates of the bridge. -/
+theorem lastSnoc_castSucc (x : Fin A → ℝ) (z : ℝ) (i : Fin A) :
+    lastSnoc x z (Fin.castSucc i) = x i := by
+  simp [lastSnoc]
+
+/-- The last coordinate of the bridge. -/
+theorem lastSnoc_last (x : Fin A → ℝ) (z : ℝ) : lastSnoc x z (Fin.last A) = z := by
+  simp [lastSnoc]
+
+/-- `(p, α)·(x, z) = p·x + αz`. -/
+theorem last_snoc_dot (p : Fin A → ℝ) (α : ℝ) (x : Fin A → ℝ) (z : ℝ) :
+    lastSnoc p α ⬝ᵥ lastSnoc x z = p ⬝ᵥ x + α * z := by
+  simp [dotProduct, Fin.sum_univ_castSucc, lastSnoc_castSucc, lastSnoc_last]
+
+/-- `(x, z) ∈ ℝ^{A+1}_+ ⟺ x ∈ ℝ^A_+ ∧ z ≥ 0`. -/
+theorem last_snoc_mem (x : Fin A → ℝ) (z : ℝ) :
+    lastSnoc x z ∈ nonnegOrthant (A + 1) ↔ x ∈ nonnegOrthant A ∧ 0 ≤ z := by
+  constructor
+  · intro h
+    exact ⟨fun i => by simpa [lastSnoc_castSucc] using h (Fin.castSucc i),
+      by simpa [lastSnoc_last] using h (Fin.last A)⟩
+  · rintro ⟨hx, hz⟩ i
+    refine Fin.lastCases ?_ (fun j => ?_) i
+    · rw [lastSnoc_last]; exact hz
+    · rw [lastSnoc_castSucc]; exact hx j
+
+/-- `(p, α) ≫ 0 ⟺ p ≫ 0 ∧ α > 0`. -/
+theorem last_snoc_pos (p : Fin A → ℝ) (α : ℝ) :
+    StrictlyPositive (lastSnoc p α) ↔ StrictlyPositive p ∧ 0 < α := by
+  constructor
+  · intro h
+    exact ⟨fun i => by simpa [lastSnoc_castSucc] using h (Fin.castSucc i),
+      by simpa [lastSnoc_last] using h (Fin.last A)⟩
+  · rintro ⟨hp, hα⟩ i
+    refine Fin.lastCases ?_ (fun j => ?_) i
+    · rw [lastSnoc_last]; exact hα
+    · rw [lastSnoc_castSucc]; exact hp j
+
+/-- The `y`-budget `{y ≥ 0, q₀·y ≤ z}` is the budget set `B_{q₀, z}`. -/
+theorem last_composite_set_eq (q0 : Fin B → ℝ) (z : ℝ) :
+    {y | y ∈ nonnegOrthant B ∧ q0 ⬝ᵥ y ≤ z} = budgetSet q0 z := rfl
+
+/-- The maximum defining `ũ(x, z)` is attained, for `u(x, ·)` continuous on `ℝ^B_+`. -/
+theorem last_composite_attained {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0) {x : Fin A → ℝ} (hux : ContinuousOn (u x) (nonnegOrthant B))
+    {z : ℝ} (hz : 0 ≤ z) :
+    ∃ y ∈ budgetSet q0 z, compositeUtility u q0 x z = u x y ∧
+      ∀ y' ∈ budgetSet q0 z, u x y' ≤ u x y := by
+  obtain ⟨y, hy, hmax⟩ := (isCompact_budgetSet hq0 z).exists_isMaxOn
+    ⟨0, zero_mem_budgetSet q0 hz⟩ (hux.mono fun _ hy => hy.1)
+  refine ⟨y, hy, ?_, fun y' hy' => hmax hy'⟩
+  unfold compositeUtility
+  rw [last_composite_set_eq]
+  exact IsGreatest.csSup_eq ⟨⟨y, hy, rfl⟩, by rintro _ ⟨y', hy', rfl⟩; exact hmax hy'⟩
+
+/-- At a maximizer the `y`-budget is exhausted, when `u` is strictly increasing in `y`. -/
+theorem last_composite_exhausts {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0) {x : Fin A → ℝ}
+    (hmono : ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ, (∀ j, y j < y' j) → u x y < u x y')
+    {z : ℝ} {y : Fin B → ℝ} (hy : y ∈ budgetSet q0 z)
+    (hmax : ∀ y' ∈ budgetSet q0 z, u x y' ≤ u x y) : q0 ⬝ᵥ y = z := by
+  by_contra hne
+  have hlt : q0 ⬝ᵥ y < z := lt_of_le_of_ne hy.2 hne
+  set c := ∑ j, q0 j with hc
+  have hc0 : 0 ≤ c := Finset.sum_nonneg fun j _ => (hq0 j).le
+  set η := (z - q0 ⬝ᵥ y) / (c + 1) with hη
+  have hη0 : 0 < η := div_pos (by linarith) (by linarith)
+  have hmem : (y + fun _ => η) ∈ budgetSet q0 z := by
+    refine ⟨fun j => by simp only [Pi.add_apply]; linarith [hy.1 j], ?_⟩
+    have : q0 ⬝ᵥ (y + fun _ => η) = q0 ⬝ᵥ y + η * c := by
+      rw [dotProduct_add, hc, Finset.mul_sum]
+      simp [dotProduct, mul_comm]
+    rw [this]
+    have : η * c ≤ η * (c + 1) := by nlinarith
+    have h2 : η * (c + 1) = z - q0 ⬝ᵥ y := by rw [hη]; field_simp
+    linarith
+  have := hmax _ hmem
+  have hgt := hmono y hy.1 (y + fun _ => η) fun j => by simp only [Pi.add_apply]; linarith
+  linarith
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100), continuity of `ũ`: if `u` is continuous on
+`ℝ^A_+ × ℝ^B_+` and `q₀ ≫ 0`, then `ũ` is continuous on `ℝ^{A+1}_+` (Berge's maximum theorem;
+on the orthant `{y ≥ 0, q₀·y ≤ z} = z K` with the fixed compact `K = B_{q₀, 1}`). -/
+theorem last_composite_continuousOn {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B)) :
+    ContinuousOn (lastCompositeVec u q0) (nonnegOrthant (A + 1)) := by
+  set K := budgetSet q0 1 with hK
+  have hKc : IsCompact K := isCompact_budgetSet hq0 1
+  set clA : (Fin A → ℝ) → Fin A → ℝ := fun x i => max (x i) 0 with hclA
+  set clB : (Fin B → ℝ) → Fin B → ℝ := fun y j => max (y j) 0 with hclB
+  set g : (Fin (A + 1) → ℝ) × (Fin B → ℝ) → (Fin A → ℝ) × (Fin B → ℝ) :=
+    fun vy => (clA (Fin.init vy.1), clB (vy.1 (Fin.last A) • vy.2)) with hg
+  have hgc : Continuous g := by
+    simp only [hg, hclA, hclB, Fin.init]
+    fun_prop
+  have hgm : ∀ vy, g vy ∈ nonnegOrthant A ×ˢ nonnegOrthant B := fun vy =>
+    ⟨fun i => le_max_right _ _, fun j => le_max_right _ _⟩
+  set G : (Fin (A + 1) → ℝ) → (Fin B → ℝ) → ℝ := fun v y => Function.uncurry u (g (v, y))
+    with hG
+  have hGc : Continuous (Function.uncurry G) := hu.comp_continuous hgc hgm
+  have hc := hKc.continuous_sSup (f := G) hGc
+  refine hc.continuousOn.congr fun v hv => ?_
+  have hx : Fin.init v ∈ nonnegOrthant A := fun i => hv (Fin.castSucc i)
+  have hz : 0 ≤ v (Fin.last A) := hv (Fin.last A)
+  have hclx : clA (Fin.init v) = Fin.init v := funext fun i => max_eq_left (hx i)
+  unfold lastCompositeVec compositeUtility
+  rw [last_composite_set_eq]
+  congr 1
+  ext t
+  constructor
+  · rintro ⟨y, hy, rfl⟩
+    rcases eq_or_lt_of_le hz with h0 | hpos
+    · -- `z = 0`: the only affordable `y` is `0`
+      have hy0 : y = 0 := by
+        funext j
+        have hsum : q0 ⬝ᵥ y = 0 := le_antisymm (h0 ▸ hy.2)
+          (Finset.sum_nonneg fun j _ => mul_nonneg (hq0 j).le (hy.1 j))
+        have := (Finset.sum_eq_zero_iff_of_nonneg fun j _ =>
+          mul_nonneg (hq0 j).le (hy.1 j)).mp hsum j (Finset.mem_univ j)
+        exact (mul_eq_zero.mp this).resolve_left (hq0 j).ne'
+      refine ⟨0, zero_mem_budgetSet q0 zero_le_one, ?_⟩
+      simp only [hG, hg, Function.uncurry_apply_pair, hclx, smul_zero, ← h0, hy0]
+      congr 1
+      funext j
+      simp [hclB]
+    · refine ⟨(v (Fin.last A))⁻¹ • y, ⟨fun j => ?_, ?_⟩, ?_⟩
+      · simp only [Pi.smul_apply, smul_eq_mul]
+        exact mul_nonneg (inv_nonneg.mpr hz) (hy.1 j)
+      · rw [dotProduct_smul, smul_eq_mul, inv_mul_le_iff₀ hpos, mul_one]
+        exact hy.2
+      · simp only [hG, hg, Function.uncurry_apply_pair, hclx, smul_smul,
+          mul_inv_cancel₀ hpos.ne', one_smul]
+        congr 1
+        funext j
+        exact max_eq_left (hy.1 j)
+  · rintro ⟨y, hy, rfl⟩
+    refine ⟨v (Fin.last A) • y, ⟨fun j => ?_, ?_⟩, ?_⟩
+    · simp only [Pi.smul_apply, smul_eq_mul]
+      exact mul_nonneg hz (hy.1 j)
+    · rw [dotProduct_smul, smul_eq_mul]
+      have := mul_le_mul_of_nonneg_left hy.2 hz
+      linarith
+    · simp only [hG, hg, Function.uncurry_apply_pair, hclx]
+      congr 1
+      funext j
+      simp only [hclB, Pi.smul_apply, smul_eq_mul]
+      exact (max_eq_left (mul_nonneg hz (hy.1 j))).symm
+
+/-- `u(x, ·)` is continuous on `ℝ^B_+` when `u` is jointly continuous on the orthant. -/
+theorem last_composite_section {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ}
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    {x : Fin A → ℝ} (hx : x ∈ nonnegOrthant A) : ContinuousOn (u x) (nonnegOrthant B) :=
+  hu.comp (f := fun y => (x, y)) (Continuous.continuousOn (by fun_prop)) fun _ hy => ⟨hx, hy⟩
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100): the preference of `ũ` on `ℝ^{A+1}_+` is locally
+nonsatiated when the `y` goods are desirable (`u` strictly increasing in `y`). -/
+theorem last_composite_lns {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y') :
+    LocallyNonsatiated (nonnegOrthant (A + 1)) (utilityPref (lastCompositeVec u q0)) := by
+  intro v hv ε hε
+  set x := Fin.init v with hxdef
+  set z := v (Fin.last A) with hzdef
+  have hx : x ∈ nonnegOrthant A := fun i => hv (Fin.castSucc i)
+  have hz : 0 ≤ z := hv (Fin.last A)
+  have hv' : v = lastSnoc x z := (lastSnoc_init v).symm
+  obtain ⟨y, hy, hval, -⟩ := last_composite_attained hq0 (last_composite_section hu hx) hz
+  obtain ⟨Y, -, hval', hmax'⟩ := last_composite_attained hq0 (last_composite_section hu hx)
+    (by linarith : 0 ≤ z + ε)
+  refine ⟨lastSnoc x (z + ε), (last_snoc_mem x _).mpr ⟨hx, by linarith⟩, ?_, ?_⟩
+  · rw [hv']
+    unfold euclidDist
+    rw [Fin.sum_univ_castSucc]
+    simp only [lastSnoc_castSucc, lastSnoc_last, sub_self, ne_eq, OfNat.ofNat_ne_zero,
+      not_false_eq_true, zero_pow, Finset.sum_const_zero, zero_add, add_sub_cancel_left]
+    rw [Real.sqrt_sq hε.le]
+  · -- `y` plus a little of every `y` good is affordable at `z + ε` and strictly better
+    set c := ∑ j, q0 j with hc
+    have hc0 : 0 ≤ c := Finset.sum_nonneg fun j _ => (hq0 j).le
+    set η := ε / (c + 1) with hη
+    have hη0 : 0 < η := div_pos hε (by linarith)
+    have hmem : (y + fun _ => η) ∈ budgetSet q0 (z + ε) := by
+      refine ⟨fun j => by simp only [Pi.add_apply]; linarith [hy.1 j], ?_⟩
+      have : q0 ⬝ᵥ (y + fun _ => η) = q0 ⬝ᵥ y + η * c := by
+        rw [dotProduct_add, hc, Finset.mul_sum]
+        simp [dotProduct, mul_comm]
+      rw [this]
+      have : η * c ≤ η * (c + 1) := by nlinarith
+      have h2 : η * (c + 1) = ε := by rw [hη]; field_simp
+      linarith [hy.2]
+    have hlt : lastCompositeVec u q0 v < lastCompositeVec u q0 (lastSnoc x (z + ε)) := by
+      rw [lastCompositeVec_snoc, hval', hv', lastCompositeVec_snoc, hval]
+      exact (hmono x hx y hy.1 (y + fun _ => η) fun j => by
+        simp only [Pi.add_apply]; linarith).trans_le
+        (hmax' _ hmem)
+    exact ⟨hlt.le, not_le.mpr hlt⟩
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100): if `u` is strictly quasiconcave on `ℝ^A_+ × ℝ^B_+`
+(strictly convex preferences over `(x, y)`) and strictly increasing in `y`, then `ũ` is strictly
+quasiconcave on `ℝ^{A+1}_+`. -/
+theorem last_composite_strictlyQuasiconcave {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ}
+    {q0 : Fin B → ℝ} (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y')) :
+    StrictlyQuasiconcaveOn (nonnegOrthant (A + 1)) (lastCompositeVec u q0) := by
+  refine ⟨convex_nonnegOrthant (A + 1), fun v hv v' hv' hne a ha0 ha1 t ht ht' => ?_⟩
+  have hx : Fin.init v ∈ nonnegOrthant A := fun i => hv (Fin.castSucc i)
+  have hz : 0 ≤ v (Fin.last A) := hv (Fin.last A)
+  have hx' : Fin.init v' ∈ nonnegOrthant A := fun i => hv' (Fin.castSucc i)
+  have hz' : 0 ≤ v' (Fin.last A) := hv' (Fin.last A)
+  obtain ⟨y, hy, hval, hmax⟩ := last_composite_attained hq0 (last_composite_section hu hx) hz
+  obtain ⟨y', hy', hval', hmax'⟩ := last_composite_attained hq0 (last_composite_section hu hx') hz'
+  have hex := last_composite_exhausts hq0 (hmono _ hx) hy hmax
+  have hex' := last_composite_exhausts hq0 (hmono _ hx') hy' hmax'
+  have hpair : (Fin.init v, y) ≠ (Fin.init v', y') := by
+    intro heq
+    obtain ⟨h1, h2⟩ := Prod.mk.inj heq
+    apply hne
+    rw [← lastSnoc_init v, ← lastSnoc_init v', h1, ← hex, ← hex', h2]
+  set w := a • v + (1 - a) • v' with hw
+  have hwx : Fin.init w = a • Fin.init v + (1 - a) • Fin.init v' := by
+    funext i
+    simp [hw, Fin.init]
+  have hwz : w (Fin.last A) = a * v (Fin.last A) + (1 - a) * v' (Fin.last A) := by
+    simp [hw]
+  have hwm : w ∈ nonnegOrthant (A + 1) :=
+    convex_nonnegOrthant (A + 1) hv hv' ha0.le (by linarith) (by ring)
+  have hwxm : Fin.init w ∈ nonnegOrthant A := fun i => hwm (Fin.castSucc i)
+  obtain ⟨Y, -, hvalw, hmaxw⟩ := last_composite_attained hq0 (last_composite_section hu hwxm)
+    (hwm (Fin.last A))
+  have hcomb : a • y + (1 - a) • y' ∈ budgetSet q0 (w (Fin.last A)) := by
+    refine ⟨fun j => ?_, ?_⟩
+    · simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul]
+      have := hy.1 j
+      have := hy'.1 j
+      have : 0 ≤ 1 - a := by linarith
+      positivity
+    · rw [dotProduct_add, dotProduct_smul, dotProduct_smul, smul_eq_mul, smul_eq_mul, hwz,
+        hex, hex']
+  have hstrict := hsq _ hx _ hx' _ hy.1 _ hy'.1 hpair a ha0 ha1
+  unfold lastCompositeVec at ht ht' ⊢
+  rw [hval] at ht
+  rw [hval'] at ht'
+  rw [hvalw]
+  calc t ≤ min (u (Fin.init v) y) (u (Fin.init v') y') := le_min ht ht'
+    _ < u (a • Fin.init v + (1 - a) • Fin.init v') (a • y + (1 - a) • y') := hstrict
+    _ = u (Fin.init w) (a • y + (1 - a) • y') := by rw [hwx]
+    _ ≤ u (Fin.init w) Y := hmaxw _ hcomb
+
+end MWG.ClassicalDemand
+
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+
+/-!
+# Exercise 3.G.5(b)-(c): demand and Hicksian demand for the composite commodity
+
+MWG, Exercise 3.G.5(b)-(c), p. 100. Standing assumptions (as in `LastComposite`): `q₀ ≫ 0`;
+`u` continuous on `ℝ^A_+ × ℝ^B_+`, strictly increasing in the `y` goods ("desirable"), and
+strictly quasiconcave on `ℝ^{A+B}_+`. The composite utility `ũ` on `ℝ^{A+1}_+` is then continuous,
+locally nonsatiated and strictly quasiconcave (`last_composite_continuousOn`,
+`last_composite_lns`, `last_composite_strictlyQuasiconcave`), so the project's general results
+apply to it with `L = A + 1`. Composite prices are `(p, α) = Fin.snoc p α`.
+
+* **(b)** `x(p, α, w)` and `z(p, α, w)`: homogeneity of degree zero, Walras' law
+  `p·x + αz = w`, existence and uniqueness (Proposition 3.D.2, `exercise_3_G_5b`); they are the
+  consumer's actual `x` and `z = q₀·y` (`exercise_3_G_5b_actual`, from Exercise 3.G.5(a));
+  Roy's identity (Proposition 3.G.4, `exercise_3_G_5b_roy`).
+* **(c)** The Hicksian demand of `ũ`: Proposition 3.E.3 (`exercise_3_G_5c_E3`), Shephard's lemma
+  (Proposition 3.G.1, `exercise_3_G_5c_G1`), the properties of `D_p h` (Proposition 3.G.2,
+  `exercise_3_G_5c_G2`) and the Slutsky equation (Proposition 3.G.3, `exercise_3_G_5c_G3`).
+-/
+
+namespace MWG.ClassicalDemand
+
+open MWG.ConsumerChoice Kreps.PreferenceProperties Filter Topology
+
+variable {A B : ℕ}
+
+/-- The standing assumptions give `ũ` the hypotheses of Sections 3.D-3.G on `ℝ^{A+1}_+`:
+continuity, local nonsatiation, strict quasiconcavity and strict convexity of its preference. -/
+theorem last_composite_hyps {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y')) :
+    ContinuousOn (lastCompositeVec u q0) (nonnegOrthant (A + 1)) ∧
+      LocallyNonsatiated (nonnegOrthant (A + 1)) (utilityPref (lastCompositeVec u q0)) ∧
+      StrictlyQuasiconcaveOn (nonnegOrthant (A + 1)) (lastCompositeVec u q0) ∧
+      PrefStrictlyConvex (nonnegOrthant (A + 1)) (utilityPref (lastCompositeVec u q0)) := by
+  have hS := last_composite_strictlyQuasiconcave hq0 hu hmono hsq
+  exact ⟨last_composite_continuousOn hq0 hu, last_composite_lns hq0 hu hmono, hS,
+    (prefStrictlyConvex_iff_strictlyQuasiconcaveOn (convex_nonnegOrthant (A + 1))
+      (representsOn_utilityPref _ _)).mpr hS⟩
+
+/-- **Exercise 3.G.5(b)** (MWG, p. 100), Proposition 3.D.2 for the composite demand
+`(x, z)(p, α, w)`: (i) homogeneous of degree zero in `(p, α, w)`; (ii) Walras' law
+`p·x + αz = w`; (iii) single-valued (it exists and is unique). -/
+theorem exercise_3_G_5b {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {p : Fin A → ℝ} (hp : StrictlyPositive p) {α w : ℝ} (hα : 0 < α) (hw : 0 ≤ w) :
+    (∀ t : ℝ, 0 < t → walrasianDemand (lastCompositeVec u q0) (t • lastSnoc p α) (t * w) =
+      walrasianDemand (lastCompositeVec u q0) (lastSnoc p α) w) ∧
+    (∀ v ∈ walrasianDemand (lastCompositeVec u q0) (lastSnoc p α) w,
+      p ⬝ᵥ Fin.init v + α * v (Fin.last A) = w) ∧
+    ∃ v, walrasianDemand (lastCompositeVec u q0) (lastSnoc p α) w = {v} := by
+  obtain ⟨hc, hl, hs, -⟩ := last_composite_hyps hq0 hu hmono hsq
+  have hP : StrictlyPositive (lastSnoc p α) := (last_snoc_pos p α).mpr ⟨hp, hα⟩
+  refine ⟨fun t ht => proposition_3_D_2_i _ _ _ ht, fun v hv => ?_, ?_⟩
+  · have h := proposition_3_D_2_ii (representsOn_utilityPref _ _) hl hv
+    rwa [← lastSnoc_init v, last_snoc_dot] at h
+  · obtain ⟨v, hv⟩ := proposition_3_D_1 hc hP hw
+    exact ⟨v, Set.eq_singleton_iff_unique_mem.mpr
+      ⟨hv, fun v' hv' => proposition_3_D_2_iii_unique hs _ _ hv' hv⟩⟩
+
+/-- **Exercise 3.G.5(b)** (MWG, p. 100), with (a): if `(x*, y*)` solves the consumer's UMP at
+prices `(p, αq₀)` and wealth `w`, the composite demand is `{(x*, q₀·y*)}`, so
+`x(p, α, w) = x*` and `z(p, α, w) = q₀·y*` are the consumer's actual levels. -/
+theorem exercise_3_G_5b_actual {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {p : Fin A → ℝ} {α w : ℝ} (hα : 0 < α) {xs : Fin A → ℝ} {ys : Fin B → ℝ}
+    (hfeas : xs ∈ nonnegOrthant A ∧ ys ∈ nonnegOrthant B ∧ p ⬝ᵥ xs + (α • q0) ⬝ᵥ ys ≤ w)
+    (hopt : ∀ x y, x ∈ nonnegOrthant A → y ∈ nonnegOrthant B →
+      p ⬝ᵥ x + (α • q0) ⬝ᵥ y ≤ w → u x y ≤ u xs ys) :
+    walrasianDemand (lastCompositeVec u q0) (lastSnoc p α) w = {lastSnoc xs (q0 ⬝ᵥ ys)} := by
+  obtain ⟨-, -, hs, -⟩ := last_composite_hyps hq0 hu hmono hsq
+  obtain ⟨hval, ⟨hx, hz, hb⟩, hbest⟩ := exercise_3_G_5a hq0 hα hfeas hopt
+  have hmem : lastSnoc xs (q0 ⬝ᵥ ys) ∈
+      walrasianDemand (lastCompositeVec u q0) (lastSnoc p α) w := by
+    refine ⟨⟨(last_snoc_mem _ _).mpr ⟨hx, hz⟩, by rw [last_snoc_dot]; exact hb⟩, fun v hv => ?_⟩
+    have hv' := hv
+    rw [← lastSnoc_init v] at hv'
+    obtain ⟨hvm, hvb⟩ := hv'
+    rw [last_snoc_mem] at hvm
+    rw [last_snoc_dot] at hvb
+    rw [← lastSnoc_init v, lastCompositeVec_snoc, lastCompositeVec_snoc]
+    exact hbest _ _ hvm.1 hvm.2 hvb
+  exact Set.eq_singleton_iff_unique_mem.mpr
+    ⟨hmem, fun v hv => proposition_3_D_2_iii_unique hs _ _ hv hmem⟩
+
+/-- **Exercise 3.G.5(b)** (MWG, p. 100), Proposition 3.G.4 (Roy's identity) for the composite
+demand: wherever the composite indirect utility `ṽ` is differentiable at `((p, α), w)`, `w > 0`,
+`∂ṽ/∂p_l + (∂ṽ/∂w) x_l = 0` for every composite good (the `x` goods and `z`), and
+`x_l = -(∂ṽ/∂p_l)/(∂ṽ/∂w)` when `∂ṽ/∂w ≠ 0`. -/
+theorem exercise_3_G_5b_roy {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {p : Fin A → ℝ} (hp : StrictlyPositive p) {α w : ℝ} (hα : 0 < α) (hw : 0 < w)
+    {Dv : ((Fin (A + 1) → ℝ) × ℝ) →L[ℝ] ℝ}
+    (hD : HasFDerivAt (fun q : (Fin (A + 1) → ℝ) × ℝ =>
+      indirectUtility (lastCompositeVec u q0) q.1 q.2) Dv (lastSnoc p α, w))
+    {v : Fin (A + 1) → ℝ} (hv : v ∈ walrasianDemand (lastCompositeVec u q0) (lastSnoc p α) w) :
+    (∀ l, Dv (Pi.single l 1, 0) + Dv (0, 1) * v l = 0) ∧
+      (Dv (0, 1) ≠ 0 → ∀ l, v l = -(Dv (Pi.single l 1, 0) / Dv (0, 1))) := by
+  obtain ⟨hc, hl, -, hsc⟩ := last_composite_hyps hq0 hu hmono hsq
+  exact proposition_3_G_4 (representsOn_utilityPref _ _) hc hl hsc
+    ⟨(last_snoc_pos p α).mpr ⟨hp, hα⟩, hw⟩ hD hv
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100), Proposition 3.E.3 for the Hicksian demand of `ũ` at
+composite prices `P ≫ 0` and an attainable level `ū ≥ ũ(0)`: (i) homogeneous of degree zero in
+`P`; (ii) no excess utility; (iii) single-valued. -/
+theorem exercise_3_G_5c_E3 {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {P : Fin (A + 1) → ℝ} (hP : StrictlyPositive P) {ub : ℝ}
+    (hub : lastCompositeVec u q0 0 ≤ ub)
+    (hne : ∃ v ∈ nonnegOrthant (A + 1), ub ≤ lastCompositeVec u q0 v) :
+    (∀ t : ℝ, 0 < t → hicksianDemand (lastCompositeVec u q0) (t • P) ub =
+      hicksianDemand (lastCompositeVec u q0) P ub) ∧
+    (∀ v ∈ hicksianDemand (lastCompositeVec u q0) P ub, lastCompositeVec u q0 v = ub) ∧
+    ∃ v, hicksianDemand (lastCompositeVec u q0) P ub = {v} := by
+  obtain ⟨hc, -, -, hsc⟩ := last_composite_hyps hq0 hu hmono hsq
+  refine ⟨fun t ht => proposition_3_E_3_i _ _ _ ht,
+    fun v hv => proposition_3_E_3_ii hc hP hub hv, ?_⟩
+  obtain ⟨v, hv⟩ := exercise_3_E_3 hc hP hne
+  exact ⟨v, Set.eq_singleton_iff_unique_mem.mpr ⟨hv, fun v' hv' =>
+    (proposition_3_E_3_iii (representsOn_utilityPref _ _) hc hP ub).2 hsc hv' hv⟩⟩
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100), Proposition 3.G.1 (Shephard's lemma) for `ũ`: the
+Hicksian demand `h̃(P, ū)` is the gradient of the composite expenditure function `ẽ(·, ū)`. -/
+theorem exercise_3_G_5c_G1 {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {P : Fin (A + 1) → ℝ} (hP : StrictlyPositive P) {ub : ℝ}
+    (hne : ∃ v ∈ nonnegOrthant (A + 1), ub ≤ lastCompositeVec u q0 v) :
+    ∃ v, hicksianDemand (lastCompositeVec u q0) P ub = {v} ∧
+      HasFDerivAt (fun Q => expenditure (lastCompositeVec u q0) Q ub) (dualityDotCLM v) P ∧
+      ∀ l, v l =
+        gradientVec (fderiv ℝ (fun Q => expenditure (lastCompositeVec u q0) Q ub) P) l := by
+  obtain ⟨hc, -, -, hsc⟩ := last_composite_hyps hq0 hu hmono hsq
+  exact proposition_3_G_1 (representsOn_utilityPref _ _) hc hsc hP hne
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100), Proposition 3.G.2 for `ũ`: if a Hicksian demand
+function `h̃(·, ū)` of `ũ` is differentiable at `P ≫ 0` with derivative `D`, then
+(i) `D = D²_P ẽ(P, ū)`, (ii) `D` is negative semidefinite, (iii) symmetric, (iv) `D P = 0`. -/
+theorem exercise_3_G_5c_G2 {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {ub : ℝ} {hf : (Fin (A + 1) → ℝ) → (Fin (A + 1) → ℝ)}
+    (hhf : ∀ Q, StrictlyPositive Q → hf Q ∈ hicksianDemand (lastCompositeVec u q0) Q ub)
+    {P : Fin (A + 1) → ℝ} (hP : StrictlyPositive P)
+    {D : (Fin (A + 1) → ℝ) →L[ℝ] (Fin (A + 1) → ℝ)} (hD : HasFDerivAt hf D P) :
+    MWG.ConsumerChoice.hessianMatrix (fun Q => expenditure (lastCompositeVec u q0) Q ub) P =
+        jacobian D ∧
+      NegSemidef (jacobian D) ∧ (∀ i j, jacobian D i j = jacobian D j i) ∧ D P = 0 := by
+  obtain ⟨hc, -, hs, -⟩ := last_composite_hyps hq0 hu hmono hsq
+  exact ⟨proposition_3_G_2_i hc hs hhf hP hD, proposition_3_G_2_ii _ hhf hP hD,
+    proposition_3_G_2_iii hc hs hhf hP hD, proposition_3_G_2_iv hc hs hhf hP hD⟩
+
+/-- **Exercise 3.G.5(c)** (MWG, p. 100), Proposition 3.G.3 (the Slutsky equation) for `ũ`: if
+the composite Walrasian demand function is differentiable at `(P, w)`, the Hicksian demand at
+`ū = ṽ(P, w)` has derivative `D_P x̃ + D_w x̃ x̃ᵀ`, whose matrix is the Slutsky matrix. -/
+theorem exercise_3_G_5c_G3 {u : (Fin A → ℝ) → (Fin B → ℝ) → ℝ} {q0 : Fin B → ℝ}
+    (hq0 : StrictlyPositive q0)
+    (hu : ContinuousOn (Function.uncurry u) (nonnegOrthant A ×ˢ nonnegOrthant B))
+    (hmono : ∀ x ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B, ∀ y' : Fin B → ℝ,
+      (∀ j, y j < y' j) → u x y < u x y')
+    (hsq : ∀ x ∈ nonnegOrthant A, ∀ x' ∈ nonnegOrthant A, ∀ y ∈ nonnegOrthant B,
+      ∀ y' ∈ nonnegOrthant B, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (u x y) (u x' y') < u (a • x + (1 - a) • x') (a • y + (1 - a) • y'))
+    {xf : DemandFunction (A + 1)}
+    (hxf : ∀ P w, PWDomain P w → xf P w ∈ walrasianDemand (lastCompositeVec u q0) P w)
+    {P₀ : Fin (A + 1) → ℝ} {w₀ : ℝ} (hpw : PWDomain P₀ w₀)
+    {Dx : ((Fin (A + 1) → ℝ) × ℝ) →L[ℝ] (Fin (A + 1) → ℝ)}
+    (hD : HasFDerivAt (Function.uncurry xf) Dx (P₀, w₀))
+    {hf : (Fin (A + 1) → ℝ) → (Fin (A + 1) → ℝ)}
+    (hhf : ∀ Q, StrictlyPositive Q → hf Q ∈
+      hicksianDemand (lastCompositeVec u q0) Q (indirectUtility (lastCompositeVec u q0) P₀ w₀)) :
+    HasFDerivAt hf
+        (Dx.comp ((ContinuousLinearMap.id ℝ (Fin (A + 1) → ℝ)).prod
+          (dualityDotCLM (xf P₀ w₀)))) P₀ ∧
+      jacobian (Dx.comp ((ContinuousLinearMap.id ℝ (Fin (A + 1) → ℝ)).prod
+        (dualityDotCLM (xf P₀ w₀)))) = slutskyMatrix Dx (xf P₀ w₀) := by
+  obtain ⟨hc, hl, -, hsc⟩ := last_composite_hyps hq0 hu hmono hsq
+  exact proposition_3_G_3 (representsOn_utilityPref _ _) hc hl hsc hxf hpw hD hhf
+
+/-- The standing assumptions of Exercise 3.G.5(b)-(c) are consistent: with one good of each kind,
+`u(x, y) = √x + √y` and `q₀ = 1` satisfy all of them. -/
+theorem last_composite_instance :
+    StrictlyPositive (fun _ => (1 : ℝ) : Fin 1 → ℝ) ∧
+    ContinuousOn (Function.uncurry fun (x : Fin 1 → ℝ) (y : Fin 1 → ℝ) =>
+      Real.sqrt (x 0) + Real.sqrt (y 0)) (nonnegOrthant 1 ×ˢ nonnegOrthant 1) ∧
+    (∀ x ∈ nonnegOrthant 1, ∀ y ∈ nonnegOrthant 1, ∀ y' : Fin 1 → ℝ, (∀ j, y j < y' j) →
+      Real.sqrt (x 0) + Real.sqrt (y 0) < Real.sqrt (x 0) + Real.sqrt (y' 0)) ∧
+    (∀ x ∈ nonnegOrthant 1, ∀ x' ∈ nonnegOrthant 1, ∀ y ∈ nonnegOrthant 1,
+      ∀ y' ∈ nonnegOrthant 1, (x, y) ≠ (x', y') → ∀ a : ℝ, 0 < a → a < 1 →
+        min (Real.sqrt (x 0) + Real.sqrt (y 0)) (Real.sqrt (x' 0) + Real.sqrt (y' 0)) <
+          Real.sqrt ((a • x + (1 - a) • x') 0) + Real.sqrt ((a • y + (1 - a) • y') 0)) := by
+  refine ⟨fun _ => one_pos, ?_, fun x _ y hy y' hyy => ?_, ?_⟩
+  · exact Continuous.continuousOn (by fun_prop)
+  · have := Real.sqrt_lt_sqrt (hy 0) (hyy 0)
+    linarith
+  · intro x hx x' hx' y hy y' hy' hne a ha0 ha1
+    have hb : 0 < 1 - a := by linarith
+    have hS := Real.strictConcaveOn_sqrt
+    have hC := hS.concaveOn
+    simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul]
+    have hx0 : x 0 ∈ Set.Ici (0 : ℝ) := hx 0
+    have hx0' : x' 0 ∈ Set.Ici (0 : ℝ) := hx' 0
+    have hy0 : y 0 ∈ Set.Ici (0 : ℝ) := hy 0
+    have hy0' : y' 0 ∈ Set.Ici (0 : ℝ) := hy' 0
+    have hcx := hC.2 hx0 hx0' ha0.le hb.le (by ring)
+    have hcy := hC.2 hy0 hy0' ha0.le hb.le (by ring)
+    simp only [smul_eq_mul] at hcx hcy
+    have hstrict : a * Real.sqrt (x 0) + (1 - a) * Real.sqrt (x' 0) +
+        (a * Real.sqrt (y 0) + (1 - a) * Real.sqrt (y' 0)) <
+        Real.sqrt (a * x 0 + (1 - a) * x' 0) + Real.sqrt (a * y 0 + (1 - a) * y' 0) := by
+      by_cases hxx : x 0 = x' 0
+      · have hyy : y 0 ≠ y' 0 := by
+          intro h
+          apply hne
+          have e1 : x = x' := funext fun i => by fin_cases i; exact hxx
+          have e2 : y = y' := funext fun i => by fin_cases i; exact h
+          rw [e1, e2]
+        have := hS.2 hy0 hy0' hyy ha0 hb (by ring)
+        simp only [smul_eq_mul] at this
+        linarith
+      · have := hS.2 hx0 hx0' hxx ha0 hb (by ring)
+        simp only [smul_eq_mul] at this
+        linarith
+    have hmin : min (Real.sqrt (x 0) + Real.sqrt (y 0)) (Real.sqrt (x' 0) + Real.sqrt (y' 0)) ≤
+        a * (Real.sqrt (x 0) + Real.sqrt (y 0)) +
+          (1 - a) * (Real.sqrt (x' 0) + Real.sqrt (y' 0)) := by
+      rcases le_total (Real.sqrt (x 0) + Real.sqrt (y 0)) (Real.sqrt (x' 0) + Real.sqrt (y' 0))
+        with h | h
+      · rw [min_eq_left h]; nlinarith
+      · rw [min_eq_right h]; nlinarith
+    linarith
+
+end MWG.ClassicalDemand
+
 set_option linter.style.longLine false
 #print axioms MWG.ClassicalDemand.euclidDist
 #print axioms MWG.ClassicalDemand.euclidDist_nonneg
@@ -20675,3 +26604,213 @@ set_option linter.style.longLine false
 #print axioms MWG.ClassicalDemand.hicksianDemand_congr
 #print axioms MWG.ClassicalDemand.les_roy
 #print axioms MWG.ClassicalDemand.exercise_3_G_2
+#print axioms MWG.ClassicalDemand.hardInt_lipschitz
+#print axioms MWG.ClassicalDemand.hardInt_unique_Ioo
+#print axioms MWG.ClassicalDemand.hardInt_unique
+#print axioms MWG.ClassicalDemand.hardInt_exists_local
+#print axioms MWG.ClassicalDemand.hardInt_exists_global
+#print axioms MWG.ClassicalDemand.hardIntLogField
+#print axioms MWG.ClassicalDemand.hardInt_strictlyPositive_exp
+#print axioms MWG.ClassicalDemand.hardIntLogField_contDiff
+#print axioms MWG.ClassicalDemand.hardIntLogField_abs_le
+#print axioms MWG.ClassicalDemand.hardInt_lift_hasDerivAt
+#print axioms MWG.ClassicalDemand.hardInt_log_hasDerivAt
+#print axioms MWG.ClassicalDemand.hardInt_strict_order
+#print axioms MWG.ClassicalDemand.footnote_3_18_global
+#print axioms MWG.ClassicalDemand.footnote_3_18_unique
+#print axioms MWG.ClassicalDemand.hardInt_solution_family
+#print axioms MWG.ClassicalDemand.integrability_two_goods_global
+#print axioms MWG.ClassicalDemand.hardHalkin_feasible
+#print axioms MWG.ClassicalDemand.hardHalkin_cone
+#print axioms MWG.ClassicalDemand.theorem_M_K_1_differentiable
+#print axioms MWG.ClassicalDemand.theorem_M_K_1_book
+#print axioms MWG.ClassicalDemand.theorem_M_K_2_differentiable
+#print axioms MWG.ClassicalDemand.theorem_M_K_2_book
+#print axioms MWG.ClassicalDemand.hardSO_bound
+#print axioms MWG.ClassicalDemand.theorem_M_K_second_order_necessary
+#print axioms MWG.ClassicalDemand.theorem_M_K_second_order_necessary_matrix
+#print axioms MWG.ClassicalDemand.hardEnv_range_pi_eq_top
+#print axioms MWG.ClassicalDemand.theorem_M_L_1_value
+#print axioms MWG.ClassicalDemand.theorem_M_L_1_needs_CQ
+#print axioms MWG.ClassicalDemand.hardSard_exists_complement_map
+#print axioms MWG.ClassicalDemand.hardSard_isInvertible_of_injective
+#print axioms MWG.ClassicalDemand.hardSard_local
+#print axioms MWG.ClassicalDemand.theorem_M_E_2
+#print axioms MWG.ClassicalDemand.theorem_M_E_2_ae
+#print axioms MWG.ClassicalDemand.theorem_M_E_2_regular
+#print axioms MWG.ClassicalDemand.frob_uniform_taylor
+#print axioms MWG.ClassicalDemand.frob_hasFDerivAt_endpoint
+#print axioms MWG.ClassicalDemand.frob_hasDerivAt_dotProduct
+#print axioms MWG.ClassicalDemand.frobRayField
+#print axioms MWG.ClassicalDemand.frobRayField_contDiff
+#print axioms MWG.ClassicalDemand.frobRayField_abs_le
+#print axioms MWG.ClassicalDemand.frobRayField_fderiv_apply
+#print axioms MWG.ClassicalDemand.frob_ray_exists
+#print axioms MWG.ClassicalDemand.frob_ray_unique
+#print axioms MWG.ClassicalDemand.frob_ray_strict_order
+#print axioms MWG.ClassicalDemand.frobenius_ray_family
+#print axioms MWG.ClassicalDemand.frobLogField
+#print axioms MWG.ClassicalDemand.frob_slutsky_mulVec
+#print axioms MWG.ClassicalDemand.frob_exp_mem_domain
+#print axioms MWG.ClassicalDemand.frobLogField_contDiff
+#print axioms MWG.ClassicalDemand.frobLogField_abs_dot_le
+#print axioms MWG.ClassicalDemand.frobLogField_fderiv_apply
+#print axioms MWG.ClassicalDemand.frobLogField_dot_fderiv
+#print axioms MWG.ClassicalDemand.frobLogField_symm
+#print axioms MWG.ClassicalDemand.frob_hasFDerivAt_log
+#print axioms MWG.ClassicalDemand.frob_solvesPDE_of_log
+#print axioms MWG.ClassicalDemand.frob_expenditure_family
+#print axioms MWG.ClassicalDemand.frob_3_H_2_exists
+#print axioms MWG.ClassicalDemand.integrability_general
+#print axioms MWG.ClassicalDemand.frob_update_strictlyPositive
+#print axioms MWG.ClassicalDemand.frob_line_hasDerivAt
+#print axioms MWG.ClassicalDemand.frobLineField
+#print axioms MWG.ClassicalDemand.frobLineField_contDiff
+#print axioms MWG.ClassicalDemand.frobLineField_abs_le
+#print axioms MWG.ClassicalDemand.frob_line_lift
+#print axioms MWG.ClassicalDemand.frob_line_log
+#print axioms MWG.ClassicalDemand.frob_line_exists
+#print axioms MWG.ClassicalDemand.frob_line_unique
+#print axioms MWG.ClassicalDemand.frobOnePricePath
+#print axioms MWG.ClassicalDemand.frobOnePricePath_pos
+#print axioms MWG.ClassicalDemand.frobOnePricePath_zero
+#print axioms MWG.ClassicalDemand.frobOnePricePath_last
+#print axioms MWG.ClassicalDemand.frobOnePricePath_update_start
+#print axioms MWG.ClassicalDemand.frobOnePricePath_update_end
+#print axioms MWG.ClassicalDemand.frob_one_price_at_a_time
+#print axioms MWG.ClassicalDemand.frob_one_price_at_a_time_exists
+#print axioms MWG.ClassicalDemand.econBaseUtility
+#print axioms MWG.ClassicalDemand.econBaseUtility_summable
+#print axioms MWG.ClassicalDemand.econBaseUtility_bounds
+#print axioms MWG.ClassicalDemand.econBaseUtility_represents
+#print axioms MWG.ClassicalDemand.econ_exists_nat_basis
+#print axioms MWG.ClassicalDemand.econJumps
+#print axioms MWG.ClassicalDemand.econDense
+#print axioms MWG.ClassicalDemand.econJumps_countable
+#print axioms MWG.ClassicalDemand.econDense_countable
+#print axioms MWG.ClassicalDemand.econDense_subset
+#print axioms MWG.ClassicalDemand.econDense_between
+#print axioms MWG.ClassicalDemand.econGapOrder
+#print axioms MWG.ClassicalDemand.econGapUtility
+#print axioms MWG.ClassicalDemand.econ_gap_lemma
+#print axioms MWG.ClassicalDemand.econ_debreu_representation
+#print axioms MWG.ClassicalDemand.proposition_3_C_1_general
+#print axioms MWG.ClassicalDemand.econPenalty
+#print axioms MWG.ClassicalDemand.econPenalty_ge_term
+#print axioms MWG.ClassicalDemand.econPenalty_nonneg
+#print axioms MWG.ClassicalDemand.econPenalty_exists_min
+#print axioms MWG.ClassicalDemand.econPenalty_foc
+#print axioms MWG.ClassicalDemand.econ_recoveredSet_subset
+#print axioms MWG.ClassicalDemand.exercise_3_H_2_convex
+#print axioms MWG.ClassicalDemand.exercise_3_H_2_prefConvex
+#print axioms MWG.ClassicalDemand.givenHicks
+#print axioms MWG.ClassicalDemand.givenDemand
+#print axioms MWG.ClassicalDemand.econ_givenPi_hasDerivAt
+#print axioms MWG.ClassicalDemand.econ_givenA_hasDerivAt
+#print axioms MWG.ClassicalDemand.econ_givenHicks_hasDerivAt
+#print axioms MWG.ClassicalDemand.econ_givenDemand_eq
+#print axioms MWG.ClassicalDemand.exercise_3_G_16c_slutsky
+#print axioms MWG.ClassicalDemand.econBoundaryUtility
+#print axioms MWG.ClassicalDemand.econBoundaryPrice
+#print axioms MWG.ClassicalDemand.econBoundaryUtility_continuousOn
+#print axioms MWG.ClassicalDemand.econBoundaryUtility_lns
+#print axioms MWG.ClassicalDemand.econBoundaryPrice_dot
+#print axioms MWG.ClassicalDemand.exercise_3_AA_2_boundary_counterexample
+#print axioms MWG.ClassicalDemand.econ_priceLine_priceLine
+#print axioms MWG.ClassicalDemand.footnote_3_I_28_cv
+#print axioms MWG.ClassicalDemand.econ_relative_error_of_deriv
+#print axioms MWG.ClassicalDemand.welfare_av_relative_error
+#print axioms MWG.ClassicalDemand.welfare_ev_relative_error
+#print axioms MWG.ClassicalDemand.econ_second_order_taylor
+#print axioms MWG.ClassicalDemand.equation_3_I_9_second_order
+#print axioms MWG.ClassicalDemand.econP0
+#print axioms MWG.ClassicalDemand.econP1
+#print axioms MWG.ClassicalDemand.econX0
+#print axioms MWG.ClassicalDemand.econP0_dot
+#print axioms MWG.ClassicalDemand.econP1_dot
+#print axioms MWG.ClassicalDemand.econX0_mem
+#print axioms MWG.ClassicalDemand.econ_affine_concaveOn
+#print axioms MWG.ClassicalDemand.exercise_3_D_7a_necessary
+#print axioms MWG.ClassicalDemand.exercise_3_D_7a
+#print axioms MWG.ClassicalDemand.econQL
+#print axioms MWG.ClassicalDemand.exercise_3_D_7b
+#print axioms MWG.ClassicalDemand.exercise_3_D_7c
+#print axioms MWG.ClassicalDemand.exercise_3_D_7d
+#print axioms MWG.ClassicalDemand.exercise_3_D_7e
+#print axioms MWG.ClassicalDemand.lastPhi
+#print axioms MWG.ClassicalDemand.lastNormalUtility
+#print axioms MWG.ClassicalDemand.lastNormalLevel
+#print axioms MWG.ClassicalDemand.lastNormalDemand
+#print axioms MWG.ClassicalDemand.lastPhi_quarter
+#print axioms MWG.ClassicalDemand.lastPhi_opt
+#print axioms MWG.ClassicalDemand.lastNormalLevel_nonneg
+#print axioms MWG.ClassicalDemand.lastNormalDemand_mem
+#print axioms MWG.ClassicalDemand.lastNormalDemand_mono
+#print axioms MWG.ClassicalDemand.lastNormalUtility_continuous
+#print axioms MWG.ClassicalDemand.lastNormalUtility_concaveOn
+#print axioms MWG.ClassicalDemand.lastNormalUtility_monotone
+#print axioms MWG.ClassicalDemand.last_lns_of_monotone
+#print axioms MWG.ClassicalDemand.last_exercise_3_D_7d_hyp_unsatisfiable
+#print axioms MWG.ClassicalDemand.last_exercise_3_D_7d_necessary
+#print axioms MWG.ClassicalDemand.exercise_3_D_7d_iff
+#print axioms MWG.ClassicalDemand.lastQ
+#print axioms MWG.ClassicalDemand.lastQ_pos
+#print axioms MWG.ClassicalDemand.lastQ_self
+#print axioms MWG.ClassicalDemand.lastQ_hasDerivAt
+#print axioms MWG.ClassicalDemand.last_quadratic_of_deriv
+#print axioms MWG.ClassicalDemand.last_ratio_limit
+#print axioms MWG.ClassicalDemand.lastDwlEV
+#print axioms MWG.ClassicalDemand.lastDwlCV
+#print axioms MWG.ClassicalDemand.lastDwlAV
+#print axioms MWG.ClassicalDemand.lastDwlMixed
+#print axioms MWG.ClassicalDemand.last_revenue_hasDerivAt
+#print axioms MWG.ClassicalDemand.last_inv_sq_hasDerivAt
+#print axioms MWG.ClassicalDemand.lastDwlEV_expansion
+#print axioms MWG.ClassicalDemand.lastDwlCV_expansion
+#print axioms MWG.ClassicalDemand.lastDwlAV_expansion
+#print axioms MWG.ClassicalDemand.lastDwlMixed_expansion
+#print axioms MWG.ClassicalDemand.last_priceLine_zero
+#print axioms MWG.ClassicalDemand.last_priceLine_one
+#print axioms MWG.ClassicalDemand.last_cd_expenditure_indirect
+#print axioms MWG.ClassicalDemand.last_cdConst_priceLine
+#print axioms MWG.ClassicalDemand.last_cd_dwl_ev_eq
+#print axioms MWG.ClassicalDemand.last_cd_dwl_cv_eq
+#print axioms MWG.ClassicalDemand.last_cd_dwl_mixed_eq
+#print axioms MWG.ClassicalDemand.last_cd_dwl_av_eq
+#print axioms MWG.ClassicalDemand.figure_3_I_8_ev
+#print axioms MWG.ClassicalDemand.figure_3_I_8_cv
+#print axioms MWG.ClassicalDemand.figure_3_I_8
+#print axioms MWG.ClassicalDemand.footnote_3_I_29_mixed
+#print axioms MWG.ClassicalDemand.lastNormPrices
+#print axioms MWG.ClassicalDemand.lastNormPrices_convex
+#print axioms MWG.ClassicalDemand.last_const_of_small_variation
+#print axioms MWG.ClassicalDemand.exercise_3_I_8a_only_if
+#print axioms MWG.ClassicalDemand.exercise_3_I_8a_only_if_all
+#print axioms MWG.ClassicalDemand.lastSqrtUtility
+#print axioms MWG.ClassicalDemand.lastSqrtDemand
+#print axioms MWG.ClassicalDemand.last_3_I_8a_instance
+#print axioms MWG.ClassicalDemand.lastCompositeVec
+#print axioms MWG.ClassicalDemand.lastSnoc
+#print axioms MWG.ClassicalDemand.lastCompositeVec_snoc
+#print axioms MWG.ClassicalDemand.lastSnoc_init
+#print axioms MWG.ClassicalDemand.lastSnoc_castSucc
+#print axioms MWG.ClassicalDemand.lastSnoc_last
+#print axioms MWG.ClassicalDemand.last_snoc_dot
+#print axioms MWG.ClassicalDemand.last_snoc_mem
+#print axioms MWG.ClassicalDemand.last_snoc_pos
+#print axioms MWG.ClassicalDemand.last_composite_set_eq
+#print axioms MWG.ClassicalDemand.last_composite_attained
+#print axioms MWG.ClassicalDemand.last_composite_exhausts
+#print axioms MWG.ClassicalDemand.last_composite_continuousOn
+#print axioms MWG.ClassicalDemand.last_composite_section
+#print axioms MWG.ClassicalDemand.last_composite_lns
+#print axioms MWG.ClassicalDemand.last_composite_strictlyQuasiconcave
+#print axioms MWG.ClassicalDemand.last_composite_hyps
+#print axioms MWG.ClassicalDemand.exercise_3_G_5b
+#print axioms MWG.ClassicalDemand.exercise_3_G_5b_actual
+#print axioms MWG.ClassicalDemand.exercise_3_G_5b_roy
+#print axioms MWG.ClassicalDemand.exercise_3_G_5c_E3
+#print axioms MWG.ClassicalDemand.exercise_3_G_5c_G1
+#print axioms MWG.ClassicalDemand.exercise_3_G_5c_G2
+#print axioms MWG.ClassicalDemand.exercise_3_G_5c_G3
+#print axioms MWG.ClassicalDemand.last_composite_instance
