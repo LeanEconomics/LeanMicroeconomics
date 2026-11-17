@@ -60,8 +60,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/02_ConsumerChoice](MicroeconomicTheory/02_ConsumerChoice/README.md) | 2. Consumer Choice (with Appendix M.A, M.B, M.D) | 273 theorems / 356 declarations; fresh audit passed; 1 exercise converse open | [Chapter overview](MicroeconomicTheory/02_ConsumerChoice/README.md) |
 | [MicroeconomicTheory/03_ClassicalDemand](MicroeconomicTheory/03_ClassicalDemand/README.md) | 3. Classical Demand Theory (with Appendix M.C, M.E, M.F, M.G, M.H, M.J, M.K, M.L) | 949 theorems / 1152 declarations; fresh audit passed; 1 item open | [Chapter overview](MicroeconomicTheory/03_ClassicalDemand/README.md) |
 | [MicroeconomicTheory/04_AggregateDemand](MicroeconomicTheory/04_AggregateDemand/README.md) | 4. Aggregate Demand | 204 theorems / 274 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/04_AggregateDemand/README.md) |
+| [MicroeconomicTheory/05_Production](MicroeconomicTheory/05_Production/README.md) | 5. Production (with Appendix 5.A, M.M) | 306 theorems / 383 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/05_Production/README.md) |
 
-MWG Chapters 1–4 are implemented.
+MWG Chapters 1–5 are implemented.
 
 ## Build and verify
 
