@@ -62,8 +62,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/04_AggregateDemand](MicroeconomicTheory/04_AggregateDemand/README.md) | 4. Aggregate Demand | 204 theorems / 274 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/04_AggregateDemand/README.md) |
 | [MicroeconomicTheory/05_Production](MicroeconomicTheory/05_Production/README.md) | 5. Production (with Appendix 5.A, M.M) | 306 theorems / 383 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/05_Production/README.md) |
 | [MicroeconomicTheory/06_ChoiceUnderUncertainty](MicroeconomicTheory/06_ChoiceUnderUncertainty/README.md) | 6. Choice Under Uncertainty | 352 theorems / 442 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/06_ChoiceUnderUncertainty/README.md) |
+| [MicroeconomicTheory/07_NoncooperativeGames](MicroeconomicTheory/07_NoncooperativeGames/README.md) | 7. Basic Elements of Noncooperative Games | 183 theorems / 301 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/07_NoncooperativeGames/README.md) |
 
-MWG Chapters 1–6 are implemented.
+MWG Chapters 1–7 are implemented.
 
 ## Build and verify
 
