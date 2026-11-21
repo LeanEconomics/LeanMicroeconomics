@@ -68,8 +68,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/10_CompetitiveMarkets](MicroeconomicTheory/10_CompetitiveMarkets/README.md) | 10. Competitive Markets | 365 theorems / 471 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/10_CompetitiveMarkets/README.md) |
 | [MicroeconomicTheory/11_ExternalitiesPublicGoods](MicroeconomicTheory/11_ExternalitiesPublicGoods/README.md) | 11. Externalities and Public Goods | 235 theorems / 349 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/11_ExternalitiesPublicGoods/README.md) |
 | [MicroeconomicTheory/12_MarketPower](MicroeconomicTheory/12_MarketPower/README.md) | 12. Market Power (with Appendices A-B) | 661 theorems / 866 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/12_MarketPower/README.md) |
+| [MicroeconomicTheory/13_AdverseSelection](MicroeconomicTheory/13_AdverseSelection/README.md) | 13. Market Signaling, Adverse Selection and Screening (with Appendix A) | 501 theorems / 795 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/13_AdverseSelection/README.md) |
 
-MWG Chapters 1–12 are implemented.
+MWG Chapters 1–13 are implemented.
 
 ## Build and verify
 

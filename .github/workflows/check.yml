@@ -29,6 +29,7 @@ jobs:
           - MicroeconomicTheory/10_CompetitiveMarkets
           - MicroeconomicTheory/11_ExternalitiesPublicGoods
           - MicroeconomicTheory/12_MarketPower
+          - MicroeconomicTheory/13_AdverseSelection
     defaults:
       run:
         working-directory: ${{ matrix.project }}
