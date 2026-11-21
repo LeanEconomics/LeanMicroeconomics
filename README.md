@@ -64,8 +64,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/06_ChoiceUnderUncertainty](MicroeconomicTheory/06_ChoiceUnderUncertainty/README.md) | 6. Choice Under Uncertainty | 352 theorems / 442 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/06_ChoiceUnderUncertainty/README.md) |
 | [MicroeconomicTheory/07_NoncooperativeGames](MicroeconomicTheory/07_NoncooperativeGames/README.md) | 7. Basic Elements of Noncooperative Games | 183 theorems / 301 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/07_NoncooperativeGames/README.md) |
 | [MicroeconomicTheory/08_SimultaneousMoveGames](MicroeconomicTheory/08_SimultaneousMoveGames/README.md) | 8. Simultaneous-Move Games (with Appendix M.I) | 347 theorems / 504 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/08_SimultaneousMoveGames/README.md) |
+| [MicroeconomicTheory/09_DynamicGames](MicroeconomicTheory/09_DynamicGames/README.md) | 9. Dynamic Games | 653 theorems / 953 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/09_DynamicGames/README.md) |
 
-MWG Chapters 1–8 are implemented.
+MWG Chapters 1–9 are implemented.
 
 ## Build and verify
 
