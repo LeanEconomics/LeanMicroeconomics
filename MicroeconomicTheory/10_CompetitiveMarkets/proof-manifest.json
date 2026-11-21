@@ -1,0 +1,43 @@
+{
+  "library": "MWGCompetitiveMarkets",
+  "modules": [
+    "MWGCompetitiveMarkets/FOCTools.lean",
+    "MWGCompetitiveMarkets/ParetoEquilibrium.lean",
+    "MWGCompetitiveMarkets/QuasilinearModel.lean",
+    "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean",
+    "MWGCompetitiveMarkets/WelfareTheorems.lean",
+    "MWGCompetitiveMarkets/ConvexExistence.lean",
+    "MWGCompetitiveMarkets/CentralAuthority.lean",
+    "MWGCompetitiveMarkets/Surplus.lean",
+    "MWGCompetitiveMarkets/TaxIncidence.lean",
+    "MWGCompetitiveMarkets/FreeEntry.lean",
+    "MWGCompetitiveMarkets/ExercisesF.lean",
+    "MWGCompetitiveMarkets/ExercisesF2.lean",
+    "MWGCompetitiveMarkets/ExercisesC.lean",
+    "MWGCompetitiveMarkets/ExercisesE.lean",
+    "MWGCompetitiveMarkets/DerivedPaths.lean",
+    "MWGCompetitiveMarkets/GroupMarkets.lean",
+    "MWGCompetitiveMarkets/Instances.lean"
+  ],
+  "theorem_counts": {
+    "MWGCompetitiveMarkets/FOCTools.lean": 23,
+    "MWGCompetitiveMarkets/ParetoEquilibrium.lean": 13,
+    "MWGCompetitiveMarkets/QuasilinearModel.lean": 61,
+    "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean": 15,
+    "MWGCompetitiveMarkets/WelfareTheorems.lean": 26,
+    "MWGCompetitiveMarkets/ConvexExistence.lean": 7,
+    "MWGCompetitiveMarkets/CentralAuthority.lean": 49,
+    "MWGCompetitiveMarkets/Surplus.lean": 31,
+    "MWGCompetitiveMarkets/TaxIncidence.lean": 25,
+    "MWGCompetitiveMarkets/FreeEntry.lean": 21,
+    "MWGCompetitiveMarkets/ExercisesF.lean": 14,
+    "MWGCompetitiveMarkets/ExercisesF2.lean": 13,
+    "MWGCompetitiveMarkets/ExercisesC.lean": 18,
+    "MWGCompetitiveMarkets/ExercisesE.lean": 13,
+    "MWGCompetitiveMarkets/DerivedPaths.lean": 9,
+    "MWGCompetitiveMarkets/GroupMarkets.lean": 20,
+    "MWGCompetitiveMarkets/Instances.lean": 7
+  },
+  "scope": "MWG Chapter 10: competitive markets (Pareto optimality and competitive equilibria, partial equilibrium with quasilinear utility, the fundamental welfare theorems in a partial equilibrium context, welfare analysis, free-entry and long-run equilibria, Appendix 10.A on the quasilinear representative consumer), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 10. Exact scope: docs/source-map.md."
+}
