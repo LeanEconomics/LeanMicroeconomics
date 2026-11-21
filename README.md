@@ -66,8 +66,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/08_SimultaneousMoveGames](MicroeconomicTheory/08_SimultaneousMoveGames/README.md) | 8. Simultaneous-Move Games (with Appendix M.I) | 347 theorems / 504 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/08_SimultaneousMoveGames/README.md) |
 | [MicroeconomicTheory/09_DynamicGames](MicroeconomicTheory/09_DynamicGames/README.md) | 9. Dynamic Games | 653 theorems / 953 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/09_DynamicGames/README.md) |
 | [MicroeconomicTheory/10_CompetitiveMarkets](MicroeconomicTheory/10_CompetitiveMarkets/README.md) | 10. Competitive Markets | 365 theorems / 471 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/10_CompetitiveMarkets/README.md) |
+| [MicroeconomicTheory/11_ExternalitiesPublicGoods](MicroeconomicTheory/11_ExternalitiesPublicGoods/README.md) | 11. Externalities and Public Goods | 235 theorems / 349 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/11_ExternalitiesPublicGoods/README.md) |
 
-MWG Chapters 1–10 are implemented.
+MWG Chapters 1–11 are implemented.
 
 ## Build and verify
 

@@ -27,6 +27,7 @@ jobs:
           - MicroeconomicTheory/08_SimultaneousMoveGames
           - MicroeconomicTheory/09_DynamicGames
           - MicroeconomicTheory/10_CompetitiveMarkets
+          - MicroeconomicTheory/11_ExternalitiesPublicGoods
     defaults:
       run:
         working-directory: ${{ matrix.project }}

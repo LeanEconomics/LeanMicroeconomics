@@ -1,0 +1,39 @@
+{
+  "library": "MWGExternalitiesPublicGoods",
+  "modules": [
+    "MWGExternalitiesPublicGoods/Tools.lean",
+    "MWGExternalitiesPublicGoods/Concavity.lean",
+    "MWGExternalitiesPublicGoods/Bilateral.lean",
+    "MWGExternalitiesPublicGoods/PublicGoods.lean",
+    "MWGExternalitiesPublicGoods/Multilateral.lean",
+    "MWGExternalitiesPublicGoods/PrivateInfo.lean",
+    "MWGExternalitiesPublicGoods/GrovesClarke.lean",
+    "MWGExternalitiesPublicGoods/AppendixA.lean",
+    "MWGExternalitiesPublicGoods/ExercisesB.lean",
+    "MWGExternalitiesPublicGoods/ExercisesC.lean",
+    "MWGExternalitiesPublicGoods/ExercisesD1.lean",
+    "MWGExternalitiesPublicGoods/ExercisesD2.lean",
+    "MWGExternalitiesPublicGoods/ExercisesD3.lean",
+    "MWGExternalitiesPublicGoods/ExercisesE.lean",
+    "MWGExternalitiesPublicGoods/Instances.lean"
+  ],
+  "theorem_counts": {
+    "MWGExternalitiesPublicGoods/Tools.lean": 10,
+    "MWGExternalitiesPublicGoods/Concavity.lean": 6,
+    "MWGExternalitiesPublicGoods/Bilateral.lean": 34,
+    "MWGExternalitiesPublicGoods/PublicGoods.lean": 27,
+    "MWGExternalitiesPublicGoods/Multilateral.lean": 20,
+    "MWGExternalitiesPublicGoods/PrivateInfo.lean": 15,
+    "MWGExternalitiesPublicGoods/GrovesClarke.lean": 19,
+    "MWGExternalitiesPublicGoods/AppendixA.lean": 12,
+    "MWGExternalitiesPublicGoods/ExercisesB.lean": 26,
+    "MWGExternalitiesPublicGoods/ExercisesC.lean": 4,
+    "MWGExternalitiesPublicGoods/ExercisesD1.lean": 11,
+    "MWGExternalitiesPublicGoods/ExercisesD2.lean": 11,
+    "MWGExternalitiesPublicGoods/ExercisesD3.lean": 21,
+    "MWGExternalitiesPublicGoods/ExercisesE.lean": 11,
+    "MWGExternalitiesPublicGoods/Instances.lean": 8
+  },
+  "scope": "MWG Chapter 11: externalities and public goods (bilateral externalities and their remedies, Coase, public goods and the Samuelson condition, free riding, Lindahl equilibria, multilateral externalities, common property, private information and second-best solutions), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 11. Exact scope: docs/source-map.md."
+}
