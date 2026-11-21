@@ -1,0 +1,36 @@
+name = "MWGSimultaneousMoveGames"
+version = "0.1.0"
+keywords = ["math", "economics", "microeconomics"]
+defaultTargets = ["MWGSimultaneousMoveGames"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.34.0"
+
+[[require]]
+name = "MWGNoncooperativeGames"
+path = "../07_NoncooperativeGames"
+
+[[require]]
+name = "MWGClassicalDemand"
+path = "../03_ClassicalDemand"
+
+[[require]]
+name = "LeanEconomics"
+git = "https://github.com/LeanEconomics/LeanEconomics"
+rev = "04decca"
+
+[[require]]
+name = "MWGProduction"
+path = "../05_Production"
+
+[[lean_lib]]
+name = "MWGSimultaneousMoveGames"

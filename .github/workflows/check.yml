@@ -24,6 +24,7 @@ jobs:
           - MicroeconomicTheory/05_Production
           - MicroeconomicTheory/06_ChoiceUnderUncertainty
           - MicroeconomicTheory/07_NoncooperativeGames
+          - MicroeconomicTheory/08_SimultaneousMoveGames
     defaults:
       run:
         working-directory: ${{ matrix.project }}
