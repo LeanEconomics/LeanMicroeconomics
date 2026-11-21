@@ -1,0 +1,5196 @@
+{
+  "checked_at_utc": "2026-11-21T22:23:14.797314+00:00",
+  "theorems": 331,
+  "module_theorems": {
+    "MWGPrincipalAgent/Basic.lean": 10,
+    "MWGPrincipalAgent/KuhnTucker.lean": 4,
+    "MWGPrincipalAgent/HiddenAction.lean": 19,
+    "MWGPrincipalAgent/RiskAverse.lean": 21,
+    "MWGPrincipalAgent/Discrete.lean": 4,
+    "MWGPrincipalAgent/ExampleHA.lean": 25,
+    "MWGPrincipalAgent/Signal.lean": 7,
+    "MWGPrincipalAgent/AppendixA.lean": 6,
+    "MWGPrincipalAgent/Screen.lean": 17,
+    "MWGPrincipalAgent/HiddenInfo.lean": 31,
+    "MWGPrincipalAgent/ExampleHI.lean": 13,
+    "MWGPrincipalAgent/InfRiskAversion.lean": 6,
+    "MWGPrincipalAgent/Revelation.lean": 6,
+    "MWGPrincipalAgent/Monopolistic.lean": 5,
+    "MWGPrincipalAgent/ExercisesC.lean": 10,
+    "MWGPrincipalAgent/ExercisesAA.lean": 9,
+    "MWGPrincipalAgent/ExerciseB4.lean": 9,
+    "MWGPrincipalAgent/ExercisesB.lean": 6,
+    "MWGPrincipalAgent/HANecessity.lean": 16,
+    "MWGPrincipalAgent/ExercisesB56.lean": 11,
+    "MWGPrincipalAgent/ExerciseB6Opt.lean": 2,
+    "MWGPrincipalAgent/ExerciseC8.lean": 7,
+    "MWGPrincipalAgent/ExerciseC9.lean": 5,
+    "MWGPrincipalAgent/ExerciseC9KT.lean": 4,
+    "MWGPrincipalAgent/ExerciseC7.lean": 11,
+    "MWGPrincipalAgent/ExerciseB1.lean": 12,
+    "MWGPrincipalAgent/ExerciseC1.lean": 5,
+    "MWGPrincipalAgent/ExerciseC1Opt.lean": 11,
+    "MWGPrincipalAgent/ExerciseC4.lean": 11,
+    "MWGPrincipalAgent/ExerciseC1Strict.lean": 3,
+    "MWGPrincipalAgent/ExerciseB7.lean": 5,
+    "MWGPrincipalAgent/ExerciseB8.lean": 8,
+    "MWGPrincipalAgent/ExerciseC3N.lean": 3,
+    "MWGPrincipalAgent/Instances.lean": 9
+  },
+  "audited_declarations": 510,
+  "declarations": [
+    {
+      "name": "MWG.PrincipalAgent.tpa_tangent_le",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_tangent_lt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_tangent_ge_convex",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_tangent_gt_convex",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_tangent_integrable",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_tangent_integral",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_jensen",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_jensen_eq",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_jensen_two",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.tpa_jensen_two_lt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Basic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.kt_sign",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/KuhnTucker.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.kt_le",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/KuhnTucker.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.kt_convexlike",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/KuhnTucker.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.kt_convexlike_eq",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/KuhnTucker.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.\u03bd",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.f",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.v",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.dv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.g",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ubar",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.f_meas",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.f_pos",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.f_int",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.f_one",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.x_int",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.v_deriv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.dv_pos",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Standing.v_conc",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.Adm",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.EW",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.EV",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.EU",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.GP",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.OP",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ObsFeasible",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.IsObsOptimal",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.IsCostMin",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.IC",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.HAFeasible",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.IsHACostMin",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.IsHAOptimal",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_OP_eq",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_const_adm",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_EW_const",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_EV_const",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_v_strictMono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_EV_le",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_cost_lower_bound",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_fixed_wage_feasible",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_fixed_wage_costMin",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_costMin_binds",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_costMin_unique",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_foc_constant",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_riskNeutral_costMin",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_wage_higher",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.proposition_14_B_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.proposition_14_B_1_unique",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_value_le_obs",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.proposition_14_B_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.proposition_14_B_2_every",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenAction.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.F",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.FOSD",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_IC_two",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_implement_low",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_EV_sub",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_kt_sufficient",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_fosd_set",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_nu_ne_zero",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.lemma_14_B_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_dv_anti",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_v_hits",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.shift",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_shift_spec",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_shift",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.footnote_8",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_optimal_binds",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.footnote_9",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_wage_vs_what",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_monotone_iff_mlrp",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_EW_gt_of_IC",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.proposition_14_B_3",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_welfare_loss",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_no_loss_of_tie",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_no_upward_distortion",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/RiskAverse.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.dmeas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Discrete.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.dmeas_integrable",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Discrete.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.dmeas_integral",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Discrete.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.dmeas_setIntegral",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Discrete.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.dmeas_ae",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Discrete.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exPts",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exF",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exModel",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_integral",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_standing_of",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_hasDeriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_strictConcave",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_standing",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_dv_anti",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_two",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_fosd",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_not_mlrp",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exW",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exW_adm",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exW_zero",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exW_one",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exW_two",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_EU",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_foc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_optimal",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_not_monotone",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_lemma_14_B_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exWstar",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_wstar",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_GP",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_fb_strict",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_proposition_14_B_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_welfare_loss",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exTie",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_tie",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exRN",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exA_proposition_14_B_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_ratio_indep",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_ratio_suffstat",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_foc_indep",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_depends",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_jensen",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_same_utility",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.signal_lower_cost",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Signal.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.aa_IC_iff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.aa_not_implementable",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.twoVal",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.aa_high_implementable",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exC",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.aa_high_not_implementable",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.foa_sufficient",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.foa_fails",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/AppendixA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.pH",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.pL",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.g",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.\u03b8L",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.\u03b8H",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.lam",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.c",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIContract",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIContract.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIContract.wH",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIContract.eH",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIContract.wL",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIContract.eL",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Pi",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.C1",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.C2",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.C3",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.C4",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Feas3",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.FeasRelax",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.IsOpt",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.IsOptRelax",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.D",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.SH",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.SL",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Q",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.R",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.bind",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Hyp",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Hyp.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Hyp.lam_pos",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Hyp.lam_lt",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Hyp.D_zero",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.Hyp.D_mono",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_D_pos",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_D_nonneg",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.lemma_14_C_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_eL_le_eH",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_Pi_le",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_Pi_eq_iff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_Pi_bind",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_bind_feas",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.lemma_14_C_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.IsFB",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_Q_min",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.lemma_14_C_3",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_opt_iff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_iv_slack",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_H_rent",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.FBval",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_loss",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.screen_fb_violates_iii",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.Screen.exercise_14_BB_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Screen.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hi_exists_gt_of_deriv_pos",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hi_deriv_anti",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hi_deriv_mono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hi_g_theta_inconsistent",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hi_cross_of_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.pH",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.pL",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.dpH",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.dpL",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.g",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.ge",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.v",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.dv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.\u03b8L",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.\u03b8H",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.lam",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.ubar",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.c",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing",
+      "kind": "structure",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.mk",
+      "kind": "constructor",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.pH_zero",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.pL_zero",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.pH_deriv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.pL_deriv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.dpL_pos",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.dp_le",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.pH_conc",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.pL_conc",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.g_zero",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.g_deriv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.ge_zero",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.g_conv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.\u03b8_lt",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.ge_cross",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.lam_pos",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.lam_lt",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.v_deriv",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.dv_pos",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.v_conc",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.Standing.v_c",
+      "kind": "projection",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.scr",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_v_strictMono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_D_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_hyp",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_SH_conc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_SL_conc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_SH_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_SL_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_isFB_of_crit",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_fbH_of_foc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_fbL_of_foc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_fb_order",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.ObsFeas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.IsObsOpt",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.fbK",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.proposition_14_C_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_obs_foc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_isoprofit_axis",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_H_prefers_L",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_Q_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_eL_pos",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_Q_crit",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_foc_14_C_9",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.lemma_14_C_4",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_14_C_9_terms",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.proposition_14_C_3",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.hi_eL_falls",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.footnote_17",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.appendix_B_steps",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HIModel.appendix_B_multipliers",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HiddenInfo.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_g_conv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_log_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_log_conc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_expL",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_expH",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_standing",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_focH",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_focL",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_Q",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_Q_max",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_opt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_proposition_14_C_3",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exB_proposition_14_C_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExampleHI.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.ceRho",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_15_order",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_15",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.ceRho_ge_min",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_15_accept",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_15_reject",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.infinite_ra_insure",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/InfRiskAversion.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.proposition_14_C_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Revelation.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.proposition_14_C_2_payoff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Revelation.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.revelation_example",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Revelation.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hybrid_revelation",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Revelation.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hybrid_forcing",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Revelation.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.hybrid_change_of_variables",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Revelation.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_21_misprint",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Monopolistic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_21_corrected",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Monopolistic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.footnote_21_limit",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Monopolistic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.maskin_riley",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Monopolistic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.baron_myerson",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Monopolistic.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_3a",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_3a_suff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_3b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_3b_order",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.screen_relax_opt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exRev",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_5_reversal",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.monopsony",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.monopsony_hyp",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_6",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_6_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.aa_neBot",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.aa_mono_iff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.aa_ratio_log",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.aa_G_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_AA_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_AA_1_strict",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_AA_1_strict_false",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_AA_2_valid",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_AA_2_contract",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesAA.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4EU",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4Profit",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4Obs",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4Impl",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4p",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4g",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4_jensen",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4_obs_bound",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_4a",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_4b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_4b_threshold",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_4c",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4pd",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4gd",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b4_sqrt8",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_4d_obs",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_4d_unobs",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.exercise_14_B_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_3a",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_3b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_3c",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_3c_beta",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_3c_sigma",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_piece_integral",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_piece_adm",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_mix",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_EV_mix",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_setIntegral_pos",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_raise",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_slater",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_ae_min",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_kt_general",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.ha_kt_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.lemma_14_B_1_every",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.exercise_14_B_2_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.HAModel.foa_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_kt_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_14_B_2_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exFOA",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exWf",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_foa_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/HANecessity.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw_ge",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw_le_iff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw_exists",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw_mono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw_of_mono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.effw_idem",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.IsDisp",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_5",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_6a",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_6b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.mlrp_expect_mono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_6c",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExercisesB56.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_6b_opt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB6Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_6b_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB6Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C8Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C8Profit",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C8Opt",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8_IRB",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8c",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8d_feas",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8d_bound",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8d",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_8e",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9a",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c9Profit",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC9.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9b_shape",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9b_rationed",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9b_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.kt_foc_1d",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9KT.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c9_r_order",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9KT.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9b_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9KT.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_9b_necessary_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC9KT.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7v",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7_demand",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7_surplus",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7D",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7Pi",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7_one_type",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7_bound_high",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7a_theta",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7a_lambda",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7a_price",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7c",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C7Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c7Profit",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7d",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_7d_compare",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1c",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1dc",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_rpow32",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_rpow12",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1c_eq",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_c_deriv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_c_ge",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_uH_lt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_uw_pos",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_c_convex",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_c_tangent",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_c_half",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b1_c_threehalf",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_1",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C1IC",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_mono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_IR",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1D",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_rent",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_bound",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_local",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C1Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1Prof",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1Rent",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1Wage",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1VS",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_D_mono",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_D_nonneg",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_rent_le",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_prof_le_VS",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1Ext",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_wage_feasible",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_prof_wage",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_VS_ext",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_opt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_suff",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_distortion",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Opt.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.C4Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4Prof",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_mk",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_prof_mk",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_dv_lt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_spread",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_part",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_4",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_left_gt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_4_strict",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4_exp_bound",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4\u03ba",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4a",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4g",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4wH",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c4wL",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_4_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_4_instance_applied",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC4.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c1_VS_update",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Strict.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_strict",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Strict.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_1_strict_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC1Strict.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7U",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.B7Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7Cost",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7_local_inv",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7_shift",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7_improve",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_7",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7f",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b7w",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_7_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB7.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8F",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8EV",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8Cost",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.B8Feas",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8A",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8B",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8_persp",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8_lag",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8_upd",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8_foc",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_8",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8_exp_bound",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.b8fq",
+      "kind": "def",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_8_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_B_8_instance_applied",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseB8.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.c3_foc_state",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC3N.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_3a_necessary",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC3N.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.exercise_14_C_3a_necessary_instance",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/ExerciseC3N.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_footnote_8",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_EW_gt",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_high_implementable",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_lemmas_14_C",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_appendix_B_steps",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_eL_falls",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_14_B_3b",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_14_B_3c",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    },
+    {
+      "name": "MWG.PrincipalAgent.inst_14_AA_2",
+      "kind": "theorem",
+      "module": "MWGPrincipalAgent/Instances.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.PrincipalAgent.tpa_tangent_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_tangent_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_tangent_ge_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_tangent_gt_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_tangent_integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_tangent_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_jensen_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_jensen_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.tpa_jensen_two_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.kt_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.kt_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.kt_convexlike": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.kt_convexlike_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.\u03bd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.dv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ubar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.f_meas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.f_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.f_int": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.f_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.x_int": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.v_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.dv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Standing.v_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.Adm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.EW": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.EV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.EU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.GP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.OP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ObsFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.IsObsOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.IsCostMin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.IC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.HAFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.IsHACostMin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.IsHAOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_OP_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_const_adm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_EW_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_EV_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_v_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_EV_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_cost_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_fixed_wage_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_fixed_wage_costMin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_costMin_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_costMin_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_foc_constant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_riskNeutral_costMin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_wage_higher": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.proposition_14_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.proposition_14_B_1_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_value_le_obs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.proposition_14_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.proposition_14_B_2_every": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.F": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.FOSD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_IC_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_implement_low": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_EV_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_kt_sufficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_fosd_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_nu_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.lemma_14_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_dv_anti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_v_hits": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_shift_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.footnote_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_optimal_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.footnote_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_wage_vs_what": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_monotone_iff_mlrp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_EW_gt_of_IC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.proposition_14_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_welfare_loss": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_no_loss_of_tie": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_no_upward_distortion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.dmeas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.dmeas_integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.dmeas_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.dmeas_setIntegral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.dmeas_ae": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exPts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_standing_of": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_hasDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_strictConcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_dv_anti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_two": [
+      "propext"
+    ],
+    "MWG.PrincipalAgent.exA_fosd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_not_mlrp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exW": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exW_adm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exW_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exW_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exW_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_EU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_not_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_lemma_14_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exWstar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_wstar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_GP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_fb_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_proposition_14_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_welfare_loss": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exTie": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_tie": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exRN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exA_proposition_14_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_ratio_indep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_ratio_suffstat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_foc_indep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_depends": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_same_utility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.signal_lower_cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.aa_IC_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.aa_not_implementable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.twoVal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.aa_high_implementable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.aa_high_not_implementable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.foa_sufficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.foa_fails": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.pH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.pL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.\u03b8L": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.\u03b8H": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.lam": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIContract": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIContract.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIContract.wH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIContract.eH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIContract.wL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIContract.eL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Pi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.C1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.C2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.C3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.C4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Feas3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.FeasRelax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.IsOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.IsOptRelax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.D": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.SH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.SL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Q": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.R": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.bind": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Hyp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Hyp.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Hyp.lam_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Hyp.lam_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Hyp.D_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.Hyp.D_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_D_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_D_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.lemma_14_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_eL_le_eH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_Pi_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_Pi_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_Pi_bind": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_bind_feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.lemma_14_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.IsFB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_Q_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.lemma_14_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_opt_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_iv_slack": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_H_rent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.FBval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_loss": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.screen_fb_violates_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.Screen.exercise_14_BB_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hi_exists_gt_of_deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hi_deriv_anti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hi_deriv_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hi_g_theta_inconsistent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hi_cross_of_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.pH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.pL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.dpH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.dpL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.dv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.\u03b8L": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.\u03b8H": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.lam": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.ubar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.pH_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.pL_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.pH_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.pL_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.dpL_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.dp_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.pH_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.pL_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.g_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.g_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.ge_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.g_conv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.\u03b8_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.ge_cross": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.lam_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.lam_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.v_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.dv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.v_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.Standing.v_c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.scr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_v_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_D_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_hyp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_SH_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_SL_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_SH_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_SL_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_isFB_of_crit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_fbH_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_fbL_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_fb_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.ObsFeas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.IsObsOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.fbK": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.proposition_14_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_obs_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_isoprofit_axis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_H_prefers_L": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_Q_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_eL_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_Q_crit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_foc_14_C_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.lemma_14_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_14_C_9_terms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.proposition_14_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.hi_eL_falls": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.footnote_17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.appendix_B_steps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HIModel.appendix_B_multipliers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_g_conv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_log_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_log_conc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_expL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_expH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_focH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_focL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_Q": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_Q_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_proposition_14_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exB_proposition_14_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.ceRho": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_15_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.ceRho_ge_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_15_accept": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_15_reject": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.infinite_ra_insure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.proposition_14_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.proposition_14_C_2_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.revelation_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hybrid_revelation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hybrid_forcing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.hybrid_change_of_variables": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_21_misprint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_21_corrected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.footnote_21_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.maskin_riley": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.baron_myerson": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_3a_suff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_3b_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.screen_relax_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exRev": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_5_reversal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.monopsony": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.monopsony_hyp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_6_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.aa_neBot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.aa_mono_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.aa_ratio_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.aa_G_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_AA_1_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_AA_1_strict_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_AA_2_valid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_AA_2_contract": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4EU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4Profit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4Obs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4Impl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4p": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4_obs_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_4b_threshold": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4pd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4gd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b4_sqrt8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_4d_obs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_4d_unobs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.exercise_14_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_3c_beta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_3c_sigma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_piece_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_piece_adm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_mix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_EV_mix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_setIntegral_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_raise": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_ae_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_kt_general": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.ha_kt_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.lemma_14_B_1_every": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.exercise_14_B_2_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.HAModel.foa_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_kt_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_14_B_2_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exFOA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exWf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_foa_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw_of_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.effw_idem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.IsDisp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_6a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_6b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.mlrp_expect_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_6c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_6b_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_6b_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C8Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C8Profit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C8Opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8_IRB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8d_feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8d_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_8e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c9Profit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9b_shape": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9b_rationed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9b_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.kt_foc_1d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c9_r_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9b_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_9b_necessary_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7D": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7Pi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7_one_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7_bound_high": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7a_theta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7a_lambda": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7a_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C7Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c7Profit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_7d_compare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1dc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_rpow32": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_rpow12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1c_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_c_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_c_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_uH_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_uw_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_c_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_c_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_c_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b1_c_threehalf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C1IC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_IR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1D": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_rent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C1Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1Prof": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1Rent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1Wage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1VS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_D_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_D_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_rent_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_prof_le_VS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1Ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_wage_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_prof_wage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_VS_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_suff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_distortion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.C4Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4Prof": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_prof_mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_dv_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_spread": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_part": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_left_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_4_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4_exp_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4\u03ba": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4wH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c4wL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_4_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_4_instance_applied": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c1_VS_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_1_strict_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.B7Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7Cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7_local_inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7_improve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b7w": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_7_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8F": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8EV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8Cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.B8Feas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8A": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8B": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8_persp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8_lag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8_upd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8_exp_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.b8fq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_8_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_B_8_instance_applied": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.c3_foc_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_3a_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.exercise_14_C_3a_necessary_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_footnote_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_EW_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_high_implementable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_lemmas_14_C": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_appendix_B_steps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_eL_falls": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_14_B_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_14_B_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PrincipalAgent.inst_14_AA_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGPrincipalAgent/Basic.lean": "6a8553901031be2fc55ebc094aed0c12158c74c812684cfc66dd10586a17f94b",
+    "MWGPrincipalAgent/KuhnTucker.lean": "744a3194928410667869f686d6d3bdaa5fda5b10cd3932e88b87e1df0759befb",
+    "MWGPrincipalAgent/HiddenAction.lean": "b92e1ddffe1cf837e475b262fb199a45a651395ad61634ad8e0c97a0ac55927e",
+    "MWGPrincipalAgent/RiskAverse.lean": "2cd7d986f41bae904820e8f874241cbb9dbc475d87e56a3e631ab95f486fa3a1",
+    "MWGPrincipalAgent/Discrete.lean": "dce3ef127cae91a019197d2531e2111678f3e84e52597216db9bf21f12cb1c87",
+    "MWGPrincipalAgent/ExampleHA.lean": "36219742c84717dc7a6dad8826e7b36aa0963a34d673f21203a5e232ac4257fc",
+    "MWGPrincipalAgent/Signal.lean": "58a7882a58dd914c80617c9e4305a7db84f831a8a35d1678e904073235cb8f27",
+    "MWGPrincipalAgent/AppendixA.lean": "ea8a010d2c2b0da8193b662034f8fcaddfc62ce3bf09abff7eb3dd3040a6889a",
+    "MWGPrincipalAgent/Screen.lean": "0f4015646d6b564bcfab4e9f94996902368527a95e8f3f47a063f20d0510fa14",
+    "MWGPrincipalAgent/HiddenInfo.lean": "112dbd0309e8a3fc2464191e39993d05380d4270f2ab86e83eb2ec3438ca52c9",
+    "MWGPrincipalAgent/ExampleHI.lean": "cee2860574e1a8cb9435b459a354386fae5155b721145a147136d45f0dfc2015",
+    "MWGPrincipalAgent/InfRiskAversion.lean": "e59fb688dab1e1e405cf0b56b94239070d5a989fa66f3e9135d555dd28924bbd",
+    "MWGPrincipalAgent/Revelation.lean": "0a45c9bbdb96f2a10c575bb4025284c9a722dd8194484440fdd0b6fd1590c294",
+    "MWGPrincipalAgent/Monopolistic.lean": "76a77669ef8bfe8d2bbbd95f9daede48e036cf9418f25f319fb1dbe62052db39",
+    "MWGPrincipalAgent/ExercisesC.lean": "18ed1ab08ac46b8bf8d3658b24be862f8d823d61f391a2252d883c2d7e974e1d",
+    "MWGPrincipalAgent/ExercisesAA.lean": "ec594a638f3673cb96aef56514d4f3616678de0a1b2ddcd1ec1982e3ee898d54",
+    "MWGPrincipalAgent/ExerciseB4.lean": "63fbad02c6eb2ea76e8801e5ea363b8733175ee25a15102795980b64feb6e161",
+    "MWGPrincipalAgent/ExercisesB.lean": "a9c0da07a8b593adb2a5176a35f22f00213f719e3d66deb92131c81d85969d31",
+    "MWGPrincipalAgent/HANecessity.lean": "6bd24e69c8bd24150304899c55c33ec77ea6606feb6d977b84dc5636de9ffc77",
+    "MWGPrincipalAgent/ExercisesB56.lean": "483e9d4a5e488ef7dd82084228f400649bf4e1e0173f7ce718d09adc5a889f74",
+    "MWGPrincipalAgent/ExerciseB6Opt.lean": "214d02a8bb892f1d75c4dfa12fe3e5473e96e1b84fba66917b47926944765b15",
+    "MWGPrincipalAgent/ExerciseC8.lean": "bac17f48542eaada1f9de424bf74676100f5de17bff4765c463a3e99689f95dc",
+    "MWGPrincipalAgent/ExerciseC9.lean": "8765d7669ad20cc3021f676a7f8136a9be54332c1c5e0965ceb16a513c6e2a81",
+    "MWGPrincipalAgent/ExerciseC9KT.lean": "26cb0a18cf4b44951856b8029baf60bf73320a3a16df0c7a965e278499058c71",
+    "MWGPrincipalAgent/ExerciseC7.lean": "0eefb43b250785c170f50edcbfd1fcdcb0313b299cef2ae8e22aeeb84ae40f47",
+    "MWGPrincipalAgent/ExerciseB1.lean": "47be56218f804673f11e3a87d40603f059090362cc0d652cd5a508c175530a91",
+    "MWGPrincipalAgent/ExerciseC1.lean": "95453cc9ba868adcb9670328919ba09a8ae7060b28fdbfaf48b587c807960dcf",
+    "MWGPrincipalAgent/ExerciseC1Opt.lean": "f2e520931b30768e392ab98796479a3c2ac4bfb2e2220a5f50f147cd9a16ec8b",
+    "MWGPrincipalAgent/ExerciseC4.lean": "ed337eb07f31eefd04259de23ade7e5358c4fd4969f44e8968dc57141acd9997",
+    "MWGPrincipalAgent/ExerciseC1Strict.lean": "d58d2aceaf01ec4f8a789e186f16bf4ca0af355712f24a1fefb4a39a5d93bd3e",
+    "MWGPrincipalAgent/ExerciseB7.lean": "0e2939853e84493e239fce855ebf655da03f1a005f664ea8749f9f588e92c5ca",
+    "MWGPrincipalAgent/ExerciseB8.lean": "141ca2619d0efbe77c979b3b14be256c9c7c85d2d0229cdb0d0581f0e8aac6fc",
+    "MWGPrincipalAgent/ExerciseC3N.lean": "a8f2d8d602d59c4f1eba2098b3a883261bfe07eb5489e7de5529e72da4ef5f4a",
+    "MWGPrincipalAgent/Instances.lean": "975fcf6716c874e58c8f7e0766ab5842d48ee16c3dad6243b40bcbfe18b42623",
+    "MWGPrincipalAgent.lean": "a2c4744cc52a9b83325d1b788a01a1e172db379a443f9776e4e84f9ea5aea45d",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "b7b8f92d54e778736f11d5dfb56f6495091c39b127bf7bae3defbc4db6492f63",
+    "lake-manifest.json": "9f71edacb43f32262f20287b48f22aabdf993f525484bf725aa19ebe29bfcd1d",
+    "proof-manifest.json": "6794a237f28a175058c32c930782ebc9c83d654dedf20044dc9be01959d4d5db",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "181ba61c149c788c5442f63f1ac36b19736c3c7589cd92590cc63a03ba53d6cb",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 14, The Principal-Agent Problem (pp. 477-510), with Appendices A and B.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 14. Exact scope: docs/source-map.md."
+}

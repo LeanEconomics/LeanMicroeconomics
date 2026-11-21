@@ -1,0 +1,39 @@
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+import MWGPrincipalAgent.Basic
+import MWGPrincipalAgent.KuhnTucker
+import MWGPrincipalAgent.HiddenAction
+import MWGPrincipalAgent.RiskAverse
+import MWGPrincipalAgent.Discrete
+import MWGPrincipalAgent.ExampleHA
+import MWGPrincipalAgent.Signal
+import MWGPrincipalAgent.AppendixA
+import MWGPrincipalAgent.Screen
+import MWGPrincipalAgent.HiddenInfo
+import MWGPrincipalAgent.ExampleHI
+import MWGPrincipalAgent.InfRiskAversion
+import MWGPrincipalAgent.Revelation
+import MWGPrincipalAgent.Monopolistic
+import MWGPrincipalAgent.ExercisesC
+import MWGPrincipalAgent.ExercisesAA
+import MWGPrincipalAgent.ExerciseB4
+import MWGPrincipalAgent.ExercisesB
+import MWGPrincipalAgent.HANecessity
+import MWGPrincipalAgent.ExercisesB56
+import MWGPrincipalAgent.ExerciseB6Opt
+import MWGPrincipalAgent.ExerciseC8
+import MWGPrincipalAgent.ExerciseC9
+import MWGPrincipalAgent.ExerciseC9KT
+import MWGPrincipalAgent.ExerciseC7
+import MWGPrincipalAgent.ExerciseB1
+import MWGPrincipalAgent.ExerciseC1
+import MWGPrincipalAgent.ExerciseC1Opt
+import MWGPrincipalAgent.ExerciseC4
+import MWGPrincipalAgent.ExerciseC1Strict
+import MWGPrincipalAgent.ExerciseB7
+import MWGPrincipalAgent.ExerciseB8
+import MWGPrincipalAgent.ExerciseC3N
+import MWGPrincipalAgent.Instances
