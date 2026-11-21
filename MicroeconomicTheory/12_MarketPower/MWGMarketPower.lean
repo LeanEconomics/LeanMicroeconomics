@@ -1,0 +1,48 @@
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+import MWGMarketPower.Monopoly
+import MWGMarketPower.MonopolyExercises
+import MWGMarketPower.MonopolyExercises2
+import MWGMarketPower.MonopolyExercises3
+import MWGMarketPower.Bertrand
+import MWGMarketPower.Cournot
+import MWGMarketPower.LinearCity
+import MWGMarketPower.RepeatedGames
+import MWGMarketPower.NashReversion
+import MWGMarketPower.Schedule
+import MWGMarketPower.FolkTheorem
+import MWGMarketPower.StickCarrot
+import MWGMarketPower.StickCarrotInstances
+import MWGMarketPower.StickCarrotLiteral
+import MWGMarketPower.CournotFolk
+import MWGMarketPower.RepeatedBertrand
+import MWGMarketPower.RepeatedBertrand2
+import MWGMarketPower.RepeatedCournot
+import MWGMarketPower.MiscExercises
+import MWGMarketPower.Entry
+import MWGMarketPower.Precommitment
+import MWGMarketPower.CournotBestResponse
+import MWGMarketPower.CompetitiveLimit
+import MWGMarketPower.CompetitiveLimitExercises
+import MWGMarketPower.EntryDeterrence
+import MWGMarketPower.EntryDeterrenceExercises
+import MWGMarketPower.CournotExistence
+import MWGMarketPower.DifferentiatedProducts
+import MWGMarketPower.CapacityConstraints
+import MWGMarketPower.CityModels
+import MWGMarketPower.CityExercises
+import MWGMarketPower.CircularCity
+import MWGMarketPower.RepresentativeConsumer
+import MWGMarketPower.MixedBertrand
+import MWGMarketPower.BertrandCosts
+import MWGMarketPower.UnitBids
+import MWGMarketPower.CournotCosts
+import MWGMarketPower.Stackelberg
+import MWGMarketPower.LinearCityCosts
+import MWGMarketPower.FiniteRepeatedBertrand
+import MWGMarketPower.RepeatedBertrandExercises
+import MWGMarketPower.OneStageEntry
+import MWGMarketPower.EntryExercises
