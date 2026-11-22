@@ -78,8 +78,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/20_EquilibriumTime](MicroeconomicTheory/20_EquilibriumTime/README.md) | 20. Equilibrium and Time | 321 theorems / 460 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/20_EquilibriumTime/README.md) |
 | [MicroeconomicTheory/21_SocialChoice](MicroeconomicTheory/21_SocialChoice/README.md) | 21. Social Choice Theory | 281 theorems / 418 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/21_SocialChoice/README.md) |
 | [MicroeconomicTheory/22_WelfareBargaining](MicroeconomicTheory/22_WelfareBargaining/README.md) | 22. Elements of Welfare Economics and Axiomatic Bargaining | 502 theorems / 701 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/22_WelfareBargaining/README.md) |
+| [MicroeconomicTheory/23_MechanismDesign](MicroeconomicTheory/23_MechanismDesign/README.md) | 23. Incentives and Mechanism Design | 649 theorems / 971 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/23_MechanismDesign/README.md) |
 
-MWG Chapters 1–22 are implemented.
+MWG Chapters 1–23 are implemented.
 
 ## Build and verify
 
