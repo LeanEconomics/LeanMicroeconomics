@@ -37,6 +37,7 @@ jobs:
           - MicroeconomicTheory/19_EquilibriumUncertainty
           - MicroeconomicTheory/20_EquilibriumTime
           - MicroeconomicTheory/21_SocialChoice
+          - MicroeconomicTheory/22_WelfareBargaining
     defaults:
       run:
         working-directory: ${{ matrix.project }}
