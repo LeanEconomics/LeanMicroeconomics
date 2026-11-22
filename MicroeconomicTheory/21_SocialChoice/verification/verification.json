@@ -1,0 +1,3913 @@
+{
+  "checked_at_utc": "2026-11-22T00:13:24.846559+00:00",
+  "theorems": 281,
+  "module_theorems": {
+    "MWGSocialChoice/Aggregation.lean": 23,
+    "MWGSocialChoice/TwoAlternatives.lean": 24,
+    "MWGSocialChoice/Borda.lean": 15,
+    "MWGSocialChoice/Arrow.lean": 17,
+    "MWGSocialChoice/WeakRationality.lean": 15,
+    "MWGSocialChoice/SinglePeaked.lean": 21,
+    "MWGSocialChoice/SinglePeakedExercises.lean": 8,
+    "MWGSocialChoice/ArrowConditions.lean": 12,
+    "MWGSocialChoice/SocialChoiceFunctions.lean": 32,
+    "MWGSocialChoice/IntervalPreferences.lean": 6,
+    "MWGSocialChoice/TaxVoting.lean": 14,
+    "MWGSocialChoice/WeakPeaks.lean": 6,
+    "MWGSocialChoice/Multidimensional.lean": 10,
+    "MWGSocialChoice/Euclidean.lean": 11,
+    "MWGSocialChoice/EuclideanExercises.lean": 13,
+    "MWGSocialChoice/Plane.lean": 9,
+    "MWGSocialChoice/GradientCycles.lean": 9,
+    "MWGSocialChoice/NonVacuity.lean": 6,
+    "MWGSocialChoice/TriangleMedian.lean": 11,
+    "MWGSocialChoice/DirectionalMedian.lean": 19
+  },
+  "audited_declarations": 418,
+  "declarations": [
+    {
+      "name": "MWG.SocialChoice.Profile",
+      "kind": "abbrev",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.NoIndifference",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.RationalPrefs",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StrictPrefs",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.RationalProfiles",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StrictProfiles",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strictPrefs_subset",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strictProfiles_subset",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.footnote_21_4",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.footnote_21_3_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.footnote_21_3_indifferent",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strict_trans",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strict_of_weak_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.weak_of_not_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strict_asymm",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsSWF",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Paretian",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.PairwiseIndependent",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsDictator",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Dictatorial",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.restrictPair",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.restrictPair_eq_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.footnote_21_7",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.agree_of_same_ranking",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.PairwiseIndependent.strict_transfer",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_complete",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scorePref",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scorePref_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scorePref_strict_of_lt",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.natPref",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.natPref_rational",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.natPref_mem_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.natPref_strict_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.natPref_indifferent_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.rank3",
+      "kind": "def",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.rank3_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exists_third",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TwoAltProfiles",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsTwoAltSWF",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TwoAltParetian",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.weightedVoting",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityVoting",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.signType_cast_cases",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.weightedVoting_isSWF",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_B_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityVoting_eq_weighted",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.int_sign_cases",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityVoting_isSWF",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.nPlus",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.nMinus",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.sum_eq_nPlus_sub_nMinus",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityVoting_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsTwoAltDictator",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_B_2_paretian",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_B_2",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.SymmetricAmongAgents",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.NeutralBetweenAlternatives",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.PositivelyResponsive",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.neg_mem_twoAltProfiles",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_1_symmetric",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_1_neutral",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_1_responsive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.may_tie",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.may_plus",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_B_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.tiltedVoting",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_2_symmetry",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.xBiasedVoting",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_2_neutrality",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_2_responsiveness",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.ParetoOptimalNoTransfers",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.MajorityDecision",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_3_pareto_no_transfers",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.FeasibleWithTransfers",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.ParetoOptimalWithTransfers",
+      "kind": "def",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_3_mean",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_B_3_not_pareto_with_transfers",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TwoAlternatives.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaPoints",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaSWF",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_C_1_rational",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaPoints_lt",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_C_1_paretian",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaPoints_natPref",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_C_1_rank",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.footnote_21_6",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaSWF_two",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaSWF_three",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaProfileA",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaProfileB",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_C_1_two_agents",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaProfileC",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaProfileD",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bordaProfileE",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_C_1_three_agents",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_natPref",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcetProfile",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcetProfile_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcet_majority",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_C_2",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.pairWinner",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.agendaWinner",
+      "kind": "def",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcet_agenda",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Borda.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StandardDomain",
+      "kind": "def",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StandardDomain.score_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StandardDomain.rational",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.DecisiveFor",
+      "kind": "def",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Decisive",
+      "kind": "def",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.CompletelyDecisiveFor",
+      "kind": "def",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_2",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_3",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_4",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_5",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_empty_not_decisive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_6",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_7",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_8",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.pairTop",
+      "kind": "def",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_9",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.arrow_step_10",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_C_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dictatorSWF",
+      "kind": "def",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dictatorSWF_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_C_1_nonvacuous",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Arrow.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Quasitransitive",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Acyclic",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.AcyclicAsPrinted",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.acyclic_as_printed_false",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.footnote_21_9_acyclic",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.rational_quasitransitive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.rational_acyclic",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.oligarchyRel",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_1_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_2_quasitransitive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_1_paretian_independent",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_1_extremes",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_1_not_dictatorial",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_2_not_transitive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.vetoRel",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.vetoRel_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_3_acyclic",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_3_not_quasitransitive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcet_not_acyclic",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.cyclicRel",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakRationality.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsLinearOrderRel",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.linearOrderRel_of_linearOrder",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.linearOrderRel_dual",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_3",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.linearOrderOfRel",
+      "kind": "abbrev",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsPeak",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.SinglePeaked",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsPeak.strict_best",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsPeak.unique",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.SinglePeakedPrefs",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StrictSinglePeakedPrefs",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.SinglePeakedProfiles",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StrictSinglePeakedProfiles",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strictSinglePeaked_subset",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strictSinglePeaked_subset_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsCondorcetWinner",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsMedianAgent",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.median_exists",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.median_odd_unique",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majority_of_supporters",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_D_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_D_1_exists",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsPeak.restrict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strict_singlePeaked_condorcet_finset",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.tieBreak",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.tieBreak_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.doubleProfile",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.doubleProfile_card",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_doubleProfile",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.doubleProfile_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_acyclic",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strict_majority_odd",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_D_2",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeaked.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.three_middle",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsPeak.middle_not_worst",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_5",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.natPref_singlePeaked_of_isPeak",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise21D6Profile",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_6",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.oligarchyMajority",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_11_oligarchy",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.phantomUtil",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.withPhantoms",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.phantomMajority",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.phantom_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.phantomTestA",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.phantomTestB",
+      "kind": "def",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_11",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SinglePeakedExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_paretian",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_independent",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.majorityRel_not_dictatorial",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.splitProfile",
+      "kind": "def",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_2a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_2b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_2c",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_2d",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.totalIndifference",
+      "kind": "def",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_2e",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_2f",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.lexRel",
+      "kind": "def",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_3_rational",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_3_arrow",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_C_3_not_identical",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/ArrowConditions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.WeaklyParetian",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.MaintainsPosition",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.lowerContour",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.maintainsPosition_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Monotonic",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsSCFDictator",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.DictatorialSCF",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.induced_scf_exists",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.induced_scf_condorcet",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TakesToTop",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.topProfile",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.topProfile_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TakesToTop.maintains",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TakesToTop.trans",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.definition_21_E_6_example",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.WeaklyParetian.mem_top",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_step_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scfRelation",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_step_2",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StandardDomain.topProfile_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_choice_pair",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_not_chosen",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_step_3",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_3",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_step_4",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_step_5",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.scf_step_6",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_E_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dictatorial_strict_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.smallestTopLabel",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.smallestTopLabel_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_2_dictatorial",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_2_not_monotonic",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_2_strict",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.NoIncentiveToMisrepresent",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.no_incentive_step",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.monotonic_of_noIncentive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_E_2",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.smallestTopLabel_noIncentive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcetWinner_unique",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcetSCF",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_1",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.parityRule",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_4_two",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e214A",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e214B",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e214F",
+      "kind": "def",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_E_4_three",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/SocialChoiceFunctions.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.iccComb",
+      "kind": "def",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.StrictlyConvexPref",
+      "kind": "def",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.ContinuousPref",
+      "kind": "def",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_4",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exists_max_of_continuousPref",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_4_sufficiency",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_4",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_4_empty",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strictlyConvex_of_strictQuasiconcave",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/IntervalPreferences.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TaxRates",
+      "kind": "abbrev",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthPref",
+      "kind": "def",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthPref_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthPref_strict_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthPref_rational",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.isPeak_zero",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.isPeak_one",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthB",
+      "kind": "def",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_10b_singlePeaked",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_10b_mean_agent",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_10b_condorcet",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthC",
+      "kind": "def",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.peakC",
+      "kind": "def",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.peakC_mem",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.peakCRate",
+      "kind": "def",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_10c_singlePeaked",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.peakC_antitone",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_10c",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthD",
+      "kind": "def",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.wealthD_strictQuasiconcave",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_10d",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TaxVoting.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e2114",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_14a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.WeaklySinglePeaked",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_14b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e2114u",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e2114pos",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.quasiconcaveOn_of_unimodal",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_14_quasiconcave",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_14c",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e2114Defeats",
+      "kind": "def",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_14d",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/WeakPeaks.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.ex21D5u",
+      "kind": "def",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.unitSquare",
+      "kind": "def",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_5_i",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_5_ii",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_5_iii",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_5",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_5_unique_max",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_5_cone",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.taxShares",
+      "kind": "def",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.taxDefeats",
+      "kind": "def",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.taxDefeats_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_12a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_12b_one_zero",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_12b_one_payer",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Multidimensional.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.euclidPref",
+      "kind": "def",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.euclidPref_spec",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.euclidPref_injective",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.prefRegion",
+      "kind": "def",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.strict_euclidPref_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.mem_prefRegion_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.prefRegion_eq_halfspace",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.bisector_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.openHalfSpace",
+      "kind": "def",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.measurableSet_openHalfSpace",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsMedianPoint",
+      "kind": "def",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsCondorcetWinnerMeasure",
+      "kind": "def",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.disjoint_openHalfSpace",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.disjoint_prefRegion",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.isMedianPoint_iff_book",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_6",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Euclidean.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.isMedianPoint_of_symmetric",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.measurePreserving_reflect",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.rectangle",
+      "kind": "def",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.figure_21_D_8a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.figure_21_D_8a_center",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.Intermediate",
+      "kind": "def",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.linParamUtil",
+      "kind": "def",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9c",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e219Family",
+      "kind": "def",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9c_counterexample",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9d_exists",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9e",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9f",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9f_intermediate",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9e_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/EuclideanExercises.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.typeMass",
+      "kind": "def",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsTypeCondorcetWinner",
+      "kind": "def",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.eventually_small_step",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.condorcet_halfplane",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.complex_inner_eq",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exists_generic_direction",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_13a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_13a_even",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.inner_I_mul",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.collinear_of_orth",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.GeneralPosition",
+      "kind": "def",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_13b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/Plane.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.TwoAgentsPrefer",
+      "kind": "def",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.eventually_gradient_lt",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.area_antisymm",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.area_self",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.cone_directions",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_7a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_7b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_7b_zero",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsDirectionalMedian",
+      "kind": "def",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8c",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8c_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/GradientCycles.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.proposition_21_D_1_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/NonVacuity.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.example_21_D_6_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/NonVacuity.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.hasGradientAt_inner_const",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/NonVacuity.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_7_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/NonVacuity.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_13a_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/NonVacuity.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_13b_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/NonVacuity.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.isMedianPoint_of_affine_image",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.stdTriangle",
+      "kind": "def",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.triangle_coords_measurePreserving",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.triangle_strip_volume",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.stdTriangle_eq_preimage",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.stdTriangle_median_coord",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.triSwapLin",
+      "kind": "def",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.triShearLin",
+      "kind": "def",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.triSwapLin_involutive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.triShearLin_involutive",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.stdTriangle_median_three",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.figure_21_D_8b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.figure_21_D_8b_affine",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_9d_not_exists",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/TriangleMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.ConeContainsHalfSpace",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dm_three_term",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dm_binet_cauchy",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dm_not_median",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dm_spans_of_relation",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dm_median_or_spans",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.dm_spans_no_median",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8a_iff",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8a",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.not_coneContainsHalfSpace_of_pos",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8a_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.IsGlobalDirectionalMedian",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218aUtil",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8a_global_counterexample",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218bPeak",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218bUtil",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218bGrad",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218bUtil_eq",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218bUtil_concave",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218bUtil_hasGradientAt",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8b",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8c_global",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8c_global_instance",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218c_hasDerivAt_sqPos",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218cUtil",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.e218cGrad",
+      "kind": "def",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    },
+    {
+      "name": "MWG.SocialChoice.exercise_21_D_8c_counterexample",
+      "kind": "theorem",
+      "module": "MWGSocialChoice/DirectionalMedian.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.SocialChoice.Profile": [],
+    "MWG.SocialChoice.NoIndifference": [],
+    "MWG.SocialChoice.RationalPrefs": [],
+    "MWG.SocialChoice.StrictPrefs": [],
+    "MWG.SocialChoice.RationalProfiles": [],
+    "MWG.SocialChoice.StrictProfiles": [],
+    "MWG.SocialChoice.strictPrefs_subset": [],
+    "MWG.SocialChoice.strictProfiles_subset": [],
+    "MWG.SocialChoice.footnote_21_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.footnote_21_3_strict": [],
+    "MWG.SocialChoice.footnote_21_3_indifferent": [],
+    "MWG.SocialChoice.strict_trans": [],
+    "MWG.SocialChoice.strict_of_weak_strict": [],
+    "MWG.SocialChoice.weak_of_not_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.strict_asymm": [],
+    "MWG.SocialChoice.IsSWF": [],
+    "MWG.SocialChoice.Paretian": [],
+    "MWG.SocialChoice.PairwiseIndependent": [],
+    "MWG.SocialChoice.IsDictator": [],
+    "MWG.SocialChoice.Dictatorial": [],
+    "MWG.SocialChoice.restrictPair": [],
+    "MWG.SocialChoice.restrictPair_eq_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.footnote_21_7": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.agree_of_same_ranking": [],
+    "MWG.SocialChoice.PairwiseIndependent.strict_transfer": [],
+    "MWG.SocialChoice.majorityRel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_complete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scorePref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scorePref_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scorePref_strict_of_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.natPref": [],
+    "MWG.SocialChoice.natPref_rational": [],
+    "MWG.SocialChoice.natPref_mem_strict": [],
+    "MWG.SocialChoice.natPref_strict_iff": [
+      "propext"
+    ],
+    "MWG.SocialChoice.natPref_indifferent_iff": [],
+    "MWG.SocialChoice.rank3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.rank3_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exists_third": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.TwoAltProfiles": [],
+    "MWG.SocialChoice.IsTwoAltSWF": [],
+    "MWG.SocialChoice.TwoAltParetian": [],
+    "MWG.SocialChoice.weightedVoting": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityVoting": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.signType_cast_cases": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.weightedVoting_isSWF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityVoting_eq_weighted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.int_sign_cases": [
+      "propext"
+    ],
+    "MWG.SocialChoice.majorityVoting_isSWF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.nPlus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.nMinus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.sum_eq_nPlus_sub_nMinus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityVoting_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsTwoAltDictator": [],
+    "MWG.SocialChoice.example_21_B_2_paretian": [],
+    "MWG.SocialChoice.example_21_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.SymmetricAmongAgents": [],
+    "MWG.SocialChoice.NeutralBetweenAlternatives": [],
+    "MWG.SocialChoice.PositivelyResponsive": [],
+    "MWG.SocialChoice.neg_mem_twoAltProfiles": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_1_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_1_neutral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_1_responsive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.may_tie": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.may_plus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.tiltedVoting": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_2_symmetry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.xBiasedVoting": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_2_neutrality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_2_responsiveness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.ParetoOptimalNoTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.MajorityDecision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_3_pareto_no_transfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.FeasibleWithTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.ParetoOptimalWithTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_3_mean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_B_3_not_pareto_with_transfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaPoints": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaSWF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_C_1_rational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaPoints_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_C_1_paretian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaPoints_natPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_C_1_rank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.footnote_21_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaSWF_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaSWF_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaProfileA": [
+      "propext"
+    ],
+    "MWG.SocialChoice.bordaProfileB": [
+      "propext"
+    ],
+    "MWG.SocialChoice.example_21_C_1_two_agents": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bordaProfileC": [
+      "propext"
+    ],
+    "MWG.SocialChoice.bordaProfileD": [
+      "propext"
+    ],
+    "MWG.SocialChoice.bordaProfileE": [
+      "propext"
+    ],
+    "MWG.SocialChoice.example_21_C_1_three_agents": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_natPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcetProfile": [
+      "propext"
+    ],
+    "MWG.SocialChoice.condorcetProfile_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcet_majority": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.pairWinner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.agendaWinner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcet_agenda": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.StandardDomain": [],
+    "MWG.SocialChoice.StandardDomain.score_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.StandardDomain.rational": [],
+    "MWG.SocialChoice.DecisiveFor": [],
+    "MWG.SocialChoice.Decisive": [],
+    "MWG.SocialChoice.CompletelyDecisiveFor": [],
+    "MWG.SocialChoice.arrow_step_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_empty_not_decisive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.pairTop": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.arrow_step_10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dictatorSWF": [],
+    "MWG.SocialChoice.dictatorSWF_spec": [],
+    "MWG.SocialChoice.proposition_21_C_1_nonvacuous": [
+      "propext"
+    ],
+    "MWG.SocialChoice.Quasitransitive": [],
+    "MWG.SocialChoice.Acyclic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.AcyclicAsPrinted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.acyclic_as_printed_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.footnote_21_9_acyclic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.rational_quasitransitive": [],
+    "MWG.SocialChoice.rational_acyclic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.oligarchyRel": [],
+    "MWG.SocialChoice.example_21_D_1_strict": [],
+    "MWG.SocialChoice.exercise_21_D_2_quasitransitive": [
+      "propext"
+    ],
+    "MWG.SocialChoice.example_21_D_1_paretian_independent": [],
+    "MWG.SocialChoice.example_21_D_1_extremes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_1_not_dictatorial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_2_not_transitive": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.vetoRel": [
+      "propext"
+    ],
+    "MWG.SocialChoice.vetoRel_strict": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_3_acyclic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_3_not_quasitransitive": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcet_not_acyclic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.cyclicRel": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsLinearOrderRel": [],
+    "MWG.SocialChoice.linearOrderRel_of_linearOrder": [
+      "propext"
+    ],
+    "MWG.SocialChoice.linearOrderRel_dual": [
+      "propext"
+    ],
+    "MWG.SocialChoice.example_21_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.linearOrderOfRel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsPeak": [
+      "propext"
+    ],
+    "MWG.SocialChoice.SinglePeaked": [
+      "propext"
+    ],
+    "MWG.SocialChoice.IsPeak.strict_best": [
+      "propext"
+    ],
+    "MWG.SocialChoice.IsPeak.unique": [
+      "propext"
+    ],
+    "MWG.SocialChoice.SinglePeakedPrefs": [
+      "propext"
+    ],
+    "MWG.SocialChoice.StrictSinglePeakedPrefs": [
+      "propext"
+    ],
+    "MWG.SocialChoice.SinglePeakedProfiles": [
+      "propext"
+    ],
+    "MWG.SocialChoice.StrictSinglePeakedProfiles": [
+      "propext"
+    ],
+    "MWG.SocialChoice.strictSinglePeaked_subset": [
+      "propext"
+    ],
+    "MWG.SocialChoice.strictSinglePeaked_subset_strict": [
+      "propext"
+    ],
+    "MWG.SocialChoice.IsCondorcetWinner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsMedianAgent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.median_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.median_odd_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majority_of_supporters": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_D_1_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsPeak.restrict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.strict_singlePeaked_condorcet_finset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.tieBreak": [],
+    "MWG.SocialChoice.tieBreak_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.doubleProfile": [
+      "propext"
+    ],
+    "MWG.SocialChoice.doubleProfile_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_doubleProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.doubleProfile_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_acyclic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.strict_majority_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.three_middle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsPeak.middle_not_worst": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.natPref_singlePeaked_of_isPeak": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise21D6Profile": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.oligarchyMajority": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_11_oligarchy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.phantomUtil": [
+      "propext"
+    ],
+    "MWG.SocialChoice.withPhantoms": [
+      "propext"
+    ],
+    "MWG.SocialChoice.phantomMajority": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.phantom_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.phantomTestA": [
+      "propext"
+    ],
+    "MWG.SocialChoice.phantomTestB": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_paretian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.majorityRel_not_dictatorial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.splitProfile": [],
+    "MWG.SocialChoice.exercise_21_C_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_C_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_C_2c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_C_2d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.totalIndifference": [],
+    "MWG.SocialChoice.exercise_21_C_2e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_C_2f": [
+      "propext"
+    ],
+    "MWG.SocialChoice.lexRel": [],
+    "MWG.SocialChoice.exercise_21_C_3_rational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_C_3_arrow": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_C_3_not_identical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.WeaklyParetian": [],
+    "MWG.SocialChoice.MaintainsPosition": [],
+    "MWG.SocialChoice.lowerContour": [],
+    "MWG.SocialChoice.maintainsPosition_iff": [],
+    "MWG.SocialChoice.Monotonic": [],
+    "MWG.SocialChoice.IsSCFDictator": [],
+    "MWG.SocialChoice.DictatorialSCF": [],
+    "MWG.SocialChoice.induced_scf_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.induced_scf_condorcet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.TakesToTop": [],
+    "MWG.SocialChoice.topProfile": [],
+    "MWG.SocialChoice.topProfile_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.TakesToTop.maintains": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.TakesToTop.trans": [],
+    "MWG.SocialChoice.definition_21_E_6_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.WeaklyParetian.mem_top": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_step_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scfRelation": [],
+    "MWG.SocialChoice.scf_step_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.StandardDomain.topProfile_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_choice_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_not_chosen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_step_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_step_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_step_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.scf_step_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dictatorial_strict_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.smallestTopLabel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.smallestTopLabel_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_2_dictatorial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_2_not_monotonic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_2_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.NoIncentiveToMisrepresent": [],
+    "MWG.SocialChoice.no_incentive_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.monotonic_of_noIncentive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.smallestTopLabel_noIncentive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcetWinner_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcetSCF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.parityRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_4_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e214A": [
+      "propext"
+    ],
+    "MWG.SocialChoice.e214B": [
+      "propext"
+    ],
+    "MWG.SocialChoice.e214F": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_E_4_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.iccComb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.StrictlyConvexPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.ContinuousPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exists_max_of_continuousPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_4_sufficiency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_4_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.strictlyConvex_of_strictQuasiconcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.TaxRates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthPref_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthPref_strict_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthPref_rational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.isPeak_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.isPeak_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_10b_singlePeaked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_10b_mean_agent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_10b_condorcet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.peakC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.peakC_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.peakCRate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_10c_singlePeaked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.peakC_antitone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_10c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.wealthD_strictQuasiconcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_10d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e2114": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_14a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.WeaklySinglePeaked": [
+      "propext"
+    ],
+    "MWG.SocialChoice.exercise_21_D_14b": [
+      "propext"
+    ],
+    "MWG.SocialChoice.e2114u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e2114pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.quasiconcaveOn_of_unimodal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_14_quasiconcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_14c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e2114Defeats": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_14d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.ex21D5u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.unitSquare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_5_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_5_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_5_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_5_unique_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_5_cone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.taxShares": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.taxDefeats": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.taxDefeats_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_12a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_12b_one_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_12b_one_payer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.euclidPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.euclidPref_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.euclidPref_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.prefRegion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.strict_euclidPref_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.mem_prefRegion_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.prefRegion_eq_halfspace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.bisector_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.openHalfSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.measurableSet_openHalfSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsMedianPoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsCondorcetWinnerMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.disjoint_openHalfSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.disjoint_prefRegion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.isMedianPoint_iff_book": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.isMedianPoint_of_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.measurePreserving_reflect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.rectangle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.figure_21_D_8a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.figure_21_D_8a_center": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.Intermediate": [],
+    "MWG.SocialChoice.exercise_21_D_9a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.linParamUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e219Family": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9c_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9d_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9f_intermediate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9e_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.typeMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsTypeCondorcetWinner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.eventually_small_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.condorcet_halfplane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.complex_inner_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exists_generic_direction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_13a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_13a_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.inner_I_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.collinear_of_orth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.GeneralPosition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_13b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.TwoAgentsPrefer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.eventually_gradient_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.area_antisymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.area_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.cone_directions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_7a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_7b_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsDirectionalMedian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8c_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.proposition_21_D_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.example_21_D_6_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.hasGradientAt_inner_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_7_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_13a_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_13b_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.isMedianPoint_of_affine_image": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.stdTriangle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.triangle_coords_measurePreserving": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.triangle_strip_volume": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.stdTriangle_eq_preimage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.stdTriangle_median_coord": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.triSwapLin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.triShearLin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.triSwapLin_involutive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.triShearLin_involutive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.stdTriangle_median_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.figure_21_D_8b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.figure_21_D_8b_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_9d_not_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.ConeContainsHalfSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dm_three_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dm_binet_cauchy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dm_not_median": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dm_spans_of_relation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dm_median_or_spans": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.dm_spans_no_median": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8a_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.not_coneContainsHalfSpace_of_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8a_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.IsGlobalDirectionalMedian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218aUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8a_global_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218bPeak": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218bUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218bGrad": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218bUtil_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218bUtil_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218bUtil_hasGradientAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8c_global": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8c_global_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218c_hasDerivAt_sqPos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218cUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.e218cGrad": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SocialChoice.exercise_21_D_8c_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGSocialChoice/Aggregation.lean": "d74ae097bd957da663a1086afa7bde334a5f34429fad390bec9359a518f0683e",
+    "MWGSocialChoice/TwoAlternatives.lean": "103a70afc2aef76d41b9935524528a5fc50646c2f525217fcb6501dbd685470f",
+    "MWGSocialChoice/Borda.lean": "53047d39f7b5c6fee4eb0463c88a209a4d7a768e157d26ac854d70edb27bb82c",
+    "MWGSocialChoice/Arrow.lean": "fb593769a8b400c38b263e95c8c8e3bc3f9ced1e45a3bd17c116a1912aa4d1cc",
+    "MWGSocialChoice/WeakRationality.lean": "67f65a5528d004db044fc822b99f587d670f9e01783daab13d9c198d6af74531",
+    "MWGSocialChoice/SinglePeaked.lean": "1af617325533ca5bd0784b1c8e96033886b11beec3b7c6ef6f5c8c19df2a7960",
+    "MWGSocialChoice/SinglePeakedExercises.lean": "ddd1e686e2c376ba8034b4e83567de9ca111c431f37792a6d46fa291c1cdb3ec",
+    "MWGSocialChoice/ArrowConditions.lean": "1a2fe454f5a065f27bb26924c1fb8d7b8fe7dab8895b9d504b6aa3f0eea67049",
+    "MWGSocialChoice/SocialChoiceFunctions.lean": "49cc3aced1838ecea10597f259ac169c9161cd847e59d5402d30c7cda2d77d5c",
+    "MWGSocialChoice/IntervalPreferences.lean": "d72967bb2ff83e53e0d20211fb113bc4aa945569068489dd1f081109587ed139",
+    "MWGSocialChoice/TaxVoting.lean": "5e788ad1c4a4b4f3a6b755020f00583d3991c2d922f2edaf1041be6f216ed03d",
+    "MWGSocialChoice/WeakPeaks.lean": "b56da2d7866f535157b8e798027256ec3778a334cf855f6d4882cc76599a01a7",
+    "MWGSocialChoice/Multidimensional.lean": "93555b21c5b3a143c5bed7840e9c9d7c88c5c1c1f4cbf679de5628c30590f3ac",
+    "MWGSocialChoice/Euclidean.lean": "f2992a135ba99f3470788b6945f2618f7af08fe6caefa971ca96b6dda9e549e9",
+    "MWGSocialChoice/EuclideanExercises.lean": "83779a3719d233aa66928c059c9bc7914db0abed64bf5e5c72b2bc92c760e374",
+    "MWGSocialChoice/Plane.lean": "583a1df93b04fcf6025f3b935c2d5ae037f77869024c1269f30129975a3bdef7",
+    "MWGSocialChoice/GradientCycles.lean": "28930bf95910cd83710511910a6f218f073d2b99efc286325af4355052b42e52",
+    "MWGSocialChoice/NonVacuity.lean": "d47fd86b612418ac74b9e0c1dc13737a6363dfcec4f47b7b619887234d15b871",
+    "MWGSocialChoice/TriangleMedian.lean": "b07f19d3c010603b03ee14871eef236c8d36006f4d5ab236ead7e5d157c94edb",
+    "MWGSocialChoice/DirectionalMedian.lean": "85e858790952432990d305b76996393b2cbc19e811af6376ff9fad8f7a5446df",
+    "MWGSocialChoice.lean": "320df40101e8535cfd2c3653791f1c040a908eafbb08bd1623c1b386fe8986d0",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "714163c46ab66319e66bc072f7f0444f1422f370fac86712220d6a65e2cce8df",
+    "lake-manifest.json": "81e4290ff8b176ce17f4c77fa0f00ee491cca848f0cb58bc9e13db421c1aa008",
+    "proof-manifest.json": "97b17745de1c8d7b3f98b0347eccbd9a6fe6fd64f90ee00ebfd209df36c087a9",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "d7224187ccee109e2f68fbfeb40e204ec119626c0dc153df24f86f8ad0acc29e",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 21, Social Choice Theory (pp. 789-816), with Part Five introduction.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 21. Exact scope: docs/source-map.md."
+}

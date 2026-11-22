@@ -75,8 +75,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/17_PositiveEquilibriumTheory](MicroeconomicTheory/17_PositiveEquilibriumTheory/README.md) | 17. The Positive Theory of Equilibrium | 983 theorems / 1344 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/17_PositiveEquilibriumTheory/README.md) |
 | [MicroeconomicTheory/19_EquilibriumUncertainty](MicroeconomicTheory/19_EquilibriumUncertainty/README.md) | 19. General Equilibrium Under Uncertainty | 278 theorems / 436 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/19_EquilibriumUncertainty/README.md) |
 | [MicroeconomicTheory/20_EquilibriumTime](MicroeconomicTheory/20_EquilibriumTime/README.md) | 20. Equilibrium and Time | 321 theorems / 460 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/20_EquilibriumTime/README.md) |
+| [MicroeconomicTheory/21_SocialChoice](MicroeconomicTheory/21_SocialChoice/README.md) | 21. Social Choice Theory | 281 theorems / 418 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/21_SocialChoice/README.md) |
 
-MWG Chapters 1–17 and 19–20 are implemented (Chapter 18 follows Chapter 22, whose results it imports).
+MWG Chapters 1–17 and 19–21 are implemented (Chapter 18 follows Chapter 22, whose results it imports).
 
 ## Build and verify
 
