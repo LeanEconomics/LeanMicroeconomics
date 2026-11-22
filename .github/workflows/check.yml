@@ -34,6 +34,7 @@ jobs:
           - MicroeconomicTheory/15_GeneralEquilibriumExamples
           - MicroeconomicTheory/16_WelfareTheorems
           - MicroeconomicTheory/17_PositiveEquilibriumTheory
+          - MicroeconomicTheory/18_CoreFoundations
           - MicroeconomicTheory/19_EquilibriumUncertainty
           - MicroeconomicTheory/20_EquilibriumTime
           - MicroeconomicTheory/21_SocialChoice
