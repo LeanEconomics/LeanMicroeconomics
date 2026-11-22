@@ -73,8 +73,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/15_GeneralEquilibriumExamples](MicroeconomicTheory/15_GeneralEquilibriumExamples/README.md) | 15. General Equilibrium Theory: Some Examples | 424 theorems / 573 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/15_GeneralEquilibriumExamples/README.md) |
 | [MicroeconomicTheory/16_WelfareTheorems](MicroeconomicTheory/16_WelfareTheorems/README.md) | 16. Equilibrium and Its Basic Welfare Properties (with Appendix A) | 181 theorems / 275 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/16_WelfareTheorems/README.md) |
 | [MicroeconomicTheory/17_PositiveEquilibriumTheory](MicroeconomicTheory/17_PositiveEquilibriumTheory/README.md) | 17. The Positive Theory of Equilibrium | 983 theorems / 1344 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/17_PositiveEquilibriumTheory/README.md) |
+| [MicroeconomicTheory/19_EquilibriumUncertainty](MicroeconomicTheory/19_EquilibriumUncertainty/README.md) | 19. General Equilibrium Under Uncertainty | 278 theorems / 436 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/19_EquilibriumUncertainty/README.md) |
 
-MWG Chapters 1–17 are implemented.
+MWG Chapters 1–17 and 19 are implemented (Chapter 18 follows Chapter 22, whose results it imports).
 
 ## Build and verify
 

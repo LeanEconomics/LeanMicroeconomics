@@ -29,7 +29,7 @@ exercises also appear within the text. §3 gives the per-chapter counts.
 
 **Status.** Proposal 2026-11-12; decisions settled 2026-11-13 (§5). Phase 0 done 2026-11-13
 (scaffold branch `mwg-scaffold`): the dependency arrangement was tested with a temporary
-stub (see `PROVENANCE.md`). Chapters 1–17 implemented.
+stub (see `PROVENANCE.md`). Chapters 1–17 and 19 implemented.
 
 ---
 

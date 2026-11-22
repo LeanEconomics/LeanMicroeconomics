@@ -1,0 +1,4396 @@
+{
+  "checked_at_utc": "2026-11-22T20:14:45.593343+00:00",
+  "theorems": 278,
+  "module_theorems": {
+    "MWGEquilibriumUncertainty/Basic.lean": 10,
+    "MWGEquilibriumUncertainty/ArrowDebreu.lean": 18,
+    "MWGEquilibriumUncertainty/Calculus.lean": 10,
+    "MWGEquilibriumUncertainty/Exchange.lean": 21,
+    "MWGEquilibriumUncertainty/RiskSharing.lean": 12,
+    "MWGEquilibriumUncertainty/Sequential.lean": 14,
+    "MWGEquilibriumUncertainty/SequentialExamples.lean": 8,
+    "MWGEquilibriumUncertainty/Assets.lean": 20,
+    "MWGEquilibriumUncertainty/AssetsFOC.lean": 6,
+    "MWGEquilibriumUncertainty/Complete.lean": 22,
+    "MWGEquilibriumUncertainty/LongLived.lean": 3,
+    "MWGEquilibriumUncertainty/Incomplete.lean": 15,
+    "MWGEquilibriumUncertainty/Firms.lean": 7,
+    "MWGEquilibriumUncertainty/Information.lean": 22,
+    "MWGEquilibriumUncertainty/RationalExpectations.lean": 20,
+    "MWGEquilibriumUncertainty/REExamples.lean": 29,
+    "MWGEquilibriumUncertainty/ExercisesFH.lean": 8,
+    "MWGEquilibriumUncertainty/Closer19F3.lean": 14,
+    "MWGEquilibriumUncertainty/Closer19H6.lean": 8,
+    "MWGEquilibriumUncertainty/Closer19F4.lean": 11
+  },
+  "audited_declarations": 436,
+  "declarations": [
+    {
+      "name": "MWG.EquilibriumUncertainty.CVec",
+      "kind": "abbrev",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.contingentUnit",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.definition_19_B_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.randomVar",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.randomVar_ext",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.NonnegC",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.expUtil",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.euPref",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_B_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.footnote_19_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.seedsTech",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.plan2",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_B_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ConsumedExAnte",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.SharesValid",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.shares_printed_normalization_fails",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsInfoStructure",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.Refines",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsInfoFamily",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example19B3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_B_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unique_predecessor",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsMeasurable",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_B_3_measurable",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.StronglyMonotoneC",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.StronglyMonotoneL",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.expUtil_stronglyMonotone",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Basic.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unflat",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unflat_flat",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat_unflat",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat_injective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat_dotProduct",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat_add",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat_smul",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flat_sum",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unflat_add",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unflat_smul",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy",
+      "kind": "structure",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.X",
+      "kind": "projection",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.pref",
+      "kind": "projection",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.\u03c9",
+      "kind": "projection",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.Y",
+      "kind": "projection",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.\u03b8",
+      "kind": "projection",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.wealth",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.IsADEqm",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.toPriv",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.flatAlloc",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.isADEqm_iff_isWalrasEqm",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.CEconomy.IsParetoOptimal",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adEqm_paretoOptimal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.paretoOptimal_supported",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsADEqmU",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exchangeCE",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.isADEqmU_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_C_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.euPref_convex",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.euPref_prefConvex",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.euPref_rational_lns",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adEqm_paretoOptimal_eu",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ArrowDebreu.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.eventually_lt_of_hasDerivAt_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.hasDerivAt_nonpos_of_eventually_le",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exists_nonneg_smul_of_dot_nonpos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_add_smul",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.foc_dir",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.hasDerivAt_lt_of_strictConcaveOn",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.eq_of_hasDerivAt_eq_of_strictConcaveOn",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.quasilinearLog_le",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.quasilinearLog_eq_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.quasilinearLog_at",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Calculus.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_sum",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_mono",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_add",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_sub",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_smul",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_unit",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exists_larger_cheap",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsParetoOptimalU",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adEqmU_price_nonneg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adEqmU_budget_binds",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adEqmU_paretoOptimal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.constC",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.po_stateIndependent",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.eu1",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.eu1_eq_expUtil",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.eu1_stronglyMonotone",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.dirC",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cval_dirC",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.hasDerivAt_eu1_dir",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.foc_eu1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.po_no_improving_dir",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.po_tangency",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.GoodBernoulli",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.GoodBernoulli.deriv_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.GoodBernoulli.deriv_lt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.goodBernoulli_sqrt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Exchange.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.strictConcaveOn_fin1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.omega19C1",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_C_1a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_C_1a_diagonal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_C_1b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.po_exhausts",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.AggregateTwoOne",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_C_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_C_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_C_2_equal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_C_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.halfEndow",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_C_4a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_C_4b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_C_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RiskSharing.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerFeasible",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsRadnerEqm",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsRadnerEqmD",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.definition_19_D_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerFeasible_rescale",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adBudget",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adBudget_eq_radner",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_D_1_i",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radner_eq_adBudget",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.clear_eq_of_binding",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_D_1_ii_le",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_D_1_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_D_1_ii_counterexample",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.no_expost_trade",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.footnote_19_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.footnote_19_7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.dollarFeasible",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_1_dollars_goods",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Sequential.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.omega19D1",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_D_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_D_1_instance",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_D_1_stateIndependent",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adBudget0",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerBudget0",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_3_i",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_3_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adBudgetTree",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerBudgetTree",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_4c_i",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_D_4c_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/SequentialExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ReturnVector",
+      "kind": "abbrev",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.returnMatrix",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.arrowSecurity",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_1_arrow",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example19E1iii",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_1_iii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.callOption",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.primary4321",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.budgetSet_normalized",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ArbitrageFree",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.NonnegNonzeroReturns",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.mulVec_single",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ArbitrageFree.pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.eq_smul_of_ker_le",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.separation_fintype",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.lemma_19_E_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radner_arbitrageFree",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_E_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsComplete",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.isComplete_iff_surjective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_4_identity",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.optionStructure19E5",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.not_complete_of_eq_rows",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_5_not_separating",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.interpolate_by_options",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Assets.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.foc_halfspace",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.portfolioObjective",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.hasDerivAt_portfolioObjective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_E_1_proof2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_E_1_proof2_radner",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_1a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_1b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/AssetsFOC.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.dot_eq_of_pricing",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_E_2_i",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.multipliers_pos_of_complete",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_E_2_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.multipliers_unique",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.arrow_price",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radner_date0_binds",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_E_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.appendAsset",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.redundant_range",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_4_eqm",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.r2_19E6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_6_returns",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_6_price",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_6_bounds",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.optionPrice19E6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_6_dispersion",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_6_identity_fails",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.r1_19E6x",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.r2_19E6x",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ConsistentStatePrices",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_6a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_6b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_6c",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_6d",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_6e",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_6f",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Complete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsCompleteTree",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.nodeMatrix19E7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.rootMatrix19E7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_E_7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.adPrices19E7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.SeqReachable19E7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_E_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.footnote_19_21",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/LongLived.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_F_1_po",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_F_1_needs_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_F_1_complete",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsSpotEqm",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radner_noAssets_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sunspot_radnerEqm",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sunspot_not_po",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.leontief_spot_eqm",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_1_po",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.inducedConsumption",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsConstrainedPO",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radner_consumption_induced",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_F_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_F_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_2_concave",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_2_continuous",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_2_increasing",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Incomplete.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsSpanned",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.marketValue_wellDefined",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.firmBudget",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unanimity",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unanimity_utility",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.withFirm",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_G_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_G_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerFeasibleE",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_G_2_no_one_worse_off",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_G_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Firms.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.SigmaMeas",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.SymmetricInfo",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.AtLeastAsInformative",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.MoreInformative",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.footnote_19_43",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.SigmaMeas.mono",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cellMass",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.posterior",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.condEU",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cellMass_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.posterior_sum",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cellMass_congr",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.condEU_eq",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsSignalPlan",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sum_eq_sum_cells",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.signalPlan_optimal_on",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_3_max",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_3_subset",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.proposition_19_H_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.condEU_of_injective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_1a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_1a_counterexample",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_1b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_1c",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_1d",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_1_noinfo",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_1_state1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_1_state2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Information.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.reeEvent",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pooledEvent",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsREE",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsPooledPrice",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.FullyRevealing",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.DependsOnSignals",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.reeEvent_eq_pooled",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pooled_fullyRevealing_isREE",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.QLOptimal",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.qlOptimal_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.qlOptimal_price_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.QLSpotEqm",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.qlSpotEqm_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.postCoef",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.updU",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.updU_eq",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.QLClears",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.qlClears_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.postCoef_singleton",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.postCoef_const",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.reeEvent_nonempty",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pooledEvent_nonempty",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.qlSpotEqm_two",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.beta19H",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.beta19H_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.half2",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.half2_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.postCoef_univ_beta",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.betaBoth",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ones2",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sig19H2",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.qlClears_two",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.naiveEvents19H2",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_2_continued",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.beta19H3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.beta19H3_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/RationalExpectations.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.coef19H7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.endow19H7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sig19H7",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.coef19H7_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_7a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.events19H7b",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.u0_19H7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.u1_19H7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pos_19H7b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ne_19H7b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_7b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_7c",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_7d",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.bOf",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.kOf",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sig19H4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.beta19H4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.case19H4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.price19H4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.unif50",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.betaBoth19H4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.postCoef_unif50",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.facts19H4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.factsREE19H4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.price19H4_eq_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.postCoef_pooled19H4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_4_printed",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_5_pooled",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_5_separates",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_5_identifies",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.infoGain",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.infoGain_eq",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.infoGain_nonneg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.infoGain_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.continuousOn_infoGain",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.integral_infoGain_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.GoodSupply",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.LemonsAdmissible",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.lemons_admissible_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.lemons_admissible_cases",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.example_19_H_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.footnote_19_49",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/REExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.strictConcave_tangent",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.welfare19F5",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_5a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_5b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_5c",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.U1_19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.U2_19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.omega19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.x19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sqrt_le_add_quarter",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6_surplus",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6_not_po",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/ExercisesFH.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.linU",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.coef19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.U19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.omega19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pSpot19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.xSpot19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pAD19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.xAD19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3a_spot",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3a_AD",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3a_complete_radner",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.firstHalf19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.secondHalf19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.double19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.doubleU19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.append4_zero",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.append4_one",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.append4_two",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.append4_three",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.doubleU19F3_linU",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.doubleU19F3_double",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.R1_19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.R3_19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.pADspot19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.z3_19F3",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3c_one",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3c_three",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_3c",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F3.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.bern19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ncFeasible19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsNCEqm19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ncTrade19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sqrt_le_tangent",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ncEqm19H6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsCEqm19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.cEqm19H6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exAnte19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.xB19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.xC19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6e",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.wInst19H6",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.wInst19H6_sqrt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6_instance",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6b_not_po",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_H_6e_instance",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19H6.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerFeasibleReal",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.IsRadnerEqmReal",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.radnerFeasibleReal_single",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.isRadnerEqmReal_single",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.sqrtDemand",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.A19F4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.c19F4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.U19F4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.omega19F4",
+      "kind": "def",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.c19F4_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ret19F4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_4_AD",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.ad19F4_det",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.spot19F4_det",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.U19F4_lt_bump",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.dot_bump19F4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    },
+    {
+      "name": "MWG.EquilibriumUncertainty.exercise_19_F_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumUncertainty/Closer19F4.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.EquilibriumUncertainty.CVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.contingentUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.definition_19_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.randomVar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.randomVar_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.NonnegC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.expUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.euPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.footnote_19_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.seedsTech": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.plan2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ConsumedExAnte": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.SharesValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.shares_printed_normalization_fails": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsInfoStructure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.Refines": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsInfoFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example19B3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unique_predecessor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsMeasurable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_B_3_measurable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.StronglyMonotoneC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.StronglyMonotoneL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.expUtil_stronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unflat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unflat_flat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat_unflat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat_dotProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flat_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unflat_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unflat_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.\u03b8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.IsADEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.toPriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.flatAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.isADEqm_iff_isWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.CEconomy.IsParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adEqm_paretoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.paretoOptimal_supported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsADEqmU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exchangeCE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.isADEqmU_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.euPref_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.euPref_prefConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.euPref_rational_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adEqm_paretoOptimal_eu": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.eventually_lt_of_hasDerivAt_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.hasDerivAt_nonpos_of_eventually_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exists_nonneg_smul_of_dot_nonpos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_add_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.foc_dir": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.hasDerivAt_lt_of_strictConcaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.eq_of_hasDerivAt_eq_of_strictConcaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.quasilinearLog_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.quasilinearLog_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.quasilinearLog_at": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_unit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exists_larger_cheap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsParetoOptimalU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adEqmU_price_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adEqmU_budget_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adEqmU_paretoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.constC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.po_stateIndependent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.eu1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.eu1_eq_expUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.eu1_stronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.dirC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cval_dirC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.hasDerivAt_eu1_dir": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.foc_eu1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.po_no_improving_dir": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.po_tangency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.GoodBernoulli": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.GoodBernoulli.deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.GoodBernoulli.deriv_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.goodBernoulli_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.strictConcaveOn_fin1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.omega19C1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_C_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_C_1a_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_C_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.po_exhausts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.AggregateTwoOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_C_2_equal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.halfEndow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_C_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_C_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsRadnerEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsRadnerEqmD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.definition_19_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerFeasible_rescale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adBudget_eq_radner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_D_1_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radner_eq_adBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.clear_eq_of_binding": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_D_1_ii_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_D_1_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_D_1_ii_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.no_expost_trade": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.footnote_19_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.footnote_19_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.dollarFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_1_dollars_goods": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.omega19D1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_D_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_D_1_stateIndependent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adBudget0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerBudget0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_3_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_3_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adBudgetTree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerBudgetTree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_4c_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_D_4c_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ReturnVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.returnMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.arrowSecurity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_1_arrow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example19E1iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_1_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.callOption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.primary4321": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.budgetSet_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ArbitrageFree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.NonnegNonzeroReturns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.mulVec_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ArbitrageFree.pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.eq_smul_of_ker_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.separation_fintype": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.lemma_19_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radner_arbitrageFree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsComplete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.isComplete_iff_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_4_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.optionStructure19E5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.not_complete_of_eq_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_5_not_separating": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.interpolate_by_options": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.foc_halfspace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.portfolioObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.hasDerivAt_portfolioObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_E_1_proof2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_E_1_proof2_radner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.dot_eq_of_pricing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_E_2_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.multipliers_pos_of_complete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_E_2_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.multipliers_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.arrow_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radner_date0_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.appendAsset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.redundant_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_4_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.r2_19E6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_6_returns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_6_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_6_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.optionPrice19E6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_6_dispersion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_6_identity_fails": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.r1_19E6x": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.r2_19E6x": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ConsistentStatePrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_6a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_6b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_6c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_6d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_6e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_6f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsCompleteTree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.nodeMatrix19E7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.rootMatrix19E7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_E_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.adPrices19E7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.SeqReachable19E7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_E_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.footnote_19_21": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_F_1_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_F_1_needs_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_F_1_complete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsSpotEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radner_noAssets_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sunspot_radnerEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sunspot_not_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.leontief_spot_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_1_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.inducedConsumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsConstrainedPO": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radner_consumption_induced": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_F_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_2_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_2_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_2_increasing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsSpanned": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.marketValue_wellDefined": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.firmBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unanimity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unanimity_utility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.withFirm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_G_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_G_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerFeasibleE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_G_2_no_one_worse_off": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_G_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.SigmaMeas": [],
+    "MWG.EquilibriumUncertainty.SymmetricInfo": [],
+    "MWG.EquilibriumUncertainty.AtLeastAsInformative": [],
+    "MWG.EquilibriumUncertainty.MoreInformative": [],
+    "MWG.EquilibriumUncertainty.footnote_19_43": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.SigmaMeas.mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cellMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.posterior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.condEU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cellMass_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.posterior_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cellMass_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.condEU_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsSignalPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sum_eq_sum_cells": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.signalPlan_optimal_on": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_3_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_3_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.proposition_19_H_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.condEU_of_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_1a_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_1d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_1_noinfo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_1_state1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_1_state2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.reeEvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pooledEvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsREE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsPooledPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.FullyRevealing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.DependsOnSignals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.reeEvent_eq_pooled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pooled_fullyRevealing_isREE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.QLOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.qlOptimal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.qlOptimal_price_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.QLSpotEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.qlSpotEqm_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.postCoef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.updU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.updU_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.QLClears": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.qlClears_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.postCoef_singleton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.postCoef_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.reeEvent_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pooledEvent_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.qlSpotEqm_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.beta19H": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.beta19H_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.half2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.half2_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.postCoef_univ_beta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.betaBoth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ones2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sig19H2": [
+      "propext"
+    ],
+    "MWG.EquilibriumUncertainty.qlClears_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.naiveEvents19H2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_2_continued": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.beta19H3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.beta19H3_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.coef19H7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.endow19H7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sig19H7": [
+      "propext"
+    ],
+    "MWG.EquilibriumUncertainty.coef19H7_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_7a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.events19H7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.u0_19H7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.u1_19H7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pos_19H7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ne_19H7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_7c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_7d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.bOf": [],
+    "MWG.EquilibriumUncertainty.kOf": [
+      "propext"
+    ],
+    "MWG.EquilibriumUncertainty.sig19H4": [
+      "propext"
+    ],
+    "MWG.EquilibriumUncertainty.beta19H4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.case19H4": [
+      "propext"
+    ],
+    "MWG.EquilibriumUncertainty.price19H4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.unif50": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.betaBoth19H4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.postCoef_unif50": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.facts19H4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.factsREE19H4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.price19H4_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.postCoef_pooled19H4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_4_printed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_5_pooled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_5_separates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_5_identifies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.infoGain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.infoGain_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.infoGain_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.infoGain_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.continuousOn_infoGain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.integral_infoGain_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.GoodSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.LemonsAdmissible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.lemons_admissible_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.lemons_admissible_cases": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.example_19_H_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.footnote_19_49": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.strictConcave_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.welfare19F5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.U1_19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.U2_19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.omega19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.x19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sqrt_le_add_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6_not_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.linU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.coef19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.U19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.omega19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pSpot19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.xSpot19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pAD19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.xAD19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3a_spot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3a_AD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3a_complete_radner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.firstHalf19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.secondHalf19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.double19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.doubleU19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.append4_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.append4_one": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.append4_two": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.append4_three": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.doubleU19F3_linU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.doubleU19F3_double": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.R1_19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.R3_19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.pADspot19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.z3_19F3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3c_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3c_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.bern19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ncFeasible19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsNCEqm19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ncTrade19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sqrt_le_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ncEqm19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsCEqm19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.cEqm19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exAnte19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.xB19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.xC19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.wInst19H6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.wInst19H6_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6b_not_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_H_6e_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerFeasibleReal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.IsRadnerEqmReal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.radnerFeasibleReal_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.isRadnerEqmReal_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.sqrtDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.A19F4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.c19F4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.U19F4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.omega19F4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.c19F4_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ret19F4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_4_AD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.ad19F4_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.spot19F4_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.U19F4_lt_bump": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.dot_bump19F4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumUncertainty.exercise_19_F_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGEquilibriumUncertainty/Basic.lean": "723a39631a9910aaef3dca120f039c7518b6fbbd862dcd09957338e2be223c78",
+    "MWGEquilibriumUncertainty/ArrowDebreu.lean": "a6f22764cce1d70b675274c29b9a02b3f5539f45b39baa59d5243cf261b80788",
+    "MWGEquilibriumUncertainty/Calculus.lean": "eb605ef402736518fc57e17a9652c1e89691aaf5d3d2485895905ac6f210c345",
+    "MWGEquilibriumUncertainty/Exchange.lean": "c50f5cd7512ae568626df78776b15c766c7f78562586b8bd6180e0952d92d372",
+    "MWGEquilibriumUncertainty/RiskSharing.lean": "801f0fe883b3f0419443f22c533f191551b4be2efce1d42217d262a07459e3e3",
+    "MWGEquilibriumUncertainty/Sequential.lean": "a7ce92aea9403e8eb12633a4300e14ccab2d1d353a149f22e6e880eb9ced2e6a",
+    "MWGEquilibriumUncertainty/SequentialExamples.lean": "4cb5fb20e491e0c4fc7cd85e857c0cbddd061e3dfddcf753e6cb4274a7ce3a5c",
+    "MWGEquilibriumUncertainty/Assets.lean": "67871adccf0949a91bc38eb68c58d3f5209e10620a58925e2df3f3a95cdf0a13",
+    "MWGEquilibriumUncertainty/AssetsFOC.lean": "314f930752463cacd966a28187d0df1ca0d99cef3abc44382c5c798321ac2f26",
+    "MWGEquilibriumUncertainty/Complete.lean": "8de9523b7005470d0095adafe8ebc06bf5131baf9f320d663bf204f7ddc49d54",
+    "MWGEquilibriumUncertainty/LongLived.lean": "a86f6362cebadbcbdd20fe64026a74cfaca760fdd43fd809e1953753cd13902b",
+    "MWGEquilibriumUncertainty/Incomplete.lean": "a7c82a3020e7026f9ff6f6acf3a92a306a8578894f8e33067145b594a772c4e9",
+    "MWGEquilibriumUncertainty/Firms.lean": "660d679cc3056d2121b8a6065995098ced96df0ffbed1900e1e5620ae28824da",
+    "MWGEquilibriumUncertainty/Information.lean": "2b117cc3267055b47d5d6a61ced21f0ef466a1865411f73b72454a225d9101e2",
+    "MWGEquilibriumUncertainty/RationalExpectations.lean": "78b705280d03da41e400cbcccc68031651c57ff70885de29edf69dcfc0f99235",
+    "MWGEquilibriumUncertainty/REExamples.lean": "615f182258615135ae67a79b6c77fca085bb7ec4d07d0962e0f3c5e3c6892364",
+    "MWGEquilibriumUncertainty/ExercisesFH.lean": "cfd456aaa77e656dbfaa0447a616ae2be18e796935c9c3dab7b80e1a3d671d90",
+    "MWGEquilibriumUncertainty/Closer19F3.lean": "76959b7f793514301a78c54c84640fdb6faa69e92a4f0f9cbf0872ff8d35ef3e",
+    "MWGEquilibriumUncertainty/Closer19H6.lean": "7ebb227bdf6bd8098da2f859e54092f5851bbd32cda53ccee37f5d904352ad6c",
+    "MWGEquilibriumUncertainty/Closer19F4.lean": "f0b046df2ee91ac3efbd805b6b5cfb65376d077acf185e812e4c1958dd18d37a",
+    "MWGEquilibriumUncertainty.lean": "06fc5a277e2594b16632a6545b44c2631dfcc8ebf9856b5560e4bbdb8ae70380",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "8b59004d1a880ce8a221b7de00a14fcaef1e0d1d83736cf81c89f0bd068715bf",
+    "lake-manifest.json": "a3501b5c889fd504cd8c5fff11eae9f38b5dc441f6cb997bfc92020e880e8440",
+    "proof-manifest.json": "495d1117ed6bda198d8b5ef4549b52cdc4a49c51c9fb9c6667ff2865e4695671",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "1056db469602164b6204e51e213c5a21152271915e6a665b2ab60954c15f679e",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 19 (pp. 687-731): contingent commodities, Arrow-Debreu and Radner equilibrium, asset markets and no-arbitrage, incomplete markets, firm behaviour and rational expectations.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 19. Exact scope: docs/source-map.md."
+}
