@@ -39,6 +39,49 @@ proofs. These connect Afriat rationalization to consumer demand and bundle lotte
 to preferences over income after optimal consumption. CI runs these checks
 alongside the individual chapter audits.
 
+## Mas-Colell, Whinston and Green, *Microeconomic Theory*
+
+A second programme formalizes Mas-Colell, Whinston and Green, *Microeconomic Theory*
+(Oxford University Press, 1995), chapter by chapter in book order, under
+`MicroeconomicTheory/`. The [proposal](PROPOSAL-MicroeconomicTheory.md) gives the
+chapter plan and the settled decisions. Each chapter is an independent Lean/Mathlib
+project `MicroeconomicTheory/NN_Project/`, with Lake library `MWG<Project>` and namespace
+`MWG.<Project>`. It covers every definition, numbered result, example and mathematical
+exercise, with source maps, corrections and the same fresh proof audit.
+
+Unlike `Volume1/`, MWG chapters **depend on** earlier material rather than copying it.
+They use Lake `path` requirements on Kreps chapters and earlier MWG chapters, and `git`
+requirements pinned to a commit for other LeanEconomics repositories. All share the
+Mathlib pin above. Each chapter audits only its own modules.
+
+| Project | Chapter | Checked results | Start here |
+| --- | --- | --- | --- |
+| [MicroeconomicTheory/01_PreferenceChoice](MicroeconomicTheory/01_PreferenceChoice/README.md) | 1. Preference and Choice | 73 theorems / 101 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/01_PreferenceChoice/README.md) |
+| [MicroeconomicTheory/02_ConsumerChoice](MicroeconomicTheory/02_ConsumerChoice/README.md) | 2. Consumer Choice (with Appendix M.A, M.B, M.D) | 273 theorems / 356 declarations; fresh audit passed; 1 exercise converse open | [Chapter overview](MicroeconomicTheory/02_ConsumerChoice/README.md) |
+| [MicroeconomicTheory/03_ClassicalDemand](MicroeconomicTheory/03_ClassicalDemand/README.md) | 3. Classical Demand Theory (with Appendix M.C, M.E, M.F, M.G, M.H, M.J, M.K, M.L) | 949 theorems / 1152 declarations; fresh audit passed; 1 item open | [Chapter overview](MicroeconomicTheory/03_ClassicalDemand/README.md) |
+| [MicroeconomicTheory/04_AggregateDemand](MicroeconomicTheory/04_AggregateDemand/README.md) | 4. Aggregate Demand | 204 theorems / 274 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/04_AggregateDemand/README.md) |
+| [MicroeconomicTheory/05_Production](MicroeconomicTheory/05_Production/README.md) | 5. Production (with Appendix 5.A, M.M) | 306 theorems / 383 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/05_Production/README.md) |
+| [MicroeconomicTheory/06_ChoiceUnderUncertainty](MicroeconomicTheory/06_ChoiceUnderUncertainty/README.md) | 6. Choice Under Uncertainty | 352 theorems / 442 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/06_ChoiceUnderUncertainty/README.md) |
+| [MicroeconomicTheory/07_NoncooperativeGames](MicroeconomicTheory/07_NoncooperativeGames/README.md) | 7. Basic Elements of Noncooperative Games | 183 theorems / 301 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/07_NoncooperativeGames/README.md) |
+| [MicroeconomicTheory/08_SimultaneousMoveGames](MicroeconomicTheory/08_SimultaneousMoveGames/README.md) | 8. Simultaneous-Move Games (with Appendix M.I) | 347 theorems / 504 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/08_SimultaneousMoveGames/README.md) |
+| [MicroeconomicTheory/09_DynamicGames](MicroeconomicTheory/09_DynamicGames/README.md) | 9. Dynamic Games | 653 theorems / 953 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/09_DynamicGames/README.md) |
+| [MicroeconomicTheory/10_CompetitiveMarkets](MicroeconomicTheory/10_CompetitiveMarkets/README.md) | 10. Competitive Markets | 365 theorems / 471 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/10_CompetitiveMarkets/README.md) |
+| [MicroeconomicTheory/11_ExternalitiesPublicGoods](MicroeconomicTheory/11_ExternalitiesPublicGoods/README.md) | 11. Externalities and Public Goods | 235 theorems / 349 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/11_ExternalitiesPublicGoods/README.md) |
+| [MicroeconomicTheory/12_MarketPower](MicroeconomicTheory/12_MarketPower/README.md) | 12. Market Power (with Appendices A-B) | 661 theorems / 866 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/12_MarketPower/README.md) |
+| [MicroeconomicTheory/13_AdverseSelection](MicroeconomicTheory/13_AdverseSelection/README.md) | 13. Market Signaling, Adverse Selection and Screening (with Appendix A) | 501 theorems / 795 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/13_AdverseSelection/README.md) |
+| [MicroeconomicTheory/14_PrincipalAgent](MicroeconomicTheory/14_PrincipalAgent/README.md) | 14. The Principal-Agent Problem (with Appendices A-B) | 331 theorems / 510 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/14_PrincipalAgent/README.md) |
+| [MicroeconomicTheory/15_GeneralEquilibriumExamples](MicroeconomicTheory/15_GeneralEquilibriumExamples/README.md) | 15. General Equilibrium Theory: Some Examples | 424 theorems / 573 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/15_GeneralEquilibriumExamples/README.md) |
+| [MicroeconomicTheory/16_WelfareTheorems](MicroeconomicTheory/16_WelfareTheorems/README.md) | 16. Equilibrium and Its Basic Welfare Properties (with Appendix A) | 181 theorems / 275 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/16_WelfareTheorems/README.md) |
+| [MicroeconomicTheory/17_PositiveEquilibriumTheory](MicroeconomicTheory/17_PositiveEquilibriumTheory/README.md) | 17. The Positive Theory of Equilibrium | 983 theorems / 1344 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/17_PositiveEquilibriumTheory/README.md) |
+| [MicroeconomicTheory/18_CoreFoundations](MicroeconomicTheory/18_CoreFoundations/README.md) | 18. Some Foundations for Competitive Equilibria | 387 theorems / 552 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/18_CoreFoundations/README.md) |
+| [MicroeconomicTheory/19_EquilibriumUncertainty](MicroeconomicTheory/19_EquilibriumUncertainty/README.md) | 19. General Equilibrium Under Uncertainty | 278 theorems / 436 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/19_EquilibriumUncertainty/README.md) |
+| [MicroeconomicTheory/20_EquilibriumTime](MicroeconomicTheory/20_EquilibriumTime/README.md) | 20. Equilibrium and Time | 321 theorems / 460 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/20_EquilibriumTime/README.md) |
+| [MicroeconomicTheory/21_SocialChoice](MicroeconomicTheory/21_SocialChoice/README.md) | 21. Social Choice Theory | 281 theorems / 418 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/21_SocialChoice/README.md) |
+| [MicroeconomicTheory/22_WelfareBargaining](MicroeconomicTheory/22_WelfareBargaining/README.md) | 22. Elements of Welfare Economics and Axiomatic Bargaining | 502 theorems / 701 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/22_WelfareBargaining/README.md) |
+| [MicroeconomicTheory/23_MechanismDesign](MicroeconomicTheory/23_MechanismDesign/README.md) | 23. Incentives and Mechanism Design | 649 theorems / 971 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/23_MechanismDesign/README.md) |
+
+MWG Chapters 1–23 are implemented.
+
 ## Build and verify
 
 From an implemented chapter directory:
@@ -55,7 +98,8 @@ source. Documentation distinguishes verified results from outstanding source cov
 ## License and provenance
 
 Apache 2.0; see [LICENSE](LICENSE) and each chapter's third-party notices. Formalization
-is developed with OpenAI Codex under the user's direction. The textbook is cited and
-is not distributed. Read the [working guidance](AGENTS.md) before contributing;
+is developed with OpenAI Codex under the user's direction; the MWG programme is
+developed with Claude Code under the user's direction. The textbooks are cited and are
+not distributed. Read the [working guidance](AGENTS.md) before contributing;
 [UPSTREAM.md](UPSTREAM.md) records possible reusable mathematical contributions and
 the duplication checks still required before an upstream proposal.

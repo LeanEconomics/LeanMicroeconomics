@@ -1,0 +1,5804 @@
+{
+  "checked_at_utc": "2026-11-22T09:33:53.565836+00:00",
+  "theorems": 424,
+  "module_theorems": {
+    "MWGGeneralEquilibriumExamples/Exchange.lean": 21,
+    "MWGGeneralEquilibriumExamples/Tools.lean": 9,
+    "MWGGeneralEquilibriumExamples/Welfare.lean": 15,
+    "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean": 12,
+    "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean": 15,
+    "MWGGeneralEquilibriumExamples/Blair.lean": 12,
+    "MWGGeneralEquilibriumExamples/OfferCurves.lean": 8,
+    "MWGGeneralEquilibriumExamples/Nonexistence.lean": 27,
+    "MWGGeneralEquilibriumExamples/QuasilinearBox.lean": 13,
+    "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean": 13,
+    "MWGGeneralEquilibriumExamples/RobinsonExercises.lean": 10,
+    "MWGGeneralEquilibriumExamples/FactorMarkets.lean": 7,
+    "MWGGeneralEquilibriumExamples/TwoByTwo.lean": 32,
+    "MWGGeneralEquilibriumExamples/ProductionExercises.lean": 13,
+    "MWGGeneralEquilibriumExamples/ClosedEconomy.lean": 6,
+    "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean": 7,
+    "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean": 29,
+    "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean": 12,
+    "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean": 68,
+    "MWGGeneralEquilibriumExamples/FactorParetoSet.lean": 32,
+    "MWGGeneralEquilibriumExamples/ClosedEconomyGeneral.lean": 4,
+    "MWGGeneralEquilibriumExamples/ParetoCurve.lean": 59
+  },
+  "audited_declarations": 573,
+  "declarations": [
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy",
+      "kind": "structure",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.X",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.u",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.\u03c9",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.EdgeworthEconomy",
+      "kind": "abbrev",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ofOrthant",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.totalEndowment",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsAllocation",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsFeasible",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.InBox",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.budget",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.demand",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.offerCurve",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsWalrasEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsDemandEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsParetoOptimal",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.paretoSet",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.contractCurve",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsEqmWithTransfers",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsSupportable",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.InBox.isFeasible",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.inBox_endowment",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsDemandEqm.isWalrasEqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.budget_line_of_inBox",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.offerCurve_ge_endowment",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.budget_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.demand_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.isWalrasEqm_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.isDemandEqm_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityLNS",
+      "kind": "abbrev",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone",
+      "kind": "abbrev",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.lt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.lns",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityLNS.exists_better",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityLNS.budget_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.isWalrasEqm_iff_isDemandEqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.toPrivEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.isDemandEqm_iff_competitiveEqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.toEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.isParetoOptimal_iff_economy",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.offerCurve_of_isDemandEqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.proportional_of_orthogonal",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.isDemandEqm_of_offerCurves",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_1a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_1b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Exchange.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exists_pos_continuous_lt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.eventually_gt_of_deriv_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exists_pos_deriv_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exists_pos_deriv_neg",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.quasiconcave_of_prefConvex",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.dotProduct_pos_of_strictlyPositive",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.dotProduct_nonneg_of_nonneg",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.eq_zero_of_dotProduct_nonpos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.concave_le_tangent",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Tools.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.first_welfare_theorem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_3",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.walrasEqm_mem_contractCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.paretoOptimal_interior_tangency",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sum_add_ite_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.onesVec",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.dotProduct_smul_onesVec",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.lt_add_ones",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.second_welfare_theorem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.second_welfare_theorem_edgeworth",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsEqmWithTransfers.wealth_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.walrasEqm_of_endowment_transfer",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.walrasEqm_at_allocation",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.footnote_4_unique",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.linearUtility",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.footnote4Economy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.footnote_4_needs_strict_convexity",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Welfare.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdExponent",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdEconomy_u",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd_no_demand_0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cobbDouglas_swap",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd_no_demand_1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd_demand_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd_demand_empty",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdAllocation",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_2",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdPriceRatio",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_2_statics",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.example15B1Endowment",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.example_15_B_1_offerCurves",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.example_15_B_1_monotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.example_15_B_1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd_endowment_mem_offerCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ql8_poly",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ql8_optimal",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2a",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2r",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2a_pow",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2r_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2a_bounds",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2r_bounds",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2Economy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2_pos_aux",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2OC1",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2OC2",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_5_offerCurves",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2_factor",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2_roots",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2a_inv_pow",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2_demand0_empty",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.example_15_B_2",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_5_printed",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.example_15_B_2_increasing",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_eq_inv_sqrt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.inv_sq_tangent",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_optimal",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_lt_add0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_swap",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesNeg2_lt_add1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.blairC",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.blairEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.blairAlloc",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.blair_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.blair_demand_empty",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.blair_factor",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_6",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Blair.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.endowment_mem_offerCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.GrossSubstitute",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.NormalOfferCurve",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_4b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_4b_offerCurves",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_4e",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_4d",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B2d",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_4f",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.endowment_mem_offerCurve_instance",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdOffer",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdOffer_grossSubstitute",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurves.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10aU1",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10aU2",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10aEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_u0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_u1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_\u03c90",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_\u03c91",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_lns0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_lns1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_lns",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10a_not_stronglyMonotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10a_dot",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10a_demand1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10a_endowment_not_optimal",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10a_no_demand0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10a_no_eqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10a_po_not_supportable",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqUtility",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqUtility_props",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqUtility_demand_corner",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10bEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10b_no_eqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig14Economy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig14_u2_props",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig14_lns",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_14",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.alphanseU",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.betatrixU",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B9Economy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.alphanse_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.betatrix_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B9_lns",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B9_p0_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.quad_root_nonneg",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_9",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_9_second",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/Nonexistence.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.quasilinear_strictConcave",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_8",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtQLEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtQLEconomy_instance",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.invQL_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.invQL_mem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B10aEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_10a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.quasilinear_demand_shift",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_10b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.kinkedPhi",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.kinkedPhi_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.kinked_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.kinkedPhi_props",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.kinked_isDemandEqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_10b_counterexample",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/QuasilinearBox.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy",
+      "kind": "structure",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.u",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.Lbar",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.f",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.IsProfitMax",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.budget",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.IsConsumerOpt",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.IsWalrasEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.feasible",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.RCEconomy.IsOptimal",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.budgetLine_eq_isoprofit",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.budgetLine_intercept_slope",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.rc_first_welfare",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.rc_eqm_price_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pareto_one_consumer_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.rc_second_welfare",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.rc_optimal_frontier",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.footnote_7_unique",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig15C3aEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrt_le_tangent",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_C_3a_optimal",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_C_3a_no_eqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_C_3a_prices",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.rc_budget_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.rc_consumerOpt_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrt_firm_profit",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C2Economy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_2",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1b_sign",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1b_instance",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ces15C1Economy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cesLeisure",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ces15C1_demands",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1b_not_monotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.footnote_8",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/RobinsonExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.IsOptimalInput",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.IsFactorEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.concave_le_fderiv",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.factorEqm_iff_foc",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.factorEqm_revenue_max",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.factorEqm_supergradient",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.factorEqm_monotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.factor_price_endowment_opposite",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.productionPossibilitySet",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_2",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorMarkets.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo",
+      "kind": "structure",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.mk",
+      "kind": "constructor",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.f",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.a",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel",
+      "kind": "structure",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.mk",
+      "kind": "constructor",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.f_nonneg",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.hom",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_mem",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_min",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_unique",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_pos",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_cont",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.c",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.FactorIntensity",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.dot_two",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.FactorIntensity.det_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.c_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.c_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.c_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.a_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.g",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.c_eq_g",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.a_eq_rel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.unitCost_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.g_continuousOn",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.g_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.unitCost_ratio_strictMono",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.g_strictMono",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.div_g_strictMono",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.intensity_antitone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.crs_profitMax_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interior_eqm_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interior_eqm_allocation",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.factor_price_equalization",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.proposition_15_D_1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_3",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_3_welfare",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.proposition_15_D_1_differential",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.outputs_cramer",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.proposition_15_D_2",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_5",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontiefModel",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontiefModel_isModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontiefModel_factorIntensity",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_instances",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D7f",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D7k",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D7k_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D7_optimal_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D7alloc",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D7w",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_7",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.two_sqrt_add_sqrt_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_7_revenue",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.concaveOn_sqrt_sum",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtSumDeriv",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.hasFDerivAt_sqrt_sum",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_7_foc",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.endowment_output_identity",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_9",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.homogeneous_demand_scale",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_9_unique_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_9_counterexample",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ProductionExercises.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.IsClosedEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.onlyGood",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.onlyGood_demand",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15D4own",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_c0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_c1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_closedEqm_of",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_4c",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_4b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomy.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.IsTaxEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.no_tax_eqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.partial_eqm_employment_falls",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.general_eqm_wage_derivative",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.wage_effect_vanishes",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.aggregate_profit_derivative",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.labor_bears_burden",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.quadratic_eqm_path",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_six_poly_nonneg",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_six_poly_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive_gap",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive_tangent",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive_tangent_strict",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive_strictConcaveOn",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive_strictMonoOn",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpPowFive_continuousOn",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpAffineUtility",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpAffineUtility_continuousOn",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpAffineUtility_stronglyMonotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcpAffineUtility_strictlyConvex",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_eq_of_strictlyConvex",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy",
+      "kind": "structure",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.u",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.Lbar",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.f",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.IsProfitMax",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.budget",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.IsConsumerOpt",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.IsWalrasEqm",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1cEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_u0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_u1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_Lbar0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_Lbar1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_consumerA_opt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_consumerB_opt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_profitMax",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_eqm_of",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1cAlloc1",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1cAlloc2",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1c",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15C1c_strictlyConvex",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_eqm_price_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_crs_profitMax",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1c_crs_no_low_wage",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.tcp_crs_consumerOpt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TCEconomy.convex_budget",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1c_crs",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_C_1c_crs_wage",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4dUtility",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4dDemand",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_props",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_dot",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_opt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_demand_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_demand_five",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_demand_high",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_4d_exists",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ex15B4d_inferior",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10b_demand0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig10b_corner_mem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10b_offerCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.fig_15_B_10b_offerCurve_not_preconnected",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtF",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtRatio",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtCost",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtRatio_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA_ratio",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtF_cdtA",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtF_nonneg",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtF_smul",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtCost_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdt_geom",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdt_arith",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtCost_mul_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA_balanced",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdt_dot_A",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA_min",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA_unique",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtA_continuousOn",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtModel",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtModel_isModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtModel_c",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtModel_factorIntensity",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdModel",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdModel_alpha",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdModel_isModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdModel_ratio",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdModel_factorIntensity",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.c_ratio_eq_g",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.eq_of_relPrice_eq_of_c_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_le_of_spec0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_ge_of_spec1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_lt_of_above_cone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_gt_of_below_cone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.RaySurjective",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.smul_relPrice_facts",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0_of_ray",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1_of_ray",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0_exists",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1_exists",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0_unique",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1_unique",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.unitDollarIsoquant",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.RayDifferentiable",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.f_mul_c_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.f_eq_ray",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_mul_a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_mul_g_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_mul_g_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_deriv_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayPrice_lt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_ratio_strictMono",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6c",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_6c_counterexample",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtModel_raySurjective",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cdtModel_rayDifferentiable",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_6c_cdModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8_rpow_pair",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8_c0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8_c1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8What",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec0",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec1",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8ZDiv",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8What_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8What_c",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8What_ratio",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec0_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec1_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec0_c0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec1_c1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec0_rel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.cd8WSpec1_rel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_8_diversified",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_8_outputs",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_8_spec0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_8_spec1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_8",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.IsFactorAllocation",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsEfficientAllocation",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsSupportedBy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsSupportedAllocation",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.IsInteriorSupport",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.f_smul_a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.supported_isEfficient",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_zbar_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_identities",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_between",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_between'",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_eq",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_antitone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_order_preserved",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_order_preserved'",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_eq_preserved",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1a",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.diagonal_pareto_set",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.relRatio_strictAnti",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1b_ratios_fall",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1b_monotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.eventually_strictlyPositive_line",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.eventually_lt_of_hasDerivAt_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.f_hasDerivAt_line",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.efficient_isSupported",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_of_supportedBy",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1a_pareto",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.diagonal_pareto_set_efficient",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.footnote_16",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_f0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_f1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.leontief_output_bounds",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_1b_counterexample",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_1b_cdModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.efficient_isSupported_cdModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.footnote_16_leontief",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/FactorParetoSet.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.ex15D4b_eqm_facts",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomyGeneral.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.ex15D4b_not_relPrice_lt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomyGeneral.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_4b_general",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomyGeneral.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_D_4b_cdModel",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ClosedEconomyGeneral.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp",
+      "kind": "structure",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.mk",
+      "kind": "constructor",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.X_eq",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.cont",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.mono",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.sconv",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.\u03c9_pos",
+      "kind": "projection",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_exists_shrink",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_lt_add",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_smul_mem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_inBox_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_inBox_iff'",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_le_total",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_total_mem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_zero_mem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_transfer0",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_transfer1",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isParetoOptimal_iff",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_po_bounds",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_a_le_b",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isClosed_box",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isCompact_box",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_continuousOn_u",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isClosed_paretoSet",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isCompact_paretoSet",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_po_injective",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_exists_po",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.paretoCurve",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_paretoCurve_spec",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_paretoCurve_u",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_eq_paretoCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_7_homeomorph",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_continuous_paretoCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_paretoSet_eq_image",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_7_connected",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_homothetic_le",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_homothetic_lt",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_scaled_support",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.diagonalAllocation",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_diagonal_inBox",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_diagonal_po",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_7_diagonal",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_7_homothetic",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_dot_pair",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_normalize",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.ExchangeEconomy.QuasiSupports",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_quasiSupports_of_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_paretoCurve_mem",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_continuous_u_paretoCurve",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_exists_quasiSupports",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isClosed_quasiSupports",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isClosed_exists_Icc",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_quasiSupports_uIcc",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_exists_better_cheaper",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_quasiSupports_pos",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_walras_of_quasiSupports",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.pc_isParetoOptimal_with",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_10d_lower_eqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.exercise_15_B_10d",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtUtility",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy",
+      "kind": "def",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_total",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtUtility_stronglyMonotone",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtUtility_strictlyConvex",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_hyp",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_homothetic",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtUtility_le_diag",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_half_po",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_paretoSet",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_transfer_eqm",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    },
+    {
+      "name": "MWG.GeneralEquilibriumExamples.sqrtEconomy_15_B_10d",
+      "kind": "theorem",
+      "module": "MWGGeneralEquilibriumExamples/ParetoCurve.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.EdgeworthEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ofOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.totalEndowment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.InBox": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.offerCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsDemandEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.paretoSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.contractCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsEqmWithTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsSupportable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.InBox.isFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.inBox_endowment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsDemandEqm.isWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.budget_line_of_inBox": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.offerCurve_ge_endowment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.budget_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.demand_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.isWalrasEqm_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.isDemandEqm_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityLNS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityLNS.exists_better": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityLNS.budget_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.isWalrasEqm_iff_isDemandEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.toPrivEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.isDemandEqm_iff_competitiveEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.toEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.isParetoOptimal_iff_economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.offerCurve_of_isDemandEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.proportional_of_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.isDemandEqm_of_offerCurves": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exists_pos_continuous_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.eventually_gt_of_deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exists_pos_deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exists_pos_deriv_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.quasiconcave_of_prefConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.dotProduct_pos_of_strictlyPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.dotProduct_nonneg_of_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.eq_zero_of_dotProduct_nonpos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.concave_le_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.first_welfare_theorem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.walrasEqm_mem_contractCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.paretoOptimal_interior_tangency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sum_add_ite_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.onesVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.dotProduct_smul_onesVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.UtilityStronglyMonotone.lt_add_ones": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.second_welfare_theorem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.second_welfare_theorem_edgeworth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.IsEqmWithTransfers.wealth_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.walrasEqm_of_endowment_transfer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.walrasEqm_at_allocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.footnote_4_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.linearUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.footnote4Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.footnote_4_needs_strict_convexity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdEconomy_u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd_no_demand_0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cobbDouglas_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd_no_demand_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd_demand_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd_demand_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdPriceRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_2_statics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.example15B1Endowment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.example_15_B_1_offerCurves": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.example_15_B_1_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.example_15_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd_endowment_mem_offerCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ql8_poly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ql8_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2r": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2a_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2r_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2a_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2r_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2_pos_aux": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2OC1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2OC2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_5_offerCurves": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2_roots": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2a_inv_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2_demand0_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.example_15_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_5_printed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.example_15_B_2_increasing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_eq_inv_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.inv_sq_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_lt_add0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesNeg2_lt_add1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.blairC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.blairEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.blairAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.blair_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.blair_demand_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.blair_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.endowment_mem_offerCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.GrossSubstitute": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.NormalOfferCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_4b_offerCurves": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_4e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_4d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B2d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_4f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.endowment_mem_offerCurve_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdOffer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdOffer_grossSubstitute": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10aU1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10aU2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10aEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_u0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_u1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_\u03c90": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_\u03c91": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_lns0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_lns1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10a_not_stronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10a_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10a_demand1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10a_endowment_not_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10a_no_demand0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10a_no_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10a_po_not_supportable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqUtility_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqUtility_demand_corner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10bEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10b_no_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig14Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig14_u2_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig14_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.alphanseU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.betatrixU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B9Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.alphanse_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.betatrix_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B9_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B9_p0_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.quad_root_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_9_second": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.quasilinear_strictConcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtQLEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtQLEconomy_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.invQL_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.invQL_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B10aEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_10a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.quasilinear_demand_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_10b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.kinkedPhi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.kinkedPhi_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.kinked_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.kinkedPhi_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.kinked_isDemandEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_10b_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.Lbar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.IsProfitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.IsConsumerOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.IsWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.RCEconomy.IsOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.budgetLine_eq_isoprofit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.budgetLine_intercept_slope": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.rc_first_welfare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.rc_eqm_price_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pareto_one_consumer_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.rc_second_welfare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.rc_optimal_frontier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.footnote_7_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig15C3aEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrt_le_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_C_3a_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_C_3a_no_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_C_3a_prices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.rc_budget_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.rc_consumerOpt_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrt_firm_profit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C2Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1b_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1b_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ces15C1Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cesLeisure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ces15C1_demands": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1b_not_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.footnote_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.IsOptimalInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.IsFactorEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.concave_le_fderiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.factorEqm_iff_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.factorEqm_revenue_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.factorEqm_supergradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.factorEqm_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.factor_price_endowment_opposite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.productionPossibilitySet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.f_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.hom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsModel.a_cont": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.FactorIntensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.dot_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.FactorIntensity.det_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.c_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.c_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.c_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.a_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.c_eq_g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.a_eq_rel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.unitCost_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.g_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.g_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.unitCost_ratio_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.g_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.div_g_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.intensity_antitone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.crs_profitMax_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interior_eqm_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interior_eqm_allocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.factor_price_equalization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.proposition_15_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_3_welfare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.proposition_15_D_1_differential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.outputs_cramer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.proposition_15_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontiefModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontiefModel_isModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontiefModel_factorIntensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_instances": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D7f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D7k": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D7k_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D7_optimal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D7alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D7w": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.two_sqrt_add_sqrt_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_7_revenue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.concaveOn_sqrt_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtSumDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.hasFDerivAt_sqrt_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_7_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.endowment_output_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.homogeneous_demand_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_9_unique_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_9_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.IsClosedEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.onlyGood": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.onlyGood_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15D4own": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_c0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_c1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_closedEqm_of": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.IsTaxEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.no_tax_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.partial_eqm_employment_falls": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.general_eqm_wage_derivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.wage_effect_vanishes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.aggregate_profit_derivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.labor_bears_burden": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.quadratic_eqm_path": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_six_poly_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_six_poly_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive_tangent_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive_strictConcaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive_strictMonoOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpPowFive_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpAffineUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpAffineUtility_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpAffineUtility_stronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcpAffineUtility_strictlyConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_eq_of_strictlyConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.Lbar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.IsProfitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.IsConsumerOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.IsWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1cEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_u0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_u1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_Lbar0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_Lbar1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_consumerA_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_consumerB_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_profitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_eqm_of": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1cAlloc1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1cAlloc2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15C1c_strictlyConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_eqm_price_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_crs_profitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1c_crs_no_low_wage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.tcp_crs_consumerOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TCEconomy.convex_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1c_crs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_C_1c_crs_wage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4dUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4dDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_demand_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_demand_five": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_demand_high": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_4d_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ex15B4d_inferior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10b_demand0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig10b_corner_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10b_offerCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.fig_15_B_10b_offerCurve_not_preconnected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtCost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtRatio_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA_ratio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtF_cdtA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtF_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtF_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtCost_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdt_geom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdt_arith": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtCost_mul_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA_balanced": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdt_dot_A": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtA_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtModel_isModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtModel_c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtModel_factorIntensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdModel_alpha": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdModel_isModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdModel_ratio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdModel_factorIntensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.c_ratio_eq_g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.eq_of_relPrice_eq_of_c_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_le_of_spec0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_ge_of_spec1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_lt_of_above_cone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.relPrice_gt_of_below_cone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.RaySurjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.smul_relPrice_facts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0_of_ray": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1_of_ray": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec0_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6d_spec1_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.unitDollarIsoquant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.RayDifferentiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.f_mul_c_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.f_eq_ray": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_mul_a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_mul_g_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_mul_g_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_deriv_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayPrice_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.rayF_ratio_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_6c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_6c_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtModel_raySurjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cdtModel_rayDifferentiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_6c_cdModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8_rpow_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8_c0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8_c1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8What": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8ZDiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8What_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8What_c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8What_ratio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec0_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec1_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec0_c0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec1_c1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec0_rel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.cd8WSpec1_rel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_8_diversified": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_8_outputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_8_spec0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_8_spec1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.IsFactorAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsEfficientAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsSupportedBy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsSupportedAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.IsInteriorSupport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.f_smul_a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.supported_isEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_zbar_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_identities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_between": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_between'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_antitone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_order_preserved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_order_preserved'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.factorRatio_eq_preserved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.diagonal_pareto_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.relRatio_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1b_ratios_fall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1b_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.eventually_strictlyPositive_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.eventually_lt_of_hasDerivAt_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.f_hasDerivAt_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.efficient_isSupported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.interiorSupport_of_supportedBy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_1a_pareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.diagonal_pareto_set_efficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.footnote_16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_f0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_f1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.leontief_output_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_1b_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_1b_cdModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.efficient_isSupported_cdModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.footnote_16_leontief": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.ex15D4b_eqm_facts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.ex15D4b_not_relPrice_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.TwoByTwo.exercise_15_D_4b_general": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_D_4b_cdModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.X_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.cont": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.sconv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.ParetoCurveHyp.\u03c9_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_exists_shrink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_lt_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_smul_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_inBox_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_inBox_iff'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_le_total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_total_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_zero_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_transfer0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_transfer1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isParetoOptimal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_po_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_a_le_b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isClosed_box": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isCompact_box": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_continuousOn_u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isClosed_paretoSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isCompact_paretoSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_po_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_exists_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.paretoCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_paretoCurve_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_paretoCurve_u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_eq_paretoCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_7_homeomorph": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_continuous_paretoCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_paretoSet_eq_image": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_7_connected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_homothetic_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_homothetic_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_scaled_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.diagonalAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_diagonal_inBox": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_diagonal_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_7_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_7_homothetic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_dot_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_normalize": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.ExchangeEconomy.QuasiSupports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_quasiSupports_of_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_paretoCurve_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_continuous_u_paretoCurve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_exists_quasiSupports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isClosed_quasiSupports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isClosed_exists_Icc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_quasiSupports_uIcc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_exists_better_cheaper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_quasiSupports_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_walras_of_quasiSupports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.pc_isParetoOptimal_with": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_10d_lower_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.exercise_15_B_10d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtUtility_stronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtUtility_strictlyConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_hyp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_homothetic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtUtility_le_diag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_half_po": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_paretoSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_transfer_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.GeneralEquilibriumExamples.sqrtEconomy_15_B_10d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGGeneralEquilibriumExamples/Exchange.lean": "679e624511dbe5df4b14a9e2a7c53c9580186f76315d12d161dd7cf4e3fc6cb6",
+    "MWGGeneralEquilibriumExamples/Tools.lean": "2438d6f5c054c5c320efa9f119a673c77651d5b5d7d835713e5614b52b6dd017",
+    "MWGGeneralEquilibriumExamples/Welfare.lean": "af9a2a24f8b5f8e1f73f95b7376b0e154283d45932871e55fa1550a1739dd5c3",
+    "MWGGeneralEquilibriumExamples/CobbDouglasBox.lean": "8bbcf1fa3a6b52525d625c835aafa7432433275029047a4feea6647181712f4f",
+    "MWGGeneralEquilibriumExamples/MultipleEquilibria.lean": "e12eb120731ca7f2fdd961f3420bf02a4a0c1428d7a5a8ae6d426ae2c1f36e0b",
+    "MWGGeneralEquilibriumExamples/Blair.lean": "bd834834852f6454362f3ed930cd3e2ea9aa4730eb012c2081d4f3e0886acd23",
+    "MWGGeneralEquilibriumExamples/OfferCurves.lean": "7e86cc118b16224ab4f2d5e339568d5a88f5f3b3b6f18826b1b7a338b0dbcce6",
+    "MWGGeneralEquilibriumExamples/Nonexistence.lean": "d05f465006d4d1ff235c8051a5436739a0d46f712b6622df7bccd5a8c7e52ae2",
+    "MWGGeneralEquilibriumExamples/QuasilinearBox.lean": "51050dec2859ede0214da668f80f90ecdc0357f06c37e1a5b46de9f06432ba33",
+    "MWGGeneralEquilibriumExamples/RobinsonCrusoe.lean": "3ab8047195cf96a785ee8f3d6cdae10eceaa9ea2b012071133571a324bf681ac",
+    "MWGGeneralEquilibriumExamples/RobinsonExercises.lean": "2b529770618af3749046b0440f3c3c1028e51967518c4f773221c514a74bc5f6",
+    "MWGGeneralEquilibriumExamples/FactorMarkets.lean": "af2b1b2b64eb8d271e9ec83e599d21fd1593ce9cf15ed9b5f3db60d61fdaf70a",
+    "MWGGeneralEquilibriumExamples/TwoByTwo.lean": "41a144c09e63ae50e5a927a3e4345c81a6a0119dc44a19fdf3bc30bec47423a2",
+    "MWGGeneralEquilibriumExamples/ProductionExercises.lean": "0c1e4d8e48b6f5ac968f7da04bbcb52c4741e17a6c5fee84c47e3e359ecbeca6",
+    "MWGGeneralEquilibriumExamples/ClosedEconomy.lean": "9c520982d5b1b95c1308d0265a84af84951d78ead73e89d1d114336dbbd7d3bf",
+    "MWGGeneralEquilibriumExamples/GeneralVersusPartial.lean": "5ac9009a3a66de4fe2efbfdca1a9000740956f6fd63b977a3c76f022c57d46f4",
+    "MWGGeneralEquilibriumExamples/TwoConsumerProduction.lean": "2a2809fb694dce124532bd15f92e9110eeb7cfcc22bfb80f3af9d6516a85b3e0",
+    "MWGGeneralEquilibriumExamples/OfferCurveExamples.lean": "ce6829716eb7cf66abf4d3b802d3fd3b93cf4383ac2d1b6676b655ec479db154",
+    "MWGGeneralEquilibriumExamples/CobbDouglasTwoByTwo.lean": "e04fa6c0a46259bdf74867a1d424b874f34f57a320d69a082ec1265df149eebc",
+    "MWGGeneralEquilibriumExamples/FactorParetoSet.lean": "cd63fe3a7a05f245bb83263705dc823813c253c2cd10196e490a9f2411185bcf",
+    "MWGGeneralEquilibriumExamples/ClosedEconomyGeneral.lean": "7977f41da758d8b398b59c0f97f09e87903406f7e5519d247d07b02270da28a7",
+    "MWGGeneralEquilibriumExamples/ParetoCurve.lean": "161022402d4f6292368b0e27cc1daa47755801e90087b96fe76db51d0ba7d219",
+    "MWGGeneralEquilibriumExamples.lean": "be4c91e95848fb2d95943b6e9907827d69cb7d8bcf76b3a45529237b9f53ea20",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "4edf820bd983b92a8011a344075c5aa88fe4ad255d281f5be41ac9f5c91a100f",
+    "lake-manifest.json": "6dde7b80c4b7e783cb7663b2631f90f947e62c2ec25f0b96a289ce7f2d227c44",
+    "proof-manifest.json": "a245fbc5d1c4a3147ebedc65c4447febec1d1734743cf2b8fc5bfed2e3638c59",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "f86720364433df5926879dad1b6465356f8d44ed12edb5c5d6a6fd68dc43e21b",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 15, General Equilibrium Theory: Some Examples (pp. 515-544).",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 15. Exact scope: docs/source-map.md."
+}

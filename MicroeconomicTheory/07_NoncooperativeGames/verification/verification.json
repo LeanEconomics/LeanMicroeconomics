@@ -1,0 +1,2953 @@
+{
+  "checked_at_utc": "2026-11-20T13:12:47.046005+00:00",
+  "theorems": 183,
+  "module_theorems": {
+    "MWGNoncooperativeGames/ExtensiveForm.lean": 21,
+    "MWGNoncooperativeGames/GameTree.lean": 17,
+    "MWGNoncooperativeGames/Strategies.lean": 23,
+    "MWGNoncooperativeGames/Mixed.lean": 15,
+    "MWGNoncooperativeGames/MixedSignal.lean": 6,
+    "MWGNoncooperativeGames/Kuhn.lean": 34,
+    "MWGNoncooperativeGames/MatchingPennies.lean": 30,
+    "MWGNoncooperativeGames/MeetingAndRecall.lean": 8,
+    "MWGNoncooperativeGames/TickTackToe.lean": 19,
+    "MWGNoncooperativeGames/Exercise7E1.lean": 10
+  },
+  "audited_declarations": 301,
+  "declarations": [
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm",
+      "kind": "structure",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mk",
+      "kind": "constructor",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.nodes",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.nil_mem",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.tail_mem",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.info",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.avail",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.avail_spec",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.info_surj",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.player",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.natureProb",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.nature_nonneg",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.nature_zero",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.nature_sum",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.payoff",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.IsDecision",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.IsTerminal",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.IsPred",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mem_of_cons_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mem_of_suffix",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.isDecision_of_cons_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.isDecision_or_isTerminal",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mem_avail_of_cons_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.cons_mem_of_mem_avail",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.avail_nonempty",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.choices_eq_of_info_eq",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.extensive_tree_disjoint",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.extensive_initial_node",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.extensive_successor_actions_distinct",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.suffix_unique",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.exists_cons_suffix",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.PerfectInformation",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.NoAbsentMindedness",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.RecallFor",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.PerfectRecall",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.info_ne_of_cons_suffix",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.noAbsentMindedness_of_perfectInformation",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.recallFor_of_perfectInformation",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.perfectRecall_of_perfectInformation",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.decisionNodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.terminals",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.successors",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.infoSet",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mem_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mem_decisionNodes",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mem_successors",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.infoSet_partition",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/ExtensiveForm.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree",
+      "kind": "structure",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.mk",
+      "kind": "constructor",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.root",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.pred",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.pred_root",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.pred_ne_none",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.acyclic",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.act",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.act_inj",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.up",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.up_iterate_none",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.up_iterate_root_succ",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.exists_iterate_eq_root",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.iterate_eq_root_unique",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.histN",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.depth",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.depth_spec",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.hist",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.depth_root",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.depth_of_pred",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.hist_root",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.hist_of_pred",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.eq_root_of_depth_zero",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.hist_eq_nil_iff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.hist_injective",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.historyNodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.nil_mem_historyNodes",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.historyNodes_tail_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.GameTree.cons_mem_historyNodes_iff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.treePred",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.up_iterate_treePred",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.toGameTree",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.gameTree_of_history",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/GameTree.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm",
+      "kind": "structure",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.mk",
+      "kind": "constructor",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.payoff",
+      "kind": "projection",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.InfoSetOf",
+      "kind": "abbrev",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.PureStrategy",
+      "kind": "abbrev",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureOfFun",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureOfFun_apply",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.assemble",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.assemble_of_none",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.assemble_of_some",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach_nonneg",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureBeh",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureBeh_of_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureProfile",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.sum_pureBeh",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.sum_pureProfile",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_nonneg",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.eq_of_terminal_suffix",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.sum_terminals_below_decision",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.length_le_sup",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.sum_reach_terminals_below",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.sum_reach_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_outcome_distribution",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach_pureProfile_zero_or_one",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_outcome_degenerate",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_apply",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.toNormalForm_payoff_eq_of_reach",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.card_pureStrategy",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.exercise_7_D_1",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.toNormalForm",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.toNormalForm_payoff_of_reach",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Strategies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.IsMixedStrategy",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mixedExtension",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mixedExtension_fin",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.pureMixed",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.isMixedStrategy_pureMixed",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.mixedPayoff",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.sum_prod_mixed",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.mixedPayoff_pure",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.mixedExtensionGame",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.mixedExtensionGame_pure",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.IsBehaviorStrategy",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_congr",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach_assemble_factor",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.Consistent",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_of_consistent",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_of_not_consistent",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.isBehaviorStrategy_pureBeh",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedOutcome",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedOutcome_factor",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedOutcome_distribution",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedPayoff_toNormalForm",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Mixed.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.signalCut",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.signalCut_zero",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.signalCut_mono",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.signalCut_full",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.signalCut_succ",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mixedStrategy_signal",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mixedStrategy_signal_pure",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MixedSignal.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.rep",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.rep_isDecision",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.info_rep",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_cons_of_ne",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_cons_of_eq",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_nonneg",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.consistent_iff_of_recall",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_eq_of_recall",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_of_ne",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_of_eq",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_nonneg",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_le",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_eq_zero",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.sum_mixedWeight_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_of_not_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_eq_of_recall",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.behaviorOfMixed",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.isBehaviorStrategy_behaviorOfMixed",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_eq_weight_behaviorOfMixed",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedOfBehavior",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.isMixedStrategy_mixedOfBehavior",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.PathAllows",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pathFactor",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pathFactor_of",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pathFactor_of_not",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.consistent_iff_pathAllows",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_eq_prod",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pathAllows_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pathAllows_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.pathFactor_cons_of_ne",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_mixedOfBehavior",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.RealizationEquivalent",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.reach_update_factor",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.realizationEquivalent_of_weight",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.kuhn_behavior_to_mixed",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.kuhn_mixed_to_behavior",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.kuhn_theorem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.realizationEquivalent_mixed_rivals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ExtensiveForm.kuhn_mixed_rivals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Kuhn.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpPay",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPennies",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_1_zero_sum",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.NormalForm.IsZeroSum",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_1_isZeroSum",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_1_best_action",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpTermPay",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpNodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpBInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_1",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_D_1",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpBResponse",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpBProfile",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_info",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_payoff_def",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_no_nature",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_root_player",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_second_player",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesB_payoff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_D_3",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpCInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesC",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_3",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_D_2",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesC_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesC_no_nature",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_D_2",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesReversed",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesReversed_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_4",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpDInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpDNodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mpDPay",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesD",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesD_info",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesD_player",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesD_natureProb",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.matchingPenniesD_payoff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_5",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_5_random_outcome",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.fig7D2Nodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.fig7D2Pay",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_D_2",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_D_2_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.fig7D2Profile",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_D_2_payoff_def",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_D_2_payoff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_D_2_same_normal_form",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MatchingPennies.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.meetingNY",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_3_aligned",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_3_best_reply",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_3_not_zeroSum",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_3_two_places",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.nyTermPay",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7C1",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7C1_terminals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_C_1",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.fig7C4aInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure7C4a",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_C_4a",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.fig7C4bInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure7C4b",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.figure_7_C_4b",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/MeetingAndRecall.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttLines",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttMarks",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttWins",
+      "kind": "abbrev",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttWon",
+      "kind": "abbrev",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttNoEarlyWin",
+      "kind": "abbrev",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttValid",
+      "kind": "abbrev",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttNodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mem_tttNodes",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttNoEarlyWin_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.length_lt_of_nodup_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exists_not_mem",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttDecision",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttMarks_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttLines_ne_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.not_tttWins_nil",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.nil_mem_tttDecision",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.cons_mem_tttNodes_iff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.mem_tttDecision_of_cons",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttPlayer",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttPayoff",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tickTackToe",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tickTackToe_info",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tickTackToe_player",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tickTackToe_payoff",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_2_perfectInformation",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_2_alternate",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.tttMarks_cons_other",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ttt_not_both_win",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_B_2_zero_sum",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.example_7_C_2_paths",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/TickTackToe.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1Nodes",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1Info",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7E1",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_E_1a",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7E1_perfectRecall",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_E_1b",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_E_1c",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1Pure",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_E_1c_mixed_rivals",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1MergedInfo",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7E1Merged",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7E1Merged_info",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise7E1Merged_player",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1MX",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1RY",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1Sigma",
+      "kind": "def",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.ex7E1MX_ne_RY",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.isMixedStrategy_ex7E1Sigma",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    },
+    {
+      "name": "MWG.NoncooperativeGames.exercise_7_E_1d",
+      "kind": "theorem",
+      "module": "MWGNoncooperativeGames/Exercise7E1.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.NoncooperativeGames.ExtensiveForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.nodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.nil_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.tail_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.info": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.avail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.avail_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.info_surj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.player": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.natureProb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.nature_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.nature_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.nature_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.IsDecision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.IsTerminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.IsPred": [],
+    "MWG.NoncooperativeGames.ExtensiveForm.mem_of_cons_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mem_of_suffix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.isDecision_of_cons_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.isDecision_or_isTerminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mem_avail_of_cons_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.cons_mem_of_mem_avail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.avail_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.choices_eq_of_info_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.extensive_tree_disjoint": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.extensive_initial_node": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.extensive_successor_actions_distinct": [],
+    "MWG.NoncooperativeGames.ExtensiveForm.suffix_unique": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.exists_cons_suffix": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.PerfectInformation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.NoAbsentMindedness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.RecallFor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.PerfectRecall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.info_ne_of_cons_suffix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.noAbsentMindedness_of_perfectInformation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.recallFor_of_perfectInformation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.perfectRecall_of_perfectInformation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.decisionNodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.successors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.infoSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mem_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mem_decisionNodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mem_successors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.infoSet_partition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree": [],
+    "MWG.NoncooperativeGames.GameTree.mk": [],
+    "MWG.NoncooperativeGames.GameTree.root": [],
+    "MWG.NoncooperativeGames.GameTree.pred": [],
+    "MWG.NoncooperativeGames.GameTree.pred_root": [],
+    "MWG.NoncooperativeGames.GameTree.pred_ne_none": [],
+    "MWG.NoncooperativeGames.GameTree.acyclic": [],
+    "MWG.NoncooperativeGames.GameTree.act": [],
+    "MWG.NoncooperativeGames.GameTree.act_inj": [],
+    "MWG.NoncooperativeGames.GameTree.up": [],
+    "MWG.NoncooperativeGames.GameTree.up_iterate_none": [],
+    "MWG.NoncooperativeGames.GameTree.up_iterate_root_succ": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.GameTree.exists_iterate_eq_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.iterate_eq_root_unique": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.histN": [],
+    "MWG.NoncooperativeGames.GameTree.depth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.depth_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.hist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.depth_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.depth_of_pred": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.hist_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.hist_of_pred": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.eq_root_of_depth_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.hist_eq_nil_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.hist_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.historyNodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.nil_mem_historyNodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.historyNodes_tail_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.GameTree.cons_mem_historyNodes_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.treePred": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.up_iterate_treePred": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.toGameTree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.gameTree_of_history": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.InfoSetOf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.PureStrategy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureOfFun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureOfFun_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach_nil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.assemble": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.assemble_of_none": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.assemble_of_some": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureBeh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureBeh_of_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.sum_pureBeh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.sum_pureProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.eq_of_terminal_suffix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.sum_terminals_below_decision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.length_le_sup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.sum_reach_terminals_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.sum_reach_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_outcome_distribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach_pureProfile_zero_or_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_outcome_degenerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pureProfile_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.toNormalForm_payoff_eq_of_reach": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.card_pureStrategy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.exercise_7_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.toNormalForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.toNormalForm_payoff_of_reach": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.IsMixedStrategy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mixedExtension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mixedExtension_fin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.pureMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.isMixedStrategy_pureMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.mixedPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.sum_prod_mixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.mixedPayoff_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.mixedExtensionGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.mixedExtensionGame_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.IsBehaviorStrategy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_nil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach_assemble_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.Consistent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_of_consistent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_of_not_consistent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.isBehaviorStrategy_pureBeh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedOutcome": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedOutcome_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedOutcome_distribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedPayoff_toNormalForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.signalCut": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.signalCut_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.signalCut_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.signalCut_full": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.signalCut_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mixedStrategy_signal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mixedStrategy_signal_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.rep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.rep_isDecision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.info_rep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_cons_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_cons_of_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.consistent_iff_of_recall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_eq_of_recall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_nil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_of_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.sum_mixedWeight_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_cons_of_not_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_eq_of_recall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.behaviorOfMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.isBehaviorStrategy_behaviorOfMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_eq_weight_behaviorOfMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedOfBehavior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.isMixedStrategy_mixedOfBehavior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.PathAllows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pathFactor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pathFactor_of": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pathFactor_of_not": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.consistent_iff_pathAllows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.weight_pureBeh_eq_prod": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pathAllows_nil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pathAllows_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.pathFactor_cons_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.mixedWeight_mixedOfBehavior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.RealizationEquivalent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.reach_update_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.realizationEquivalent_of_weight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.kuhn_behavior_to_mixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.kuhn_mixed_to_behavior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.kuhn_theorem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.realizationEquivalent_mixed_rivals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ExtensiveForm.kuhn_mixed_rivals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPennies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_1_zero_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.NormalForm.IsZeroSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_1_isZeroSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_1_best_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpTermPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpNodes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpBInfo": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpBResponse": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.mpBProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_info": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_payoff_def": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_no_nature": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_root_player": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_second_player": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesB_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpCInfo": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesC_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesC_no_nature": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesReversed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesReversed_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpDInfo": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.mpDNodes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mpDPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesD_info": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesD_player": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesD_natureProb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.matchingPenniesD_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_5_random_outcome": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.fig7D2Nodes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.fig7D2Pay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_D_2_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.fig7D2Profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_D_2_payoff_def": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_D_2_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_D_2_same_normal_form": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.meetingNY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_3_aligned": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_3_best_reply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_3_not_zeroSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_3_two_places": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.nyTermPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise7C1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise7C1_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.fig7C4aInfo": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.figure7C4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_C_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.fig7C4bInfo": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.figure7C4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.figure_7_C_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttLines": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.tttMarks": [],
+    "MWG.NoncooperativeGames.tttWins": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.tttWon": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.tttNoEarlyWin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttNodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mem_tttNodes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttNoEarlyWin_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.length_lt_of_nodup_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exists_not_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttDecision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttMarks_nil": [],
+    "MWG.NoncooperativeGames.tttLines_ne_nil": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.not_tttWins_nil": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.nil_mem_tttDecision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttInfo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.cons_mem_tttNodes_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.mem_tttDecision_of_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttPlayer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tickTackToe": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tickTackToe_info": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tickTackToe_player": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tickTackToe_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_2_perfectInformation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_2_alternate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.tttMarks_cons_other": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.ttt_not_both_win": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_B_2_zero_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.example_7_C_2_paths": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1Nodes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1Info": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.exercise7E1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_E_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise7E1_perfectRecall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_E_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_E_1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1Pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_E_1c_mixed_rivals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1MergedInfo": [
+      "propext"
+    ],
+    "MWG.NoncooperativeGames.exercise7E1Merged": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise7E1Merged_info": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise7E1Merged_player": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1MX": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1RY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1Sigma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.ex7E1MX_ne_RY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.isMixedStrategy_ex7E1Sigma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.NoncooperativeGames.exercise_7_E_1d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGNoncooperativeGames/ExtensiveForm.lean": "484ecd1ee7a559aee40a8a60fa3e7c033d299882974f20d5405fd05d0d50326f",
+    "MWGNoncooperativeGames/GameTree.lean": "3a707076a548f0e1eec4cc8d821bef42b7ec1664b585201d301355ea4cd52c48",
+    "MWGNoncooperativeGames/Strategies.lean": "eea02540f3cc3eed138c24035b25ed740e3f9e97d429b670c8927eda17c30ab1",
+    "MWGNoncooperativeGames/Mixed.lean": "3c73c521320edcd3f28db25c16fe38d5d50145b43c928964886d9320b3947395",
+    "MWGNoncooperativeGames/MixedSignal.lean": "3584744cd3d5d0141138df1346572f0705a63f7a8ee1cf65c38b0c872728e9bd",
+    "MWGNoncooperativeGames/Kuhn.lean": "caba1a56822593983d6159d850e6caa2bd573527cc18148197fad70bebf2872c",
+    "MWGNoncooperativeGames/MatchingPennies.lean": "b1472693f287a5e137c96613161ee5f62885d72da5e9f42e2acff9713bbab4d1",
+    "MWGNoncooperativeGames/MeetingAndRecall.lean": "09cb1b1692f6a38b59be5176632d70f7fde54407572c52449c723781a5287cd0",
+    "MWGNoncooperativeGames/TickTackToe.lean": "f8a8fe860a4016a6f034178066bce767a5f14a2979c71223fa13bc1442a68c3d",
+    "MWGNoncooperativeGames/Exercise7E1.lean": "e4a6b76ecbb5d8132c4092b1ca7ea75bba51f18c705dbc0ba334882740d799a4",
+    "MWGNoncooperativeGames.lean": "3f785f61300b48a37c94ddcf8ae899bc56a7048bd6395234235a4f5b096f83cf",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "4076a676821e3fb4bd47f9d8b43b2568d3a418b1c4e0203987ebe2c262514591",
+    "lake-manifest.json": "92997db3b72a63067a191a273d27bd2c8322aaf8b5df3ca4922020d9b863ff52",
+    "proof-manifest.json": "b3fca1335516ebd10b127080d5449c53e459b813598557ebdcc5f571c1a533f5",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "eee86f53a304a9327caac23ced59e5f04c7c816543b852f87e725e37a94e732b",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 7: basic elements of noncooperative games (extensive and normal forms, information sets, perfect recall, strategies, mixed and behavior strategies, randomized choices), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 7. Exact scope: docs/source-map.md."
+}

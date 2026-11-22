@@ -1,0 +1,23 @@
+/-
+Copyright (c) 2026 KrepsFoundations contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: KrepsFoundations contributors
+-/
+import MWGCoreFoundations.Basic
+import MWGCoreFoundations.CoreWalras
+import MWGCoreFoundations.EqualTreatment
+import MWGCoreFoundations.DebreuScarf
+import MWGCoreFoundations.DebreuScarfSpecial
+import MWGCoreFoundations.ShoeMarket
+import MWGCoreFoundations.TradingGames
+import MWGCoreFoundations.Redistribution
+import MWGCoreFoundations.MarginalProduct
+import MWGCoreFoundations.MarginalProductExamples
+import MWGCoreFoundations.CoopGames
+import MWGCoreFoundations.Balanced
+import MWGCoreFoundations.ShapleyValue
+import MWGCoreFoundations.ShapleyExamples
+import MWGCoreFoundations.ShapleyExercises
+import MWGCoreFoundations.Closer18AA
+import MWGCoreFoundations.Closer18Value
+import MWGCoreFoundations.Closer18D

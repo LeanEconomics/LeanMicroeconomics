@@ -1,0 +1,5565 @@
+{
+  "checked_at_utc": "2026-11-22T21:23:10.019692+00:00",
+  "theorems": 387,
+  "module_theorems": {
+    "MWGCoreFoundations/Basic.lean": 10,
+    "MWGCoreFoundations/CoreWalras.lean": 24,
+    "MWGCoreFoundations/EqualTreatment.lean": 21,
+    "MWGCoreFoundations/DebreuScarf.lean": 9,
+    "MWGCoreFoundations/DebreuScarfSpecial.lean": 13,
+    "MWGCoreFoundations/ShoeMarket.lean": 17,
+    "MWGCoreFoundations/TradingGames.lean": 45,
+    "MWGCoreFoundations/Redistribution.lean": 14,
+    "MWGCoreFoundations/MarginalProduct.lean": 44,
+    "MWGCoreFoundations/MarginalProductExamples.lean": 34,
+    "MWGCoreFoundations/CoopGames.lean": 31,
+    "MWGCoreFoundations/Balanced.lean": 8,
+    "MWGCoreFoundations/ShapleyValue.lean": 34,
+    "MWGCoreFoundations/ShapleyExamples.lean": 20,
+    "MWGCoreFoundations/ShapleyExercises.lean": 19,
+    "MWGCoreFoundations/Closer18AA.lean": 19,
+    "MWGCoreFoundations/Closer18Value.lean": 11,
+    "MWGCoreFoundations/Closer18D.lean": 14
+  },
+  "audited_declarations": 552,
+  "declarations": [
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy",
+      "kind": "structure",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.pref",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.\u03c9",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.Y",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsCRSTechnology",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.Standing",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsFeasible",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.Blocks",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.HasCoreProperty",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.core",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsWalrasEqm",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsWalrasAlloc",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.definition_18_B_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.definition_18_B_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.profit_eq_zero_of_max",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.toPriv",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isWalrasEqm_iff_toPriv",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.replica",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.typeAlloc",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.EqualTreatment",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.CN",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.equalTreatment_typeAlloc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtU",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtEconomy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isCRSTechnology_nonposOrthant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.continuous_sqrtU",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtU_lt_of_le_of_ne",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtU_strict_concave",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtEconomy_standing",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Basic.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_B_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_B_1_exchange",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.ParetoDominates",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsParetoOptimal",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsIndividuallyRational",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isParetoOptimal_iff_toPriv",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exists_strict_all_of_weak",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.core_not_strictly_dominated",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.core_isParetoOptimal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.core_isIndividuallyRational",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isIndividuallyRational_iff_exchange",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.figure_18_B_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtU_two",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtU_vec",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.two_mul_sqrt_le",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtEconomy_diag_isParetoOptimal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exampleEndow",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exampleShare",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exampleAlloc",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.two_sqrt_third_lt",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.two_sqrt_two_thirds_lt",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exampleAlloc_ir",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exampleAlloc_mem_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exampleAlloc_not_walras",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.converse_18_B_1_false",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.fig18B2Coalition",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.fig18B2Bundle",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.figure_18_B_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.figure_18_B_2_identity",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.figure_18_B_2_identity_instance",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoreWalras.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.convex_upper_of_strictlyConvex",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exists_worst",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.avg_pref",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.avg_strict",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_5",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_B_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.replica_isFeasible_typeAlloc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.core_replica_eq_typeAlloc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CN_succ_subset",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isWalrasEqm_typeAlloc_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.walrasTypeAllocs_eq",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.walras_mem_CN",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_3",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.replica_walras_equalTreatment",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2U",
+      "kind": "def",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2U_vec",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2Economy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2Alloc",
+      "kind": "def",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2U_lt_of_le_of_ne",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2Economy_standing",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2_tu_bound",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ex18B2_util",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_2a",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_2b",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/EqualTreatment.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.not_maximal_one_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.oneZero_mem_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.dsEconomy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_B_3_false",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.convex_strictUpper",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exists_type_combination",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exists_rounding",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sum_replica_filter",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.disjoint_improving_trades",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_B_3",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarf.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exists_favoured_type",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.grad_dot_pos_of_proportional",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.special_coalition_identity",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.special_coalition_blocks",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.special_nonneg_eventually",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_4",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_4_grad",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_B_3_special_case",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.coreVset",
+      "kind": "def",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.coreV",
+      "kind": "def",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sum_endow_mem_coreV",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.core_not_mem_interior_coreV",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.supporting_price_isWalrasEqm",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.supporting_price_needs_positive_endowment",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.coreVset_not_convex",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/DebreuScarfSpecial.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeU",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeFeasible",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeParetoOptimal",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeMatched",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeBlocks",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeCore",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeWealth",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeWalras",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_card_right",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_card_left",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_sum_u_le",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_eq_one_of_sum_le",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_paretoOptimal_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_5a",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_matched_not_paretoOptimal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_5a_converse",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeExample",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_paretoOptimal_not_matched",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_5b",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeWalras_pR_pos",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_5c",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoePairs",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeEndow",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_sum_ite_right",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoe_sum_ite_left",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeWalras_pairs",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shoeWalras_endowment",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_B_5d",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShoeMarket.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel",
+      "kind": "structure",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.mk",
+      "kind": "constructor",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.P",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.A",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.\u03c9",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.g",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.price",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.u",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.IsValid",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.payoff",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.IsTradingEqm",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_7",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.definition_18_C_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.effBudget",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingModel.isTradingEqm_maximal_effBudget",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_8",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.price_insensitivity",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.cournotModel",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.cournotModel_isValid",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.cournotModel_payoff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.cournot_sum_update",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_1_walras",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_1_not_walrasian",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.cournotStepSel",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_1_instance",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.partialOne",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.partialTwo",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.complementsPrice",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.complementsModel",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.complementsModel_isValid",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.partialOne_axis_eq_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.partialTwo_axis_eq_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.complements_sum_update_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.fn13GeomMean",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_13_psi",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_13_psi_concave",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_13_prices",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_13_discontinuous",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_13_not_differentiable",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpPrice",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpGood",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpMoney",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_3_rule",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_continuous_sum_fst",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_continuous_sum_snd",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_3_continuous",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpLoneBid",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_continuous_loneBid",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpPrice_loneBid",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_3_no_continuous_price",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_14",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy",
+      "kind": "structure",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.\u03c9g",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.\u03c9m",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.u",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.FeasibleBid",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.goodsOut",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.moneyOut",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.TradingPostEconomy.IsEqm",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_lone_bidder",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_all_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_3_inactive_post",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_C_3_no_money",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpBudget",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_update_sums",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_outcome",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_C_1_one_sided",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpFrontier",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_outcome_on_frontier",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpFrontier_eq",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpFrontier_strictConcaveOn",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpFrontier_antitoneOn",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tpMaxBuy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tp_reachable",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_C_1_eq",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_C_1_convex",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_C_1_boundary",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/TradingGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsSelfSelectiveWith",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.IsSelfSelective",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.CoreEconomy.NoEnvyNetTrades",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.definition_18_D_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.selfSelective_iff_netTrades",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.misprintEconomy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.selfSelective_consumptions_misprint",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.walras_isParetoOptimal_selfSelective",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.fig18D2Endow",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.fig18D2Alloc",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.fig18D2_sqrt_sq",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.figure_18_D_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.pref_add_of_pref_endow",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_D_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_supported_eq",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_equal_treatment",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_single_net_trade",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_smooth",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_walrasian",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.prop18D1D",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_instance",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Redistribution.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy",
+      "kind": "structure",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.\u03c8",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.\u03c9",
+      "kind": "projection",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.u",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlPrice",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.IsFeasible",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.welfare",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.valueSet",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.IsOptimal",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.IsMarginalProduct",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.IsWalrasEqm",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlPrice_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlPrice_sub",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlPrice_mono",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.valueSet_nonempty",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.welfare_le_of_majorant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v_le_of_majorant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.bddAbove_of_majorant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_clm_apply_eq_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_hasDerivAt_line",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_fderiv_single_nonneg",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.exists_majorant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.valueSet_smul",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v_smul",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v_div",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_convex_bundles",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.u_concaveOn",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v_superadditive",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.IsFeasibleFinite",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlTypeCount",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_sum_fiber",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_20",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_20_sSup",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_euler",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_partial_eq_of_le_linear",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_eventually_nonneg_line",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_sum_perturb",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.foc_of_optimal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.isOptimal_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.walras_price_nonneg",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.walras_budget_eq",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.walras_majorant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.v_le_linear",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.partial_v_of_walras",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_E_1_of_walras",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.supporting_prices",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.walras_of_optimal_of_partial",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_E_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_eventually_nonneg_of_pos",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.QLEconomy.deltaV",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.claim_18_E_deltaV_ge_partial",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.claim_18_E_sum_deltaV_ge",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.claim_18_E_no_full_marginal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.claim_18_E_no_full_marginal_finite",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.claim_18_E_finite_walras_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProduct.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQLEconomy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_concave",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_mono",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_omega_nonneg",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_welfare_le",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_v",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlOnes",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_v_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQLStar",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_sqrt_half",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ql_sqrt_tangent",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_walras",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_partial",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.definition_18_E_1_instance",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_E_1_instance",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_optimal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_v_concave",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sqrtQL_deltaV",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_E_finite_strict",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_E_no_full_marginal",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_E_walras_below_delta",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_E_finite_claims",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.leontiefQLEconomy",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.leontief_concave",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.leontief_mono",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.leontief_welfare_le",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.leontief_v",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.leontief_line",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_left_deriv",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_right_deriv",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_not_differentiable",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_delta",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_eqm",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_boundary",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_E_3_hypotheses",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.qlShapleyGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.claim_18_E_shapley_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/MarginalProductExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.projS",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsUtilityPossibilitySet",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.extS",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.projS_extS",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.continuous_projS",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.continuous_extS",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isUtilityPossibilitySet_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.NTUGame",
+      "kind": "abbrev",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsCharacteristicForm",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsSuperadditive",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.econGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.econGame_comprehensive",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.econGame_nonempty",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_convex",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_superadditive",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.openConeTech",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.openConeTech_isCRS",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_not_closed",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_closed",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.votingGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.votingGame_isCharacteristicForm",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.votingGame_superadditive",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.votingPayoffs",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_2_not_convex",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tuSet",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tuSet_isCharacteristicForm",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tuSet_superadditive_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tuMajority",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_3",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ntuBlocks",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ntuCore",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tuCore",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.tu_blocks_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.ntuCore_tuSet",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_2",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_4_tu",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_4_ntu",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_5",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_5_game_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_5_walras",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.prodGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.propAlloc",
+      "kind": "def",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.propAlloc_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_6",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_6_convex",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_3",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_28",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_28_core_empty",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/CoopGames.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsGeneralizedPartition",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsBalanced",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_1_singletons",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_1_pairs",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isBalanced_of_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.bsGen",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.dotProduct_snoc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.snoc_apply_castSucc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.snoc_apply_last",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.core_nonempty_of_isBalanced",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Balanced.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.subgame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsEgalitarianSolution",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isEgalitarianSolution_congr",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.egalitarian_unique",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.egalitarian_recursion",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.egalitarian_pair",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapleyFamily",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.powerset_filter_not_mem",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapleyFamily_isEgalitarian",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapleyMWG",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.definition_18_AA_7",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.formula_18_AA_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.formula_18_AA_3",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.footnote_18_31",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sum_marginal_contributions",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.dividend_subgame",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_subgame",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.subsetFormula",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.hockey_stick",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_weight_sum_nat",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_weight_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sub_erase_eq_sum_dividend",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.subsetFormula_eq_shapleyFamily",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.formula_18_AA_4",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_4",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_efficiency",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.RolesPermuted",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.map_swap_of_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.map_swap_of_mem_notMem",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.rolesPermuted_iff",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_symmetry_footnote_33",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_linearity",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_dummy_axiom",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.MWGSymmetric",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_mwgSymmetric",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsUnanimityGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.isUnanimityGame_unanimity",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_5",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_6_decomposition",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_6_unique",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_6",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_characterization",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyValue.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.gloveInt",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.gloveGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7_values",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.gloveMarg",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7_orderings",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.gloveGame_empty",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.gloveGame_swap",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7_check",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sum_glove_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7_block",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_7_shapley_not_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.shapley_not_core_majority",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IsConvexGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.marginal_vector_mem_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_AA_1",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.IncreasingDifferences",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.inputGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_7",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.convexOn_increasing_differences",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_8_one_input",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_8_one_input_deriv",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_8_not_sufficient",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_8_not_necessary",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.maxTech",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.maxGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_8",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExamples.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.v9Int",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.game9",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.game9mod",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9_table",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.game9_empty",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.omega9",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9a",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.sum_alpha_alloc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.alpha_alloc_mem_core",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9b",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9c",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9c_compare",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.game9_perm_invariant",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9d",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9e",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_9e_compare",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.costGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.psi1",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.psi2",
+      "kind": "def",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_10a",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_10b",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_10c_unbounded",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_10c_no_max",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_10c_foc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.const_of_hasDerivAt_zero_Ioi",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_10d",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/ShapleyExercises.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18Partial",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_eq_sum_single",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_clm_apply_eq_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_partial_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_hasDerivAt_line",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_line_mem",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_partial_mono",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_fderiv_mono",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_8_increasingDifferences",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_7_crossPartials",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_product_crossPartials",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.exercise_18_AA_7_product",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18NegSum",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18NegSum_continuous",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18NegSum_smul",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_cone_bounded",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_closed_cone",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_closed_crs",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18HalfPlane",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18HalfPlane_hyp",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_closed_halfPlane",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.example_18_AA_1_free_production",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18AA.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18Profile",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18TypeGame",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18Box",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_card_profile_fiber",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_profile_mono",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_sum_powerset_profile",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_profile_insert",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_card_eq_sum_profile",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_profile_erase",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_shapley_sub_const",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_shapley_types",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_shapley_hypergeometric",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_hypergeometric_weights_sum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18BookFormula",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_book_formula_counterexample",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18Value.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_abs_coord_le",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_dot_two",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_abs_sub_le_of_mem_uIcc",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_mem_uIcc_affine",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_planar_flat_const",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_flat_of_noEnvy",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_continuousOn_of_noEnvy",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_continuum",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18IsSelfSelective",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_isSelfSelective_iff_noEnvy",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18IsMeasureFeasible",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18IsMeasurePareto",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_integral_dot_eq_zero",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18_isMeasurePareto_of_supported",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18InstU",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18InstOmega",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18InstZ",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18InstD",
+      "kind": "def",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18InstD_apply",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.c18InstU_mid",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    },
+    {
+      "name": "MWG.CoreFoundations.proposition_18_D_1_continuum_instance",
+      "kind": "theorem",
+      "module": "MWGCoreFoundations/Closer18D.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.CoreFoundations.CoreEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsCRSTechnology": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.Standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.Blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.HasCoreProperty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsWalrasAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.definition_18_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.definition_18_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.profit_eq_zero_of_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.toPriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isWalrasEqm_iff_toPriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.replica": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.typeAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.EqualTreatment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.CN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.equalTreatment_typeAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isCRSTechnology_nonposOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.continuous_sqrtU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtU_lt_of_le_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtU_strict_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtEconomy_standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_B_1_exchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.ParetoDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsIndividuallyRational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isParetoOptimal_iff_toPriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exists_strict_all_of_weak": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.core_not_strictly_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.core_isParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.core_isIndividuallyRational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isIndividuallyRational_iff_exchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.figure_18_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtU_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtU_vec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.two_mul_sqrt_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtEconomy_diag_isParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exampleEndow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exampleShare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exampleAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.two_sqrt_third_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.two_sqrt_two_thirds_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exampleAlloc_ir": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exampleAlloc_mem_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exampleAlloc_not_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.converse_18_B_1_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.fig18B2Coalition": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.fig18B2Bundle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.figure_18_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.figure_18_B_2_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.figure_18_B_2_identity_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.convex_upper_of_strictlyConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exists_worst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.avg_pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.avg_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.replica_isFeasible_typeAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.core_replica_eq_typeAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CN_succ_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isWalrasEqm_typeAlloc_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.walrasTypeAllocs_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.walras_mem_CN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.replica_walras_equalTreatment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2U_vec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2Alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2U_lt_of_le_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2Economy_standing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2_tu_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ex18B2_util": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.not_maximal_one_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.oneZero_mem_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.dsEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_B_3_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.convex_strictUpper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exists_type_combination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exists_rounding": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sum_replica_filter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.disjoint_improving_trades": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exists_favoured_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.grad_dot_pos_of_proportional": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.special_coalition_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.special_coalition_blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.special_nonneg_eventually": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_4_grad": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_B_3_special_case": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.coreVset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.coreV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sum_endow_mem_coreV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.core_not_mem_interior_coreV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.supporting_price_isWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.supporting_price_needs_positive_endowment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.coreVset_not_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeU": [],
+    "MWG.CoreFoundations.shoeFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeMatched": [],
+    "MWG.CoreFoundations.shoeBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeCore": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeWealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeWalras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_card_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_card_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_sum_u_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_eq_one_of_sum_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_paretoOptimal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_matched_not_paretoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_5a_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeExample": [
+      "propext"
+    ],
+    "MWG.CoreFoundations.shoe_paretoOptimal_not_matched": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeWalras_pR_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoePairs": [],
+    "MWG.CoreFoundations.shoeEndow": [],
+    "MWG.CoreFoundations.shoe_sum_ite_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoe_sum_ite_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeWalras_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shoeWalras_endowment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_B_5d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.P": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.A": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.IsValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.IsTradingEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.definition_18_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.effBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingModel.isTradingEqm_maximal_effBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.price_insensitivity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.cournotModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.cournotModel_isValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.cournotModel_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.cournot_sum_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_1_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_1_not_walrasian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.cournotStepSel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.partialOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.partialTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.complementsPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.complementsModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.complementsModel_isValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.partialOne_axis_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.partialTwo_axis_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.complements_sum_update_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.fn13GeomMean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_13_psi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_13_psi_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_13_prices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_13_discontinuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_13_not_differentiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpGood": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpMoney": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_3_rule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_continuous_sum_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_continuous_sum_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_3_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpLoneBid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_continuous_loneBid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpPrice_loneBid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_3_no_continuous_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.\u03c9g": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.\u03c9m": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.FeasibleBid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.goodsOut": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.moneyOut": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.TradingPostEconomy.IsEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_lone_bidder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_all_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_3_inactive_post": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_C_3_no_money": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_update_sums": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_outcome": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_C_1_one_sided": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpFrontier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_outcome_on_frontier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpFrontier_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpFrontier_strictConcaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpFrontier_antitoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tpMaxBuy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tp_reachable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_C_1_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_C_1_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_C_1_boundary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsSelfSelectiveWith": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.IsSelfSelective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.CoreEconomy.NoEnvyNetTrades": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.definition_18_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.selfSelective_iff_netTrades": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.misprintEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.selfSelective_consumptions_misprint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.walras_isParetoOptimal_selfSelective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.fig18D2Endow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.fig18D2Alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.fig18D2_sqrt_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.figure_18_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.pref_add_of_pref_endow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_supported_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_equal_treatment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_single_net_trade": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_walrasian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.prop18D1D": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.\u03c8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.IsFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.welfare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.valueSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.IsOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.IsMarginalProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.IsWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlPrice_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlPrice_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlPrice_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.valueSet_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.welfare_le_of_majorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v_le_of_majorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.bddAbove_of_majorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_clm_apply_eq_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_hasDerivAt_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_fderiv_single_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.exists_majorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.valueSet_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v_div": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_convex_bundles": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.u_concaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v_superadditive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.IsFeasibleFinite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlTypeCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_sum_fiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_20": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_20_sSup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_euler": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_partial_eq_of_le_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_eventually_nonneg_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_sum_perturb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.foc_of_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.isOptimal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.walras_price_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.walras_budget_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.walras_majorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.v_le_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.partial_v_of_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_E_1_of_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.supporting_prices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.walras_of_optimal_of_partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_eventually_nonneg_of_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.QLEconomy.deltaV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.claim_18_E_deltaV_ge_partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.claim_18_E_sum_deltaV_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.claim_18_E_no_full_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.claim_18_E_no_full_marginal_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.claim_18_E_finite_walras_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQLEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_omega_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_welfare_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlOnes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_v_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQLStar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_sqrt_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ql_sqrt_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.definition_18_E_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_E_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_v_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sqrtQL_deltaV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_E_finite_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_E_no_full_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_E_walras_below_delta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_E_finite_claims": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.leontiefQLEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.leontief_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.leontief_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.leontief_welfare_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.leontief_v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.leontief_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_left_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_right_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_not_differentiable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_delta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_boundary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_E_3_hypotheses": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.qlShapleyGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.claim_18_E_shapley_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.projS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsUtilityPossibilitySet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.extS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.projS_extS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.continuous_projS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.continuous_extS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isUtilityPossibilitySet_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.NTUGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsCharacteristicForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsSuperadditive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.econGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.econGame_comprehensive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.econGame_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_superadditive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.openConeTech": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.openConeTech_isCRS": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_not_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.votingGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.votingGame_isCharacteristicForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.votingGame_superadditive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.votingPayoffs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_2_not_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tuSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tuSet_isCharacteristicForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tuSet_superadditive_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tuMajority": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ntuBlocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ntuCore": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tuCore": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.tu_blocks_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.ntuCore_tuSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_4_tu": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_4_ntu": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_5_game_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_5_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.prodGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.propAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.propAlloc_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_6_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_28": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_28_core_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsGeneralizedPartition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsBalanced": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_1_singletons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_1_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isBalanced_of_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.bsGen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.dotProduct_snoc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.snoc_apply_castSucc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.snoc_apply_last": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.core_nonempty_of_isBalanced": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.subgame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsEgalitarianSolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isEgalitarianSolution_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.egalitarian_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.egalitarian_recursion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.egalitarian_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapleyFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.powerset_filter_not_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapleyFamily_isEgalitarian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapleyMWG": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.definition_18_AA_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.formula_18_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.formula_18_AA_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.footnote_18_31": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sum_marginal_contributions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.dividend_subgame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_subgame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.subsetFormula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.hockey_stick": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_weight_sum_nat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_weight_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sub_erase_eq_sum_dividend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.subsetFormula_eq_shapleyFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.formula_18_AA_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_efficiency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.RolesPermuted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.map_swap_of_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.map_swap_of_mem_notMem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.rolesPermuted_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_symmetry_footnote_33": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_linearity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_dummy_axiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.MWGSymmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_mwgSymmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsUnanimityGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.isUnanimityGame_unanimity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_6_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_6_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_characterization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.gloveInt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.gloveGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.gloveMarg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7_orderings": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.gloveGame_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.gloveGame_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7_check": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sum_glove_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_7_shapley_not_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.shapley_not_core_majority": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IsConvexGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.marginal_vector_mem_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.IncreasingDifferences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.inputGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.convexOn_increasing_differences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_8_one_input": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_8_one_input_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_8_not_sufficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_8_not_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.maxTech": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.maxGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.v9Int": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.game9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.game9mod": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9_table": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.game9_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.omega9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.sum_alpha_alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.alpha_alloc_mem_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9c_compare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.game9_perm_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_9e_compare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.costGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.psi1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.psi2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_10a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_10b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_10c_unbounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_10c_no_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_10c_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.const_of_hasDerivAt_zero_Ioi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_10d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18Partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_eq_sum_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_clm_apply_eq_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_partial_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_hasDerivAt_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_line_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_partial_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_fderiv_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_8_increasingDifferences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_7_crossPartials": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_product_crossPartials": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.exercise_18_AA_7_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18NegSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18NegSum_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18NegSum_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_cone_bounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_closed_cone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_closed_crs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18HalfPlane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18HalfPlane_hyp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_closed_halfPlane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.example_18_AA_1_free_production": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18Profile": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18TypeGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18Box": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_card_profile_fiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_profile_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_sum_powerset_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_profile_insert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_card_eq_sum_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_profile_erase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_shapley_sub_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_shapley_types": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_shapley_hypergeometric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_hypergeometric_weights_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18BookFormula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_book_formula_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_abs_coord_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_dot_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_abs_sub_le_of_mem_uIcc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_mem_uIcc_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_planar_flat_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_flat_of_noEnvy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_continuousOn_of_noEnvy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_continuum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18IsSelfSelective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_isSelfSelective_iff_noEnvy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18IsMeasureFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18IsMeasurePareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_integral_dot_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18_isMeasurePareto_of_supported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18InstU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18InstOmega": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18InstZ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18InstD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18InstD_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.c18InstU_mid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CoreFoundations.proposition_18_D_1_continuum_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGCoreFoundations/Basic.lean": "030d545c80bb534b89987bbbdc8f1ea45d3ac4f12865cabaf4db9e6853958010",
+    "MWGCoreFoundations/CoreWalras.lean": "267c9ef45ff8eb4b81f682cb609e0affefc98a9e199ba768789667b17c7cf83e",
+    "MWGCoreFoundations/EqualTreatment.lean": "c73926eba24304c671e979964175f4789b156aeeecd6f3b0f4b103bdc32ecf2c",
+    "MWGCoreFoundations/DebreuScarf.lean": "36577f701ae6d08fa7f86507310e73ef08f7e5685b7a5d860860285cd92a8fe2",
+    "MWGCoreFoundations/DebreuScarfSpecial.lean": "c7234ee7864ce7fd7c3262dfee55734031ce0133266201235b7c78263b5f34be",
+    "MWGCoreFoundations/ShoeMarket.lean": "33438f83b789b7c32ea7790ac28806c83d8c29f5eb792b042cb8f5fb20f66496",
+    "MWGCoreFoundations/TradingGames.lean": "2267f7e0641271e8e7e4a1df0ae5d4862c0476677e36993a4ea5a1f73e5bb13a",
+    "MWGCoreFoundations/Redistribution.lean": "c245361c957236dcb2a2cdcfe1cadc94ffa1a4bb054709224e015d2484efc234",
+    "MWGCoreFoundations/MarginalProduct.lean": "d91d7689922baa392ac435e384d3e6a065763217fb9f1bf6a898ad6ec946fbbe",
+    "MWGCoreFoundations/MarginalProductExamples.lean": "485b24b5519f686c6b4745a82fea304eebbcbc646f98b6f972819105674f559d",
+    "MWGCoreFoundations/CoopGames.lean": "b6203680ede0178cc013e0573285768fcd25a45c9bc006faca56313b4783fd55",
+    "MWGCoreFoundations/Balanced.lean": "0718e22d89add5b9d85203d3061db861dc37cbe8db8d9c821c36f97a14147446",
+    "MWGCoreFoundations/ShapleyValue.lean": "8b1b1e0d2482d543fd1cd9bcf831a84e39f94f6d5fc10e767cd3230caf00c47f",
+    "MWGCoreFoundations/ShapleyExamples.lean": "eabfe409e63a7903c3e3026fbe988b23997cf31ff0ef8f7f019ea1f7838933ad",
+    "MWGCoreFoundations/ShapleyExercises.lean": "d7c755ff7806bd40abe3d4cf1040e2a357256f5b3a4b59b3214ef7f32608a778",
+    "MWGCoreFoundations/Closer18AA.lean": "1fda5d8de8f5b6cb87370c2d3fb7ab2f68496d6a3fb2a740dd33f52ccd690545",
+    "MWGCoreFoundations/Closer18Value.lean": "5c511c41702b519025259f4471629ae8fab3f840971e9b58fb439115df0f6020",
+    "MWGCoreFoundations/Closer18D.lean": "6a33693190dc088f7deef0868bd3595d9c146572904c08cec61f55508449d0d0",
+    "MWGCoreFoundations.lean": "9868ec1d5e0a14ffbac1f4af97735ff9b299d7050a2203e0f51eba039d6f4176",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "6103d2397ae54650be9211df0b9d4d3620de8dde9d1ef22af7c8f030049b323f",
+    "lake-manifest.json": "26cdcd32f292246a6f8ab610faf3763740c97ac389dc40e6e8b0d907d1c3ddc2",
+    "proof-manifest.json": "67360d414ae9078033f56acf0e9df74851602b46e8560e9cd0ca76fa46acc45b",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "8ee3bf8231365d46954fcdba99649185570f99217cade16fe59459ccfe995a79",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 18 (pp. 652-686): core, Debreu-Scarf core convergence, noncooperative foundations, limits to redistribution, marginal productivity, and Appendix A cooperative game theory.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 18. Exact scope: docs/source-map.md."
+}

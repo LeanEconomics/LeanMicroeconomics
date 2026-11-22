@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-name: Check Kreps Foundations proofs
+name: Check Kreps Foundations and MWG proofs
 on: [push, pull_request]
 permissions:
   contents: read
@@ -17,6 +17,29 @@ jobs:
           - Volume1/04_RevealedPreference
           - Volume1/05_ChoiceUnderUncertainty
           - Volume1/06_UtilityForMoney
+          - MicroeconomicTheory/01_PreferenceChoice
+          - MicroeconomicTheory/02_ConsumerChoice
+          - MicroeconomicTheory/03_ClassicalDemand
+          - MicroeconomicTheory/04_AggregateDemand
+          - MicroeconomicTheory/05_Production
+          - MicroeconomicTheory/06_ChoiceUnderUncertainty
+          - MicroeconomicTheory/07_NoncooperativeGames
+          - MicroeconomicTheory/08_SimultaneousMoveGames
+          - MicroeconomicTheory/09_DynamicGames
+          - MicroeconomicTheory/10_CompetitiveMarkets
+          - MicroeconomicTheory/11_ExternalitiesPublicGoods
+          - MicroeconomicTheory/12_MarketPower
+          - MicroeconomicTheory/13_AdverseSelection
+          - MicroeconomicTheory/14_PrincipalAgent
+          - MicroeconomicTheory/15_GeneralEquilibriumExamples
+          - MicroeconomicTheory/16_WelfareTheorems
+          - MicroeconomicTheory/17_PositiveEquilibriumTheory
+          - MicroeconomicTheory/18_CoreFoundations
+          - MicroeconomicTheory/19_EquilibriumUncertainty
+          - MicroeconomicTheory/20_EquilibriumTime
+          - MicroeconomicTheory/21_SocialChoice
+          - MicroeconomicTheory/22_WelfareBargaining
+          - MicroeconomicTheory/23_MechanismDesign
     defaults:
       run:
         working-directory: ${{ matrix.project }}
@@ -55,6 +78,10 @@ jobs:
                              for name in config['modules']
                              for line in (project / name).read_text().splitlines()
                              if line.startswith('import Mathlib.'))
+          # MWG projects require other packages (Kreps chapters, LeanEconomics), whose
+          # Mathlib imports are not listed above: fetch the whole pinned Mathlib cache.
+          if Path('lakefile.toml').read_text().count('[[require]]') > 1:
+              imports = set()
           for attempt in range(1, 6):
               if subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(imports)]).returncode == 0:
                   break

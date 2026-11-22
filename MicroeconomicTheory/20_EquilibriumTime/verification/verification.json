@@ -1,0 +1,4656 @@
+{
+  "checked_at_utc": "2026-11-22T21:09:04.403375+00:00",
+  "theorems": 321,
+  "module_theorems": {
+    "MWGEquilibriumTime/Utility.lean": 30,
+    "MWGEquilibriumTime/Production.lean": 33,
+    "MWGEquilibriumTime/Closer20C.lean": 4,
+    "MWGEquilibriumTime/SmoothPrices.lean": 14,
+    "MWGEquilibriumTime/RamseySolowPrices.lean": 11,
+    "MWGEquilibriumTime/OneConsumer.lean": 23,
+    "MWGEquilibriumTime/Planning.lean": 12,
+    "MWGEquilibriumTime/Euler.lean": 24,
+    "MWGEquilibriumTime/EulerExamples.lean": 24,
+    "MWGEquilibriumTime/Stationary.lean": 14,
+    "MWGEquilibriumTime/SteadyStates.lean": 28,
+    "MWGEquilibriumTime/Closer20E.lean": 3,
+    "MWGEquilibriumTime/Dynamics.lean": 21,
+    "MWGEquilibriumTime/Several.lean": 11,
+    "MWGEquilibriumTime/Closer20G.lean": 12,
+    "MWGEquilibriumTime/Closer20B.lean": 6,
+    "MWGEquilibriumTime/OLG.lean": 17,
+    "MWGEquilibriumTime/Closer20H.lean": 12,
+    "MWGEquilibriumTime/AppendixMN.lean": 11,
+    "MWGEquilibriumTime/Nonequilibrium.lean": 7,
+    "MWGEquilibriumTime/Closer20I.lean": 4
+  },
+  "audited_declarations": 460,
+  "declarations": [
+    {
+      "name": "MWG.EquilibriumTime.BoundedStream",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.NonnegStream",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.timeAdditiveUtility",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_eq_timeAdditive",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.backShift",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.forwardShift",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.summable_discounted",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.abs_utility_le_of_monotoneOn",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.summable_discounted_of_monotoneOn",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.footnote_20_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.NonnegStream.backShift",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.BoundedStream.backShift",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_split",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_recursive",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_forwardShift",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.impatience_fails_at_zero_discount",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_2_stationary",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stationarity_fails_at_zero_discount",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.quasiHyperbolic",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_2_violation",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.footnote_20_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.splice",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_splice",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_3_future",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_3_past",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.survival_interpretation",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.altruism_dynasty",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.powAggregator",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.recursiveTrunc",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.recursiveTrunc_nonneg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_4_bounded",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.recursiveTrunc_mono",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.recursiveUtility",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_4_limit",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_4_aggregator",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.recursive_aggregator_two_solutions",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_5_concave",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_5_affine",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_5_ordinal_not_additive",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Utility.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ProdPlan",
+      "kind": "abbrev",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.StrictPos",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.dotProduct_pos_of_strictPos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions",
+      "kind": "structure",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.mk",
+      "kind": "constructor",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.isClosed",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.convex",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.zero_mem",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.noFreeLunch",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.freeDisposal",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TechAssumptions.truncation",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.truncation_of_nonneg_after",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stackPlan",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stackPlan_le_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stackPlan_zero",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stackPlan_injective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stackPlan_surjective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.noFreeLunch_iff_stack",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.freeDisposal_iff_stack",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ramseySolowSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ramseySolowSet_eq",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ramseySolow_labor_primary",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.twoSectorSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.costAdjustmentSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_3_costAdjustment",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.mergeGoods",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_3_ramseySolow",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.multiSectorSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.IsProdPath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.netOutput",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ProdEfficient",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.planValue",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.periodProfit",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.MyopicProfitMax",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.Transversality",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sum_value_netOutput",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sum_value_netOutput'",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sum_value_le_of_myopic",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.no_value_improvement",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_C_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.prodEfficient_not_mem_interior",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.storageSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.storageSet_eq",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.storageSet_techAssumptions",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.storagePath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ownRate",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ProdWeaklyEfficient",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.BoundedPath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OverallProfitMax",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tendsto_value_of_bounded",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.splicePath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.splicePath_lt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.splicePath_self",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.splicePath_gt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_4a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_4b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TEfficient",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.not_finite_change_of_myopic",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_5a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Production.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chainPlan",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chainSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chainSetNoReturn",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chainStoragePath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chain_value_zero",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chain_storage_myopic",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_5c_twoEfficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chainDetourPath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_5c_not_threeEfficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20C.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.SupportsAt",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.SmoothAt",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.planValue_smul",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.normalScale",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.normalScale_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.normalPrices",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.malinvaud_of_proportional_normals",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.normalPrices_strictPos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tripleVec",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tripleVec_le_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tripleVec_injective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.dotProduct_tripleVec",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.twoDateSet",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.convex_twoDateSet",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.updateTwo",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.updateTwo_changes",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.efficient_twoDateSet",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.block1",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.block2",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.block3",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tripleVec_blocks",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proportional_normals_of_twoEfficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.malinvaud_of_twoEfficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_5b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SmoothPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.clm_fin2_apply",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rsPlan",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rsPlan_mem",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.planValue_rsPlan",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.partial_nonneg_of_concave_mono",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rsPath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rsPrices",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rs_profitMax_of_foc",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rs_foc_of_profitMax",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_C_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.efficient_of_20_C_1_20_C_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_C_7_no_adjustment",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/RamseySolowPrices.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.consumption",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.identity_20_D_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.InBudget",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.UtilityMax",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.expenditure_summable",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_sub_of_finite",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.summable_of_finite_change",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.abs_add_smul_single_le",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.single_smul_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.budget_binds",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq",
+      "kind": "structure",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.mk",
+      "kind": "constructor",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.boundedPath",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.boundedPrices",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.pricesNonneg",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.feasible",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.myopic",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.wealthSummable",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEq.utilityMax",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.TotalProfitMax",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_2_to",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_2_of",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.MyopicUtilityMax",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.clm_apply_eq_sum",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.Foc20D5",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.Foc20D6",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.foc_20_D_5_iff_20_D_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_1_foc",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_1_i",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.linearTech",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.posOrthant1",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.logUtil",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.logUtil_concaveOn",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.logUtil_hasFDerivAt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_1_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_1_iii_false",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_1_iii_corrected",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OneConsumer.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.FeasiblePath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.PlanOptimal",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.boundedStream_consumption",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.BoundedPath.update",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.eventually_pos_of_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.partial_bounds",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.summable_of_continuousOn",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.continuous_consumption",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.consumption_zero",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.consumption_mix",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Planning.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.concave_le_fderiv_normed",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.summable_of_eq_off",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tsum_sub_eq_of_eq_off",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.Admissible",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.reducedObjective",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.objective_20_D_8",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OptimalFrom",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.EulerEq",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.euler_of_shortRun",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.euler_of_optimal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.euler_telescope",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.abs_fderiv_le_of_concave",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_D_7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.reducedObjective_succ",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.consPath",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.consPath_zero",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.consPath_succ",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.reducedObjective_consPath",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.optimal_tail",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.policy_20_D_10",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.optimal_unique",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.IsValueFn",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.bellman_20_D_11",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.bellman_20_D_11_printed_false",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_8_i",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_8_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.second_deriv_nonneg_of_isLocalMin",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_9_first",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_9_second",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Euler.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_2_deriv",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_2_ratio",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_3_deriv",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.hasSum_of_recursion",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_3_iterated",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.powCost",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_5_gamma_deriv_zero",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_5_gamma_deriv_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_5_gamma_deriv_neg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_5_F_deriv",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_5_steady_state",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_7_euler",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_deriv",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_7_solution",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_D_7_unique",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_consumption",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_negative",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_unbounded",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_bounded_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_not_optimal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_infeasible",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.footnote_20_17",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.logRegion",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_D_4_optimal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/EulerExamples.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.IsStationary",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.propPrices",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.clm_prod_eq_planValue",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exists_mem_of_smooth_neg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.supporting_prices_proportional",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_E_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_E_2_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_E_2_neg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.IsModifiedGoldenRule",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.IsGoldenRule",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.stationary_equilibrium_modified_golden_rule",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.IsConeTech",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.smoothAt_smul_of_cone",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.malinvaud_prop_of_common_normal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_2a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_2b_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_2b_neg",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_9",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Stationary.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.chord_right_le",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.strict_tangent_below",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.strictMonoOn_left_of_max",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.strictAntiOn_right_of_max",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.hasDerivAt_capital",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rs_interest_rate",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rs_steady_prices",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.modified_golden_rule_iff",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rate_pos_below_golden",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.rate_neg_above_golden",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.inefficient_above_golden",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_capital",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_efficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_3",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.modified_golden_rule_below",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_4_i_mono",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_4_i_anti",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_4_ii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.euler_homogeneous",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_4_iii_wage",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_4_iii",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_8_surplus",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_8",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.eq_20_E_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_multisector",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_E_7",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/SteadyStates.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_multisector_efficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20E.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_linear_inefficient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20E.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.golden_rule_quadratic_instance",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20E.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.steady_state_iff_fixed",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.monotone_policy_converges",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.monotone_policy_converges_unique",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.two_cycle_example",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.three_cycle_example",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.policy_deriv",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.policy_deriv_bound_printed_false",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.policy_deriv_lower_bound",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_2_false",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.footnote_20_26",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycle_beaten_by_mean",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.StrictIncDiff",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.increasing_differences_of_cross_pos",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.policy_mono_of_increasing_differences",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.policy_anti_of_decreasing_differences",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_3_rs",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_3_adjustment",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.example_20_F_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_F_1_engel",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Dynamics.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI",
+      "kind": "structure",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.mk",
+      "kind": "constructor",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.boundedPath",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.boundedPrices",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.pricesNonneg",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.feasible",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.myopic",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.profitSummable",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.endowSummable",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.WalrasEqI.utilityMax",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.wealthI",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.FeasibleAlloc",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exists_better_of_slack",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sum_wealthI",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_G_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.walrasEqI_example",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.negishiUtility",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.weighted_supergradient",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.negishiUtility_props",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_G_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.eq_20_G_6",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_5",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.dampening_of_small_coefficients",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Several.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.ParetoOptimalExchange",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.discountedUtility_finite_change",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.pareto_ratio_core",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_2_ratio",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.paretoOptimalExchange_linear",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.strictConcave_lt_fderiv",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.StaticWalrasEq",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.staticWalrasEq_noTrade",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.static_foc",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_4_repetition",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_4_static",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_3a",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.negishiPrice",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_G_3b",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20G.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.twoDateStream",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.twoDate_value",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.twoDate_props",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.SameRanking",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sameRanking_affine",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.additive_jensen",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.affine_of_weighted_jensen",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_B_5_unique",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20B.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olgWealth",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq",
+      "kind": "structure",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.mk",
+      "kind": "constructor",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.pricesPos",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.bubble_nonneg",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.assetFinite",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.cons_nonneg",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.budget",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.optimal",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.feasible_zero",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGEq.feasible",
+      "kind": "projection",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.fundamental_value_bound",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_steady_alpha",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_budget_binds",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_cost_ge",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_cost_gt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_total_wealth",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_H_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_consumption_value",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.proposition_20_H_2",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_nominal_identity",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_bubble_zero_iff_autarky",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_autarky_equilibrium",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_autarky_linear",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_autarky_dominated",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.monetary_steady_state_prices_log",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.backward_shift",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_H_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/OLG.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.monetaryCb",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.monetary_steady_state_optimal",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sqrt_utility_unique_max",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.monetary_steady_state_optimal_sqrt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycleU",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycleCa",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycleCb",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cyclePrice",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.figure_20_H_5_period_two",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycle3U",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycle3Ca",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycle3Cb",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.cycle3Price",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.figure_20_H_6_period_three",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.OLGParetoOptimal",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sqrtU",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olgParetoOptimal_monetary",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sqrt_demand",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_sqrt_demand",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_sqrt_classification",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.olg_sqrt_optimal_iff_bubble",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_H_2b_sqrt",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sqrt_determinacy_condition",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20H.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.mnReward",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.mnProgram",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.mnObjective",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.mnPlan",
+      "kind": "def",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.mnPlan_value",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.plan_value_eq",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.value_attained_M_N",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.value_continuous_M_N",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.bellman_M_N",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.theorem_M_N_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.value_iteration_M_N",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.value_iteration_pointwise_M_N",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.summable_mnObjective",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.value_concave_M_N",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.euler_M_N_4",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/AppendixMN.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.shortRun_demand_derivative",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.shortRun_negDef",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.shortRun_aggregate_negDef",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.unique_zero_of_negDef",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.exercise_20_I_1",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.learning_walras",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.learning_reverses",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Nonequilibrium.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.sq_le_dotProduct_self",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20I.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tatonnement_global_stable",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20I.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tatonnement_global_stable_negDef",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20I.lean"
+    },
+    {
+      "name": "MWG.EquilibriumTime.tatonnement_linear_instance",
+      "kind": "theorem",
+      "module": "MWGEquilibriumTime/Closer20I.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.EquilibriumTime.BoundedStream": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.NonnegStream": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.timeAdditiveUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_eq_timeAdditive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.backShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.forwardShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.summable_discounted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.abs_utility_le_of_monotoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.summable_discounted_of_monotoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.footnote_20_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.NonnegStream.backShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.BoundedStream.backShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_recursive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_forwardShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.impatience_fails_at_zero_discount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_2_stationary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stationarity_fails_at_zero_discount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.quasiHyperbolic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_2_violation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.footnote_20_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.splice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_splice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_3_future": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_3_past": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.survival_interpretation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.altruism_dynasty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.powAggregator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.recursiveTrunc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.recursiveTrunc_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_4_bounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.recursiveTrunc_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.recursiveUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_4_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_4_aggregator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.recursive_aggregator_two_solutions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_5_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_5_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_5_ordinal_not_additive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ProdPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.StrictPos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.dotProduct_pos_of_strictPos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.isClosed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.zero_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.noFreeLunch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.freeDisposal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TechAssumptions.truncation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.truncation_of_nonneg_after": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stackPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stackPlan_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stackPlan_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stackPlan_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stackPlan_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.noFreeLunch_iff_stack": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.freeDisposal_iff_stack": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ramseySolowSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ramseySolowSet_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ramseySolow_labor_primary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.twoSectorSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.costAdjustmentSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_3_costAdjustment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.mergeGoods": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_3_ramseySolow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.multiSectorSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.IsProdPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.netOutput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ProdEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.planValue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.periodProfit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.MyopicProfitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.Transversality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sum_value_netOutput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sum_value_netOutput'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sum_value_le_of_myopic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.no_value_improvement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.prodEfficient_not_mem_interior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.storageSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.storageSet_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.storageSet_techAssumptions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.storagePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ownRate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ProdWeaklyEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.BoundedPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OverallProfitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tendsto_value_of_bounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.splicePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.splicePath_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.splicePath_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.splicePath_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.not_finite_change_of_myopic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chainPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chainSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chainSetNoReturn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chainStoragePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chain_value_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chain_storage_myopic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_5c_twoEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chainDetourPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_5c_not_threeEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.SupportsAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.SmoothAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.planValue_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.normalScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.normalScale_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.normalPrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.malinvaud_of_proportional_normals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.normalPrices_strictPos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tripleVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tripleVec_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tripleVec_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.dotProduct_tripleVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.twoDateSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.convex_twoDateSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.updateTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.updateTwo_changes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.efficient_twoDateSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.block1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.block2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.block3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tripleVec_blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proportional_normals_of_twoEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.malinvaud_of_twoEfficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.clm_fin2_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rsPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rsPlan_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.planValue_rsPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.partial_nonneg_of_concave_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rsPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rsPrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rs_profitMax_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rs_foc_of_profitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.efficient_of_20_C_1_20_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_C_7_no_adjustment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.consumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.identity_20_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.InBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.UtilityMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.expenditure_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_sub_of_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.summable_of_finite_change": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.abs_add_smul_single_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.single_smul_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.budget_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.boundedPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.boundedPrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.pricesNonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.myopic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.wealthSummable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEq.utilityMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.TotalProfitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_2_to": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_2_of": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.MyopicUtilityMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.clm_apply_eq_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.Foc20D5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.Foc20D6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.foc_20_D_5_iff_20_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_1_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_1_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.linearTech": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.posOrthant1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.logUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.logUtil_concaveOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.logUtil_hasFDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_1_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_1_iii_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_1_iii_corrected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.FeasiblePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.PlanOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.boundedStream_consumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.BoundedPath.update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.eventually_pos_of_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.partial_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.summable_of_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.continuous_consumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.consumption_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.consumption_mix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.concave_le_fderiv_normed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.summable_of_eq_off": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tsum_sub_eq_of_eq_off": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.Admissible": [],
+    "MWG.EquilibriumTime.reducedObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.objective_20_D_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OptimalFrom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.EulerEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.euler_of_shortRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.euler_of_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.euler_telescope": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.abs_fderiv_le_of_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_D_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.reducedObjective_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.consPath": [],
+    "MWG.EquilibriumTime.consPath_zero": [],
+    "MWG.EquilibriumTime.consPath_succ": [],
+    "MWG.EquilibriumTime.reducedObjective_consPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.optimal_tail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.policy_20_D_10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.optimal_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.IsValueFn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.bellman_20_D_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.bellman_20_D_11_printed_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_8_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_8_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.second_deriv_nonneg_of_isLocalMin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_9_first": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_9_second": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_2_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_2_ratio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_3_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.hasSum_of_recursion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_3_iterated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.powCost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_5_gamma_deriv_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_5_gamma_deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_5_gamma_deriv_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_5_F_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_5_steady_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_7_euler": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_7_solution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_D_7_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_consumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_negative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_unbounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_bounded_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_not_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_infeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.footnote_20_17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.logRegion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_D_4_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.IsStationary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.propPrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.clm_prod_eq_planValue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exists_mem_of_smooth_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.supporting_prices_proportional": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_E_2_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_E_2_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.IsModifiedGoldenRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.IsGoldenRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.stationary_equilibrium_modified_golden_rule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.IsConeTech": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.smoothAt_smul_of_cone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.malinvaud_prop_of_common_normal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_2b_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_2b_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.chord_right_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.strict_tangent_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.strictMonoOn_left_of_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.strictAntiOn_right_of_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.hasDerivAt_capital": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rs_interest_rate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rs_steady_prices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.modified_golden_rule_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rate_pos_below_golden": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.rate_neg_above_golden": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.inefficient_above_golden": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_capital": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_efficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.modified_golden_rule_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_4_i_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_4_i_anti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_4_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.euler_homogeneous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_4_iii_wage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_4_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_8_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.eq_20_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_multisector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_E_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_multisector_efficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_linear_inefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.golden_rule_quadratic_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.steady_state_iff_fixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.monotone_policy_converges": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.monotone_policy_converges_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.two_cycle_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.three_cycle_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.policy_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.policy_deriv_bound_printed_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.policy_deriv_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_2_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.footnote_20_26": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycle_beaten_by_mean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.StrictIncDiff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.increasing_differences_of_cross_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.policy_mono_of_increasing_differences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.policy_anti_of_decreasing_differences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_3_rs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_3_adjustment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.example_20_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_F_1_engel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.boundedPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.boundedPrices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.pricesNonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.myopic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.profitSummable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.endowSummable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.WalrasEqI.utilityMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.wealthI": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.FeasibleAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exists_better_of_slack": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sum_wealthI": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_G_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.walrasEqI_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.negishiUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.weighted_supergradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.negishiUtility_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_G_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.eq_20_G_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.dampening_of_small_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.ParetoOptimalExchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.discountedUtility_finite_change": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.pareto_ratio_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_2_ratio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.paretoOptimalExchange_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.strictConcave_lt_fderiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.StaticWalrasEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.staticWalrasEq_noTrade": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.static_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_4_repetition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_4_static": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.negishiPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_G_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.twoDateStream": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.twoDate_value": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.twoDate_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.SameRanking": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sameRanking_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.additive_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.affine_of_weighted_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_B_5_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olgWealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.pricesPos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.bubble_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.assetFinite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.cons_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.feasible_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGEq.feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.fundamental_value_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_steady_alpha": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_budget_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_cost_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_cost_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_total_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_H_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_consumption_value": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.proposition_20_H_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_nominal_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_bubble_zero_iff_autarky": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_autarky_equilibrium": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_autarky_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_autarky_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.monetary_steady_state_prices_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.backward_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_H_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.monetaryCb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.monetary_steady_state_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sqrt_utility_unique_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.monetary_steady_state_optimal_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycleU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycleCa": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycleCb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cyclePrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.figure_20_H_5_period_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycle3U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycle3Ca": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycle3Cb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.cycle3Price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.figure_20_H_6_period_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.OLGParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sqrtU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olgParetoOptimal_monetary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sqrt_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_sqrt_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_sqrt_classification": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.olg_sqrt_optimal_iff_bubble": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_H_2b_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sqrt_determinacy_condition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.mnReward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.mnProgram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.mnObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.mnPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.mnPlan_value": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.plan_value_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.value_attained_M_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.value_continuous_M_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.bellman_M_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.theorem_M_N_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.value_iteration_M_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.value_iteration_pointwise_M_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.summable_mnObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.value_concave_M_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.euler_M_N_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.shortRun_demand_derivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.shortRun_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.shortRun_aggregate_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.unique_zero_of_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.exercise_20_I_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.learning_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.learning_reverses": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.sq_le_dotProduct_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tatonnement_global_stable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tatonnement_global_stable_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.EquilibriumTime.tatonnement_linear_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGEquilibriumTime/Utility.lean": "58e76fda61ef773cf2725e531e05b45d6931cb7f50fb4ac742c796de0edad035",
+    "MWGEquilibriumTime/Production.lean": "96d79c3780b6e3aef2074eb420a5402751efe364c24e5b34160249a7acd40c4a",
+    "MWGEquilibriumTime/Closer20C.lean": "f9063f684dabca9a52fcab434e161f4306d9908abf43ef29a2b2db612d00c792",
+    "MWGEquilibriumTime/SmoothPrices.lean": "44c5806488ca31f4d87593f7bd11ec9560935a65292038924d03187b79791c09",
+    "MWGEquilibriumTime/RamseySolowPrices.lean": "ba9747d64a7f3777742d2f4f900f907b300d7416deb3051dc97e0baf2ee68232",
+    "MWGEquilibriumTime/OneConsumer.lean": "8d9a817ae471a228d63eabe29572b64afa0e6c2b3d535d853a838adb552312fc",
+    "MWGEquilibriumTime/Planning.lean": "cd8c5cad7145a32cdf67d06c502a94b935ff3d372e852ba2e3db7cde11d94fac",
+    "MWGEquilibriumTime/Euler.lean": "5b2b45098f727b33c6382c49f8e04f58912b0912963b0f979406ff05ffb8cbf6",
+    "MWGEquilibriumTime/EulerExamples.lean": "bc385dc0ea5ad0efb32233deb407ff589143c83a60bb4e1963fc3893a94bff31",
+    "MWGEquilibriumTime/Stationary.lean": "506b3a3cb7650f7f647a0e56a2b6727613a18f0a7247b4643f1663ed02927256",
+    "MWGEquilibriumTime/SteadyStates.lean": "aede97af9c55e31c4f5dfaf04ccdce29966f827697c2639150079d49ee855421",
+    "MWGEquilibriumTime/Closer20E.lean": "68f6b08092d5f16106e502eaec197f51b558aad30264064c5988ae901ce0ca01",
+    "MWGEquilibriumTime/Dynamics.lean": "d9c79d2980d3085b79e84927728cc8c04ed9521e23e441c31821989b1bed21a9",
+    "MWGEquilibriumTime/Several.lean": "96040f4d00f6f8f14e190a339d62085b55d16ee975e36c3b80b8c037a505b532",
+    "MWGEquilibriumTime/Closer20G.lean": "d4492a9c4ce6318c63da1fe6f51364f195b77691f5b5af2143ec2270e0a2bc7b",
+    "MWGEquilibriumTime/Closer20B.lean": "dc21026a7e9808abaffd9050fc3d0f214ff48733f700fda22bd2f1a82bb24692",
+    "MWGEquilibriumTime/OLG.lean": "9183c74f54b6c2a4ec27e343e8b39a817468a8447686da7ce4190a00ef48e978",
+    "MWGEquilibriumTime/Closer20H.lean": "fc0de02c6a84c2a26c23d980ca1d9084b9133a8d1bb5f58f6d0c5fee06882059",
+    "MWGEquilibriumTime/AppendixMN.lean": "518875782afd0e2e186d8f2446798077097930777947f58aacc514292588b1b0",
+    "MWGEquilibriumTime/Nonequilibrium.lean": "4046f030129670af1db84359ed61a887ee0f15d051075d7a35243b2e939a599b",
+    "MWGEquilibriumTime/Closer20I.lean": "9a598bb934028ea6d92b31f643b1aa6bb0e9eb43df640db3c9ac746b296f43cd",
+    "MWGEquilibriumTime.lean": "ccbc4c4611b5575ffa0ab02ff283521dd77f1bdb18b954f7204b00aacac68eaf",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "d1f2ce4cbf21858af4d7db4f5727f44e0836687414a3b772cdf0c73d0cd249fd",
+    "lake-manifest.json": "42c156652a9da70f9ae2101e87b1742275ca18bc600b5a28995c805e434085bc",
+    "proof-manifest.json": "5fbad32ebc65db7e62eef58299d70089098a7e9031ebc70b76afc55a1a54946e",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "f3618a1f4ccdf3060100db4972e3efd21d8186f1d8e187bece948e3e7606154e",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 20 (pp. 732-786) with Appendix M.N: intertemporal utility and production, Malinvaud efficiency, representative-consumer equilibrium, stationary paths and golden rules, dynamics, overlapping generations, and dynamic programming.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 20. Exact scope: docs/source-map.md."
+}

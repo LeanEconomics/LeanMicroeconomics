@@ -1,0 +1,5053 @@
+{
+  "checked_at_utc": "2026-11-21T12:24:10.764835+00:00",
+  "theorems": 347,
+  "module_theorems": {
+    "MWGSimultaneousMoveGames/Dominance.lean": 16,
+    "MWGSimultaneousMoveGames/MixedPayoff.lean": 18,
+    "MWGSimultaneousMoveGames/MixedStrategies.lean": 21,
+    "MWGSimultaneousMoveGames/AppendixMI.lean": 12,
+    "MWGSimultaneousMoveGames/Existence.lean": 14,
+    "MWGSimultaneousMoveGames/Rationalizable.lean": 17,
+    "MWGSimultaneousMoveGames/TwoPlayer.lean": 5,
+    "MWGSimultaneousMoveGames/TremblingHand.lean": 20,
+    "MWGSimultaneousMoveGames/Bimatrix.lean": 38,
+    "MWGSimultaneousMoveGames/Examples8B.lean": 11,
+    "MWGSimultaneousMoveGames/Examples8CD.lean": 16,
+    "MWGSimultaneousMoveGames/Bayesian.lean": 10,
+    "MWGSimultaneousMoveGames/Zigger.lean": 10,
+    "MWGSimultaneousMoveGames/ExercisesBD.lean": 24,
+    "MWGSimultaneousMoveGames/ExercisesCF.lean": 10,
+    "MWGSimultaneousMoveGames/Bargaining.lean": 4,
+    "MWGSimultaneousMoveGames/TwoPlayerConverse.lean": 18,
+    "MWGSimultaneousMoveGames/Converses.lean": 5,
+    "MWGSimultaneousMoveGames/Auctions.lean": 20,
+    "MWGSimultaneousMoveGames/Cournot.lean": 21,
+    "MWGSimultaneousMoveGames/IceCream.lean": 14,
+    "MWGSimultaneousMoveGames/Kreps.lean": 7,
+    "MWGSimultaneousMoveGames/Armies.lean": 7,
+    "MWGSimultaneousMoveGames/FirstPriceUniform.lean": 9
+  },
+  "audited_declarations": 504,
+  "declarations": [
+    {
+      "name": "MWG.SimultaneousMoveGames.StrictlyDominant",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.StrictlyDominates",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.StrictlyDominated",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.strictlyDominant_iff_dominates",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.WeaklyDominates",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.WeaklyDominated",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.WeaklyDominant",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.StrictlyDominates.weaklyDominates",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.StrictlyDominates.trans",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsNashEquilibrium",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bestResponse",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bestResponse_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isNashEquilibrium_iff_mem_bestResponse",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsNashEquilibrium.not_strictlyDominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.SDominatedIn",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.SDStep",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.SDTerminal",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fullSets",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdChain_subset",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdStep_nonempty",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdChain_nonempty",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdChain_dominated_by_survivor",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdTerminal_subset_chain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_4",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.countingGame",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.countingGame_step",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.countingGame_terminal",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_4_infinite_counterexample",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Dominance.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsMixedProfile",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pureProfile",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedProfile_pureProfile",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pureProfile_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.prod_update_eq",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_update_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_update_add_smul",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_update_sum_smul",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_update_eq_sum_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_pureProfile_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_pureProfile",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_pureProfile_update_mixed",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.prod_mixed_nonneg",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sum_prod_mixed_eq_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_update_eq_expect",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_le_of_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_lt_of_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.abs_mixedPayoff_le",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_compound",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedPayoff.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MixedStrictlyDominates",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MixedStrictlyDominated",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MixedStrictlyDominant",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedStrictlyDominates_iff_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_B_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_shift",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedStrategy_shift",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_6",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_le_of_pure_le",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.uniformMixed",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedStrategy_uniformMixed",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.uniformMixed_pos",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedProfile_uniform",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_7",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsBestResponse",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.NeverBestResponse",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isBestResponse_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.neverBestResponse_of_mixedStrictlyDominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isBestResponse_iff_support",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isBestResponse_pureMixed_of_max",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_pure_bestResponse",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.footnote_8_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsMixedNash",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedNash_iff_bestResponse",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedNash_iff_mixedExtensionGame",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_D_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedNash_iff_pure_deviations",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.corollary_8_D_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/MixedStrategies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.theorem_M_I_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.theorem_M_I_1_instance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.brouwer_unitInterval_ivt",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_M_I_1b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.unitCircle",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rotateClockwise",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.circle_rotation_no_fixedPoint",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.circle_not_convex",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.kakutani_mwg",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.theorem_M_I_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.theorem_M_I_2_instance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figM12b",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_M_I_2b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.theorem_M_I_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_M_I_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/AppendixMI.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bestResp",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.update_mem_pi",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.lemma_8_AA_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.nash_exists_of_quasiconcave",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_D_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.restrictGame",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isNashEquilibrium_restrictGame",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_D_3_instance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.continuous_mixedPayoff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.concaveOn_mixedPayoff_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.convex_mixedExtension",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isCompact_mixedExtension",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_D_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.no_mixedProfile_of_isEmpty",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.footnote_8_5",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.footnote_8_5_singleton",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Existence.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BRToSome",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratStep",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratIter",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.Rationalizable",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BRToSome.mono",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.subset_ratIter_of_bestResponseSet",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizable_of_bestResponseSet",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.Rationalizable.isMixedStrategy",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.NBRStep",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.NBRTerminal",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_ratIter_subset_of_chain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.nbrChain_subset",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.nbrTerminal_eq_rationalizable",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.nbrStep_ratStep",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MSDStep",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdStep_msdStep",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.msd_dominated_lt",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_ratIter_support_subset",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizable_support_subset",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.msdChain_of_sdChain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizable_of_isMixedNash",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.footnote_8_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Rationalizable.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsBelief",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.beliefPayoff",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bestResponse_correlated_of_not_dominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.correlated_iff_not_dominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.marginal",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedProfile_marginal",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.expect_eq_mixedPayoff_marginals",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayer.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsPerturbation",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.perturbedSet",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsPerturbedNash",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsTHP",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsTotallyMixed",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedStrategy_of_mem_perturbedSet",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.perturbedNash_eq_of_not_best",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isTotallyMixed_of_perturbedNash",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixed_le_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixed_exists_pos",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_F_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MixedWeaklyDominates",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MixedWeaklyDominated",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedWeaklyDominates_iff_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MixedWeaklyDominates.lt_of_totallyMixed",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_F_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedWeaklyDominated_of_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.proposition_8_F_2_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.convex_perturbedSet",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isCompact_perturbedSet",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.perturbedSet_nonempty",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_perturbedNash",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.tendsto_mixedPayoff_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.uniformTremble",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isPerturbation_uniformTremble",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.tendsto_uniformTremble",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_F_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_nash_no_weakly_dominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TremblingHand.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.S2",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pp",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pp_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pp_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.eq_pp",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_payoff_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_payoff_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_update_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_update_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_isNash_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_strictlyDominates_zero_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_strictlyDominates_one_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_weaklyDominates_zero_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_weaklyDominates_one_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_strictlyDominant_zero_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_strictlyDominant_one_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ps",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ps_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ps_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_sdominatedIn_zero_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_sdominatedIn_one_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_sdStep_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_sdTerminal_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fullSets_eq_ps",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_fin_two",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixedPayoff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixedPayoff_row",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixedPayoff_col",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mp",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mp_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mp_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedProfile_mp",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_isMixedNash_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixed_vs_pure_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixed_vs_pure_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixedStrictlyDominates_zero_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_mixedStrictlyDominates_one_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_isBestResponse_row",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_isBestResponse_col",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bimatrix_isMixedNash_support",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sum_pureMixed_mul",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.eq_mp",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bimatrix.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pdU\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pdU\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_B_1_confess_dominant",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_B_1_dilemma",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B2U\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B2U\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_B_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B3U\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B3U\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_B_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.RowWeaklyDominatedIn",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ColWeaklyDominatedIn",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.WDStep2",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.WDTerminal2",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.wdTerminal2_singleton",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_B_3_order_dependence",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.daU\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.daU\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_B_3_dominance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_B_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B5U\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B5U\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.halfUD",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedStrategy_halfUD",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_B_5",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8B5U\u2081'",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_B_5_variant",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8B.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8C1U\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8C1U\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bernheim",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.halfB13",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedStrategy_halfB13",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_C_1_dominance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bernheimSet",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_C_1_rationalizable",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bernheim_bestResponse_b4",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_C_1_not_rationalizable",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_C_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8D1U\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8D1U\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.meetNY",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_3_figure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_5_indifference",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_5",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.meetNY_correlated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_4_no_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_D_4",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Examples8CD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame",
+      "kind": "structure",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.mk",
+      "kind": "constructor",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.prior",
+      "kind": "projection",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.payoff",
+      "kind": "projection",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.IsPrior",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.play",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.expectedPayoff",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.toNormalForm",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.IsBNE",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.isBNE_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.typeProb",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.typeGain",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.condPayoff",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.play_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.expectedPayoff_update_eq",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.expectedPayoff_eq",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.typeGain_eq_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.proposition_8_E_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BayesianGame.exists_mixed_BNE",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.daDims",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.DA\u0398",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.daBayes",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.da\u03b8",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.da\u0398Equiv",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sum_da\u0398",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.daBayes_isPrior",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_E_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bayesian.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.zProb",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ZiggerBNE",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.zigger_sqrt_lt_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.zProb_mem",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.volume_sq_ge",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.volume_sq_ge_of_one_lt",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.zigger_cutoff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.zigger_cutoff_ge_sqrt",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.zigger_prob_response",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_E_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_E_2_exists",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.example_8_E_2_outcomes",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Zigger.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.Effort",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.lobbyGame",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.quad_max",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.lobbyGame_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_1_dominant",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.eq_of_strictlyDominant_of_max",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_1_only_if",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_1_one_firm",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_1_nonpositive",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.weaklyDominant_unique",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.AtLeastAsGoodAsAll",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_2a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_2b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_6",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_6_param",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.iSup_iInf_le_iInf_iSup_of_bdd",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mprof",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.\u0394\u2081",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.\u0394\u2082",
+      "kind": "abbrev",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pay2",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedProfile_mprof",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.abs_pay2_le",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.maximin\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.minimax\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.maximin\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.minimax\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_7a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.IsZeroSum2",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.pay2_zeroSum",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.update_mprof_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.update_mprof_one",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedNash_mprof_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_7b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_7c",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_8_counterexample",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_8",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesBD.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedWeaklyDominates_pureMixed",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8F1U\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fig8F1U\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_F_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vdU\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vanDamme",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.p3",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.mixedPayoff_three",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_F_2_nash",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_F_2_undominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_F_2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.c4U",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.c4E",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_4a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_4a_printed_false",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_4b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_C_4c",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/ExercisesCF.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.demandGame",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bargaining.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.demand_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bargaining.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.eff",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Bargaining.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_4a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bargaining.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_4b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bargaining.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_4c",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Bargaining.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.gordan_alternative",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.stiemke_alternative",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.two_profile_ext",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.two_other",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.two_nonempty",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.two_mixedPayoff_pure",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.two_mixedPayoff_eq",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isBestResponse_two_mix",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_totallyMixed_bestResponse",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isTHP_of_not_weaklyDominated_two",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.MSDTerminal",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.BRToSomeConv",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratStepConv",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratIterConv",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.RationalizableConv",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratIterConv_subset",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizableConv_of_bestResponseSet",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.eq_zero_of_mem_convexHull",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_ratIterConv_support_subset",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_max_mem_of_msdChain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exists_belief_of_msdTerminal",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizableConv_of_msdTerminal_two",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizableConv_iff_two",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/TwoPlayerConverse.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.msdTerminal_full_of_bestResponse",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratGapU\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratGapU\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratGap",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.halfLR",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.isMixedStrategy_halfLR",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.ratGap_bestResponse",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rationalizable_two_counterexample",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.figure_8_F_1_UL_isTHP",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Converses.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vickrey",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vickrey_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vickrey_truthful",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vickrey_le_truthful",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.vickrey_sup_const",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_3_one_bidder",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_3_instance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpInt",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpPay",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpPay_eq",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpPay_le_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpPay_lt_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.firstPrice",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.one_sub_ne",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.firstPrice_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.firstPrice_weaklyDominates_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_3a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_3b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpInt_bound_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.firstPrice_isNash_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_3c",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_3c_exists",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_3c_not_unique",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Auctions.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdRound",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdIter",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdStep_sdRound",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sdIter_chain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rivalsTotal",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.qIval",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cbr",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rivalsTotal_const",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.rivalsTotal_mem",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot_gap",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot_not_dominated",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot_round",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot_round_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournotBounds",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournotBounds_inv",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournot_two_sdIter",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.cournotStar",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_5a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_B_5b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.typeP",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.tcost",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bayesCournot",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.expQ",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sum_fin2_fin2",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bayesCournot_isPrior",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bayesCournot_typeProb",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bayesCournot_typeGain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.quad_argmax",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bayesCournot_isBNE_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.bcq",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_3",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_3_instance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Cournot.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare2",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.iceCream2",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.iceCream3",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.uiMid",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare2_lt",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare2_self",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare2_gt",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.iceCream2_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare2_le_half",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_5a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3_left",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3_right",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3_self",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3_leftmost",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3_rightmost",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.icShare3_together",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.iceCream3_update",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_5b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/IceCream.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.krepsU\u2081",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.krepsU\u2082",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.kreps",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.kreps_rows",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.kreps_cols",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_9a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.krepsX",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.krepsY",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_9b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_9c_not_nash",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_9c_rationalizable",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_D_9d",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Kreps.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.armyPay",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.armies",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.sum_fin2_bool",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.armies_isPrior",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.armies_typeProb",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.armies_typeGain",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.armies_isBNE_iff",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.stratAA",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.stratNN",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.stratAN",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_1",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_1_instance",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/Armies.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpBelow",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpExp",
+      "kind": "def",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpTie_zero",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpBelow_eq",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fpBelow_nonpos",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fp_bernoulli",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.fp_core",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_2b",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_2a",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_2b_limit",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    },
+    {
+      "name": "MWG.SimultaneousMoveGames.exercise_8_E_2b_mono",
+      "kind": "theorem",
+      "module": "MWGSimultaneousMoveGames/FirstPriceUniform.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.SimultaneousMoveGames.StrictlyDominant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.StrictlyDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.StrictlyDominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.strictlyDominant_iff_dominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.WeaklyDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.WeaklyDominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.WeaklyDominant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.StrictlyDominates.weaklyDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.StrictlyDominates.trans": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsNashEquilibrium": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bestResponse_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isNashEquilibrium_iff_mem_bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsNashEquilibrium.not_strictlyDominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.SDominatedIn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.SDStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.SDTerminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fullSets": [],
+    "MWG.SimultaneousMoveGames.sdChain_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdStep_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdChain_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdChain_dominated_by_survivor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdTerminal_subset_chain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.countingGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.countingGame_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.countingGame_terminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_4_infinite_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsMixedProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pureProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedProfile_pureProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pureProfile_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.prod_update_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_update_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_update_add_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_update_sum_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_update_eq_sum_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_pureProfile_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_pureProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_pureProfile_update_mixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.prod_mixed_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sum_prod_mixed_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_update_eq_expect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_le_of_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_lt_of_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.abs_mixedPayoff_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_compound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MixedStrictlyDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MixedStrictlyDominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MixedStrictlyDominant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedStrictlyDominates_iff_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedStrategy_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_le_of_pure_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.uniformMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedStrategy_uniformMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.uniformMixed_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedProfile_uniform": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsBestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.NeverBestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isBestResponse_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.neverBestResponse_of_mixedStrictlyDominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isBestResponse_iff_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isBestResponse_pureMixed_of_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_pure_bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.footnote_8_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsMixedNash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedNash_iff_bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedNash_iff_mixedExtensionGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedNash_iff_pure_deviations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.corollary_8_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.theorem_M_I_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.theorem_M_I_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.brouwer_unitInterval_ivt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_M_I_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.unitCircle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rotateClockwise": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.circle_rotation_no_fixedPoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.circle_not_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.kakutani_mwg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.theorem_M_I_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.theorem_M_I_2_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figM12b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_M_I_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.theorem_M_I_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_M_I_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bestResp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.update_mem_pi": [],
+    "MWG.SimultaneousMoveGames.lemma_8_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.nash_exists_of_quasiconcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.restrictGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isNashEquilibrium_restrictGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_D_3_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.continuous_mixedPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.concaveOn_mixedPayoff_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.convex_mixedExtension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isCompact_mixedExtension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.no_mixedProfile_of_isEmpty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.footnote_8_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.footnote_8_5_singleton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BRToSome": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratIter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.Rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BRToSome.mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.subset_ratIter_of_bestResponseSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizable_of_bestResponseSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.Rationalizable.isMixedStrategy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.NBRStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.NBRTerminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_ratIter_subset_of_chain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.nbrChain_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.nbrTerminal_eq_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.nbrStep_ratStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MSDStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdStep_msdStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.msd_dominated_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_ratIter_support_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizable_support_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.msdChain_of_sdChain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizable_of_isMixedNash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.footnote_8_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsBelief": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.beliefPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bestResponse_correlated_of_not_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.correlated_iff_not_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedProfile_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.expect_eq_mixedPayoff_marginals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsPerturbation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.perturbedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsPerturbedNash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsTHP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsTotallyMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedStrategy_of_mem_perturbedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.perturbedNash_eq_of_not_best": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isTotallyMixed_of_perturbedNash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixed_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixed_exists_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MixedWeaklyDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MixedWeaklyDominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedWeaklyDominates_iff_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MixedWeaklyDominates.lt_of_totallyMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_F_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedWeaklyDominated_of_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.proposition_8_F_2_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.convex_perturbedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isCompact_perturbedSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.perturbedSet_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_perturbedNash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.tendsto_mixedPayoff_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.uniformTremble": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isPerturbation_uniformTremble": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.tendsto_uniformTremble": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_F_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_nash_no_weakly_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.S2": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pp": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.pp_zero": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.pp_one": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.eq_pp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_payoff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_payoff_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_update_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_update_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_isNash_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_strictlyDominates_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_strictlyDominates_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_weaklyDominates_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_weaklyDominates_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_strictlyDominant_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_strictlyDominant_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ps": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.ps_zero": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.ps_one": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_sdominatedIn_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_sdominatedIn_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_sdStep_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_sdTerminal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fullSets_eq_ps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_fin_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixedPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixedPayoff_row": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixedPayoff_col": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mp_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mp_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedProfile_mp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_isMixedNash_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixed_vs_pure_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixed_vs_pure_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixedStrictlyDominates_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_mixedStrictlyDominates_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_isBestResponse_row": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_isBestResponse_col": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bimatrix_isMixedNash_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sum_pureMixed_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.eq_mp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pdU\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pdU\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_B_1_confess_dominant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_B_1_dilemma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B2U\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B2U\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B3U\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B3U\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.RowWeaklyDominatedIn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ColWeaklyDominatedIn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.WDStep2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.WDTerminal2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.wdTerminal2_singleton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_B_3_order_dependence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.daU\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.daU\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_B_3_dominance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B5U\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B5U\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.halfUD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedStrategy_halfUD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_B_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8B5U\u2081'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_B_5_variant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8C1U\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8C1U\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bernheim": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.halfB13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedStrategy_halfB13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_C_1_dominance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bernheimSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_C_1_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bernheim_bestResponse_b4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_C_1_not_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8D1U\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8D1U\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.meetNY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_3_figure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_5_indifference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.meetNY_correlated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_4_no_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.prior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.IsPrior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.play": [],
+    "MWG.SimultaneousMoveGames.BayesianGame.expectedPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.toNormalForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.IsBNE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.isBNE_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.typeProb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.typeGain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.condPayoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.play_update": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.expectedPayoff_update_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.expectedPayoff_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.typeGain_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.proposition_8_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BayesianGame.exists_mixed_BNE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.daDims": [],
+    "MWG.SimultaneousMoveGames.DA\u0398": [],
+    "MWG.SimultaneousMoveGames.daBayes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.da\u03b8": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.da\u0398Equiv": [
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sum_da\u0398": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.daBayes_isPrior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.zProb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ZiggerBNE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.zigger_sqrt_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.zProb_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.volume_sq_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.volume_sq_ge_of_one_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.zigger_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.zigger_cutoff_ge_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.zigger_prob_response": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_E_2_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.example_8_E_2_outcomes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.Effort": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.lobbyGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.quad_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.lobbyGame_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_1_dominant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.eq_of_strictlyDominant_of_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_1_only_if": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_1_one_firm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_1_nonpositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.weaklyDominant_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.AtLeastAsGoodAsAll": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_6_param": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.iSup_iInf_le_iInf_iSup_of_bdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mprof": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.\u0394\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.\u0394\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pay2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedProfile_mprof": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.abs_pay2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.maximin\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.minimax\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.maximin\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.minimax\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_7a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.IsZeroSum2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.pay2_zeroSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.update_mprof_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.update_mprof_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedNash_mprof_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_7c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_8_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.mixedWeaklyDominates_pureMixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8F1U\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fig8F1U\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vdU\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vanDamme": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.p3": [
+      "propext"
+    ],
+    "MWG.SimultaneousMoveGames.mixedPayoff_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_F_2_nash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_F_2_undominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_F_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.c4U": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.c4E": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_4a_printed_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_C_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.demandGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.demand_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.eff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.gordan_alternative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.stiemke_alternative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.two_profile_ext": [
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.two_other": [],
+    "MWG.SimultaneousMoveGames.two_nonempty": [
+      "Classical.choice"
+    ],
+    "MWG.SimultaneousMoveGames.two_mixedPayoff_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.two_mixedPayoff_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isBestResponse_two_mix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_totallyMixed_bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isTHP_of_not_weaklyDominated_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.MSDTerminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.BRToSomeConv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratStepConv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratIterConv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.RationalizableConv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratIterConv_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizableConv_of_bestResponseSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.eq_zero_of_mem_convexHull": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_ratIterConv_support_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_max_mem_of_msdChain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exists_belief_of_msdTerminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizableConv_of_msdTerminal_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizableConv_iff_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.msdTerminal_full_of_bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratGapU\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratGapU\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.halfLR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.isMixedStrategy_halfLR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.ratGap_bestResponse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rationalizable_two_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.figure_8_F_1_UL_isTHP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vickrey": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vickrey_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vickrey_truthful": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vickrey_le_truthful": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.vickrey_sup_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_3_one_bidder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_3_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpInt": [],
+    "MWG.SimultaneousMoveGames.fpPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpPay_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpPay_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpPay_lt_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.firstPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.one_sub_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.firstPrice_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.firstPrice_weaklyDominates_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpInt_bound_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.firstPrice_isNash_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_3c_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_3c_not_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdRound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdIter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdStep_sdRound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sdIter_chain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rivalsTotal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.qIval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cbr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rivalsTotal_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.rivalsTotal_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot_not_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot_round": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot_round_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournotBounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournotBounds_inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournot_two_sdIter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.cournotStar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_B_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.typeP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.tcost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bayesCournot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.expQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sum_fin2_fin2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bayesCournot_isPrior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bayesCournot_typeProb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bayesCournot_typeGain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.quad_argmax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bayesCournot_isBNE_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.bcq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_3_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.iceCream2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.iceCream3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.uiMid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare2_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare2_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare2_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.iceCream2_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare2_le_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3_leftmost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3_rightmost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.icShare3_together": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.iceCream3_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.krepsU\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.krepsU\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.kreps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.kreps_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.kreps_cols": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_9a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.krepsX": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.krepsY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_9b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_9c_not_nash": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_9c_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_D_9d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.armyPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.armies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.sum_fin2_bool": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.armies_isPrior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.armies_typeProb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.armies_typeGain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.armies_isBNE_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.stratAA": [],
+    "MWG.SimultaneousMoveGames.stratNN": [],
+    "MWG.SimultaneousMoveGames.stratAN": [],
+    "MWG.SimultaneousMoveGames.exercise_8_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpBelow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpExp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpTie_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpBelow_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fpBelow_nonpos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fp_bernoulli": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.fp_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_2b_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.SimultaneousMoveGames.exercise_8_E_2b_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGSimultaneousMoveGames/Dominance.lean": "7cea993cc79f21749a7c71fb68113ce3a4e529a7617125f49633018afff8f961",
+    "MWGSimultaneousMoveGames/MixedPayoff.lean": "1b4392d413dcb923bcbc5212308c9363d3b4d946f2dcf4286f9f8eb817a730ea",
+    "MWGSimultaneousMoveGames/MixedStrategies.lean": "54e2528397aafa75be12a41c62f6c5db331d748b709b73ae7dc3408e7e3e8e60",
+    "MWGSimultaneousMoveGames/AppendixMI.lean": "f92c160f663462aa99bc674d40f3429dd2b6260182332f3c1098492f54f0d7f7",
+    "MWGSimultaneousMoveGames/Existence.lean": "d5a2239085d0de8289759b07c7dc3dd62b8023447e9576c623f23748b2abfe68",
+    "MWGSimultaneousMoveGames/Rationalizable.lean": "54b801ffc6e20ac8c415932bcb7d833d80704a3ece5da4e65dea5803a929cf74",
+    "MWGSimultaneousMoveGames/TwoPlayer.lean": "8aa7d4e63eacc261e78d87d367bf2189359191b7f39723f8b1c041080fa5c191",
+    "MWGSimultaneousMoveGames/TremblingHand.lean": "e232ab280a2084b18ca12682805dd70b452612c69abee04a877ccf41d439554b",
+    "MWGSimultaneousMoveGames/Bimatrix.lean": "5eb82725129bbabd94e6eb76c52ee6a94c86800ef3a50dcdb3b170a135429d3e",
+    "MWGSimultaneousMoveGames/Examples8B.lean": "acee4aed63a6dfa18885dbf9cfed8b043017d633eea8743a0400730b0a40dcae",
+    "MWGSimultaneousMoveGames/Examples8CD.lean": "a7309654e8652f269651b37f0971952d86d632dc47c1ee56807dc851f3f15e74",
+    "MWGSimultaneousMoveGames/Bayesian.lean": "cd126f4a3f61503ae2e1b3ffa24a5eed071bb0648c5aa836d0b2668900997de1",
+    "MWGSimultaneousMoveGames/Zigger.lean": "cd45e62b8eeb3536102b893aea26c7ec5b43c7d8a79bdb8949ec94fd59b5c657",
+    "MWGSimultaneousMoveGames/ExercisesBD.lean": "c138077fd4f6cbe337ee84ef4af15a7ea8b8487568cb03691c04e0ccdd061cf9",
+    "MWGSimultaneousMoveGames/ExercisesCF.lean": "152dcb889ccabc96308e1b294df3d9436c0cf2fb4ff9e4c5bd1e013bb21934e6",
+    "MWGSimultaneousMoveGames/Bargaining.lean": "25e11942b0543df14ffd4a7495a3aeb1f1ba8729b43dd1f223f47a389524b281",
+    "MWGSimultaneousMoveGames/TwoPlayerConverse.lean": "e2cfff90678ffe172dbc56c4c8a979cf18bf3f30aedf6940fe23bfab9a7b4fa4",
+    "MWGSimultaneousMoveGames/Converses.lean": "063b4e5ca89eb6eb2d2e4b3464a758bfecdc7015d1a1ac3c071b226c48b6d075",
+    "MWGSimultaneousMoveGames/Auctions.lean": "41a1e71a090fb038a6e2c967c3cd9085f04e15dfdb0fe0f907e0f6e688814f75",
+    "MWGSimultaneousMoveGames/Cournot.lean": "4a61bd316d97f5518a46a4a98beb692599754ce89ae6ecb2f25c2762b5f9c404",
+    "MWGSimultaneousMoveGames/IceCream.lean": "02f64b28986ccccf5757d287559b827ebf20f93511e6d19fa13f37b2012e55d1",
+    "MWGSimultaneousMoveGames/Kreps.lean": "cf6f1e1cc90931f95518a47ce3817bd323eebc8cd3f0bf734cd2d065ac20d4d0",
+    "MWGSimultaneousMoveGames/Armies.lean": "06d38b96c4764a7a72be07f340e91769eb62dfede9f9fe80034c725533d79850",
+    "MWGSimultaneousMoveGames/FirstPriceUniform.lean": "d48d25164ccd4e67ef6d678679ad443ab80f39717f5fe2da274cd51a34165689",
+    "MWGSimultaneousMoveGames.lean": "cacb503d08a013c5adfa7355a9f0a26359555ad923fe461023ad60155b5c696f",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "2cdef3f96aee53c90f572e8290f5dd394d44254b819258d7e837686aaabae500",
+    "lake-manifest.json": "bc8131e3e2a856572b65e432823a5b2acae0806bbe0656d27dfbfd2deed89c89",
+    "proof-manifest.json": "91a5202db8cd85fdc4cd5da43fba5f351968c54a468be99cab157b12e174ed94",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "17c92a5084c4db218f6e2b476a8f017575896a8f834f2d061731d7db19b7ebaa",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 8: simultaneous-move games (dominance, rationalizability, Nash equilibrium and its existence, Bayesian games, trembling-hand perfection), with Appendix M.I (fixed-point theorems) and all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 8. Exact scope: docs/source-map.md."
+}

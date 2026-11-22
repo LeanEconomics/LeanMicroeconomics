@@ -1,0 +1,3550 @@
+{
+  "checked_at_utc": "2026-11-21T17:03:32.561840+00:00",
+  "theorems": 235,
+  "module_theorems": {
+    "MWGExternalitiesPublicGoods/Tools.lean": 10,
+    "MWGExternalitiesPublicGoods/Concavity.lean": 6,
+    "MWGExternalitiesPublicGoods/Bilateral.lean": 34,
+    "MWGExternalitiesPublicGoods/PublicGoods.lean": 27,
+    "MWGExternalitiesPublicGoods/Multilateral.lean": 20,
+    "MWGExternalitiesPublicGoods/PrivateInfo.lean": 15,
+    "MWGExternalitiesPublicGoods/GrovesClarke.lean": 19,
+    "MWGExternalitiesPublicGoods/AppendixA.lean": 12,
+    "MWGExternalitiesPublicGoods/ExercisesB.lean": 26,
+    "MWGExternalitiesPublicGoods/ExercisesC.lean": 4,
+    "MWGExternalitiesPublicGoods/ExercisesD1.lean": 11,
+    "MWGExternalitiesPublicGoods/ExercisesD2.lean": 11,
+    "MWGExternalitiesPublicGoods/ExercisesD3.lean": 21,
+    "MWGExternalitiesPublicGoods/ExercisesE.lean": 11,
+    "MWGExternalitiesPublicGoods/Instances.lean": 8
+  },
+  "audited_declarations": 349,
+  "declarations": [
+    {
+      "name": "MWG.ExternalitiesPublicGoods.QLAlloc",
+      "kind": "structure",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.QLAlloc.mk",
+      "kind": "constructor",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.QLAlloc.x",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.QLAlloc.m",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.QLFeasible",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.QLPareto",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.qlSurplus'",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.ql_pareto_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.ql_pareto_exists",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.IsTIOLIOffer",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.tioli_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.kt_max_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.kt_isMax_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.kt_max_unique",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.kt_strict_max",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.strictMonoOn_Icc_of_deriv_pos",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.kt_strictMonoOn",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.strictAntiOn_of_second_deriv_neg",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Tools.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.convex_tangent",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.concave_tangent",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.orthant",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.convex_orthant",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.hasDerivAt_update",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.clm_apply_eq_sum",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.orthant_kt_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Concavity.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.HasExternality",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.definition_11_B_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PositiveExternality",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.NegativeExternality",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.hasExternality_of_deriv_ne",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PositiveExternality.hasExternality",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.NegativeExternality.hasExternality",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.footnote_3",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral",
+      "kind": "structure",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.mk",
+      "kind": "constructor",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.\u03c6\u2081",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.\u03c6\u2082",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.d\u2081",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.d\u2082",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.hd\u2081",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.hd\u2082",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.anti\u2081",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.anti\u2082",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.joint",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.hasDerivAt_joint",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.anti_joint",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsEqLevel",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsOptLevel",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_2",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.footnote_4",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_ne_opt",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.negative_externality_excess",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.positive_externality_shortfall",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.opt_indep_wealth",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.quota_implements",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsTaxChoice",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_4",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.pigou_tax",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.pigou_tax_unique",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.pigou_tax_sign",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.footnote_5",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.subsidy_equiv_tax",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.tax_quota_equivalent",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsOffer2Free",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsOffer2Right",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.joint_comm'",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_5",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.coase_theorem",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.coase_payments",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.offer1_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.figure_11_B_3",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.merger_internalizes",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_6",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsRightsSupply",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_7",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.IsRightsEquilibrium",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.rights_equilibrium_optimal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.rights_equilibrium_exists",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.ex",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.ex_values",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Bilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.DepletableFeasible",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.NondepletableFeasible",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.definition_11_C_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.nondepletable_not_preclude",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.depletable_precludes",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.depletable_imp_nondepletable",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood",
+      "kind": "structure",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.mk",
+      "kind": "constructor",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.d\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.c",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.dc",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.h\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.hc",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.anti\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.monoc",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.surplus",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.msurplus",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.hasDerivAt_surplus",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.anti_msurplus",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.IsOptimal",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.pareto_iff_optimal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.optimal_unique",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.IsConsumerChoice",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.consumer_foc",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.IsFirmChoice",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.firm_foc",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.IsSubsidyEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.IsPrivateEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.others_nonneg",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.subsidyEq_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_3_4",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_5",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.underprovision",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.public_bad_excess",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.stark_free_rider",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_1_exists",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_2",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_2_exists",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.IsLindahlEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_6",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.lindahl_optimal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.lindahl_exists",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.PublicGood.footnote_11",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.pgEx",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.pgEx_values",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PublicGoods.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.sum_update_eq",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.dir_foc",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral",
+      "kind": "structure",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.mk",
+      "kind": "constructor",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.d\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.pr",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.dpr",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.h\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.hpr",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.anti\u03c6",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.antipr",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.IsUnfetteredEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.eq_11_D_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.footnote_13",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.DeplFeas",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.deplObj",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.IsDeplOpt",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.DeplKKT",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.deplKKT_sufficient",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.deplKKT_necessary",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.eq_11_D_3_4",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.IsDeplMarketEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.consumer_sell_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.firm_buy_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.deplMarket_optimal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.deplMarket_exists",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.nondeplObj",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.IsNondeplOpt",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.NondeplFOC",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.eq_11_D_6",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.nondepl_excess",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.nondepl_quota",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.IsFirmTaxChoice",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.nondepl_tax",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.footnote_15",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.IsPermitEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.permit_demand_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.permits_equilibrium",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Multilateral.permits_unique",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.mlEx",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.mlEx_values",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Multilateral.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.twoLevel_optimal_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.bargObj",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.eq_11_E_1_gt",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.eq_11_E_1_inefficient",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.heavyG",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.eq_11_E_1_no_solution",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.expG",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.eq_11_E_1_exponential",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.IsQuotaChoice",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.quota_binds",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.surplus_loss_integral",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.IsTaxChoice'",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.lq_tax_choice",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.lq_quota_choice",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.figure_11_E_4a",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.figure_11_E_4b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.footnote_22",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.uniform_tax_efficient",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.permits_ge_quota",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.footnote_23",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/PrivateInfo.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gcGame",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_payoff_consumer",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_payoff_firm",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_consumer_truth",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_firm_truth",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_4",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_optimal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.weaklyDominant_unique",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_3",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gcRevenue",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_deficit",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_no_budget_balance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.gc_surplus_somewhere",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.projGame",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.proj_payoff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_5_truth",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_5_strict",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_5_efficient",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.projBudget",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_5_balance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_6",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_6_selector",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_5_balance_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/GrovesClarke.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.aa1Gamma",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_1_concave_in_z",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_1_convex",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_1_alpha_zero",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_1_alpha_one",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_2",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_2_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.aa3\u03c0\u2081",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.aa3\u03c0\u2082",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.aa3_surplus_le",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.aa3_surplus_ge",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_3_optimum",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_3_local",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.example_11_AA_3_kink",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/AppendixA.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_1_bees_efficient",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_1_bribe",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_1_subsidy",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_reduction",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.compensated_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_convex",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_slope",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2a",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_invariant",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_counterexample",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_corrected",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_sign",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.exercise_11_B_3_tax",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.Bilateral.exercise_11_B_3_quota",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_4",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_4_no_tax_e",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.quadrant",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.convex_quadrant",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.lines_deriv",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_5_firm",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_5b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_5c",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_5d",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_5_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesB.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.taxPGForm",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.taxPGForm_single",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.taxPGForm_snd",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_C_3",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_C_3_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.studentGame",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.student_dev",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_1",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_1_pareto",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_1_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.d2Obj",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.d2Obj_concave",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.d2Obj_hasFDerivAt",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_2_opt",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.concave1_kt_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.d2_own",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.IsD2Eq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_2_eq",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_2_tax",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD1.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.clm2_apply",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_3_msc",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_3_msc_deriv",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_3",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_3_subsidy",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_3_optimal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.d4Obj",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.d4Obj_concave",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_4_opt",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.firm_tax_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_4_tax",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_4_uniform",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD2.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.avg_gt_marginal",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.avg_strictAnti",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.IsCommonsEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_5b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_5_compare",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_5c",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_5d",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_5_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel",
+      "kind": "structure",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.mk",
+      "kind": "constructor",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.\u03b1",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.\u03b2",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.\u03bc",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.\u03b3",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.\u03b7",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.h\u03bc",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.h\u03b7",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.h\u03b2\u03b7",
+      "kind": "projection",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.prof",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.yld",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.h\u03b8",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.pay",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6_offer",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.memberPay",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.outPay",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6_stay",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6_join",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.IsMembershipEq",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.membershipEq_iff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6a",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6b_limit",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.landEx",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.nbUtil",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_7a_allA",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_7a_allB",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_7a_counterexample",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_7b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.avg_interval",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_7b_cutoff",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_7c",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesD3.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.quad_integral",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.lq\u03c0",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.lq\u03c6",
+      "kind": "def",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.lq_tax_response",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_1a",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_1_tax_value",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_1b",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_1c",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_2",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_2_compare",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_moments_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_7",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_E_7_printed",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.mlEx_depl",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.quota_binds_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2b_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_B_4_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_2_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_3_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    },
+    {
+      "name": "MWG.ExternalitiesPublicGoods.exercise_11_D_4_instance",
+      "kind": "theorem",
+      "module": "MWGExternalitiesPublicGoods/Instances.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.ExternalitiesPublicGoods.QLAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.QLAlloc.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.QLAlloc.x": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.QLAlloc.m": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.QLFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.QLPareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.qlSurplus'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.ql_pareto_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.ql_pareto_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.IsTIOLIOffer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.tioli_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.kt_max_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.kt_isMax_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.kt_max_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.kt_strict_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.strictMonoOn_Icc_of_deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.kt_strictMonoOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.strictAntiOn_of_second_deriv_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.convex_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.concave_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.orthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.convex_orthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.hasDerivAt_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.clm_apply_eq_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.orthant_kt_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.HasExternality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.definition_11_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PositiveExternality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.NegativeExternality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.hasExternality_of_deriv_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PositiveExternality.hasExternality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.NegativeExternality.hasExternality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.footnote_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.\u03c6\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.\u03c6\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.d\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.d\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.hd\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.hd\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.anti\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.anti\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.joint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.hasDerivAt_joint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.anti_joint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsEqLevel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsOptLevel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.footnote_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_ne_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.negative_externality_excess": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.positive_externality_shortfall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.opt_indep_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.quota_implements": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsTaxChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.pigou_tax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.pigou_tax_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.pigou_tax_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.footnote_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.subsidy_equiv_tax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.tax_quota_equivalent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsOffer2Free": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsOffer2Right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.joint_comm'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.coase_theorem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.coase_payments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.offer1_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.figure_11_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.merger_internalizes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsRightsSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.eq_11_B_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.IsRightsEquilibrium": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.rights_equilibrium_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.rights_equilibrium_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.ex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.ex_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.DepletableFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.NondepletableFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.definition_11_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.nondepletable_not_preclude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.depletable_precludes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.depletable_imp_nondepletable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.d\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.dc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.h\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.hc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.anti\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.monoc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.msurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.hasDerivAt_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.anti_msurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.IsOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.pareto_iff_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.optimal_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.IsConsumerChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.consumer_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.IsFirmChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.firm_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.IsSubsidyEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.IsPrivateEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.others_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.subsidyEq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_3_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.underprovision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.public_bad_excess": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.stark_free_rider": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_1_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.exercise_11_C_2_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.IsLindahlEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.eq_11_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.lindahl_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.lindahl_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.PublicGood.footnote_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.pgEx": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.pgEx_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.sum_update_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.dir_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.d\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.pr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.dpr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.h\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.hpr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.anti\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.antipr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.IsUnfetteredEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.eq_11_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.footnote_13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.DeplFeas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.deplObj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.IsDeplOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.DeplKKT": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.deplKKT_sufficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.deplKKT_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.eq_11_D_3_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.IsDeplMarketEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.consumer_sell_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.firm_buy_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.deplMarket_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.deplMarket_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.nondeplObj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.IsNondeplOpt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.NondeplFOC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.eq_11_D_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.nondepl_excess": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.nondepl_quota": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.IsFirmTaxChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.nondepl_tax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.footnote_15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.IsPermitEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.permit_demand_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.permits_equilibrium": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Multilateral.permits_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.mlEx": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.mlEx_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.twoLevel_optimal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.bargObj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.eq_11_E_1_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.eq_11_E_1_inefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.heavyG": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.eq_11_E_1_no_solution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.expG": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.eq_11_E_1_exponential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.IsQuotaChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.quota_binds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.surplus_loss_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.IsTaxChoice'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.lq_tax_choice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.lq_quota_choice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.figure_11_E_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.figure_11_E_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.footnote_22": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.uniform_tax_efficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.permits_ge_quota": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.footnote_23": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gcGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_payoff_consumer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_payoff_firm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_consumer_truth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_firm_truth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.weaklyDominant_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gcRevenue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_deficit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_no_budget_balance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.gc_surplus_somewhere": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.projGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.proj_payoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_5_truth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_5_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_5_efficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.projBudget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_5_balance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_6_selector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_5_balance_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.aa1Gamma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_1_concave_in_z": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_1_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_1_alpha_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_1_alpha_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_2_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.aa3\u03c0\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.aa3\u03c0\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.aa3_surplus_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.aa3_surplus_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_3_optimum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_3_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.example_11_AA_3_kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_1_bees_efficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_1_bribe": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_1_subsidy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_reduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.compensated_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_slope": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2a_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_corrected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.exercise_11_B_3_tax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.Bilateral.exercise_11_B_3_quota": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_4_no_tax_e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.quadrant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.convex_quadrant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.lines_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_5_firm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_5d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_5_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.taxPGForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.taxPGForm_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.taxPGForm_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_C_3_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.studentGame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.student_dev": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_1_pareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.d2Obj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.d2Obj_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.d2Obj_hasFDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_2_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.concave1_kt_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.d2_own": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.IsD2Eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_2_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_2_tax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.clm2_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_3_msc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_3_msc_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_3_subsidy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_3_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.d4Obj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.d4Obj_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_4_opt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.firm_tax_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_4_tax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_4_uniform": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.avg_gt_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.avg_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.IsCommonsEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_5_compare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_5d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_5_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.\u03b1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.\u03b2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.\u03bc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.\u03b3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.\u03b7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.h\u03bc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.h\u03b7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.h\u03b2\u03b7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.prof": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.yld": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.h\u03b8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.pay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6_offer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.memberPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.outPay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6_stay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6_join": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.IsMembershipEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.membershipEq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.LandModel.exercise_11_D_6b_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.landEx": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.nbUtil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_7a_allA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_7a_allB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_7a_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_7b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.avg_interval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_7b_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_7c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.quad_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.lq\u03c0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.lq\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.lq_tax_response": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_1_tax_value": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_2_compare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_moments_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_E_7_printed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.mlEx_depl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.quota_binds_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2b_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_2c_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_B_4_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_2_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_3_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ExternalitiesPublicGoods.exercise_11_D_4_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGExternalitiesPublicGoods/Tools.lean": "371ddf2457ccca66b5e136d015f5f796cefe60596c0d0d2a63883bbce9fe579b",
+    "MWGExternalitiesPublicGoods/Concavity.lean": "adddf4ff943450c96482682ee14e8b4107876f1492f104699427f8893907275d",
+    "MWGExternalitiesPublicGoods/Bilateral.lean": "ee9ff7dce8e1f53a695fbe8d79453cc6c45b4772ef37aa5a2adf2d202747f3b9",
+    "MWGExternalitiesPublicGoods/PublicGoods.lean": "f399dc6c52e5f604aa06fa6e981556b7f38ca5c4ec46bc9374c617212d368367",
+    "MWGExternalitiesPublicGoods/Multilateral.lean": "9538a3263bdb68ab737813c80dfbcfab0dc596ba5c1a0cef6ab4efc7ff0c5da4",
+    "MWGExternalitiesPublicGoods/PrivateInfo.lean": "0c13eccdbecede917b25d8fb7dca22f3edbac5e7c0205783b42ee208f8c0703c",
+    "MWGExternalitiesPublicGoods/GrovesClarke.lean": "b338a97330a0f92e4bc6ceff667bd16989a2ada54fcd46fa00ab9548e3a3d7c8",
+    "MWGExternalitiesPublicGoods/AppendixA.lean": "90e91cc9b902fc2a0cad22ca3077bf38e729328a9e3775da3bbcd89cf8f08402",
+    "MWGExternalitiesPublicGoods/ExercisesB.lean": "8c3f99b80fd0f51cc03e1654df3351400efc6f67aca478162336c7795863e902",
+    "MWGExternalitiesPublicGoods/ExercisesC.lean": "58b0263455700ed3ec5ab538d8e912ad1228181e2b1eaf977e7b74bd8a5ede08",
+    "MWGExternalitiesPublicGoods/ExercisesD1.lean": "7645543cf98b9a02ed7baa92f12273f97bd46cb7b9afb2f59010fffda5f284b7",
+    "MWGExternalitiesPublicGoods/ExercisesD2.lean": "b7e621160d776b08dbce8bcd77dd4870cad7b84008b44d90156081325ce67f08",
+    "MWGExternalitiesPublicGoods/ExercisesD3.lean": "06b0f76cb4d779bda91a4c97d7d986d8fc1e21cd4e525763eb8ebd7155770b90",
+    "MWGExternalitiesPublicGoods/ExercisesE.lean": "2197a8fb963ca1c687675610d9e4415967331276d6c4a6fcc73a46446c5c5b6e",
+    "MWGExternalitiesPublicGoods/Instances.lean": "d7919d6612b2fb7505cb1de44fb7b74fad171c3b38d951eda2194e2a4ec0aebc",
+    "MWGExternalitiesPublicGoods.lean": "84fe854652b8b69fdf57b6d610406ebf3d3dbcc92b81f5cf04af1bea104e9967",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "4b1228c0f9c18d2d42ef4733736a64c2709b6089197760ba911bf5fc38cc0b51",
+    "lake-manifest.json": "5088de0c4a061a2c48c4c1537a55b7d12cb13d785b023d8b528adeb734d7fe7b",
+    "proof-manifest.json": "4e899d6bed6b03b81e3bb9c8a4e6adfbee509df08f441010526e80af5ec7885c",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "6208d6de94196eec98def74061575eea4e24cdfa4bc6ba48c3e61d735b7cb72c",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 11: externalities and public goods (bilateral externalities and their remedies, Coase, public goods and the Samuelson condition, free riding, Lindahl equilibria, multilateral externalities, common property, private information and second-best solutions), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 11. Exact scope: docs/source-map.md."
+}

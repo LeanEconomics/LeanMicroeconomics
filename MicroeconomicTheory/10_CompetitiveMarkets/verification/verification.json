@@ -1,0 +1,4774 @@
+{
+  "checked_at_utc": "2026-11-21T15:57:25.494354+00:00",
+  "theorems": 365,
+  "module_theorems": {
+    "MWGCompetitiveMarkets/FOCTools.lean": 23,
+    "MWGCompetitiveMarkets/ParetoEquilibrium.lean": 13,
+    "MWGCompetitiveMarkets/QuasilinearModel.lean": 61,
+    "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean": 15,
+    "MWGCompetitiveMarkets/WelfareTheorems.lean": 26,
+    "MWGCompetitiveMarkets/ConvexExistence.lean": 7,
+    "MWGCompetitiveMarkets/CentralAuthority.lean": 49,
+    "MWGCompetitiveMarkets/Surplus.lean": 31,
+    "MWGCompetitiveMarkets/TaxIncidence.lean": 25,
+    "MWGCompetitiveMarkets/FreeEntry.lean": 21,
+    "MWGCompetitiveMarkets/ExercisesF.lean": 14,
+    "MWGCompetitiveMarkets/ExercisesF2.lean": 13,
+    "MWGCompetitiveMarkets/ExercisesC.lean": 18,
+    "MWGCompetitiveMarkets/ExercisesE.lean": 13,
+    "MWGCompetitiveMarkets/DerivedPaths.lean": 9,
+    "MWGCompetitiveMarkets/GroupMarkets.lean": 20,
+    "MWGCompetitiveMarkets/Instances.lean": 7
+  },
+  "audited_declarations": 471,
+  "declarations": [
+    {
+      "name": "MWG.CompetitiveMarkets.foc_exists_gt_of_deriv_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_exists_lt_of_deriv_neg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_hasDerivWithin_interior",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_max_necessary",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_local_necessary",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_max_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_tangent_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_le_tangent_convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsFOCSol",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.isFOCSol_unique",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.isFOCSol_exists",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_spec",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_eq",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_eq_zero_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_pos_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_eq_of_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_antitone",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_strictAnti",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_continuousAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.focSol_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.hasDerivAt_of_sandwich",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.remainder_isLittleO",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FOCTools.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy",
+      "kind": "structure",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.mk",
+      "kind": "constructor",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.X",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.u",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.\u03c9",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.Y",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Allocation",
+      "kind": "structure",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Allocation.mk",
+      "kind": "constructor",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Allocation.x",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Allocation.y",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.IsAllocation",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.IsFeasible",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.IsParetoOptimal",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.definition_10_B_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.definition_10_B_2",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.utilityPossibilitySet",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.isParetoOptimal_iff_undominated",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.mem_utilityPossibilitySet",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy",
+      "kind": "structure",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.X",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.u",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.Y",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.\u03c9i",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.\u03b8",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.toEconomy",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.wealth",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.IsCompetitiveEqm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.definition_10_B_3",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PrivEconomy.IsCompetitiveEqm.isFeasible",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_B_2",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lemma_10_B_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lemma_10_B_1_strictlyPositive",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.IsWeaklyParetoOptimal",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_B_1a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_B_1b_general",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_B_1b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_B_1c_economy",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_B_1c",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ParetoEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer",
+      "kind": "structure",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.mk",
+      "kind": "constructor",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.\u03c6",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d2\u03c6",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.\u03c6_zero",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.bddAbove",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.hasDeriv",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.hasDeriv2",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_pos",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d2\u03c6_neg",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm",
+      "kind": "structure",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.mk",
+      "kind": "constructor",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.c",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.dc",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.d2c",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.hasDeriv",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.hasDeriv2",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.dc_pos",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.d2c_nonneg",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict",
+      "kind": "structure",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.mk",
+      "kind": "constructor",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.toQLFirm",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.strictConvex",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.dc_tendsto",
+      "kind": "projection",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.\u03c6_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_strictAnti",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_antitone",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.\u03c6_strictMono",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.strictConcave",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.tangent_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.exists_d\u03c6_lt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_surj",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.max_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.foc_exists",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_spec",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_nonneg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_eq",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_max",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_eq_zero_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_pos_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_demand",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_antitoneOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_strictAnti",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_continuousAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.demand_deriv_neg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.dc_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.c_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.dc_monotone",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.c_strictMono",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.le_tangent",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.max_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirm.foc_iff_isFOCSol",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.c",
+      "kind": "abbrev",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.dc",
+      "kind": "abbrev",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.d2c",
+      "kind": "abbrev",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.hasDeriv",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.hasDeriv2",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.dc_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.dc_strictMono",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.neg_dc_strictAnti",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.foc_exists",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_nonneg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_eq",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_max",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_eq_zero_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_pos_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_monotone",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_strictMono",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_continuous",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.supply_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand_nonneg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply_nonneg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply_continuous",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand_antitoneOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply_monotone",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand_eq_zero_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply_eq_zero_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand_strictAnti",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply_strictMono",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.expConsumer",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.expConsumer_demand",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.linearFirm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.quadFirmBase",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.quadFirm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.quadFirm_supply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.cubicFirmBase",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.cubicFirm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.supply_not_differentiable_example",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearModel.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.qlEconomy",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.qlPrice",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.qlPrice_dot",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_supply_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_demand_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_wealth",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_eqm_price_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsQLEqm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.qlEconomyOf",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.qlAllocation",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_isCompetitiveEqm_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_isCompetitiveEqm_of_isQLEqm",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsQLEqm.price_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsQLEqm.aggregate_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_eqm_unique",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_eqm_exists",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_C_10",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.figure_10_C_4_price",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.figure_10_C_4_indeterminate",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.figure_10_C_8_cost",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.figure_10_C_8_no_equilibrium",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.qlSurplus",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsOptimalLevels",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_feasible_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_utility",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_sum_utility_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_D_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_pos_of_sum_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_reduce",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_pareto_iff_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_pareto_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsQLEqm.isOptimalLevels",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.sum_update_apply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.sum_update_id",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.hasDerivWithinAt_shift",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optimalLevels_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optimalLevels_iff_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_eqm_sum_utility",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.proposition_10_D_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsOptimalLevels.surplus_eq",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.proposition_10_D_2_of_exists",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.proposition_10_D_2",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_1_strict",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_D_15",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.Economy.Solves10D6",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_3_of_pareto",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_3_pareto",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_4",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_4_converse",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/WelfareTheorems.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optimalLevels_exist",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_eqm_exists_convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_competitiveEqm_exists_convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_eqm_unique_convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.proposition_10_D_2_convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_convex_existence",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_proposition_10_D_2_convex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ConvexExistence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.maxMB",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.le_maxMB",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_eq_maxMB",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.maxMB_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_lt_of_aggDemand_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_benefit_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.benefitSet",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit_isGreatest",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit_eq_of_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_invDemand",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_spec",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggDemand_invDemand",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_unique",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_aggDemand",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_le_maxMB",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_strictAntiOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_antitoneOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optAlloc",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optAlloc_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optAlloc_sum",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit_eq",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit_zero",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_4a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_4b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_4c",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.costSet",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsCostFOC",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.foc_cost_ge",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.costSet_lower",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost_isLeast",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost_eq_of_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_3a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_3a_sufficient",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_3b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_3c",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minMC",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minMC_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_eq_minMC",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minMC_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_lt_of_aggSupply_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_invSupply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_spec",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSupply_invSupply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_unique",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_aggSupply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_strictMonoOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_monotoneOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optPlan",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optPlan_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.optPlan_sum",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost_eq",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_3c_strict",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost_zero",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/CentralAuthority.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.redistributionSet",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.welfare_lt_iff_surplus_lt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_E_17",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.potential_pareto_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_4",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSurplus",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit_continuousWithinAt_zero",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost_continuousWithinAt_zero",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSurplus_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSurplus_continuousOn",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_intervalIntegrable",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invSupply_intervalIntegrable",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_5",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.aggSurplus_zero_of_cost_zero",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.grossBenefit_eq_integral",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.minCost_eq_integral",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_E_19_concave",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_E_19",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.competitive_maximizes_surplus",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.deadweight_loss_neg",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.consumerSurplus",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.producerSurplus",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLConsumer.surplus_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.QLFirmStrict.profit_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.consumerSurplus_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.producerSurplus_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.consumerSurplus_eq_zero",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_9",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_8",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_7",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_2",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.producerSurplus_eq_of_le",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_11",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_12",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_E_10",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Surplus.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.continuousAt_of_antitoneOn_of_image_mem_nhds",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_continuousAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.invDemand_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exists_taxPrice",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxPrice",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxRange",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxPrice_spec",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxPrice_unique",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxQuantity",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxQuantity_pos",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_C_1_monotone",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxPrice_left_inverse",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.taxPrice_continuousAt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.eq_10_C_8",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_C_1_bounds",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_C_1_formula",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_5",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_E_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_E_1_decomposition",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_E_1_first_order",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_6a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_6b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_6b_inelastic",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_6b_equivalent",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_7_price",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_7_elasticity",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_7_limits",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_C_1_instance",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/TaxIncidence.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsProfitMax",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsLREqm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.definition_10_F_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsLREqmReal",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.PosProfit",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.InLRSupply",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_F_27",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.posProfit_unbounded",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_crs",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_crs_indeterminate",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lrSupply_crs",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_strictConvex_nonexistence",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lrSupply_strictConvex",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.figure_10_F_3",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_technology_not_closed",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsEfficientScale",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsEfficientScale.le_cost",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_efficientScale",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_integer_problem",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lrSupply_efficientScale",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_F_28",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_F_28_ushaped",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_F_29",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_F_25",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_maximizes_surplus",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lumpyCost",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_F_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/FreeEntry.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.lr_efficientScale_real",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.quadLumpyCost",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.quadLumpy_efficientScale",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.quadLumpy_book",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_2a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_2a_statics",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_2b_supply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_2b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_2b_limit",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_3_printed",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_3_scale",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_3_prices",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_3_inelastic",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_3_counterexample",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_4",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.hasDerivAt_comp_pair",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_5a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_5b_deriv",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_5b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_6_longRun",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_6_shortRun",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.srCost",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_7_leontief",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_7_leontief_kink",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_7_vertical_supply",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_7_cd_longRun",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_7_cd_shortRun",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_F_7_cd_smooth",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.example_10_F_1_instance",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesF2.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_1a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_1a_wealth",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_1b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.logConsumer_max",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_2a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_2b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_2b_statics",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_D_2",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.price_response_cost_param",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_8a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_8b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_8b_converse",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_8b_AC",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_8c",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_9",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_10",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_10_statics",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_11",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_indirect_utility",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ql_cv_eq_ev",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.hasDerivAt_comp_two",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_1_deriv",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_1_foreign_price",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_1a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_1b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3a_normalize",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3b_marginal",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3c",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3c_good_one",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/ExercisesE.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.implicit_1d",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.implicit_path",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_1a_derived",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_exercise_10_E_1a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.ramsey_strict",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_E_3b_lagrange",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_exercise_10_E_3b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_C_5_derived",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_exercise_10_C_5",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/DerivedPaths.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.group_ump_iff",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsGroupEqm",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.groupSurplus",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.IsGroupEqm.maximizes",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_1_unique",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_1_unique_strict",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.orthant_shift",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.orthant_coord_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.dot_shift",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.group_consumer_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.group_firm_foc",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.dot_split",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_2_consumer",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_2_surplus",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_2_full",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_3_4",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_3",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_4",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_5a",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.exercise_10_G_5b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_G_32",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.footnote_10_G_32_increasing",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/GroupMarkets.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.instC",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.instF",
+      "kind": "def",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_gap",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_equilibrium_pareto",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_second_welfare",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_exercise_10_B_1b",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_exercise_10_F_1",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_lr_efficientScale",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    },
+    {
+      "name": "MWG.CompetitiveMarkets.inst_welfare_lt",
+      "kind": "theorem",
+      "module": "MWGCompetitiveMarkets/Instances.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.CompetitiveMarkets.foc_exists_gt_of_deriv_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_exists_lt_of_deriv_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_hasDerivWithin_interior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_max_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_local_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_max_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_tangent_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_le_tangent_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsFOCSol": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.isFOCSol_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.isFOCSol_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_pos_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_eq_of_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_antitone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_continuousAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.focSol_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.hasDerivAt_of_sandwich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.remainder_isLittleO": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Allocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Allocation.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Allocation.x": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Allocation.y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.IsAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.IsFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.IsParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.definition_10_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.definition_10_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.utilityPossibilitySet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.isParetoOptimal_iff_undominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.mem_utilityPossibilitySet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.\u03c9i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.\u03b8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.toEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.IsCompetitiveEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.definition_10_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PrivEconomy.IsCompetitiveEqm.isFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lemma_10_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lemma_10_B_1_strictlyPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.IsWeaklyParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_B_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_B_1b_general": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_B_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_B_1c_economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_B_1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d2\u03c6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.\u03c6_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.bddAbove": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.hasDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.hasDeriv2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d2\u03c6_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.dc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.d2c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.hasDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.hasDeriv2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.dc_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.d2c_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.toQLFirm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.strictConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.dc_tendsto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.\u03c6_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_antitone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.\u03c6_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.strictConcave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.tangent_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.exists_d\u03c6_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_surj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.max_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.foc_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_pos_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.d\u03c6_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_antitoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_continuousAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.demand_deriv_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.dc_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.c_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.dc_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.c_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.le_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.max_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirm.foc_iff_isFOCSol": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.dc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.d2c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.hasDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.hasDeriv2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.dc_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.dc_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.neg_dc_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.foc_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_pos_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.supply_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand_antitoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand_strictAnti": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.expConsumer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.expConsumer_demand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.linearFirm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.quadFirmBase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.quadFirm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.quadFirm_supply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.cubicFirmBase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.cubicFirm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.supply_not_differentiable_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.qlEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.qlPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.qlPrice_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_supply_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_demand_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_eqm_price_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsQLEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.qlEconomyOf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.qlAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_isCompetitiveEqm_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_isCompetitiveEqm_of_isQLEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsQLEqm.price_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsQLEqm.aggregate_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_eqm_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_eqm_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_C_10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.figure_10_C_4_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.figure_10_C_4_indeterminate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.figure_10_C_8_cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.figure_10_C_8_no_equilibrium": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.qlSurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsOptimalLevels": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_feasible_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_utility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_sum_utility_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_pos_of_sum_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_reduce": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_pareto_iff_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_pareto_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsQLEqm.isOptimalLevels": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.sum_update_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.sum_update_id": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.hasDerivWithinAt_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optimalLevels_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optimalLevels_iff_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_eqm_sum_utility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.proposition_10_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsOptimalLevels.surplus_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.proposition_10_D_2_of_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.proposition_10_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_1_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_D_15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.Economy.Solves10D6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_3_of_pareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_3_pareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_4_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optimalLevels_exist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_eqm_exists_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_competitiveEqm_exists_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_eqm_unique_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.proposition_10_D_2_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_convex_existence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_proposition_10_D_2_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.maxMB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.le_maxMB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_eq_maxMB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.maxMB_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_lt_of_aggDemand_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_benefit_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.benefitSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit_isGreatest": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit_eq_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_invDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggDemand_invDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_aggDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_le_maxMB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_strictAntiOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_antitoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optAlloc_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optAlloc_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.costSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsCostFOC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.foc_cost_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.costSet_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost_isLeast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost_eq_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_3a_sufficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minMC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minMC_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_eq_minMC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minMC_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_lt_of_aggSupply_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_invSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSupply_invSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_aggSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_strictMonoOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_monotoneOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optPlan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optPlan_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.optPlan_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_3c_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.redistributionSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.welfare_lt_iff_surplus_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_E_17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.potential_pareto_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit_continuousWithinAt_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost_continuousWithinAt_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSurplus_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSurplus_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_intervalIntegrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invSupply_intervalIntegrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.aggSurplus_zero_of_cost_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.grossBenefit_eq_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.minCost_eq_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_E_19_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_E_19": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.competitive_maximizes_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.deadweight_loss_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.consumerSurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.producerSurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLConsumer.surplus_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.QLFirmStrict.profit_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.consumerSurplus_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.producerSurplus_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.consumerSurplus_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.producerSurplus_eq_of_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_E_10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.continuousAt_of_antitoneOn_of_image_mem_nhds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_continuousAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.invDemand_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exists_taxPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxRange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxPrice_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxPrice_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxQuantity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxQuantity_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_C_1_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxPrice_left_inverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.taxPrice_continuousAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.eq_10_C_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_C_1_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_C_1_formula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_E_1_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_E_1_first_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_6a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_6b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_6b_inelastic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_6b_equivalent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_7_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_7_elasticity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_7_limits": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_C_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsProfitMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsLREqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.definition_10_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsLREqmReal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.PosProfit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.InLRSupply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_F_27": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.posProfit_unbounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_crs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_crs_indeterminate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lrSupply_crs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_strictConvex_nonexistence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lrSupply_strictConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.figure_10_F_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_technology_not_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsEfficientScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsEfficientScale.le_cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_efficientScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_integer_problem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lrSupply_efficientScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_F_28": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_F_28_ushaped": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_F_29": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_F_25": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_maximizes_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lumpyCost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.lr_efficientScale_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.quadLumpyCost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.quadLumpy_efficientScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.quadLumpy_book": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_2a_statics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_2b_supply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_2b_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_3_printed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_3_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_3_prices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_3_inelastic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_3_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.hasDerivAt_comp_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_5b_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_6_longRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_6_shortRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.srCost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_7_leontief": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_7_leontief_kink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_7_vertical_supply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_7_cd_longRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_7_cd_shortRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_F_7_cd_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.example_10_F_1_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_1a_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.logConsumer_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_2b_statics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.price_response_cost_param": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_8a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_8b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_8b_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_8b_AC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_8c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_10_statics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_indirect_utility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ql_cv_eq_ev": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.hasDerivAt_comp_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_1_deriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_1_foreign_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3a_normalize": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3b_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3c_good_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.implicit_1d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.implicit_path": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_1a_derived": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_exercise_10_E_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.ramsey_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_E_3b_lagrange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_exercise_10_E_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_C_5_derived": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_exercise_10_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.group_ump_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsGroupEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.groupSurplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.IsGroupEqm.maximizes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_1_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_1_unique_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.orthant_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.orthant_coord_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.dot_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.group_consumer_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.group_firm_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.dot_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_2_consumer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_2_surplus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_2_full": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_3_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.exercise_10_G_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_G_32": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.footnote_10_G_32_increasing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.instC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.instF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_equilibrium_pareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_second_welfare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_exercise_10_B_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_exercise_10_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_lr_efficientScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.CompetitiveMarkets.inst_welfare_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGCompetitiveMarkets/FOCTools.lean": "3b7ef095b58f3c917a1a2f633d7337158544527d748e4ed4a2e4d7615273cffa",
+    "MWGCompetitiveMarkets/ParetoEquilibrium.lean": "ec1ca83e043637f51ded8763b05f75e73e4b5e296c8ba265bd9f11fa5d415412",
+    "MWGCompetitiveMarkets/QuasilinearModel.lean": "b338da3647c3bb844bf93557163b1ef68ba1023c59a6f3ef604a560f6c2bfca4",
+    "MWGCompetitiveMarkets/QuasilinearEquilibrium.lean": "fb83a6e7d8acd10d4cafc041cdbbbcff9cad2e0e3d039458d73cc46d072e88ee",
+    "MWGCompetitiveMarkets/WelfareTheorems.lean": "e5961f725c9ed856e9e69d42709677b39b28cbd3a6a15c9a29aad22ae50dbabc",
+    "MWGCompetitiveMarkets/ConvexExistence.lean": "9d86e5fa4f8bbb88ca48f8d219b9adef3655f3cb4b4243ac958f0c29165f7a91",
+    "MWGCompetitiveMarkets/CentralAuthority.lean": "1d5587a4d688bc349aeb0f84bf32f04a22d6c3e55738a17aa46e6f6eafa8106e",
+    "MWGCompetitiveMarkets/Surplus.lean": "e78d39d64b6d3d07334513de666bb9ebcde222d011144cb36436c99f0fc21d00",
+    "MWGCompetitiveMarkets/TaxIncidence.lean": "7c6ba06e53ca09362e082f3d234ff2405fc9f5852829308c07b93376dc52fdde",
+    "MWGCompetitiveMarkets/FreeEntry.lean": "60908de60e7a86339330f170bbf75dc2f68f772224251078d80db90a601a27b4",
+    "MWGCompetitiveMarkets/ExercisesF.lean": "dd8465c249dde8361c58effede634bded234c01d425c21caa45cad993ca5ab63",
+    "MWGCompetitiveMarkets/ExercisesF2.lean": "9ee8f64e225e4624e756b4b834308e329d1588594ec4cc15339ec33326e58691",
+    "MWGCompetitiveMarkets/ExercisesC.lean": "d55fa0979c257bf04aac11d41caf9b5692f9edc4f2e5f2a71e6eb513d8a641f2",
+    "MWGCompetitiveMarkets/ExercisesE.lean": "0c6c62b0a9c217c64375797466aedef782cf58cadfdde03457711cf261f6d907",
+    "MWGCompetitiveMarkets/DerivedPaths.lean": "6b0e7cb39f5b57621dcba7733575bf08c5421dbe8933028f872145fd2d17c5cb",
+    "MWGCompetitiveMarkets/GroupMarkets.lean": "ce05bedcb662bd92c6a66b3644a5d543cc6c421f65c825a16fb025b80a0a1ff5",
+    "MWGCompetitiveMarkets/Instances.lean": "8a12edb524973827beb54dab3a47db5985af039d53dce318b34dacc6b138d97f",
+    "MWGCompetitiveMarkets.lean": "9a344a89db4780090f744d6056c3bfe1b35f9a38d9dcdf3921f13dfa3f6c3c95",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "55049017e948f550fc4f94a30e284ed1c208b54b8c07e8bb296d9d75da4a5f04",
+    "lake-manifest.json": "92b893c671b38bc1b8591727825ba22a693671e0d418b89ec336a2ffcf645320",
+    "proof-manifest.json": "5ee70133f56030d971fe35b756c3fbea6d877be90b626fa3b61163ca4288ada5",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "b1192f5778035f99c4ccd8d9ada154133e227ec45d549d7de0c2be0a96d1af73",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 10: competitive markets (Pareto optimality and competitive equilibria, partial equilibrium with quasilinear utility, the fundamental welfare theorems in a partial equilibrium context, welfare analysis, free-entry and long-run equilibria, Appendix 10.A on the quasilinear representative consumer), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 10. Exact scope: docs/source-map.md."
+}

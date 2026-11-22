@@ -1,0 +1,29 @@
+{
+  "library": "MWGNoncooperativeGames",
+  "modules": [
+    "MWGNoncooperativeGames/ExtensiveForm.lean",
+    "MWGNoncooperativeGames/GameTree.lean",
+    "MWGNoncooperativeGames/Strategies.lean",
+    "MWGNoncooperativeGames/Mixed.lean",
+    "MWGNoncooperativeGames/MixedSignal.lean",
+    "MWGNoncooperativeGames/Kuhn.lean",
+    "MWGNoncooperativeGames/MatchingPennies.lean",
+    "MWGNoncooperativeGames/MeetingAndRecall.lean",
+    "MWGNoncooperativeGames/TickTackToe.lean",
+    "MWGNoncooperativeGames/Exercise7E1.lean"
+  ],
+  "theorem_counts": {
+    "MWGNoncooperativeGames/ExtensiveForm.lean": 21,
+    "MWGNoncooperativeGames/GameTree.lean": 17,
+    "MWGNoncooperativeGames/Strategies.lean": 23,
+    "MWGNoncooperativeGames/Mixed.lean": 15,
+    "MWGNoncooperativeGames/MixedSignal.lean": 6,
+    "MWGNoncooperativeGames/Kuhn.lean": 34,
+    "MWGNoncooperativeGames/MatchingPennies.lean": 30,
+    "MWGNoncooperativeGames/MeetingAndRecall.lean": 8,
+    "MWGNoncooperativeGames/TickTackToe.lean": 19,
+    "MWGNoncooperativeGames/Exercise7E1.lean": 10
+  },
+  "scope": "MWG Chapter 7: basic elements of noncooperative games (extensive and normal forms, information sets, perfect recall, strategies, mixed and behavior strategies, randomized choices), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 7. Exact scope: docs/source-map.md."
+}

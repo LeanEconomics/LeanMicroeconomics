@@ -1,0 +1,4502 @@
+{
+  "checked_at_utc": "2026-11-19T11:46:02.085895+00:00",
+  "theorems": 352,
+  "module_theorems": {
+    "MWGChoiceUnderUncertainty/Lotteries.lean": 11,
+    "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean": 24,
+    "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean": 31,
+    "MWGChoiceUnderUncertainty/MoneyLotteries.lean": 23,
+    "MWGChoiceUnderUncertainty/RiskAversion.lean": 20,
+    "MWGChoiceUnderUncertainty/InsuranceAssets.lean": 14,
+    "MWGChoiceUnderUncertainty/ArrowPratt.lean": 7,
+    "MWGChoiceUnderUncertainty/MoreRiskAverse.lean": 12,
+    "MWGChoiceUnderUncertainty/WealthEffects.lean": 15,
+    "MWGChoiceUnderUncertainty/AssetComparative.lean": 11,
+    "MWGChoiceUnderUncertainty/ExercisesC.lean": 8,
+    "MWGChoiceUnderUncertainty/ExercisesC2.lean": 9,
+    "MWGChoiceUnderUncertainty/ExercisesC3.lean": 14,
+    "MWGChoiceUnderUncertainty/ExercisesC4.lean": 11,
+    "MWGChoiceUnderUncertainty/ExercisesC5.lean": 7,
+    "MWGChoiceUnderUncertainty/ExercisesC6.lean": 15,
+    "MWGChoiceUnderUncertainty/FirstOrderDominance.lean": 13,
+    "MWGChoiceUnderUncertainty/UpwardShift.lean": 1,
+    "MWGChoiceUnderUncertainty/SecondOrderDominance.lean": 6,
+    "MWGChoiceUnderUncertainty/SOSDApprox.lean": 8,
+    "MWGChoiceUnderUncertainty/DominanceExamples.lean": 15,
+    "MWGChoiceUnderUncertainty/StrassenGrid.lean": 21,
+    "MWGChoiceUnderUncertainty/StrassenFinite.lean": 4,
+    "MWGChoiceUnderUncertainty/StrassenLimit.lean": 6,
+    "MWGChoiceUnderUncertainty/Strassen.lean": 6,
+    "MWGChoiceUnderUncertainty/StateDependent.lean": 16,
+    "MWGChoiceUnderUncertainty/DebreuAdditive.lean": 15,
+    "MWGChoiceUnderUncertainty/SubjectiveProbability.lean": 9
+  },
+  "audited_declarations": 442,
+  "declarations": [
+    {
+      "name": "MWG.ChoiceUnderUncertainty.rational_iff_mwg",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lotteryOfVec",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lotteryOfVec_weights",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.definition_6_B_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lottery_vectors_eq_simplex",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.degenerate_lottery_weights",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.reducedVec",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_4",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.reducedLottery",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.reducedLottery_weights",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.reducedLottery_two",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_B_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_B_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Lotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MixContinuous",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.Independence",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_1_strict",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_1_indifferent",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.independence_left",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_1_both",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mixtureAxioms_of_mwg",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mixContinuous_of_affine",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.independence_of_affine",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_3_step1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_3_step2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsLinearUtility",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.HasExpectedUtilityForm",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.expectedUtilityForm_degenerate",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.reducedLottery_degenerate",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hasExpectedUtilityForm_iff",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.affineInMix_of_expectedUtilityForm",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_6",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.continuous_of_expectedUtilityForm",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_3_converse",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_B_3_step3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.noBetter_isConvexSet",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.noWorse_isConvexSet",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.eu",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.eu_mix",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lot3",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.eu_lot3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.utility_differences_meaning",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.utility_differences_invariant",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.indifference_set_hyperplane",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.indifference_straight",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.indifference_parallel",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_1_general_map_fails",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.allaisL1",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.allaisL1'",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.allaisL2",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.allaisL2'",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_B_7",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_2_axioms",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.dutchBook_convexity",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.weightedV",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.weightedV_den_pos",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.weightedPref",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.weightedV_mix_continuous",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.weightedPref_rational_continuous",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.Betweenness",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_5a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_5b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.weightedPref_betweenness",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_5d",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_5c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.dutchBook_convexity_weaker",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_4a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_4b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_6_convex",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sup'_fin_two",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_4",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_B_4_outcomes",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_9",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_B_7",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMoneyLottery",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMoneyLottery.ae_mem",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMoneyLottery.integrable",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMoneyLottery.integrable_id",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMoneyLottery.mean_mem",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMoneyLottery.mean_mem_S",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.binLot",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_binLot",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.binLot_isProbabilityMeasure",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.binLot_isMoneyLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.dirac_isMoneyLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mixM",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mixM_isProbabilityMeasure",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mixM_real",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.cdf_mixM",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_C_1_lottery",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_C_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.stPetersburg",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.stPetersburg_probabilities",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.concave_bddBelow_le",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_14",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoneyContinuous",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoneyIndependence",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoneyRational",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.atomicMass",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.tsum_atoms_le_one",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.atomicMass_mixM",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.atomicMass_dirac",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.uniform01",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.uniform01_isMoneyLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.atomicMass_uniform01",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.expectedUtility_6_C_1_counterexample",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoneyLotteries.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.euPref",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.RiskAverter",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.RiskNeutral",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.StrictlyRiskAverse",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.riskAverter_iff_jensen",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.jensen_moneyLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mean_binLot",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_1_i_ii",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsCertaintyEquivalent",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.certaintyEquivalent_exists",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.certaintyEquivalent_unique",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.probPremium",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.probPremium_spec",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_C_3b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_C_2a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_C_2b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_1_ii_iii",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.certaintyEquivalent_le_mean_iff",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.concaveOn_of_midpoint",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_1_ii_iv",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.eq_dirac_of_ae_eq_const",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.strictlyRiskAverse_iff",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.riskNeutral_iff_affine",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_16",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/RiskAversion.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.insuranceEU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_1_expected_wealth",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.deriv_nonpos_of_max_Ici",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.insuranceEU_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_1_foc",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.assetEU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.assetEU_integrable",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_17",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.portfolioU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.portfolio_payoff_nonneg",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.portfolio_integrable",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_4a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_4b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_4c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/InsuranceAssets.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_eq_kreps",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_affine_invariant",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.second_derivative_not_invariant",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_eq_four_probPremium_slope",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.utility_determined_by_arrowPratt",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_4",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_4_general",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ArrowPratt.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.simpleMeasure",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_simpleMeasure",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.simpleMeasure_isMoneyLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoreRiskAverseI",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoreRiskAverseII",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoreRiskAverseIII",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoreRiskAverseIV",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.MoreRiskAverseV",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.kreps_of_moreRiskAverseV",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverseII_of_kreps",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.kreps_of_moreRiskAverseII",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exists_Icc_image_nhds",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverse_ii_iii",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverse_iii_v",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverse_v_iii",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverse_iii_iv",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverse_iv_i",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/MoreRiskAverse.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.shiftU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.deriv_shiftU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_shiftU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.probPremium_shiftU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.contDiffAt_shiftU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.isMoneyLottery_map_add",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.DecreasingAbsoluteRiskAversion",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.shift_tfae",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.relativeRiskAversion",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.relativeRiskAversion_eq_kreps",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.relativeRiskAversion_eq",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.decreasingAbsolute_of_decreasingRelative",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.decreasingRelative_not_of_decreasingAbsolute",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.scaleU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.deriv_scaleU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_scaleU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.scale_tfae",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_C_4",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/WealthEffects.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.concave_supergradient",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mem_interior_image",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.invest_compare",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_C_2_continued",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverseI_trans",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_log",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.moreRiskAverse_not_complete",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.assetEU_shiftU",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_8",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proportion_objective",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_11",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/AssetComparative.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_2a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_2a_moments",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_2a_note",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.meanVarianceU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.meanVarianceU_binLot",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_2b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_5a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_5b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.bumpUtility",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_5c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.deriv2_congr_Ioi",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.relativeRiskAversion_crra",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.relativeRiskAversion_log",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.marginal_of_constant_relative",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_12a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_12a_printed_counterexample",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_12b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_12c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_12c_printed_counterexample",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC2.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.maxProfit",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_13",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_14a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_14b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_14c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsSellingPrice",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsBuyingPrice",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_16a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_16b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_16c_cara",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_16c_riskless",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sqrt_of_sq",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_16d",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.arrowPratt_sqrt",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_18a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_18b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_18c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC3.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.concave_le_tangent",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hasDerivAt_expected",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_9a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.prudence",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.prudence_eq_arrowPratt",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_9b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_9c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_9c_degenerate",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_9d",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_9d_cara",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_20",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_20_instance",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC4.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.twoAssetEU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_15a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_15b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.twoAssetFOC",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_15c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.foc_along_a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_15d",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.foc_along_\u03c0",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_15f",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC5.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.grossReturn",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.grossReturn_pos",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.crra",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.crraObjective",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.crraObjective_homog",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.isMaxOn_const_mul_iff",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_17_period1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.crraObjective_continuousOn",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.crraValue",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_17_period0",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.caraObjective",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.caraAmount",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.caraObjective_eq",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_17_cara",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.isMaxOn_add_const_iff",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.logObjective",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.logObjective_shift",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_17_log",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.caraPortfolioEU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.caraCE",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.caraPortfolioEU_eq",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_19",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_19_exists",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_C_19_instance",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/ExercisesC6.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMWGDist",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMWGDist.ae_mem",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMWGDist.isMoneyLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMWGDist.integrable_monotone",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.FOSD",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.monotone_step",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_step",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_D_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_2_mean",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_2_example",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_D_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_smul_dirac",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integrable_smul_dirac",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lot3M",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_lot3M",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.figure_6_D_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/FirstOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_D_1_converse",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/UpwardShift.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.SOSD",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMWGDist.integrable_concave",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.min_utility_props",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_min_eq",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IntegralCondition",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.equal_areas",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sosd_integralCondition",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.IsMeanPreservingSpread",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sosd_of_meanPreservingSpread",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SecondOrderDominance.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sum_by_parts",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridPt",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridInterp",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridInterp_cell",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridInterp_continuous",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exists_cell",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridInterp_between",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sosd_of_integralCondition",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_D_2_i_iii",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integralCondition_of_single_crossing",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SOSDApprox.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integrable_lot3M",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lot3M_apply",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.lot3M_isMWGDist",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_1a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_1b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4d",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_D_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.elementaryIncrease",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_elementaryIncrease",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.dirac_compProd_map_add",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.binLot_real",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_D_2_spread",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DominanceExamples.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_nonneg",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.continuous_hatFn",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_le_one",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_eq_zero",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.abs_sub_lt_of_hatFn_pos",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_grid_sum",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_sum_one",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_sum_id",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_sum_concave",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.hatFn_sum_approx",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integrable_of_continuous_ae_Ioc",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridMass",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridCtr",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridMass_nonneg",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridMass_sum",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.abs_integral_hat_sub_le",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gridMass_mul_ctr",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.abs_gridCtr_sub_le",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sum_gridMass_mul",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.dilation_le",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.dilation_mean",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.le_contraction",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.contraction_mean",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenGrid.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.atomLottery",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StrassenFinite.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.expectedUtility_atomLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenFinite.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.mem_support_atomLottery",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenFinite.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_sum_dirac",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenFinite.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exists_grid_martingale_coupling",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenFinite.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.eq_of_mapClusterPt_of_tendsto",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.tendsto_hat_average",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.truncAt",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.continuous_truncAt",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.abs_truncAt_le",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.truncAt_eq",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exists_martingale_coupling",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StrassenLimit.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_D_2_i_ii",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Strassen.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_D_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Strassen.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_D_2_equivalence",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Strassen.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4c_converse",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Strassen.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4c_iff",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Strassen.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_D_4c_instance",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/Strassen.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.inducedLaw",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.inducedLaw_cdf",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.integral_inducedLaw",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.HasExtendedEU",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.footnote_6_24",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.absorb_probabilities",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.certainty_line_mrs",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_E_1_uniform",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_E_1_dependent",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.ExtendedIndependence",
+      "kind": "abbrev",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_E_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_E_1_converse",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.SureThing",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.sureThing_of_additive",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.riskAversion_iff_concave_states",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.regret",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_E_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_E_2a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_E_2b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_E_2c",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_E_3",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/StateDependent.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.SureThingOn",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.SureThing.sureThingOn",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.EssentialState",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_E_2",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenV",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenPref",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsen_mono_left",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsen_mono_right",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenPref_rational",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenPref_continuous",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenPref_sureThing",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.twoStateVec",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.twoStateVec_zero",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.twoStateVec_one",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.twoStateVec_mem",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenV_twoStateVec",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenPref_not_additive",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_E_2_false",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.thomsenPref_essential",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_E_2_instance",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/DebreuAdditive.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.statePref",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.StateUniform",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.stateUniform_affine",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_F_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.proposition_6_F_1_sure",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_F_1_utility",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_F_1_probabilities",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_F_1_probabilities_not_unique",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.example_6_F_1",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gsUtilityW",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.gsUtilityB",
+      "kind": "def",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_F_2a",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    },
+    {
+      "name": "MWG.ChoiceUnderUncertainty.exercise_6_F_2b",
+      "kind": "theorem",
+      "module": "MWGChoiceUnderUncertainty/SubjectiveProbability.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.ChoiceUnderUncertainty.rational_iff_mwg": [],
+    "MWG.ChoiceUnderUncertainty.lotteryOfVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.lotteryOfVec_weights": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.definition_6_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.lottery_vectors_eq_simplex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.degenerate_lottery_weights": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.reducedVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.reducedLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.reducedLottery_weights": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.reducedLottery_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MixContinuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.Independence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_1_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_1_indifferent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.independence_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_1_both": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mixtureAxioms_of_mwg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mixContinuous_of_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.independence_of_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_3_step1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_3_step2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsLinearUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.HasExpectedUtilityForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.expectedUtilityForm_degenerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.reducedLottery_degenerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hasExpectedUtilityForm_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.affineInMix_of_expectedUtilityForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.continuous_of_expectedUtilityForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_3_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_B_3_step3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.noBetter_isConvexSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.noWorse_isConvexSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.eu": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.eu_mix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.lot3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.eu_lot3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.utility_differences_meaning": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.utility_differences_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.indifference_set_hyperplane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.indifference_straight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.indifference_parallel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_1_general_map_fails": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.allaisL1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.allaisL1'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.allaisL2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.allaisL2'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_B_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_2_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.dutchBook_convexity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.weightedV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.weightedV_den_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.weightedPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.weightedV_mix_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.weightedPref_rational_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.Betweenness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.weightedPref_betweenness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_5d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.dutchBook_convexity_weaker": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_6_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sup'_fin_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_B_4_outcomes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_B_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMoneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMoneyLottery.ae_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMoneyLottery.integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMoneyLottery.integrable_id": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMoneyLottery.mean_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMoneyLottery.mean_mem_S": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.binLot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_binLot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.binLot_isProbabilityMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.binLot_isMoneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.dirac_isMoneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mixM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mixM_isProbabilityMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mixM_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.cdf_mixM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_C_1_lottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.stPetersburg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.stPetersburg_probabilities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.concave_bddBelow_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoneyContinuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoneyIndependence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoneyRational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.atomicMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.tsum_atoms_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.atomicMass_mixM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.atomicMass_dirac": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.uniform01": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.uniform01_isMoneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.atomicMass_uniform01": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.expectedUtility_6_C_1_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.euPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.RiskAverter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.RiskNeutral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.StrictlyRiskAverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.riskAverter_iff_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.jensen_moneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mean_binLot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_1_i_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsCertaintyEquivalent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.certaintyEquivalent_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.certaintyEquivalent_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.probPremium": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.probPremium_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_C_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_C_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_C_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_1_ii_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.certaintyEquivalent_le_mean_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.concaveOn_of_midpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_1_ii_iv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.eq_dirac_of_ae_eq_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.strictlyRiskAverse_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.riskNeutral_iff_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.insuranceEU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_1_expected_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.deriv_nonpos_of_max_Ici": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.insuranceEU_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_1_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.assetEU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.assetEU_integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.portfolioU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.portfolio_payoff_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.portfolio_integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_eq_kreps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_affine_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.second_derivative_not_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_eq_four_probPremium_slope": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.utility_determined_by_arrowPratt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_4_general": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.simpleMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_simpleMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.simpleMeasure_isMoneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoreRiskAverseI": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoreRiskAverseII": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoreRiskAverseIII": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoreRiskAverseIV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.MoreRiskAverseV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.kreps_of_moreRiskAverseV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverseII_of_kreps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.kreps_of_moreRiskAverseII": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exists_Icc_image_nhds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverse_ii_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverse_iii_v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverse_v_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverse_iii_iv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverse_iv_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.shiftU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.deriv_shiftU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_shiftU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.probPremium_shiftU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.contDiffAt_shiftU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.isMoneyLottery_map_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.DecreasingAbsoluteRiskAversion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.shift_tfae": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.relativeRiskAversion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.relativeRiskAversion_eq_kreps": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.relativeRiskAversion_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.decreasingAbsolute_of_decreasingRelative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.decreasingRelative_not_of_decreasingAbsolute": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.scaleU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.deriv_scaleU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_scaleU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.scale_tfae": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.concave_supergradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mem_interior_image": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.invest_compare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_C_2_continued": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverseI_trans": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.moreRiskAverse_not_complete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.assetEU_shiftU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proportion_objective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_2a_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_2a_note": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.meanVarianceU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.meanVarianceU_binLot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.bumpUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.deriv2_congr_Ioi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.relativeRiskAversion_crra": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.relativeRiskAversion_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.marginal_of_constant_relative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_12a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_12a_printed_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_12b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_12c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_12c_printed_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.maxProfit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_14a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_14b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_14c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsSellingPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsBuyingPrice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_16a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_16b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_16c_cara": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_16c_riskless": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sqrt_of_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_16d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.arrowPratt_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_18a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_18b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_18c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.concave_le_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hasDerivAt_expected": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_9a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.prudence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.prudence_eq_arrowPratt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_9b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_9c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_9c_degenerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_9d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_9d_cara": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_20": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_20_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.twoAssetEU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_15a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_15b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.twoAssetFOC": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_15c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.foc_along_a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_15d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.foc_along_\u03c0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_15f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.grossReturn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.grossReturn_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.crra": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.crraObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.crraObjective_homog": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.isMaxOn_const_mul_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_17_period1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.crraObjective_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.crraValue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_17_period0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.caraObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.caraAmount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.caraObjective_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_17_cara": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.isMaxOn_add_const_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.logObjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.logObjective_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_17_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.caraPortfolioEU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.caraCE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.caraPortfolioEU_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_19": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_19_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_C_19_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMWGDist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMWGDist.ae_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMWGDist.isMoneyLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMWGDist.integrable_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.FOSD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.monotone_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_2_mean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_2_example": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_smul_dirac": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integrable_smul_dirac": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.lot3M": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_lot3M": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.figure_6_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_D_1_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.SOSD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMWGDist.integrable_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.min_utility_props": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_min_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IntegralCondition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.equal_areas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sosd_integralCondition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.IsMeanPreservingSpread": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sosd_of_meanPreservingSpread": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sum_by_parts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridPt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridInterp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridInterp_cell": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridInterp_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exists_cell": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridInterp_between": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sosd_of_integralCondition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_D_2_i_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integralCondition_of_single_crossing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integrable_lot3M": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.lot3M_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.lot3M_isMWGDist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.elementaryIncrease": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_elementaryIncrease": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.dirac_compProd_map_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.binLot_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_D_2_spread": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.continuous_hatFn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.abs_sub_lt_of_hatFn_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_grid_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_sum_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_sum_id": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_sum_concave": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.hatFn_sum_approx": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integrable_of_continuous_ae_Ioc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridCtr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridMass_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridMass_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.abs_integral_hat_sub_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gridMass_mul_ctr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.abs_gridCtr_sub_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sum_gridMass_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.dilation_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.dilation_mean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.le_contraction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.contraction_mean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.atomLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.expectedUtility_atomLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.mem_support_atomLottery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_sum_dirac": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exists_grid_martingale_coupling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.eq_of_mapClusterPt_of_tendsto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.tendsto_hat_average": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.truncAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.continuous_truncAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.abs_truncAt_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.truncAt_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exists_martingale_coupling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_D_2_i_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_D_2_equivalence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4c_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4c_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_D_4c_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.inducedLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.inducedLaw_cdf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.integral_inducedLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.HasExtendedEU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.footnote_6_24": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.absorb_probabilities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.certainty_line_mrs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_E_1_uniform": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_E_1_dependent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.ExtendedIndependence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_E_1_converse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.SureThing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.sureThing_of_additive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.riskAversion_iff_concave_states": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.regret": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_E_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_E_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_E_2c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.SureThingOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.SureThing.sureThingOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.EssentialState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsen_mono_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsen_mono_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenPref_rational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenPref_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenPref_sureThing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.twoStateVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.twoStateVec_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.twoStateVec_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.twoStateVec_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenV_twoStateVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenPref_not_additive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_E_2_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.thomsenPref_essential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_E_2_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.statePref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.StateUniform": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.stateUniform_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.proposition_6_F_1_sure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_F_1_utility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_F_1_probabilities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_F_1_probabilities_not_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.example_6_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gsUtilityW": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.gsUtilityB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_F_2a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ChoiceUnderUncertainty.exercise_6_F_2b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGChoiceUnderUncertainty/Lotteries.lean": "1e41a1d07d2ad4010b455df4de37acaa9eb9a606eb46b8f928544b610988f552",
+    "MWGChoiceUnderUncertainty/ExpectedUtilityTheorem.lean": "b9a80638d8a150cbe30e0b8d0d9463df9b1ab2c89eea0fb7363c24a422bbae67",
+    "MWGChoiceUnderUncertainty/ExpectedUtilityDiscussion.lean": "77fe9c9c4856d28fe783a221ce88250c66c43830b0ef08f1cdec67d6bc267bbb",
+    "MWGChoiceUnderUncertainty/MoneyLotteries.lean": "e6dee4e2c74b5229ed4a31ea6d236d443c0e5431e597548476763a13b6a2192c",
+    "MWGChoiceUnderUncertainty/RiskAversion.lean": "21aa35327e61801abd9d729231bd54c3ddfd4234f3f5d86c158ba9449b306764",
+    "MWGChoiceUnderUncertainty/InsuranceAssets.lean": "4cdb0f378c532d663582e8e51150948f21331383d6194ede62073d77d4ca64da",
+    "MWGChoiceUnderUncertainty/ArrowPratt.lean": "cd4b3c4cad5015cecf64dfbd7198db3c747e5149547058e199e431ca06a7bcb6",
+    "MWGChoiceUnderUncertainty/MoreRiskAverse.lean": "dd0099523958e71c445ceced552cc7abb5546d6ae784ce449c95a04285800c3a",
+    "MWGChoiceUnderUncertainty/WealthEffects.lean": "8d7982d5886c1cf398591d60c0e9c28d04b10f0a4ac4bd860f5c247dabe16f43",
+    "MWGChoiceUnderUncertainty/AssetComparative.lean": "e202ccc7ef665e49ad42a5be32cb19af352a9933341d0e36ecd5b6f5445c3a0c",
+    "MWGChoiceUnderUncertainty/ExercisesC.lean": "8fc52dce0144d97408f089fe82859110679eaee02c826afab8bca88050eedd21",
+    "MWGChoiceUnderUncertainty/ExercisesC2.lean": "080e601573b41074574a9b08970bd9ce3b9713f92f08a1083b1069c9c305a260",
+    "MWGChoiceUnderUncertainty/ExercisesC3.lean": "e79a244cb24de8168215deeece4739acb8969b539e49a9b4bd4adfccf96f30a3",
+    "MWGChoiceUnderUncertainty/ExercisesC4.lean": "6526f1580621bb328a67a1c0b703ab503620dc00396b4a363e63ddb1befa29ad",
+    "MWGChoiceUnderUncertainty/ExercisesC5.lean": "6a0f1060b95b18941cce44b2bee0074bc55aefbb367feead3d1d6be286d42c01",
+    "MWGChoiceUnderUncertainty/ExercisesC6.lean": "0f09b04f5b339fb4ead7ab4d5b85610ab6d49572a1f9b78b8ef516a34b4da668",
+    "MWGChoiceUnderUncertainty/FirstOrderDominance.lean": "6d541fbfb05d3b5356d8c618146854eff11be8f2f8dbccc609ac46b6546e008d",
+    "MWGChoiceUnderUncertainty/UpwardShift.lean": "f7b3d967bcc3f91a67ec196164ae9a3e0ee1a57a16ae5c3acd6b1b884e076b98",
+    "MWGChoiceUnderUncertainty/SecondOrderDominance.lean": "04285e332cd0c75e270518d1455b2d38564ea3b401cc21d8ee9c168cc8bcad77",
+    "MWGChoiceUnderUncertainty/SOSDApprox.lean": "704076c1995a2b6a521b0e2c27330dd3da928f8dd339738215390c4ef1f1ba04",
+    "MWGChoiceUnderUncertainty/DominanceExamples.lean": "bc3d2f3c0740e76b6bbdf9c8d85d686f22fa435c17123347006e386e6586df41",
+    "MWGChoiceUnderUncertainty/StrassenGrid.lean": "feda1fe1e2313d49a4d1a5ab98481f857e3c68a21179ccef50e44c5f309b27ae",
+    "MWGChoiceUnderUncertainty/StrassenFinite.lean": "f86d204869b0e303e2791ae6f2f3fb339c18e7c8736f421a788f64e07861762c",
+    "MWGChoiceUnderUncertainty/StrassenLimit.lean": "0a188556ebf88b9c1ec93a8c7e6b11117d6c8f11adfb76d87b211f1dcbe1134d",
+    "MWGChoiceUnderUncertainty/Strassen.lean": "8962d023d66402acb3c267826f8dc4167900cad49f61ff9d9cef784d1a10abfb",
+    "MWGChoiceUnderUncertainty/StateDependent.lean": "104a167233ffb4457a89e3eaa7d4a7979b8e65737c299cb66bcaa9518ce4bb98",
+    "MWGChoiceUnderUncertainty/DebreuAdditive.lean": "9bb562017378946ae130d5f5353896bf682cee13d2965220b9539c90d7508cb0",
+    "MWGChoiceUnderUncertainty/SubjectiveProbability.lean": "fd744b519e0f76e171cd2f04660cb0efb9e4457b99ee1b819c5555b7f095a909",
+    "MWGChoiceUnderUncertainty.lean": "dc23584409953c75aeaef66e0f6c23d6e39f9e1954a9a02e8ed7ac7669373e74",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "c3599efbcbe9d4c1c6f96c4eda1ae805d889147a7ee14d0a505a012e6a27d6a0",
+    "lake-manifest.json": "212d4a3f6b099ba41a6974ad86b2cb8e2b4b7942d9b523c3da9b0d71a95d8c6e",
+    "proof-manifest.json": "070b6ecb00852b11b0672f0341f09747d977cbf53d2a268295fbc255b3be89ab",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "7147cd0f47d5eb8a6c824c17a926302324ebc9a9f50eefa218edccbc6e8f135b",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 6: choice under uncertainty (expected utility, money lotteries and risk aversion, comparisons of payoff distributions, state-dependent and subjective utility), with all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 6. Exact scope: docs/source-map.md."
+}

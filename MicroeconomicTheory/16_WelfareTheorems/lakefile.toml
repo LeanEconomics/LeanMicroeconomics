@@ -1,0 +1,23 @@
+name = "MWGWelfareTheorems"
+version = "0.1.0"
+keywords = ["math", "economics", "microeconomics"]
+defaultTargets = ["MWGWelfareTheorems"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.34.0"
+
+[[require]]
+name = "MWGGeneralEquilibriumExamples"
+path = "../15_GeneralEquilibriumExamples"
+
+[[lean_lib]]
+name = "MWGWelfareTheorems"

@@ -1,0 +1,3636 @@
+{
+  "checked_at_utc": "2026-11-12T20:12:29.604517+00:00",
+  "theorems": 273,
+  "module_theorems": {
+    "MWGConsumerChoice/Commodities.lean": 10,
+    "MWGConsumerChoice/WalrasianBudget.lean": 15,
+    "MWGConsumerChoice/DemandBasics.lean": 20,
+    "MWGConsumerChoice/DemandCalculus.lean": 7,
+    "MWGConsumerChoice/Aggregation.lean": 14,
+    "MWGConsumerChoice/AggregationExercises.lean": 10,
+    "MWGConsumerChoice/WeakAxiom.lean": 12,
+    "MWGConsumerChoice/WeakAxiomExercises.lean": 12,
+    "MWGConsumerChoice/RevealedData.lean": 21,
+    "MWGConsumerChoice/MatrixDefiniteness.lean": 5,
+    "MWGConsumerChoice/Slutsky.lean": 16,
+    "MWGConsumerChoice/SlutskyExamples.lean": 28,
+    "MWGConsumerChoice/SamuelsonSufficiency.lean": 2,
+    "MWGConsumerChoice/AppendixMA.lean": 12,
+    "MWGConsumerChoice/AppendixMB.lean": 14,
+    "MWGConsumerChoice/AppendixMDBasic.lean": 20,
+    "MWGConsumerChoice/AppendixMDDeterminants.lean": 13,
+    "MWGConsumerChoice/AppendixMDSemidef.lean": 5,
+    "MWGConsumerChoice/AppendixMDTangent.lean": 7,
+    "MWGConsumerChoice/AppendixMDNeumann.lean": 2,
+    "MWGConsumerChoice/AppendixMDBordered.lean": 6,
+    "MWGConsumerChoice/AppendixMDBorderedTests.lean": 12,
+    "MWGConsumerChoice/AppendixMDBorderedSemidef.lean": 10
+  },
+  "audited_declarations": 356,
+  "declarations": [
+    {
+      "name": "MWG.ConsumerChoice.nonnegOrthant",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.mem_nonnegOrthant_iff",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.range_val_nonnegativeOrthant",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convexCombination_apply",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convex_nonnegOrthant",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_C_1_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_C_2_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_C_3_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_C_4_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_C_5_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_C_6_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convex_figure_2_C_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convex_figure_2_C_4",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convex_figure_2_C_5",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convex_figure_2_C_6",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.not_convex_figure_2_C_2",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.not_convex_figure_2_C_3",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Commodities.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.StrictlyPositive",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.definition_2_D_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetHyperplane",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.image_val_krepsBudgetSet",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet_zero_wealth",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetHyperplane_orthogonal",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetLine_two_goods",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet_subset_of_price_fall",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet_ssubset_of_price_fall",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetLine_steeper",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.convex_budgetSet",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSetOn",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSetOn_nonnegOrthant",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_D_3b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_D_3a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_D_4_income",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_D_4_consumption",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_D_4_set",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_D_4",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_D_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_D_2",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WalrasianBudget.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.PWDomain",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.DemandCorrespondence",
+      "kind": "abbrev",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.DemandFunction",
+      "kind": "abbrev",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.HomogeneousZeroCorr",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.WalrasLawCorr",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.HomogeneousZero",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.WalrasLaw",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.toCorrespondence",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.homogeneousZero_iff_corr",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walrasLaw_iff_corr",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.pwDomain_smul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet_smul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.vertex_mem_budgetSet",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet_eq_imp_proportional",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_depends_only_on_budget",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walrasianBudgetFamily",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetSet_infinite",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.finite_not_mem_walrasianBudgetFamily",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.normalize_price",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.normalize_wealth",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.priceEffect",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.wealthEffect",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.priceJacobian",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.wealthJacobian",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.prod_eq_sum_single",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.deriv_apply_eq",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.deriv_apply_eq_mulVec",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.engelFunction",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.wealthExpansionPath",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NormalAt",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.InferiorAt",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NormalDemand",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.GiffenAt",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.inferiorAt_iff_not_normalAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.priceEffect_fderiv",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_E_1",
+      "kind": "def",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_1_homogeneous",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_E_1_expenditure",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_1_walras_iff",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_7",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandBasics.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_line",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_path",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_path_apply",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.eventually_pwDomain",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_eq_zero_of_eventually_const",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walras_deriv_identity",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.homogeneous_deriv_identity",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/DemandCalculus.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.priceElasticity",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.wealthElasticity",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.budgetShare",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_1_matrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_1_elasticity",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_2",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_2_matrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_3",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_E_3_matrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_2_price",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_2_wealth",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_3",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_3_via_homogeneity",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.HomogeneousOneInWealth",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_4_wealthJacobian",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_4",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_4_engel",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Aggregation.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_eq_of_own_price_eq",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_5",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_E_5_counterexample",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_E_5_counterexample_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_5_alpha_pos_counterexample",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_E_1_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_6",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_exp_price_curve",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_8_price",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_8_wealth",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_E_8_loglinear",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AggregationExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.WeakAxiom",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.ValuesInOrthant",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.compensatedWealth",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.CompensatedLawOfDemand",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.compensatedWealth_pos",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.weakAxiom_iff_compensated",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_F_1_i",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_F_1_ii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_F_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.own_price_compensated_law",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_F_4",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leontiefDemand",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leontiefDemand_walras",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leontiefDemand_homogeneous",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leontiefDemand_orthant",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leontiefDemand_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.own_price_strict_counterexample",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiom.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walrasianChoiceRule",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.zero_mem_budgetSet",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walrasianChoiceStructure",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walrasianChoiceRule_budgetSet",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_6",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_12",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_14",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.GeneralizedWeakAxiom",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.walrasianCorrStructure",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_13a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.generalizedWeakAxiom_toCorrespondence_iff",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.dotProduct_pos_of_nonneg",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_13b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.GeneralizedCompensatedLaw",
+      "kind": "def",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_13c",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_13d",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/WeakAxiomExercises.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.RevealedPreferred",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.PairWeakAxiom",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.pairWeakAxiom_of_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.figure_2_F_5",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_2_F_1_prices",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_2_F_1_choices",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_2_F_1_walras",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_2_pairs",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_2_cycle",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_2_F_1_not_rationalizable",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_p1",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_x1",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_p2",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_x2",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_w2",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_rp12",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_rp21",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3c",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3d",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_inconsistent",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exists_inferiorAt_of_decrease",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_compensated",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3e",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3f",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_3_homothetic_bound",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.laspeyresQuantity",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.paascheQuantity",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.expenditureIndex",
+      "kind": "def",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_4a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_4b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_4c",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/RevealedData.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegSemidef",
+      "kind": "def",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegDef",
+      "kind": "def",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.PosSemidefMWG",
+      "kind": "def",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.PosDefMWG",
+      "kind": "def",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posSemidefMWG_iff_neg",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posDefMWG_iff_neg",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegDef.negSemidef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posSemidefMWG_iff_posSemidef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posDefMWG_iff_posDef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/MatrixDefiniteness.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutskyMatrix",
+      "kind": "def",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutskyMatrix_eq",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutskyMatrix_mulVec",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_nonpos_of_right_le",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_F_2",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutsky_diag_nonpos",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.giffen_imp_inferior",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.proposition_2_F_3",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_7",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutsky_det_eq_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutsky_not_negDef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.symmetric_of_two_by_two",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_11",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_9b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_8",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_5",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_5_infinitesimal",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/Slutsky.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutsky_mulVec_of_hasDerivAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_affine",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hasDerivAt_share_term",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutsky_2_E_1_mulVec",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_10a_matrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_10a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_10b_quadratic",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_10b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_F_16",
+      "kind": "def",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_16a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_16b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_F_16_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_16c",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_F_15",
+      "kind": "def",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.quadForm_pos",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_15_basic",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_15_unique",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_15_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_F_15_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.slutsky_2_F_15_mulVec",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_15_quadratic",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_15_negDef_off_p",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_15_not_symm",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_F_17",
+      "kind": "def",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_17a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.sum_prices_pos",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_17b",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_17c",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.demand_2_F_17_differentiableAt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_17d_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_17d",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SlutskyExamples.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.neg_at_one_of_deriv_neg_at_zeros",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SamuelsonSufficiency.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.samuelson_sufficiency",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/SamuelsonSufficiency.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.dotProduct_eq_transpose_mul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.vecMul_eq_transpose_mul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.jacobian",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.jacobian_mulVec",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.gradientVec",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.gradient_eq_transpose_jacobian",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.fderiv_apply_eq_gradient_dot",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.partialJacobianFst",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.partialJacobianFst_apply",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.hessianMatrix",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.equation_M_A_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.equation_M_A_2",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.equation_M_A_3",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.equation_M_A_5",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.rank_vecMulVec_le_one",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.equation_M_A_4",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMA.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.HomogeneousOfDegree",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_B_quotient",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_B_sqrt",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.homogeneous_zero_normalize",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.homogeneous_one_normalize",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.interior_nonnegOrthant_nonempty",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_B_1",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_B_1_partial",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_B_sqrt_partial",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.level_set_radial",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.level_set_slope_radial",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.homothetic_level_sets",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.homothetic_slope_radial",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_B_2",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.euler_degree_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMB.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.dotProduct_self_pos_of_ne_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.dotProduct_transpose_mulVec",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_1_i",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_1_i_semidef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.IsCharacteristicValue",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.isCharacteristicValue_ofReal_iff",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.isCharacteristicValue_real",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_1_ii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_1_ii_complex",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegDef.det_ne_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegDef.inv",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_1_iii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.Stable",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_1_iv",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.det_neg_eq_pow",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.quadratic_two_by_two",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_1_negDef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_1_negSemidef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.DominantDiagonal",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.GrossSubstituteSign",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_5_i",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_5_ii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_5_iii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_5_iv",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBasic.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.sum_extend_mul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.quadratic_submatrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegDef.submatrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.NegSemidef.submatrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.PosDefMWG.det_ne_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.PosDefMWG.det_pos",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leadingMinorMatrix",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.permuteMatrix",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_2_iii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.IsPMatrix",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.negDef_neg_isPMatrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leadingMinorMatrix_castSucc",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.quadratic_castSucc_split",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.sylvester_posDef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_2_i",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exercise_2_F_9a",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDDeterminants.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.exists_perm_extend",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.principalMinor_eq_permuted",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posSemidef_of_principal_minors",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_2_ii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_2_ii_permutations_needed",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.quadratic_sub_smul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_4_ii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.extend_succAbove_self",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.extend_succAbove_restrict",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_4_iii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.rank_le_of_two_kernel_vectors",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_4_i",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDTangent.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.pow_entry_nonneg",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDNeumann.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_5_v",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDNeumann.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.borderedMatrix",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_3_i_counterexample",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_2_det",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_2_line",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_2_negDef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_2_negSemidef",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.example_M_D_2_product",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBordered.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered",
+      "kind": "def",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_det_eq_zero_of_not_injective",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_det_ne_zero",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posDefMWG_transpose_mul",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.posDefMWG_mul_transpose",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_sign_pos",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_det_eq",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.transpose_mulVec_extend",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.negDef_on_ker_submatrix",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leadingRows_injective",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.leadingRows_transpose_injective",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_3_i",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_3_ii_forward",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedTests.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.det_one_add_eq_sum_minors",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.det_add_diagonal_expansion",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.det_bordered_submatrix_disjSum",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_perturbation_expansion",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.card_le_of_mulVec_injective",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.transpose_injective_of_card_eq",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_sign_pos_square",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.det_bordered_reindex",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.bordered_sign_of_printed",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    },
+    {
+      "name": "MWG.ConsumerChoice.theorem_M_D_3_ii",
+      "kind": "theorem",
+      "module": "MWGConsumerChoice/AppendixMDBorderedSemidef.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.ConsumerChoice.nonnegOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.mem_nonnegOrthant_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.range_val_nonnegativeOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convexCombination_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convex_nonnegOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_C_1_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_C_2_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_C_3_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_C_4_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_C_5_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_C_6_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convex_figure_2_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convex_figure_2_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convex_figure_2_C_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convex_figure_2_C_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.not_convex_figure_2_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.not_convex_figure_2_C_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.StrictlyPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.definition_2_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetHyperplane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.image_val_krepsBudgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet_zero_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetHyperplane_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetLine_two_goods": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet_subset_of_price_fall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet_ssubset_of_price_fall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetLine_steeper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.convex_budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSetOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSetOn_nonnegOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_D_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_D_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_D_4_income": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_D_4_consumption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_D_4_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.PWDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.DemandCorrespondence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.DemandFunction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.HomogeneousZeroCorr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.WalrasLawCorr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.HomogeneousZero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.WalrasLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.toCorrespondence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.homogeneousZero_iff_corr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walrasLaw_iff_corr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.pwDomain_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.vertex_mem_budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet_eq_imp_proportional": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_depends_only_on_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walrasianBudgetFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetSet_infinite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.finite_not_mem_walrasianBudgetFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.normalize_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.normalize_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.priceEffect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.wealthEffect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.priceJacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.wealthJacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.prod_eq_sum_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.deriv_apply_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.deriv_apply_eq_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.engelFunction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.wealthExpansionPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NormalAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.InferiorAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NormalDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.GiffenAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.inferiorAt_iff_not_normalAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.priceEffect_fderiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_1_homogeneous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_E_1_expenditure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_1_walras_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_path": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_path_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.eventually_pwDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_eq_zero_of_eventually_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walras_deriv_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.homogeneous_deriv_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.priceElasticity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.wealthElasticity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.budgetShare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_1_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_1_elasticity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_2_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_E_3_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_2_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_2_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_3_via_homogeneity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.HomogeneousOneInWealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_4_wealthJacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_4_engel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_eq_of_own_price_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_E_5_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_E_5_counterexample_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_5_alpha_pos_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_E_1_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_exp_price_curve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_8_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_8_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_E_8_loglinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.WeakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.ValuesInOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.compensatedWealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.CompensatedLawOfDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.compensatedWealth_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.weakAxiom_iff_compensated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_F_1_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_F_1_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.own_price_compensated_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_F_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leontiefDemand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leontiefDemand_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leontiefDemand_homogeneous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leontiefDemand_orthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leontiefDemand_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.own_price_strict_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walrasianChoiceRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.zero_mem_budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walrasianChoiceStructure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walrasianChoiceRule_budgetSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.GeneralizedWeakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.walrasianCorrStructure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_13a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.generalizedWeakAxiom_toCorrespondence_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.dotProduct_pos_of_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_13b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.GeneralizedCompensatedLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_13c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_13d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.RevealedPreferred": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.PairWeakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.pairWeakAxiom_of_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.figure_2_F_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_2_F_1_prices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_2_F_1_choices": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_2_F_1_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_2_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_2_cycle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_2_F_1_not_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_p1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_x1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_p2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_x2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_w2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_rp12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_rp21": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_inconsistent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exists_inferiorAt_of_decrease": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_compensated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3f": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_3_homothetic_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.laspeyresQuantity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.paascheQuantity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.expenditureIndex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_4a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_4b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_4c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.PosSemidefMWG": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.PosDefMWG": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posSemidefMWG_iff_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posDefMWG_iff_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegDef.negSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posSemidefMWG_iff_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posDefMWG_iff_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutskyMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutskyMatrix_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutskyMatrix_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_nonpos_of_right_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_F_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutsky_diag_nonpos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.giffen_imp_inferior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.proposition_2_F_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutsky_det_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutsky_not_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.symmetric_of_two_by_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_9b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_5_infinitesimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutsky_mulVec_of_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hasDerivAt_share_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutsky_2_E_1_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_10a_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_10a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_10b_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_10b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_F_16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_16a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_16b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_F_16_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_16c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_F_15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.quadForm_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_15_basic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_15_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_15_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_F_15_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.slutsky_2_F_15_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_15_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_15_negDef_off_p": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_15_not_symm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_F_17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_17a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.sum_prices_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_17b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_17c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.demand_2_F_17_differentiableAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_17d_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_17d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.neg_at_one_of_deriv_neg_at_zeros": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.samuelson_sufficiency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.dotProduct_eq_transpose_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.vecMul_eq_transpose_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.jacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.jacobian_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.gradientVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.gradient_eq_transpose_jacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.fderiv_apply_eq_gradient_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.partialJacobianFst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.partialJacobianFst_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.hessianMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.equation_M_A_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.equation_M_A_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.equation_M_A_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.equation_M_A_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.rank_vecMulVec_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.equation_M_A_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.HomogeneousOfDegree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_B_quotient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_B_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.homogeneous_zero_normalize": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.homogeneous_one_normalize": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.interior_nonnegOrthant_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_B_1_partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_B_sqrt_partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.level_set_radial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.level_set_slope_radial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.homothetic_level_sets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.homothetic_slope_radial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.euler_degree_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.dotProduct_self_pos_of_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.dotProduct_transpose_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_1_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_1_i_semidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.IsCharacteristicValue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.isCharacteristicValue_ofReal_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.isCharacteristicValue_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_1_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_1_ii_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegDef.det_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegDef.inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_1_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.Stable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_1_iv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.det_neg_eq_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.quadratic_two_by_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_1_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_1_negSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.DominantDiagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.GrossSubstituteSign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_5_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_5_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_5_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_5_iv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.sum_extend_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.quadratic_submatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegDef.submatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.NegSemidef.submatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.PosDefMWG.det_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.PosDefMWG.det_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leadingMinorMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.permuteMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_2_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.IsPMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.negDef_neg_isPMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leadingMinorMatrix_castSucc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.quadratic_castSucc_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.sylvester_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_2_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exercise_2_F_9a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.exists_perm_extend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.principalMinor_eq_permuted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posSemidef_of_principal_minors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_2_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_2_ii_permutations_needed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.quadratic_sub_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_4_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.extend_succAbove_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.extend_succAbove_restrict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_4_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.rank_le_of_two_kernel_vectors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_4_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.pow_entry_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_5_v": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.borderedMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_3_i_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_2_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_2_line": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_2_negDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_2_negSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.example_M_D_2_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_det_eq_zero_of_not_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_det_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posDefMWG_transpose_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.posDefMWG_mul_transpose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_sign_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_det_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.transpose_mulVec_extend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.negDef_on_ker_submatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leadingRows_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.leadingRows_transpose_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_3_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_3_ii_forward": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.det_one_add_eq_sum_minors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.det_add_diagonal_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.det_bordered_submatrix_disjSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_perturbation_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.card_le_of_mulVec_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.transpose_injective_of_card_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_sign_pos_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.det_bordered_reindex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.bordered_sign_of_printed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.ConsumerChoice.theorem_M_D_3_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGConsumerChoice/Commodities.lean": "fb0b062e93968c72bbc5927ca6ac4d674511609386f8ccc932c07c43dca54c1a",
+    "MWGConsumerChoice/WalrasianBudget.lean": "c334088e268750fdf75ca3de4cd86a905be5b7deb9c8d86c31c54323929c38af",
+    "MWGConsumerChoice/DemandBasics.lean": "a73cfa95be3616b2261231b5232d18306818878893d47e4e5d8a00567dfe5e4b",
+    "MWGConsumerChoice/DemandCalculus.lean": "3ea114f8e44756d346dc6178bd185ba277374f1e2141262d8da19b76b591dd82",
+    "MWGConsumerChoice/Aggregation.lean": "26ff8114c62898a84ab1262670b587049351ac644842ad7c95c186b84d7039e0",
+    "MWGConsumerChoice/AggregationExercises.lean": "6e88a1e4094dd2f4e83dfca7e5935d8461ca6147266981169e5149654bd56889",
+    "MWGConsumerChoice/WeakAxiom.lean": "93d8a0592bca3b56d050e2c20521324ae14e54259c7b91f161d6107851ea85b3",
+    "MWGConsumerChoice/WeakAxiomExercises.lean": "72264fb44d1ecdeab26069fa45b2581277ba99b53445f1f07e6c9b67a754e028",
+    "MWGConsumerChoice/RevealedData.lean": "8196619f87acce1c3d00dc9e0d63809072ad5935dd97f7e02e93433c878760ef",
+    "MWGConsumerChoice/MatrixDefiniteness.lean": "da7d5f24e1c8fee620d4dcf9bbd69edcb408fd244f95a9bd867f9f59fab9f95b",
+    "MWGConsumerChoice/Slutsky.lean": "521c9c7dfb3c166febe39e701cb3f2e56dba53acc67bce101ebb0833740fe40a",
+    "MWGConsumerChoice/SlutskyExamples.lean": "fca70c1639cfda63f3a7715140189a26d11cb2507b0dd399610865ccd0369146",
+    "MWGConsumerChoice/SamuelsonSufficiency.lean": "1ef26cd023206c0c19d6c58279e192e6189c87c88e6e54a0a1f905b4654aee5b",
+    "MWGConsumerChoice/AppendixMA.lean": "62b5c0ea114e8aaa6fade33249da1a905806be808a69ca2100a6b44bffa4e940",
+    "MWGConsumerChoice/AppendixMB.lean": "3c3264196d662b089dd1406f10fe3c7c95c0162bb2d524731eb1b750c3cb9f77",
+    "MWGConsumerChoice/AppendixMDBasic.lean": "f1bc3e9ba7e417fcc9453a0347d63de5208c275d74d47eda93366555e4689f5e",
+    "MWGConsumerChoice/AppendixMDDeterminants.lean": "074504de588b7e2f26766e1c6c8b44c41bfdfb2852cca61c4c6057d5d98db735",
+    "MWGConsumerChoice/AppendixMDSemidef.lean": "e42b4832eaf1c704026fe8838e5faa8e42b0aa3676dfd6d53a5a2633f115c901",
+    "MWGConsumerChoice/AppendixMDTangent.lean": "dabfc9b9e0ba0ed342298a86e09a4d5344703b38fce93d8e0c542fe42f9b0e25",
+    "MWGConsumerChoice/AppendixMDNeumann.lean": "26a4a9c78ccd04c2b34d74a52179eedbe64a707451c7c5c041a63e0ff68f09ae",
+    "MWGConsumerChoice/AppendixMDBordered.lean": "78c9b75bc6499a92fdaa8270c0bdab557300cd89f9c169e3d1cf93ea6d4beb39",
+    "MWGConsumerChoice/AppendixMDBorderedTests.lean": "fa5b0e96f03d1bf2371a3475c655c7a0353c10681c9131ba8ca81837785eaae9",
+    "MWGConsumerChoice/AppendixMDBorderedSemidef.lean": "047bc51136690c510b3872bc00ab2ff129d1e5f8ae2b723d3c329859c9b009f6",
+    "MWGConsumerChoice.lean": "f62d154e076fcc553ac90453922fbdd4ebb31a806689a613407c209eeedfe387",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "eec48e26cac5b51666a2f7d22552bfe472993727f640ad1943a2ed0b79f11747",
+    "lake-manifest.json": "67581613b750ba44fa64cbbddd7566cf6cac66dca2b853732c5f1c7f60534ed0",
+    "proof-manifest.json": "5b453b2495ea2d33ccb9078d974ddc44a07da19d03f8643f801ae9844529e166",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "ed0dd3121ce67ca9c742f428ff5830f20ce81121dfca7e08b1ceb76b2b87c9d1",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 2, pp. 17-39: commodities, consumption sets, competitive budgets, Walrasian demand and comparative statics, the weak axiom and the law of demand, all exercises, and Mathematical Appendix M.A, M.B, M.D.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 2. Exact scope: docs/source-map.md."
+}

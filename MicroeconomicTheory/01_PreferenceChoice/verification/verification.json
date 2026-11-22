@@ -1,0 +1,903 @@
+{
+  "checked_at_utc": "2026-11-12T18:13:41.728908+00:00",
+  "theorems": 73,
+  "module_theorems": {
+    "MWGPreferenceChoice/PreferenceRelations.lean": 21,
+    "MWGPreferenceChoice/ChoiceRules.lean": 20,
+    "MWGPreferenceChoice/Rationalization.lean": 20,
+    "MWGPreferenceChoice/StochasticChoice.lean": 12
+  },
+  "audited_declarations": 101,
+  "declarations": [
+    {
+      "name": "MWG.PreferenceChoice.definition_1_B_1",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.strict_iff",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.indifferent_iff",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.footnote_1_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_B_1_i",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_B_1_ii",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_B_1_iii",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_B_1",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_B_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_no_strict_cycle",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_just_perceptible",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_framing",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.condorcetRank",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.condorcetMajority",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_condorcet",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_change_of_tastes",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.definition_1_B_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_B_3",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_differences_not_ordinal",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_B_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefRel_rational_not_representable",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_B_4",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_B_5",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/PreferenceRelations.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure",
+      "kind": "structure",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure.mk",
+      "kind": "constructor",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure.budgets",
+      "kind": "projection",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure.C",
+      "kind": "projection",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure.budget_nonempty",
+      "kind": "projection",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure.choice_subset",
+      "kind": "projection",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ChoiceStructure.choice_nonempty",
+      "kind": "projection",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.WeakAxiom",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.RevealedPref",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.RevealedStrict",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.RevealedStrict'",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.weakAxiom_iff_revealed",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.weakAxiom_iff_coherentOn",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.threeChoice",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.threeChoice_ne",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.threeChoice_C_xy",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.threeChoice_C_xyz",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.example_1_C_1_C\u2081",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.example_1_C_1_C\u2082",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.threeChoice_budgets",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.example_1_C_2_C\u2081",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.example_1_C_2_C\u2082",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_C_1",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_C_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_C_3a",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_C_3a_without_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.revealedStrict_of_revealedStrict'",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicPairs",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicPairs_values",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicPairs_budget_cases",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicPairs_weakAxiom",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.revealedPref_not_complete",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.revealedPref_not_transitive",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_C_3b",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_C_3c",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/ChoiceRules.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.mem_prefChoice_iff",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.prefChoice_can_be_empty",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.generatedStructure",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_D_1",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.Rationalizes",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.Rationalizable",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.weakAxiom_of_rationalizes",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.example_1_D_1",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.ContainsSmallSubsets",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.containsSmallSubsets_pair",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.containsSmallSubsets_triple",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.revealedPref_iff_mem_pair",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_D_2_rational",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_D_2_generates",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_D_2_unique",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.proposition_1_D_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.weakAxiom_iff_rationalizable",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.WeaklyRationalizes",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.weaklyRationalizes_of_rationalizes",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.weaklyRationalizes_indifference",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_1_structure",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_1a",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_1b",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_2",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_3",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_4",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/Rationalization.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.rankPrefers",
+      "kind": "abbrev",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.rankPrefers_strictTotal",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.rankPrefers_injective",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.StochasticRationalizable",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicChoice",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicChoice_valid",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicCount",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicCount_bounds",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicChoice_bounds_of_rationalizable",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.rankPrefers_card",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.rankPrefers_cyclicCount_sum",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicDistribution",
+      "kind": "def",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicChoice_rationalizable_of_bounds",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.cyclicChoice_rationalizable_iff",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_5a",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_5b",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    },
+    {
+      "name": "MWG.PreferenceChoice.exercise_1_D_5c",
+      "kind": "theorem",
+      "module": "MWGPreferenceChoice/StochasticChoice.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.PreferenceChoice.definition_1_B_1": [],
+    "MWG.PreferenceChoice.strict_iff": [],
+    "MWG.PreferenceChoice.indifferent_iff": [],
+    "MWG.PreferenceChoice.footnote_1_2": [],
+    "MWG.PreferenceChoice.proposition_1_B_1_i": [],
+    "MWG.PreferenceChoice.proposition_1_B_1_ii": [],
+    "MWG.PreferenceChoice.proposition_1_B_1_iii": [],
+    "MWG.PreferenceChoice.exercise_1_B_1": [],
+    "MWG.PreferenceChoice.exercise_1_B_2": [],
+    "MWG.PreferenceChoice.prefRel_no_strict_cycle": [],
+    "MWG.PreferenceChoice.prefRel_just_perceptible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.prefRel_framing": [],
+    "MWG.PreferenceChoice.condorcetRank": [
+      "propext"
+    ],
+    "MWG.PreferenceChoice.condorcetMajority": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.prefRel_condorcet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.prefRel_change_of_tastes": [],
+    "MWG.PreferenceChoice.definition_1_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.prefRel_differences_not_ordinal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.proposition_1_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.prefRel_rational_not_representable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_B_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.ChoiceStructure": [],
+    "MWG.PreferenceChoice.ChoiceStructure.mk": [],
+    "MWG.PreferenceChoice.ChoiceStructure.budgets": [],
+    "MWG.PreferenceChoice.ChoiceStructure.C": [],
+    "MWG.PreferenceChoice.ChoiceStructure.budget_nonempty": [],
+    "MWG.PreferenceChoice.ChoiceStructure.choice_subset": [],
+    "MWG.PreferenceChoice.ChoiceStructure.choice_nonempty": [],
+    "MWG.PreferenceChoice.WeakAxiom": [],
+    "MWG.PreferenceChoice.RevealedPref": [],
+    "MWG.PreferenceChoice.RevealedStrict": [],
+    "MWG.PreferenceChoice.RevealedStrict'": [],
+    "MWG.PreferenceChoice.weakAxiom_iff_revealed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.weakAxiom_iff_coherentOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.threeChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.threeChoice_ne": [
+      "propext"
+    ],
+    "MWG.PreferenceChoice.threeChoice_C_xy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.threeChoice_C_xyz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.example_1_C_1_C\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.example_1_C_1_C\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.threeChoice_budgets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.example_1_C_2_C\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.example_1_C_2_C\u2082": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_C_3a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_C_3a_without_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.revealedStrict_of_revealedStrict'": [],
+    "MWG.PreferenceChoice.cyclicPairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicPairs_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicPairs_budget_cases": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicPairs_weakAxiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.revealedPref_not_complete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.revealedPref_not_transitive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_C_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_C_3c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.mem_prefChoice_iff": [],
+    "MWG.PreferenceChoice.prefChoice_can_be_empty": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.generatedStructure": [],
+    "MWG.PreferenceChoice.proposition_1_D_1": [],
+    "MWG.PreferenceChoice.Rationalizes": [],
+    "MWG.PreferenceChoice.Rationalizable": [],
+    "MWG.PreferenceChoice.weakAxiom_of_rationalizes": [],
+    "MWG.PreferenceChoice.example_1_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.ContainsSmallSubsets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.containsSmallSubsets_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.containsSmallSubsets_triple": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.revealedPref_iff_mem_pair": [
+      "propext"
+    ],
+    "MWG.PreferenceChoice.proposition_1_D_2_rational": [
+      "propext"
+    ],
+    "MWG.PreferenceChoice.proposition_1_D_2_generates": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.proposition_1_D_2_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.proposition_1_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.weakAxiom_iff_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.WeaklyRationalizes": [],
+    "MWG.PreferenceChoice.weaklyRationalizes_of_rationalizes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.weaklyRationalizes_indifference": [],
+    "MWG.PreferenceChoice.exercise_1_D_1_structure": [
+      "propext"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_1a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.rankPrefers": [
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.rankPrefers_strictTotal": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.rankPrefers_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.StochasticRationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicChoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicChoice_valid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicCount": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicCount_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicChoice_bounds_of_rationalizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.rankPrefers_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.rankPrefers_cyclicCount_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicDistribution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicChoice_rationalizable_of_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.cyclicChoice_rationalizable_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_5b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.PreferenceChoice.exercise_1_D_5c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGPreferenceChoice/PreferenceRelations.lean": "7a0a6dba8dcee178d6b24a01b338b252206e809811192cd7953bafc2eaa37068",
+    "MWGPreferenceChoice/ChoiceRules.lean": "8d0d80860492bb2469837b56ade6fa16fc95140f436cc575c8a80a5315adc061",
+    "MWGPreferenceChoice/Rationalization.lean": "143b8847310dcf65c1281b5bae3c2647a6d1e2da80081b5026f82eaac3db1bbb",
+    "MWGPreferenceChoice/StochasticChoice.lean": "b75acca95633ac92a372c0ee393db1bef7d1036888c5e45c3e5c93e6e6653ae6",
+    "MWGPreferenceChoice.lean": "154a16f343dbadbde4363210d38dbfa038477b54d122230f1fc600eae7210101",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "1e568f8c86e4932e6682a8b26a910f47885cada29ff37fc998de29d2cd85ebdd",
+    "lake-manifest.json": "abe10e81d92ec5171b8c6c3816a44670f1f7345f452203860b7c768fb4a0e1bc",
+    "proof-manifest.json": "9e26942704ffd19684fc406b7f30c7aa6c4c772d481b08e108c654d3678592ef",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "f1b05737cd487e3a5b0f774de753a79379985ef2b5e075cd51d0369bf0d959bf",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 1, pp. 5-16: preference relations, choice rules, their relationship, and all exercises.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 1. Exact scope: docs/source-map.md."
+}
