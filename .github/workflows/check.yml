@@ -33,6 +33,7 @@ jobs:
           - MicroeconomicTheory/14_PrincipalAgent
           - MicroeconomicTheory/15_GeneralEquilibriumExamples
           - MicroeconomicTheory/16_WelfareTheorems
+          - MicroeconomicTheory/17_PositiveEquilibriumTheory
     defaults:
       run:
         working-directory: ${{ matrix.project }}
