@@ -35,6 +35,7 @@ jobs:
           - MicroeconomicTheory/16_WelfareTheorems
           - MicroeconomicTheory/17_PositiveEquilibriumTheory
           - MicroeconomicTheory/19_EquilibriumUncertainty
+          - MicroeconomicTheory/20_EquilibriumTime
     defaults:
       run:
         working-directory: ${{ matrix.project }}
