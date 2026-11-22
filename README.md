@@ -71,8 +71,9 @@ Mathlib pin above. Each chapter audits only its own modules.
 | [MicroeconomicTheory/13_AdverseSelection](MicroeconomicTheory/13_AdverseSelection/README.md) | 13. Market Signaling, Adverse Selection and Screening (with Appendix A) | 501 theorems / 795 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/13_AdverseSelection/README.md) |
 | [MicroeconomicTheory/14_PrincipalAgent](MicroeconomicTheory/14_PrincipalAgent/README.md) | 14. The Principal-Agent Problem (with Appendices A-B) | 331 theorems / 510 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/14_PrincipalAgent/README.md) |
 | [MicroeconomicTheory/15_GeneralEquilibriumExamples](MicroeconomicTheory/15_GeneralEquilibriumExamples/README.md) | 15. General Equilibrium Theory: Some Examples | 424 theorems / 573 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/15_GeneralEquilibriumExamples/README.md) |
+| [MicroeconomicTheory/16_WelfareTheorems](MicroeconomicTheory/16_WelfareTheorems/README.md) | 16. Equilibrium and Its Basic Welfare Properties (with Appendix A) | 181 theorems / 275 declarations; fresh audit passed | [Chapter overview](MicroeconomicTheory/16_WelfareTheorems/README.md) |
 
-MWG Chapters 1–15 are implemented.
+MWG Chapters 1–16 are implemented.
 
 ## Build and verify
 

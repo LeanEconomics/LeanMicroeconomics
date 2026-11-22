@@ -1,0 +1,2816 @@
+{
+  "checked_at_utc": "2026-11-22T11:02:33.340357+00:00",
+  "theorems": 181,
+  "module_theorems": {
+    "MWGWelfareTheorems/Basic.lean": 24,
+    "MWGWelfareTheorems/FirstWelfare.lean": 17,
+    "MWGWelfareTheorems/SecondWelfare.lean": 10,
+    "MWGWelfareTheorems/CheaperPoint.lean": 11,
+    "MWGWelfareTheorems/QuasiExample.lean": 7,
+    "MWGWelfareTheorems/Replica.lean": 9,
+    "MWGWelfareTheorems/SocialWelfare.lean": 12,
+    "MWGWelfareTheorems/UtilityFrontier.lean": 5,
+    "MWGWelfareTheorems/Appendix.lean": 15,
+    "MWGWelfareTheorems/FritzJohn.lean": 2,
+    "MWGWelfareTheorems/FirstOrder.lean": 9,
+    "MWGWelfareTheorems/FirstOrderWelfare.lean": 12,
+    "MWGWelfareTheorems/RatioConditions.lean": 8,
+    "MWGWelfareTheorems/MarginalCost.lean": 3,
+    "MWGWelfareTheorems/MCExamples.lean": 7,
+    "MWGWelfareTheorems/Applications.lean": 9,
+    "MWGWelfareTheorems/Exercise16G5.lean": 9,
+    "MWGWelfareTheorems/LindahlSecond.lean": 12
+  },
+  "audited_declarations": 275,
+  "declarations": [
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy",
+      "kind": "structure",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.X",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.pref",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.Y",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.\u03c9",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy",
+      "kind": "structure",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.mk",
+      "kind": "constructor",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.X",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.pref",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.Y",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.\u03c9i",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.\u03b8",
+      "kind": "projection",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.nonposOrthant",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsAllocation",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsFeasible",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.feasibleSet",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.ParetoDominates",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsParetoOptimal",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.IsMaximalFor",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceQuasiEqmWithTransfers",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPureExchange",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.ofUtility",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.toEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.SharesValid",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.wealth",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.IsWalrasEqm",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_B_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_B_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_B_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_B_4",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_C_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_D_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers.isFeasible",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceQuasiEqmWithTransfers.isFeasible",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.sum_wealth",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrivPrefEconomy.IsWalrasEqm.isPriceEqmWithTransfers",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers.isPriceQuasiEqm",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.priceEqmCounterEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.priceEqmCounterEconomy_counterexample",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.dotProduct_finset_sum",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.abs_dotProduct_sub_le",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lns_exists_better_cheaper",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers.isPriceQuasiEqm_of_lns",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsPriceQuasiEqmWithTransfers.wealth_eq",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_4",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.paretoOptimal_all_to_one",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exchangeToPrefEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exchangeToPrefEconomy_isPureExchange",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exchange_isFeasible_iff",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exchange_isDemandEqm_isPriceEqm",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.isWalrasEqm_iff_competitiveEqm",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Basic.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.equation_16_C_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_C_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_C_1_walras",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16C1u1",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16C1u2",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16C1Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16C1Eqm",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.dot_two",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.zero_mem_supply_nonpos",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_C_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.unbounded_of_lns",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.StrictlyConvexC3",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.strictlyConvexC3_of_prefStrictlyConvex",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.prefStrictlyConvex_of_strictlyConvexC3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.euclidDist_segment",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_3a_unique",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_3a_lns",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_3b",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsParetoOptimalWrt",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_4",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.altruismPleasure",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.altruismW",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_C_4_converse_fails",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.strict_of_strict_of_pref",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.strict_of_pref_of_strict",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.preferredSet",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.aggPreferredSet",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.availableSet",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_1_step1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_1_step2_V",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_1_step2_Y",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_1_step3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_1_step5",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_D_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.ex16D2u",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.ex16D2Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_D_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SecondWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.isMaximalFor_of_strict_gt",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_6",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_7",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_8",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.satiatedEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_D_3_needs_lns",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_9",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.dotProduct_pos_of_nonneg_ne_zero",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.pureExchange_quasiEqm_isPriceEqm_of_interior",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_D_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/CheaperPoint.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.euclidDist_add_single",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lns_of_strictMono_coord",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16D2u1",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16D2u2",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16D2Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16D2Alloc",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16D2_lns",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_D_2_quasi",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_D_2_unique_price",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_D_2_not_eqm",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.pureExchange_quasiEqm_isPriceEqm_of_strongMono",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/QuasiExample.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.replicaEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.symmetricAlloc",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exists_strict_of_tendsto",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exists_strict_sub_single",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exists_nat_combination_neg",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_D_4",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.rationalOn_utilityPref",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.prefContinuous_utilityPref",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.sqNormU",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.sqNormU_stronglyMonotone",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_D_4",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_D_5",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Replica.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.utilityPossibilitySet",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.achievedUtilitySet",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.paretoFrontier",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.achievedUtilitySet_subset",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.utilityPossibilitySet_down",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_E_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_E_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_E_2_i",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.strongDual_apply_eq_sum",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_E_2_ii",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.pareto_isWelfareOptimum",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.welfareOptimum_isPareto",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16C1Utilities",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_12",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.squareUtility",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16E1Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_E_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.repUtility",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.representative_consumer",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/SocialWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.utility_mono_of_strongMono",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/UtilityFrontier.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_E_1b_interior",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/UtilityFrontier.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_E_1b",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/UtilityFrontier.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_E_1b_hint",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/UtilityFrontier.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_E_1c",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/UtilityFrontier.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.aggregateProduction",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.feasiblePairs",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.isClosed_nonnegOrthant",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.isClosed_nonposOrthant",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_AA_1_nonempty",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.mem_of_tendsto_inv_smul",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_AA_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.aaY1",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.aaCounterEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.aaCounter_agg",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_AA_1_counterexample",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_2_needs_closed",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_2_needs_convex",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_2_needs_zero",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_2_needs_no_free_lunch",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_AA_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_AA_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Appendix.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.no_improving_direction",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FritzJohn.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fritz_john",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FritzJohn.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.clm_apply_eq_sum_partials",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.clm_pos_of_partials_pos",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.strictMono_of_grad_pos",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.mono_of_grad_pos",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.Problem16F1",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.IsSolution16F1",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.economy16F",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.single_nonneg_add",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.solution16F1_resources_bind",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_1_i",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_1_ii",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.projX",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.projY",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.resLin",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrder.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.convexOn_tangent_le",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.concaveOn_le_tangent",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.consumer_max_of_foc",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.firm_max_of_foc",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.section_16_F_constraints_bind",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.foc_16F2_iff_16F10",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.foc_16F13_iff_16F2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.section_16_F_pareto_isPriceEqm",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.section_16_F_pareto_iff_priceEqm",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_F_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_18_counterexample",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/FirstOrderWelfare.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exists_sep_direction",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.eventually_gt_along",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.eventually_pos_along",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.single_eq_smul_single",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.clm_two_dir",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.Problem16F7",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_4_i",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.Problem16F8",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_4_ii",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_F_4_iii",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/RatioConditions.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PrefEconomy.IsMCPriceEqm",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MarginalCost.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proposition_16_G_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MarginalCost.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MarginalCost.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MarginalCost.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.sqTechF",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.sqTechY",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.sqTechF_hasFDerivAt",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16G1Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16G1Alloc",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_G_1",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16G2Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.fig16G2Alloc",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.figure_16_G_2",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.ex16G3F",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.ex16G3Y",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.ex16G3Economy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.ex16G3F_hasFDerivAt",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_3",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_4",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.noOptimumF",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_4_needs_optimum",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/MCExamples.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_20",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.occupationalX",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.example_16_G_2_X",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.example_16_G_2_lns",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.example_16_G_2_Y",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PublicFeasible",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.PublicParetoOptimal",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.IsLindahlEqm",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.IsLindahlEqmPrinted",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_G_1_wealth_gap",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_G_1_printed_forces",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlExampleU",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.definition_16_G_1_printed_counterexample",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahl_isParetoOptimal",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.footnote_23",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Applications.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5a",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5b_wages",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5b_cost",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5b_mc",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5bc",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5d",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5e_level",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.sqrt_mul_add_le",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.exercise_16_G_5e",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/Exercise16G5.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlEmb",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlProj",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlX",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlY",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlArtificialEconomy",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.IsLindahlQuasiEqm",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlEmb_zero",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlEmb_succ",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlProj_emb",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.dot_succ",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.dot_lindahlEmb",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.emb_proj",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.emb_mem",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.proj_mem",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.euclidDist_emb",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahlAlloc",
+      "kind": "def",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahl_pareto_artificial",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahl_second_welfare",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    },
+    {
+      "name": "MWG.WelfareTheorems.lindahl_second_welfare_instance",
+      "kind": "theorem",
+      "module": "MWGWelfareTheorems/LindahlSecond.lean"
+    }
+  ],
+  "full_build": "passed",
+  "fresh_source_compilation": "passed",
+  "fresh_source_lint_options": [
+    "-Dlinter.mathlibStandardSet=true",
+    "-Dlinter.style.header=false"
+  ],
+  "axioms": {
+    "MWG.WelfareTheorems.PrefEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.\u03c9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.\u03c9i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.\u03b8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.nonposOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsAllocation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.feasibleSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.ParetoDominates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.IsMaximalFor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceQuasiEqmWithTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPureExchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.ofUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.toEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.SharesValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.IsWalrasEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_B_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_B_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_B_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_B_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers.isFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceQuasiEqmWithTransfers.isFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.sum_wealth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrivPrefEconomy.IsWalrasEqm.isPriceEqmWithTransfers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers.isPriceQuasiEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.priceEqmCounterEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.priceEqmCounterEconomy_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.dotProduct_finset_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.abs_dotProduct_sub_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lns_exists_better_cheaper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceEqmWithTransfers.isPriceQuasiEqm_of_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsPriceQuasiEqmWithTransfers.wealth_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.paretoOptimal_all_to_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exchangeToPrefEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exchangeToPrefEconomy_isPureExchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exchange_isFeasible_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exchange_isDemandEqm_isPriceEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.isWalrasEqm_iff_competitiveEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.equation_16_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_C_1_walras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16C1u1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16C1u2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16C1Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16C1Eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.dot_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.zero_mem_supply_nonpos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.unbounded_of_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.StrictlyConvexC3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.strictlyConvexC3_of_prefStrictlyConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.prefStrictlyConvex_of_strictlyConvexC3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.euclidDist_segment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_3a_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_3a_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_3b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsParetoOptimalWrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.altruismPleasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.altruismW": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_C_4_converse_fails": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.strict_of_strict_of_pref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.strict_of_pref_of_strict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.preferredSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.aggPreferredSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.availableSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_1_step1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_1_step2_V": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_1_step2_Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_1_step3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_1_step5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_D_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.ex16D2u": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.ex16D2Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.isMaximalFor_of_strict_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.satiatedEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_D_3_needs_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.dotProduct_pos_of_nonneg_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.pureExchange_quasiEqm_isPriceEqm_of_interior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_D_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.euclidDist_add_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lns_of_strictMono_coord": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16D2u1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16D2u2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16D2Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16D2Alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16D2_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_D_2_quasi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_D_2_unique_price": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_D_2_not_eqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.pureExchange_quasiEqm_isPriceEqm_of_strongMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.replicaEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.symmetricAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exists_strict_of_tendsto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exists_strict_sub_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exists_nat_combination_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.rationalOn_utilityPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.prefContinuous_utilityPref": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.sqNormU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.sqNormU_stronglyMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_D_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_D_5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.utilityPossibilitySet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.achievedUtilitySet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.paretoFrontier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.achievedUtilitySet_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.utilityPossibilitySet_down": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_E_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_E_2_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.strongDual_apply_eq_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_E_2_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.pareto_isWelfareOptimum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.welfareOptimum_isPareto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16C1Utilities": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.squareUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16E1Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_E_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.repUtility": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.representative_consumer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.utility_mono_of_strongMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_E_1b_interior": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_E_1b": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_E_1b_hint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_E_1c": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.aggregateProduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.feasiblePairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.isClosed_nonnegOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.isClosed_nonposOrthant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_AA_1_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.mem_of_tendsto_inv_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_AA_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.aaY1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.aaCounterEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.aaCounter_agg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_AA_1_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_2_needs_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_2_needs_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_2_needs_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_2_needs_no_free_lunch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_AA_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_AA_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.no_improving_direction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fritz_john": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.clm_apply_eq_sum_partials": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.clm_pos_of_partials_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.strictMono_of_grad_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.mono_of_grad_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.Problem16F1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.IsSolution16F1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.economy16F": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.single_nonneg_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.solution16F1_resources_bind": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_1_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_1_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.projX": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.projY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.resLin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.convexOn_tangent_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.concaveOn_le_tangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.consumer_max_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.firm_max_of_foc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.section_16_F_constraints_bind": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.foc_16F2_iff_16F10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.foc_16F13_iff_16F2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.section_16_F_pareto_isPriceEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.section_16_F_pareto_iff_priceEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_F_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_18_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exists_sep_direction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.eventually_gt_along": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.eventually_pos_along": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.single_eq_smul_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.clm_two_dir": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.Problem16F7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_4_i": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.Problem16F8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_4_ii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_F_4_iii": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PrefEconomy.IsMCPriceEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proposition_16_G_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.sqTechF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.sqTechY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.sqTechF_hasFDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16G1Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16G1Alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_G_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16G2Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.fig16G2Alloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.figure_16_G_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.ex16G3F": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.ex16G3Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.ex16G3Economy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.ex16G3F_hasFDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.noOptimumF": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_4_needs_optimum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_20": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.occupationalX": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.example_16_G_2_X": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.example_16_G_2_lns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.example_16_G_2_Y": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PublicFeasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.PublicParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.IsLindahlEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.IsLindahlEqmPrinted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_G_1_wealth_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_G_1_printed_forces": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlExampleU": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.definition_16_G_1_printed_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahl_isParetoOptimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.footnote_23": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5b_wages": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5b_cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5b_mc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5bc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5d": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5e_level": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.sqrt_mul_add_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.exercise_16_G_5e": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlEmb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlProj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlX": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlY": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlArtificialEconomy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.IsLindahlQuasiEqm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlEmb_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlEmb_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlProj_emb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.dot_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.dot_lindahlEmb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.emb_proj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.emb_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.proj_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.euclidDist_emb": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahlAlloc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahl_pareto_artificial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahl_second_welfare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWG.WelfareTheorems.lindahl_second_welfare_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "MWGWelfareTheorems/Basic.lean": "1d769bf01ea3e041a292e814f39b0b2fbe33de458534448b07ad9c709955e128",
+    "MWGWelfareTheorems/FirstWelfare.lean": "2b808e80b7196ade5770fd365353fcdf9ffd1357f241e57180c660157fda48e9",
+    "MWGWelfareTheorems/SecondWelfare.lean": "ebf03b1c37310384919b7793ef50c4b67f532253122c52790e5a318c3e0040dd",
+    "MWGWelfareTheorems/CheaperPoint.lean": "3935d16ef1a33e0a4a7b695fdc2917ba3f6233f2b3fb15da94f85248efa2dee8",
+    "MWGWelfareTheorems/QuasiExample.lean": "1ba2ba60e8cd774a6d6bef99e378915afa527caf31bc6011afa752a2883f1821",
+    "MWGWelfareTheorems/Replica.lean": "82c86d667588134df31cfc4ced6e1dac0391a7192eef2124b8be38d84af7ef71",
+    "MWGWelfareTheorems/SocialWelfare.lean": "3f65a16546404fd50ff7ccf1df4474da245cf44f85473a07b12e6d194d63f742",
+    "MWGWelfareTheorems/UtilityFrontier.lean": "0db3a1da4321ec0243dc80617d22647fae41057524324150e80bbc073f91f13c",
+    "MWGWelfareTheorems/Appendix.lean": "41335f0b709ed59d722ecb5d036bcbdd7001475f8972ebaa57def0ab23ea01d0",
+    "MWGWelfareTheorems/FritzJohn.lean": "71eefc0ebc80a1eee9af89378ba738093ecdce821c70b28b4be3a1a2ad7a1ce8",
+    "MWGWelfareTheorems/FirstOrder.lean": "493e54b1a7b33affa26c0e2df92adbaf912f8ee31b58d849890988f8ff5fa320",
+    "MWGWelfareTheorems/FirstOrderWelfare.lean": "edd3bbc96e496e47b433cff44d78b6e7da320604e110038c7c6dc0ab5c126c2c",
+    "MWGWelfareTheorems/RatioConditions.lean": "8cebabeacbc59d6a6d707cb0124a60c5777f4ae18d19e7a584b429b4df20fa6d",
+    "MWGWelfareTheorems/MarginalCost.lean": "8a3779f06c44d605a88e67d586388959d5fb9332d0deeb21fe791c80899c13dc",
+    "MWGWelfareTheorems/MCExamples.lean": "498f1e11ab87b7a103cde432dd1bdbf2d7d8a52f0291ec12f5a3805013fa9b39",
+    "MWGWelfareTheorems/Applications.lean": "60187461b7ece1d881165d095b7e655eed03696017f65acf387c7f2e82b4c106",
+    "MWGWelfareTheorems/Exercise16G5.lean": "8d14909c8d17eabb7328e287dfb2dca40d402a78936ce0cd6c09ee62d79ed4f6",
+    "MWGWelfareTheorems/LindahlSecond.lean": "d2748283a004cd668e6afec608534f417da59bd53fb3ae5226c21235d58975c8",
+    "MWGWelfareTheorems.lean": "612805af0ef50f8f3eee74493880b241eae5e87c0c692d53776dacf86092799f",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "b890bfeef52dc2cd3dec7c7afc297259de3e77a2f333a240a8a5485aa3212bf5",
+    "lake-manifest.json": "cd668f682ac6fdac32fea53a8df1877cd9adca0ececc957797501ebbc9db191c",
+    "proof-manifest.json": "c9b2ff33f8ed15f90ec0a2d81666759ee98be718babb9f80ff631a455d05a82e",
+    "scripts/verify.py": "a70b1fa704dd590f937f8b37682afa88a9d85a9150065acb935c7d2c9589da3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "fresh_audit_sha256": "3170727cbc92f554dbfae7717539e5173158a98a0d21ec282d76799a0ebea443",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "scope": "MWG Chapter 16, Equilibrium and Its Basic Welfare Properties (pp. 545-577), with Appendix A.",
+  "source": "Mas-Colell, Whinston and Green, Microeconomic Theory (Oxford University Press, 1995), Chapter 16. Exact scope: docs/source-map.md."
+}
